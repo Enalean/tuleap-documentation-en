@@ -6,17 +6,19 @@
 Welcome to Tuleap's documentation!
 ==================================
 
-Contents:
-
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
+   user-guide/tracker
+   soap/tracker
 
+User Guide
+==========
 
-Indices and tables
-==================
+    * :doc:`user-guide/tracker`
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+SOAP API
+========
+
+    * :doc:`soap/tracker`
 
