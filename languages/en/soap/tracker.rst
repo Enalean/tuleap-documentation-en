@@ -30,5 +30,5 @@ Get an artifact
 
    ?>
 
-This produces some interesting results, doesn't it? ;)
+This produces some interesting results, doesn't it? ;) !
 
