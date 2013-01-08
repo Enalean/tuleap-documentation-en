@@ -6,7 +6,7 @@ Tracker system. For documentation on the legacy tracker system (v3) see
 ?.
 
 The Tuleap Tracker is one of the most powerful and flexible
-service provided by SYS\_PRODUCT\_NAME. It allows tracking change
+service provided by Tuleap. It allows tracking change
 management and various artifacts like bugs, tasks, requirements, etc...
 . A project can create and customize as many trackers as necessary.
 
