@@ -15,6 +15,8 @@
 
    <iframe width="560" height="315" src="http://www.youtube.com/embed/mmScXlOZi0o" frameborder="0" allowfullscreen></iframe>
 
+.. |SYSPRODUCTNAME| replace:: Tuleap
+
 Trackers and real-time Reports
 ==============================
 
@@ -90,7 +92,7 @@ screen (see ?).
    :align: center
    :alt: 
 
-? shows a sample submission screen from one of the SYS\_PRODUCT\_NAME
+? shows a sample submission screen from one of the |SYSPRODUCTNAME|
 hosted projects. Because of the SYS\_PRODUCT\_NAME Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
