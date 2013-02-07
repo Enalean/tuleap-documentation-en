@@ -11,9 +11,6 @@
 | body row 4             |            | - body elements.    |
 +------------------------+------------+---------------------+
 
-.. raw:: html
-
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/mmScXlOZi0o" frameborder="0" allowfullscreen></iframe>
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
