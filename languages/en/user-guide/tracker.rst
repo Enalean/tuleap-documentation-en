@@ -93,7 +93,7 @@ screen (see ?).
    A sample artifact submission screen (the artifact is of type "bug" here)
 
 `new screenshot machin`_ shows a sample submission screen from one of the |SYSPRODUCTNAME|
-hosted projects. Because of the SYS\_PRODUCT\_NAME Tracker high level of
+hosted projects. Because of the |SYSPRODUCTNAME| Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
