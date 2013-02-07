@@ -89,6 +89,8 @@ screen (see ?).
    :align: center
    :alt: A sample artifact submission screen (the artifact is of type "bug" here)
 
+   A sample artifact submission screen (the artifact is of type "bug" here)
+
 ? shows a sample submission screen from one of the |SYSPRODUCTNAME|
 hosted projects. Because of the SYS\_PRODUCT\_NAME Tracker high level of
 customizability no two submission screens look alike. Depending on the
