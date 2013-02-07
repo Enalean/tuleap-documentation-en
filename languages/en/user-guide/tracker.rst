@@ -88,10 +88,11 @@ screen (see ?).
 .. figure:: ../images/screenshots/sc_artifactsubmission_new.png
    :align: center
    :alt: A sample artifact submission screen (the artifact is of type "bug" here)
+   :name: new screenshot machin
 
    A sample artifact submission screen (the artifact is of type "bug" here)
 
-? shows a sample submission screen from one of the |SYSPRODUCTNAME|
+`new screenshot machin`_ shows a sample submission screen from one of the |SYSPRODUCTNAME|
 hosted projects. Because of the SYS\_PRODUCT\_NAME Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
