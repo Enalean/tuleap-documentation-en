@@ -936,7 +936,7 @@ the table below:
    `Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_ , "Only available to project administrators 
    and project members with Admin.
    permission on this tracker."            
-   `Tracker Administration -Workflow Management <#TrackerV5Workflow>`_ , "Only Project administrators and project
+   `Tracker Administration - Workflow Management <#TrackerV5Workflow>`_ , "Only Project administrators and project
    members with Admin. permission can 
    define and configure workflow."         
    `Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_ , "Only Project administrators and project
@@ -955,8 +955,6 @@ the table below:
    `Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_ , "Only Project administrators and project
    members with Admin. permission can 
    export tracker structure."                
-
-Table: Default Tracker Access Permissions
 
 Tracker Creation
 ================
