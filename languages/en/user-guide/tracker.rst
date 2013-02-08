@@ -57,7 +57,8 @@ artifact database or configure the tracker.
 
 .. figure:: ../images/screenshots/sc_trackerwelcomescreen_new.png
    :align: center
-   :alt: 
+   :alt: Tracker Welcome Screen
+   :name: Tracker Welcome Screen
 
 New Artifact Submission
 =======================
