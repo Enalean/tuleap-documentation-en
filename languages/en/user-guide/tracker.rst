@@ -70,25 +70,25 @@ appropriate tracker of that project as indicated in the section above
 `Entering the Tracker Service`_.
 
 When entering a given tracker you are presented with the artifact
-selection and browsing screen (more about this facility in ?). For now
+selection and browsing screen (more about this facility in `Artifact Browsing`_). For now
 let's click on the "Submit new artifact" item (or whatever the artifact
 name is) from the Tracker Menu Bar in the upper part of the welcome
-screen (see ?).
+screen `A Tracker browsing screen`_.
 
 .. figure:: ../images/screenshots/sc_artifactsubmission_new.png
    :align: center
    :alt: A sample artifact submission screen (the artifact is of type "bug" here)
-   :name: new screenshot machin
+   :name: A sample artifact submission screen
 
    A sample artifact submission screen (the artifact is of type "bug" here)
 
-`new screenshot machin`_ shows a sample submission screen from one of the |SYSPRODUCTNAME|
+`A sample artifact submission screen`_ shows a sample submission screen from one of the |SYSPRODUCTNAME|
 hosted projects. Because of the |SYSPRODUCTNAME| Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
 
-In the example provided on ? the artifact type is a bug (also know as
+In the example provided on `A sample artifact submission screen`_ the artifact type is a bug (also know as
 "defect" in corporate language). The user is asked to give a one-line
 description for the bug and a longer text entry field where you can
 fully characterize the bug. Then, he has to choose a bug Category and a
@@ -118,7 +118,7 @@ make much sense. It is very unlikely that users external to the project
 team know enough about the project organization to correctly assign the
 bug. That's the reason why artifact fields shown to users on the
 submission form can be configured in the Tracker Administration module
-(see ?)
+`Tracker Administration`_
 
 In any case don't forget to click on the "Submit" button when you are
 finished !
@@ -276,7 +276,10 @@ from the one shown in ?.
 
 .. figure:: ../images/screenshots/sc_artifactbrowsing.png
    :align: center
-   :alt: 
+   :alt: A Tracker browsing screen
+   :name: A Tracker browsing screen
+
+A Tracker browsing screen
 
 Results are listed by chunks of N artifacts where N is user-definable.
 If more than N artifacts are retrieved from the tracker database you are
