@@ -898,7 +898,7 @@ permissions granted as a project member, the various features of the
 that the default access permissions listed below may change for a
 particular tracker if the tracker administrator modifies the access
 permission settings. For more information on how to configure tracker
-access permissions see ?. Default permission settings are summarized in
+access permissions see `Permissions Management`_. Default permission settings are summarized in
 the table below:
 
 +----------------------------------+------------------------------------------+
