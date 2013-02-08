@@ -67,7 +67,7 @@ New Artifact Submission
 
 To submit a new artifact to a given project you must first access the
 appropriate tracker of that project as indicated in the section above
-(see ?.
+`Entering the Tracker Service`_.
 
 When entering a given tracker you are presented with the artifact
 selection and browsing screen (more about this facility in ?). For now
