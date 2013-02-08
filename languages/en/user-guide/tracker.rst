@@ -901,8 +901,8 @@ permission settings. For more information on how to configure tracker
 access permissions see `Permissions Management`_. Default permission settings are summarized in
 the table below:
 
-   .. csv-table:: Default Tracker Access Permissions
-      :header: "Tracker Feature", "Access Permission"
+  .. csv-table:: Default Tracker Access Permissions
+   :header: "Tracker Feature", "Access Permission"
    
    `New Artifact Submission <#TrackerV5ArtifactSubmission>`_ , "By default any |SYSPRODUCTNAME| visitor, whether logged in or not, has 
    the ability to submit a new artifact to
