@@ -686,6 +686,13 @@ are added to the input text field (comma separated), and can be viewed
 in trackers tabs. Note that these advanced functionalities are not
 available at artifact creation.
 
+.. figure:: ../images/screenshots/sc_linkingartifact.png
+   :align: center
+   :alt: How to link artifacts?
+   :name: How to link artifacts?
+
+   How to link artifacts?
+
 Creating an artifact
 --------------------
 
