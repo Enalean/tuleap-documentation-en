@@ -460,7 +460,7 @@ description, and the fields required to build the chart.
 Pie Chart
 ^^^^^^^^^
 
-.. figure:: ../images/screenshots/sc_trackergraphie.png
+.. figure:: ../images/screenshots/sc_trackergraphpie.png
    :align: center
    :alt: Pie chart edition screen
    :name: Pie chart edition screen
