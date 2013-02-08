@@ -431,6 +431,8 @@ functions available are:
 You can easily add, remove and move columns you want to display on your
 table as well was adding agregate functions at the bottom.
 
+image (Table render with aggregate functions)
+
 Charts renderer
 ~~~~~~~~~~~~~~~
 
@@ -442,14 +444,20 @@ graph, click on the selected graph icon on the top of the current
 renderer. Regarding the chart type, you will then provide a name, a
 description, and the fields required to build the chart.
 
+image (Several charts in one tab)
+
 Pie Chart
 ^^^^^^^^^
+
+image (Pie chart edition screen)
 
 Bar Chart
 ^^^^^^^^^
 
 Gantt Chart
 ^^^^^^^^^^^
+
+image (Gantt chart edition screen)
 
     **Tip**
 
@@ -461,6 +469,8 @@ Gantt Chart
 Burndown charts
 ^^^^^^^^^^^^^^^
 
+image (Burndown Graph edition screen)
+
 Cardwall
 ^^^^^^^^
 
@@ -468,6 +478,8 @@ Cardwall provides and easy-to-understand and instantly updated view of
 your work status. Cardwall is very used in agile methods. It is very
 easy to update the status of an artifact: just drag'n drop a post-it
 from a column to another one.
+
+image (Cardwall)
 
 Updating/removing a renderer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
