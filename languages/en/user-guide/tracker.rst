@@ -911,8 +911,7 @@ the table below:
    feature to |SYSPRODUCTNAME| registered 
    users (anonymous users are requested to
    login first) or to the project members 
-   if the tracker is made private."          
-   `Artifact Browsing <#TrackerV5ArtifactBrow sing>`_ , "Searching the Artifact database and browsing the results is available to all 
+   if the tracker is made private." `Artifact Browsing <#TrackerV5ArtifactBrow sing>`_ , "Searching the Artifact database and browsing the results is available to all 
    |SYSPRODUCTNAME| visitors (whether 
    registered or not) unless the tracker
    has been made private by the project 
