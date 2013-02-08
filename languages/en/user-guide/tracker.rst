@@ -736,7 +736,10 @@ access the artifact form on |SYSPRODUCTNAME|.
 
 .. figure:: ../images/screenshots/sc_emailnotification.png
    :align: center
-   :alt: 
+   :alt: Notification by email
+   :name: Notification by email
+
+   Notification by email
 
 Tracker Artifact Import
 =======================
