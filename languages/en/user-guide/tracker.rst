@@ -49,7 +49,7 @@ choose a tracker from the trackers listed in the Public Area of the
 Project Dashboard.
 
 You will be presented with a list of trackers available for this
-particular project `Tracker Welcome Screen`_. Select the tracker you are interested in.
+particular project (see `Tracker Welcome Screen`_). Select the tracker you are interested in.
 Entering the tracker will give you access to various tracker functions
 depending on the permissions you have with this tracker. You may be able
 to submit new artifacts, update existing ones, search and browse the
@@ -73,7 +73,7 @@ When entering a given tracker you are presented with the artifact
 selection and browsing screen (more about this facility in `Artifact Browsing`_). For now
 let's click on the "Submit new artifact" item (or whatever the artifact
 name is) from the Tracker Menu Bar in the upper part of the welcome
-screen `A Tracker browsing screen`_.
+screen (see `A Tracker browsing screen`_).
 
 .. figure:: ../images/screenshots/sc_artifactsubmission_new.png
    :align: center
@@ -118,7 +118,7 @@ make much sense. It is very unlikely that users external to the project
 team know enough about the project organization to correctly assign the
 bug. That's the reason why artifact fields shown to users on the
 submission form can be configured in the Tracker Administration module
-`Tracker Administration`_
+(see `Tracker Administration`_)
 
 In any case don't forget to click on the "Submit" button when you are
 finished !
@@ -142,13 +142,13 @@ Selection Criteria
 ------------------
 
 The upper part of the artifact browsing screen is devoted to the
-selection criteria. ? shows the default set of selection criteria that
+selection criteria. `A Tracker browsing screen`_ shows the default set of selection criteria that
 is available when a new tracker is created. You can select bugs by
 Category (the module in which the bug occurred), Group (nature of the
 bug like Crash, Documentation Typo, ...), Status (e.g. Open, Closed,
 ...) and Assignee (the person in charge of the bug). But you may also
 add or remove criteria by using the "Toggle criteria" link.(for more
-details, see ?)
+details, see `Tracker Report Management`_)
 
 How selection criteria are filled out depend on their field type. The
 Tracker Service currently has several types of fields used as search
@@ -270,9 +270,9 @@ Tracker Search Results
 Based on your selection of search criteria, |SYSPRODUCTNAME| runs a
 query against the tracker database, selects the matching artifacts, and
 displays them right below the selection criteria. Columns displayed in
-the artifact list are entirely configurable by the user. (see ?).
+the artifact list are entirely configurable by the user. (see `Tracker Report Management`_).
 Therefore, the artifact browsing screen might look completely different
-from the one shown in ?.
+from the one shown in `A Tracker browsing screen`_.
 
 .. figure:: ../images/screenshots/sc_artifactbrowsing.png
    :align: center
@@ -319,7 +319,7 @@ into CSV format. Using this facility you can easily select the tracker
 artifacts that you want to process with other tools outside
 |SYSPRODUCTNAME|.
 
-See ? for how to import artifacts from CSV file.
+See `Tracker Artifact Import`_ for how to import artifacts from CSV file.
 
 Printer Friendly Version
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -369,7 +369,7 @@ Tracker Report Setting
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The current report is defined at the top left of the report page (see
-?). If several reports are available, a select box will allow to change
+`A Tracker browsing screen`_). If several reports are available, a select box will allow to change
 the current report.
 
 For each report, if you are granted enough to do it, you can either
@@ -385,7 +385,7 @@ Adding a renderer
 
 You can add as many renderers you want in any tracker report. Renderer
 are ordered in tabs. Adding a renderer is easy: simply select the [+]
-tab on the right of the renderer tabs (see ?). Select the kind of
+tab on the right of the renderer tabs (see `A Tracker browsing screen`_). Select the kind of
 renderer you want to add (either table, charts or cardwall), give the
 renderer a name and a description, and select the submit button.
 
@@ -398,7 +398,7 @@ Table renderer
 
 Table renderer is displayed artifacts matching your search in a table.
 Columns of the table are tracker fields and rows of the table are the
-artifacts. ?) shows an example of a table renderer.
+artifacts. `A Tracker browsing screen`_) shows an example of a table renderer.
 
 You can select the fields of the renderer (using the Toggle columns
 link), reorder the fields using drag and drop, sort artifact list by
