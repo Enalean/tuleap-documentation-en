@@ -1,6 +1,6 @@
 Tuleap Documentation
 ====================
-new test
+
 This is a proposal to use Sphinx (instead of docbook) in order to generate the 
 documentation for [Tuleap](http://tuleap.com/).
 
