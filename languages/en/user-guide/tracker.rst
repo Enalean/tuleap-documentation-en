@@ -925,12 +925,12 @@ the table below:
    `Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_ , "Only Project administrators and project
    members with Admin. permission can 
    import data into trackers."             
-  `Tracker Creation <#TrackerV5Creation>`_ , "Only available to project
+   `Tracker Creation <#TrackerV5Creation>`_ , "Only available to project
    administrators."                        
-  `Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_, "Only available to project administrators 
+   `Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_ , "Only available to project administrators 
    and project members with Admin.
    permission on this tracker."              
-    `Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_ , "Only available to project administrators 
+   `Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_ , "Only available to project administrators 
    and project members with Admin.
    permission on this tracker."            
    `Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_ , "Only available to project administrators 
@@ -939,13 +939,13 @@ the table below:
    `Tracker Administration -Workflow Management <#TrackerV5Workflow>`_ , "Only Project administrators and project
    members with Admin. permission can 
    define and configure workflow."         
-    `Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_ , "Only Project administrators and project
+   `Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_ , "Only Project administrators and project
    members with Admin. permission can 
    define tracker permissions."              
-    `Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_ , "Only Project administrators and project
+   `Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_ , "Only Project administrators and project
    members with Admin. permission can 
    define canned responses."                 
-    `Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ ,"Only Project administrators can add
+   `Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ , "Only Project administrators can add
    email addresses in the global email
    notification field. Project members can
    watch artifacts of other team members. 
