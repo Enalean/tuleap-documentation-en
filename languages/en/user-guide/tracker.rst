@@ -279,7 +279,7 @@ from the one shown in `A Tracker browsing screen`_.
    :alt: A Tracker browsing screen
    :name: A Tracker browsing screen
 
-A Tracker browsing screen
+   A Tracker browsing screen
 
 Results are listed by chunks of N artifacts where N is user-definable.
 If more than N artifacts are retrieved from the tracker database you are
