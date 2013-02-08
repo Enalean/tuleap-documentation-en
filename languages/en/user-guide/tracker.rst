@@ -49,7 +49,7 @@ choose a tracker from the trackers listed in the Public Area of the
 Project Dashboard.
 
 You will be presented with a list of trackers available for this
-particular project (see ?. Select the tracker you are interested in.
+particular project `Tracker Welcome Screen`_. Select the tracker you are interested in.
 Entering the tracker will give you access to various tracker functions
 depending on the permissions you have with this tracker. You may be able
 to submit new artifacts, update existing ones, search and browse the
