@@ -431,7 +431,12 @@ functions available are:
 You can easily add, remove and move columns you want to display on your
 table as well was adding agregate functions at the bottom.
 
-image (Table render with aggregate functions)
+.. figure:: ../images/screenshots/sc_trackertable.png
+   :align: center
+   :alt: Table render with aggregate functions
+   :name: Table render with aggregate functions
+
+   Table render with aggregate functions
 
 Charts renderer
 ~~~~~~~~~~~~~~~
@@ -439,27 +444,48 @@ Charts renderer
 Charts renderer allows to add charts in your report. |SYSPRODUCTNAME|
 provides four kind of graphs: pie, bar, gantt and burndown charts.
 
+.. figure:: ../images/screenshots/sc_graphs_renderer.png
+   :align: center
+   :alt: Several charts in one tab
+   :name: Several charts in one tab
+
+   Several charts in one tab
+
 You can add as many graphs as you want in a charts renderer. To add a
 graph, click on the selected graph icon on the top of the current
 renderer. Regarding the chart type, you will then provide a name, a
 description, and the fields required to build the chart.
 
-image (Several charts in one tab)
 
 Pie Chart
 ^^^^^^^^^
 
-image (Pie chart edition screen)
+.. figure:: ../images/screenshots/sc_trackergraphie.png
+   :align: center
+   :alt: Pie chart edition screen
+   :name: Pie chart edition screen
+
+   Pie chart edition screen
 
 Bar Chart
 ^^^^^^^^^
 
-image (Bar chart edition screen)
+.. figure:: ../images/screenshots/sc_trackergraphbar.png
+   :align: center
+   :alt: Bar chart edition screen
+   :name: Bar chart edition screen
+
+   Bar chart edition screen
 
 Gantt Chart
 ^^^^^^^^^^^
 
-image (Gantt chart edition screen)
+.. figure:: ../images/screenshots/sc_trackergraphgantt.png
+   :align: center
+   :alt: Bar chart edition screen
+   :name: Bar chart edition screen
+
+   Gantt chart edition screen
 
     **Tip**
 
@@ -471,7 +497,12 @@ image (Gantt chart edition screen)
 Burndown charts
 ^^^^^^^^^^^^^^^
 
-image (Burndown Graph edition screen)
+.. figure:: ../images/screenshots/sc_v5_trackergraphburndown.png
+   :align: center
+   :alt: Burndown Graph edition screen
+   :name: Burndown Graph edition screen
+
+   Burndown Graph edition screen
 
 Cardwall
 ^^^^^^^^
@@ -481,7 +512,12 @@ your work status. Cardwall is very used in agile methods. It is very
 easy to update the status of an artifact: just drag'n drop a post-it
 from a column to another one.
 
-image (Cardwall)
+.. figure:: ../images/screenshots/sc_trackercardwall.png
+   :align: center
+   :alt: Cardwall
+   :name: Cardwall
+
+   Cardwall
 
 Updating/removing a renderer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
