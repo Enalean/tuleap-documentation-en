@@ -114,7 +114,7 @@ assigned to the submitted artifact.
 
 The values proposed by a field could depend upon other field value. If
 javascript is activated in your browser, fields will be filtered
-dynamically. Otherwise, SYS\_PRODUCT\_NAME will ensure that the values
+dynamically. Otherwise, |SYSPRODUCTNAME| will ensure that the values
 you submit are correct.
 
 As explained above, artifact submission forms vary from one project to
@@ -135,17 +135,17 @@ finished !
 
     **Tip**
 
-    About to submit a bug or a support request to a SYS\_PRODUCT\_NAME
+    About to submit a bug or a support request to a |SYSPRODUCTNAME|
     Project? Before you do that, make sure that others haven't yet
     submitted a similar artifact. To do so you can either browse the
     artifact database through the Artifact Selection and Browsing
-    facility or you can use the search box in the SYS\_PRODUCT\_NAME
+    facility or you can use the search box in the |SYSPRODUCTNAME|
     Main Menu and search by keywords.
 
 Artifact Browsing
 =================
 
-SYS\_PRODUCT\_NAME offers the ability to browse the artifact database
+|SYSPRODUCTNAME| offers the ability to browse the artifact database
 according to a variable set of criteria.
 
 Selection Criteria
