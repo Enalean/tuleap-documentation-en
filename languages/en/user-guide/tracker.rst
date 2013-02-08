@@ -454,6 +454,8 @@ image (Pie chart edition screen)
 Bar Chart
 ^^^^^^^^^
 
+image (Bar chart edition screen)
+
 Gantt Chart
 ^^^^^^^^^^^
 
