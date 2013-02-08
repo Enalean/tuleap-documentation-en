@@ -60,6 +60,8 @@ artifact database or configure the tracker.
    :alt: Tracker Welcome Screen
    :name: Tracker Welcome Screen
 
+Tracker Welcome Screen
+
 New Artifact Submission
 =======================
 
