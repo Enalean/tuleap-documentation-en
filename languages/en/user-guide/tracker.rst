@@ -901,7 +901,7 @@ permission settings. For more information on how to configure tracker
 access permissions see `Permissions Management`_. Default permission settings are summarized in
 the table below:
 
-.. csv-table:: Default Tracker Access Permissions
+   .. csv-table:: Default Tracker Access Permissions
    :header: "Tracker Feature", "Access Permission"
    
    `New Artifact Submission <#TrackerV5ArtifactSubmission>`_ , "By default any |SYSPRODUCTNAME| visitor, whether logged in or not, has 
@@ -912,7 +912,7 @@ the table below:
    users (anonymous users are requested to
    login first) or to the project members 
    if the tracker is made private." 
-`Artifact Browsing <#TrackerV5ArtifactBrow sing>`_ , "Searching the Artifact database and browsing the results is available to all 
+   `Artifact Browsing <#TrackerV5ArtifactBrow sing>`_ , "Searching the Artifact database and browsing the results is available to all 
    |SYSPRODUCTNAME| visitors (whether 
    registered or not) unless the tracker
    has been made private by the project 
