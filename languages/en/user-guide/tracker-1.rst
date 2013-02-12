@@ -998,6 +998,8 @@ To define a new tracker you must provide the following information (see
    :alt: Create a new tracker
    :name: Create a new tracker
 
+   Create a new tracker
+
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
 trackers again and again (e.g. Bug tracker, Support Request tracker,
@@ -1437,6 +1439,7 @@ the left and a tracker visualization on the right (see `Tracker Admin Field Usag
    :alt: Tracker Admin Field Usage Overview
    :name: Tracker Admin Field Usage Overview
 
+   Tracker Admin Field Usage Overview
 Tracker Fields Palette
 ~~~~~~~~~~~~~~~~~~~~~~
 
