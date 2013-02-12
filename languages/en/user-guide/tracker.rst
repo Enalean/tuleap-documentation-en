@@ -1757,7 +1757,7 @@ creation :
 
 -  **Add a decorator**: List values can be embellished with a decorator.
    A decorator is a colored square. You can choose the color for each
-   value in a large palette of colors. (see `Tracker Admin Field Edition`_). Decorators can be used
+   value in a large palette of colors. (see trololo `Tracker Admin Field Edition`_). Decorators can be used
    to get a quick visual indicator feedback for the user. For instance,
    the values for the priority of a bug can be given a color with the
    meaning "the darker the more important".
