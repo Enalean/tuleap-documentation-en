@@ -1677,7 +1677,7 @@ properties that can be tuned :
       sort automatically your values.
 
       |SYSPRODUCTNAME| allows to add what we call "decorator" to each
-      value but only on edition mode (see ?)
+      value but only on edition mode (see `Modify the field of a tracker`_)
 
    -  **Binding a field to a list of users**: the Trackers offers the
       ability to associate "Select Box", "Multi-Select Box" and "Text
