@@ -903,7 +903,6 @@ the table below:
 
 .. csv-table:: Default Tracker Access Permissions
    :header: "Tracker Feature", "Access Permission"
-   
    `New Artifact Submission <#TrackerV5ArtifactSubmission>`_ , "By default any |SYSPRODUCTNAME| visitor, whether logged in or not, has 
    the ability to submit a new artifact to
    a tracker. The tracker administrator has 
