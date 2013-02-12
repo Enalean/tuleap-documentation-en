@@ -1724,12 +1724,12 @@ properties that can be tuned :
           same way but instead of selecting a user, you will choose a user
           group among a list.
 
-   It's useful when you have complex setup and want to have several
-   people notified at once for an action.
+It's useful when you have complex setup and want to have several
+people notified at once for an action.
 
-   On the following picture, we define a list of support groups that
-   will be in charge of the artifact according to their
-   responsabilities:
+On the following picture, we define a list of support groups that
+will be in charge of the artifact according to their
+responsabilities:
 
 .. figure:: ../images/screenshots/sc_conf_vs_end_usergroup.png
    :align: center
