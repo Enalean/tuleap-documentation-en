@@ -1716,7 +1716,7 @@ properties that can be tuned :
    :align: center
    :alt: Select box bond to a list of users
    :name: Select box bond to a list of users   
-  
+
    Select box bond to a list of users
 
    -  **Binding a field to a list of user groups**: It's an extension of
