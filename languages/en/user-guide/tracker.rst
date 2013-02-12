@@ -1719,17 +1719,17 @@ properties that can be tuned :
 
    Select box bond to a list of users
 
-   -  **Binding a field to a list of user groups**: It's an extension of
-      "binding to a list of user" but with user groups. It behaves the
-      same way but instead of selecting a user, you will choose a user
-      group among a list.
+      -  **Binding a field to a list of user groups**: It's an extension of
+         "binding to a list of user" but with user groups. It behaves the
+         same way but instead of selecting a user, you will choose a user
+         group among a list.
 
-      It's useful when you have complex setup and want to have several
-      people notified at once for an action.
+         It's useful when you have complex setup and want to have several
+         people notified at once for an action.
 
-      On the following picture, we define a list of support groups that
-      will be in charge of the artifact according to their
-      responsabilities:
+         On the following picture, we define a list of support groups that
+         will be in charge of the artifact according to their
+         responsabilities:
 
 .. figure:: ../images/screenshots/sc_conf_vs_end_usergroup.png
    :align: center
@@ -1757,7 +1757,7 @@ creation :
 
 -  **Add a decorator**: List values can be embellished with a decorator.
    A decorator is a colored square. You can choose the color for each
-   value in a large palette of colors. (see trololo `Tracker Admin Field Edition`_). Decorators can be used
+   value in a large palette of colors. (see `Tracker Admin Field Edition`_). Decorators can be used
    to get a quick visual indicator feedback for the user. For instance,
    the values for the priority of a bug can be given a color with the
    meaning "the darker the more important".
