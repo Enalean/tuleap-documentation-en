@@ -1374,7 +1374,7 @@ Field Permissions Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Beside defining access permissions for the tracker and its artifacts
-(see ?) it is sometimes necessary to restrict access to certain fields
+(see `Tracker Permissions Management`_) it is sometimes necessary to restrict access to certain fields
 of the tracker to a given population. As an example if you share a
 defect tracking system with your customers you may want to hide some
 fields from the view of your customer or prevent them from modifying
@@ -1430,11 +1430,12 @@ or structural elements addition or removal or it can be an entirely new
 tracker created from an empty template.
 
 The Field Usage Manager is divided in two parts : a fields palette on
-the left and a tracker visualization on the right (see ?)
+the left and a tracker visualization on the right (see `Tracker Admin Field Usage Overview`_)
 
 .. figure:: ../images/screenshots/sc_tracker_admin_field_usage_overview.png
    :align: center
-   :alt: 
+   :alt: Tracker Admin Field Usage Overview
+   :name: Tracker Admin Field Usage Overview
 
 Tracker Fields Palette
 ~~~~~~~~~~~~~~~~~~~~~~
