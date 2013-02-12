@@ -998,6 +998,8 @@ To define a new tracker you must provide the following information (see
    :alt: Create a new tracker
    :name: Create a new tracker
 
+   Create a new tracker
+
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
 trackers again and again (e.g. Bug tracker, Support Request tracker,
@@ -1437,6 +1439,8 @@ the left and a tracker visualization on the right (see `Tracker Admin Field Usag
    :alt: Tracker Admin Field Usage Overview
    :name: Tracker Admin Field Usage Overview
 
+   Tracker Admin Field Usage Overview
+
 Tracker Fields Palette
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1677,7 +1681,7 @@ properties that can be tuned :
       sort automatically your values.
 
       |SYSPRODUCTNAME| allows to add what we call "decorator" to each
-      value but only on edition mode (see ?)
+      value but only on edition mode (see `Modify the field of a tracker`_)
 
    -  **Binding a field to a list of users**: the Trackers offers the
       ability to associate "Select Box", "Multi-Select Box" and "Text
@@ -1708,6 +1712,13 @@ properties that can be tuned :
       On the following picture, we can see that people in "Assigned to"
       field are automatically populated from "SupportTeam" user group.
 
+.. figure:: ../images/screenshots/sc_conf_vs_end_user.png
+   :align: center
+   :alt: Select box bond to a list of users
+   :name: Select box bond to a list of users
+
+   Select box bond to a list of users
+
    -  **Binding a field to a list of user groups**: It's an extension of
       "binding to a list of user" but with user groups. It behaves the
       same way but instead of selecting a user, you will choose a user
@@ -1719,6 +1730,13 @@ properties that can be tuned :
       On the following picture, we define a list of support groups that
       will be in charge of the artifact according to their
       responsabilities:
+
+.. figure:: ../images/screenshots/sc_conf_vs_end_usergroup.png
+   :align: center
+   :alt: Select box bond to a list of user groups
+   :name: Select box bond to a list of user groups
+
+   Select box bond to a list of user groups
 
 Modify the field of a tracker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1739,7 +1757,7 @@ creation :
 
 -  **Add a decorator**: List values can be embellished with a decorator.
    A decorator is a colored square. You can choose the color for each
-   value in a large palette of colors. (see ?). Decorators can be used
+   value in a large palette of colors. (see `Tracker Admin Field Edition`_). Decorators can be used
    to get a quick visual indicator feedback for the user. For instance,
    the values for the priority of a bug can be given a color with the
    meaning "the darker the more important".
@@ -1771,7 +1789,10 @@ creation :
 
 .. figure:: ../images/screenshots/sc_tracker_admin_field_usage_edition.png
    :align: center
-   :alt: 
+   :alt: Tracker Admin Field Edition
+   :name: Tracker Admin Field Edition
+
+   Tracker Admin Field Edition
 
 Delete the field of a tracker
 '''''''''''''''''''''''''''''
