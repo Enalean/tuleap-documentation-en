@@ -974,7 +974,7 @@ servide page.
     fields or customize existing ones in each of the trackers.
 
 To define a new tracker you must provide the following information (see
-?):
+`Create a new tracker`_):
 
 -  **Name**: this is the name of your tracker. A tracker is typically
    named after the type of artifact it is going to manage. This name
@@ -995,7 +995,8 @@ To define a new tracker you must provide the following information (see
 
 .. figure:: ../images/screenshots/sc_trackercreatenewtracker.png
    :align: center
-   :alt: 
+   :alt: Create a new tracker
+   :name: Create a new tracker
 
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
@@ -1018,7 +1019,7 @@ or remove fields or fine-tune the field settings afterwards.
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
-   ? for more explanations on the semantic of those templates.
+   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic of those templates.
 
 -  **Project Templates**: in case you have already defined a tracker
    that suits your needs or you have seen a tracker from another project
@@ -1033,7 +1034,7 @@ or remove fields or fine-tune the field settings afterwards.
    trackers, the fields used, the values of the fields, and the
    permissions. XML schema is available in
    /src/www/tracker/resources/tracker.rnc. Most of the time, you will
-   use an XML file coming from a tracker structure export (See ?). This
+   use an XML file coming from a tracker structure export (See `Tracker Structure Export`_). This
    feature is really convenient to copy a tracker from a server to
    another. **Note**: this does not copy the artifacts of the original
    tracker but only the structure).
