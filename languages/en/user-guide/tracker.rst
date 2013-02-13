@@ -485,8 +485,7 @@ Gantt Chart
    :alt: Bar chart edition screen
    :name: Bar chart edition screen
 
-   Gantt chart edition screen
-
+   Gantt chart edition screen.
 
     **Tip**
 
