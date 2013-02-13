@@ -1817,7 +1817,7 @@ or close, or the field used to define the contributor (or assignee) of
 an artifact. This feature is provided by the admin section "Semantics".
 
 Most of the trackers you will use already defined a semantic. This is
-the case for instance for all tracker templates (see ?).
+the case for instance for all tracker templates (see `Tuleap-wide Tracker Templates`_).
 
 To define or update a semantic field, select the pencil icon next to the
 semantic property. Semantic admin section lets you define the following
