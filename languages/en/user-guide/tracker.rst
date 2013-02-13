@@ -1042,7 +1042,7 @@ or remove fields or fine-tune the field settings afterwards.
    another. **Note**: this does not copy the artifacts of the original
    tracker but only the structure).
 
-|SYSPRODUCTNAME|-wide Tracker Templates
+|SYSPRODUCTNAME| -wide Tracker Templates
 =========================================
 
 The standard trackers provided for each new |SYSPRODUCTNAME| project
@@ -1372,6 +1372,13 @@ Each group can be associated with the following access permissions:
    granted this permission a group of users can only see those artifacts
    that have been submitted by or assigned to one or several members of
    this group.
+
+.. figure:: ../images/screenshots/sc_tracker_admin_field_usage_overview.png
+   :align: center
+   :alt: Tracker Admin Field Usage Overview
+   :name: Tracker Admin Field Usage Overview
+
+   Tracker Admin Field Usage Overview
 
 Field Permissions Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
