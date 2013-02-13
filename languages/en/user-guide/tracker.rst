@@ -1013,7 +1013,8 @@ an xml file.
 of fields and field values defined in this template. You can always add
 or remove fields or fine-tune the field settings afterwards.
 
--  **|SYSPRODUCTNAME|-wide Templates**: these are templates that have
+-  
+   **|SYSPRODUCTNAME|-wide Templates**: these are templates that have
    been defined by the administrators of the |SYSPRODUCTNAME| site
    because it is expected that most project needs them. It is also a way
    to ensure a certain level of harmonization across projects that will
