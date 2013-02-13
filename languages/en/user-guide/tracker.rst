@@ -487,7 +487,7 @@ Gantt Chart
 
    Gantt chart edition screen
 
-?
+
     **Tip**
 
     Warning! If you're dealing with big projects and your dates spread
