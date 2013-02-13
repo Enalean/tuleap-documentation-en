@@ -2043,7 +2043,10 @@ Define rules on transitions
 
 .. figure:: ../images/screenshots/sc_manage_workflow_transitions.png
    :align: center
-   :alt: 
+   :alt: Define workflow transitions
+   :name: Define workflow transitions
+
+   Define workflow transitions
 
 For a given transition, you can select the people allowed to perform it
 and actions exectued after the transition happens (if allowed).
@@ -2054,7 +2057,7 @@ Groups that may make the transition
 Once the transition is defined, you can refine who can make the
 transition. To do this, click the "[details]" link next to the
 transition. Then, select the group of users you allow to do the
-transition (see ?).
+transition (see `Define workflow transitions`_).
 
 Post actions
 ^^^^^^^^^^^^
