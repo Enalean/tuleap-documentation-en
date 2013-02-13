@@ -338,7 +338,7 @@ You can also view graphical results of your search by adding a Charts
 tab. There are four types of graphs supported : Pie, Bar and Gantt
 charts, but also Burndown charts used in Scrum methodology. Like the
 list of artifact (table renderer), the graphical view respond to the
-selection criteria. For more details, see ?.
+selection criteria. For more details, see `Charts renderer`_.
 
 Tracker Report Management
 -------------------------
@@ -791,8 +791,7 @@ To export an Excel sheet to CSV format, simply follow the steps below:
 
 -  Select ``File -> Save As``
 
--  In the dialog window choose ``CSV`` as the ``Save 
-                               as type``
+-  In the dialog window choose ``CSV`` as the ``Save as type``
 
 CSV File Parsing
 ----------------
