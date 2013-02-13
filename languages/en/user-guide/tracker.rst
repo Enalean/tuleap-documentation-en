@@ -2116,12 +2116,6 @@ qualifying and dispatching the artifacts.
     kept in an archive that can serve as an audit trail for your
     tracker.
 
-Tracker Artifact Import
------------------------
-
-|SYSPRODUCTNAME| allows you to import artifacts in a tracker from a
-CSV file. See `Tracker Artifact Import`_ for more details about this feature.
-
 Tracker Structure Export
 ------------------------
 
