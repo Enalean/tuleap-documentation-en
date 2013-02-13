@@ -487,7 +487,7 @@ Gantt Chart
 
    Gantt chart edition screen
 
-**Tip**
+  **Tip**
 
     Warning! If you're dealing with big projects and your dates spread
     on several years, don't display your gantt chart by day. The chart
