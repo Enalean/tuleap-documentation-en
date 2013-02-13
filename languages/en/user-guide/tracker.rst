@@ -319,7 +319,7 @@ into CSV format. Using this facility you can easily select the tracker
 artifacts that you want to process with other tools outside
 |SYSPRODUCTNAME|.
 
-See `Tracker Artifact Import`_for how to import artifacts from CSV file.
+See `Tracker Artifact Import`_ `Charts renderer`_ for how to import artifacts from CSV file.
 
 Printer Friendly Version
 ~~~~~~~~~~~~~~~~~~~~~~~~
