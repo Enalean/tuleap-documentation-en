@@ -1013,7 +1013,7 @@ an xml file.
 of fields and field values defined in this template. You can always add
 or remove fields or fine-tune the field settings afterwards.
 
--  **|SYSPRODUCTNAME|-wide Template**: these are templates that have
+-  **|SYSPRODUCTNAME| -wide Template**: these are templates that have
    been defined by the administrators of the |SYSPRODUCTNAME| site
    because it is expected that most project needs them. It is also a way
    to ensure a certain level of harmonization across projects that will
@@ -1022,7 +1022,8 @@ or remove fields or fine-tune the field settings afterwards.
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
-   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic of those templates.
+   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic 
+   of those templates.
 
 -  **Project Templates**: in case you have already defined a tracker
    that suits your needs or you have seen a tracker from another project
@@ -1042,7 +1043,7 @@ or remove fields or fine-tune the field settings afterwards.
    another. **Note**: this does not copy the artifacts of the original
    tracker but only the structure).
 
-|SYSPRODUCTNAME| -wide Tracker Templates
+|SYSPRODUCTNAME|-wide Tracker Templates
 =========================================
 
 The standard trackers provided for each new |SYSPRODUCTNAME| project
