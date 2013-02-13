@@ -2072,7 +2072,7 @@ artifact (eg. when it's state move from Resolved to Closed).
 Email Notification Settings
 ---------------------------
 
-As explained earlier in ? the Tracker comes with a predefined set of
+As explained earlier in `E-mail Notification`_ the Tracker comes with a predefined set of
 rules to keep relevant people aware of the artifact life. The default
 rules can however be complemented or tuned in a number of ways:
 
@@ -2113,7 +2113,7 @@ Tracker Artifact Import
 -----------------------
 
 |SYSPRODUCTNAME| allows you to import artifacts in a tracker from a
-CSV file. See ? for more details about this feature.
+CSV file. See `Tracker Artifact Import`_ for more details about this feature.
 
 Tracker Structure Export
 ------------------------
