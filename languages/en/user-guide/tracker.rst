@@ -487,7 +487,8 @@ Gantt Chart
 
    Gantt chart edition screen
 
-   
+.
+.   
 
     **Tip**
 
