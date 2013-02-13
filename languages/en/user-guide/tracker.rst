@@ -1021,7 +1021,7 @@ or remove fields or fine-tune the field settings afterwards.
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
-   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic 
+   `Tracker Templates`_ for more explanations on the semantic 
    of those templates.
 
 -  **Project Templates**: in case you have already defined a tracker
@@ -1042,7 +1042,7 @@ or remove fields or fine-tune the field settings afterwards.
    another. **Note**: this does not copy the artifacts of the original
    tracker but only the structure).
 
-|SYSPRODUCTNAME|-wide Tracker Templates
+Tracker Templates
 =========================================
 
 The standard trackers provided for each new |SYSPRODUCTNAME| project
@@ -1824,7 +1824,7 @@ or close, or the field used to define the contributor (or assignee) of
 an artifact. This feature is provided by the admin section "Semantics".
 
 Most of the trackers you will use already defined a semantic. This is
-the case for instance for all tracker templates (see `Tuleap-wide Tracker Templates`_ ).
+the case for instance for all tracker templates (see `Tracker Templates`_ ).
 
 To define or update a semantic field, select the pencil icon next to the
 semantic property. Semantic admin section lets you define the following
