@@ -9,15 +9,27 @@ Welcome to Tuleap's documentation!
 .. toctree::
    :hidden:
 
-   user-guide/tracker
    user-guide/project-admin
+   user-guide/doc
+   user-guide/tracker
+   user-guide/cvs
+   user-guide/svn
+   user-guide/git
+   user-guide/ci
+   user-guide/frs
    soap/tracker
 
 User Guide
 ==========
 
-    * :doc:`user-guide/tracker`
     * :doc:`user-guide/project-admin`
+    * :doc:`user-guide/doc`
+    * :doc:`user-guide/tracker`
+    * :doc:`user-guide/cvs`
+    * :doc:`user-guide/svn`
+    * :doc:`user-guide/git`
+    * :doc:`user-guide/ci`
+    * :doc:`user-guide/frs`
 
 SOAP API
 ========
