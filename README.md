@@ -10,13 +10,28 @@ becomes stable.
 Build the documentation
 -----------------------
 
-    > sudo apt-get install python-pip
-    > sudo pip install -q Sphinx
-    > cd /path/to/tuleap-documentation
-    > make html
+    sudo apt-get install python-pip
+    sudo pip install -q Sphinx
+    cd /path/to/tuleap-documentation
+    make html
 
 The documentation is generated in `_build/html/`
 
+Convert docbook files to reStructuredText
+-----------------------------------------
+
+First install latest version of pandoc:
+
+    sudo apt-get install haskell-platform
+    cabal update
+    cabal install pandoc
+
+Then convert the file from legacy documentation:
+
+    cd src/documentation/user_guide/en_US/
+    $HOME/.cabal/bin/pandoc -f docbook -s -w rst --toc ProjectAdministration.xml -o project-admin.rst 
+
+Move the file if `tuleap-documentation/languages/en/user-guide/` and modify the `tuleap-documentation/languages/en/index.rst` accordingly.
 
 License
 -------
