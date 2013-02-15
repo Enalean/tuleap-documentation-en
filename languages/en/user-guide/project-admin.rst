@@ -855,8 +855,6 @@ process and what are the parameters to use to connect to the remote
 database from your desktop. Write them down and keep them in a safe
 place.
 
-    **Note**
-
     **Remark**: if your project database contains several thousands of
     records (tasks, bugs,…), the project database generation may take
     several minutes to complete.
