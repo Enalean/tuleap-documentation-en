@@ -588,7 +588,7 @@ necessary.
 
    |SYSPRODUCTNAME| reference patterns may be used to reference
    artifacts, as well as source code commits, documents, files, etc.
-   Please refer to ? for more details on References.
+   Please refer to `Reference Overview`_ for more details on References.
 
    Furthemore references concerning artifacts, svn revisions and cvs
    commits are stored in the database. They are displayed in the next
@@ -801,7 +801,7 @@ tracker field names (shortname), indicating which fields are mandatory
 in case of a new artifact submission. In addition, it gives you a sample
 CSV file. As for the export feature, you can specify the separator used
 in the CSV file you want to import as well as the date format (See ?).
-If you already use the Tracker Artifact Export (see ?) you will notice
+If you already use the Tracker Artifact Export (see `Project Data Export`_) you will notice
 that the format of the files to import and the exported files are
 exactly the same. This means that if you changed your CSV separator for
 exporting data, you must use the same to import those data. You can
@@ -858,7 +858,7 @@ information.
 If an error occurs for some artifact during the database update the
 following artifacts in the CSV file are not imported any more.
 
-Each import is tracked in the project history (?). On the other hand, no
+Each import is tracked in the project history (`Project History`_). On the other hand, no
 e-mail notification is sent in response to the import.
 
     **Tip**
@@ -1300,7 +1300,7 @@ configuration page. The properties are as follows:
    Bugs…
 
 -  **Instantiate for new projects**: This parameter is only displayed
-   when working on a "template" type of project (see ?). If the
+   when working on a "template" type of project (see `Project Type`_). If the
    parameter is selected, then projects created from this template
    project will have this tracker created. If not selected, the tracker
    will not be available in the new project.
@@ -1335,7 +1335,7 @@ Access permissions to a tracker can be defined at two levels:
    can modify it or which ones do not have access to it at all.
 
 All access permissions are defined for groups of users rather than
-individuals. See ? for more information on how project administrators
+individuals. See `User Groups`_ for more information on how project administrators
 can define and manage groups of users.
 
 Tracker Permissions Management
@@ -1348,7 +1348,7 @@ project\_members, etc. These are groups that |SYSPRODUCTNAME| manages
 for you so you don't have to keep them up to date when new users
 subscribe to the site or become member of your project. The second part
 of the user group list shows all groups of users defined at the project
-level (see ? for more information on how to define and manage groups of
+level (see `User Groups`_ for more information on how to define and manage groups of
 users).
 
 Each group can be associated with the following access permissions:
@@ -1395,7 +1395,7 @@ a given field OR for a given user group you can view all the field
 permissions defined for it. The experience shows that the view by field
 is often the preferred one when you configure a tracker for the first
 time whereas the view by group of users is more convenient to adjust the
-permission settings later on (see ? for more information on how to
+permission settings later on (see `User Groups`_ for more information on how to
 define and manage groups of users).
 
 Each group of users can be granted the following permissions for a given
@@ -1714,7 +1714,7 @@ properties that can be tuned :
 
       -  **Project Defined User Groups**: you can bind a select box to
          any of the user groups that are defined by the project. To see
-         how to define such user groups refer to ?.
+         how to define such user groups refer to `User Groups`_.
 
       On the following picture, we can see that people in "Assigned to"
       field are automatically populated from "SupportTeam" user group.
