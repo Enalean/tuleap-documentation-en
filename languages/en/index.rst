@@ -10,12 +10,14 @@ Welcome to Tuleap's documentation!
    :hidden:
 
    user-guide/tracker
+   user-guide/project-admin
    soap/tracker
 
 User Guide
 ==========
 
     * :doc:`user-guide/tracker`
+    * :doc:`user-guide/project-admin`
 
 SOAP API
 ========
