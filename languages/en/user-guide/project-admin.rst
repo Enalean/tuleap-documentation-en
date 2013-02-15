@@ -869,7 +869,7 @@ driver <http://www.mysql.com/downloads/api-myodbc.html>`__ and unzip the
 zip archive in a temporary directory of your choice.
 
 Run the setup program and go through the installation
-process.\ **Important Remark**: On Windows you must have administrator
+process. \ **Important Remark**: On Windows you must have administrator
 rights to install the driver.
 
 Add your project database to Windows Data Sources. For Windows users:
@@ -916,8 +916,8 @@ Using Your Project Database From MS-Access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you use MS-Access to connect to your project database make sure
-that the MySQL ODBC driver has been installed on your PC (see ?) and
-that you have generated your project database (see ?). Then go through
+that the MySQL ODBC driver has been installed on your PC (see `Installing and Configuring the MySQL ODBC Driver`_) and
+that you have generated your project database (see `Installing and Configuring the MySQL ODBC Driver`_). Then go through
 the following steps:
 
 -  Launch MS-Access and open a new database.
