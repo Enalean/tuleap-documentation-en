@@ -783,7 +783,7 @@ can save on your local disk or directly open in Excel or any other
 spreadsheet of your choice. No particular setting is required in most
 cases. Nevertheless, you can change the CSV separator and the date
 format (see ?) if the default one doesn't correspond with your Excel
-version  [2]_.
+version  [#2]_.
 
 Importing CSV Files in MS-Access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
