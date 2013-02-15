@@ -111,7 +111,7 @@ As explained above, artifact submission forms vary from one project to
 another depending on the fields used by the tracker. The submission form
 can also vary according to the permission level. Depending whether you
 are a project member or an ordinary registered user the artifact fields
-displayed on the screen may differ. As an example, on ?, the bug
+displayed on the screen may differ. As an example, on `A sample artifact submission screen`_, the bug
 submitter using the form is probably a project member because giving
 access to the "Assigned to" field to an ordinary registered user doesn't
 make much sense. It is very unlikely that users external to the project
