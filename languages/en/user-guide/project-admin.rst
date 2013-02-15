@@ -534,7 +534,7 @@ project member. Let's review the column one by one:
    project members permission page.
 
 -  **CVS Write**: Right now this is always set to Yes. All project
-   members have write permission over the CVS [#1] repository and this
+   members have write permission over the CVS [#1]_ repository and this
    cannot be changed from the current version of the Web interface.
    However we'll see how to deny CVS write permission to project members
    in the CVS chapter (?).
