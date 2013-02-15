@@ -1,3 +1,6 @@
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
+
 Project Administration
 ======================
 
