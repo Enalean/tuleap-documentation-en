@@ -226,7 +226,7 @@ replaced by their value:
 -  **$projectname**: short name of the project
 
 -  **$sys\_default\_domain**: domain of your |SYSPRODUCTNAME| server
-   (e.g. "|SYS\_DEFAULT\_DOMAIN|")
+   (e.g. "SYS\_DEFAULT\_DOMAIN")
 
 -  **$group\_id**: project number.
 
@@ -890,7 +890,7 @@ Add your project database to Windows Data Sources. For Windows users:
    -  *Windows DSN Name*: is your choice of a name for this connection.
       Use "Project X Database" for instance.
 
-   -  *MySQL host (IP or Name)*; |SYS\_DEFAULT\_DOMAIN|
+   -  *MySQL host (IP or Name)*; SYS\_DEFAULT\_DOMAIN
 
    -  *MySQL Database Name*: the database name is your project shortname
       prefixed by 'cx\_' as displayed by |SYSPRODUCTNAME| after you
