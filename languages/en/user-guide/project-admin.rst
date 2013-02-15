@@ -523,7 +523,7 @@ Documentation Manager of the project.
 
    A sample project members permission table
 
-`A sample project members permission tabl`_ shows a sample project members permission table. Each column
+`A sample project members permission table`_ shows a sample project members permission table. Each column
 represents a service or a user capability and there is one line per
 project member. Let's review the column one by one:
 
