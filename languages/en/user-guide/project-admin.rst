@@ -534,7 +534,7 @@ project member. Let's review the column one by one:
    project members permission page.
 
 -  **CVS Write**: Right now this is always set to Yes. All project
-   members have write permission over the CVS [#1]_ repository and this
+   members have write permission over the CVS [#f1]_ repository and this
    cannot be changed from the current version of the Web interface.
    However we'll see how to deny CVS write permission to project members
    in the CVS chapter (?).
@@ -994,7 +994,7 @@ can also be adjusted to show more or less access log history.
 
    Sample Access Log
 
-.. [#1]
+.. [#f1]
    CVS stands for Concurrent Versions System. It is one of the source
    code version control system offered on the |SYSPRODUCTNAME| site.
    CVS is used by hundreds of thousands of software projects all over
