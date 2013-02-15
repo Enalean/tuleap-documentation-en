@@ -987,7 +987,12 @@ Access Logs can be filtered out by users to show accesses from all
 users, project members or non project members (default). The time window
 can also be adjusted to show more or less access log history.
 
-|Sample Access Log|
+.. figure:: ../images/screenshots/sc_sourcecodeaccesslogs.png
+   :align: center
+   :alt: Sample Access Log
+   :name: Sample Access Log
+
+   Sample Access Log
 
 .. [#1]
    CVS stands for Concurrent Versions System. It is one of the source
