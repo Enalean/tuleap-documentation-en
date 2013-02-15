@@ -587,7 +587,7 @@ User Groups
 A user group, sometimes called a "ugroup ", is simply a group of
 |SYSPRODUCTNAME| users. User groups are used to set specific
 permissions to some project data (e.g. software releases and packages -
-see `Package Modification`_). A user group is always attached to a project, but the users
+see ?). A user group is always attached to a project, but the users
 comprising the group do not necessarily belong to that project.
 
 User Groups Management
