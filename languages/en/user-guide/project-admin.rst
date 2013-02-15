@@ -571,7 +571,7 @@ project member. Let's review the column one by one:
       (only a project administrator can).
 
 -  **Member of user groups**: For each individual members, the column
-   lists all the project user groups s/he belongs to. See ? for more
+   lists all the project user groups s/he belongs to. See `User Groups`_ for more
    information on user groups.
 
     **Important**
@@ -587,7 +587,7 @@ User Groups
 A user group, sometimes called a "ugroup ", is simply a group of
 |SYSPRODUCTNAME| users. User groups are used to set specific
 permissions to some project data (e.g. software releases and packages -
-see ?). A user group is always attached to a project, but the users
+see `Package Modification`_). A user group is always attached to a project, but the users
 comprising the group do not necessarily belong to that project.
 
 User Groups Management
@@ -596,9 +596,14 @@ User Groups Management
 The "User Groups Admin" function of the Project Administration menu
 lists all available user groups, and provides a way to create new ones.
 
-|User Group Management Page|
+.. figure:: ../images/screenshots/sc_usergrouplist.png
+   :align: center
+   :alt: User Group Management Page
+   :name: User Group Management Page
 
-In the list, (see for example ?) there are two different kinds of user
+   User Group Management Page
+
+In the list, (see for example `User Group Management Page`_) there are two different kinds of user
 groups:
 
 **Pre-defined User Groups**: These groups are defined for every project.
@@ -633,9 +638,14 @@ this project. The members of the selected group will automatically be
 added to the new group. You will be able to add or remove members on the
 next screen.
 
-|User Group Edit|
+.. figure:: ../images/screenshots/sc_usergroupedit.png
+   :align: center
+   :alt: User Group Edit
+   :name: User Group Edit
 
-In the next page (see ?), the project administrator may select
+   User Group Edit
+
+In the next page (see `User Group Edit`_), the project administrator may select
 individually the members of the new group.
 
 Two columns are displayed: the one on the left contains the list of all
@@ -677,7 +687,7 @@ Deleting a User Group
 ---------------------
 
 User groups can be deleted. Just click on the trash icon next to the
-group name in the group management page (?) to suppress the user group
+group name in the group management page (`User Group Management Page`_) to suppress the user group
 from the database. Only custom user groups can be deleted.
 
     **Important**
@@ -692,12 +702,12 @@ Additional Information on User Groups
 -------------------------------------
 
 It is possible to know all user groups one individual project member
-belongs to. Simply display the User Permissions page (?). However,
+belongs to. Simply display the User Permissions page (`User Permissions`_). However,
 please note that only user groups belonging to the current project are
 displayed. The user might also be a member of additional user groups in
 other projects.
 
-The bottom of the User Group Edit page (?) also lists all the
+The bottom of the User Group Edit page (`User Group Edit`_) also lists all the
 permissions granted to this group, e.g. packages and releases this user
 group is granted access to.
 
