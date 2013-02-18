@@ -4,8 +4,6 @@
 Trackers and real-time Reports
 ==============================
 
-`Project Administration`_
-
 **Disclaimer:** this chapter covers the new generation (aka v5) of
 Tracker system. For documentation on the legacy tracker system (v3) see
 ?.
