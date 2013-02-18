@@ -1302,7 +1302,7 @@ configuration page. The properties are as follows:
    Bugs…
 
 -  **Instantiate for new projects**: This parameter is only displayed
-   when working on a "template" type of project (see `Project Type`_). If the
+   when working on a "template" type of project (see :ref:`project-type`). If the
    parameter is selected, then projects created from this template
    project will have this tracker created. If not selected, the tracker
    will not be available in the new project.

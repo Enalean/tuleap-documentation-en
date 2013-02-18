@@ -125,6 +125,8 @@ values for each of the 7 criteria used in the Software Map. If you
 cannot find any matching value in the predefined list do not hesitate to
 contact the |SYSPRODUCTNAME| Team.
 
+.. _project-type:
+
 Project Type
 ============
 
