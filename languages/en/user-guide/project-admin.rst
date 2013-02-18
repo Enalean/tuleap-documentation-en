@@ -592,7 +592,7 @@ User Groups
 A user group, sometimes called a "ugroup ", is simply a group of
 |SYSPRODUCTNAME| users. User groups are used to set specific
 permissions to some project data (e.g. software releases and packages -
-see :ref:`package-editing-of-the-camellia-package`). A user group is always attached to a project, but the users
+see :ref:`package-modification`). A user group is always attached to a project, but the users
 comprising the group do not necessarily belong to that project.
 
 User Groups Management

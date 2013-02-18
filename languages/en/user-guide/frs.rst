@@ -192,14 +192,14 @@ screen, and its status:
    project admins or file admins, the hidden packages are displayed in
    italic, in order to update them.
 
+.. _package-modification:
+
 Package Modification
 ~~~~~~~~~~~~~~~~~~~~
 
 To update a package, just click the [edit] icon located after each
 package name. Then, the modification form is the same than the creation
 one, except that you can set read permissions on the package (see `Package editing of the Camellia package`_).
-
-.. _package-editing-of-the-camellia-package:
 
 .. figure:: ../images/screenshots/sc_filereleasepackageadmin.png
           :align: center
