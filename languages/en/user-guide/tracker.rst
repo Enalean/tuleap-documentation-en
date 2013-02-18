@@ -588,7 +588,7 @@ necessary.
 
    |SYSPRODUCTNAME| reference patterns may be used to reference
    artifacts, as well as source code commits, documents, files, etc.
-   Please refer to `Reference Overview`_ for more details on References.
+   Please refer to :ref:`reference-overview` for more details on References.
 
    Furthemore references concerning artifacts, svn revisions and cvs
    commits are stored in the database. They are displayed in the next
