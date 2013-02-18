@@ -1,6 +1,5 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Version Control with CVS
 ========================
