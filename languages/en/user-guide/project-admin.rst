@@ -540,7 +540,7 @@ project member. Let's review the column one by one:
    members have write permission over the CVS [#f1]_ repository and this
    cannot be changed from the current version of the Web interface.
    However we'll see how to deny CVS write permission to project members
-   in the CVS chapter (`CVS: Concurrent Version Control`_).
+   in the CVS chapter (:ref:`version-control-with-CVS`).
 
 -  **Trackers**:
 

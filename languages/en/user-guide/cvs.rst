@@ -1,6 +1,8 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
+.. _version-control-with-CVS:
+
 Version Control with CVS
 ========================
 
