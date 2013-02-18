@@ -860,7 +860,7 @@ information.
 If an error occurs for some artifact during the database update the
 following artifacts in the CSV file are not imported any more.
 
-Each import is tracked in the project history (`Project History`_). On the other hand, no
+Each import is tracked in the project history (:ref:`project-history`). On the other hand, no
 e-mail notification is sent in response to the import.
 
     **Tip**

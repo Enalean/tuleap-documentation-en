@@ -951,6 +951,8 @@ Tracker Artifact Import
 
 Please see :ref:`tracker-artifact-import`
 
+.. _project-history:
+
 Project History
 ===============
 
