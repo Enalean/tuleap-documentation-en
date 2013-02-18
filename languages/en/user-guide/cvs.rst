@@ -5,7 +5,7 @@ Version Control with CVS
 ========================
 
 This chapter is not a CVS Tutorial. It focuses on the integration of CVS
-with SYS\_PRODUCT\_NAME and how to use it in an optimal way in this
+with |SYSPRODUCTNAME| and how to use it in an optimal way in this
 context. If you are not familiar with the CVS version control system
 look at the CVS references (see ?).
 
@@ -36,7 +36,7 @@ of your project.
 
 No good software project should be started without making a decision on
 which version control tool is going to be used. CVS and Subversion (see
-?) are the two possible choices offered by SYS\_PRODUCT\_NAME  [1]_.
+?) are the two possible choices offered by |SYSPRODUCTNAME|  [1]_.
 Although Subversion is a more modern version control system, using CVS
 is a very valid choice for several reasons:
 
@@ -66,10 +66,10 @@ is a very valid choice for several reasons:
 CVS Clients
 -----------
 
-CVS has a client-server architecture. In other words, SYS\_PRODUCT\_NAME
+CVS has a client-server architecture. In other words, |SYSPRODUCTNAME|
 developers who want to interact with the CVS repository of their project
 must have CVS installed on their desktop machine, hereafter called
-client. The SYS\_PRODUCT\_NAME server permanently runs a CVS server in
+client. The |SYSPRODUCTNAME| server permanently runs a CVS server in
 the background to which CVS clients talk to to act upon the CVS
 repository. CVS clients come in various flavors for all sorts of
 platforms (Windows, Mac and all Unix): command line interface, graphical
@@ -104,19 +104,19 @@ on the market (MS Visual Studio, Visual Age, IntelliJ IDEA, Eclipse,…)
 comes with CVS plugins either provided natively or by 3rd party
 companies.
 
-Setting up WinCVS for SYS\_PRODUCT\_NAME
+Setting up WinCVS for |SYSPRODUCTNAME|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above, WinCVS is one of the most popular CVS clients on
 Windows. Below are all the instructions needed to get WinCVS running on
-a SYS\_PRODUCT\_NAME project. In the examples, "username" is the user
+a |SYSPRODUCTNAME| project. In the examples, "username" is the user
 login name, and "projectname" is the short project name.
 
 -  Download WinCVS from http://www.wincvs.org and install it on your PC.
 
 -  Run WinCVS: ``Start->Programs->WinCvs``
 
--  Setup the connection to the SYS\_PRODUCT\_NAME project:
+-  Setup the connection to the |SYSPRODUCTNAME| project:
    ``Admin->Preferences``
 
    Enter the CVSROOT:
@@ -134,7 +134,7 @@ login name, and "projectname" is the short project name.
    ``View->Browse Location->Change...``
 
 -  Checkout the source code from the CVS repository of your
-   SYS\_PRODUCT\_NAME project:
+   |SYSPRODUCTNAME| project:
 
    ``Create->Check out module``
 
@@ -172,8 +172,8 @@ CVS References
 --------------
 
 As stated earlier in this chapter, this document is not a CVS Tutorial.
-It focuses on the integration of CVS in SYS\_PRODUCT\_NAME and how to
-use CVS in the SYS\_PRODUCT\_NAME context. If you want to learn more
+It focuses on the integration of CVS in |SYSPRODUCTNAME| and how to
+use CVS in the |SYSPRODUCTNAME| context. If you want to learn more
 about CVS refer to the following documents:
 
 -  Open Source Development with CVS : excellent book also known as "The
@@ -190,13 +190,13 @@ about CVS refer to the following documents:
 
 -  The Official CVS Web Site. See http://www.cvshome.org/.
 
-CVS Integration in SYS\_PRODUCT\_NAME
+CVS Integration in |SYSPRODUCTNAME|
 =====================================
 
 The CVS Repository
 ------------------
 
-Whenever a new project is hosted on SYS\_PRODUCT\_NAME, a new CVS
+Whenever a new project is hosted on |SYSPRODUCTNAME|, a new CVS
 repository is automatically created and properly initialized. Each
 project has its own CVS repository. Having its own repository has a
 certain number of advantages: your CVS logs, history files
@@ -207,7 +207,7 @@ repository.
     **Note**
 
     All CVS repositories are available under the
-    ``/cvsroot/projectname`` directory on the SYS\_PRODUCT\_NAME server.
+    ``/cvsroot/projectname`` directory on the |SYSPRODUCTNAME| server.
     All interactions with the CVS repository take place from a CVS
     client through the cvs program. If need be and if this feature is
     active on your server, you can also use your shell account (see ?)
@@ -233,9 +233,9 @@ With respect to the public projects, the default access permissions are
 as follows:
 
 -  **Anonymous Users**: users who have not registered with
-   SYS\_PRODUCT\_NAME (or are not logged in) have *no access at all* to
+   |SYSPRODUCTNAME| (or are not logged in) have *no access at all* to
    the CVS repositories. Depending on the configuration of the
-   SYS\_PRODUCT\_NAME server, anonymous user may even be denied access
+   |SYSPRODUCTNAME| server, anonymous user may even be denied access
    to the entire site.
 
 -  **Registered Users**: have read-only access to CVS repositories. In
@@ -248,10 +248,10 @@ as follows:
        **Note**
 
        **Note**: all source code accesses are recorded by
-       SYS\_PRODUCT\_NAME. Project administrators always have access to
+       |SYSPRODUCTNAME|. Project administrators always have access to
        the list of people who accessed the source code (see ?).
 
--  **Project Members**: members of a SYS\_PRODUCT\_NAME hosted project
+-  **Project Members**: members of a |SYSPRODUCTNAME| hosted project
    are granted a password protected read/write access. As mentioned
    above in the section about private projects, it is also possible to
    grant read-only access to the project members.
@@ -261,7 +261,7 @@ as follows:
 The CVS Web Interface
 =====================
 
-SYS\_PRODUCT\_NAME offers a number of facilities that allow you to
+|SYSPRODUCTNAME| offers a number of facilities that allow you to
 interact with your CVS repository through the Web interface. The CVS Web
 interface does not intend to replace the CVS client that you should
 normally use on your desktop computer. It rather focuses on providing
@@ -271,7 +271,7 @@ via the CVS service listed in the Public Area (see ?). The CVS Web
 interface provides the following features:
 
 -  **Accessing the CVS repository**: The welcome page of the
-   SYS\_PRODUCT\_NAME CVS service gives you all the information you need
+   |SYSPRODUCTNAME| CVS service gives you all the information you need
    to access the CVS repository from your CVS client. Among other things
    it tells you what the CVS root path is and how to log in and checkout
    the source code. This page may also be customized for specific needs
@@ -283,7 +283,7 @@ interface provides the following features:
 
 -  **Querying CVS**: if the CVS tracking feature has been activated for
    your project (default) all CVS events (commit, file addition or
-   deletion) are tracked down in the SYS\_PRODUCT\_NAME database. This
+   deletion) are tracked down in the |SYSPRODUCTNAME| database. This
    audit trail can be searched using several criteria.
 
 -  **CVS Administration**: this service allows you to activate the CVS
@@ -297,8 +297,8 @@ Browsing The CVS Repository
 ---------------------------
 
 In order to interact with the CVS repository of any
-SYS\_PRODUCT\_NAME-hosted project, you normally need to have CVS
-installed on your machine. However SYS\_PRODUCT\_NAME also offers a
+|SYSPRODUCTNAME|-hosted project, you normally need to have CVS
+installed on your machine. However |SYSPRODUCTNAME| also offers a
 built-in Web browsing interface to the CVS repository which allows you
 to navigate in the source code, download it, view a file history or
 compare two revisions of the same file.
@@ -321,7 +321,7 @@ interface will bring very useful features to the software engineers:
    at each commit can be referenced in future commits, or in the
    follow-up comments of project artifacts like bugs/tasks/support
    requests simply by using the pattern ``commit #XXXX`` (where XXXX is
-   the unique ID generated by SYS\_PRODUCT\_NAME). Any reference of that
+   the unique ID generated by |SYSPRODUCTNAME|). Any reference of that
    kind will be automatically transformed into an hyperlink to the CVS
    tracking database. This mechanism makes it very easy to go from
    project artifacts like bugs, support requests or tasks to source code
@@ -355,10 +355,10 @@ request) that led the developers to make a change in the code. And
 conversely, when reading the artifact description it is also very
 helpful to immediately see how the change was implemented.
 
-The integration of CVS in SYS\_PRODUCT\_NAME precisely provide the
-SYS\_PRODUCT\_NAME users with this bi-directional cross-referencing
+The integration of CVS in |SYSPRODUCTNAME| precisely provide the
+|SYSPRODUCTNAME| users with this bi-directional cross-referencing
 mechanism. This is achieved through the use of reference patterns that
-are automatically detected by SYS\_PRODUCT\_NAME in either the follow-up
+are automatically detected by |SYSPRODUCTNAME| in either the follow-up
 comments of the project artifacts or in the messages attached to a CVS
 commit.
 
@@ -370,19 +370,19 @@ as follows:
    name (e.g. "bug #123", "task #321", "req #12", etc.). If you don't
    know the tracker short name or don't want to specify it, you may
    simply use "art #NNN". When browsing a message containing this
-   pattern anywhere in SYS\_PRODUCT\_NAME, the pattern will be
+   pattern anywhere in |SYSPRODUCTNAME|, the pattern will be
    automatically transformed into an hyperlink to the artifact
    description.
 
 -  **commit #YYY**: this pattern refers to the commit YYY where YYY is
    the commit unique ID as listed when querying the CVS tracking
    database. When browsing a message containing this pattern anywhere in
-   SYS\_PRODUCT\_NAME, the pattern will be automatically transformed
+   |SYSPRODUCTNAME|, the pattern will be automatically transformed
    into an hyperlink to the commit description (log messages, impacted
    files, versions and author of the change.
 
--  The SYS\_PRODUCT\_NAME reference mechanism allows cross-referencing
-   with any SYS\_PRODUCT\_NAME object: artifacts, documents, files, etc.
+-  The |SYSPRODUCTNAME| reference mechanism allows cross-referencing
+   with any |SYSPRODUCTNAME| object: artifacts, documents, files, etc.
    Please refer to ? for more details on References.
 
     **Tip**
@@ -397,7 +397,7 @@ as follows:
 CVS Administration
 ------------------
 
-Through the Web interface, SYS\_PRODUCT\_NAME allows you to configure
+Through the Web interface, |SYSPRODUCTNAME| allows you to configure
 the following settings:
 
 -  **CVS Tracking**: Being a version control system CVS is, of course,
@@ -406,9 +406,9 @@ the following settings:
    something you can look at either through your CVS client or through
    the CVS Web Browsing interface.
 
-   If you activate the CVS tracking for your project SYS\_PRODUCT\_NAME
+   If you activate the CVS tracking for your project |SYSPRODUCTNAME|
    will also keep track of all the code changes in the
-   SYS\_PRODUCT\_NAME database. This will give you extra capabilities on
+   |SYSPRODUCTNAME| database. This will give you extra capabilities on
    your CVS repository as explained in ?
 
 -  **CVS Watch Mode**: Watches in CVS work as a communication device,
@@ -434,7 +434,7 @@ the following settings:
    won't be updated.
 
 -  **CVS E-mail Notification**: In addition to tracking the changes in
-   the SYS\_PRODUCT\_NAME database, SYS\_PRODUCT\_NAME can also send a
+   the |SYSPRODUCTNAME| database, |SYSPRODUCTNAME| can also send a
    nicely formatted email message to individual email addresses or
    mailing lists each time there is a change in your source code. The
    email message contains the log message, the author of the change, the
@@ -442,9 +442,9 @@ the following settings:
    what changes were made.
 
 -  **CVS Preamble**: In some cases (e.g. for legacy projects), the
-   project CVS repository might not be hosted by the SYS\_PRODUCT\_NAME
+   project CVS repository might not be hosted by the |SYSPRODUCTNAME|
    server. In this case, the CVS information displayed in the welcome
-   page of the SYS\_PRODUCT\_NAME CVS service is incorrect. Fortunately,
+   page of the |SYSPRODUCTNAME| CVS service is incorrect. Fortunately,
    the project administrator can customize the CVS preamble here.
 
     **Tip**
@@ -452,9 +452,9 @@ the following settings:
     If you intend to generate email notification for the changes made in
     your CVS repository, it is a good practice to create a specific
     mailing list called ``projectname-cvsevents``. By doing so,
-    SYS\_PRODUCT\_NAME users and project members interested in receiving
+    |SYSPRODUCTNAME| users and project members interested in receiving
     the email notification just need to subscribe to the mailing list.
-    In addition, the SYS\_PRODUCT\_NAME mailing list manager will
+    In addition, the |SYSPRODUCTNAME| mailing list manager will
     archive all the email messages which can prove very useful for
     future reference. See ? for mailing list creation.
 
@@ -464,28 +464,28 @@ A Typical CVS Life Cycle
 Again the intent of this section is not to give formal CVS training but
 rather to explain what are the steps a project team typically goes
 through to efficiently use CVS and, more generally, all the
-SYS\_PRODUCT\_NAME tools involved in a Software release process.
+|SYSPRODUCTNAME| tools involved in a Software release process.
 
 It also deals with the problem of contributing source code when you are
 not part of a project team. In this section all examples are given in
 the form of CVS command lines but transposing them to graphical
 front-ends should not be a problem.
 
-|A Typical Software Development Life Cycle on SYS\_PRODUCT\_NAME|
+|A Typical Software Development Life Cycle on |SYSPRODUCTNAME||
 
 Logging In
 ----------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
-The first step when dealing with a SYS\_PRODUCT\_NAME-hosted CVS
+The first step when dealing with a |SYSPRODUCTNAME|-hosted CVS
 repository is to authenticate yourself with the CVS server. In
-SYS\_PRODUCT\_NAME, anonymous users cannot access the source code of any
+|SYSPRODUCTNAME|, anonymous users cannot access the source code of any
 project whether be it through the CVS repository or through the File
 Release mechanism. So make sure you have created your own account on
-SYS\_PRODUCT\_NAME before interacting with a CVS repository.
+|SYSPRODUCTNAME| before interacting with a CVS repository.
 
-Assuming that you have your SYS\_PRODUCT\_NAME login/password ok, you
+Assuming that you have your |SYSPRODUCTNAME| login/password ok, you
 can now use them to authenticate yourself with the CVS repository. To
 connect to the CVS repository of a given project type the following
 command (in one line):
@@ -504,7 +504,7 @@ Where:
 
 -  ``projectname`` is the project short name
 
--  ``loginname`` is your SYS\_PRODUCT\_NAME login
+-  ``loginname`` is your |SYSPRODUCTNAME| login
 
 CVS keeps track of the password associated with a given CVS root path.
 So as long as you do not logout there is no need to authenticate
@@ -517,7 +517,7 @@ Importing Existing Source Code
 
 *Audience: project members*
 
-As the happy administrator of a new SYS\_PRODUCT\_NAME project, the
+As the happy administrator of a new |SYSPRODUCTNAME| project, the
 first thing to do is to populate your freshly brewed CVS repository with
 your project source code. To do so, first create a new directory
 ``topdirectory`` on your workstation and place your source code under
@@ -540,7 +540,7 @@ Where:
 
 -  ``projectname`` is the project short name
 
--  ``loginname`` is your SYS\_PRODUCT\_NAME login (all lowercase)
+-  ``loginname`` is your |SYSPRODUCTNAME| login (all lowercase)
 
 -  ``topdirectory`` is the name of the top level directory to import
 
@@ -553,25 +553,25 @@ Where:
     into a fresh CVS repository especially for new users. Typical
     mistakes are directories placed at the wrong level or with the wrong
     name. Nothing to fear though... if you want to start again on a new
-    CVS repository contact the SYS\_PRODUCT\_NAME Team and we'll do that
+    CVS repository contact the |SYSPRODUCTNAME| Team and we'll do that
     for you.
 
     **Note**
 
     Note that if you already have a CVS repository available, the
-    SYS\_PRODUCT\_NAME Team can help you transfer this repository on
-    SYS\_PRODUCT\_NAME and preserve all of your project history. We just
+    |SYSPRODUCTNAME| Team can help you transfer this repository on
+    |SYSPRODUCTNAME| and preserve all of your project history. We just
     need an archive (zip or tar) of your entire CVS tree including the
     CVSROOT directory. From there we'll re-install everything for you on
-    the SYS\_PRODUCT\_NAME server. Contact us for more information.
+    the |SYSPRODUCTNAME| server. Contact us for more information.
 
 Checking Code Out
 -----------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 Once a CVS repository has been populated project members (or
-SYS\_PRODUCT\_NAME users at large if they are granted access) can
+|SYSPRODUCTNAME| users at large if they are granted access) can
 checkout the source code and place it on their own workstation. The
 result is called a working copy in the CVS jargon. Note that 'checkout'
 in the CVS world does not mean that the user has acquired any sort of
@@ -609,7 +609,7 @@ Where:
 
 -  ``projectname`` is the project short name
 
--  ``loginname`` is your SYS\_PRODUCT\_NAME login (all lowercase)
+-  ``loginname`` is your |SYSPRODUCTNAME| login (all lowercase)
 
 -  ``directory`` is the path to the directory that you want to checkout.
    To learn more about the directory structure of the CVS repository you
@@ -619,7 +619,7 @@ Where:
 Updating the Source Code
 ------------------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 Running a "``cvs update``\ " command from within a working copy has the
 effect of updating the working copy (or a subpart of it) with the latest
@@ -677,7 +677,7 @@ Where:
 
     In the ideal world, all modifications made to the source code of a
     project should be related to either a bug logged in the
-    SYS\_PRODUCT\_NAME BTS or to a task assign to a developer. If your
+    |SYSPRODUCTNAME| BTS or to a task assign to a developer. If your
     project team lives in this wonderful world :-) then don't forget to
     include the related bug or task ID number at the beginning or at the
     end of your commit message (see ?). The CVS administrative files can
@@ -706,7 +706,7 @@ can automatically be built and unit tested nightly.
 Contributing your Changes (other users)
 ---------------------------------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 This is a variant of the previous section for those of you who do not
 have write access to the CVS repository of a project and, therefore,
@@ -769,7 +769,7 @@ directly with CVS if you have been hacking on a CVS working copy.
 
 In both cases, store the output of the diff or cvs diff command in a
 text file. Compress the output file if it's a large one and use the
-SYS\_PRODUCT\_NAME Patch Tracker (see ?) to submit your patch to the
+|SYSPRODUCTNAME| Patch Tracker (see ?) to submit your patch to the
 project team).
 
 And thanks for contributing some code!
@@ -822,7 +822,7 @@ Create a ZIP or tar archive with the entire ``project-1.2/`` directory
 Deliver this archive through the File Release service (see ?).
 
 Done! Nice job...Take a break. And remember to announce the availability
-of your new version via the SYS\_PRODUCT\_NAME News service (see ?).
+of your new version via the |SYSPRODUCTNAME| News service (see ?).
 
 CVS for Project Administrators
 ==============================
@@ -839,7 +839,7 @@ granted to all project members (and project members only).
 It is, however, possible for a project administrator to deny CVS write
 access to certain project members. Revoking CVS write access for project
 members is not (yet!) feasible from the Web interface. You must use your
-Shell Account to log into the SYS\_PRODUCT\_NAME server (see ?) and type
+Shell Account to log into the |SYSPRODUCTNAME| server (see ?) and type
 the following commands at the shell prompt:
 
 -  ``newgrp projectname`` (Where ``projectname`` is the short project
@@ -860,14 +860,14 @@ all located in the ``CVSROOT`` directory. These files gives project
 administrators all sorts of interesting capabilities like the creation
 of virtual modules from a collection of files and directories, trigger
 e-mail notification on certain events like commit or add (note:
-SYS\_PRODUCT\_NAME already does it for you - see below), check the
+|SYSPRODUCTNAME| already does it for you - see below), check the
 format of a CVS tag before accepting it, etc. (See the CVS Documentation
 cited in ? for more information about CVS administrative files).
 
     **Tip**
 
     Never-ever edit any CVS administrative files directly in the CVS
-    repository by using your SYS\_PRODUCT\_NAME Shell Account (except
+    repository by using your |SYSPRODUCTNAME| Shell Account (except
     for ``readers`` and ``writers`` files). Always use CVS itself to
     manage the changes you want to apply to these files. Proceed as
     usual by checking out a working copy of the CVSROOT directory. Edit
@@ -876,7 +876,7 @@ cited in ? for more information about CVS administrative files).
     **Note**
 
     When making changes to the administrative files make sure you
-    preserve the SYS\_PRODUCT\_NAME specific settings in the following
+    preserve the |SYSPRODUCTNAME| specific settings in the following
     files: ``config``, ``writers`` and ``loginfo``. Also be very careful
     not to change directory or file ownership unless you know exactly
     what you are doing.
@@ -889,4 +889,4 @@ cited in ? for more information about CVS administrative files).
 .. |Browsing the CVS repository - A sample session| image:: ../../slides/en_US/CVS_Web_Session.png
 .. |Querying the CVS tracking database of a given project| image:: ../../screenshots/en_US/sc_cvssearch.png
 .. |The detail of an atomic CVS commit| image:: ../../screenshots/en_US/sc_cvsshowcommit.png
-.. |A Typical Software Development Life Cycle on SYS\_PRODUCT\_NAME| image:: ../../slides/en_US/CVS_Life_Cycle.png
+.. |A Typical Software Development Life Cycle on |SYSPRODUCTNAME|| image:: ../../slides/en_US/CVS_Life_Cycle.png
