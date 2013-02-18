@@ -282,6 +282,8 @@ lists all reference patterns available to the project. The "Reference
 Configuration" page allows a project administrator to update, enable,
 disable or even create reference patterns.
 
+.. _reference-overview:
+
 Reference Overview
 ------------------
 
