@@ -199,14 +199,14 @@ To update a package, just click the [edit] icon located after each
 package name. Then, the modification form is the same than the creation
 one, except that you can set read permissions on the package (see `Package editing of the Camellia package`_).
 
-.. figure:: ../images/screenshots/sc_filereleasepackageadmin.png
-   	   :align: center
-  	   :alt: Package editing of the Camellia package
-  	   :name: Package editing of the Camellia package
+        .. figure:: ../images/screenshots/sc_filereleasepackageadmin.png
+                  :align: center
+                   :alt: Package editing of the Camellia package
+                   :name: Package editing of the Camellia package
 
 .. _package-editing-of-the-camellia-package:
 
-                Package editing of the Camellia package
+                   Package editing of the Camellia package
 
 A project member with the 'File Manager Admin' right (see ?) can attach
 access permissions to any existing package.
