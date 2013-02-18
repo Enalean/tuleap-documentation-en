@@ -801,7 +801,7 @@ tracker field names (shortname), indicating which fields are mandatory
 in case of a new artifact submission. In addition, it gives you a sample
 CSV file. As for the export feature, you can specify the separator used
 in the CSV file you want to import as well as the date format (See ?).
-If you already use the Tracker Artifact Export (see `Project Data Export`_) you will notice
+If you already use the Tracker Artifact Export (see :ref:`project-data-export`) you will notice
 that the format of the files to import and the exported files are
 exactly the same. This means that if you changed your CSV separator for
 exporting data, you must use the same to import those data. You can
@@ -1111,7 +1111,7 @@ planning tools:
 
 -  Task data can be collected by the project leader(s) at any point in
    time and exported out of the |SYSPRODUCTNAME| project thanks to the
-   Project Data Export facility (see `Project Data Export`_). This allows for an easy
+   Project Data Export facility (see :ref:`project-data-export`). This allows for an easy
    generation of progress reports or project re-planning.
 
 The User Story Template
