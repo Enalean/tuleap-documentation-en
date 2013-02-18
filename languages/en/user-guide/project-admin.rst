@@ -168,7 +168,7 @@ Project Type
 
    -  the file packages and their permissions are copied
 
- -  **Test Project**: If you just need to test what is feasible with
+-  **Test Project**: If you just need to test what is feasible with
    |SYSPRODUCTNAME| projects use the Test Project type for your
    project. Having defined that type, your project will not appear any
    more in the |SYSPRODUCTNAME| Software Map nor on the
