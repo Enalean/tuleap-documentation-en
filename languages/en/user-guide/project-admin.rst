@@ -723,6 +723,8 @@ safety reasons.
 Similarly, when a user is deleted (not just suspended) by the site
 administrator, they are removed from all user groups in all projects.
 
+.. _project-data-export:
+
 Project Data Export
 ===================
 
