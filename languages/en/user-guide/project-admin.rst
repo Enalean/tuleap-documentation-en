@@ -580,6 +580,8 @@ project member. Let's review the column one by one:
     Don't forget to click on the "Update User Permissions" button after
     making any changes in the permission table.
 
+.. _user-groups:
+
 User Groups
 ===========
 
