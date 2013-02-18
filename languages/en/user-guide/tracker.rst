@@ -4,6 +4,8 @@
 Trackers and real-time Reports
 ==============================
 
+`Project Administration`_
+
 **Disclaimer:** this chapter covers the new generation (aka v5) of
 Tracker system. For documentation on the legacy tracker system (v3) see
 ?.
@@ -480,13 +482,12 @@ Bar Chart
 Gantt Chart
 ^^^^^^^^^^^
 
-.. figure:: ../images/screenshots/sc_trackergraphgantt.png
-   :align: center
-   :alt: Bar chart edition screen
-   :name: Bar chart edition screen
+    .. figure:: ../images/screenshots/sc_trackergraphgantt.png
+       :align: center
+       :alt: Bar chart edition screen
+       :name: Bar chart edition screen
 
-   Gantt chart edition screen
-
+       Gantt chart edition screen
 
     **Tip**
 
@@ -1336,7 +1337,7 @@ Access permissions to a tracker can be defined at two levels:
    can modify it or which ones do not have access to it at all.
 
 All access permissions are defined for groups of users rather than
-individuals. See `User Groups`_ for more information on how project administrators
+individuals. See :ref:`user-groups` for more information on how project administrators
 can define and manage groups of users.
 
 Tracker Permissions Management
@@ -1349,7 +1350,7 @@ project\_members, etc. These are groups that |SYSPRODUCTNAME| manages
 for you so you don't have to keep them up to date when new users
 subscribe to the site or become member of your project. The second part
 of the user group list shows all groups of users defined at the project
-level (see `User Groups`_ for more information on how to define and manage groups of
+level (see :ref:`user-groups` for more information on how to define and manage groups of
 users).
 
 Each group can be associated with the following access permissions:
@@ -1396,7 +1397,7 @@ a given field OR for a given user group you can view all the field
 permissions defined for it. The experience shows that the view by field
 is often the preferred one when you configure a tracker for the first
 time whereas the view by group of users is more convenient to adjust the
-permission settings later on (see `User Groups`_ for more information on how to
+permission settings later on (see :ref:`user-groups` for more information on how to
 define and manage groups of users).
 
 Each group of users can be granted the following permissions for a given
@@ -1441,13 +1442,6 @@ tracker created from an empty template.
 
 The Field Usage Manager is divided in two parts : a fields palette on
 the left and a tracker visualization on the right (see `Tracker Admin Field Usage Overview`_)
-
-.. figure:: ../images/screenshots/sc_tracker_admin_field_usage_overview.png
-   :align: center
-   :alt: Tracker Admin Field Usage Overview
-   :name: Tracker Admin Field Usage Overview
-
-   Tracker Admin Field Usage Overview
 
 Tracker Fields Palette
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1715,7 +1709,7 @@ properties that can be tuned :
 
       -  **Project Defined User Groups**: you can bind a select box to
          any of the user groups that are defined by the project. To see
-         how to define such user groups refer to `User Groups`_.
+         how to define such user groups refer to :ref:`user-groups`.
 
       On the following picture, we can see that people in "Assigned to"
       field are automatically populated from "SupportTeam" user group.
