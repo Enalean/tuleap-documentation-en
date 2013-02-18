@@ -741,6 +741,8 @@ access the artifact form on |SYSPRODUCTNAME|.
 
    Notification by email
 
+.. _tracker-artifact-import:
+
 Tracker Artifact Import
 =======================
 

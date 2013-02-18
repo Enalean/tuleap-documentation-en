@@ -947,7 +947,7 @@ Tracker Artifact Import
 
 *Location: Project Administration Menu*
 
-Please see ?
+Please see :ref:`tracker-artifact-import`
 
 Project History
 ===============
