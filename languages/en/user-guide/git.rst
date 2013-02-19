@@ -1,14 +1,15 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
+
+.. _version-control-with-git:
 
 Version Control with Git
 ========================
 
 This chapter is not a Git Tutorial. It focuses on the integration of Git
-with SYS\_PRODUCT\_NAME and how to use it in an optimal way in this
+with |SYSPRODUCTNAME| and how to use it in an optimal way in this
 context. If you are not familiar with Git we warmly advise you to first
-read some of the documents listed in the references section (see ?).
+read some of the documents listed in the references section (see `Git References`_).
 
 Git support has been designed to support multiple repositories for a
 given project as well as "Personal repositories" for each developer.
@@ -65,13 +66,18 @@ In this context, developments should happen in developers repositories
 (on developer's computer) and are regularly pushed into a public
 repositories for sharing with other developers.
 
-SYS\_PRODUCT\_NAME "Personal Fork" are those public repositories.
+|SYSPRODUCTNAME| "Personal Fork" are those public repositories.
 
 If you ever need to group the selected repositories into a common
 namespace, you can give a specific path the repositories will be created
 in.
 
-|Git repositories fork screen|
+.. figure:: ../images/screenshots/sc_git_personal_fork.png
+   	   :align: center
+  	   :alt: Git repositories fork screen
+  	   :name: Git repositories fork screen
+
+   	   Git repositories fork screen
 
 This screen also allows to fork across projects. Given you are
 administrator of a project with Git service activated, you can choose to
@@ -112,7 +118,12 @@ the User Groups allowed to:
    highly un-advised to activate it if you don't know exactly what you
    are doing, you can erase your whole repository. You are warned!
 
-|Control Git repository permissions|
+.. figure:: ../images/screenshots/sc_git_permissions.png
+   	   :align: center
+  	   :alt: Control Git repository permissions
+  	   :name: Control Git repository permissions
+
+   	   Control Git repository permissions
 
 Email notification
 ------------------
@@ -139,7 +150,7 @@ addresses. Emails will contain:
 
 -  the modified files (+diffstats)
 
--  for each commit, the link to the diff in SYS\_PRODUCT\_NAME gitweb
+-  for each commit, the link to the diff in |SYSPRODUCTNAME| gitweb
    interface
 
 -  for each reference (in commit description for instance), the
@@ -154,7 +165,7 @@ Repository deletion
 A repository can be deleted, this will create a backup named after
 {PROJECT\_SHORT\_NAME}\_{REPOSITORY\_NAME}\_{DEL\_TIMESTAMP}.tar.bz2 and
 move it into Git Plugin backup directory defined in plugin
-configuration. See import repository section ? for backup reactivation.
+configuration. See import repository section `Importing an existing Git Repository`_ for backup reactivation.
 
 Importing an existing Git Repository
 ====================================
