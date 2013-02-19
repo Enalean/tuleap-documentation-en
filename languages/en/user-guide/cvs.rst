@@ -247,7 +247,7 @@ as follows:
    are not allowed to commit any changes they have made to the source
    code. Source code contributions (bug fix, enhancements…) from this
    class of user must return to the project team via the Patch Tracker
-   (see :ref:`acces-logs`).
+   (see :ref:`access-logs`).
 
        **Note**: all source code accesses are recorded by
        |SYSPRODUCTNAME|. Project administrators always have access to

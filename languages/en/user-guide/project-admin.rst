@@ -965,7 +965,7 @@ list of changes reports the nature of the change (e.g. Changed Public
 Info, Changed Permissions, Changed Software Map, ...) , what the value
 was before it changed (if applicable), who changed it and when.
 
-.. _acces-logs:
+.. _access-logs:
 
 Access Logs
 ===========

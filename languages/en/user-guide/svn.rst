@@ -7,10 +7,10 @@ Version Control with Subversion
 ===============================
 
 This chapter is not a Subversion Tutorial. It focuses on the integration
-of Subversion with SYS\_PRODUCT\_NAME and how to use it in an optimal
+of Subversion with |SYSPRODUCTNAME| and how to use it in an optimal
 way in this context. If you are not familiar with Subversion we warmly
 advise you to first read some of the documents listed in the references
-section (see ?).
+section (see `Subversion References`_).
 
 It is important to note that a version control tool like Subversion is
 just a part of the overall configuration management activity. Therefore,
@@ -38,7 +38,7 @@ Subversion: The Next Generation CVS
 Subversion is an Open Source version control system that manages your
 files and directories history over time. The Subversion effort started
 in early 2000 under the leadership of Karl Fogel, a recognized guru of
-CVS and author of the so-called 'CVS Black Book'(see ?). Like millions
+CVS and author of the so-called 'CVS Black Book'(see `Subversion References`_). Like millions
 of developers in the world, Karl had used CVS for years and acknowledged
 the fact that, in spite of its merits, it had a number of shortfalls
 that would be nice to fix.
@@ -66,7 +66,7 @@ But Subversion also comes with a number of enhancements over CVS:
    add, delete, rename and copy files or entire directories without
    doing any compromise on the file naming or the file history.
 
--  **Atomic commits**: although SYS\_PRODUCT\_NAME provides an
+-  **Atomic commits**: although |SYSPRODUCTNAME| provides an
    additional layer on top of CVS which gives an atomic view of the
    commits, CVS itself has no notion of the fact that you may have
    committed a dozen file at the same time to fix a single bug.
@@ -101,10 +101,10 @@ But Subversion also comes with a number of enhancements over CVS:
    disk space and, above all, it takes a constant amount of time
    regardless of the repository size.
 
--  **Fine grain access control**: in its SYS\_PRODUCT\_NAME incarnation,
+-  **Fine grain access control**: in its |SYSPRODUCTNAME| incarnation,
    your Subversion repository operates on top of the HTTP (or HTTPS)
    protocol and it therefore take advantage of the rich HTTP
-   authentication mechanism. As a result SYS\_PRODUCT\_NAME allows you
+   authentication mechanism. As a result |SYSPRODUCTNAME| allows you
    to fine tune who has access to which part of your Subversion
    repository whether for read, write or no access at all.
 
@@ -118,9 +118,9 @@ Subversion Clients
 ------------------
 
 Subversion has a client-server architecture. In other words,
-SYS\_PRODUCT\_NAME developers who want to interact with the Subversion
+|SYSPRODUCTNAME| developers who want to interact with the Subversion
 repository of their project must have Subversion installed on their
-desktop machine, hereafter called client. The SYS\_PRODUCT\_NAME server
+desktop machine, hereafter called client. The |SYSPRODUCTNAME| server
 permanently runs a Subversion server in the background to which
 Subversion clients talk to to act upon the Subversion repository.
 Subversion clients come in various flavors for all sorts of platforms
@@ -134,7 +134,7 @@ Subversion comes with a command line interface that can be used on
 virtually any platform (Linux/Unix, MS Windows, Mac...). Even though
 Subversion has multiple command line options, most commands that you
 normally use have one or two command-line options and are very easy to
-remember and look a lot like cvs commands. Refer to ? for more
+remember and look a lot like cvs commands. Refer to `Subversion References`_ for more
 information about how to use the Subversion command line.
 
 Graphical Front-ends
@@ -144,17 +144,17 @@ Subversion already has a number of graphical front-ends. rapidSVN is
 part of the standard Subversion package and runs on Linux and Windows.
 TortoiseSVN is another option for MS Windows users. jSVN is a Java based
 client that can run on any platform. As time goes the list of graphical
-front-ends will certainly grow. Refer to ? for more information about
+front-ends will certainly grow. Refer to `Subversion References`_ for more information about
 those graphical clients.
 
-Setting up rapidSVN for SYS\_PRODUCT\_NAME
+Setting up rapidSVN for |SYSPRODUCTNAME|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above, rapidSVN is the graphical user interface that comes
 with Subversion for Linux and Windows. Below are all the instructions
-needed to get rapidSVN running on a SYS\_PRODUCT\_NAME project. In the
-instructions below, "username" is the SYS\_PRODUCT\_NAME user login
-name, and "projectname" is the SYS\_PRODUCT\_NAME short project name the
+needed to get rapidSVN running on a |SYSPRODUCTNAME| project. In the
+instructions below, "username" is the |SYSPRODUCTNAME| user login
+name, and "projectname" is the |SYSPRODUCTNAME| short project name the
 user is working on.
 
 -  Download rapidSVN from the Subversion Web site and install it on your
@@ -169,7 +169,7 @@ user is working on.
    ``http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname``
 
 -  Click on the new bookmark corresponding to your repository and type
-   you SYS\_PRODUCT\_NAME user name and password when asked to. You
+   you |SYSPRODUCTNAME| user name and password when asked to. You
    should now be able to browse the repository and see the file status
    and revision history.
 
@@ -207,13 +207,13 @@ following documents:
 -  jSVN. A graphical 100% Java graphical client. See
    http://jsvn.alternatecomputing.com/.
 
-Subversion Integration in SYS\_PRODUCT\_NAME
+Subversion Integration in |SYSPRODUCTNAME|
 ============================================
 
 The Subversion Repository
 -------------------------
 
-Whenever a new project is hosted on SYS\_PRODUCT\_NAME, a new Subversion
+Whenever a new project is hosted on |SYSPRODUCTNAME|, a new Subversion
 repository is automatically created and properly initialized. Each
 project has its own Subversion repository as opposed to what happens in
 most Subversion servers, where several projects share the same
@@ -227,8 +227,8 @@ project without impacting the others.
 
     All interactions with a Subversion repository should normally happen
     through a Subversion client. However if need be and if this feature
-    is available on your SYS\_PRODUCT\_NAME server, you can get access
-    to your Subversion repository via your SYS\_PRODUCT\_NAME shell
+    is available on your |SYSPRODUCTNAME| server, you can get access
+    to your Subversion repository via your |SYSPRODUCTNAME| shell
     account (see ?). Once the shell session is active you'll find your
     subversion repository under ``/svnroot/projectname`` you should
     never do that unless you know exactly what you are doing.
@@ -236,7 +236,7 @@ project without impacting the others.
 The Subversion Repository Structure
 -----------------------------------
 
-When a new SYS\_PRODUCT\_NAME project is created, it comes with a virgin
+When a new |SYSPRODUCTNAME| project is created, it comes with a virgin
 subversion repository that the project team must populate. Due to the
 fact that Subversion manages branching and tagging through its virtual
 filesystem (and not through labels attached to individual files as in
@@ -244,7 +244,7 @@ CVS) there is a recommended way to organize your repository. The layout
 suggested below can be considered as a de-facto standard and we highly
 recommend that you follow this best practice.
 
-If you expect your SYS\_PRODUCT\_NAME project to manage only one project
+If you expect your |SYSPRODUCTNAME| project to manage only one project
 deliverable then you can create the following top-level directories in
 your repository:
 
@@ -259,7 +259,7 @@ where ``/trunk`` contains the main line of development, ``/branches``
 contains branch copies and ``/tags`` contains tag copies of your source
 code that generally correspond to a given release.
 
-If you expect your SYS\_PRODUCT\_NAME project to manage several software
+If you expect your |SYSPRODUCTNAME| project to manage several software
 deliverables that are managed independently one from each other, then it
 is often a good idea to first create top-level directories that carry
 the name of the sub-project and under each of these directories repeat
@@ -278,12 +278,12 @@ look like this:
           
 
 More on the repository layout is available in the Subversion book listed
-in ?.
+in `Subversion References`_.
 
 The Subversion Browsing Interface
 =================================
 
-SYS\_PRODUCT\_NAME offers a number a facilities that allow you to
+|SYSPRODUCTNAME| offers a number a facilities that allow you to
 interact with your Subversion repository through the Web interface. The
 Subversion Web interface does not intend to replace the Subversion
 client that you should normally use on your desktop computer. It rather
@@ -296,11 +296,11 @@ Public Area (see ?). The Subversion Web interface provides the following
 features to end-users:
 
 -  **Accessing the Subversion repository**: The welcome page of the
-   SYS\_PRODUCT\_NAME Subversion service gives you all the information
+   |SYSPRODUCTNAME| Subversion service gives you all the information
    you need to access the Subversion repository from your Subversion
    client. Among other things it tells you what the Subversion root path
    is and how to checkout the source code. This page may also be
-   customized to display project specific instructions (see ?).
+   customized to display project specific instructions (see `Subversion Administration Interface`_).
 
 -  **Browsing the Subversion repository**: this feature allows you to
    browse the Subversion repository even if you don't have a Subversion
@@ -308,13 +308,13 @@ features to end-users:
 
 -  **Querying Subversion**: If the Subversion tracking feature has been
    activated for your project all Subversion events (commit, file
-   addition or deletion) are tracked down in the SYS\_PRODUCT\_NAME
+   addition or deletion) are tracked down in the |SYSPRODUCTNAME|
    database. This audit trail can be searched using several criteria.
 
 -  **Subversion Administration**: this service allows project
    administrator to perform the most common Subversion administration
-   and configuration tasks from the SYS\_PRODUCT\_NAME Web interface
-   (for more details see ?).
+   and configuration tasks from the |SYSPRODUCTNAME| Web interface
+   (for more details see `Subversion Administration Interface`_).
 
 Let's review some of these features in more details.
 
@@ -322,18 +322,23 @@ Browsing The Subversion Repository
 ----------------------------------
 
 In order to interact with the Subversion repository of any
-SYS\_PRODUCT\_NAME-hosted project, you normally need to have Subversion
-installed on your machine. However SYS\_PRODUCT\_NAME also offers a
+|SYSPRODUCTNAME|-hosted project, you normally need to have Subversion
+installed on your machine. However |SYSPRODUCTNAME| also offers a
 built-in Web browsing interface to the Subversion repository which
 allows you to navigate in the source code, download it, view a file
 history or compare two revisions of the same file.
 
-|Browsing the Subversion repository - A sample session|
+.. figure:: ../images/screenshots/SVN_Web_Session.png
+   :align: center
+   :alt: Browsing the Subversion repository - A sample session
+   :name: Browsing the Subversion repository - A sample session
+
+   Browsing the Subversion repository - A sample session
 
 Querying Subversion
 -------------------
 
-If a project has the Subversion Tracking feature activated (see ?), the
+If a project has the Subversion Tracking feature activated (see `Subversion Administration Interface`_), the
 Subversion Web interface will bring very useful features to the software
 engineers:
 
@@ -351,22 +356,27 @@ engineers:
    that kind will be automatically transformed into an hyperlink to the
    Subversion tracking database. This mechanism makes it very easy to go
    from project artifacts like bugs, support requests or tasks to source
-   code changes and vice-versa (more on this mechanism at ?).
+   code changes and vice-versa (more on this mechanism at `Cross-Referencing Artifacts and Subversion Commits`_).
 
 -  **Commit search**: another side benefit of the Subversion Tracking
    database is that you can use various search criteria to query the
    Subversion tracking database. You can search code changes by authors
    (who made the change), by revision number, by file path or by
    keywords to be found in the log message. Results can also be sorted
-   by clicking on the headers of the search results (see ?).
+   by clicking on the headers of the search results (see `Querying the Subversion tracking database of a given project`_).
 
    A click on one of the selected commit ID brings you to a complete
    description of the change, the files that were impacted and the
    nature of the change with a direct link into the Subversion
    repository if you want to browse the file or look at the code
-   modification (see ?).
+   modification (see `The detail of an atomic Subversion commit`_).
 
-|Querying the Subversion tracking database of a given project|
+.. figure:: ../images/screenshots/sc_svnsearch.png
+   :align: center
+   :alt: Querying the Subversion tracking database of a given project
+   :name: Querying the Subversion tracking database of a given project
+
+   Querying the Subversion tracking database of a given project
 
 Cross-Referencing Artifacts and Subversion Commits
 --------------------------------------------------
@@ -380,10 +390,10 @@ support request) that led the developers to make a change in the code.
 And conversely, when reading the artifact description it is also very
 helpful to immediately see how the change was implemented.
 
-The integration of Subversion in SYS\_PRODUCT\_NAME precisely provides
-SYS\_PRODUCT\_NAME users with this bi-directional cross-referencing
+The integration of Subversion in |SYSPRODUCTNAME| precisely provides
+|SYSPRODUCTNAME| users with this bi-directional cross-referencing
 mechanism. This is achieved through the use of reference patterns that
-are automatically detected by SYS\_PRODUCT\_NAME in either the follow-up
+are automatically detected by |SYSPRODUCTNAME| in either the follow-up
 comments of the project artifacts or in the messages attached to a
 Subversion commit.
 
@@ -395,22 +405,27 @@ as follows:
    name (e.g. "bug #123", "task #321", "req #12", etc.). If you don't
    know the tracker short name or don't want to specify it, you may
    simply use "art #NNN". When browsing a message containing this
-   pattern anywhere in SYS\_PRODUCT\_NAME, the pattern will be
+   pattern anywhere in |SYSPRODUCTNAME|, the pattern will be
    automatically transformed into an hyperlink to the artifact
    description.
 
 -  **revision #YYY or rev #YYY**: this pattern refers to the commit YYY
    where YYY is the commit revision number. When browsing a message
-   containing this pattern anywhere in SYS\_PRODUCT\_NAME, the pattern
+   containing this pattern anywhere in |SYSPRODUCTNAME|, the pattern
    will be automatically transformed into an hyperlink to the commit
    description which include log messages, impacted files, versions and
-   author of the change(see ?) .
+   author of the change(see `The detail of an atomic Subversion commit`_) .
 
--  The SYS\_PRODUCT\_NAME reference mechanism allows cross-referencing
-   with any SYS\_PRODUCT\_NAME object: artifacts, documents, files, etc.
-   Please refer to ? for more details on References.
+-  The |SYSPRODUCTNAME| reference mechanism allows cross-referencing
+   with any |SYSPRODUCTNAME| object: artifacts, documents, files, etc.
+   Please refer to :ref:`reference-overview` for more details on References.
 
-|The detail of an atomic Subversion commit|
+    .. figure:: ../images/screenshots/sc_svnshowcommit.png
+       :align: center
+       :alt: The detail of an atomic Subversion commit
+       :name: The detail of an atomic Subversion commit
+
+       The detail of an atomic Subversion commit
 
     **Tip**
 
@@ -424,7 +439,7 @@ as follows:
 Subversion Administration Interface
 ===================================
 
-Through the SYS\_PRODUCT\_NAME Web interface, project administrators can
+Through the |SYSPRODUCTNAME| Web interface, project administrators can
 perform the most common administration and configuration tasks on their
 Subversion repository. The administration functions can be accessed
 through the ``SVN Admin`` menu item in the Subversion menu bar.
@@ -439,15 +454,15 @@ General Settings
    Subversion client or through the Subversion Web Browsing interface.
 
    If you activate the Subversion tracking (default) for your project
-   SYS\_PRODUCT\_NAME will also keep track of all the code changes in
-   the SYS\_PRODUCT\_NAME database. This will give you extra
-   capabilities on your Subversion repository as explained in ?.
+   |SYSPRODUCTNAME| will also keep track of all the code changes in
+   the |SYSPRODUCTNAME| database. This will give you extra
+   capabilities on your Subversion repository as explained in `Querying Subversion`_.
 
 -  **Subversion Preamble**: In some cases (e.g. when your project
    already has its own subversion server in place), the project
-   Subversion repository might not be hosted by the SYS\_PRODUCT\_NAME
+   Subversion repository might not be hosted by the |SYSPRODUCTNAME|
    server. In this case, the Subversion information displayed in the
-   welcome page of the SYS\_PRODUCT\_NAME Subversion service are
+   welcome page of the |SYSPRODUCTNAME| Subversion service are
    inadequate. Fortunately, the project administrator can customize the
    Subversion Information page here.
 
@@ -469,7 +484,7 @@ With respect to the public projects, the default access permissions are
 as follows:
 
 -  **Anonymous Users**: users who have not registered with
-   SYS\_PRODUCT\_NAME (or are not logged in) have *no access at all* to
+   |SYSPRODUCTNAME| (or are not logged in) have *no access at all* to
    the Subversion repositories.
 
 -  **Registered Users**: have read-only access to Subversion
@@ -479,18 +494,14 @@ as follows:
    enhancements…) from this class of user must return to the project
    team via the Patch Tracker (see ? ).
 
-       **Note**
-
        **Note**: if the "restricted users" mode is on (See ?), then
        there is no access for non project members by default.
 
-       **Note**
-
        **Note**: all source code accesses are recorded by
-       SYS\_PRODUCT\_NAME. Project administrators always have access to
-       the list of people who accessed the source code (see ?).
+       |SYSPRODUCTNAME|. Project administrators always have access to
+       the list of people who accessed the source code (see :ref:`access-logs`).
 
--  **Project Members**: members of a SYS\_PRODUCT\_NAME hosted project
+-  **Project Members**: members of a |SYSPRODUCTNAME| hosted project
    are granted a password protected read/write access. As mentioned
    above in the section about private projects, it is also possible to
    grant read-only access to the project members.
@@ -500,9 +511,9 @@ as follows:
 Customized Access Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Thanks to the integration of Subversion in the SYS\_PRODUCT\_NAME
+Thanks to the integration of Subversion in the |SYSPRODUCTNAME|
 environment, project administrators can redefine access permissions for
-some or all SYS\_PRODUCT\_NAME users.
+some or all |SYSPRODUCTNAME| users.
 
 This can be achieved by specifying access permission rules that will
 complement or even override the default settings. The syntax of the
@@ -520,7 +531,7 @@ where:
    ``/svnroot/projectname``) in your repository for which you want to
    redefine access permissions.
 
--  ``name`` is either a SYS\_PRODUCT\_NAME login name or group name. The
+-  ``name`` is either a |SYSPRODUCTNAME| login name or group name. The
    name \* (star) means any registered user.
 
    If it is a group name it must be preceded with the @ character. The
@@ -534,15 +545,15 @@ where:
        groupname = username1,username2,...
              
 
-   All project defined user groups (see ?) are also defined in the
-   SYS\_PRODUCT\_NAME default permissions settings and ready to use if
+   All project defined user groups (see :ref:`user-groups`) are also defined in the
+   |SYSPRODUCTNAME| default permissions settings and ready to use if
    you wish to redefine access permissions.
 
 -  ``permission`` is either ``r`` for read-only access, ``rw`` for
    read-write access or blank if access is forbidden.
 
 As an illustration, the default permission settings of a
-SYS\_PRODUCT\_NAME repository as explained in the previous section are
+|SYSPRODUCTNAME| repository as explained in the previous section are
 expressed through the following set of rules:
 
 ::
@@ -555,8 +566,8 @@ expressed through the following set of rules:
     @members = rw
           
 
-where ``member1,member2,...,memberN`` are the SYS\_PRODUCT\_NAME login
-name of the SYS\_PRODUCT\_NAME project members.
+where ``member1,member2,...,memberN`` are the |SYSPRODUCTNAME| login
+name of the |SYSPRODUCTNAME| project members.
 
 Additionally, all existing user groups defined in this project are
 listed in this section.
@@ -598,16 +609,16 @@ will indeed prevent registered users from reading the '/secret'
 directory.
 
 If you really need to prevent access to the whole repository, you should
-contact a SYS\_PRODUCT\_NAME administrator.
+contact a |SYSPRODUCTNAME| administrator.
 
 For more information about the format of this file you should refer to
-the Subversion Book (see ?).
+the Subversion Book (see `Subversion References`_).
 
 Subversion Email Notification
 -----------------------------
 
-In addition to tracking the changes in the SYS\_PRODUCT\_NAME database,
-SYS\_PRODUCT\_NAME can also send a nicely formatted email message to
+In addition to tracking the changes in the |SYSPRODUCTNAME| database,
+|SYSPRODUCTNAME| can also send a nicely formatted email message to
 individual email addresses or mailing lists each time there is a change
 in the source code. The email message contains the log message, the
 author of the change, the list of impacted files and pointers to the
@@ -634,9 +645,9 @@ notification:
     If you intend to generate email notification for the changes made in
     your Subversion repository or a specific path, it is a good practice
     to create a specific mailing list called ``projectname-svnevents``.
-    By doing so, SYS\_PRODUCT\_NAME users and project members interested
+    By doing so, |SYSPRODUCTNAME| users and project members interested
     in receiving the email notification just need to subscribe to the
-    mailing list. In addition, the SYS\_PRODUCT\_NAME mailing list
+    mailing list. In addition, the |SYSPRODUCTNAME| mailing list
     manager will archive all the email messages which can prove very
     useful for future reference. See ? for mailing list creation.
 
@@ -646,19 +657,24 @@ A Typical Subversion Life Cycle
 As stated earlier, the intent of this chapter is not to give a formal
 Subversion training but rather to explain what are the steps a project
 team typically goes through when using Subversion and, more generally,
-all the SYS\_PRODUCT\_NAME tools involved in a Software release process.
+all the |SYSPRODUCTNAME| tools involved in a Software release process.
 
 It also deals with the problem of contributing source code when you are
 not part of a project team. In this section all examples are given in
 the form of Subversion command lines but transposing them to graphical
 front-ends should be relatively straightforward.
 
-|A Typical Software Development Life Cycle on SYS\_PRODUCT\_NAME|
+.. figure:: ../images/screenshots/SVN_Life_Cycle.png
+   :align: center
+   :alt: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+   :name: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+
+   A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
 
 Logging In
 ----------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 Unlike CVS when used with the pserver protocol there is no explicit
 login command to issue to start working with a Subversion repository.
@@ -670,12 +686,12 @@ Importing Existing Source Code
 
 *Audience: project members*
 
-As the happy administrator of a new SYS\_PRODUCT\_NAME project, the
+As the happy administrator of a new |SYSPRODUCTNAME| project, the
 first thing to do is to populate your freshly brewed Subversion
 repository with your project source code. To do so, first create a new
 directory ``topdirectory`` on your workstation and populate this top
 level directory with the recommended directory layout documented earlier
-(see ?).
+(see `The Subversion Repository Structure`_).
 
 Place yourself into the ``topdirectory`` and type the following command
 (in one line):
@@ -691,8 +707,8 @@ Where:
 
 -  ``projectname`` is the project short name
 
--  ``loginname`` is your SYS\_PRODUCT\_NAME login (all lowercase). The
-   --username option is only needed if your SYS\_PRODUCT\_NAME login
+-  ``loginname`` is your |SYSPRODUCTNAME| login (all lowercase). The
+   --username option is only needed if your |SYSPRODUCTNAME| login
    name is different from the Unix or Windows login name you are
    currently working with.
 
@@ -704,33 +720,33 @@ Where:
     ``http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname`` in
     all the examples given on these pages.
 
-    **Tip**
+   **Tip**
 
-    It is not unusual to make a mistake when importing your source code
-    into a fresh Subversion repository especially for new users. Typical
-    mistakes are directories placed at the wrong level or with the wrong
-    name. Nothing to fear though... If you want to start again from a
-    fresh Subversion repository contact the SYS\_PRODUCT\_NAME Team to
-    get your Subversion repository reinitialized. Alternatively you can
-    easily delete or move directories and files with any subversion
-    client afterwards.
+   It is not unusual to make a mistake when importing your source code
+   into a fresh Subversion repository especially for new users. Typical
+   mistakes are directories placed at the wrong level or with the wrong
+   name. Nothing to fear though... If you want to start again from a
+   fresh Subversion repository contact the |SYSPRODUCTNAME| Team to
+   get your Subversion repository reinitialized. Alternatively you can
+   easily delete or move directories and files with any subversion
+   client afterwards.
 
     **Note**
 
     Note that if you already have a Subversion repository available, the
-    SYS\_PRODUCT\_NAME Team can help you migrate this repository on
-    SYS\_PRODUCT\_NAME and preserve all of your project history. We just
+    |SYSPRODUCTNAME| Team can help you migrate this repository on
+    |SYSPRODUCTNAME| and preserve all of your project history. We just
     need a dump of your Subversion tree generated with the
-    ``svnadmin dump`` command. With this dump the SYS\_PRODUCT\_NAME
-    Team will re-install everything for you on the SYS\_PRODUCT\_NAME
+    ``svnadmin dump`` command. With this dump the |SYSPRODUCTNAME|
+    Team will re-install everything for you on the |SYSPRODUCTNAME|
     server. Contact us for more information.
 
 Checking Code Out
 -----------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
-Once a Subversion repository has been populated other SYS\_PRODUCT\_NAME
+Once a Subversion repository has been populated other |SYSPRODUCTNAME|
 users can checkout the source code and place it on their own
 workstation. The result is called a working copy in the Subversion
 jargon. Note that 'checkout' in the Subversion world does not mean that
@@ -767,7 +783,7 @@ Where:
 Updating the Source Code
 ------------------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 Running an update command from within a working copy has the effect of
 updating the working copy (or a subpart of it) with the latest version
@@ -866,7 +882,7 @@ Where:
 Contributing your Changes (other users)
 ---------------------------------------
 
-*Audience: all SYS\_PRODUCT\_NAME users*
+*Audience: all |SYSPRODUCTNAME| users*
 
 This is a variant of the previous section for those of you who do not
 have write access to the Subversion repository of a project and,
@@ -930,7 +946,7 @@ from within a Subversion working copy.
 
 In both cases, you should redirect the output of the diff or svn diff
 command in a text file. Compress the output file if it's a large one and
-use the SYS\_PRODUCT\_NAME Patch Tracker (see ?) to submit your patch to
+use the |SYSPRODUCTNAME| Patch Tracker (see ?) to submit your patch to
 the project team.
 
 And thanks for contributing some code!
@@ -941,8 +957,8 @@ Exporting and Packaging
 *Audience: project members*
 
 There is a quick and easy way to release a pre-packaged version of your
-source file and make it available to all SYS\_PRODUCT\_NAME users
-through the File Release mechanism (see ?).
+source file and make it available to all |SYSPRODUCTNAME| users
+through the File Release mechanism (see :ref:`delivery-manager`).
 
 Make sure all the project members involved in software development have
 committed the changes that were supposed to appear in this new release.
@@ -980,10 +996,10 @@ by typing:
 
 Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 
-Deliver this archive through the File Release service (see ?).
+Deliver this archive through the File Release service (see :ref:`delivery-manager-administration`).
 
 Done! Nice job...Take a break. And remember to announce the availability
-of your new version via the SYS\_PRODUCT\_NAME News service (see ?).
+of your new version via the |SYSPRODUCTNAME| News service (see ?).
 
 Subversion for Project Administrators
 =====================================
@@ -991,15 +1007,15 @@ Subversion for Project Administrators
 Subversion Hook Scripts
 -----------------------
 
-SYS\_PRODUCT\_NAME offers an easy to use Web interface to administrate
+|SYSPRODUCTNAME| offers an easy to use Web interface to administrate
 the common settings of your Subversion repository like access control
 and email notification. In case project administrators want to go deeper
-in customizing the behavior of their SYS\_PRODUCT\_NAME repository, they
+in customizing the behavior of their |SYSPRODUCTNAME| repository, they
 can get access to the Subversion hook scripts.
 
 In order to access those hook scripts, you must be granted the right to
-log into the SYS\_PRODUCT\_NAME server with your Shell Account (see
-?) [1]_.
+log into the |SYSPRODUCTNAME| server with your Shell Account (see
+?) [#f1]_.
 
 .
 Once logged in, type the following commands at the shell prompt:
@@ -1020,15 +1036,15 @@ Once logged in, type the following commands at the shell prompt:
 
     If you decide to customize the Subversion hook scripts for your
     repository make sure to preserve the statements that could have been
-    inserted by SYS\_PRODUCT\_NAME in the first place. The
-    SYS\_PRODUCT\_NAME statements are clearly marked with a recognizable
+    inserted by |SYSPRODUCTNAME| in the first place. The
+    |SYSPRODUCTNAME| statements are clearly marked with a recognizable
     header and trailer.
 
-.. [1]
+.. [#f1]
    The Shell Account may have been deactivated by your
-   SYS\_PRODUCT\_NAME site administrators.
+   |SYSPRODUCTNAME| site administrators.
 
 .. |Browsing the Subversion repository - A sample session| image:: ../../slides/en_US/SVN_Web_Session.png
 .. |Querying the Subversion tracking database of a given project| image:: ../../screenshots/en_US/sc_svnsearch.png
 .. |The detail of an atomic Subversion commit| image:: ../../screenshots/en_US/sc_svnshowcommit.png
-.. |A Typical Software Development Life Cycle on SYS\_PRODUCT\_NAME| image:: ../../slides/en_US/SVN_Life_Cycle.png
+.. |A Typical Software Development Life Cycle on |SYSPRODUCTNAME|| image:: ../../slides/en_US/SVN_Life_Cycle.png
