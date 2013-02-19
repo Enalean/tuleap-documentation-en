@@ -2013,6 +2013,7 @@ Add a workflow to a tracker
 .. figure:: ../images/screenshots/sc_manage_workflow.png
    :align: center
    :alt: 
+   :name: Add a workflow to a tracker
 
 -  **First, select the field**: you choose the field on which applies
    the workflow. A workflow applies on "Select Box" field type (except
@@ -2030,7 +2031,7 @@ Add a workflow to a tracker
    Once you defined all your transition, click on Submit button to save
    it.
 
-   For instance, in ?, various transitions have been defined: on
+   For instance, in `Add a workflow to a tracker`_, various transitions have been defined: on
    artifact submission, defined by fake state "new artifact", the only
    value available for the field "Status" will be "New". Then, once
    Status is "New", possible changes will be "Unconfirmed", "Verified"
