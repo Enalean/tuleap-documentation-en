@@ -9,7 +9,7 @@ Version Control with CVS
 This chapter is not a CVS Tutorial. It focuses on the integration of CVS
 with |SYSPRODUCTNAME| and how to use it in an optimal way in this
 context. If you are not familiar with the CVS version control system
-look at the CVS references (see ?).
+look at the CVS references (see :ref:`CVS-references` ).
 
 It is important to note that version control is just a part of the
 overall configuration management activity. Therefore, CVS alone does not
@@ -38,7 +38,7 @@ of your project.
 
 No good software project should be started without making a decision on
 which version control tool is going to be used. CVS and Subversion (see
-?) are the two possible choices offered by |SYSPRODUCTNAME|  [1]_.
+:ref:`version-control-with-subversion`) are the two possible choices offered by |SYSPRODUCTNAME|  [#f1]_.
 Although Subversion is a more modern version control system, using CVS
 is a very valid choice for several reasons:
 
@@ -84,7 +84,7 @@ CVS originates from the Unix world and therefore all the CVS functions
 can be controlled from a command line interface. Even though CVS has
 multiple command line options, most commands that you normally use have
 one or two command-line options and are very easy to remember. Refer to
-? for more information about how to use CVS.
+:ref:`CVS-references` for more information about how to use CVS.
 
 Graphical Front-ends
 ~~~~~~~~~~~~~~~~~~~~
@@ -170,6 +170,8 @@ Other things to know about WinCVS:
    doesn't delete your local version of the file, it queues the file for
    removal from CVS.
 
+.. _CVS-reference:
+
 CVS References
 --------------
 
@@ -229,7 +231,7 @@ project member for which only read access is granted. It is currently
 not possible to deny access to the CVS repository to a member of a
 private project. If you want to do so or want to setup more
 sophisticated access control permission we highly recommend that you use
-Subversion instead of CVS (see ?).
+Subversion instead of CVS (see :ref:`version-control-with-subversion`).
 
 With respect to the public projects, the default access permissions are
 as follows:
@@ -245,9 +247,7 @@ as follows:
    are not allowed to commit any changes they have made to the source
    code. Source code contributions (bug fix, enhancements…) from this
    class of user must return to the project team via the Patch Tracker
-   (see ? ).
-
-       **Note**
+   (see :ref:`acces-logs`).
 
        **Note**: all source code accesses are recorded by
        |SYSPRODUCTNAME|. Project administrators always have access to
@@ -277,7 +277,7 @@ interface provides the following features:
    to access the CVS repository from your CVS client. Among other things
    it tells you what the CVS root path is and how to log in and checkout
    the source code. This page may also be customized for specific needs
-   (see ?).
+   (see :ref:`CVS-administration`).
 
 -  **Browsing the CVS repository**: this feature allows you to browse
    the CVS repository even if you don't have a CVS client installed on
@@ -305,12 +305,17 @@ built-in Web browsing interface to the CVS repository which allows you
 to navigate in the source code, download it, view a file history or
 compare two revisions of the same file.
 
-|Browsing the CVS repository - A sample session|
+.. figure:: ../images/screenshots/CVS_Web_Session.png
+   	   :align: center
+  	   :alt: Browsing the CVS repository - A sample session
+  	   :name: Browsing the CVS repository - A sample session
+
+   	   Browsing the CVS repository - A sample session
 
 Querying CVS
 ------------
 
-If a project has the CVS Tracking feature activated (see ?), the CVS Web
+If a project has the CVS Tracking feature activated (see :ref:`CVS-administration`), the CVS Web
 interface will bring very useful features to the software engineers:
 
 -  **Atomic CVS commit and unique commit ID**: all changes (file
@@ -334,16 +339,26 @@ interface will bring very useful features to the software engineers:
    You can search code changes by authors (who made the change), by
    commit ID, by tag or by keywords to be found in the log message.
    Results can also be sorted by clicking on the headers of the search
-   results (see ?).
+   results (see `Querying the CVS tracking database of a given project`_).
 
    A click on one of the selected commit ID brings you to a complete
    description of the change, the files that were impacted and the
    nature of the change with a direct link into the CVS repository if
-   you want to browse the file or look at the code modification (see ?).
+   you want to browse the file or look at the code modification (see `The detail of an atomic CVS commit`_).
 
-|Querying the CVS tracking database of a given project|
+.. figure:: ../images/screenshots/sc_cvssearch.png
+   	   :align: center
+  	   :alt: Querying the CVS tracking database of a given project
+  	   :name: Querying the CVS tracking database of a given project
 
-|The detail of an atomic CVS commit|
+   	   Querying the CVS tracking database of a given project
+
+.. figure:: ../images/screenshots/sc_cvsshowcommit.png
+   	   :align: center
+  	   :alt: The detail of an atomic CVS commit
+  	   :name: The detail of an atomic CVS commit
+
+   	   The detail of an atomic CVS commit
 
 Cross-Referencing Artifacts and CVS Commits
 -------------------------------------------
@@ -385,7 +400,7 @@ as follows:
 
 -  The |SYSPRODUCTNAME| reference mechanism allows cross-referencing
    with any |SYSPRODUCTNAME| object: artifacts, documents, files, etc.
-   Please refer to ? for more details on References.
+   Please refer to :ref:`reference-overview` for more details on References.
 
     **Tip**
 
@@ -395,6 +410,8 @@ as follows:
     make sure you mention the commit ID in the follow-up comment. You
     will find this extremely convenient while trying to keep track of
     the changes and why it was made.
+
+.. _CVS-administration:
 
 CVS Administration
 ------------------
@@ -411,7 +428,7 @@ the following settings:
    If you activate the CVS tracking for your project |SYSPRODUCTNAME|
    will also keep track of all the code changes in the
    |SYSPRODUCTNAME| database. This will give you extra capabilities on
-   your CVS repository as explained in ?
+   your CVS repository as explained in `Querying CVS`_
 
 -  **CVS Watch Mode**: Watches in CVS work as a communication device,
    CVS can be used to keep participants informed about what's going on
@@ -473,7 +490,12 @@ not part of a project team. In this section all examples are given in
 the form of CVS command lines but transposing them to graphical
 front-ends should not be a problem.
 
-|A Typical Software Development Life Cycle on |SYSPRODUCTNAME||
+.. figure:: ../images/screenshots/CVS_Life_Cycle.png
+   	   :align: center
+  	   :alt: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+  	   :name: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+
+   	   A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
 
 Logging In
 ----------
@@ -616,7 +638,7 @@ Where:
 -  ``directory`` is the path to the directory that you want to checkout.
    To learn more about the directory structure of the CVS repository you
    are working with, first browse the CVS repository via the CVS Web
-   Interface (see ?)
+   Interface (see `The CVS Web Interface`_)
 
 Updating the Source Code
 ------------------------
@@ -675,17 +697,17 @@ Where:
    commit all the files that have changed in the directory where you are
    located and all sub-directories recursively.
 
-    **Tip**
+   **Tip**
 
-    In the ideal world, all modifications made to the source code of a
-    project should be related to either a bug logged in the
-    |SYSPRODUCTNAME| BTS or to a task assign to a developer. If your
-    project team lives in this wonderful world :-) then don't forget to
-    include the related bug or task ID number at the beginning or at the
-    end of your commit message (see ?). The CVS administrative files can
-    help you enforce this rule by checking the format of all the
-    submitted commit messages and reject them if it does not follow the
-    recommended pattern.
+   In the ideal world, all modifications made to the source code of a
+   project should be related to either a bug logged in the
+   |SYSPRODUCTNAME| BTS or to a task assign to a developer. If your
+   project team lives in this wonderful world :-) then don't forget to
+   include the related bug or task ID number at the beginning or at the
+   end of your commit message (see ?). The CVS administrative files can
+   help you enforce this rule by checking the format of all the
+   submitted commit messages and reject them if it does not follow the
+   recommended pattern.
 
 As a project member, make sure you understand and follow your project
 policy before you commit any changes to your CVS repository. For example
@@ -783,7 +805,7 @@ Exporting and Packaging
 
 There is a quick and easy way to release a pre-packaged version of your
 source file and make it available to your users through the File Release
-mechanism (see ?).
+mechanism (see :ref:`delivery-manager`).
 
 Make sure all the project members involved in software development have
 committed the changes that were supposed to appear in this new release.
@@ -821,7 +843,7 @@ directory, type:
 
 Create a ZIP or tar archive with the entire ``project-1.2/`` directory
 
-Deliver this archive through the File Release service (see ?).
+Deliver this archive through the File Release service (see :ref:`delivery-manager-administration`).
 
 Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the |SYSPRODUCTNAME| News service (see ?).
@@ -835,7 +857,7 @@ aware of to manage their CVS repository well.
 More on CVS Access Control
 --------------------------
 
-As explained in ? CVS is setup in such a way that write access is
+As explained in `CVS Access Control`_ CVS is setup in such a way that write access is
 granted to all project members (and project members only).
 
 It is, however, possible for a project administrator to deny CVS write
@@ -864,7 +886,7 @@ of virtual modules from a collection of files and directories, trigger
 e-mail notification on certain events like commit or add (note:
 |SYSPRODUCTNAME| already does it for you - see below), check the
 format of a CVS tag before accepting it, etc. (See the CVS Documentation
-cited in ? for more information about CVS administrative files).
+cited in :ref:`CVS-reference` for more information about CVS administrative files).
 
     **Tip**
 
@@ -883,7 +905,7 @@ cited in ? for more information about CVS administrative files).
     not to change directory or file ownership unless you know exactly
     what you are doing.
 
-.. [1]
+.. [#f1]
    There are many version control software available on the market
    whether Free Software (SCCS, RCS, PKS, Arch, Monotone......) or
    Commercial (SourceSafe, ClearCase, TeamWare...)

@@ -1,3 +1,6 @@
+
+.. _delivery-manager:
+
 Delivery Manager
 ================
 
@@ -148,6 +151,8 @@ the name of the release. Some file information is given, like the size,
 the type of file, the architecture (if it is relevant) the date and the
 number of downloads. To download a file, you just have to click the name
 of the file and follow the instructions.
+
+.. _delivery-manager-administration:
 
 Delivery manager Administration
 ===============================

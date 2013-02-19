@@ -1,6 +1,7 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
+
+.. _version-control-with-subversion:
 
 Version Control with Subversion
 ===============================
