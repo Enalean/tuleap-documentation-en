@@ -1,16 +1,15 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Document Manager
 ================
 
 Documentation is probably the second most important deliverable in a
 software project after the software work products themselves.
-SYS\_PRODUCT\_NAME provides a specific service to manage your project
+|SYSPRODUCTNAME| provides a specific service to manage your project
 documents.
 
-Although the SYS\_PRODUCT\_NAME Document Manager cannot be compared with
+Although the |SYSPRODUCTNAME| Document Manager cannot be compared with
 dedicated document management systems, it is however very handy to
 publish documents that are critical to your community of users. Examples
 are: Installation, Administration or User Guide, API documentation,
@@ -18,7 +17,7 @@ Frequently Asked Questions, etc...
 
 The Document Manager features are as follows:
 
--  The SYS\_PRODUCT\_NAME Document Manager can handle any type of
+-  The |SYSPRODUCTNAME| Document Manager can handle any type of
    document.
 
 -  Documents are stored in folders. You can have subfolders in a folder.
@@ -35,7 +34,12 @@ Structure
 You can structure as you want your document manager by creating folders
 and subfolders to classify your documents.
 
-|Folders and subfolders|
+.. figure:: ../images/screenshots/sc_docman2_folders.png
+   	   :align: center
+  	   :alt: Folders and subfolders
+  	   :name: Folders and subfolders
+
+   	   Folders and subfolders
 
 Actions
 =======
@@ -45,7 +49,12 @@ actions are available or not depending on permissions. In order to
 display the action panel, you must click on the pencil icon next to the
 document or folder name.
 
-|Actions|
+.. figure:: ../images/screenshots/sc_docman2_actions.png
+   	   :align: center
+  	   :alt: Actions
+  	   :name: Actions
+
+   	   Actions
 
 We will now describe all the actions that can be performed on a folder
 or document.
@@ -58,7 +67,12 @@ new document in a folder. When you select this action, a "new document"
 window is displayed, where you can enter information concerning the new
 document.
 
-|Create a new document|
+.. figure:: ../images/screenshots/sc_docman2_newdocument.png
+   	   :align: center
+  	   :alt: Create a new document
+  	   :name: Create a new document
+
+   	   Create a new document
 
 The new document inherits the permissions of the parent folder.
 
@@ -106,7 +120,12 @@ New Folder
 This action is only available for folders and allow the user to create a
 sub folder in a folder.
 
-|Create a new folder|
+.. figure:: ../images/screenshots/sc_docman2_newfolder.png
+   	   :align: center
+  	   :alt: Create a new folder
+  	   :name: Create a new folder
+
+   	   Create a new folder
 
 The new folder inherits the permissions of the parent folder.
 
@@ -133,7 +152,12 @@ This action allows the user to view the properties of a document or
 folder. If he has enough permissions, he will be able to modify those
 properties.
 
-|Display and edit properties|
+.. figure:: ../images/screenshots/sc_docman2_properties.png
+   	   :align: center
+  	   :alt: Display and edit properties
+  	   :name: Display and edit properties
+
+   	   Display and edit properties
 
 From the property panel, it is possible to view/edit permissions,
 history and actions. There are also shortcuts to these panels in the
@@ -147,14 +171,24 @@ Therefore, he will be alerted about the creation of a document in a
 folder, about the update of a document, about its move, ... He just has
 to check the dedicated checkbox.
 
-|Notifications|
+.. figure:: ../images/screenshots/sc_docman2_notifications.png
+   	   :align: center
+  	   :alt: Notifications
+  	   :name: Notifications
+
+   	   Notifications
 
 History
 -------
 
 This action allows the user to see logs and old versions (if available).
 
-|See a document history|
+.. figure:: ../images/screenshots/sc_docman2_history.png
+   	   :align: center
+  	   :alt: See a document history
+  	   :name: See a document history
+
+   	   See a document history
 
 Update
 ------
@@ -162,7 +196,12 @@ Update
 This action allows the user to update the name of a wiki page or the url
 of a link.
 
-|Update a link|
+.. figure:: ../images/screenshots/sc_docman2_update.png
+   	   :align: center
+  	   :alt: Update a link
+  	   :name: Update a link 
+
+   	   Update a link
 
 New version
 -----------
@@ -170,7 +209,12 @@ New version
 This action allows the user to update a new version of a file or an
 embedded file.
 
-|Create a new version for embedded file|
+.. figure:: ../images/screenshots/sc_docman2_newversion.png
+   	   :align: center
+  	   :alt: Create a new version for embedded file
+  	   :name: Create a new version for embedded file
+
+   	   Create a new version for embedded file
 
 Permissions
 -----------
@@ -179,7 +223,12 @@ This action allows the user to manage the permissions of a document or
 folder. Permissions for folders can be applied recursively to its
 hierarchy.
 
-|Define permissions|
+.. figure:: ../images/screenshots/sc_docman2_permissions.png
+   	   :align: center
+  	   :alt: Define permissions
+  	   :name: Define permissions
+
+   	   Define permissions
 
 There is 3 types of permissions.
 
@@ -224,13 +273,23 @@ able to choose the target folder (or let it in the same folder) and the
 new position (at the beginning, at the end or at a specific position).
 The permissions of the item will not be changed.
 
-|Move a document|
+.. figure:: ../images/screenshots/sc_docman2_move.png
+   	   :align: center
+  	   :alt: Move a document
+  	   :name: Move a document
+
+   	   Move a document
 
 If you just want to reorder a folder and move some of its items
 relatively to each other, you can click on shortcuts next to "move" item
 in the popup menu : up, down, at the beginning or at the end.
 
-|Shortcuts to move a document inside a folder|
+.. figure:: ../images/screenshots/sc_docman2_move_shortcuts.png
+   	   :align: center
+  	   :alt: Shortcuts to move a document inside a folder
+  	   :name: Shortcuts to move a document inside a folder
+
+   	   Shortcuts to move a document inside a folder
 
 Delete
 ------
