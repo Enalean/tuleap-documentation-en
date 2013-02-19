@@ -1,4 +1,6 @@
 
+.. |SYSPRODUCTNAME| replace:: Tuleap
+
 .. _delivery-manager:
 
 Delivery Manager
@@ -8,18 +10,18 @@ Guidelines
 ==========
 
 There are 2 ways by which project administrators can provide access to
-their project source code on SYS\_PRODUCT\_NAME: the software
+their project source code on |SYSPRODUCTNAME|: the software
 configuration management repository (CVS or Subversion) and the Delivery
-Manager. At first glance, having two distinct SYS\_PRODUCT\_NAME
+Manager. At first glance, having two distinct |SYSPRODUCTNAME|
 services seems redundant. However both have been developed with
 different objectives and target audience in mind and they are very much
 complementary. Providing both is definitely a plus for your visitors.
 
 -  **The SCM repository** provides a full access to your source code
    including its entire version history. However accessing the source
-   code via SCM tools requires that the SYS\_PRODUCT\_NAME user installs
+   code via SCM tools requires that the |SYSPRODUCTNAME| user installs
    specific software on his machine. Not everybody is capable or willing
-   to do so. SCM access is well suited for SYS\_PRODUCT\_NAME users who
+   to do so. SCM access is well suited for |SYSPRODUCTNAME| users who
    want to get deeper in the project code, add some new extensions, fix
    bugs and contribute changes back to the project team. Please be aware
    that certain projects decide to restrict the access to the SCM to
@@ -29,7 +31,7 @@ complementary. Providing both is definitely a plus for your visitors.
 -  **The Delivery Manager** allows you to publish pre-packaged version
    of the source code and/or binaries in one or several archive file
    (zip, tar, jar,...) that an authorized user can easily download from
-   the SYS\_PRODUCT\_NAME Web site. No specific tools or knowledge is
+   the |SYSPRODUCTNAME| Web site. No specific tools or knowledge is
    required. Besides possibly providing pre-packaged source code it is
    also considered a very good practice to provide ready-to-use binary
    version of your software to make developers life even easier. The
@@ -39,7 +41,7 @@ complementary. Providing both is definitely a plus for your visitors.
 As you can see both services are fundamentally different in nature and
 we strongly encourage project teams to use both of them. In order to
 help project teams understand why these two services are highly
-complementary a typical project life cycle is documented on ?.
+complementary a typical project life cycle is documented on :ref:`a-typical-software-development-life-cycle-on-|SYSPRODUCTNAME|`.
 
 Delivery Manager Jargon
 =======================
@@ -47,9 +49,14 @@ Delivery Manager Jargon
 Before we get further into the description of the Delivery Manager let's
 review the terms used throughout this section. These terms are key for
 the understanding of the tool mechanism both for users and
-administrators (see ?).
+administrators (see `Delivery Manager Structure`_).
 
-|Delivery Manager Structure|
+.. figure:: ../images/screenshots/File_Release.png
+   :align: center
+   :alt: Delivery Manager Structure
+   :name: Delivery Manager Structure
+
+   Delivery Manager Structure
 
 -  **Packages** : these are the topmost entities visible in the Delivery
    Manager. A package is a container for one or several releases. In
@@ -101,15 +108,20 @@ downloaded by clicking on the "Download" link or visit the complete list
 of packages and release by clicking on the "[View ALL project files]"
 link.
 
-|Example of a Delivery Manager screen|
+.. figure:: ../images/screenshots/sc_filereleasedownloads.png
+   :align: center
+   :alt: Example of a Delivery Manager screen
+   :name: Example of a Delivery Manager screen
 
-The first example given on ? shows the Delivery Manager screen of the
+   Example of a Delivery Manager screen
+
+The first example given on `Example of a Delivery Manager screen`_ shows the Delivery Manager screen of the
 Playground project.
 
 Browsing packages
 -----------------
 
-As explained in the ?, projects can contain several packages. In the
+As explained in the `Delivery Manager Jargon`_, projects can contain several packages. In the
 example, the Playground project has four packages.
 
 The content of each package can be hidden by clicking the *minus* icon
@@ -118,7 +130,7 @@ reasons if your project has lots of packages and releases. To expand a
 collapsed package, simply click the *plus* icon before the package name.
 By default, all the packages are expanded.
 
-SYS\_PRODUCT\_NAME gives you the opportunity to monitor the packages.
+|SYSPRODUCTNAME| gives you the opportunity to monitor the packages.
 Like this, you will be notified when a new release is available, or if a
 release is updated, etc. In order to monitor a package, click the *bell*
 icon located after the package name. If you're already monitoring the
@@ -169,7 +181,14 @@ update an existing one in them at any time.
 update) releases to it
 
 When you are project admin or file admin, you are able to perform the
-admin actions on the Delivery Manager home page. (See ?
+admin actions on the Delivery Manager home page. (See `The Delivery Manager screen of the Playground project, when you are an admin`_ )
+
+.. figure:: ../images/screenshots/sc_filereleasedownloadsadmin.png
+   :align: center
+   :alt: The Delivery Manager screen of the Playground project, when you are an admin
+   :name: The Delivery Manager screen of the Playground project, when you are an admin
+
+   The Delivery Manager screen of the Playground project, when you are an admin
 
 Package Administration
 ----------------------
@@ -213,7 +232,7 @@ one, except that you can set read permissions on the package (see `Package editi
 
           Package editing of the Camellia package
 
-A project member with the 'File Manager Admin' right (see ?) can attach
+A project member with the 'File Manager Admin' right (see :ref:`user-permissions`) can attach
 access permissions to any existing package.
 
 By default, permissions attached to a package apply to all releases and
@@ -231,13 +250,18 @@ Release Creation and modification
 
 Once a package has been created you can immediately start adding
 releases to it. Click on the [Add a Release] link of the appropriate
-package (see ?).
+package (see `The Delivery Manager screen of the Playground project, when you are an admin`_).
 
 The release creation and modification process is really easy to perform.
-It can be divided into 6 steps, but some are optional. (see ?). In every
+It can be divided into 6 steps, but some are optional. (see `The release update screen`_). In every
 case, you can update the release at any time
 
-|The release update screen|
+.. figure:: ../images/screenshots/sc_frsreleases.png
+   :align: center
+   :alt: The release update screen
+   :name: The release update screen
+
+   The release update screen
 
 -  **Step 1 - Give Release properties**
 
@@ -263,17 +287,17 @@ case, you can update the release at any time
       appropriate file name from the "FTP/SCP Files list " in the pull
       down menu.
 
-          **Tip**
+      **Tip**
 
-          SYS\_PRODUCT\_NAME server offers an upload mechanism via FTP
-          (ou SCP). To upload your files, follow the instructions given
-          when you click the *?* next to the [add file] link. Then click
-          the [Refresh File list] link to see your files.
+      |SYSPRODUCTNAME| server offers an upload mechanism via FTP (ou SCP). To 
+      upload your files, follow the instructions given
+      when you click the *?* next to the [add file] link. Then click
+      the [Refresh File list] link to see your files.
 
-      Before you upload the files make sure you gave them names that
-      will speak to SYS\_PRODUCT\_NAME users. Ideally the file names
-      should include the release label in it and any other extension
-      telling whether it is a source file or a binary file.
+   Before you upload the files make sure you gave them names that
+   will speak to |SYSPRODUCTNAME| users. Ideally the file names
+   should include the release label in it and any other extension
+   telling whether it is a source file or a binary file.
 
 -  **Step 3 - Add Release Notes and/or Changelog (optional)**
 
@@ -309,12 +333,12 @@ case, you can update the release at any time
 -  **Step 4 - Set permissions to the Release (optional)**
 
    By default, releases have no specific access permissions: access to
-   all files is granted to any SYS\_PRODUCT\_NAME registered user
+   all files is granted to any |SYSPRODUCTNAME| registered user
    (anonymous users are not allowed to download release files). However,
    in some cases, you might want to limit the users allowed to download
    your software. In these specific cases, you can restrict access
    permissions to your packages and releases to specific user groups.
-   See ? for more information on user groups. To define or to change the
+   See :ref:`usre-groups` for more information on user groups. To define or to change the
    permissions on a release, click the [view/change] link in the
    permissions frame.
 
@@ -351,8 +375,8 @@ case, you can update the release at any time
 -  **Step 6 - Send e-mail notification (optional)**
 
    This step is optional in the sense that it may not show up on your
-   screen. If some SYS\_PRODUCT\_NAME users monitor your package, this
-   step will tell you how many of them are doing so. SYS\_PRODUCT\_NAME
+   screen. If some |SYSPRODUCTNAME| users monitor your package, this
+   step will tell you how many of them are doing so. |SYSPRODUCTNAME|
    gives you the freedom to send an e-mail notification or not to the
    users who expressed interest in your packages. Do not bypass this
    step, always inform your community of users and developers.
@@ -362,9 +386,9 @@ case, you can update the release at any time
        When you prepare your files for release make sure that you
        include a README file in the top directory of each file that a
        user can download. And pack this README with useful information
-       like the address of your SYS\_PRODUCT\_NAME site, the Mailing
+       like the address of your |SYSPRODUCTNAME| site, the Mailing
        list you have put in place for your project, how to submit a bug
-       or a support to the project team (via SYS\_PRODUCT\_NAME of
+       or a support to the project team (via |SYSPRODUCTNAME| of
        course)
 
 Processor List Administration

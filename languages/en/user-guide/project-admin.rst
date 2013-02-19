@@ -511,6 +511,8 @@ pattern must be re-created if you need to use it again.
 System reference patterns cannot be deleted. However, you can disable
 them so that they will not be extracted.
 
+.. _user-permissions:
+
 User Permissions
 ================
 

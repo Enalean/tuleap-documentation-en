@@ -664,6 +664,8 @@ not part of a project team. In this section all examples are given in
 the form of Subversion command lines but transposing them to graphical
 front-ends should be relatively straightforward.
 
+.. _a-typical-software-development-life-cycle-on-|SYSPRODUCTNAME|:
+
 .. figure:: ../images/screenshots/SVN_Life_Cycle.png
    :align: center
    :alt: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
