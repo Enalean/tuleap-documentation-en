@@ -176,6 +176,8 @@ Project Type
    more in the |SYSPRODUCTNAME| Software Map nor on the
    |SYSPRODUCTNAME| Dashboard.
 
+.. _service-configuration:
+
 Service Configuration
 =====================
 

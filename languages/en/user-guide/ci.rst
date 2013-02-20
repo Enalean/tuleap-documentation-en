@@ -1,6 +1,9 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
+.. |SYS_DEFAULT_DOMAIN| replace:: tuleap.net
+.. |SYS_DEFAULT_DOMAINS| replace:: **tuleap.net**
+
+.. _continuous-integration-with-Hudson/Jenkins:
 
 Continuous Integration with Hudson/Jenkins
 ==========================================
@@ -51,7 +54,7 @@ to your development process. For instance:
    tests, demo or distribution.
 
 The continuous integration tool we decided to integrate in
-SYS\_PRODUCT\_NAME is **Hudson/Jenkins**, which is one of the best tool.
+|SYSPRODUCTNAME| is **Hudson/Jenkins**, which is one of the best tool.
 Jenkins is a fork of Hudson. So in this chapter we will use the name
 Hudson. It stands both for Hudson and Jenkins. Hudson configuration can
 be easily done on the web interface, and there is a contextual help for
@@ -60,52 +63,34 @@ each step of the configuration, which is really appreciable.
 The lexicon of Continuous integration and Hudson is quite specific.
 Let's then give a definition:
 
-+------------------+----------------------------------------------------------+
-| Word             | Definition                                               |
-+==================+==========================================================+
-| **Job**          | The concept of Job can be associated with the concept of |
-|                  | project. The job will trigger the build, but it's also   |
-|                  | in charge of setting the building environment required   |
-|                  | for executing the build (updating the source code for    |
-|                  | instance). It will also be able to execute the build,    |
-|                  | and then perform some tasks such as publishing generated |
-|                  | documentation, publishing test results, sending          |
-|                  | notifications, etc.)                                     |
-+------------------+----------------------------------------------------------+
-| **Build**        | Process is made of several steps executed periodically   |
-|                  | on a continuous integration server.                      |
-+------------------+----------------------------------------------------------+
-| **Artifact**     | Item are generated during the build, and are published   |
-|                  | by the continuous integration tool. The continuous       |
-|                  | integration notion of artifact is obviously different    |
-|                  | than the notion of a SYS\_PRODUCT\_NAME artifact (which  |
-|                  | is an item tracked in a tracker).                        |
-+------------------+----------------------------------------------------------+
-| **Workspace**    | Directory where the project will be deployed in order to |
-|                  | perform the build, and enventually publish artifacts.    |
-+------------------+----------------------------------------------------------+
-| **Status (of the | Build status can take several values regarding the tool. |
-| build)**         | Hudson has 4 status:                                     |
-|                  |                                                          |
-|                  | -  Successfull : everything went fine, all tests were    |
-|                  |    successfull,                                          |
-|                  |                                                          |
-|                  | -  Unstable : the build was successfull but unstable     |
-|                  |    (failed tests for instance),                          |
-|                  |                                                          |
-|                  | -  Failed : the build fatally failed                     |
-|                  |                                                          |
-|                  | -  Disabled : the project has never been built before,   |
-|                  |    or the project is disabled.                           |
-|                  |                                                          |
-                                                                             
-+------------------+----------------------------------------------------------+
-| **Trend (of the  | Trend based on the latest 5 builds. This trend is        |
-| builds)**        | represented by a weather report (sun, thunder, etc.)     |
-|                  | meaning that the trend is good or not.                   |
-+------------------+----------------------------------------------------------+
-
-Table: Glossary of Hudson and continuous integration specific words
+=================================   ============================================================================================
+        Word                                                    Definition
+=================================   ============================================================================================
+        **Job**                     The concept of Job can be associated with the concept of project. 
+                                    The job will trigger the build, but it's also in charge of setting the building 
+                                    environment required for executing the build (updating the source code for instance). 
+                                    It will also be able to execute the build, and then perform some tasks such as 
+                                    publishing generated documentation, publishing test results, sending notifications, etc.)
+        **Build**                   Process is made of several steps executed periodically on a continuous integration server.
+        **Artifact**                Item are generated during the build, and are published  by the continuous integration tool. 
+                                    The continuous integration notion of artifact is obviously different than the notion of a 
+                                    |SYSPRODUCTNAME| artifact (which is an item tracked in a tracker).
+        **Workspace**               Directory where the project will be deployed in order to perform the build, and 
+                                    enventually publish artifacts.
+        **Status (of the build)**   Build status can take several values regarding the tool. 
+                                    Hudson has 4 status:     
+  
+                                        -  Successfull : everything went fine, all tests were successfull,
+  
+                                        -  Unstable : the build was successfull but unstable (failed tests for instance),    
+  
+                                        -  Failed : the build fatally failed         
+  
+                                        -  Disabled : the project has never been built before, or the project is disabled.
+        **Trend (of the builds)**   Trend based on the latest 5 builds. This trend is represented by a weather report 
+                                    (sun, thunder, etc.) meaning that the trend is good or not.
+=================================   ============================================================================================
+                    Glossary of Hudson and continuous integration specific words
 
 Hudson Installation
 ===================
@@ -121,7 +106,7 @@ default, you can access the interface at http://localhost:8080/hudson
 Hudson Configuration
 ====================
 
-Before creating your own jobs, (see ?), you need to configure Hudson.
+Before creating your own jobs, (see `Hudson Jobs Creation and Configuration`_), you need to configure Hudson.
 All these steps are optional, you only have to configure what you really
 need.
 
@@ -143,9 +128,16 @@ know the path to the tools required to.
 
 You can specify here the path to the external tools you need. By
 default, the available tools are JDK, Shell, Ant, Maven and CVS. If you
-install some plug-ins (see ?) that need external tools, you will be able
+install some plug-ins (see `Hudson Plug-ins`_) that need external tools, you will be able
 to configure them in this section. You can define several instances of
 the same tool (several version of JDK for instance).
+
+.. figure:: ../images/screenshots/sc_hudsonexternaltoolsconfiguration.png
+   :align: center
+   :alt: External Tools Configuration
+   :name: External Tools Configuration
+
+   External Tools Configuration
 
 Authentication
 ~~~~~~~~~~~~~~
@@ -183,9 +175,9 @@ to state a mail server (SMTP server). Leave the field empty if you want
 to use the default mail server (localhost).
 
 You can also define a default user email suffix. By default, all of the
-SYS\_PRODUCT\_NAME users have an email address of the form
-**login@SYS\_DEFAULT\_DOMAIN** that is mapped to the real email address.
-You can then fill this field with the value **@SYS\_DEFAULT\_DOMAIN**
+|SYSPRODUCTNAME| users have an email address of the form
+**login@** |SYS_DEFAULT_DOMAINS| that is mapped to the real email address.
+You can then fill this field with the value **@** |SYS_DEFAULT_DOMAINS|
 and the emails will be automatically sent to the right users.
 
 You can also specify the system Admin Email Address. Notification
@@ -198,16 +190,16 @@ emails will then be correct.
 Jabber Notification
 ~~~~~~~~~~~~~~~~~~~
 
-If you have installed the Jabber plug-in for Hudson (see ?), you will
+If you have installed the Jabber plug-in for Hudson (see `Hudson Plug-ins`_), you will
 find in the section "Manage Hudson" -> "Configure System" a part to
 configure Jabber notification. If the Jabber plugin for
-SYS\_PRODUCT\_NAME is installed and enabled, every SYS\_PRODUCT\_NAME
+|SYSPRODUCTNAME| is installed and enabled, every |SYSPRODUCTNAME|
 user has a Jabber account (see ?) and each project has a Chat Room.
 Jabber plug-in lets you the ability to send notification to users or
 chat rooms.
 
 To use the Jabber notification, please give the name of the server (by
-default SYS\_DEFAULT\_DOMAIN) as well as the JabberID of the user that
+default |SYS_DEFAULT_DOMAIN|) as well as the JabberID of the user that
 will send the notifications.
 
 Hudson Plug-ins
@@ -246,7 +238,7 @@ CVS and Subversion
 ------------------
 
 By default, Hudson suggests the same two SCM (Source Code Management) as
-SYS\_PRODUCT\_NAME: CVS and Subversion. Select the manager you're using
+|SYSPRODUCTNAME|: CVS and Subversion. Select the manager you're using
 for your project, and then enter the information about the paths to your
 project's repository.
 
@@ -257,8 +249,8 @@ To configure CVS, you need to give the CVSROOT of your project. The
 expecting format is **:protocol:user@host:path**
 
 You can find the details of the expecting string selecting the CVS tab
-of your project in SYS\_PRODUCT\_NAME. It looks like
-**:pserver:[username]@[projectname].SYS\_DEFAULT\_DOMAIN:/cvsroot/[projectname]**
+of your project in |SYSPRODUCTNAME|. It looks like
+**:pserver:[username]@[projectname].** |SYS_DEFAULT_DOMAINS| **:/cvsroot/[projectname]**
 
 You can also provide one or several modules and/or a branch.
 
@@ -266,9 +258,9 @@ Subversion
 ~~~~~~~~~~
 
 To configure Subversion, you need to provide the URL of the repository.
-This piece of information is available on the SYS\_PRODUCT\_NAME
+This piece of information is available on the |SYSPRODUCTNAME|
 interface, by selecting the SVN tab of your project. It looks like
-**http://SYS\_DEFAULT\_DOMAIN/svnroot/[projectname]**
+**http://** |SYS_DEFAULT_DOMAINS| **/svnroot/[projectname]**
 
 Hudson will then ask you to give credentials for Subversion, to be able
 to access the repository. You can then choose several options for
@@ -283,7 +275,7 @@ Finally, if you want to give the ability to the users to navigate in the
 source code repository through Hudson interface, you can select
 "ViewSVN" in the field "Repository browser", and then enter the folowing
 string:
-**http://SYS\_DEFAULT\_DOMAIN/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
+**http://** |SYS_DEFAULT_DOMAINS| **/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
 
 Builds Schedule
 ---------------
@@ -296,15 +288,15 @@ the way hudson will schedule the build. Two main options are available:
 -  **Poll SCM**: will poll changes in your project SCM (CVS or
    Subversion). You can define the frequency following the cron syntax
    (see Hudson inline help). This option can however be expensive
-   operations for the SYS\_PRODUCT\_NAME server. You can think of using
+   operations for the |SYSPRODUCTNAME| server. You can think of using
    the 'push' option to avoid this problem (see below).
 
 -  **Trigger builds remotely**: this 'push' option avoids server
    overloading. The build is triggered by an URL. To avoid anybody to
    trigger builds, you can protect the operation by specifying an
    authentication token. To really enable the build trigger after each
-   commit, you will need to configure it in SYS\_PRODUCT\_NAME, in the
-   'Build' tab of your project (See ?). You will be able to specify your
+   commit, you will need to configure it in |SYSPRODUCTNAME|, in the
+   'Build' tab of your project (See `Link Hudson job with your Tuleap project`_). You will be able to specify your
    token if you have defined one.
 
 Build configuration (steps)
@@ -323,7 +315,7 @@ other plug-ins), Hudson offers 4 types of possible steps:
    variables (see inline help).
 
 -  **Invoke Ant**: let you invoke an Ant script. If several Ant version
-   are available (see ?), you can choose the one you want. You can also
+   are available (see `External Tools`_), you can choose the one you want. You can also
    precise the Ant target if needed. Pressing the "Advanced" button, you
    will be able to specify properties and Java options.
 
@@ -387,28 +379,28 @@ After a build, Hudson can do some actions. Among them:
 
    You can also send a separate email to people who broke the build. To
    do this, the continuous integration server must be well configured
-   (see ?).
+   (see `Email Notification`_).
 
-Integration in SYS\_PRODUCT\_NAME
+Integration in |SYSPRODUCTNAME|
 =================================
 
 As continuous integration is a good practice in software engineering,
-SYS\_PRODUCT\_NAME integrates Hudson tool. We know how to install (see
-?) and configure (see ?) Hudson, and how to create and configure Hudson
-jobs (see ?). Let's see now how Hudson is integrated to
-SYS\_PRODUCT\_NAME.
+|SYSPRODUCTNAME| integrates Hudson tool. We know how to install (see
+`Hudson Installation`_) and configure (see `Hudson Configuration`_) Hudson, and how to create and configure Hudson
+jobs (see `Hudson Jobs Creation and Configuration`_). Let's see now how Hudson is integrated to
+|SYSPRODUCTNAME|.
 
 Hudson Service
 --------------
 
-If Hudson plugin is installed and enabled on your SYS\_PRODUCT\_NAME
-server, each project can enable the Hudson service (see ? to know how to
+If Hudson plugin is installed and enabled on your |SYSPRODUCTNAME|
+server, each project can enable the Hudson service (see :ref:`service-configuration` to know how to
 enable services for your project).
 
 Once the service is enabled, you will see a "Build" tab in the service
 bar of your project : the Hudson continuous integration tab.
 
-Link Hudson job with your SYS\_PRODUCT\_NAME project
+Link Hudson job with your |SYSPRODUCTNAME| project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to link Hudson job with your project, select the Build tab of
@@ -416,15 +408,22 @@ your project, and then select the 'Add a job' link. You need then to
 give the URL of the Hudson job you want to associate with your project
 (for instance: http://[my\_ci\_server]:8080/hudson/job/[my\_job]).
 
+.. figure:: ../images/screenshots/sc_hudsonaddjob.png
+   :align: center
+   :alt:  Link Hudon job with your project
+   :name:  Link Hudon job with your project
+
+    Link Hudon job with your project
+
 You may also want to enable the auto trigger of the build for this job
 after each commit in your project repository (CVS or Subversion). If you
 have protected your build with a token, you can specify this token (see
-? for more information). By checking this option, each commit will
+`Builds Schedule`_ for more information). By checking this option, each commit will
 trigger a build of the associated job, using the pre-commit hook (you
 don't have anything more to do).
 
 By the way, it is possible to link several Hudson jobs with one
-SYS\_PRODUCT\_NAME project.
+|SYSPRODUCTNAME| project.
 
 Browse Hudson jobs and builds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -435,7 +434,7 @@ the current status (colored bullet left to the name of the job), the
 name, the last successfull build, the last failed build, if you have
 enabled SCM trigger or not (see ?). Project admins will also see for
 each job some icons that let them modify the job or delete it (remove
-the link with SYS\_PRODUCT\_NAME).
+the link with |SYSPRODUCTNAME|).
 
 The name of the job is automatically detected during job creation. But
 you can change it if needed. This is pretty convenient if you want to
@@ -445,7 +444,7 @@ not allowed. They are replaced by (\_), in order to allow references.
 The name of the job and the latest builds are hypertext links that will
 be opened the corresponding Hudson section in a frame below the table.
 This is really convenient to browse Hudson interface while staying in
-the SYS\_PRODUCT\_NAME interface. If you want to open the Hudson frame
+the |SYSPRODUCTNAME| interface. If you want to open the Hudson frame
 in a specific window, just select the 'show only this frame' link.
 
 The table provides also links to Hudson jobs RSS feed.
@@ -500,7 +499,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
 Hudson References
 -----------------
 
-It is possible to make references to Hudson items in SYS\_PRODUCT\_NAME.
+It is possible to make references to Hudson items in |SYSPRODUCTNAME|.
 There are some predefined references (job, build), but you can also
 create your own references if needed (see ? for more details about
 references)

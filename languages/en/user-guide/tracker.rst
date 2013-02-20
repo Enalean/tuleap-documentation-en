@@ -902,61 +902,64 @@ permission settings. For more information on how to configure tracker
 access permissions see `Permissions Management`_. Default permission settings are summarized in
 the table below:
 
-.. csv-table:: Default Tracker Access Permissions
-   :header: "Tracker Feature", "Access Permission"
+============================================================================================= ===========================================
+        Tracker Feature                                                                           Access Permission
+============================================================================================= ===========================================
+`New Artifact Submission <#TrackerV5ArtifactSubmission>`_                                     By default any |SYSPRODUCTNAME| visitor, 
+                                                                                              whether logged in or not, has the ability 
+                                                                                              to submit a new artifact to a tracker. The
+                                                                                              tracker administrator has the ability to 
+                                                                                              limit the scope of this feature to
+                                                                                              |SYSPRODUCTNAME| registered users 
+                                                                                              (anonymous users are requested to login 
+                                                                                              first) or to the project members if the 
+                                                                                              tracker is made private. 
+`Artifact Browsing <#TrackerV5ArtifactBrow sing>`_                                            Searching the Artifact database and 
+                                                                                              browsing the results is available to all 
+                                                                                              |SYSPRODUCTNAME| visitors (whether 
+                                                                                              registered or not) unless the tracker has 
+                                                                                              been made private by the project 
+                                                                                              administrator. If so the tracker is only 
+                                                                                              visible to project members.
+`Artifact Update <#TrackerV5ArtifactUpdate>`_                                                 By default only project members can 
+                                                                                              update an artifact. Non members have only 
+                                                                                              limited access and can only add a comment 
+                                                                                              or attach a file. 
+`Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_                        Only Project administrators and project 
+                                                                                              members with Admin. permission can 
+                                                                                              import data into trackers. 
+`Tracker Creation <#TrackerV5Creation>`_                                                      Only available to project administrators.
+`Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_                      Only available to project administrators 
+                                                                                              and project members with Admin. 
+                                                                                              permission on this tracker.
+`Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_          Only available to project administrators 
+                                                                                              and project members with Admin. 
+                                                                                              permission on this tracker.
+`Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_                Only available to project administrators 
+                                                                                              and project members with Admin. permission 
+                                                                                              on this tracker.
+`Tracker Administration - Workflow Management <#TrackerV5Workflow>`_                          Only Project administrators and project 
+                                                                                              members with Admin. permission can define 
+                                                                                              and configure workflow.
+`Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_          Only Project administrators and project 
+                                                                                              members with Admin. permission can define 
+                                                                                              tracker permissions.
+`Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_           Only Project administrators and project 
+                                                                                              members with Admin. permission can define 
+                                                                                              canned responses.
+`Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ Only Project administrators can add email 
+                                                                                              addresses in the global email notification 
+                                                                                              field. Project members can watch artifacts
+                                                                                              of other team members. Any registered 
+                                                                                              |SYSPRODUCTNAME| user can customize her 
+                                                                                              notification preferences.
+`Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_                 Only Project administrators and project 
+                                                                                              members with Admin. permission can export 
+                                                                                              tracker structure.
+============================================================================================= ===========================================
 
-   `New Artifact Submission <#TrackerV5ArtifactSubmission>`_ , "By default any |SYSPRODUCTNAME| visitor, whether logged in or not, has 
-   the ability to submit a new artifact to
-   a tracker. The tracker administrator has 
-   the ability to limit the scope of this 
-   feature to |SYSPRODUCTNAME| registered 
-   users (anonymous users are requested to
-   login first) or to the project members 
-   if the tracker is made private." 
-   `Artifact Browsing <#TrackerV5ArtifactBrow sing>`_ , "Searching the Artifact database and browsing the results is available to all 
-   |SYSPRODUCTNAME| visitors (whether 
-   registered or not) unless the tracker
-   has been made private by the project 
-   administrator. If so the tracker is only 
-   visible to project members."            
-   `Artifact Update <#TrackerV5ArtifactUpdate>`_ , "By default only project members can
-   update an artifact. Non members have 
-   only limited access and can only add a 
-   comment or attach a file."                
-   `Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_ , "Only Project administrators and project
-   members with Admin. permission can 
-   import data into trackers."             
-   `Tracker Creation <#TrackerV5Creation>`_ , "Only available to project
-   administrators."                        
-   `Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_ , "Only available to project administrators 
-   and project members with Admin.
-   permission on this tracker."              
-   `Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_ , "Only available to project administrators 
-   and project members with Admin.
-   permission on this tracker."            
-   `Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_ , "Only available to project administrators 
-   and project members with Admin.
-   permission on this tracker."            
-   `Tracker Administration - Workflow Management <#TrackerV5Workflow>`_ , "Only Project administrators and project
-   members with Admin. permission can 
-   define and configure workflow."         
-   `Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_ , "Only Project administrators and project
-   members with Admin. permission can 
-   define tracker permissions."              
-   `Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_ , "Only Project administrators and project
-   members with Admin. permission can 
-   define canned responses."                 
-   `Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ , "Only Project administrators can add
-   email addresses in the global email
-   notification field. Project members can
-   watch artifacts of other team members. 
-   Any registered |SYSPRODUCTNAME| user 
-   can customize her notification 
-   preferences."                             
-   `Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_ , "Only Project administrators and project
-   members with Admin. permission can 
-   export tracker structure."                
-
+                                                Default Tracker Access Permissions
+   
 Tracker Creation
 ================
 
