@@ -325,6 +325,7 @@ other plug-ins), Hudson offers 4 types of possible steps:
 
 The step configuration is specific to your project. We will let you
 configure it as needed.
+
 Post-build Actions
 ------------------
 
@@ -413,7 +414,7 @@ give the URL of the Hudson job you want to associate with your project
    :alt:  Link Hudon job with your project
    :name:  Link Hudon job with your project
 
-    Link Hudon job with your project
+   Link Hudon job with your project
 
 You may also want to enable the auto trigger of the build for this job
 after each commit in your project repository (CVS or Subversion). If you
@@ -441,7 +442,7 @@ the link with |SYSPRODUCTNAME|).
    :alt:  Hudson jobs associated with your project
    :name:  Hudson jobs associated with your project
 
-    Hudson jobs associated with your project
+   Hudson jobs associated with your project
 
 The name of the job is automatically detected during job creation. But
 you can change it if needed. This is pretty convenient if you want to
@@ -473,7 +474,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt:  "My Hudson Jobs" Widget
    :name:  "My Hudson Jobs" Widget
 
-    "My Hudson Jobs" Widget
+   "My Hudson Jobs" Widget
 
 -  **Jobs Overview**: this widget is only available on project
    dashboard. It can display an overview of all the jobs associated with
@@ -485,7 +486,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Jobs Overview" Widget
    :name: "Jobs Overview" Widget
 
-    "Jobs Overview" Widget
+   "Jobs Overview" Widget
 
 -  **Last Builds**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the last
@@ -497,7 +498,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Lasts Builds" Widget
    :name: "Lasts Builds" Widget
 
-    "Lasts Builds" Widget
+   "Lasts Builds" Widget
 
 -  **Test Results**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the test
@@ -510,7 +511,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Test results" Widget
    :name: "Test results" Widget
 
-    "Test results" Widget
+   "Test results" Widget
 
 -  **Test Trend**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the test
@@ -525,7 +526,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Tests Trend" Widget
    :name: "Tests Trend" Widget
 
-    "Tests Trend" Widget
+   "Tests Trend" Widget
 
 -  **Build History**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the build
@@ -538,7 +539,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Builds History" Widget
    :name: "Builds History" Widget
 
-    "Builds History" Widget
+   "Builds History" Widget
 
 -  **Last Artifacts of the Build**: this widget is available for both
    personal and project dashboard. It is linked to only one job, and
@@ -550,7 +551,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    :alt: "Last artifacts of the Build" Widget
    :name: "Last artifacts of the Build" Widget
 
-    "Last artifacts of the Build" Widget
+   "Last artifacts of the Build" Widget
 
 Hudson References
 -----------------
