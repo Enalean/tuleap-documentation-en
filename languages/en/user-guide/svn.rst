@@ -1,5 +1,6 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
+.. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
 .. _version-control-with-subversion:
 
@@ -676,7 +677,7 @@ front-ends should be relatively straightforward.
 Logging In
 ----------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 Unlike CVS when used with the pserver protocol there is no explicit
 login command to issue to start working with a Subversion repository.
@@ -746,7 +747,7 @@ Where:
 Checking Code Out
 -----------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 Once a Subversion repository has been populated other |SYSPRODUCTNAME|
 users can checkout the source code and place it on their own
@@ -785,7 +786,7 @@ Where:
 Updating the Source Code
 ------------------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 Running an update command from within a working copy has the effect of
 updating the working copy (or a subpart of it) with the latest version
@@ -884,7 +885,7 @@ Where:
 Contributing your Changes (other users)
 ---------------------------------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 This is a variant of the previous section for those of you who do not
 have write access to the Subversion repository of a project and,
