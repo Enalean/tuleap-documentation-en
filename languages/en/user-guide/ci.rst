@@ -296,7 +296,7 @@ the way hudson will schedule the build. Two main options are available:
    trigger builds, you can protect the operation by specifying an
    authentication token. To really enable the build trigger after each
    commit, you will need to configure it in |SYSPRODUCTNAME|, in the
-   'Build' tab of your project (See `Link Hudson job with your Tuleap project`_). You will be able to specify your
+   'Build' tab of your project (See :ref:`link-hudson-job-with-your-|SYSPRODUCTNAME|-project`). You will be able to specify your
    token if you have defined one.
 
 Build configuration (steps)
@@ -400,6 +400,8 @@ enable services for your project).
 
 Once the service is enabled, you will see a "Build" tab in the service
 bar of your project : the Hudson continuous integration tab.
+
+.. _link-hudson-job-with-your-|SYSPRODUCTNAME|-project:
 
 Link Hudson job with your |SYSPRODUCTNAME| project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

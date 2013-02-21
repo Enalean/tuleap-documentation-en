@@ -2,6 +2,8 @@
 .. |SYSPRODUCTNAME| replace:: Tuleap
 .. |SYS_DEFAULT_DOMAIN| replace:: Tuleap.net
 
+.. project-administration:
+
 Project Administration
 ======================
 

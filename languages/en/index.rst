@@ -35,7 +35,7 @@ User Guide
     * :doc:`user-guide/svn`
     * :doc:`user-guide/git`
     * :doc:`user-guide/doc`
-    * :doc:`user-guide/ci`*
+    * :doc:`user-guide/ci`
     * :doc:`user-guide/wiki`
     * :doc:`user-guide/survey`
    
