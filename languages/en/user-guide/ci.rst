@@ -16,7 +16,7 @@ software engineering. These good practices aim at checking that a source
 code modification does not lead to a regression on the developping
 software application. This checking is usually performed on a different
 machine than your development one (this machine is called an integration
-server); and this checking is carried out rather frequently  [1]_, and
+server); and this checking is carried out rather frequently  [#f1]_, and
 so it's called Continuous Integration.
 
 The tool responsible for this checking is a Continuous Integration tool
@@ -436,9 +436,16 @@ enabled SCM trigger or not (see ?). Project admins will also see for
 each job some icons that let them modify the job or delete it (remove
 the link with |SYSPRODUCTNAME|).
 
+.. figure:: ../images/screenshots/sc_hudsonbrowsejobs.png
+   :align: center
+   :alt:  Hudson jobs associated with your project
+   :name:  Hudson jobs associated with your project
+
+    Hudson jobs associated with your project
+
 The name of the job is automatically detected during job creation. But
 you can change it if needed. This is pretty convenient if you want to
-make references to Hudson items (see ?). Spaces in the name of jobs are
+make references to Hudson items (see `Make a reference to a Job`_). Spaces in the name of jobs are
 not allowed. They are replaced by (\_), in order to allow references.
 
 The name of the job and the latest builds are hypertext links that will
@@ -461,21 +468,49 @@ many widgets. To know how to add widgets to your personal dashboard, see
    are member of. You can of course select the jobs you wish to display
    by selecting the preferences link of the widget.
 
+.. figure:: ../images/screenshots/sc_hudson_widget_my_jobs.png
+   :align: center
+   :alt:  "My Hudson Jobs" Widget
+   :name:  "My Hudson Jobs" Widget
+
+    "My Hudson Jobs" Widget
+
 -  **Jobs Overview**: this widget is only available on project
    dashboard. It can display an overview of all the jobs associated with
    this project. You can always choose the ones you want to display in
    the widget (preferences link).
 
+.. figure:: ../images/screenshots/sc_hudson_widget_jobs_overview.png
+   :align: center
+   :alt: "Jobs Overview" Widget
+   :name: "Jobs Overview" Widget
+
+    "Jobs Overview" Widget
+
 -  **Last Builds**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the last
    builds for this job (last one, last successfull, last failed). It
-   also displays the project weather report (project trend, see ?).
+   also displays the project weather report (project trend, see `Introduction to Continuous Integration`_).
+
+.. figure:: ../images/screenshots/sc_hudson_widget_last_builds.png
+   :align: center
+   :alt: "Lasts Builds" Widget
+   :name: "Lasts Builds" Widget
+
+    "Lasts Builds" Widget
 
 -  **Test Results**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the test
    results of the latest build for the selected job. To display
    something, your job needs to execute tests and publish them. The
    result is shown on a pie chart.
+
+.. figure:: ../images/screenshots/sc_hudson_widget_test_results.png
+   :align: center
+   :alt: "Test results" Widget
+   :name: "Test results" Widget
+
+    "Test results" Widget
 
 -  **Test Trend**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the test
@@ -485,23 +520,44 @@ many widgets. To know how to add widgets to your personal dashboard, see
    managers to check that the number of tests is increasing while the
    number of build and commits are increasing too.
 
+.. figure:: ../images/screenshots/sc_hudson_widget_test_trend.png
+   :align: center
+   :alt: "Tests Trend" Widget
+   :name: "Tests Trend" Widget
+
+    "Tests Trend" Widget
+
 -  **Build History**: this widget is available for both personal and
    project dashboard. It is linked to only one job, and show the build
    history, under the form of RSS feed. For each build of the list, you
    can see the build number, the status and the date the build has been
    scheduled.
 
+.. figure:: ../images/screenshots/sc_hudson_widget_builds_history.png
+   :align: center
+   :alt: "Builds History" Widget
+   :name: "Builds History" Widget
+
+    "Builds History" Widget
+
 -  **Last Artifacts of the Build**: this widget is available for both
    personal and project dashboard. It is linked to only one job, and
    show the last artifacts published. To display something, your job
    needs to publish artifacts.
+
+.. figure:: ../images/screenshots/sc_hudson_widget_last_artifacts.png
+   :align: center
+   :alt: "Last artifacts of the Build" Widget
+   :name: "Last artifacts of the Build" Widget
+
+    "Last artifacts of the Build" Widget
 
 Hudson References
 -----------------
 
 It is possible to make references to Hudson items in |SYSPRODUCTNAME|.
 There are some predefined references (job, build), but you can also
-create your own references if needed (see ? for more details about
+create your own references if needed (see :ref:'reference-overview` for more details about
 references)
 
 Make a reference to a Job
@@ -537,7 +593,7 @@ reference to a build, you can use the expressions:
 -  build #projet\_num:AJob/XXX (will make a reference to the build
    number 'XXX' of the job 'AJob' of the project number 'project\_num')
 
-.. [1]
+.. [#f1]
    Several strategies are possible: after each commit, with regular
    interval (every hours, every night). It depends on the size of the
    project, the number of developers, the frequency of modifications.
