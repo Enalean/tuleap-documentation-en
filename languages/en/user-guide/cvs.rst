@@ -1,5 +1,6 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
+.. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
 .. _version-control-with-CVS:
 
@@ -500,7 +501,7 @@ front-ends should not be a problem.
 Logging In
 ----------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 The first step when dealing with a |SYSPRODUCTNAME|-hosted CVS
 repository is to authenticate yourself with the CVS server. In
@@ -592,7 +593,7 @@ Where:
 Checking Code Out
 -----------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 Once a CVS repository has been populated project members (or
 |SYSPRODUCTNAME| users at large if they are granted access) can
@@ -643,7 +644,7 @@ Where:
 Updating the Source Code
 ------------------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 Running a "``cvs update``\ " command from within a working copy has the
 effect of updating the working copy (or a subpart of it) with the latest
@@ -730,7 +731,7 @@ can automatically be built and unit tested nightly.
 Contributing your Changes (other users)
 ---------------------------------------
 
-*Audience: all |SYSPRODUCTNAME| users*
+*Audience: all* |SYSPRODUCTNAMES| *users*
 
 This is a variant of the previous section for those of you who do not
 have write access to the CVS repository of a project and, therefore,
