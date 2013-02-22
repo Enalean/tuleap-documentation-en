@@ -146,7 +146,7 @@ To log into the |SYSPRODUCTNAME| site, go to the |SYSPRODUCTNAME|
 Site at `http://SYS\_DEFAULT\_DOMAIN <http://&SYS_DEFAULT_DOMAIN;/>`__
 and click on the "Login" link. If you typed your login and password OK,
 |SYSPRODUCTNAME| presents you with your Personal Page (or Personal
-Dashboard) (`The Personal Page of a |SYSPRODUCTNAME| user`_). At any point in time you can return to your
+Dashboard) (`The Personal Page of a Tulep user`_). At any point in time you can return to your
 |SYSPRODUCTNAME| Personal Page by selecting the "My Personal Page" in
 the upper part of the |SYSPRODUCTNAME| Main Menu.
 
@@ -160,8 +160,8 @@ be impatient to see fixed.
 
 .. figure:: ../images/screenshots/sc_mypersonalpage.png
    :align: center
-   :alt: The Personal Page of a |SYSPRODUCTNAME| user
-   :name: The Personal Page of a |SYSPRODUCTNAME| user
+   :alt: The Personal Page of a Tuleap user
+   :name: The Personal Page of a Tuleap user
 
    The Personal Page of a |SYSPRODUCTNAME| user
 
