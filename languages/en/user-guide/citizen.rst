@@ -163,7 +163,7 @@ be impatient to see fixed.
    :alt: The Personal Page of a Tuleap user
    :name: The Personal Page of a Tuleap user
 
-   The Personal Page of a |SYSPRODUCTNAME| user
+   The Personal Page of a Tuleap user
 
 |SYSPRODUCTNAME| allows you to personalize your page to fit your
 needs. The content of your page is made of *widgets*. All widgets can be
