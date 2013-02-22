@@ -1,11 +1,9 @@
-.. contents::
-   :depth: 3
-..
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Creating a New Project
 ======================
 
-So - you are a freshly registered SYS\_PRODUCT\_NAME user and you want
+So - you are a freshly registered |SYSPRODUCTNAME| user and you want
 to make your developer or project leader life easier. In other words you
 want to:
 
@@ -23,21 +21,21 @@ want to:
    possibly letting others re-use your software and build on it.
 
 If any of these points is appealing to you then you should definitely
-host your software project on SYS\_PRODUCT\_NAME. Let's see how you can
+host your software project on |SYSPRODUCTNAME|. Let's see how you can
 do that.
 
 Project Registration
 ====================
 
-Before you create a new project you must be a registered user (see ?).
+Before you create a new project you must be a registered user (see :ref:`classes-of-citizens`).
 You then login and select the item "Register New Project" in the upper
-part of the SYS\_PRODUCT\_NAME Main Menu.
+part of the |SYSPRODUCTNAME| Main Menu.
 
 The project registration is an easy process:
 
 -  **Project Registration**
 
-   Some information about SYS\_PRODUCT\_NAME Services. Just read it.
+   Some information about |SYSPRODUCTNAME| Services. Just read it.
 
    Do not forget to read and agree the Terms of Services Agreement.
 
@@ -46,18 +44,18 @@ The project registration is an easy process:
    Give the project short name and the project full name. Carefully read
    the restrictions that apply to both names before you type anything.
    The full name can be changed at any time in the life of the project.
-   The short name cannot [1]_. So think about it twice before you make a
+   The short name cannot [#f1]_. So think about it twice before you make a
    decision!
 
 -  **Project Template**
 
-   You already registered a SYS\_PRODUCT\_NAME project and would now
+   You already registered a |SYSPRODUCTNAME| project and would now
    like to reuse the same configuration (services, trackers, documents,
-   references, ...) ? Make your old project a template project (see ?)
+   references, ...) ? Make your old project a template project (see :ref:`project-type`)
    and you will find it here in the list of available project templates.
    Check your old project as template and your new registered project
    will be staffed as you are used to. If you don't want to reuse a
-   specific template just keep the Default SYS\_PRODUCT\_NAME Template
+   specific template just keep the Default |SYSPRODUCTNAME| Template
    checked and go on.
 
 -  **Project Description**
@@ -93,8 +91,8 @@ The project registration is an easy process:
 
    Most of the time the only valid choice here is the default one:
    "SYS\_ORG\_NAME Code eXchange Policy". As explained earlier in this
-   document the SYS\_PRODUCT\_NAME Team assisted by SYS\_ORG\_NAME
-   lawyers have carefully crafted the SYS\_PRODUCT\_NAME Policy and it
+   document the |SYSPRODUCTNAME| Team assisted by SYS\_ORG\_NAME
+   lawyers have carefully crafted the |SYSPRODUCTNAME| Policy and it
    is very unlikely that you need to create your own. If you do you'll
    have to talk to us and to the SYS\_ORG\_NAME Legal Department to
    validate it. A number of truly Open Source licenses are also
@@ -104,15 +102,15 @@ The project registration is an easy process:
 -  **Final Confirmation**
 
    Last chance to review the submitted information before you send it to
-   the SYS\_PRODUCT\_NAME Team for validation. Don't worry: the project
+   the |SYSPRODUCTNAME| Team for validation. Don't worry: the project
    members can later update all pieces of information shown on this
    page.
 
-After you validate the project registration, the SYS\_PRODUCT\_NAME Team
+After you validate the project registration, the |SYSPRODUCTNAME| Team
 reviews the information you submitted and decides to approve it or not.
 This process can take up to 24 hours but in most cases it's less than a
 couple of hours. So far all projects have been accepted so there is
-little to fear ... Shortly after the SYS\_PRODUCT\_NAME Team approval
+little to fear ... Shortly after the |SYSPRODUCTNAME| Team approval
 you'll receive an e-mail summarizing the characteristics of your project
 including a pointer to your new "Project Dashboard" page. Bookmark it in
 a safe place!
@@ -145,14 +143,14 @@ after a project is registered:
     **Tip**
 
     Rather than putting in place a heavy hierarchy of project topics and
-    sub-topics, the SYS\_PRODUCT\_NAME Team has decided to start small
+    sub-topics, the |SYSPRODUCTNAME| Team has decided to start small
     and create only a handful of top-level topics in the hierarchy. As
     time goes and as more and more projects register on
-    SYS\_PRODUCT\_NAME we'll refine the hierarchy. If you cannot find
+    |SYSPRODUCTNAME| we'll refine the hierarchy. If you cannot find
     the appropriate topic for your project, please contact us through
-    the "Contact Us" link in the SYS\_PRODUCT\_NAME Main Menu or submit
+    the "Contact Us" link in the |SYSPRODUCTNAME| Main Menu or submit
     a request in the appropriate Discussion Forum.
 
-.. [1]
-   Actually it can but you have to ask the SYS\_PRODUCT\_NAME Team to do
+.. [#f1]
+   Actually it can but you have to ask the |SYSPRODUCTNAME| Team to do
    it for you.

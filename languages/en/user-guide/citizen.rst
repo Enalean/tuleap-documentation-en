@@ -3,6 +3,8 @@
 Becoming a |SYSPRODUCTNAME| Citizen
 =====================================
 
+.. _classes-of-citizens:
+
 Classes of Citizens
 ===================
 
