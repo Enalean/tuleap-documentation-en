@@ -252,7 +252,7 @@ are some of the preferences you can define:
    -  tab (tab).
 
 -  **CSV date format**: |SYSPRODUCTNAME| provides export and import
-   functionalities (See ? for details). The import/export format is CSV
+   functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
    format. Like CSV norm is not implemented by the same way in each
    software, we allow you to change the CSV date format, in order to fit
    with your preferred software! The available formats are:
@@ -268,5 +268,6 @@ are some of the preferences you can define:
    your preferences.
 
 .. |The Personal Page of a |SYSPRODUCTNAME| user| image:: ../../screenshots/en_US/sc_mypersonalpage.png
-.. |image1| image:: ../../icons/trash.png
-.. |image2| image:: ../../icons/trash.png
+.. |image1| image:: ../images/icons/trash.png
+.. |image2| image:: ../images/icons/trash.png
+
