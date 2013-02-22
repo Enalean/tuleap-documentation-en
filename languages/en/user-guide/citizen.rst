@@ -144,7 +144,7 @@ To log into the |SYSPRODUCTNAME| site, go to the |SYSPRODUCTNAME|
 Site at `http://SYS\_DEFAULT\_DOMAIN <http://&SYS_DEFAULT_DOMAIN;/>`__
 and click on the "Login" link. If you typed your login and password OK,
 |SYSPRODUCTNAME| presents you with your Personal Page (or Personal
-Dashboard) (`The Personal Page of a Tuleap user`_). At any point in time you can return to your
+Dashboard) (`The Personal Page of a |SYSPRODUCTNAME| user`_). At any point in time you can return to your
 |SYSPRODUCTNAME| Personal Page by selecting the "My Personal Page" in
 the upper part of the |SYSPRODUCTNAME| Main Menu.
 
@@ -156,7 +156,12 @@ including to foreign projects. By doing so, |SYSPRODUCTNAME| allows
 you to follow the evolution of bugs that you have reported and you might
 be impatient to see fixed.
 
-|The Personal Page of a |SYSPRODUCTNAME| user|
+.. figure:: ../images/screenshots/sc_mypersonalpage.png
+   :align: center
+   :alt: The Personal Page of a |SYSPRODUCTNAME| user
+   :name: The Personal Page of a |SYSPRODUCTNAME| user
+
+   The Personal Page of a |SYSPRODUCTNAME| user
 
 |SYSPRODUCTNAME| allows you to personalize your page to fit your
 needs. The content of your page is made of *widgets*. All widgets can be
@@ -235,7 +240,7 @@ are some of the preferences you can define:
    personal desktop machine
 
 -  **CSV separator**: |SYSPRODUCTNAME| provides you export and import
-   functionalities (See ? for details). The import/export format is CSV
+   functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
    format. Like CSV norm is not implemented by the same way in each
    software, we allow you to change the CSV separator, in order to fit
    with your preferred software! The available separators are:
