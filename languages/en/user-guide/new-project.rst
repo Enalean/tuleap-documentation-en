@@ -25,6 +25,8 @@ If any of these points is appealing to you then you should definitely
 host your software project on |SYSPRODUCTNAME|. Let's see how you can
 do that.
 
+.. _project-registration:
+
 Project Registration
 ====================
 

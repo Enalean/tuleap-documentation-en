@@ -141,12 +141,12 @@ Project Type
 
 -  **Template Project**: If you choose this project type new projects
    can reuse this projects service configuration. When registering a new
-   project (see ?) your template project is listed as available
+   project (see :ref:`project-registration`) your template project is listed as available
    template. When choosing your template project then the new project
    will use exactly the same configuration. This includes that
 
    -  the new project is classified into the same trove categories as
-      the template project (see ?).
+      the template project (see :ref:`software-map-(or Project Tree)`).
 
    -  the same services are enabled (see `Service Configuration`_). Unavailable services won't
       be present. Disabled services will be disabled by default.
@@ -205,7 +205,7 @@ There is one exception, the **Home Page** service is a system service
 but it can be customized with any URL. Each project hosted on
 |SYSPRODUCTNAME| has its own virtual Web server available on the
 |SYSPRODUCTNAME| site. By default the "Home Page" in the Project
-Service Bar links to this location (see ? for more details). If you want
+Service Bar links to this location (see :ref:`project-web-site` for more details). If you want
 the Home Page of your project to link to some other locations on the
 Intranet or on the Web, simply replace the default value with your own
 Web location. Do not confuse your Project Home Page with your Project
@@ -797,7 +797,7 @@ the Project Data Export page generates and downloads a CSV file that you
 can save on your local disk or directly open in Excel or any other
 spreadsheet of your choice. No particular setting is required in most
 cases. Nevertheless, you can change the CSV separator and the date
-format (see ?) if the default one doesn't correspond with your Excel
+format (see :ref:`preferences`) if the default one doesn't correspond with your Excel
 version  [#f2]_.
 
 Importing CSV Files in MS-Access
