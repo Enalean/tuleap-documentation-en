@@ -228,6 +228,8 @@ you. However, we would like to draw your attention on some of them:
    the secure shell SSH to access |SYSPRODUCTNAME| instantly without
    having to type a password. More on that in ?
 
+.. _preferences:
+
 Preferences
 ===========
 
