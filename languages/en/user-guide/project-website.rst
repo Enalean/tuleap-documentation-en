@@ -1,6 +1,8 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
+.. _project-web-site:
+
 Project Web Site
 ================
 

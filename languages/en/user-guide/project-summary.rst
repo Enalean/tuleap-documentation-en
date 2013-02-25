@@ -51,7 +51,7 @@ Page" link in the |SYSPRODUCTNAME| Main Menu. (see :ref:`login-and-personal-page
     you describe what the project is about, related links and resources,
     etc. |SYSPRODUCTNAME| also offers a Web Site to each project. The
     "Home Page" item in the Project Main Menu is precisely a pointer to
-    this Web Site (see ? for more information on your Project Web Site
+    this Web Site (see :ref:`project-web-site` for more information on your Project Web Site
     and how to use it).
 
 Project Dashboard Content
