@@ -25,6 +25,7 @@ User Guide
 ==========
     
     * :doc:`user-guide/intro`
+    * :doc:`user-guide/overview`
     * :doc:`user-guide/citizen`
     * :doc:`user-guide/new-project`
     * :doc:`user-guide/project-summary`
@@ -37,8 +38,12 @@ User Guide
     * :doc:`user-guide/doc`
     * :doc:`user-guide/ci`
     * :doc:`user-guide/wiki`
+    * :doc:`user-guide/communication`
     * :doc:`user-guide/survey`
-   
+    * :doc:`user-guide/project-website`
+    * :doc:`user-guide/project-links`
+    * :doc:`user-guide/other-services`
+    * :doc:`user-guide/legal`   
 
 
 
