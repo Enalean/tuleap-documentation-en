@@ -15,6 +15,8 @@ services that can be customized by the project team. These include
 mailing lists, the News service, the Web Forums and a Instant Messaging
 Plug-in.
 
+.. _mailing-lists:
+
 Mailing Lists
 =============
 

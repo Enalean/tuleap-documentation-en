@@ -13,6 +13,8 @@ public and can be visited by any |SYSPRODUCTNAME| user including
 anonymous ones. In some sense the Project Dashboard displays the public
 face of a project.
 
+.. _accessing-a-project-dashboard:
+
 Accessing a Project Dashboard
 =============================
 

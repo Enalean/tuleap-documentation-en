@@ -43,7 +43,7 @@ Entering the Tracker Service
 ============================
 
 To enter the Tracker service of a given project, first go to the Project
-Dashboard (see ?) and either click the "Trackers" item in the Project
+Dashboard (see :ref:`accessing-a-project-dashboard`) and either click the "Trackers" item in the Project
 Main Menu located in the upper part of the page or you can directly
 choose a tracker from the trackers listed in the Public Area of the
 Project Dashboard.
@@ -802,7 +802,7 @@ CSV file submission screen. This page allows manual validation of the
 tracker field names (shortname), indicating which fields are mandatory
 in case of a new artifact submission. In addition, it gives you a sample
 CSV file. As for the export feature, you can specify the separator used
-in the CSV file you want to import as well as the date format (See ?).
+in the CSV file you want to import as well as the date format (See :ref:`preferences`).
 If you already use the Tracker Artifact Export (see :ref:`project-data-export`) you will notice
 that the format of the files to import and the exported files are
 exactly the same. This means that if you changed your CSV separator for
@@ -2105,7 +2105,7 @@ qualifying and dispatching the artifacts.
 
     If you want to notify many people at once, we suggest that you use
     the |SYSPRODUCTNAME| Mailing Lists service to create a
-    distribution lists (see ?). Once the Mailing List is up and running
+    distribution lists (see :ref:`mailing-lists`). Once the Mailing List is up and running
     type the e-mail address in the Global Email Notification field.
 
     Creating a Mailing List on |SYSPRODUCTNAME| has several
