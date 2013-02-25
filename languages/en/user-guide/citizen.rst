@@ -226,7 +226,7 @@ you. However, we would like to draw your attention on some of them:
    login/password as for the Web interface. To automate the shell login
    you can share a public encryption key with |SYSPRODUCTNAME| and use
    the secure shell SSH to access |SYSPRODUCTNAME| instantly without
-   having to type a password. More on that in ?
+   having to type a password. More on that in :ref:`shell-account`
 
 .. _preferences:
 
