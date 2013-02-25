@@ -1,6 +1,5 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Project Links
 =============
@@ -62,58 +61,58 @@ link target) on the summary page.
 Terms and Definitions
 =====================
 
-+----------------------------------+------------------------------------------+
-| Term                             | Definition                               |
-+==================================+==========================================+
-| **Data Aggregation**             | The process of collecting data from      |
-|                                  | related projects for display in a        |
-|                                  | collated form.                           |
-+----------------------------------+------------------------------------------+
-| **Link Administrator**           | The users who are allowed to create link |
-|                                  | types and to modify project linkages -   |
-|                                  | project administrators are automatically |
-|                                  | link administrators.                     |
-+----------------------------------+------------------------------------------+
-| **Link Type**                    | The data item that defines the           |
-|                                  | properties of a project linkage and      |
-|                                  | gives it a name. They are defined within |
-|                                  | a project, and are inherited from a      |
-|                                  | template.                                |
-+----------------------------------+------------------------------------------+
-| **Owner**                        | The project that is responsible for      |
-|                                  | creating and administering a link.       |
-+----------------------------------+------------------------------------------+
-| **Project Family**               | A strict hierarchy where there is a      |
-|                                  | parent project with one or more child    |
-|                                  | (or sub-) projects.                      |
-+----------------------------------+------------------------------------------+
-| **Project Link / Relationship    | The data item that joins one project     |
-| Link**                           | with another to create related projects  |
-|                                  | - an instance of a project link type     |
-+----------------------------------+------------------------------------------+
-| **Related Projects**             | Two projects for which there is a link   |
-|                                  | entry in at least one of them pointing   |
-|                                  | to the other.                            |
-+----------------------------------+------------------------------------------+
-| **Reverse name/linkage**         | The name (defined in the owner project)  |
-|                                  | to be used to describe the relationship  |
-|                                  | within its target projects' context      |
-|                                  | (e.g. parent and children).              |
-+----------------------------------+------------------------------------------+
-| **Ring of interest**             | A group of projects that have declared   |
-|                                  | themselves as having something in common |
-|                                  | and are linked together to share         |
-|                                  | information.                             |
-+----------------------------------+------------------------------------------+
-| **Ringmaster**                   | A project that exists (only) so that     |
-|                                  | other projects may reference it to       |
-|                                  | become members of a ring.                |
-+----------------------------------+------------------------------------------+
-| **Target**                       | The project that is the subject of a     |
-|                                  | link from another project.               |
-+----------------------------------+------------------------------------------+
+=====================================   ==========================================
+ Term                                   Definition                               
+=====================================   ==========================================
+**Data Aggregation**                    The process of collecting data from      
+                                        related projects for display in a        
+                                        collated form.                           
 
-Table: Project links terms and definitions
+**Link Administrator**                  The users who are allowed to create link 
+                                        types and to modify project linkages -   
+                                        project administrators are automatically 
+                                        link administrators.                     
+
+ **Link Type**                          The data item that defines the           
+                                        properties of a project linkage and      
+                                        gives it a name. They are defined within 
+                                        a project, and are inherited from a      
+                                        template.                                
+
+ **Owner**                              The project that is responsible for      
+                                        creating and administering a link.       
+
+**Project Family**                      A strict hierarchy where there is a      
+                                        parent project with one or more child    
+                                        (or sub-) projects.                      
+
+ **Project Link / Relationship Link**   The data item that joins one project     
+                                        with another to create related projects  
+                                        - an instance of a project link type     
+
+ **Related Projects**                   Two projects for which there is a link   
+                                        entry in at least one of them pointing   
+                                        to the other.                            
+
+ **Reverse name/linkage**               The name (defined in the owner project)  
+                                        to be used to describe the relationship  
+                                        within its target projects' context      
+                                        (e.g. parent and children).              
+
+ **Ring of interest**                   A group of projects that have declared   
+                                        themselves as having something in common 
+                                        and are linked together to share         
+                                        information.                             
+
+ **Ringmaster**                         A project that exists (only) so that     
+                                        other projects may reference it to       
+                                        become members of a ring.                
+
+ **Target**                             The project that is the subject of a     
+                                        link from another project.               
+=====================================   ==========================================
+
+      Project links terms and definitions
 
 Creating links
 ==============
