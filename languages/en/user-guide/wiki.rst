@@ -116,7 +116,7 @@ By default, |SYSPRODUCTNAME| wikis are viewable and editable by any
 
 While this is usually the best policy, some wikis should not be public.
 For those cases, |SYSPRODUCTNAME| offers a permission mechanism based
-on user groups, as for file releases (see :ref:`users-groups` and :ref:`package-modification`). Permissions may be
+on user groups, as for file releases (see :ref:`user-groups` and :ref:`package-modification`). Permissions may be
 set at the wiki level, and apply to all pages, or at the page level, so
 that only selected pages are protected.
 
