@@ -1,6 +1,5 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Survey Manager
 ==============
@@ -8,13 +7,13 @@ Survey Manager
 The Survey Manager allows a project team to create surveys. Providing a
 survey service in an environment where most services are related to
 software development activities may seem a bit strange at first glance.
-However if you remember that SYS\_PRODUCT\_NAME is about source code
+However if you remember that |SYSPRODUCTNAME| is about source code
 sharing and community building, you'll soon realize that part of the
 game in building a strong community is to listen to the community
 feedback and make it happy.
 
 Listening to your community can be done in various ways on
-SYS\_PRODUCT\_NAME:
+|SYSPRODUCTNAME|:
 
 -  through your project mailing lists and web forums,
 
@@ -24,7 +23,7 @@ SYS\_PRODUCT\_NAME:
 -  or by analyzing the profile of the submitted Support Requests over a
    period of time.
 
-All these communication channels allow SYS\_PRODUCT\_NAME users to push
+All these communication channels allow |SYSPRODUCTNAME| users to push
 spontaneous feedback on a topic that they wholeheartedly cherish. But
 what if you want to collect the opinion of your community on a precise
 number of subjects and you want the answers to be taken from a set of
@@ -40,7 +39,12 @@ Survey Manager is for. It allows you to:
 -  review the results to identify the dominant trends in your community
    of users.
 
-|Survey Manager Welcome screen|
+.. figure:: ../images/screenshots/sc_surveywelcome.png
+   :align: center
+   :alt: Survey Manager Welcome screen
+   :name: Survey Manager Welcome screen
+
+   Survey Manager Welcome screen
 
 Publishing a Survey
 ===================
@@ -49,11 +53,11 @@ Publishing a Survey
 
 You have been working hard to produce this perfectly polished survey and
 now you want to reach the broadest possible audience. With
-SYS\_PRODUCT\_NAME you can make your survey visible in a number of ways:
+|SYSPRODUCTNAME| you can make your survey visible in a number of ways:
 
 **Through the Survey Manager itself**: as soon as a survey is created it
-is visible in your Survey Manager Welcome screen (see ?). So any
-SYS\_PRODUCT\_NAME user visiting your Project Dashboard will see that
+is visible in your Survey Manager Welcome screen (see `Survey Manager Welcome screen`_). So any
+|SYSPRODUCTNAME| user visiting your Project Dashboard will see that
 surveys are available in the "Public Area" (survey count not null) and
 by clicking on "Surveys" she will be able to take whatever survey is
 available.
@@ -62,17 +66,17 @@ available.
 you publish a piece of news about this survey: why you did it, who is
 expected to take it and type the Web location corresponding to the
 survey (see below). By publishing a piece of news you also have a chance
-to see it on the SYS\_PRODUCT\_NAME front page if the SYS\_PRODUCT\_NAME
+to see it on the |SYSPRODUCTNAME| front page if the |SYSPRODUCTNAME|
 Team decides so.
 
 **E-mail**: the survey you have created can be accessed directly via a
-Web pointer (URL) on the SYS\_PRODUCT\_NAME site. As a consequence you
+Web pointer (URL) on the |SYSPRODUCTNAME| site. As a consequence you
 can push your survey to virtually anybody in the Corporation simply by
 referencing the survey Web pointer in an e-mail message, a web page or
-any kind of office document. Even non SYS\_PRODUCT\_NAME Users will be
+any kind of office document. Even non |SYSPRODUCTNAME| Users will be
 able to take the survey.
 
-All surveys created on SYS\_PRODUCT\_NAME can be accessed through the
+All surveys created on |SYSPRODUCTNAME| can be accessed through the
 following Web pointer (URL):
 
 ::
@@ -82,12 +86,12 @@ following Web pointer (URL):
 where N is your project ID number and X is the survey ID number as shown
 in the survey list displayed on the Survey Manager welcome screen. Your
 project ID number N is visible on the Survey Manager Administration
-screen (see ?)
+screen (see `Survey Manager Welcome screen`_)
 
 Taking a survey is just a matter of accessing the survey by one of the
 previously mentioned method, answer the questions and click on the
 "Submit" button at the bottom of the page. A sample survey is shown on
-?.
+`A sample survey taken from the |SYSPRODUCTNAME| project`_.
 
     **Tip**
 
@@ -99,7 +103,12 @@ previously mentioned method, answer the questions and click on the
     information gathered is used only in aggregate form, not to single
     out specific users or developers.
 
-|A sample survey taken from the SYS\_PRODUCT\_NAME project|
+.. figure:: ../images/screenshots/sc_surveysample.png
+   :align: center
+   :alt: A sample survey taken from the |SYSPRODUCTNAME| project
+   :name: A sample survey taken from the |SYSPRODUCTNAME| project
+
+   A sample survey taken from the |SYSPRODUCTNAME| project
 
 Administering Surveys
 =====================
@@ -118,10 +127,15 @@ project members. The Administration module allows you to:
 To access administrative functions of the Survey , go to your Project
 Dashboard and click on the "Survey" item in the Project Main menu at the
 top of the screen, then select the "Admin" item in the Survey Manager
-menu (see ?). From there you have access to all the Survey
-Administrative functions (see ?).
+menu (see `Survey Manager Welcome screen`_). From there you have access to all the Survey
+Administrative functions (see `Survey Manager Administration screen`_).
 
-|Survey Manager Administration screen|
+.. figure:: ../images/screenshots/sc_surveyadmin.png
+   :align: center
+   :alt: Survey Manager Administration screen
+   :name: Survey Manager Administration screen
+
+   Survey Manager Administration screen
 
 Survey Structure
 ----------------
@@ -158,7 +172,7 @@ To create questions click on the "Add Questions" item either in the
 Survey Manager Administration menu or in the content of the page itself.
 Defining a question is simply a matter of typing the question itself and
 then choosing a response type. There are 5 types of possible responses
-(see ? for some sample questions):
+(see `A sample survey taken from the |SYSPRODUCTNAME| project`_ for some sample questions):
 
 -  **Radio Buttons 1-5**: this response type will force the user to give
    an answer to the question on a scale from 1 to 5 using 5 radio
@@ -186,7 +200,7 @@ then choosing a response type. There are 5 types of possible responses
 
 -  **None**: Assigning this type to a question will result in the
    de-activation of the question. This question will disappear from all
-   the surveys using it. As usual in SYS\_PRODUCT\_NAME the question is
+   the surveys using it. As usual in |SYSPRODUCTNAME| the question is
    not deleted and all the answers collected so far in the various
    survey where this question is used remain untouched.
 
@@ -196,7 +210,7 @@ bottom of the screen
 
 Editing questions is also possible. To do so, click on the "Edit
 Existing Questions" item in the Survey Manager Administration menu or in
-the content of the page itself (see ?). You are then presented with the
+the content of the page itself (see `Survey Manager Administration screen`_). You are then presented with the
 list of questions that are currently available in your question pool.
 Clicking on the question identifier number in the leftmost column allows
 you to change the question properties.
@@ -216,7 +230,7 @@ create a survey and attach questions to it.
 
 To create a survey click on the "Add Surveys" item either in the Survey
 Manager Administration menu or in the content of the page itself (see
-?). Then enter the following information:
+`Survey Manager Administration screen`_). Then enter the following information:
 
 -  The name of the survey (give it a short title)
 
@@ -229,7 +243,7 @@ Manager Administration menu or in the content of the page itself (see
 
 -  The status of the survey: you can make it active or not. As long as a
    survey is inactive it doesn't show up in the welcome screen of the
-   Survey Manager meaning that it is not visible to SYS\_PRODUCT\_NAME
+   Survey Manager meaning that it is not visible to |SYSPRODUCTNAME|
    users. Similarly accessing the survey directly via its Web location
    will not work either.
 
@@ -261,7 +275,12 @@ who took the survey. To review the results of a given survey click on
 the "Show Results" item in the Survey Manager Administration menu and
 then click on the Survey ID number you are interested in.
 
-|Survey Results|
+.. figure:: ../images/screenshots/sc_surveyresults.png
+   :align: center
+   :alt: Survey Results
+   :name: Survey Results
+
+   Survey Results
 
 A list of all the questions attached to this survey will show up on the
 screen. Next to each question is an aggregate view of the existing
@@ -273,10 +292,5 @@ value distribution for radio button answers.
     **Tip**
 
     If you want to further massage the results of your surveys remember
-    that SYS\_PRODUCT\_NAME allows project administrators to export
-    project data including survey results. For more details see ?
-
-.. |Survey Manager Welcome screen| image:: ../../screenshots/en_US/sc_surveywelcome.png
-.. |A sample survey taken from the SYS\_PRODUCT\_NAME project| image:: ../../screenshots/en_US/sc_surveysample.png
-.. |Survey Manager Administration screen| image:: ../../screenshots/en_US/sc_surveyadmin.png
-.. |Survey Results| image:: ../../screenshots/en_US/sc_surveyresults.png
+    that |SYSPRODUCTNAME| allows project administrators to export
+    project data including survey results. For more details see :ref:`project-data-export`
