@@ -78,7 +78,7 @@ Removing a user
 ---------------
 
 Removing a project member is even easier. Just click on the trash icon
-(|image0|) next to the person's name to revoke his/her membership.
+(|image1|) next to the person's name to revoke his/her membership.
 Revoking membership has absolutely no effect on the history and the data
 integrity of the project. In other words all tracker artifacts assigned
 or submitted by this person will continue to show up as before in the
@@ -1023,9 +1023,4 @@ can also be adjusted to show more or less access log history.
    For example, by default, the separator for the french version of
    Excel is the semicolon instead of the comma.
 
-.. |image0| image:: ../../icons/trash.png
-.. |A Sample Project Administration Page| image:: ../../screenshots/en_US/sc_projectadminpage.png
-.. |A sample project members permission table| image:: ../../screenshots/en_US/sc_userpermissions.png
-.. |User Group Management Page| image:: ../../screenshots/en_US/sc_usergrouplist.png
-.. |User Group Edit| image:: ../../screenshots/en_US/sc_usergroupedit.png
-.. |Sample Access Log| image:: ../../screenshots/en_US/sc_sourcecodeaccesslogs.png
+.. |image1| image:: ../images/icons/trash.png

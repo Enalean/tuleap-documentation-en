@@ -179,6 +179,3 @@ Git References
 -  The Official Git Web Site. See http://git-scm.com/
 
 -  Pro Git book http://progit.org/book/ch1-1.html.
-
-.. |Git repositories fork screen| image:: ../../screenshots/en_US/sc_git_personal_fork.png
-.. |Control Git repository permissions| image:: ../../screenshots/en_US/sc_git_permissions.png

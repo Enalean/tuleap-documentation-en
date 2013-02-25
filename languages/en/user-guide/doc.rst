@@ -328,15 +328,3 @@ panel.
 There is no specific permissions. If a user can read(modify) a document,
 he can read(modify) all of its properties.
 
-.. |Folders and subfolders| image:: ../../screenshots/en_US/sc_docman2_folders.png
-.. |Actions| image:: ../../screenshots/en_US/sc_docman2_actions.png
-.. |Create a new document| image:: ../../screenshots/en_US/sc_docman2_newdocument.png
-.. |Create a new folder| image:: ../../screenshots/en_US/sc_docman2_newfolder.png
-.. |Display and edit properties| image:: ../../screenshots/en_US/sc_docman2_properties.png
-.. |Notifications| image:: ../../screenshots/en_US/sc_docman2_notifications.png
-.. |See a document history| image:: ../../screenshots/en_US/sc_docman2_history.png
-.. |Update a link| image:: ../../screenshots/en_US/sc_docman2_update.png
-.. |Create a new version for embedded file| image:: ../../screenshots/en_US/sc_docman2_newversion.png
-.. |Define permissions| image:: ../../screenshots/en_US/sc_docman2_permissions.png
-.. |Move a document| image:: ../../screenshots/en_US/sc_docman2_move.png
-.. |Shortcuts to move a document inside a folder| image:: ../../screenshots/en_US/sc_docman2_move_shortcuts.png

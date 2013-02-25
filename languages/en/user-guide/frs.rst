@@ -103,7 +103,7 @@ File Release Browsing and Download
 ==================================
 
 The latest version of each project package (if any) is always visible on
-the Project Dashboard (see :ref:`an-example-of-project-dashboard`). The latest version can immediately be
+the Project Dashboard (see :ref:`a-example-of-project-dashboard`). The latest version can immediately be
 downloaded by clicking on the "Download" link or visit the complete list
 of packages and release by clicking on the "[View ALL project files]"
 link.
@@ -403,8 +403,3 @@ the available processors. System processors are not editable. The other
 processors are specifics to the current project. You can edit them,
 delete them, as well as create new ones. A processor has a name and a
 rank in the processor list.
-
-.. |Delivery Manager Structure| image:: ../../slides/en_US/File_Release.png
-.. |Example of a Delivery Manager screen| image:: ../../screenshots/en_US/sc_filereleasedownloads.png
-.. |Package editing of the Camellia package| image:: ../../screenshots/en_US/sc_filereleasepackageadmin.png
-.. |The release update screen| image:: ../../screenshots/en_US/sc_frsreleases.png

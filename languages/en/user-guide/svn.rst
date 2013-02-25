@@ -1047,7 +1047,3 @@ Once logged in, type the following commands at the shell prompt:
    The Shell Account may have been deactivated by your
    |SYSPRODUCTNAME| site administrators.
 
-.. |Browsing the Subversion repository - A sample session| image:: ../../slides/en_US/SVN_Web_Session.png
-.. |Querying the Subversion tracking database of a given project| image:: ../../screenshots/en_US/sc_svnsearch.png
-.. |The detail of an atomic Subversion commit| image:: ../../screenshots/en_US/sc_svnshowcommit.png
-.. |A Typical Software Development Life Cycle on |SYSPRODUCTNAME|| image:: ../../slides/en_US/SVN_Life_Cycle.png

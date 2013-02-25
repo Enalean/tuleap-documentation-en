@@ -911,7 +911,3 @@ cited in :ref:`CVS-reference` for more information about CVS administrative file
    whether Free Software (SCCS, RCS, PKS, Arch, Monotone......) or
    Commercial (SourceSafe, ClearCase, TeamWare...)
 
-.. |Browsing the CVS repository - A sample session| image:: ../../slides/en_US/CVS_Web_Session.png
-.. |Querying the CVS tracking database of a given project| image:: ../../screenshots/en_US/sc_cvssearch.png
-.. |The detail of an atomic CVS commit| image:: ../../screenshots/en_US/sc_cvsshowcommit.png
-.. |A Typical Software Development Life Cycle on |SYSPRODUCTNAME|| image:: ../../slides/en_US/CVS_Life_Cycle.png
