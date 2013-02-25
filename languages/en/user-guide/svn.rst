@@ -230,7 +230,7 @@ project without impacting the others.
     through a Subversion client. However if need be and if this feature
     is available on your |SYSPRODUCTNAME| server, you can get access
     to your Subversion repository via your |SYSPRODUCTNAME| shell
-    account (see ?). Once the shell session is active you'll find your
+    account (see :ref:`shell-account`). Once the shell session is active you'll find your
     subversion repository under ``/svnroot/projectname`` you should
     never do that unless you know exactly what you are doing.
 
@@ -352,9 +352,8 @@ engineers:
    number) generated at each commit can be referenced in future commits,
    or in the follow-up comments of project artifacts like
    bugs/tasks/support requests simply by using the pattern
-   ``commit #XXXX``, or ``revision #XXXX`` or even ``rev
-         #XXXX`` (where XXXX is the unique commit ID). Any reference of
-   that kind will be automatically transformed into an hyperlink to the
+   ``commit #XXXX``, or ``revision #XXXX`` or even ``rev #XXXX`` (where XXXX is the unique commit ID). 
+   Any reference of that kind will be automatically transformed into an hyperlink to the
    Subversion tracking database. This mechanism makes it very easy to go
    from project artifacts like bugs, support requests or tasks to source
    code changes and vice-versa (more on this mechanism at `Cross-Referencing Artifacts and Subversion Commits`_).
@@ -474,7 +473,7 @@ Default Access Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Subversion access permission depends upon the project status (private or
-public) and the class of citizen a user belongs to (see ?).
+public) and the class of citizen a user belongs to (see :ref:`classes-of-citizens`).
 
 Regarding private projects, only project members have access to the
 Subversion repository. By default they all have read and write access.
@@ -495,7 +494,7 @@ as follows:
    enhancements…) from this class of user must return to the project
    team via the Patch Tracker (see ? ).
 
-       **Note**: if the "restricted users" mode is on (See ?), then
+       **Note**: if the "restricted users" mode is on (See :ref:`classes-of-citizens`), then
        there is no access for non project members by default.
 
        **Note**: all source code accesses are recorded by
@@ -650,7 +649,7 @@ notification:
     in receiving the email notification just need to subscribe to the
     mailing list. In addition, the |SYSPRODUCTNAME| mailing list
     manager will archive all the email messages which can prove very
-    useful for future reference. See ? for mailing list creation.
+    useful for future reference. See :ref:`mailing-lists` for mailing list creation.
 
 A Typical Subversion Life Cycle
 ===============================
@@ -873,8 +872,7 @@ Where:
 
     If you try to commit a modified file that was also modified on the
     Subversion repository in the meantime, the Subversion server will
-    refuse to execute the ``svn
-          commit`` command. You must first execute a ``svn update``
+    refuse to execute the ``svn commit`` command. You must first execute a ``svn update``
     command to bring your own working copy up to date with latest
     version, merge your changes with those from others (Subversion does
     it automatically in most cases) and then only commit your own
@@ -1002,7 +1000,7 @@ Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 Deliver this archive through the File Release service (see :ref:`delivery-manager-administration`).
 
 Done! Nice job...Take a break. And remember to announce the availability
-of your new version via the |SYSPRODUCTNAME| News service (see ?).
+of your new version via the |SYSPRODUCTNAME| News service (see :ref:`news-service`).
 
 Subversion for Project Administrators
 =====================================
@@ -1018,7 +1016,7 @@ can get access to the Subversion hook scripts.
 
 In order to access those hook scripts, you must be granted the right to
 log into the |SYSPRODUCTNAME| server with your Shell Account (see
-?) [#f1]_.
+:ref:`shell-account`) [#f1]_.
 
 .
 Once logged in, type the following commands at the shell prompt:

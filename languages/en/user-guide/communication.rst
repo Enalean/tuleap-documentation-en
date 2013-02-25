@@ -106,6 +106,8 @@ same page as before will bring you to archived messages grouped by
 month. Note that the current archiving software is not MIME-aware and
 does not support the archiving of attachments.
 
+.. _news-service:
+
 News Service
 ============
 
