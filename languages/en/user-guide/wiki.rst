@@ -1,6 +1,8 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
+.. _wiki:
+
 Wiki
 ====
 
