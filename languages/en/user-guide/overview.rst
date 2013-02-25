@@ -358,7 +358,7 @@ in the following resources:
 
 -  **Software Projects**: a match is attempted with project names as
    well as their short and long description. This search mechanism is
-   very complementary with the Software Map (see ` Software Map (or Project Tree)`_). Notice that a
+   very complementary with the Software Map (see `Software Map (or Project Tree)`_). Notice that a
    private project will never appear as a search result.
 
 -  **Code Snippet Library**: Code snippets are small pieces of code that
