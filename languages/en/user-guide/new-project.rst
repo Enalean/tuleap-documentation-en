@@ -86,7 +86,7 @@ The project registration is an easy process:
    Selected". If you used a project template that had already been
    classified you will find its categories already selected here. You
    can change the trove categories for this project at any time. You can
-   categorize your project according to the seven criteria listed in ?.
+   categorize your project according to the seven criteria listed in :ref:`software-map-(or Project Tree)`.
 
 -  **Software Policy**
 
