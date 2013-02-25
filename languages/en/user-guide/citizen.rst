@@ -139,6 +139,8 @@ validated from outside.
     can find your login again in the list of selected users. If so,
     apply the previous procedure. If not then contact us!
 
+.. _login-and-personal-page:
+
 Login and Personal Page
 =======================
 
