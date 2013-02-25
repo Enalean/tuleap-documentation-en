@@ -756,7 +756,7 @@ Diff files can be generated either with the ``diff`` tool (part of the
 GNU tools) that is available on all platforms including Windows or
 directly with CVS if you have been hacking on a CVS working copy.
 
-**The ``diff`` way:**
+**The** ``diff`` **way:**
 
 -  Use the diff way when you obtained the original source code from a
    File Release and not from the project CVS repository. Let's assume
