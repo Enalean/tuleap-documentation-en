@@ -1,12 +1,11 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Wiki
 ====
 
-SYS\_PRODUCT\_NAME offers a Wiki service to each project. The wiki
-available in SYS\_PRODUCT\_NAME is based on a popular wiki tool called
+|SYSPRODUCTNAME| offers a Wiki service to each project. The wiki
+available in |SYSPRODUCTNAME| is based on a popular wiki tool called
 `phpWiki <http://phpwiki.sourceforge.net>`__.
 
 Wiki Overview
@@ -21,19 +20,19 @@ the content that is already in place.
 A wiki enables documents to be written collectively in a simple markup
 language using a web browser. A single page in a wiki is referred to as
 a "wiki page," while the entire body of pages, which are usually highly
-interconnected via hyperlinks, is called "the wiki.". SYS\_PRODUCT\_NAME
+interconnected via hyperlinks, is called "the wiki.". |SYSPRODUCTNAME|
 offers an intermediate representation called a "Wiki Document": it is a
 wiki page that is directly accessible from the project wiki main page.
 
 A defining characteristic of wiki technology is the ease with which
 pages can be created and updated. There is no review or approval process
-before modifications are accepted, and SYS\_PRODUCT\_NAME wikis are open
-to all SYS\_PRODUCT\_NAME registered users.
+before modifications are accepted, and |SYSPRODUCTNAME| wikis are open
+to all |SYSPRODUCTNAME| registered users.
 
 Wiki Page Formatting
 --------------------
 
-In SYS\_PRODUCT\_NAME wikis, there are three representations for each
+In |SYSPRODUCTNAME| wikis, there are three representations for each
 page: the HTML code, the web page resulting from rendering that code by
 a web browser, and the user-editable source code, from which the server
 produces the HTML. The latter format, known as "wikitext", is written in
@@ -55,13 +54,13 @@ structures. Each page typically contains a large number of links to
 other pages. Links are automatically created using a specific syntax,
 the so-called "link pattern."
 
-SYS\_PRODUCT\_NAME wikis use CamelCase as a link pattern, produced by
+|SYSPRODUCTNAME| wikis use CamelCase as a link pattern, produced by
 capitalizing words in a phrase and removing the spaces between them (the
 word "CamelCase" is itself an example of CamelCase). The term CamelCase
 comes from the uppercase "bumps" in the middle of the compound word,
 suggesting the bumps of a camel.
 
-SYS\_PRODUCT\_NAME wikis also allow other ways of creating wiki links by
+|SYSPRODUCTNAME| wikis also allow other ways of creating wiki links by
 putting anything into square brackets. This allows the creation of page
 titles containing blank characters.
 
@@ -86,13 +85,13 @@ pointing to them) are rarely created.
 Searching
 ---------
 
-SYS\_PRODUCT\_NAME wikis offer a title search, as well as a full text
+|SYSPRODUCTNAME| wikis offer a title search, as well as a full text
 search.
 
-SYS\_PRODUCT\_NAME Wikis
+|SYSPRODUCTNAME| Wikis
 ========================
 
-SYS\_PRODUCT\_NAME wikis are project-specific. So two different projects
+|SYSPRODUCTNAME| wikis are project-specific. So two different projects
 may use the same page names without conflict.
 
 Wiki Creation
@@ -112,19 +111,19 @@ welcome page, a sandbox to play with, the PhpWiki documentation, etc.
 Wiki Permissions
 ----------------
 
-By default, SYS\_PRODUCT\_NAME wikis are viewable and editable by any
-SYS\_PRODUCT\_NAME registered user.
+By default, |SYSPRODUCTNAME| wikis are viewable and editable by any
+|SYSPRODUCTNAME| registered user.
 
 While this is usually the best policy, some wikis should not be public.
-For those cases, SYS\_PRODUCT\_NAME offers a permission mechanism based
-on user groups, as for file releases (see ? and ?). Permissions may be
+For those cases, |SYSPRODUCTNAME| offers a permission mechanism based
+on user groups, as for file releases (see :ref:`users-groups` and :ref:`package-modification`). Permissions may be
 set at the wiki level, and apply to all pages, or at the page level, so
 that only selected pages are protected.
 
 Examples of Wiki Usage
 ----------------------
 
-Project Wikis hosted on SYS\_PRODUCT\_NAME may typically be used for
+Project Wikis hosted on |SYSPRODUCTNAME| may typically be used for
 many different purposes. The following examples are just suggestions:
 
 -  **Meeting minutes**: wikis are very convenient places to hold meeting
@@ -132,7 +131,7 @@ many different purposes. The following examples are just suggestions:
    new link and type the minutes. Additionally, anybody can edit and
    correct the content later.
 
--  **Project Calendar**: SYS\_PRODUCT\_NAME wiki pages may include a
+-  **Project Calendar**: |SYSPRODUCTNAME| wiki pages may include a
    shared calendar, that every team member can access and edit (see the
    CalendarPlugin page).
 
@@ -145,6 +144,6 @@ many different purposes. The following examples are just suggestions:
 More Documentation
 ------------------
 
-All SYS\_PRODUCT\_NAME wikis are initialized with some default pages,
+All |SYSPRODUCTNAME| wikis are initialized with some default pages,
 including the PhpWiki documentation. See the PhpWikiDocumentation page
 for a description of all the PhpWiki features: syntax, plugins, etc.
