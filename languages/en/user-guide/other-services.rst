@@ -5,6 +5,8 @@
 Other Services
 ==============
 
+.. _shell-account:
+
 Shell Account
 =============
 

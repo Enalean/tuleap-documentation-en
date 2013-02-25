@@ -1,6 +1,5 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap*
 
 Project Web Site
 ================
@@ -8,7 +7,7 @@ Project Web Site
 Visiting a Web Site
 ===================
 
-When a new project is created on SYS\_PRODUCT\_NAME a project specific
+When a new project is created on |SYSPRODUCTNAME| a project specific
 Web Site is created as well. You can access a project Web site in 2
 different ways:
 
@@ -32,7 +31,7 @@ different ways:
 
 If the project team has not yet created its own Web pages, you'll see
 the default project home page informing you that the site will come soon
-as well as a link back to the SYS\_PRODUCT\_NAME site.
+as well as a link back to the |SYSPRODUCTNAME| site.
 
 Web Site Creation
 =================
@@ -49,7 +48,7 @@ store all these documents is:
 
     /home/groups/projectname
 
-If you use your Shell Account (see ?) to log into the SYS\_PRODUCT\_NAME
+If you use your Shell Account (see :ref:`shell-account`) to log into the |SYSPRODUCTNAME|
 server and place yourself in this directory with the Unix command "cd
 /home/groups/projectname" you'll see 3 subdirectories:
 
@@ -78,7 +77,7 @@ server and place yourself in this directory with the Unix command "cd
    -  ``index.php`` if you use embedded PHP scripts
 
    If your own home page is called index.php then rename the default
-   index.php file created by SYS\_PRODUCT\_NAME into something else by
+   index.php file created by |SYSPRODUCTNAME| into something else by
    using the following commands from your Shell Account:
 
    ``
@@ -113,7 +112,7 @@ Web Site Publishing
 -------------------
 
 You can use various methods to publish your Web pages on your
-SYS\_PRODUCT\_NAME Web site:
+|SYSPRODUCTNAME| Web site:
 
 -  Remote editing with HTML capable editors like Netscape or Mozilla
    Composer, Microsoft FrontPage or Emacs with transparent ftp access
@@ -122,7 +121,7 @@ SYS\_PRODUCT\_NAME Web site:
    ftp or, even better, via scp
 
 -  Small changes to web pages can be made from the shell account on
-   SYS\_PRODUCT\_NAME, using emacs or vi, but substantial editing is
+   |SYSPRODUCTNAME|, using emacs or vi, but substantial editing is
    discouraged.
 
 Macromedia Dreamweaver
@@ -135,7 +134,7 @@ information, choose your site name and local root folder. For the remote
 information, choose FTP access and specify
 ``projectname.SYS_DEFAULT_DOMAIN`` as host and
 ``/home/groups/projectname/htdocs`` as the host directory. The login is
-your SYS\_PRODUCT\_NAME login.
+your |SYSPRODUCTNAME| login.
 
 Local Editing and Remote Transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,8 +143,8 @@ For those of you who use an HTML editing tool that has no built-in
 export facility you can transfer your HTML files by other means.
 
 -  **FTP**: this is the simplest method for transferring your Web pages
-   to the SYS\_PRODUCT\_NAME remote location. Use ftp to connect to
-   ``projectname.SYS_DEFAULT_DOMAIN`` and use your SYS\_PRODUCT\_NAME
+   to the |SYSPRODUCTNAME| remote location. Use ftp to connect to
+   ``projectname.SYS_DEFAULT_DOMAIN`` and use your |SYSPRODUCTNAME|
    username and password to login. Once logged in issue the following
    command:
 
@@ -164,35 +163,35 @@ export facility you can transfer your HTML files by other means.
 
        scp -r * login@SYS_SHELL_HOST:/home/groups/projectname/htdocs/
 
-   where login is your SYS\_PRODUCT\_NAME login. The -r option stands
+   where login is your |SYSPRODUCTNAME| login. The -r option stands
    for recursive copy and will copy all the files in the directory as
    well as all others in subdirectory while preserving your directory
    structure.
 
-Referencing the SYS\_PRODUCT\_NAME Site
+Referencing the |SYSPRODUCTNAME| Site
 =======================================
 
-The SYS\_PRODUCT\_NAME Team is asking that all project Web sites hosted
-on SYS\_PRODUCT\_NAME display the SYS\_PRODUCT\_NAME logo on their front
+The |SYSPRODUCTNAME| Team is asking that all project Web sites hosted
+on |SYSPRODUCTNAME| display the |SYSPRODUCTNAME| logo on their front
 page. And ideally it would be great if you also cross-reference our site
 on other pages that are located on other servers. The rationale behind
 this request is twofold:
 
--  First, by referencing the SYS\_PRODUCT\_NAME site on your Web page
+-  First, by referencing the |SYSPRODUCTNAME| site on your Web page
    you will allow your visitors to learn about the existence of the
-   SYS\_PRODUCT\_NAME site, give them a chance to visit it and also let
-   them learn about other projects hosted on SYS\_PRODUCT\_NAME. By
+   |SYSPRODUCTNAME| site, give them a chance to visit it and also let
+   them learn about other projects hosted on |SYSPRODUCTNAME|. By
    doing so you will augment the opportunity for re-use.
 
--  The second reason is that using the SYS\_PRODUCT\_NAME logo in your
+-  The second reason is that using the |SYSPRODUCTNAME| logo in your
    Web site will automatically increase the Web access counter that
-   SYS\_PRODUCT\_NAME is maintaining for you. The number of accesses to
+   |SYSPRODUCTNAME| is maintaining for you. The number of accesses to
    your site can be viewed by visiting your Project Dashboard and click
    on the "Statistics" link below the project description (see ?). This
    will also help us to identify projects that may require additional
    hosting resources due to large amounts of activity.
 
-To display the SYS\_PRODUCT\_NAME logo on your project Web page use the
+To display the |SYSPRODUCTNAME| logo on your project Web page use the
 following Web pointer:
 
 ::
