@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap*
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Project Web Site
 ================
@@ -187,7 +187,7 @@ this request is twofold:
    Web site will automatically increase the Web access counter that
    |SYSPRODUCTNAME| is maintaining for you. The number of accesses to
    your site can be viewed by visiting your Project Dashboard and click
-   on the "Statistics" link below the project description (see ?). This
+   on the "Statistics" link below the project description (see :ref:`an-example-of-project-dashboard`). This
    will also help us to identify projects that may require additional
    hosting resources due to large amounts of activity.
 
