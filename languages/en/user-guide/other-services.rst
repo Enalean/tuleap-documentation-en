@@ -1,5 +1,6 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
+.. |SYS_DEFAULT_DOMAIN| replace:: tuleap.net
 
 Other Services
 ==============
@@ -66,13 +67,11 @@ storage will then be visible to any |SYSPRODUCTNAME| users and all
 files placed in this directory can be freely downloaded. So make sure
 that you use this storage space for world readable files only.
 
--  Anonymous Users access: use an ftp client to connect to ````. Use
-   "ftp" as login and your email address as the password. Then ``cd
-               /pub/projectname`` to access the FTP Anonymous space.
+-  Anonymous Users access: use an ftp client to connect to |SYS_DEFAULT_DOMAIN|. Use
+   "ftp" as login and your email address as the password. Then ``cd/pub/projectname`` to access the FTP Anonymous space.
 
--  Project Members access: use an ftp client to connect to ````. Use
-   |SYSPRODUCTNAME| login and password and then type ``cd
-               SYS_DATA_DIR/ftp/pub/projectname`` to access the FTP
+-  Project Members access: use an ftp client to connect to |SYS_DEFAULT_DOMAIN|. Use
+   |SYSPRODUCTNAME| login and password and then type ``cd SYS_DATA_DIR/ftp/pub/projectname`` to access the FTP
    Anonymous space. From there project members have both read and write
    access which means that they can upload files.
 
