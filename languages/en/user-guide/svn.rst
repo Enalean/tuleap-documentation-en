@@ -1018,7 +1018,7 @@ In order to access those hook scripts, you must be granted the right to
 log into the |SYSPRODUCTNAME| server with your Shell Account (see
 :ref:`shell-account`) [#f1]_.
 
-.
+
 Once logged in, type the following commands at the shell prompt:
 
 -  ``newgrp projectname`` (where ``projectname`` is the short project
