@@ -20,6 +20,8 @@ Plug-in.
 Mailing Lists
 =============
 
+.. _creation:
+
 Creation
 --------
 
@@ -165,6 +167,8 @@ to Add Forum, Delete Message, and Update Forum Info/Status. The Update
 Forum Info/Status page lets administrators make forums public or
 private, edit the name and description of the forum, or even delete the
 forum.
+
+.. _instant-messaging-plug-in:
 
 Instant Messaging Plug-in
 =========================

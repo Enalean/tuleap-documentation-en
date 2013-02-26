@@ -56,6 +56,8 @@ Page" link in the |SYSPRODUCTNAME| Main Menu. (see :ref:`login-and-personal-page
     this Web Site (see :ref:`project-web-site` for more information on your Project Web Site
     and how to use it).
 
+.. _project-dashboard-content:
+
 Project Dashboard Content
 =========================
 

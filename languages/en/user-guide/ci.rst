@@ -194,7 +194,7 @@ If you have installed the Jabber plug-in for Hudson (see `Hudson Plug-ins`_), yo
 find in the section "Manage Hudson" -> "Configure System" a part to
 configure Jabber notification. If the Jabber plugin for
 |SYSPRODUCTNAME| is installed and enabled, every |SYSPRODUCTNAME|
-user has a Jabber account (see ?) and each project has a Chat Room.
+user has a Jabber account (see :ref:`instant-messaging-plug-in`) and each project has a Chat Room.
 Jabber plug-in lets you the ability to send notification to users or
 chat rooms.
 
@@ -360,7 +360,7 @@ After a build, Hudson can do some actions. Among them:
 -  **Email notification**: Hudson is able to send emails while some
    events happen. You can enter a list of email addresses to be
    notified. A good practice could be giving a mailing list address
-   (specific for Hudson or not) in order to notify all the team (see ?
+   (specific for Hudson or not) in order to notify all the team (see :ref:`creation`
    to know how to create mailing lists). Events that trigger
    notification are managed as followed:
 
@@ -464,7 +464,7 @@ Hudson Widgets
 
 Hudson service lets you adorn your personal and project dashboard with
 many widgets. To know how to add widgets to your personal dashboard, see
-?. The procedure is similar to add widgets to dashboard project (see ?).
+:ref:`login-and-personal-page`. The procedure is similar to add widgets to dashboard project (see :ref:`project-dashboard-content`).
 
 -  **My Hudson jobs**: only available on the personal dashboard. By
    default, it gives an overview of all the jobs of all the projects you
@@ -560,7 +560,7 @@ Hudson References
 
 It is possible to make references to Hudson items in |SYSPRODUCTNAME|.
 There are some predefined references (job, build), but you can also
-create your own references if needed (see :ref:'reference-overview` for more details about
+create your own references if needed (see :ref:`reference-overview` for more details about
 references)
 
 Make a reference to a Job
