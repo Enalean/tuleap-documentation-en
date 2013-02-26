@@ -29,7 +29,7 @@ do communicate regularly with the project members and improve your
 configuration management plan on a regular basis.
 
 CVS: Concurrent Version Control
-===============================
+--------------------------------
 
 CVS stands for Concurrent Versions System. It allows a team of multiple
 developers to concurrently manage their own version of the same source
@@ -67,7 +67,7 @@ is a very valid choice for several reasons:
    distributed under the GNU GPL License.
 
 CVS Clients
------------
+````````````
 
 CVS has a client-server architecture. In other words, |SYSPRODUCTNAME|
 developers who want to interact with the CVS repository of their project
@@ -174,7 +174,7 @@ Other things to know about WinCVS:
 .. _CVS-reference:
 
 CVS References
---------------
+``````````````
 
 As stated earlier in this chapter, this document is not a CVS Tutorial.
 It focuses on the integration of CVS in |SYSPRODUCTNAME| and how to
@@ -196,10 +196,10 @@ about CVS refer to the following documents:
 -  The Official CVS Web Site. See http://www.cvshome.org/.
 
 CVS Integration in |SYSPRODUCTNAME|
-=====================================
+-----------------------------------
 
 The CVS Repository
-------------------
+```````````````````
 
 Whenever a new project is hosted on |SYSPRODUCTNAME|, a new CVS
 repository is automatically created and properly initialized. Each
@@ -220,7 +220,7 @@ repository.
     that unless you know exactly what you are doing.
 
 CVS Access Control
-------------------
+```````````````````
 
 CVS access permission depends upon the project status (private or
 public) and the class of citizen a user belongs to (see ?).
@@ -262,7 +262,7 @@ as follows:
 -  **Project Administrators**: same as project members.
 
 The CVS Web Interface
-=====================
+----------------------
 
 |SYSPRODUCTNAME| offers a number of facilities that allow you to
 interact with your CVS repository through the Web interface. The CVS Web
@@ -297,7 +297,7 @@ interface provides the following features:
 Let's review some of these features in more details:
 
 Browsing The CVS Repository
----------------------------
+````````````````````````````
 
 In order to interact with the CVS repository of any
 |SYSPRODUCTNAME|-hosted project, you normally need to have CVS
@@ -314,7 +314,7 @@ compare two revisions of the same file.
    	   Browsing the CVS repository - A sample session
 
 Querying CVS
-------------
+`````````````
 
 If a project has the CVS Tracking feature activated (see :ref:`CVS-administration`), the CVS Web
 interface will bring very useful features to the software engineers:
@@ -362,7 +362,7 @@ interface will bring very useful features to the software engineers:
    	   The detail of an atomic CVS commit
 
 Cross-Referencing Artifacts and CVS Commits
--------------------------------------------
+````````````````````````````````````````````
 
 While working in the development or the maintenance phase of a software
 project, it is vital to keep track of the changes made to the source
@@ -415,7 +415,7 @@ as follows:
 .. _CVS-administration:
 
 CVS Administration
-------------------
+```````````````````
 
 Through the Web interface, |SYSPRODUCTNAME| allows you to configure
 the following settings:
@@ -479,7 +479,7 @@ the following settings:
     future reference. See ? for mailing list creation.
 
 A Typical CVS Life Cycle
-========================
+-------------------------
 
 Again the intent of this section is not to give formal CVS training but
 rather to explain what are the steps a project team typically goes
@@ -499,7 +499,7 @@ front-ends should not be a problem.
    	   A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
 
 Logging In
-----------
+```````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -538,7 +538,7 @@ CVS connection "open" when you leave your office, use the
 "``cvs logout``\ " command.
 
 Importing Existing Source Code
-------------------------------
+```````````````````````````````
 
 *Audience: project members*
 
@@ -591,7 +591,7 @@ Where:
     the |SYSPRODUCTNAME| server. Contact us for more information.
 
 Checking Code Out
------------------
+``````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -642,7 +642,7 @@ Where:
    Interface (see `The CVS Web Interface`_)
 
 Updating the Source Code
-------------------------
+`````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -672,7 +672,7 @@ changing the branch to which your working copy points. Refer to your CVS
 documentation for complete details.
 
 Committing your Changes
------------------------
+````````````````````````
 
 *Audience: project members*
 
@@ -729,7 +729,7 @@ can automatically be built and unit tested nightly.
     isolation.
 
 Contributing your Changes (other users)
----------------------------------------
+```````````````````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -800,7 +800,7 @@ project team).
 And thanks for contributing some code!
 
 Exporting and Packaging
------------------------
+`````````````````````````
 
 *Audience: project members*
 
@@ -850,13 +850,13 @@ Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the |SYSPRODUCTNAME| News service (see ?).
 
 CVS for Project Administrators
-==============================
+-------------------------------
 
 There are a few things that Project Administrators must absolutely be
 aware of to manage their CVS repository well.
 
 More on CVS Access Control
---------------------------
+``````````````````````````
 
 As explained in `CVS Access Control`_ CVS is setup in such a way that write access is
 granted to all project members (and project members only).
@@ -878,7 +878,7 @@ the following commands at the shell prompt:
 -  ``exit`` (Logout)
 
 CVS Administrative Files
-------------------------
+``````````````````````````
 
 Each CVS repository comes with a number of administrative files that are
 all located in the ``CVSROOT`` directory. These files gives project

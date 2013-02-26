@@ -7,7 +7,7 @@ Project Web Site
 ================
 
 Visiting a Web Site
-===================
+`````````````````````
 
 When a new project is created on |SYSPRODUCTNAME| a project specific
 Web Site is created as well. You can access a project Web site in 2
@@ -36,7 +36,7 @@ the default project home page informing you that the site will come soon
 as well as a link back to the |SYSPRODUCTNAME| site.
 
 Web Site Creation
-=================
+``````````````````
 
 Directory Structure and Location
 --------------------------------
@@ -169,7 +169,7 @@ export facility you can transfer your HTML files by other means.
    structure.
 
 Referencing the |SYSPRODUCTNAME| Site
-=======================================
+```````````````````````````````````````
 
 The |SYSPRODUCTNAME| Team is asking that all project Web sites hosted
 on |SYSPRODUCTNAME| display the |SYSPRODUCTNAME| logo on their front

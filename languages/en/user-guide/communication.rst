@@ -18,7 +18,7 @@ Plug-in.
 .. _mailing-lists:
 
 Mailing Lists
-=============
+``````````````
 
 .. _creation:
 
@@ -111,7 +111,7 @@ does not support the archiving of attachments.
 .. _news-service:
 
 News Service
-============
+`````````````
 
 The News service complements your mailing lists. This service allows you
 to publish pieces of news related to your project. Any event in the life
@@ -141,7 +141,7 @@ news, you can request a promotion for the |SYSPRODUCTNAME| front page
 to the administrator.
 
 Web Forums
-==========
+```````````
 
 This is the third form of communication offered by |SYSPRODUCTNAME|.
 Web Forums are more or less equivalent to mailing list except that the
@@ -171,7 +171,7 @@ forum.
 .. _instant-messaging-plug-in:
 
 Instant Messaging Plug-in
-=========================
+```````````````````````````
 
 |SYSPRODUCTNAME| is bundled with a Jabber server and an Instant
 Messaging (IM) Plug-In that allows a certain level of integration

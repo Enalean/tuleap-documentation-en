@@ -47,7 +47,7 @@ Survey Manager is for. It allows you to:
    Survey Manager Welcome screen
 
 Publishing a Survey
-===================
+`````````````````````
 
 *Audience: project members*
 
@@ -111,7 +111,7 @@ previously mentioned method, answer the questions and click on the
    A sample survey taken from the |SYSPRODUCTNAME| project
 
 Administering Surveys
-=====================
+```````````````````````
 
 *Audience: project members*
 

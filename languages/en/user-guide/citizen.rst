@@ -7,7 +7,7 @@ Becoming a |SYSPRODUCTNAME| Citizen
 .. _classes-of-citizens:
 
 Classes of Citizens
-===================
+--------------------
 
 Before we go further into the user registration process it is worth
 reviewing the various types of |SYSPRODUCTNAME| citizens. There are
@@ -56,7 +56,7 @@ basically 4 of them:
    where corporate users and external consultants share the same server.
 
 User Registration
-=================
+------------------
 
 As suggested above, the first thing to do for a newcomer is to create
 her own account on |SYSPRODUCTNAME|. Becoming a registered
@@ -143,7 +143,7 @@ validated from outside.
 .. _login-and-personal-page:
 
 Login and Personal Page
-=======================
+------------------------
 
 To log into the |SYSPRODUCTNAME| site, go to the |SYSPRODUCTNAME|
 Site at `http://SYS\_DEFAULT\_DOMAIN <http://&SYS_DEFAULT_DOMAIN;/>`__
@@ -206,7 +206,7 @@ incomplete list of available widgets for the personal page:
 .. _account-maintenance:
 
 Account Maintenance
-===================
+--------------------
 
 You provided a certain amount of demographic information to
 |SYSPRODUCTNAME| when you first registered on the |SYSPRODUCTNAME|
@@ -233,7 +233,7 @@ you. However, we would like to draw your attention on some of them:
 .. _preferences:
 
 Preferences
-===========
+------------
 
 Your preferences are available in My personal Page -> Preferences. Here
 are some of the preferences you can define:

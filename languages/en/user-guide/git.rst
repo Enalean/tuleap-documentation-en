@@ -31,7 +31,7 @@ Two types of repositories are available:
    publish/integrator development model.
 
 Reference
-=========
+```````````
 
 A reference can be created by project admin from the Git service home
 page, a reference name can be like reference-project\_1.
@@ -56,7 +56,7 @@ push, as an alternative you can run:
         
 
 Fork
-====
+`````
 
 Personal forks allow to support a fully decentralized development model
 where "References" are maintained by integrators and represent the
@@ -88,7 +88,7 @@ In this case, the forked repositories become "References" into the
 target project.
 
 Repository settings
-===================
+`````````````````````
 
 As a project admin, you are allowed to modify the configuration of any
 project repositories. This includes:
@@ -160,7 +160,7 @@ Please note that cross-reference extraction will not work if email
 notification is not configured.
 
 Repository deletion
-===================
+````````````````````
 
 A repository can be deleted, this will create a backup named after
 {PROJECT\_SHORT\_NAME}\_{REPOSITORY\_NAME}\_{DEL\_TIMESTAMP}.tar.bz2 and
@@ -168,13 +168,13 @@ move it into Git Plugin backup directory defined in plugin
 configuration. See import repository section `Importing an existing Git Repository`_ for backup reactivation.
 
 Importing an existing Git Repository
-====================================
+```````````````````````````````````````
 
 There is no automatic procedure to perform repository import. Read
 administration guide related section.
 
 Git References
-==============
+````````````````
 
 -  The Official Git Web Site. See http://git-scm.com/
 

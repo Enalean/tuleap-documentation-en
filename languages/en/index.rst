@@ -9,46 +9,28 @@ Welcome to Tuleap's documentation!
 ==================================
 
 .. toctree::
-   :hidden:
+   :numbered:
+   :maxdepth: 3
 
+   user-guide/intro
+   user-guide/overview
+   user-guide/citizen
+   user-guide/new-project
+   user-guide/project-summary
    user-guide/project-admin
-   user-guide/doc
    user-guide/tracker
+   user-guide/frs
    user-guide/cvs
    user-guide/svn
    user-guide/git
+   user-guide/doc
    user-guide/ci
-   user-guide/frs
+   user-guide/wiki
+   user-guide/communication
+   user-guide/survey
+   user-guide/project-website
+   user-guide/project-links
+   user-guide/other-services
+   user-guide/legal
    soap/tracker
-
-User Guide
-==========
-    
-    * :doc:`user-guide/intro`
-    * :doc:`user-guide/overview`
-    * :doc:`user-guide/citizen`
-    * :doc:`user-guide/new-project`
-    * :doc:`user-guide/project-summary`
-    * :doc:`user-guide/project-admin`
-    * :doc:`user-guide/tracker`
-    * :doc:`user-guide/frs`
-    * :doc:`user-guide/cvs`
-    * :doc:`user-guide/svn`
-    * :doc:`user-guide/git`
-    * :doc:`user-guide/doc`
-    * :doc:`user-guide/ci`
-    * :doc:`user-guide/wiki`
-    * :doc:`user-guide/communication`
-    * :doc:`user-guide/survey`
-    * :doc:`user-guide/project-website`
-    * :doc:`user-guide/project-links`
-    * :doc:`user-guide/other-services`
-    * :doc:`user-guide/legal`   
-
-
-
-SOAP API
-========
-
-    * :doc:`soap/tracker`
 

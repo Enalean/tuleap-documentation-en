@@ -28,7 +28,7 @@ do that.
 .. _project-registration:
 
 Project Registration
-====================
+--------------------
 
 Before you create a new project you must be a registered user (see :ref:`classes-of-citizens`).
 You then login and select the item "Register New Project" in the upper
@@ -119,7 +119,7 @@ including a pointer to your new "Project Dashboard" page. Bookmark it in
 a safe place!
 
 Post-Registration Configuration
-===============================
+--------------------------------
 
 The first thing to do after you receive the confirmation for your
 project registration is to visit the "Project Dashboard" page (URL

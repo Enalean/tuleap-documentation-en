@@ -11,7 +11,7 @@ available in |SYSPRODUCTNAME| is based on a popular wiki tool called
 `phpWiki <http://phpwiki.sourceforge.net>`__.
 
 Wiki Overview
-=============
+```````````````
 
 Wiki Definition
 ---------------
@@ -91,7 +91,7 @@ Searching
 search.
 
 |SYSPRODUCTNAME| Wikis
-========================
+````````````````````````
 
 |SYSPRODUCTNAME| wikis are project-specific. So two different projects
 may use the same page names without conflict.

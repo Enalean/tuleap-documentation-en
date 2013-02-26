@@ -34,7 +34,7 @@ but do communicate regularly with the project members and improve your
 configuration management plan on a regular basis.
 
 Subversion: The Next Generation CVS
-===================================
+````````````````````````````````````
 
 Subversion is an Open Source version control system that manages your
 files and directories history over time. The Subversion effort started
@@ -209,7 +209,7 @@ following documents:
    http://jsvn.alternatecomputing.com/.
 
 Subversion Integration in |SYSPRODUCTNAME|
-============================================
+`````````````````````````````````````````````
 
 The Subversion Repository
 -------------------------
@@ -282,7 +282,7 @@ More on the repository layout is available in the Subversion book listed
 in `Subversion References`_.
 
 The Subversion Browsing Interface
-=================================
+```````````````````````````````````
 
 |SYSPRODUCTNAME| offers a number a facilities that allow you to
 interact with your Subversion repository through the Web interface. The
@@ -437,7 +437,7 @@ as follows:
     trying to keep track of the changes and why they were made.
 
 Subversion Administration Interface
-===================================
+````````````````````````````````````
 
 Through the |SYSPRODUCTNAME| Web interface, project administrators can
 perform the most common administration and configuration tasks on their
@@ -652,7 +652,7 @@ notification:
     useful for future reference. See :ref:`mailing-lists` for mailing list creation.
 
 A Typical Subversion Life Cycle
-===============================
+`````````````````````````````````
 
 As stated earlier, the intent of this chapter is not to give a formal
 Subversion training but rather to explain what are the steps a project
@@ -1003,7 +1003,7 @@ Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the |SYSPRODUCTNAME| News service (see :ref:`news-service`).
 
 Subversion for Project Administrators
-=====================================
+```````````````````````````````````````
 
 Subversion Hook Scripts
 -----------------------

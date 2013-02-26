@@ -5,7 +5,7 @@
 ===========================
 
 |SYSPRODUCTNAME| Home Page
-============================
+----------------------------
 
 Tuleap Homepage is the global welcome page of the forge. It aims at
 helping new users to create an account, join or create a project. It
@@ -20,7 +20,7 @@ customize some areas with your own logo for example
    The |SYSPRODUCTNAME| HomePage
 
 Main Menu
-=========
+----------
 
 The |SYSPRODUCTNAME| main menu is a permanent piece of information
 that you'll always see on your screen wherever you are in the
@@ -51,7 +51,7 @@ in the document in the related service description.
 .. _software-map-(or Project Tree):
 
 Software Map (or Project Tree)
-------------------------------
+````````````````````````````````
 
 The Software Map is a pivotal service in |SYSPRODUCTNAME| that you can
 (should) use to determine if there are some pieces of software that you
@@ -137,7 +137,7 @@ the screen.
     it an appropriate description.
 
 Code Snippet Library
---------------------
+```````````````````````
 
 A project hosted on |SYSPRODUCTNAME| has the ability to use a large
 spectrum of services. However not all pieces of software worth sharing
@@ -274,7 +274,7 @@ new version of a code snippet, first delete the old version and add the
 new one which has its own specific code snippet version ID (see `Updating a Code Snippet`_).
 
 Help
-----
+``````
 
 Help Index
 ~~~~~~~~~~
@@ -351,7 +351,7 @@ Us" link to get in touch with the |SYSPRODUCTNAME| Team.
 Do not hesitate to bug the "Contact Us" link. We are here to help.
 
 Search area
------------
+`````````````
 
 |SYSPRODUCTNAME| allows you to search almost any piece of
 |SYSPRODUCTNAME| information through a keyword search mechanism. When
@@ -380,7 +380,7 @@ in the following resources:
    allowing you to actually search this tracker database.
 
 News and activity streams
-=========================
+---------------------------
 
 |SYSPRODUCTNAME| homepage is a sort of a fish-eye view of the global
 |SYSPRODUCTNAME| activity. Several indicators are available:

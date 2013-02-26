@@ -9,7 +9,7 @@ Continuous Integration with Hudson/Jenkins
 ==========================================
 
 Introduction to Continuous Integration
-======================================
+````````````````````````````````````````
 
 Continuous Integration is the given name for the good practices used in
 software engineering. These good practices aim at checking that a source
@@ -93,7 +93,7 @@ Let's then give a definition:
                     Glossary of Hudson and continuous integration specific words
 
 Hudson Installation
-===================
+``````````````````````
 
 A JVM (1.5 or higher) is required for Hudson installation. Hudson can be
 run standalone, but we will describe the installation in a container,
@@ -104,7 +104,7 @@ the war file in Tomcat manager. You're done! Hudson is installed. By
 default, you can access the interface at http://localhost:8080/hudson
 
 Hudson Configuration
-====================
+``````````````````````
 
 Before creating your own jobs, (see `Hudson Jobs Creation and Configuration`_), you need to configure Hudson.
 All these steps are optional, you only have to configure what you really
@@ -219,7 +219,7 @@ To install a plug-in, check the box in front of the wished plug-in,
 press the Install button and then follow the instructions.
 
 Hudson Jobs Creation and Configuration
-======================================
+````````````````````````````````````````
 
 Once the system is configured, you can start defining your jobs. To do
 that, select the link "New job" in the menu on top left. You just have
@@ -383,7 +383,7 @@ After a build, Hudson can do some actions. Among them:
    (see `Email Notification`_).
 
 Integration in |SYSPRODUCTNAME|
-=================================
+````````````````````````````````
 
 As continuous integration is a good practice in software engineering,
 |SYSPRODUCTNAME| integrates Hudson tool. We know how to install (see

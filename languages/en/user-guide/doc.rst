@@ -29,7 +29,7 @@ The Document Manager features are as follows:
 -  Documents have properties and searchable metadata.
 
 Structure
-=========
+```````````
 
 You can structure as you want your document manager by creating folders
 and subfolders to classify your documents.
@@ -42,7 +42,7 @@ and subfolders to classify your documents.
    	   Folders and subfolders
 
 Actions
-=======
+````````
 
 The Document Manager allows some actions on folders or documents. Those
 actions are available or not depending on permissions. In order to
@@ -302,7 +302,7 @@ To be able to delete an item, the user must have write permissions on
 the parent folder.
 
 Administration
-==============
+````````````````
 
 Permissions
 -----------
