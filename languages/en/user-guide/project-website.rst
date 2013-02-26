@@ -82,9 +82,7 @@ server and place yourself in this directory with the Unix command "cd
    index.php file created by |SYSPRODUCTNAME| into something else by
    using the following commands from your Shell Account:
 
-   ``
-               cd /home/groups/projectname/htdocs
-               mv index.php index_default.php ``
+   ``cd /home/groups/projectname/htdocs mv index.php index_default.php``
 
 -  **cgi-bin**: this directory is where you must place all your CGI
    scripts. CGI scripts can be written in a number of languages like
