@@ -203,6 +203,8 @@ incomplete list of available widgets for the personal page:
 -  **RSS Reader** allows you to include public rss (or atom) feeds into
    your personal page.
 
+.. _account-maintenance:
+
 Account Maintenance
 ===================
 

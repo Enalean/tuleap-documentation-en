@@ -18,7 +18,7 @@ philosophy which allows to delegate project features to be developped in
 separated repositories.
 
 Git access (for both read and write operations) requires a valid SSH key
-to be configured in user account preference. See ? for details.
+to be configured in user account preference. See :ref:`account-maintenance` for details.
 
 Two types of repositories are available:
 
