@@ -1284,7 +1284,12 @@ and new ones can be created (see ?). This section focuses on the
 configuration of an existing tracker. Creation of new tracker is covered
 in ?.
 
-|Tracker Administration - Top Level Page|
+.. figure:: ../images/screenshots/sc_trackertopadminpage.png
+   :align: center
+   :alt: Tracker Administration - Top Level Page
+   :name: Tracker Administration - Top Level Page
+
+   Tracker Administration - Top Level Page
 
 The configuration settings for a given tracker is divided in seven
 sections:
