@@ -1073,7 +1073,7 @@ part of the tracker or in the Tracker Administration section.
     fields or customize existing ones in each of the trackers.
 
 To define a new tracker you must provide the following information (see
-?):
+`Creation of a new tracker (here a defect tracking system)`_):
 
 -  **Name**: this is the name of your tracker. A tracker is typically
    named after the type of artifact it is going to manage. This name
@@ -1092,7 +1092,12 @@ To define a new tracker you must provide the following information (see
    field above, short names can be: AR for Action Request, SR for
    Support Requests, Reqt for Requirements, bug for Bugs…
 
-|Creation of a new tracker (here a defect tracking system)|
+.. figure:: ../images/screenshots/sc_legacytrackercreatenewtracker.png
+   :align: center
+   :alt: Creation of a new tracker (here a defect tracking system)
+   :name: Creation of a new tracker (here a defect tracking system)
+
+   Creation of a new tracker (here a defect tracking system)
 
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
@@ -1114,7 +1119,7 @@ or remove fields or fine-tune the field settings afterwards.
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
-   ? for more explanations on the semantic of those templates.
+   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic of those templates.
 
 -  **Project Templates**: in case you have already defined a tracker
    that suits your needs or you have seen a tracker from another project
@@ -1171,8 +1176,8 @@ The role of the Patch tracker is to let non project members or project
 members with restricted permissions to contribute source code
 modifications to the project.
 
-On how to generate source code patches see the CVS chapter (?) or the
-Subversion chapter (?).
+On how to generate source code patches see the CVS chapter (:ref:`contributing-your-changes-(other-users)`) or the
+Subversion chapter (:ref:`contributing-your-changes-(other users)`).
 
     **Note**
 
@@ -1232,7 +1237,7 @@ planning tools:
 
 -  Task data can be collected by the project leader(s) at any point in
    time and exported out of the |SYSPRODUCTNAME| project thanks to the
-   Project Data Export facility (see ?). This allows for an easy
+   Project Data Export facility (see :ref:`project-data-export`). This allows for an easy
    generation of progress reports or project re-planning.
 
 The Scrum Backlog Template

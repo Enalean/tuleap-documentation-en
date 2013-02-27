@@ -728,6 +728,8 @@ can automatically be built and unit tested nightly.
     others' changes then create a CVS branch and work with it in
     isolation.
 
+.. _contributing-your-changes-(other-users):
+
 Contributing your Changes (other users)
 ```````````````````````````````````````
 

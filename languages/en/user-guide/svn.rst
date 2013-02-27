@@ -880,6 +880,8 @@ Where:
     from others' changes then create a Subversion branch and work with
     it in isolation.
 
+.. _contributing-your-changes-(other users)
+
 Contributing your Changes (other users)
 ````````````````````````````````````````
 
