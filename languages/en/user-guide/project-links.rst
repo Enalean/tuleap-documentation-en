@@ -59,7 +59,7 @@ A project shows reverse linkages (those projects for which it is the
 link target) on the summary page.
 
 Terms and Definitions
-````````````````````````
+----------------------
 
 =====================================   ==========================================
  Term                                   Definition                               
@@ -115,7 +115,7 @@ Terms and Definitions
       Project links terms and definitions
 
 Creating links
-````````````````
+---------------
 
 A project administrator may add new related projects by using the
 following procedure:
@@ -142,7 +142,7 @@ on the summary page. Checking it in another project just makes that one
 the future master, there's no need to uncheck it first.
 
 Link Administration
-`````````````````````
+--------------------
 
 Administration of the linkage belongs to the link owner project, the
 project to which the link points is called the target project (the link
@@ -172,13 +172,13 @@ Note that a project relationship linkage has an explicit direction
 administrator can establish and remove project links.
 
 Ring Administration
-`````````````````````
+--------------------
 
 A ringmaster project is a special type of project that just displays the
 list of projects linked to it using a ring-type link.
 
 Template Projects
-```````````````````
+------------------
 
 The following are inherited from a template project at project creation:
 

@@ -18,12 +18,12 @@ Plug-in.
 .. _mailing-lists:
 
 Mailing Lists
-``````````````
+---------------
 
 .. _creation:
 
 Creation
---------
+`````````
 
 Each project can create as many mailing lists (ML) as needed. To create
 a mailing list click on the "Lists" item in the Project Main menu, then
@@ -69,7 +69,7 @@ Where:
    to follow this well established practice.
 
 Administration
---------------
+```````````````
 
 The ML administration is also entirely Web based. You can access the ML
 administration page by using the URL that you received when you first
@@ -94,7 +94,7 @@ page at least once to get an idea about the feature set.
     |SYSPRODUCTNAME| user passwords.
 
 (Un)Subscription, Archive and Preferences
------------------------------------------
+``````````````````````````````````````````
 
 Unless its owner marks a ML as private, any |SYSPRODUCTNAME| user can
 subscribe to a project Mailing List (ML). To subscribe to a mailing list
@@ -111,7 +111,7 @@ does not support the archiving of attachments.
 .. _news-service:
 
 News Service
-`````````````
+-------------
 
 The News service complements your mailing lists. This service allows you
 to publish pieces of news related to your project. Any event in the life
@@ -141,7 +141,7 @@ news, you can request a promotion for the |SYSPRODUCTNAME| front page
 to the administrator.
 
 Web Forums
-```````````
+-----------
 
 This is the third form of communication offered by |SYSPRODUCTNAME|.
 Web Forums are more or less equivalent to mailing list except that the
@@ -171,7 +171,7 @@ forum.
 .. _instant-messaging-plug-in:
 
 Instant Messaging Plug-in
-```````````````````````````
+--------------------------
 
 |SYSPRODUCTNAME| is bundled with a Jabber server and an Instant
 Messaging (IM) Plug-In that allows a certain level of integration
@@ -202,7 +202,7 @@ The status of a user using a Jabber client (online, busy, away) is
 displayed in |SYSPRODUCTNAME|.
 
 Jabber Related Information on the |SYSPRODUCTNAME| Web Page
--------------------------------------------------------------
+````````````````````````````````````````````````````````````
 
 |SYSPRODUCTNAME| provides several bits of information regarding the
 Instant Messaging on its web interface. Thus, each user has access to
@@ -236,7 +236,7 @@ If a project is deleted, the corresponding chat room and shared group
 will be destroyed as well.
 
 Jabber Client Configuration
----------------------------
+````````````````````````````
 
 Configuring a Jabber client to use your |SYSPRODUCTNAME| account is
 straightforward. In case you are using a multi protocol client the first
@@ -272,7 +272,7 @@ scope of this guide to talk about them, so please refer to your Jabber
 client documentation for further information on this topic.
 
 Multi-User Chat Room (MUC)
---------------------------
+```````````````````````````
 
 As stated before, the IM plug-in creates a multi-user chat room for each
 project. This room is named after the project name and is opened only
@@ -427,7 +427,7 @@ For further information on how to invite external users to chat rooms
 using your Jabber client please refer to its documentation.
 
 MUC Room Logs
--------------
+```````````````
 
 Conversations in chat rooms are logged (private conversation are not).
 To access the log, select the link 'Logs' in the IM tab of your project.

@@ -11,10 +11,10 @@ available in |SYSPRODUCTNAME| is based on a popular wiki tool called
 `phpWiki <http://phpwiki.sourceforge.net>`__.
 
 Wiki Overview
-```````````````
+---------------
 
 Wiki Definition
----------------
+````````````````
 
 A Wiki is a website that allows anyone to easily add content or to edit
 the content that is already in place.
@@ -32,7 +32,7 @@ before modifications are accepted, and |SYSPRODUCTNAME| wikis are open
 to all |SYSPRODUCTNAME| registered users.
 
 Wiki Page Formatting
---------------------
+`````````````````````
 
 In |SYSPRODUCTNAME| wikis, there are three representations for each
 page: the HTML code, the web page resulting from rendering that code by
@@ -49,7 +49,7 @@ consistency in look and feel that is thereby enforced, and for security
 reasons.
 
 Linking and Creating Pages
---------------------------
+```````````````````````````
 
 Wikis are a true hypertext medium, with non-linear navigational
 structures. Each page typically contains a large number of links to
@@ -85,19 +85,19 @@ pointing to them) are rarely created.
     instead of "wiki #N:WikiPageName"
 
 Searching
----------
+``````````
 
 |SYSPRODUCTNAME| wikis offer a title search, as well as a full text
 search.
 
 |SYSPRODUCTNAME| Wikis
-````````````````````````
+----------------------
 
 |SYSPRODUCTNAME| wikis are project-specific. So two different projects
 may use the same page names without conflict.
 
 Wiki Creation
--------------
+``````````````
 
 The wiki has to be initialized by a project administrator before use:
 simply click on the "Wiki" link in the service bar, select the wiki
@@ -111,7 +111,7 @@ The wiki creation phase creates a default set of useful wiki pages: a
 welcome page, a sandbox to play with, the PhpWiki documentation, etc.
 
 Wiki Permissions
-----------------
+``````````````````
 
 By default, |SYSPRODUCTNAME| wikis are viewable and editable by any
 |SYSPRODUCTNAME| registered user.
@@ -123,7 +123,7 @@ set at the wiki level, and apply to all pages, or at the page level, so
 that only selected pages are protected.
 
 Examples of Wiki Usage
-----------------------
+````````````````````````
 
 Project Wikis hosted on |SYSPRODUCTNAME| may typically be used for
 many different purposes. The following examples are just suggestions:
@@ -144,7 +144,7 @@ many different purposes. The following examples are just suggestions:
    permissions.
 
 More Documentation
-------------------
+```````````````````
 
 All |SYSPRODUCTNAME| wikis are initialized with some default pages,
 including the PhpWiki documentation. See the PhpWikiDocumentation page

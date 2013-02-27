@@ -47,7 +47,7 @@ Survey Manager is for. It allows you to:
    Survey Manager Welcome screen
 
 Publishing a Survey
-`````````````````````
+--------------------
 
 *Audience: project members*
 
@@ -111,7 +111,7 @@ previously mentioned method, answer the questions and click on the
    A sample survey taken from the |SYSPRODUCTNAME| project
 
 Administering Surveys
-```````````````````````
+----------------------
 
 *Audience: project members*
 
@@ -138,7 +138,7 @@ Administrative functions (see `Survey Manager Administration screen`_).
    Survey Manager Administration screen
 
 Survey Structure
-----------------
+`````````````````
 
 In order to understand the survey creation and update process you must
 first understand that the Survey module manages two distinct pools of
@@ -157,7 +157,7 @@ you can create distinct surveys and re-use the same questions in several
 of them if need be.
 
 Creating or Editing Questions
------------------------------
+```````````````````````````````
 
 First thing first: if you want to collect people's opinion you must
 first define a set of questions and the possible answers for each of
@@ -223,7 +223,7 @@ question clearer is perfectly OK and doesn't impact the existing set of
 answers.
 
 Creating or Editing a Survey
-----------------------------
+``````````````````````````````
 
 Once you have created questions in the common question pool, you can
 create a survey and attach questions to it.
@@ -265,7 +265,7 @@ lost. Re-inserting the question ID in the survey list allows you to view
 the set of responses again (see next section).
 
 Reviewing Survey Results
-------------------------
+`````````````````````````
 
 *Audience: project members*
 

@@ -29,7 +29,7 @@ The Document Manager features are as follows:
 -  Documents have properties and searchable metadata.
 
 Structure
-```````````
+----------
 
 You can structure as you want your document manager by creating folders
 and subfolders to classify your documents.
@@ -42,7 +42,7 @@ and subfolders to classify your documents.
    	   Folders and subfolders
 
 Actions
-````````
+--------
 
 The Document Manager allows some actions on folders or documents. Those
 actions are available or not depending on permissions. In order to
@@ -60,7 +60,7 @@ We will now describe all the actions that can be performed on a folder
 or document.
 
 New Document
-------------
+````````````
 
 This action is only available for folders and allow the user to create a
 new document in a folder. When you select this action, a "new document"
@@ -115,7 +115,7 @@ the position of the new document in the folder: at the beginning or at
 the end.
 
 New Folder
-----------
+```````````
 
 This action is only available for folders and allow the user to create a
 sub folder in a folder.
@@ -146,7 +146,7 @@ also select the position of the new folder in the parent folder: at the
 beginning or at the end.
 
 Properties
-----------
+````````````
 
 This action allows the user to view the properties of a document or
 folder. If he has enough permissions, he will be able to modify those
@@ -164,7 +164,7 @@ history and actions. There are also shortcuts to these panels in the
 initial "Actions" window.
 
 Notifications
--------------
+``````````````
 
 This action allows the user to be notified when an item is modified.
 Therefore, he will be alerted about the creation of a document in a
@@ -179,7 +179,7 @@ to check the dedicated checkbox.
    	   Notifications
 
 History
--------
+````````
 
 This action allows the user to see logs and old versions (if available).
 
@@ -191,7 +191,7 @@ This action allows the user to see logs and old versions (if available).
    	   See a document history
 
 Update
-------
+```````
 
 This action allows the user to update the name of a wiki page or the url
 of a link.
@@ -204,7 +204,7 @@ of a link.
    	   Update a link
 
 New version
------------
+````````````
 
 This action allows the user to update a new version of a file or an
 embedded file.
@@ -217,7 +217,7 @@ embedded file.
    	   Create a new version for embedded file
 
 Permissions
------------
+````````````
 
 This action allows the user to manage the permissions of a document or
 folder. Permissions for folders can be applied recursively to its
@@ -259,7 +259,7 @@ Managers are writers who can also set permissions on a document or
 folder and can access to logs.
 
 Move
-----
+`````
 
 Documents or folders can be moved elsewhere in the project
 documentation.
@@ -292,7 +292,7 @@ in the popup menu : up, down, at the beginning or at the end.
    	   Shortcuts to move a document inside a folder
 
 Delete
-------
+```````
 
 Documents or folders can be deleted. If the user wants to delete a
 folder, he will be warned that all subitems will be deleted (if the user
@@ -302,10 +302,10 @@ To be able to delete an item, the user must have write permissions on
 the parent folder.
 
 Administration
-````````````````
+---------------
 
 Permissions
------------
+````````````
 
 This section defines who can administrate the document manager.
 
@@ -313,13 +313,13 @@ Document manager administrators have all access to all items of the
 manager.
 
 Display preferences
--------------------
+````````````````````
 
 This section allows you to define the default view for the document
 manager. The settings will be overridden by user preferences.
 
 Properties
-----------
+```````````
 
 This section manage the properties of documents. Each property can be
 edited during document submission and updated in the document properties

@@ -34,7 +34,7 @@ but do communicate regularly with the project members and improve your
 configuration management plan on a regular basis.
 
 Subversion: The Next Generation CVS
-````````````````````````````````````
+------------------------------------
 
 Subversion is an Open Source version control system that manages your
 files and directories history over time. The Subversion effort started
@@ -116,7 +116,7 @@ But Subversion also comes with a number of enhancements over CVS:
    languages like C/C++, Java, Python and Perl.
 
 Subversion Clients
-------------------
+```````````````````
 
 Subversion has a client-server architecture. In other words,
 |SYSPRODUCTNAME| developers who want to interact with the Subversion
@@ -189,7 +189,7 @@ user is working on.
    your are done.
 
 Subversion References
----------------------
+``````````````````````
 
 As stated earlier in this chapter, this document is not a Subversion
 Tutorial. If you want to learn more about Subversion refer to the
@@ -209,10 +209,10 @@ following documents:
    http://jsvn.alternatecomputing.com/.
 
 Subversion Integration in |SYSPRODUCTNAME|
-`````````````````````````````````````````````
+-------------------------------------------
 
 The Subversion Repository
--------------------------
+``````````````````````````
 
 Whenever a new project is hosted on |SYSPRODUCTNAME|, a new Subversion
 repository is automatically created and properly initialized. Each
@@ -235,7 +235,7 @@ project without impacting the others.
     never do that unless you know exactly what you are doing.
 
 The Subversion Repository Structure
------------------------------------
+`````````````````````````````````````
 
 When a new |SYSPRODUCTNAME| project is created, it comes with a virgin
 subversion repository that the project team must populate. Due to the
@@ -282,7 +282,7 @@ More on the repository layout is available in the Subversion book listed
 in `Subversion References`_.
 
 The Subversion Browsing Interface
-```````````````````````````````````
+----------------------------------
 
 |SYSPRODUCTNAME| offers a number a facilities that allow you to
 interact with your Subversion repository through the Web interface. The
@@ -320,7 +320,7 @@ features to end-users:
 Let's review some of these features in more details.
 
 Browsing The Subversion Repository
-----------------------------------
+``````````````````````````````````
 
 In order to interact with the Subversion repository of any
 |SYSPRODUCTNAME|-hosted project, you normally need to have Subversion
@@ -337,7 +337,7 @@ history or compare two revisions of the same file.
    Browsing the Subversion repository - A sample session
 
 Querying Subversion
--------------------
+````````````````````
 
 If a project has the Subversion Tracking feature activated (see `Subversion Administration Interface`_), the
 Subversion Web interface will bring very useful features to the software
@@ -379,7 +379,7 @@ engineers:
    Querying the Subversion tracking database of a given project
 
 Cross-Referencing Artifacts and Subversion Commits
---------------------------------------------------
+```````````````````````````````````````````````````
 
 While working in the development or the maintenance phase of a software
 project, it is vital to keep track of the changes made to the source
@@ -437,7 +437,7 @@ as follows:
     trying to keep track of the changes and why they were made.
 
 Subversion Administration Interface
-````````````````````````````````````
+------------------------------------
 
 Through the |SYSPRODUCTNAME| Web interface, project administrators can
 perform the most common administration and configuration tasks on their
@@ -445,7 +445,7 @@ Subversion repository. The administration functions can be accessed
 through the ``SVN Admin`` menu item in the Subversion menu bar.
 
 General Settings
-----------------
+`````````````````
 
 -  **Subversion Tracking**: Being a version control system Subversion
    is, of course, natively taking care of all your file history and is
@@ -467,7 +467,7 @@ General Settings
    Subversion Information page here.
 
 Subversion Access Control
--------------------------
+``````````````````````````
 
 Default Access Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -615,7 +615,7 @@ For more information about the format of this file you should refer to
 the Subversion Book (see `Subversion References`_).
 
 Subversion Email Notification
------------------------------
+``````````````````````````````
 
 In addition to tracking the changes in the |SYSPRODUCTNAME| database,
 |SYSPRODUCTNAME| can also send a nicely formatted email message to
@@ -652,7 +652,7 @@ notification:
     useful for future reference. See :ref:`mailing-lists` for mailing list creation.
 
 A Typical Subversion Life Cycle
-`````````````````````````````````
+--------------------------------
 
 As stated earlier, the intent of this chapter is not to give a formal
 Subversion training but rather to explain what are the steps a project
@@ -674,7 +674,7 @@ front-ends should be relatively straightforward.
    A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
 
 Logging In
-----------
+```````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -684,7 +684,7 @@ Subversion will ask for your login name and password only when
 performing an operation (e.g. commit) that requires authentication.
 
 Importing Existing Source Code
-------------------------------
+```````````````````````````````
 
 *Audience: project members*
 
@@ -744,7 +744,7 @@ Where:
     server. Contact us for more information.
 
 Checking Code Out
------------------
+``````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -783,7 +783,7 @@ Where:
 -  ``projectname`` is the project short name
 
 Updating the Source Code
-------------------------
+``````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -797,7 +797,7 @@ of each source file from the repository. To update a working copy type:
             
 
 Examining your Changes
-----------------------
+```````````````````````
 
 If you want to know which files have been modified in your own working
 copy since your last update, run the following command:
@@ -830,7 +830,7 @@ If no ``filename`` is specified the diff operation is applied
 recursively on all the files and sub-directories.
 
 Committing your Changes (project team)
---------------------------------------
+```````````````````````````````````````
 
 *Audience: project members*
 
@@ -881,7 +881,7 @@ Where:
     it in isolation.
 
 Contributing your Changes (other users)
----------------------------------------
+````````````````````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -953,7 +953,7 @@ the project team.
 And thanks for contributing some code!
 
 Exporting and Packaging
------------------------
+````````````````````````
 
 *Audience: project members*
 
@@ -1003,10 +1003,10 @@ Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the |SYSPRODUCTNAME| News service (see :ref:`news-service`).
 
 Subversion for Project Administrators
-```````````````````````````````````````
+--------------------------------------
 
 Subversion Hook Scripts
------------------------
+````````````````````````
 
 |SYSPRODUCTNAME| offers an easy to use Web interface to administrate
 the common settings of your Subversion repository like access control

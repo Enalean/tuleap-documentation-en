@@ -8,7 +8,7 @@ Other Services
 .. _shell-account:
 
 Shell Account
-```````````````
+---------------
 
 **Important Note**: this feature can be deactivated by your
 |SYSPRODUCTNAME| site administrator and may therefore be unavailable
@@ -55,7 +55,7 @@ You can use this command as many time as you want during a shell session
 when you are about to do work for another one of your project.
 
 FTP Anonymous Storage Space
-``````````````````````````````
+----------------------------
 
 Each project receives its own FTP storage, the Anonymous FTP Space. If
 you need a controlled access to your files, it is recommended to use the
@@ -81,7 +81,7 @@ that you use this storage space for world readable files only.
    ``ftp://projectname.SYS_DEFAULT_DOMAIN:/pub/projectname``
 
 SOAP API
-``````````
+---------
 
 |SYSPRODUCTNAME| provides a SOAP API to access |SYSPRODUCTNAME|
 through web-services. At this time, only session (login/logout) and
@@ -98,7 +98,7 @@ more formal WSDL language at
 The WSDL also includes the types definition.
 
 |SYSPRODUCTNAME| Command Line Interface (CLI)
-```````````````````````````````````````````````
+----------------------------------------------
 
 Another way to use |SYSPRODUCTNAME| is to use the command line
 interface (CLI). It's a client application that use the SOAP API to

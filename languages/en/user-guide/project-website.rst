@@ -7,7 +7,7 @@ Project Web Site
 ================
 
 Visiting a Web Site
-`````````````````````
+--------------------
 
 When a new project is created on |SYSPRODUCTNAME| a project specific
 Web Site is created as well. You can access a project Web site in 2
@@ -36,10 +36,10 @@ the default project home page informing you that the site will come soon
 as well as a link back to the |SYSPRODUCTNAME| site.
 
 Web Site Creation
-``````````````````
+------------------
 
 Directory Structure and Location
---------------------------------
+`````````````````````````````````
 
 Each project has its own specific location where to store their
 collection of HTML pages along with the images or related data files and
@@ -92,7 +92,7 @@ server and place yourself in this directory with the Unix command "cd
    in it.
 
 Web Site Scripting with PHP
----------------------------
+````````````````````````````
 
 Project members can build sophisticated project Web sites by using the
 `PHP language <http://www.php.net>`__. PHP, is becoming extremely
@@ -109,7 +109,7 @@ document root of your project (e.g.
 ``/home/groups/projectname/htdocs``).
 
 Web Site Publishing
--------------------
+````````````````````
 
 You can use various methods to publish your Web pages on your
 |SYSPRODUCTNAME| Web site:
@@ -169,7 +169,7 @@ export facility you can transfer your HTML files by other means.
    structure.
 
 Referencing the |SYSPRODUCTNAME| Site
-```````````````````````````````````````
+--------------------------------------
 
 The |SYSPRODUCTNAME| Team is asking that all project Web sites hosted
 on |SYSPRODUCTNAME| display the |SYSPRODUCTNAME| logo on their front
