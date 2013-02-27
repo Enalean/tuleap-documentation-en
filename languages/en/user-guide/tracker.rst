@@ -1,6 +1,8 @@
 
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
+.. _trackers-and-real-time-reports:
+
 Trackers and real-time Reports
 ==============================
 

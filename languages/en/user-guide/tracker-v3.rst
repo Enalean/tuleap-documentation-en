@@ -1,16 +1,15 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Tracker (Legacy)
 ================
 
 **Disclaimer:** this chapter covers the legacy version (aka v3) of
 Tracker service. For documentation on the current tracker system (v5)
-see ?.
+see :ref:`trackers-and-real-time-reports`.
 
-The SYS\_PRODUCT\_NAME Tracker is one of the most powerful and versatile
-services offered to SYS\_PRODUCT\_NAME hosted projects. It allows for
+The |SYSPRODUCTNAME| Tracker is one of the most powerful and versatile
+services offered to |SYSPRODUCTNAME| hosted projects. It allows for
 the tracking of various artifacts like bugs, tasks, requirements, etc...
 and a project can create as many trackers as necessary.
 
@@ -18,7 +17,7 @@ All trackers, whether predefined at the site level or created by a
 project can be fully customized.
 
 Terminology and common features
-===============================
+--------------------------------
 
 Before we explain the features of the tracker service, it's worth
 spending some time on the terminology used in the tracker service as
@@ -45,50 +44,61 @@ are:
    information that help better characterize the nature of the artifact.
 
 -  **CC list**: any number of users can be notified of modification to
-   an artifact by including their SYS\_PRODUCT\_NAME user name or email
+   an artifact by including their |SYSPRODUCTNAME| user name or email
    address in the CC list.
 
 Entering the Tracker Service
-============================
+-----------------------------
 
 To enter the Tracker service of a given project, first go to the Project
-Summary page (see ?) and either click the "Trackers" item in the Project
+Summary page (see :ref:`accessing-a-project-dashboard`) and either click the "Trackers" item in the Project
 Main Menu located in the upper part of the page or you can directly
 choose a tracker from the trackers listed in the Public Area of the
 Project Summary page.
 
 You will be presented with a list of trackers available for this
-particular project (see ?. Select the tracker you are interested in.
+particular project (see `Tracker Welcome Screen`_). Select the tracker you are interested in.
 Entering the tracker will give you access to various tracker functions
 depending on the permissions you have with this tracker. You may be able
 to submit new artifacts, update existing ones, search and browse the
 artifact database or configure the tracker.
 
-|Tracker Welcome Screen|
+.. figure:: ../images/screenshots/sc_trackerwelcomescreen.png
+   :align: center
+   :alt: Tracker Welcome Screen
+   :name: Tracker Welcome Screen
+
+   Tracker Welcome Screen
 
 New Artifact Submission
-=======================
+------------------------
 
 To submit a new artifact to a given project you must first access the
 appropriate tracker of that project as indicated in the section above
-(see ?.
+(see `Entering the Tracker Service`_).
 
 When entering a given tracker you are presented with the artifact
-selection and browsing screen (more about this facility in ?). For now
+selection and browsing screen (more about this facility in `Artifact Browsing`_). For now
 let's click on the "Submit a New Artifact" item (or whatever the
 artifact name is) from the Tracker Menu Bar in the upper part of the
-welcome screen (see ?).
+welcome screen (see `A sample artifact submission screen (the artifact is of type "bug" here)`_).
 
-|A sample artifact submission screen (the artifact is of type "bug"
-here)|
+.. figure:: ../images/screenshots/sc_artifactsubmission.png
+   :align: center
+   :alt: A sample artifact submission screen (the artifact is of type "bug" here)
+   :name: A sample artifact submission screen (the artifact is of type "bug" here)
 
-? shows a sample submission screen from one of the SYS\_PRODUCT\_NAME
-hosted projects. Because of the SYS\_PRODUCT\_NAME Tracker high level of
+   A sample artifact submission screen (the artifact is of type "bug" here)
+
+`A sample artifact submission screen (the artifact is of type "bug" here)`_ shows 
+a sample submission screen from one of the |SYSPRODUCTNAME|
+hosted projects. Because of the |SYSPRODUCTNAME| Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
 
-In the example provided on ? the artifact type is a bug (also know as
+In the example provided on `A sample artifact submission screen (the artifact is of type "bug" here)`_ 
+the artifact type is a bug (also know as
 "defect" in corporate language). The user is asked to choose a bug
 Category, a bug Group, a Priority and an Assignee from a series of pull
 down menus. Then comes a one-line description for the bug and a longer
@@ -105,7 +115,7 @@ assigned to the submitted artifact.
 
 The values proposed by a field could depend upon other field value. If
 javascript is activated in your browser, fields will be filtered
-dynamically. Otherwise, SYS\_PRODUCT\_NAME will ensure that the values
+dynamically. Otherwise, |SYSPRODUCTNAME| will ensure that the values
 you submit are correct.
 
 As explained above, artifact submission forms vary from one project to
@@ -119,31 +129,31 @@ make much sense. It is very unlikely that users external to the project
 team know enough about the project organization to correctly assign the
 bug. That's the reason why artifact fields shown to users on the
 submission form can be configured in the Tracker Administration module
-(see ?)
+(see `Tracker Administration`_)
 
 In any case don't forget to click on the "Submit" button when you are
 finished !
 
     **Tip**
 
-    About to submit a bug or a support request to a SYS\_PRODUCT\_NAME
+    About to submit a bug or a support request to a |SYSPRODUCTNAME|
     Project? Before you do that, make sure that others haven't yet
     submitted a similar artifact. To do so you can either browse the
     artifact database through the Artifact Selection and Browsing
-    facility or you can use the search box in the SYS\_PRODUCT\_NAME
+    facility or you can use the search box in the |SYSPRODUCTNAME|
     Main Menu and search by keywords.
 
 Artifact Browsing
-=================
+------------------
 
-SYS\_PRODUCT\_NAME offers the ability to browse the artifact database
+|SYSPRODUCTNAME| offers the ability to browse the artifact database
 according to a variable set of criteria.
 
 Selection Criteria
-------------------
+```````````````````
 
 The upper part of the artifact browsing screen is devoted to the
-selection criteria. ? shows the default set of selection criteria that
+selection criteria. `A sample Tracker browsing screen`_ shows the default set of selection criteria that
 is available when a new tracker is created. You can select bugs by
 Category (the module in which the bug occurred), Group (nature of the
 bug like Crash, Documentation Typo, ...), Status (e.g. Open, Closed,
@@ -274,7 +284,7 @@ the values you can specify in such a field:
    characters in between including the decimal point.
 
 Favorites and Predefined Tracker Queries
-----------------------------------------
+`````````````````````````````````````````
 
     **Tip**
 
@@ -283,11 +293,11 @@ Favorites and Predefined Tracker Queries
     query for later re-use. To do this: select the appropriate tracker
     report, then choose your search criteria, click on the "Browse"
     button to run the query. Finally click on the "Bookmark this Page"
-    item in the SYS\_PRODUCT\_NAME Main Menu. A new bookmark will show
+    item in the |SYSPRODUCTNAME| Main Menu. A new bookmark will show
     up in your Personal Page. A click on this bookmark will run the
     exact same query again.
 
-Your favorite queries can be saved via the SYS\_PRODUCT\_NAME bookmark
+Your favorite queries can be saved via the |SYSPRODUCTNAME| bookmark
 mechanism as explained in the Tip box but there are also shortcuts in
 the Tracker Menu Bar for the most common queries. They are:
 
@@ -295,11 +305,11 @@ the Tracker Menu Bar for the most common queries. They are:
    for this project.
 
 -  **My Artifacts**: display the artifacts assigned to you (based on the
-   SYS\_PRODUCT\_NAME account you are currently using)
+   |SYSPRODUCTNAME| account you are currently using)
 
-Also notice that SYS\_PRODUCT\_NAME always keeps track of the last run
+Also notice that |SYSPRODUCTNAME| always keeps track of the last run
 query. Next time you enter the tracker welcome screen,
-SYS\_PRODUCT\_NAME will use the same set of selection criteria in the
+|SYSPRODUCTNAME| will use the same set of selection criteria in the
 selection fields and display the list of matching artifacts accordingly.
 
 Advanced Search Mode
@@ -312,19 +322,24 @@ selection criteria. Using this mode you could search for both open and
 suspended bugs assigned to project members A and B.
 
 Tracker Search Results
-----------------------
+```````````````````````
 
-Based on your selection of search criteria, SYS\_PRODUCT\_NAME runs a
+Based on your selection of search criteria, |SYSPRODUCTNAME| runs a
 query against the tracker database, selects the matching artifacts, and
 displays them right below the selection criteria. Columns displayed in
-the artifact list are entirely configurable by the project team (see ?).
+the artifact list are entirely configurable by the project team (see `Tracker Reports`_).
 Therefore, the artifact browsing screen might look completely different
-from the one shown in ?.
+from the one shown in `A sample Tracker browsing screen`_.
 
-|A sample Tracker browsing screen|
+.. figure:: ../images/screenshots/sc_legacyartifactbrowsing.png
+   :align: center
+   :alt: A sample Tracker browsing screen
+   :name: A sample Tracker browsing screen
+
+   A sample Tracker browsing screen
 
 Artifact severity is color coded. Colors associated with severity levels
-may vary from one SYS\_PRODUCT\_NAME site to another and it is therefore
+may vary from one |SYSPRODUCTNAME| site to another and it is therefore
 shown at the bottom of the list of results generated by the search.
 Finally, results are listed by chunks of N artifacts where N is
 user-definable. If more than N artifacts are retrieved from the tracker
@@ -339,7 +354,7 @@ Artifact List Sorting
 
 By default, artifacts are sorted by ID which happens to be the
 chronological order in which they have been submitted and stored in the
-SYS\_PRODUCT\_NAME database.
+|SYSPRODUCTNAME| database.
 
 The list of artifacts can be sorted by any of the columns displayed on
 the screen by clicking on the column heading. Clicking twice on the same
@@ -371,7 +386,7 @@ Export Tracker Search Results
 At the bottom of the Search Result screen you have a button to export
 all artifacts of your search result into CSV format. Using this facility
 you can easily select the tracker artifacts that you want to process
-with other tools outside SYS\_PRODUCT\_NAME.
+with other tools outside |SYSPRODUCTNAME|.
 
 Printer Friendly Version
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,14 +413,14 @@ criteria and the columns used in the list of matching artifacts.
 Depending on the project, users may enjoy the ability to choose from
 several tracker reports by using the upper pull-down menu of the
 artifact browsing screen. If no project or user specific tracker report
-has been defined, the SYS\_PRODUCT\_NAME 'Default' report is the only
+has been defined, the |SYSPRODUCTNAME| 'Default' report is the only
 one available.
 
-Any SYS\_PRODUCT\_NAME user with access to the tracker can define her
+Any |SYSPRODUCTNAME| user with access to the tracker can define her
 own personal report. In this case the report is a personal one and is
 only visible to this particular user. On the contrary, tracker
 administrators have the ability to define project-wide reports that all
-users will be able to use. See ? for more details on managing tracker
+users will be able to use. See `Tracker Report Management`_ for more details on managing tracker
 reports.
 
 Graphical Tracker Reports
@@ -416,19 +431,19 @@ Depending on the project, users may enjoy the ability to choose from
 several graphical tracker reports by using the upper pull-down menu of
 the 'Charts' section
 
-Any SYS\_PRODUCT\_NAME user with access to the tracker can define her
+Any |SYSPRODUCTNAME| user with access to the tracker can define her
 own personal graphical report. In this case the report is a personal one
 and is only visible to this particular user. On the contrary, tracker
 administrators have the ability to define project-wide graphical reports
-that all users will be able to use. See ? for more details on managing
+that all users will be able to use. See `Tracker Graphical Report Setting`_ for more details on managing
 tracker reports.
 
 Artifact Update
-===============
+----------------
 
 Selecting an artifact ID from the list generated by a search operation
 will bring you to a screen with all the artifact details. Depending on
-the permissions you have on this tracker (see ?), the detailed view is
+the permissions you have on this tracker (see `Field Permissions Management`_), the detailed view is
 made of text fields and menus that you can update with new values. If
 you are an anonymous user or a registered user who does not belong to
 the project team, most of the fields will likely appear as immutable
@@ -440,7 +455,7 @@ The Artifact Update screen is divided in several parts: **Header,
 Comments, CC List, Artifact Attachments, Dependencies and History.**
 
 Header
-------
+```````
 
 The header zone is where you'll find all the fields associated with an
 artifact. As shown on ?, many of these fields are assigned a set of
@@ -449,13 +464,18 @@ a number format (Effort) or a free text format (Summary). For more
 clarity, the fields are grouped in field sets. The set of fields used in
 a given tracker, as well as the related set of predefined values and the
 field sets can be configured by project members who have administration
-permissions on this tracker. (see ? for more details on the Tracker
+permissions on this tracker. (see `Header of Tracker Update screen (artifact fields)`_ for more details on the Tracker
 configuration).
 
-|Header of Tracker Update screen (artifact fields)|
+.. figure:: ../images/screenshots/sc_artifactupdateheader.png
+   :align: center
+   :alt: Header of Tracker Update screen (artifact fields)
+   :name: Header of Tracker Update screen (artifact fields)
+
+   Header of Tracker Update screen (artifact fields)
 
 Comments
---------
+`````````
 
 As many follow-up comments as needed can be attached to any given
 artifact. Follow-up comments are free text fields where virtually any
@@ -470,7 +490,7 @@ extensions:
    repeatedly posted comments are: a thank you message to the
    originator, a request for the originator to provide commonly missing
    information like version numbers or type of machine used, etc. Rather
-   than typing the same comments all the time, SYS\_PRODUCT\_NAME allows
+   than typing the same comments all the time, |SYSPRODUCTNAME| allows
    project members to create a predefined set of responses. Each canned
    response is defined by a name and by the body of the response.
 
@@ -482,7 +502,7 @@ extensions:
 
 -  **Comment Types**: in order to avoid the exponential growth of new
    artifact fields to store all sorts of free text information,
-   SYS\_PRODUCT\_NAME offers an interesting mechanism called Comment
+   |SYSPRODUCTNAME| offers an interesting mechanism called Comment
    Types. The project team has the ability to define a list of labels
    that can be used to characterize the nature of a follow-up comment.
    This is a very helpful feature to define the nature of the
@@ -494,21 +514,26 @@ extensions:
    artifacts are bugs), "Test case" to document how to test the code in
    the future to make sure that this case will be tested in the future
    test suite, etc. Comment types are defined in the Tracker
-   Administration module (see ?)
+   Administration module (see `Tracker Administration`_)
 
 -  **Cross-References**: while typing a follow-up comment, you can use
    some special text pattern to refer to other artifacts, documents,
    files, or CVS or Subversion commits. These pattern will be
    automatically displayed as hyperlinks when the follow-up comment is
    displayed on the screen. This is an extremely powerful and easy to
-   use mechanism that is covered in more details in ?.
+   use mechanism that is covered in more details in `Artifact Cross-Referencing`_.
 
-|Follow-up comments attached to an artifact|
+.. figure:: ../images/screenshots/sc_artifactupdatecomments.png
+   :align: center
+   :alt: Follow-up comments attached to an artifact
+   :name: Follow-up comments attached to an artifact
+
+   Follow-up comments attached to an artifact
 
 CC List
--------
+````````
 
-As explained later in this chapter (see ?) Tracker offers a powerful
+As explained later in this chapter (see `E-mail Notification`_) Tracker offers a powerful
 email notification system for those users who, at some point, were
 involved in the life of the artifact whether as a submitter, an assignee
 or as a person who posted a follow-up comment (commenter).
@@ -525,19 +550,19 @@ artifact.
 CC Names
 ~~~~~~~~
 
-The CC names can be either email addresses or a SYS\_PRODUCT\_NAME login
-name if the user has a SYS\_PRODUCT\_NAME account.
+The CC names can be either email addresses or a |SYSPRODUCTNAME| login
+name if the user has a |SYSPRODUCTNAME| account.
 
--  **SYS\_PRODUCT\_NAME login name**: when the person you want involve
-   in the notification process has a SYS\_PRODUCT\_NAME account use it
-   in place of her email address. Using the SYS\_PRODUCT\_NAME login
+-  **|SYSPRODUCTNAME| login name**: when the person you want involve
+   in the notification process has a |SYSPRODUCTNAME| account use it
+   in place of her email address. Using the |SYSPRODUCTNAME| login
    name give to the recipient the ability to customize the kind of
    update events they want to receive. For more information on how to
-   customize notification preferences for a given project see ?.
+   customize notification preferences for a given project see `Email Notification Settings`_.
 
 -  **Email Address**: there is no restriction on the type of email
    address you can type. It can be either individuals or mailing list -
-   see ?. Unlike CC names entered as login names, CC names added in the
+   see :ref:`mailing-lists`. Unlike CC names entered as login names, CC names added in the
    form of email addresses have no customization capabilities and
    receive all bug updates.
 
@@ -552,21 +577,21 @@ CC names addition and deletion is subject to a number of permission
 rules:
 
 -  Adding a CC name: Anonymous users cannot add CC names. Any other
-   SYS\_PRODUCT\_NAME user who is logged in can add CC names and the CC
+   |SYSPRODUCTNAME| user who is logged in can add CC names and the CC
    list will clearly show who added this entry and when.
 
 -  Deleting a CC name: users with Tracker Administrator permissions on a
-   given tracker (see ?) can delete any entry in the CC list for any
+   given tracker (see :ref:`user-permissions`) can delete any entry in the CC list for any
    artifact of this tracker. All other users can delete CC entries that
    were either added by themselves or entries where the CC name matches
-   their own name or email address in any SYS\_PRODUCT\_NAME projects.
-   In other words a SYS\_PRODUCT\_NAME user has the right to undo what
+   their own name or email address in any |SYSPRODUCTNAME| projects.
+   In other words a |SYSPRODUCTNAME| user has the right to undo what
    they have done or remove themselves from a CC list in any tracker.
 
 Artifact Attachments
---------------------
+`````````````````````
 
-In addition to comments, the SYS\_PRODUCT\_NAME Tracker allows you to
+In addition to comments, the |SYSPRODUCTNAME| Tracker allows you to
 attach virtually any piece of information to an artifact in the form of
 a file. Typical examples of artifact attachments are application screen
 shots in PNG, GIF, JPEG or whatever image format is appropriate; it can
@@ -579,22 +604,27 @@ attachment. The maximum size of a file attachment is site dependent. The
 default is 2 MByte.
 
 Artifact Dependencies
----------------------
+``````````````````````
 
 The next section on the artifact update screen deals with artifact
-dependencies (see ?). Users have the ability to establish a dependency
+dependencies (see Artifact Dependencies). Users have the ability to establish a dependency
 link from an artifact to one or several other artifacts belonging to any
-of the tracker of any SYS\_PRODUCT\_NAME project. This is made possible
+of the tracker of any |SYSPRODUCTNAME| project. This is made possible
 by the fact that artifacts have a unique ID across the entire
-SYS\_PRODUCT\_NAME system.
+|SYSPRODUCTNAME| system.
 
-The SYS\_PRODUCT\_NAME system does not impose any semantic on the nature
+The |SYSPRODUCTNAME| system does not impose any semantic on the nature
 of these dependency links. As a project team, you are free to agree on a
 specific meaning for these links. It can be a cause-effect type of
 relationship, a duplication of information or a time dependency for a
 task tracker.
 
-|Artifact Dependencies|
+.. figure:: ../images/screenshots/sc_articatupdatedependencies.png
+   :align: center
+   :alt: Artifact Dependencies
+   :name: Artifact Dependencies
+
+   Artifact Dependencies
 
 To create an artifact dependency, type one or several artifact IDs
 (comma separated) and submit the form. The cross-referenced artifacts
@@ -610,11 +640,11 @@ shows the list of artifact(s) the displayed artifact depends on but also
 the list of artifacts that depend upon the one you are browsing.
 
 Artifact Cross-Referencing
---------------------------
+```````````````````````````
 
 In addition to the rather formal way of expressing a dependency between
-two artifacts presented in ?, SYS\_PRODUCT\_NAME offers the ability to
-cross-reference any artifact, or any other SYS\_PRODUCT\_NAME object
+two artifacts presented in `Artifact Dependencies`_, |SYSPRODUCTNAME| offers the ability to
+cross-reference any artifact, or any other |SYSPRODUCTNAME| object
 from within a follow-up comment.
 
 When typing a follow-up comment, any text that follows the pattern "XXX
@@ -622,20 +652,20 @@ When typing a follow-up comment, any text that follows the pattern "XXX
 where NNN is the unique artifact ID, and XXX is the tracker short name
 (e.g. "bug #123", "task #321", "req #12", etc.). If you don't know the
 tracker short name or don't want to specify it, you may simply use "art
-#NNN". Each time SYS\_PRODUCT\_NAME displays a piece of text that
+#NNN". Each time |SYSPRODUCTNAME| displays a piece of text that
 follows this pattern it will auto-magically create an hyperlink to the
 web page showing all the details of the artifact.
 
-SYS\_PRODUCT\_NAME reference patterns may be used to reference
+|SYSPRODUCTNAME| reference patterns may be used to reference
 artifacts, as well as source code commits, documents, files, etc. Please
-refer to ? for more details on References.
+refer to :ref:`reference-overview` for more details on References.
 
 Furthemore references concerning artifacts, svn revisions and cvs
 commits are stored in the database. They are displayed in the next
 section, ordered by type and initial reference direction.
 
 Permissions on artifacts
-------------------------
+``````````````````````````
 
 Tracker admins can restrict access to artifact. Those permissions are a
 complement to the permissions defined at tracker level.
@@ -644,24 +674,34 @@ The tracker admin just has to edit the artifact and update permissions
 like in the example below (where the artifact is currently restricted to
 project admins and members).
 
-|Permissions d'un artefact|
+.. figure:: ../images/screenshots/sc_artifactpermissions.png
+   :align: center
+   :alt: Permissions d'un artefact
+   :name: Permissions d'un artefact
+
+   Permissions d'un artefact
 
 Artifact History
-----------------
+`````````````````
 
 The last part of the artifact update screen is devoted to the artifact
-history (see ?). The artifact history keeps track of all the changes
+history (see `Artifact History`_). The artifact history keeps track of all the changes
 that occurred on all artifact fields since the creation of the artifact.
 
 The artifact history shows what fields changed, what the old value was
 before the change took place, who changed it and when.
 
-|Artifact History|
+.. figure:: ../images/screenshots/sc_artifacthistory.png
+   :align: center
+   :alt: Artifact History
+   :name: Artifact History
+
+   Artifact History
 
 Artifact Mass Change
-====================
+---------------------
 
-SYS\_PRODUCT\_NAME provides project and tracker administrators with the
+|SYSPRODUCTNAME| provides project and tracker administrators with the
 possibility to update several artifacts in one step: delete/add the same
 CC name entry or file attachment to a set of artifacts, assign a list of
 artifacts to a person, etc... A typical application of the mass update
@@ -669,23 +709,28 @@ feature is when a person leaves a project and all the artifacts that are
 assigned to her have to be re-affected to another person.
 
 Selection Criteria
-------------------
+````````````````````
 
 The artifacts to be updated can be selected according to a set of
 criteria. These criteria are the same as for artifact browsing. For
 fine-grained control you may also select individually all artifacts
-concerned by the mass change. Please see the ? for more detail on how to
+concerned by the mass change. Please see the :ref:`accessing-a-project-dashboard` for more detail on how to
 fill out the selection criteria.
 
-In the sample screen in ? hitting the left button "Mass Change Selected
+In the sample screen in `Artifact Selection screen for the artifact mass change`_ hitting the left button "Mass Change Selected
 Items" will select the three items checked individually, hitting the
 right button "Mass Change All Items" will select all nine items
 corresponding to the selection criteria.
 
-|Artifact Selection screen for the artifact mass change|
+.. figure:: ../images/screenshots/sc_masschangeselection.png
+   :align: center
+   :alt: Artifact Selection screen for the artifact mass change
+   :name: Artifact Selection screen for the artifact mass change
+
+   Artifact Selection screen for the artifact mass change
 
 Update
-------
+```````
 
 Once you have selected all the artifacts to be updated you can now
 proceed to affect these changes via the Update screen. The Update screen
@@ -693,20 +738,30 @@ for the Mass Change is very similar to the normal Artifact Update
 screen. It is divided into the following parts: Header, Comments, CC
 List, Artifact Attachments, and Dependencies.
 
-|Header of Artifact Update screen for the artifact mass change|
+.. figure:: ../images/screenshots/sc_masschangeupdate_header.png
+   :align: center
+   :alt: Header of Artifact Update screen for the artifact mass change
+   :name: Header of Artifact Update screen for the artifact mass change
+
+   Header of Artifact Update screen for the artifact mass change
 
 In the Header zone you find all the fields associated to the artifact.
 Only those that are changed from Unchanged to a defined value will be
-taken into account for the update. In our example in ? only the
+taken into account for the update. In our example in `Header of Artifact Update screen for the artifact mass change`_ only the
 "Assigned to" field of the three artifacts will be updated to a new
 value. All other fields remain unchanged.
 
-|CC list of Artifact Update screen for the artifact mass change|
+.. figure:: ../images/screenshots/sc_masschangeupdate_cc.png
+   :align: center
+   :alt: CC list of Artifact Update screen for the artifact mass change
+   :name: CC list of Artifact Update screen for the artifact mass change
+
+   CC list of Artifact Update screen for the artifact mass change
 
 The CC List zone differs from the normal Artifact CC List zone in that
 it contains all the CC names of the selected artifacts with the
 information of in how many artifacts a CC name is used. If you add a CC
-Name it will be added to all the three artifacts. In our example in ?,
+Name it will be added to all the three artifacts. In our example in `CC list of Artifact Update screen for the artifact mass change`_,
 there is one CC Name used in one of the three selected artifacts. By
 checking the "Delete?" box, the given CC Name will be deleted from this
 artifact.
@@ -716,13 +771,13 @@ artifacts with the information as to how many of those artifacts each
 file is attached to. The Dependencies zone is structured in the same
 manner.
 
-Each mass change is tracked in the project history (?). On the other
+Each mass change is tracked in the project history (:ref:`project-history`). On the other
 hand, no e-mail notification is sent in response to the mass change.
 
 Artifact Duplication
-====================
+---------------------
 
-If artifact duplication is allowed for the tracker (see section ?),
+If artifact duplication is allowed for the tracker (see section `General Configuration Settings`_),
 project members can duplicate an artifact. To duplicate an artifact,
 select an existing artifact (as though you want to update it) and click
 the "Copy this artifact" link. Then, you are in an artifact submission
@@ -736,9 +791,9 @@ duplicated artifact.
 Only project members are allowed to duplicate artifacts.
 
 E-mail Notification
-===================
+---------------------
 
-The SYS\_PRODUCT\_NAME Tracker is equipped with a powerful and flexible
+The |SYSPRODUCTNAME| Tracker is equipped with a powerful and flexible
 e-mail notification system. Unless otherwise instructed by the project
 administrators or the users themselves, the e-mail notification system
 follows simple default rules. Whenever an artifact is created or updated
@@ -758,24 +813,24 @@ following actors:
 -  All users who posted at least one follow-up comment to the artifact.
 
 Beside these simple rules, the Administration module of the
-SYS\_PRODUCT\_NAME Tracker allows SYS\_PRODUCT\_NAME users to customize
+|SYSPRODUCTNAME| Tracker allows |SYSPRODUCTNAME| users to customize
 the email notification process. For further information see ?).
 
-The e-mail message generated by the SYS\_PRODUCT\_NAME Tracker first
+The e-mail message generated by the |SYSPRODUCTNAME| Tracker first
 shows the most recent changes that occurred on the artifact in case of
 an update. It is then followed by a complete snapshot of the artifact.
 Web pointers are also included in the message to quickly and easily
-access the artifact form on SYS\_PRODUCT\_NAME.
+access the artifact form on |SYSPRODUCTNAME|.
 
 Tracker Artifact Import
-=======================
+-----------------------
 
 Project Administrators have the means to import artifacts into
-SYS\_PRODUCT\_NAME trackers using the well known CSV (Comma Separated
+|SYSPRODUCTNAME| trackers using the well known CSV (Comma Separated
 Value) format supported by all of the major office productivity suites.
 The artifact import functionality greatly facilitates the migration and
 integration of external project tracking and management tools into
-SYS\_PRODUCT\_NAME trackers.
+|SYSPRODUCTNAME| trackers.
 
 The import is divided into three steps:
 
@@ -795,45 +850,44 @@ The import is divided into three steps:
    artifacts are created or existing ones updated.
 
 When to use the Import
-----------------------
+```````````````````````
 
 You will find below a couple of suggestions regarding the use of the
 tracker import feature:
 
 -  Initial import from a project management software to your
-   SYS\_PRODUCT\_NAME task tracker.
+   |SYSPRODUCTNAME| task tracker.
 
 -  Migration of your legacy defect tracking system into your new
-   SYS\_PRODUCT\_NAME defect tracker.
+   |SYSPRODUCTNAME| defect tracker.
 
--  Migration of artifacts from one SYS\_PRODUCT\_NAME tracker to
+-  Migration of artifacts from one |SYSPRODUCTNAME| tracker to
    another.
 
 Exporting Excel Sheets in CSV Format
-------------------------------------
+`````````````````````````````````````
 
 To export an Excel sheet to CSV format, simply follow the steps below:
 
 -  Select ``File -> Save As``
 
--  In the dialog window choose ``CSV`` as the ``Save 
-           as type``
+-  In the dialog window choose ``CSV`` as the ``Save as type``
 
 CSV File Parsing
-----------------
+`````````````````
 
 The CSV format that is accepted as import input is accessible over the
 CSV file submission screen. This page allows manual validation of the
 tracker field labels, indicating which fields are mandatory in case of a
 new artifact submission. In addition, it gives you a sample CSV file. As
 for the export feature, you can specify the separator used in the CSV
-file you want to import as well as the date format (See ?). If you
-already use the Tracker Artifact Export (see ?) you will notice that the
+file you want to import as well as the date format (See :ref:`preferences`). If you
+already use the Tracker Artifact Export (see :ref:`project-data-export`) you will notice that the
 format of the files to import and the exported files are exactly the
 same. This means that if you changed your CSV separator for exporting
 data, you must use the same to import those data. You can refer to the
 export format especially for the date formats as well as the format of
-the follow-up comments (see ?). The first record in the CSV import file
+the follow-up comments (see `Comments`_). The first record in the CSV import file
 is always the header row containing all the tracker field labels that
 will be used in the following artifact records.
 
@@ -876,7 +930,7 @@ All other potential errors have to be checked manually by looking at the
 parse report table.
 
 The Database Update
--------------------
+````````````````````
 
 If you import new artifacts, all non-mandatory fields that are omitted
 in the CSV file will be initialized to their default value.
@@ -892,7 +946,7 @@ by an import even if the import file contains relevant information.
 If an error occurs for some artifact during the database update the
 following artifacts in the CSV file are not imported any more.
 
-Each import is tracked in the project history (?). On the other hand, no
+Each import is tracked in the project history (:ref:`project-history`). On the other hand, no
 e-mail notification is sent in response to the import.
 
     **Tip**
@@ -906,108 +960,103 @@ e-mail notification is sent in response to the import.
     lines.
 
     The updated date format might not be compatible with the
-    SYS\_PRODUCT\_NAME date format and potentially cause troubles when
-    importing such updated CSV files back into SYS\_PRODUCT\_NAME. On
-    the other hand SYS\_PRODUCT\_NAME-exported CSV files might not open
+    |SYSPRODUCTNAME| date format and potentially cause troubles when
+    importing such updated CSV files back into |SYSPRODUCTNAME|. On
+    the other hand |SYSPRODUCTNAME|-exported CSV files might not open
     correctly under Excel in certain Regionals.
 
     If you have a .csv file that either will not open correctly under
     Excel or was opened in Excel and will not import into
-    SYS\_PRODUCT\_NAME please try the following: Make sure all
+    |SYSPRODUCTNAME| please try the following: Make sure all
     applications are closed. Change your system's regional settings
     (Start > Settings > Control Panel > Regional Options) to use the
     English with the following formats: Date = MM/dd/YYYY Time = hh:mm.
     Using Excel, open the .csv files that don't import, make a column
     width change, save the files and exit Excel. Go back and restore
     your original regional settings. Import the "fixed" .csv file into
-    SYS\_PRODUCT\_NAME.
+    |SYSPRODUCTNAME|.
 
 Default Tracker Access Permissions
-==================================
+-----------------------------------
 
 Depending on the class of citizen a user belongs to and the level of
 permissions granted as a project member, the various features of the
-SYS\_PRODUCT\_NAME Tracker may or may not be accessible. Please note
+|SYSPRODUCTNAME| Tracker may or may not be accessible. Please note
 that the default access permissions listed below may change for a
 particular tracker if the tracker administrator modifies the access
 permission settings. For more information on how to configure tracker
-access permissions see ?. Default permission settings are summarized in
+access permissions see `Permissions Management`_. Default permission settings are summarized in
 the table below:
 
-+----------------------------------+------------------------------------------+
-| Tracker Feature                  | Access Permission                        |
-+==================================+==========================================+
-| `New Artifact                    | By default any SYS\_PRODUCT\_NAME        |
-| Submission <#ArtifactSubmission> | visitor, whether logged in or not, has   |
-| `__                              | the ability to submit a new artifact to  |
-|                                  | a tracker. The tracker administrator has |
-|                                  | the ability to limit the scope of this   |
-|                                  | feature to SYS\_PRODUCT\_NAME registered |
-|                                  | users (anonymous users are requested to  |
-|                                  | login first) or to the project members   |
-|                                  | if the tracker is made private.          |
-+----------------------------------+------------------------------------------+
-| `Artifact                        | Searching the Artifact database and      |
-| Browsing <#ArtifactBrowsing>`__  | browsing the results is available to all |
-|                                  | SYS\_PRODUCT\_NAME visitors (whether     |
-|                                  | registered or not) unless the tracker    |
-|                                  | has been made private by the project     |
-|                                  | administrator. If so the tracker is only |
-|                                  | visible to project members.              |
-+----------------------------------+------------------------------------------+
-| `Artifact                        | By default only project members can      |
-| Update <#ArtifactUpdate>`__      | update an artifact. Non members have     |
-|                                  | only limited access and can only add a   |
-|                                  | comment or attach a file.                |
-+----------------------------------+------------------------------------------+
-| `Mass Update of                  | Only available to project administrators |
-| Artifacts <#ArtifactMassChange>` | and project members with Admin. and      |
-| __                               | Tech. permission on this tracker.        |
-+----------------------------------+------------------------------------------+
-| `Tracker Artifact                | Only available to project administrators |
-| Import <#ArtifactImport>`__      | and project members with Admin. and      |
-|                                  | Tech. permission on this tracker.        |
-+----------------------------------+------------------------------------------+
-| `Tracker                         | Only available to project                |
-| Creation <#TrackerFieldUsageMana | administrators.                          |
-| gement>`__                       |                                          |
-+----------------------------------+------------------------------------------+
-| `Tracker Administration -        | Only available to project administrators |
-| General                          | and project members with Admin.          |
-| Settings <#TrackerFieldUsageMana | permission on this tracker.              |
-| gement>`__                       |                                          |
-+----------------------------------+------------------------------------------+
-| `Tracker Administration - Field  | Only available to project administrators |
-| Usage                            | and project members with Admin.          |
-| Management <#TrackerFieldUsageMa | permission on this tracker.              |
-| nagement>`__                     |                                          |
-+----------------------------------+------------------------------------------+
-| `Tracker Administration - Field  | Only available to project administrators |
-| Values                           | and project members with Admin.          |
-| Management <#TrackerFieldValuesM | permission on this tracker.              |
-| anagement>`__                    |                                          |
-+----------------------------------+------------------------------------------+
-| `Tracker Administration -        | Only Project administrators and project  |
-| Reports                          | members with Admin. permission can       |
-| Management <#TrackerReportManage | define project wide tracker reports that |
-| ment>`__                         | will be available to all users. All      |
-|                                  | other SYS\_PRODUCT\_NAME users (except   |
-|                                  | anonymous users) can define personal     |
-|                                  | tracker reports.                         |
-+----------------------------------+------------------------------------------+
-| `Tracker Administration - Email  | Only Project administrators can add      |
-| Notification                     | email addresses in the global email      |
-| Settings <#TrackerEmailNotificat | notification field. Project members can  |
-| ionSettings>`__                  | watch artifacts of other team members.   |
-|                                  | Any registered SYS\_PRODUCT\_NAME user   |
-|                                  | can customize her notification           |
-|                                  | preferences.                             |
-+----------------------------------+------------------------------------------+
+=============================================================================================  ===========================================
+ Tracker Feature                                                                               Access Permission                        
+=============================================================================================  ===========================================
+ `New ArtifactSubmission <#ArtifactSubmission>`__                                              By default any |SYSPRODUCTNAME|        
+                                                                                               visitor, whether logged in or not, has   
+                                                                                               the ability to submit a new artifact to  
+                                                                                               a tracker. The tracker administrator has 
+                                                                                               the ability to limit the scope of this   
+                                                                                               feature to |SYSPRODUCTNAME| registered 
+                                                                                               users (anonymous users are requested to  
+                                                                                               login first) or to the project members   
+                                                                                               if the tracker is made private.          
 
-Table: Default Tracker Access Permissions
+ `Artifact  Browsing <#ArtifactBrowsing>`__                                                    Searching the Artifact database and      
+                                                                                               browsing the results is available to all 
+                                                                                               |SYSPRODUCTNAME| visitors (whether     
+                                                                                               registered or not) unless the tracker    
+                                                                                               has been made private by the project     
+                                                                                               administrator. If so the tracker is only 
+                                                                                               visible to project members.              
+
+ `Artifact Update <#ArtifactUpdate>`__                                                         By default only project members can      
+                                                                                               update an artifact. Non members have     
+                                                                                               only limited access and can only add a   
+                                                                                               comment or attach a file.                
+
+ `Mass Update of Artifacts <#ArtifactMassChange>`__                                            Only available to project administrators 
+                                                                                               and project members with Admin. and      
+                                                                                               Tech. permission on this tracker.        
+
+ `Tracker Artifact Import <#ArtifactImport>`__                                                 Only available to project administrators 
+                                                                                               and project members with Admin. and      
+                                                                                               Tech. permission on this tracker.        
+
+ `Tracker Creation <#TrackerFieldUsageManagement>`__                                           Only available to project                
+                                                                                               administrators.                          
+                                                                  
+ `Tracker Administration - General Settings <#TrackerFieldUsageManagement>`__                  Only available to project administrators 
+                                                                                               and project members with Admin.          
+                                                                                               permission on this tracker.              
+
+ `Tracker Administration - Field Usage Management <#TrackerFieldUsageManagement>`__            Only available to project administrators 
+                                                                                               and project members with Admin.          
+                                                                                               permission on this tracker.              
+
+ `Tracker Administration - Field Values Management <#TrackerFieldValuesManagement>`__          Only available to project administrators 
+                                                                                               and project members with Admin.          
+                                                                                               permission on this tracker.              
+
+ `Tracker Administration - Reports Management <#TrackerReportManagement>`__                    Only Project administrators and project  
+                                                                                               members with Admin. permission can       
+                                                                                               define project wide tracker reports that 
+                                                                                               will be available to all users. All      
+                                                                                               other |SYSPRODUCTNAME| users (except   
+                                                                                               anonymous users) can define personal     
+                                                                                               tracker reports.                         
+
+ `Tracker Administration - Email Notification Settings <#TrackerEmailNotificationSettings>`__  Only Project administrators can add      
+                                                                                               email addresses in the global email      
+                                                                                               notification field. Project members can  
+                                                                                               watch artifacts of other team members.   
+                                                                                               Any registered |SYSPRODUCTNAME| user   
+                                                                                               can customize her notification preferences.                             
+=============================================================================================  ===========================================
+
+                            Table: Default Tracker Access Permissions
 
 Tracker Creation
-================
+-----------------
 
 Before one can define what fields and field values to use in a tracker
 it must first be created. Tracker creation can be accessed from the
@@ -1016,7 +1065,7 @@ part of the tracker or in the Tracker Administration section.
 
     **Tip**
 
-    When a new project is created on SYS\_PRODUCT\_NAME a number of
+    When a new project is created on |SYSPRODUCTNAME| a number of
     trackers are automatically created for this project. This would
     typically be a bug tracker, a task tracker and a support request
     tracker. If your project manages this type of artifact please use
@@ -1028,7 +1077,7 @@ To define a new tracker you must provide the following information (see
 
 -  **Name**: this is the name of your tracker. A tracker is typically
    named after the type of artifact it is going to manage. This name
-   will be used by SYS\_PRODUCT\_NAME in the title of the various
+   will be used by |SYSPRODUCTNAME| in the title of the various
    screens of the trackers. Typical examples of tracker names are:
    Action Requests, Support Requests, Requirements, Defects, Bugs…
 
@@ -1037,7 +1086,7 @@ To define a new tracker you must provide the following information (see
 
 -  **Short name**: this is a short name that best describe the type of
    artifact managed in this tracker. This name must be quite short as it
-   is used in various screens of the SYS\_PRODUCT\_NAME Tracker like the
+   is used in various screens of the |SYSPRODUCTNAME| Tracker like the
    artifact update form where it appears in the tracker menu and also
    next to the artifact ID. Following the examples given for the Name
    field above, short names can be: AR for Action Request, SR for
@@ -1048,20 +1097,20 @@ To define a new tracker you must provide the following information (see
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
 trackers again and again (e.g. Bug tracker, Support Request tracker,
-etc.) SYS\_PRODUCT\_NAME offers the ability to create a new tracker from
-a set of templates. Those templates are either SYS\_PRODUCT\_NAME-wide
+etc.) |SYSPRODUCTNAME| offers the ability to create a new tracker from
+a set of templates. Those templates are either |SYSPRODUCTNAME|-wide
 templates (also known as site templates) or project specific templates.
 
 **Remark**: using a template doesn't mean you have to stick to the list
 of fields and field values defined in this template. You can always add
 or remove fields or fine-tune the field settings afterwards.
 
--  **SYS\_PRODUCT\_NAME-wide Template**: these are templates that have
-   been defined by the administrators of the SYS\_PRODUCT\_NAME site
+-  **|SYSPRODUCTNAME|-wide Template**: these are templates that have
+   been defined by the administrators of the |SYSPRODUCTNAME| site
    because it is expected that most project needs them. It is also a way
    to ensure a certain level of harmonization across projects that will
    make developers' life easier. The list of available templates may
-   vary from one SYS\_PRODUCT\_NAME site to another but you will
+   vary from one |SYSPRODUCTNAME| site to another but you will
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
@@ -1075,10 +1124,10 @@ or remove fields or fine-tune the field settings afterwards.
    (**Note**: this does not copy the artifacts of the original tracker
    but only the field settings).
 
-SYS\_PRODUCT\_NAME-wide Tracker Templates
-=========================================
+|SYSPRODUCTNAME|-wide Tracker Templates
+-----------------------------------------
 
-The standard trackers provided for each new SYS\_PRODUCT\_NAME project
+The standard trackers provided for each new |SYSPRODUCTNAME| project
 are:
 
 -  Bugs
@@ -1094,7 +1143,7 @@ are:
 Each of those templates have predefined fields that correspond to the
 specific work processes around bugs, patches etc. In the following, we
 give a short overview of these different work processes. For each of
-those templates, the SYS\_PRODUCT\_NAME Team also tried to maintain a
+those templates, the |SYSPRODUCTNAME| Team also tried to maintain a
 fair balance between sophistication and ease of use. As a consequence,
 fairly simple and straightforward templates are configured by default
 for all new hosted projects. Then it is up to the project members to
@@ -1102,7 +1151,7 @@ decide how much information they want to see attached to an artifact and
 customize their tracker configuration accordingly.
 
 The Bug Tracker Template
-------------------------
+``````````````````````````
 
 One of the golden rules in a collaborative project environment is to let
 your project community test the software and freely report on any defect
@@ -1111,12 +1160,12 @@ objective in mind.
 
 The template Bug Tracker comes pre-configured with a set of fields (used
 or not) that are probably enough for the majority of projects hosted on
-SYS\_PRODUCT\_NAME. You can either decide that the template is lacking
+|SYSPRODUCTNAME|. You can either decide that the template is lacking
 some critical fields that you can create or, on the contrary, switch
 some fields to the "Unused" status to make the tracker simpler.
 
 The Patch Tracker Template
---------------------------
+````````````````````````````
 
 The role of the Patch tracker is to let non project members or project
 members with restricted permissions to contribute source code
@@ -1130,25 +1179,25 @@ Subversion chapter (?).
     *A note to the project team*
 
     Receiving source code modifications or other contributions from
-    other SYS\_PRODUCT\_NAME users does not imply that you have to
+    other |SYSPRODUCTNAME| users does not imply that you have to
     accept the new code and insert it in your main source tree. It is up
     to the project team to decide what to do with it. One of the
     interesting features of the Patch tracker is that submitted patches
     are available to anybody at all time regardless of the final
-    decision of the project team. Therefore any SYS\_PRODUCT\_NAME
+    decision of the project team. Therefore any |SYSPRODUCTNAME|
     visitor is free to download any submitted patch and apply it onto
     its own version of the software even if the project team has decided
     not to apply the patch on the main source tree.
 
 The Support Request Tracker Template
-------------------------------------
+``````````````````````````````````````
 
 The Support Request (SR) tracker is one of the communication mechanisms
 that your project should offer to the project community. It allows any
-SYS\_PRODUCT\_NAME user to ask question to the project team and call for
+|SYSPRODUCTNAME| user to ask question to the project team and call for
 assistance.
 
-SYS\_PRODUCT\_NAME users who have access to the tracker can follow the
+|SYSPRODUCTNAME| users who have access to the tracker can follow the
 thread of discussions between the other users and the project team. It
 is also possible to review all the SRs that were posted in the past and
 the answer given by the project team. With the Support Request tracker,
@@ -1156,21 +1205,21 @@ a project team can easily and efficiently coordinate technical support
 activities.
 
 The Task Tracker Template
--------------------------
+``````````````````````````
 
-The SYS\_PRODUCT\_NAME Task tracker is a task manager and not a project
+The |SYSPRODUCTNAME| Task tracker is a task manager and not a project
 management software like CA-SuperProject, MS-Project or other powerful
 and complex desktop products available on the market. The
-SYS\_PRODUCT\_NAME Task Tracker cannot build a Pert chart, it doesn't
+|SYSPRODUCTNAME| Task Tracker cannot build a Pert chart, it doesn't
 have any planning capabilities. It is rather a time sheet tool which
 allows project members to track their time and manage other things like
 weekly TODO list for instance.
 
-However the SYS\_PRODUCT\_NAME Task Tracker offer a number of features
+However the |SYSPRODUCTNAME| Task Tracker offer a number of features
 that makes it very complementary with the above mentioned project
 planning tools:
 
--  Like all SYS\_PRODUCT\_NAME tools, the Task Tracker is entirely web
+-  Like all |SYSPRODUCTNAME| tools, the Task Tracker is entirely web
    based. Therefore any project member can update his/her time sheet
    regardless of its physical location.
 
@@ -1182,12 +1231,12 @@ planning tools:
    audit trail of the past changes.
 
 -  Task data can be collected by the project leader(s) at any point in
-   time and exported out of the SYS\_PRODUCT\_NAME project thanks to the
+   time and exported out of the |SYSPRODUCTNAME| project thanks to the
    Project Data Export facility (see ?). This allows for an easy
    generation of progress reports or project re-planning.
 
 The Scrum Backlog Template
---------------------------
+````````````````````````````
 
 Codendi makes it easy to implement the Scrum methodology, by providing a
 Scrum Backlog tracker to each project. You will find a comprehensive
@@ -1216,9 +1265,9 @@ the new Sprint Meeting. User stories selected in the past Sprint are
 updated, and new stories are selected for the next Sprint.
 
 Tracker Administration
-======================
+-----------------------
 
-As we went through the description of the SYS\_PRODUCT\_NAME Tracker
+As we went through the description of the |SYSPRODUCTNAME| Tracker
 features, we referred several times to the flexibility of this system
 and how easy it is to customize your own tracker. This can be done
 through the Tracker Administration module available under the "All
@@ -1260,7 +1309,7 @@ sections:
    personal email notification settings.
 
 General Configuration Settings
-------------------------------
+````````````````````````````````
 
 This module allows you to define a series of properties for your
 tracker. Some of those properties have already been defined in the
@@ -1269,7 +1318,7 @@ configuration page. The properties are as follows:
 
 -  **Name**: this is the name of your tracker. More precisely you want
    to name your tracker after the type of artifact that are going to be
-   managed in your tracker. This name will be used by SYS\_PRODUCT\_NAME
+   managed in your tracker. This name will be used by |SYSPRODUCTNAME|
    in the title of the various screens of the trackers. Typical example
    of tracker names are: Action Requests, Support Requests,
    Requirements, Defects or Bugs…
@@ -1279,7 +1328,7 @@ configuration page. The properties are as follows:
 
 -  **Short name**: this is a short name that best describe the type of
    artifact managed in this tracker. This name must be quite short as it
-   is used in various screens of the SYS\_PRODUCT\_NAME Tracker like the
+   is used in various screens of the |SYSPRODUCTNAME| Tracker like the
    artifact update form next to the artifact ID. Following the examples
    given for the Name field above, short names can be: AR for Action
    Request, SR for Support Requests, Reqt for Requirements, bug for
@@ -1308,7 +1357,7 @@ configuration page. The properties are as follows:
    URL…)
 
 Permissions Management
-----------------------
+``````````````````````
 
 This module is used to give different access permissions to different
 users depending on their role.
@@ -1334,7 +1383,7 @@ Tracker and Artifacts Permissions Management
 When entering this module, a list of user groups appears along with
 their access permissions. The user group list first shows groups of
 users defined at the system level like all\_users, registered\_users,
-project\_members, etc. These are groups that SYS\_PRODUCT\_NAME manages
+project\_members, etc. These are groups that |SYSPRODUCTNAME| manages
 for you so you don't have to keep them up to date when new users
 subscribe to the site or become member of your project. The second part
 of the user group list shows all groups of users defined at the project
@@ -1453,7 +1502,7 @@ changes associated with each artifact and finally in the email
 notification sent to this group of users.
 
 Field Sets Management
----------------------
+``````````````````````
 
 In order to improve the input of the artifact submission form, the
 fields of the trackers are grouped in field sets. This allows to open up
@@ -1472,7 +1521,7 @@ Tracker Field Set List
 To manage the field sets for this tracker, select the item "Manage field
 sets" on the welcome page of any Tracker Administration screen. The
 Field Set screen (?) shows you a sample list of field sets available in
-the tracker of a SYS\_PRODUCT\_NAME project. The screen is divided in 2
+the tracker of a |SYSPRODUCTNAME| project. The screen is divided in 2
 parts:
 
 the list of tracker field sets currently in use
@@ -1530,15 +1579,15 @@ Properties that can be tuned for a tracker field set are as follows:
    sets.
 
 Field Usage Management
-----------------------
+```````````````````````
 
 When a tracker is first created, it comes pre-configured with a set of
 fields inherited form the template that was used to create it. For the
-majority of projects hosted on SYS\_PRODUCT\_NAME it is very likely that
+majority of projects hosted on |SYSPRODUCTNAME| it is very likely that
 the standard Tracker templates (e.g Bugs, Tasks, Support Requests) will
 cover most of the needs.
 
-However SYS\_PRODUCT\_NAME gives you the ability to customize the list
+However |SYSPRODUCTNAME| gives you the ability to customize the list
 of fields for your trackers. It can be a variation on an existing
 template with some field addition or removal or it can be an entirely
 new tracker created from an empty template.
@@ -1588,7 +1637,7 @@ Tracker Field List
 To decide what field to use and what field not to use select the item
 "Manage Field Usage" on the welcome page of any Tracker Administration
 screen. The Field Usage screen (?) shows you a sample list of fields
-available in the tracker of a SYS\_PRODUCT\_NAME project. The screen is
+available in the tracker of a |SYSPRODUCTNAME| project. The screen is
 divided in 3 parts:
 
 the list of tracker fields currently in use
@@ -1649,7 +1698,7 @@ field label located on the left hand side of the field list.
     with new custom fields. However before you decide to create a new
     field make sure that there isn't a predefined field that already
     plays the same role. By using predefined fields whenever possible,
-    you'll contribute to keep the global SYS\_PRODUCT\_NAME environment
+    you'll contribute to keep the global |SYSPRODUCTNAME| environment
     consistent and make it easier for visitors, contributors or new team
     members to switch from project to another.
 
@@ -1738,7 +1787,7 @@ Properties that can be tuned for a tracker field are as follows:
    destroys the field data (see ?.
 
 Field Values Management
------------------------
+````````````````````````
 
 Once fields have been defined for your tracker, the next step is to
 define a set of values for your fields. This mostly applies to "Select
@@ -1799,11 +1848,11 @@ The table of values shows the following information:
 
 The ? shows the list of available values for the Resolution field of
 tracker managing "Bugs" artifacts. The Resolution field comes with set
-of predefined values that are available to all SYS\_PRODUCT\_NAME
+of predefined values that are available to all |SYSPRODUCTNAME|
 projects. By default 8 values are active (Accepted, Analyzed, etc.).
 
 Of course you are free to add your own values to the Resolution field.
-However, in order to keep a certain harmony from one SYS\_PRODUCT\_NAME
+However, in order to keep a certain harmony from one |SYSPRODUCTNAME|
 tracker to another, we highly recommend that you use the list of
 predefined resolution values as much as you can before creating new
 ones.
@@ -1828,13 +1877,13 @@ field values (not shown on ?).
 Binding a Field to a List of Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not only does the SYS\_PRODUCT\_NAME Tracker allow you to create a list
+Not only does the |SYSPRODUCTNAME| Tracker allow you to create a list
 of values for a select box but it also offers the ability to associate a
 select box with a list of predefined values that is actually dynamically
-generated by the SYS\_PRODUCT\_NAME system. A typical example of this is
+generated by the |SYSPRODUCTNAME| system. A typical example of this is
 when one would like to create a new select box showing the list of
 project members. Instead of creating and maintaining the list of values
-manually, SYS\_PRODUCT\_NAME builds this list for you and allows you to
+manually, |SYSPRODUCTNAME| builds this list for you and allows you to
 bind it to a field of type select box.
 
 Note that if you decide to bind a select box to a list of dynamically
@@ -1870,7 +1919,7 @@ label:
    smaller rank are displayed first. When the "None" value is available
    for this bug field it has a rank number of 10. This number is
    deliberately small because by convention "None" always appear at the
-   top of the pull-down menu. Please be a good SYS\_PRODUCT\_NAME
+   top of the pull-down menu. Please be a good |SYSPRODUCTNAME|
    citizen and choose rank numbers higher than 10 for your own values.
 
 -  **Status**: Active or Hidden. As explained above going from one to
@@ -1890,7 +1939,7 @@ label:
     avoid a tedious renumbering of the existing items.
 
 Field Dependencies
-------------------
+```````````````````
 
 Field dependencies allow us to link source field values to target field
 values. In other words, the values proposed to a final user for a field
@@ -1965,7 +2014,7 @@ points:
    satisfy the dependencies.
 
 Canned Responses
-----------------
+`````````````````
 
 One frequently sees project members in charge of the artifact
 classification and dispatch process posting the same follow-up comments
@@ -1975,7 +2024,7 @@ commonly missing information like version numbers or type of machine
 used, etc. (see ?
 
 Rather than repeatedly typing the same follow-up comments,
-SYS\_PRODUCT\_NAME allows project members to create a predefined set of
+|SYSPRODUCTNAME| allows project members to create a predefined set of
 responses. After these canned responses have been defined, posting a
 follow-up comment is just a matter of selecting the appropriate response
 from the pull down menu in the artifact update form.
@@ -1987,11 +2036,11 @@ Response" link (see ?).
 |Definition of Canned Responses|
 
 Tracker Report Management
--------------------------
+``````````````````````````
 
 Knowing that project administrators, project members and other
-SYS\_PRODUCT\_NAME users may have different needs in searching the
-tracker database, SYS\_PRODUCT\_NAME offers the ability to define
+|SYSPRODUCTNAME| users may have different needs in searching the
+tracker database, |SYSPRODUCTNAME| offers the ability to define
 project or user specific tracker reports.
 
 Creating a tracker report consists in deciding what fields you want to
@@ -2011,14 +2060,14 @@ whereas all other users can only define reports for their personal use.
     going to use a search criteria but not the values of this search
     criteria. This is on purpose. Defining a report template and filling
     out the search template with content (values) are 2 distinct
-    operations on SYS\_PRODUCT\_NAME. Once a report template has been
+    operations on |SYSPRODUCTNAME|. Once a report template has been
     defined in the administration module (e.g 'Simple Report', 'QA
     report', 'Daily report' ...) you can go to the tracker searching and
     browsing module and use the report template for all sorts of
     queries. Select the report you want from the pull-down menu, fill
     out the search form with the values you are interested in and click
     on the browse button. Then you can save the entire query (report
-    plus values) with the SYS\_PRODUCT\_NAME bookmarking mechanism (see
+    plus values) with the |SYSPRODUCTNAME| bookmarking mechanism (see
     tip in ?). And voila!
 
 Browsing Tracker Reports
@@ -2117,7 +2166,7 @@ Information available on this screen are as follows:
 |Setting a Tracker Report|
 
 Tracker Graphical Report Setting
---------------------------------
+`````````````````````````````````
 
 After you click on a graphical report ID in the graphical report list
 (see ?), the report setting screen appears. This screen allows you to
@@ -2198,7 +2247,7 @@ Specific informations available for the Gantt graph are as follows:
 |image34|
 
 Email Notification Settings
----------------------------
+````````````````````````````
 
 As explained earlier in ? Tracker comes with a predefined set of rules
 to keep relevant people aware of the artifact life. The default rules
@@ -2228,20 +2277,20 @@ qualifying and dispatching the artifacts.
     **Tip**
 
     If you want to notify many people at once, we suggest that you use
-    the SYS\_PRODUCT\_NAME Mailing Lists service to create a
+    the |SYSPRODUCTNAME| Mailing Lists service to create a
     distribution lists (see ?). Once the Mailing List is up and running
     type the e-mail address in the Global Email Notification field.
 
-    Creating a Mailing List on SYS\_PRODUCT\_NAME has several
+    Creating a Mailing List on |SYSPRODUCTNAME| has several
     advantages: first individuals can (un)subscribe by themselves and
-    second all messages sent to a SYS\_PRODUCT\_NAME mailing list are
+    second all messages sent to a |SYSPRODUCTNAME| mailing list are
     kept in an archive that can serve as an audit trail for your
     tracker.
 
 Tracker Watchers
 ~~~~~~~~~~~~~~~~
 
-The SYS\_PRODUCT\_NAME Tracker offers to all project members the ability
+The |SYSPRODUCTNAME| Tracker offers to all project members the ability
 to be carbon-copied on all email notifications sent to some other
 project members.
 
@@ -2267,7 +2316,7 @@ extremely useful:
 
     Remark: The goal of the tracker watch feature is not to spy on you.
     To make sure that you are only watched by authorized persons,
-    SYS\_PRODUCT\_NAME always shows you the list of SYS\_PRODUCT\_NAME
+    |SYSPRODUCTNAME| always shows you the list of |SYSPRODUCTNAME|
     users who are currently watching your email notifications.
 
 Event/Role Based Notification Settings
@@ -2297,10 +2346,10 @@ There are 4 roles defined with respect to an artifact:
 -  **Commenter**: you have once posted a follow-up comment in the
    artifact.
 
-For each of these roles you can instruct the SYS\_PRODUCT\_NAME Tracker
+For each of these roles you can instruct the |SYSPRODUCTNAME| Tracker
 to send email notifications to you only when some specific events occur.
 Nine different events (see the right most column on ?) are monitored by
-the SYS\_PRODUCT\_NAME Tracker. The description of the events is self
+the |SYSPRODUCTNAME| Tracker. The description of the events is self
 explanatory and only appeal one comment: the first 8 events in the list
 can only occur on artifact updates. Only the last event relates to the
 submission of a new artifact.
@@ -2314,7 +2363,7 @@ this user has configured her notification settings:
    time) then she is only interested in receiving email notification
    when the status of the artifact goes to "Closed" or when any of the
    fields Priority, Status and Severity is modified. All other events
-   will be ignored by the SYS\_PRODUCT\_NAME tracker and no notification
+   will be ignored by the |SYSPRODUCTNAME| tracker and no notification
    will be sent to this user.
 
 -  Second, looking at the matrix by row, one can see that the user said
