@@ -1,22 +1,21 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Introduction
 ============
 
-SYS\_PRODUCT\_NAME est une Suite libre et Open Source pour améliorer la
+|SYSPRODUCTNAME| est une Suite libre et Open Source pour améliorer la
 gestion des projets logiciels et favoriser la collaboration entre les
 membres. Avec une seule solution web, Directeurs Technique, Chefs de
 projet, Développeurs, Responsables Qualité et tous les autres
 utilisateurs impliqués dans le projet, peuvent facilement créer,
 développer et suivre des projets de qualité.
 
-SYS\_PRODUCT\_NAME fournit des outils pour gérer les projets, des
+|SYSPRODUCTNAME| fournit des outils pour gérer les projets, des
 tâches, des changements, des incidents, les documents ainsi que le code
 source, l’intégration continue et la collaboration.
 
-Avec SYS\_PRODUCT\_NAME, vous allez pouvoir:
+Avec |SYSPRODUCTNAME|, vous allez pouvoir:
 
 -  planifier et suivre vos projets,
 
@@ -30,7 +29,7 @@ Avec SYS\_PRODUCT\_NAME, vous allez pouvoir:
 -  favoriser la collaboration et les discussions entre les utilisateurs
    de Tuleap.
 
-SYS\_PRODUCT\_NAME a une haute capacité de configuration. Ceci vous
+|SYSPRODUCTNAME| a une haute capacité de configuration. Ceci vous
 permet de personnaliser finement chaque outil à vos processus et vos
 exigences métiers.
 
@@ -41,11 +40,11 @@ vous fournissons ce guide qui comprend toutes les informations utiles et
 bonnes pratiques pour que vous utilisiez pleinement les fonctionnalités
 de `Tuleap. <http://www.tuleap.com/>`__
 
-L’Equipe SYS\_PRODUCT\_NAME prend soin de maintenir à jour ce guide à
+L’Equipe |SYSPRODUCTNAME| prend soin de maintenir à jour ce guide à
 chaque nouvelle version. N’hésitez pas à nous aider à l’améliorer.
 Partager votre expérience et vos astuces, en écrivant à la liste de
 distribution tuleap-devel
 
-Profitez de SYS\_PRODUCT\_NAME tenez nous au courant!
+Profitez de |SYSPRODUCTNAME| tenez nous au courant!
 
-L'Equipe SYS\_PRODUCT\_NAME!
+L'Equipe |SYSPRODUCTNAME|!
