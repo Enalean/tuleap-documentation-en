@@ -247,6 +247,8 @@ certaines d'entre elles :
    vous vous éviterez la saisie systématique d'un nom d'utilisateur et
    d'un mot de passe. Plus de détails sur :ref:`compte-shell`.
 
+.. _preferences:
+
 Préférences
 -----------
 

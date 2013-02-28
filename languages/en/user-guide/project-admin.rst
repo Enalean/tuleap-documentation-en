@@ -929,7 +929,7 @@ Using Your Project Database From MS-Access
 
 Before you use MS-Access to connect to your project database make sure
 that the MySQL ODBC driver has been installed on your PC (see `Installing and Configuring the MySQL ODBC Driver`_) and
-that you have generated your project database (see `Installing and Configuring the MySQL ODBC Driver`_). Then go through
+that you have generated your project database (see `Generate the MySQL ODBC Driver`_). Then go through
 the following steps:
 
 -  Launch MS-Access and open a new database.
