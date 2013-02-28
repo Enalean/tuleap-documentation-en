@@ -1,22 +1,21 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Tableau de bord Projet
 ======================
 
 Le Tableau de bord Projet est le point d'entrée d'un projet hébergé sur
-SYS\_PRODUCT\_NAME et c'est une page très importante que vous pouvez
+|SYSPRODUCTNAME| et c'est une page très importante que vous pouvez
 conserver dans vos signets. A partir de cette page les utilisateurs
 enregistrés, les membres du projet ou les administrateurs peuvent suivre
 en temps réel l'avancement du projet et accéder aux ressources et
 services qui leur sont autorisés. Contrairement à la page
-d'Administration du Projet (voir ?), le Tableau de bord Projet est
+d'Administration du Projet (voir :ref:`administration-d'un-projet`), le Tableau de bord Projet est
 accessible à tous les utilisateurs. D'une certaine façon il s'agit de la
 façade publique du projet.
 
 Accéder au Tableau de bord Projet
-=================================
+---------------------------------
 
 Pour les membres d'un projet, la façon la plus simple d'accéder au
 Tableau de bord Projet consiste à se rendre sur la page personnelle et à
@@ -32,7 +31,7 @@ Vous pouvez explorer l'arbre des projets si vous savez dans quelles
 catégories se trouve le projet.
 
 Vous pouvez aussi cliquer sur le nom du projet s'il apparaît dans la
-page d'accueil de SYS\_PRODUCT\_NAME.
+page d'accueil de |SYSPRODUCTNAME|.
 
 Et enfin vous pouvez aussi indiquer explicitement l'URL à votre
 navigateur sous la forme :
@@ -43,8 +42,8 @@ navigateur sous la forme :
 
 Si vous devez consulter régulièrement des projets dont vous n'êtes pas
 membre, nous vous conseillons de faire apparaître l'URL du tableau de
-bord dans votre page personnelle SYS\_PRODUCT\_NAME en utilisant la
-fonction "Cette page en signet" du menu de SYS\_PRODUCT\_NAME (voir ?).
+bord dans votre page personnelle |SYSPRODUCTNAME| en utilisant la
+fonction "Cette page en signet" du menu de |SYSPRODUCTNAME| (voir :ref:`connexion-et-page-personnelle`).
 
     **Tip**
 
@@ -53,14 +52,14 @@ fonction "Cette page en signet" du menu de SYS\_PRODUCT\_NAME (voir ?).
     et des délivrables du projet alors que la page d'accueil est le
     point d'entrée du site Web de votre projet. Le site Web d'un projet
     peut être utilisé pour accueillir vos visiteurs, les informer et les
-    orienter vers les différents services de SYS\_PRODUCT\_NAME. (voir ?
+    orienter vers les différents services de |SYSPRODUCTNAME|. (voir ?
     pour plus d'information sur l'élaboration du site Web de votre
     projet).
 
 Contenu du Tableau de bord Projet
-=================================
+---------------------------------
 
-Un exemple de Tableau de bord Projet est visible sur la ?. La page se
+Un exemple de Tableau de bord Projet est visible sur `:ref:un-exemple-de-tableau-de-bord-du-projet-playground`. La page se
 divise en plusieurs zones :
 
 -  **Menu principal du projet** : il se trouve en haut de la page. Le
@@ -79,9 +78,16 @@ divise en plusieurs zones :
 
 -  **Une zone configurable**.
 
-|Un exemple de Tableau de bord du Projet Playground|
+.. _un-exemple-de-tableau-de-bord-du-projet-playground:
 
-SYS\_PRODUCT\_NAME permet aux administrateurs du projet de personnaliser
+.. figure:: ../images/screenshots/sc_projectsummarypage.png
+   :align: center
+   :alt: Un exemple de Tableau de bord du Projet Playground
+   :name: AUn exemple de Tableau de bord du Projet Playground
+
+   Un exemple de Tableau de bord du Projet Playground
+
+|SYSPRODUCTNAME| permet aux administrateurs du projet de personnaliser
 le Tableau de bord du projet. Le contenu de la page est constitué de
 *widgets*. Tous les widgets peuvent être déplacés, fermés ou supprimés.
 Certains d'entre eux peuvent fournir un flux rss ou des préférences
@@ -100,7 +106,7 @@ Voici une liste non-exhaustive de widgets disponible pour les projets :
    version ainsi qu'un résumé des changements (Changelog). A proximité
    se situe l'icône de surveillance de ce paquet (|image2|). La
    sélection de cette icône active la surveillance automatique de ce
-   paquet logiciel par SYS\_PRODUCT\_NAME. A chaque fois que l'équipe de
+   paquet logiciel par |SYSPRODUCTNAME|. A chaque fois que l'équipe de
    projet dépose une nouvelle version du logiciel, un message de
    notification vous est envoyé. Tous les paquets sous surveillance se
    trouvent sur votre Page Personnelle et la surveillance peut être
@@ -116,7 +122,7 @@ Voici une liste non-exhaustive de widgets disponible pour les projets :
 
 -  **Dernières annonces** : les dix dernières annonces publiées par les
    membres du projet. Certaines de ces annonces peuvent aussi apparaître
-   sur le page d'accueil du site si l'équipe SYS\_PRODUCT\_NAME en
+   sur le page d'accueil du site si l'équipe |SYSPRODUCTNAME| en
    décide ainsi.
 
 -  **RSS Reader** vous permet d'inclure dans votre page personnelle des
@@ -124,6 +130,5 @@ Voici une liste non-exhaustive de widgets disponible pour les projets :
    flux publié par un outil externe utilisé par le projet (ex:
    intégration continue).
 
-.. |Un exemple de Tableau de bord du Projet Playground| image:: ../../screenshots/fr_FR/sc_projectsummarypage.png
-.. |image1| image:: ../../icons/text.png
-.. |image2| image:: ../../icons/notification_stop.png
+.. |image1| image:: ../images/icons/text.png
+.. |image2| image:: ../images/icons/notification_stop.png
