@@ -1,11 +1,10 @@
-.. contents::
-   :depth: 3
-..
+
+.. |SYSPRODUCTNAME| replace:: Tuleap
 
 Créer un nouveau projet
 =======================
 
-Vous êtes désormais un utilisateur SYS\_PRODUCT\_NAME fraîchement
+Vous êtes désormais un utilisateur |SYSPRODUCTNAME| fraîchement
 enregistré et vous voulez vous simplifier la vie ainsi que celle de vos
 équipes de projet. En d'autre termes vous voulez :
 
@@ -24,23 +23,25 @@ enregistré et vous voulez vous simplifier la vie ainsi que celle de vos
    d'autre de ré-utiliser vos composants logiciels si vous le désirez.
 
 Si l'un de ces points vous paraît pertinent pour votre activité alors
-vous devriez absolument héberger vos projets sur SYS\_PRODUCT\_NAME.
+vous devriez absolument héberger vos projets sur |SYSPRODUCTNAME|.
 Voyons comment faire.
 
+.. _enregistrer-un-projet:
+
 Enregistrer un projet
-=====================
+----------------------
 
 Avant de créer un nouveau projet vous devez avoir le statut
-d'utilisateur enregistré (voir ?). Vous pouvez alors vous connecter et
+d'utilisateur enregistré (voir :ref:`les-groupes-d'utilisateurs`). Vous pouvez alors vous connecter et
 sélectionner le lien "Enregistrer un projet" dans le menu de
-SYS\_PRODUCT\_NAME.
+|SYSPRODUCTNAME|.
 
 L'enregistrement d'un projet est un processus qui prend moins de 10
 minutes :
 
 -  **Enregistrement d'un projet**
 
-   Il s'agit d'informations à propos des services SYS\_PRODUCT\_NAME.
+   Il s'agit d'informations à propos des services |SYSPRODUCTNAME|.
    Lisez les attentivement.
 
    N'oubliez pas de lire et d'accepter les Conditions générales
@@ -51,19 +52,19 @@ minutes :
    Indiquez le nom court et le nom complet du projet. Lisez
    attentivement les instructions fournies. Le nom complet peut être
    modifié à tout moment dans la vie du projet mais pas le nom
-   court. [1]_. Réfléchissez donc bien avant de choisir !
+   court. [#f1]_. Réfléchissez donc bien avant de choisir !
 
 -  **Patron de projet**
 
-   Vous avez déjà soumis un projet SYS\_PRODUCT\_NAME et voudriez
+   Vous avez déjà soumis un projet |SYSPRODUCTNAME| et voudriez
    réutiliser la même configuration (services, outils de suivi,
    documents, références, ...) ? Vous pouvez convertir votre ancien
-   projet en patron de projet (voir ?) et vous le retrouverez sur cette
+   projet en patron de projet (voir :ref:`type-de-projet`) et vous le retrouverez sur cette
    page dans la liste des patrons de projet disponible. Choisissez votre
    ancien projet comme patron et votre nouveau projet aura les mêmes
    services configurés de la même manière que votre ancien projet. Si
    vous ne voulez pas réutiliser un patron spécifique gardez simplement
-   le Patron SYS\_PRODUCT\_NAME par défault coché et continuez
+   le Patron |SYSPRODUCTNAME| par défault coché et continuez
    l'enregistrement.
 
 -  **Description du projet**
@@ -94,14 +95,14 @@ minutes :
    retrouver ses catégories ici. Vous pourrez à nouveau modifier cette
    classification quand vous le souhaitez. Vous pouvez catégoriser votre
    projet suivant sept critères qui sont ceux utilisés dans l'arbre des
-   projets (voir ?).
+   projets (voir :ref:`arbre-des-projets`).
 
 -  **Politique d'échange**
 
    NOTE : cette étape ne s'applique que si vous créez un projet public.
    Si c'est le cas, le choix par défaut est celui que vous devez
    conserver à savoir la "Politique d'Echange de SYS\_ORG\_NAME". Comme
-   expliqué plus haut, l'équipe SYS\_PRODUCT\_NAME assistée du
+   expliqué plus haut, l'équipe |SYSPRODUCTNAME| assistée du
    département légal de SYS\_ORG\_NAME ont créé et validé ces règles
    d'échange. Un certain nombre de licences Open Source sont aussi
    mentionnées. Enfin vous pouvez aussi spécifier vos propres termes de
@@ -115,7 +116,7 @@ minutes :
    fois votre projet approuvé.
 
 Après validation de l'enregistrement du projet, l'équipe
-SYS\_PRODUCT\_NAME doit le revoir et l'approuver, le rejeter ou vous
+|SYSPRODUCTNAME| doit le revoir et l'approuver, le rejeter ou vous
 demander plus d'information. Ce processus ne prend pas plus de 24 heures
 dans le pire des cas et moins d'une heure la plupart du temps. Rares
 sont les projets rejetés donc il y a peu de crainte à avoir... Après
@@ -125,7 +126,7 @@ dont un vers le "Sommaire du Projet". Conservez le dans vos signets
 favoris.
 
 Configuration post-enregistrement
-=================================
+----------------------------------
 
 La première chose à faire après avoir reçu confirmation de
 l'enregistrement du projet consiste à se rendre sur le page du "Sommaire
@@ -153,14 +154,14 @@ configuration. Il y au minimum deux actions à prendre :
 
     Plutôt que de mettre en place une hiérarchie de valeurs lourdes et
     complexes pour chacun des sept critères de classification de l'arbre
-    des projets, l'équipe SYS\_PRODUCT\_NAME a décidé de faire évoluer
+    des projets, l'équipe |SYSPRODUCTNAME| a décidé de faire évoluer
     cette hiérarchie au fur et à mesure de l'apparition de nouveaux
     projets. Si vous ne trouvez pas la valeur qui vous convient dans
     l'un des critères de catégorisation, n'hésitez pas à contacter
-    l'équipe SYS\_PRODUCT\_NAME via le lien "Contactez-nous" situé dans
-    la section Aide du menu principal de SYS\_PRODUCT\_NAME ou en
+    l'équipe |SYSPRODUCTNAME| via le lien "Contactez-nous" situé dans
+    la section Aide du menu principal de |SYSPRODUCTNAME| ou en
     soumettant une demande dans l'un des forums de discussion du site.
 
-.. [1]
+.. [#f1]
    En fait il peut l'être mais cela nécessite l'intervention des
    administrateurs du site.

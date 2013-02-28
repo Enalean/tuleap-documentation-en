@@ -50,6 +50,8 @@ document.
 
    Vue d'ensemble du site |SYSPRODUCTNAME|
 
+.. _arbre-des-projets:
+
 Arbre des projets
 ``````````````````
 
