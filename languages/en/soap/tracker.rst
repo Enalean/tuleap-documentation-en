@@ -59,7 +59,7 @@ post actions in workflow, etc).
 
    <?php
 
-    $artifact_id = $soapTracker->addArtifact($hash, $project_id, $tracker_id, $value);
+    $artifact_id = $soap_tracker->addArtifact($hash, $project_id, $tracker_id, $value);
 
     $artifact_id = $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
 
@@ -95,6 +95,11 @@ Each ``ArtifactFieldValue`` has 3 fields:
 
     ?>
 
+``FieldValue`` is a choice type, it means it can be either:
+
+- ``value``: string, used for scalars and by default
+- ``bind_value``: ArrayOfTrackerFieldBindValue, for lists
+- ``file_info``: ArrayOfFieldValueFileInfo, for files/attachments.
 
 Scalar: String, Text, Integer, Float
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -355,6 +360,112 @@ Clear the open list.
 Files / Attachments
 ~~~~~~~~~~~~~~~~~~~
 
+Starting Tuleap 5.8, you can manage file attachment through the SOAP API. It uses the standard =addArtifact= and =updateArtifact= methods but requires an extra step before to upload the file.
+
+Basically the workflow is:
+
+* ``purgeAllTemporaryAttachments`` removes all temporary uploaded attachments chunks
+* ``createTemporaryAttachment`` generates a unique name identifier you will you for uploading data
+* ``appendTemporaryAttachmentChunk`` you upload each chunk of your file in the temporary file (data are automatically appended at the end of file, you need to serialize the calls otherwise it will corrupt the data)
+* once all chunks are uploaded, call ``updateArtifact`` or ``addArtifact`` with unique identifier
+
+.. code-block:: php
+   :linenos:
+
+    <?php
+    // Step 1 - purge all Temporary Attachment Chunks. The number of temporary chunks for a given user is limited to 5.
+    $soap_tracker->purgeAllTemporaryAttachments($hash);
+
+    // Step 2 - get an allocated a unique filename for the file upload
+    $uuid = $soap_tracker->createTemporaryAttachment($hash);
+
+    // Step 3 - upload the file content chunk by chunk
+    $total_written = 0;
+    $offset        = 0;
+    $chunk_size    = 20000;
+    $is_last_chunk = false;
+    while ($chunk = file_get_contents($file, false, null, $offset, $chunk_size)) {
+        $chunk_length  = strlen($chunk);
+        $is_last_chunk = $chunk_length < $chunk_size;
+        $chunk_written = $soap_tracker->appendTemporaryAttachmentChunk($hash, $uuid, base64_encode($chunk));
+        if ($chunk_written !== $chunk_length) {
+            die("Warning: chunk not completely written on server");
+        }
+        $total_written += $chunk_written;
+        $offset += $chunk_size;
+    }
+
+    if ($total_written == strlen(file_get_contents($file))) {
+        echo "File successfully uploaded\n";
+    }
+
+    // Step 4 - create artifact
+    $value = array(
+        array(
+            'field_name' => 'summary',
+            'field_label' => '',
+            'field_value' => array('value' => "Title of artifact")
+        ),
+        array(
+            'field_name' => 'attachment',
+            'field_label' => '',
+            'field_value' => array(
+                'file_info' => array(
+                    array(
+                        'id'           => $uuid,
+                        'submitted_by' => 0,
+                        'description'  => 'description',
+                        'filename'     => $filename,
+                        'filesize'     => $filesize,
+                        'filetype'     => $filetype,
+                        'action'       => '',
+                    )
+                )
+            )
+        )
+    );
+
+    $artifact_id = $soap_tracker->addArtifact($hash, $project_id, $tracker_id, $value);
+    ?>
+
+Details of ``ArrayOfFieldValueFileInfo`` type:
+
+* ``id``: String, identifier of the file. For Write operations it should be the value returned by ``createTemporaryAttachement``.
+* ``submitted_by``: Integer, who created the file. Can be 0 on Write operations (automatically overridden by server). Will be filled with the ``user_id`` on Read operations.
+* ``description``: String, a description of the file if any.
+* ``filename``: String, the name of the file on the file system (mandatory on Write operations).
+* ``filesize``: Integer, the size (in Bytes) of the file on the file system (mandatory on Write operations).
+* ``filetype``: String, the mime-type of the file (mandatory on Write operations).
+* ``action``: String, (only used by ``update_artifact``) if you set ``action`` to ``delete`` and ``id`` with the attachment id of an existing file, the corresponding file will be deleted.
+
+Example, how to delete an attachment:
+
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $value = array(
+        array(
+            'field_name' => 'attachment',
+            'field_label' => '',
+            'field_value' => array(
+                'file_info' => array(
+                    array(
+                        'id'           => '1235',
+                        'submitted_by' => '',
+                        'description'  => '',
+                        'filename'     => '',
+                        'filesize'     => 0,
+                        'filetype'     => '',
+                        'action'       => 'delete',
+                    )
+                )
+            )
+        )
+    );
+
+    $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
+    ?>
 
 Artifact links
 ~~~~~~~~~~~~~~
