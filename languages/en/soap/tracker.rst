@@ -470,7 +470,56 @@ Example, how to delete an attachment:
 Artifact links
 ~~~~~~~~~~~~~~
 
-To Be Done
+This kind of field aims to receive a list of artifact ids.
+
+Like scalar values, artifact links are passed as a comma separted string in ``value`` field.
+
+You should pass all values each time.
+
+.. code-block:: php
+   :linenos:
+
+   <?php
+
+   // Link artifact #12
+   $value = array(
+       array(
+           'field_name'  => 'artifactlinks',
+           'field_label' => '',
+           'field_value' => array(
+               'value' => '12'
+            )
+       ),
+    );
+
+    $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
+
+    // Add link artifact #13 and 15
+   $value = array(
+       array(
+           'field_name'  => 'artifactlinks',
+           'field_label' => '',
+           'field_value' => array(
+               'value' => '12,13,15'
+            )
+       ),
+    );
+
+    $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
+
+    // Remove all links
+    $value = array(
+       array(
+           'field_name'  => 'artifactlinks',
+           'field_label' => '',
+           'field_value' => array(
+               'value' => ''
+            )
+       ),
+    );
+
+    $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
+    ?>
 
 Computed fields
 ~~~~~~~~~~~~~~~
