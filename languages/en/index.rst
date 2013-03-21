@@ -33,6 +33,7 @@ Welcome to Tuleap's documentation!
    user-guide/tracker-v3
    user-guide/other-services
    soap/tracker
+   soap/trackerv3
    user-guide/legal
 
 

@@ -11,7 +11,7 @@ Basic usage of API
 
 .. code-block:: php
    :linenos:
-   :emphasize-lines: 16,17
+   :emphasize-lines: 17,18
 
    <?php
 
