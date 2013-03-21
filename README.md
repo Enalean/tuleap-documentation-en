@@ -7,6 +7,11 @@ documentation for [Tuleap](http://tuleap.com/).
 This is a work in progress. Please refer to the official documentation until this 
 becomes stable.
 
+Download the sources from GitHub
+--------------------------------
+    git clone git@github.com:Enalean/tuleap-documentation.git
+
+
 Build the documentation
 -----------------------
 
@@ -17,7 +22,7 @@ Build the documentation
 
 The documentation is generated in `_build/html/`
 
-Convert docbook files to reStructuredText
+Convert docbook files to reStructuredText (@deprecated- already done and committed)
 -----------------------------------------
 
 First install latest version of pandoc:
