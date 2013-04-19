@@ -9,6 +9,18 @@ Agile Dashboard
 The Tuleap AgileDashboard is a new service provided by Tuleap.
 It is highly configurable and adapts to almost any agile team.
 
+Features
+--------
+
+The tuleap AgileDashboard has many features including a cardwall and a backlog planner.
+
+The cardwall allows for the visual monitoring of an artifact's progress, the individuals who are working on it
+or the remaing effort.
+
+Interactive actions currently include on the fly assigning, edition of the remaining effort and
+the drag'n'drop within a workflow.
+
+
 Creating an Agile Dashboard
 ---------------------------
 
@@ -50,7 +62,7 @@ Let's assume the AgileDashboard you wish to export is in the project has group_i
 First, shell into the box and navigate to the Tuleap directory- this is normally
 ::
 
-    cd /usr/share/codendi//
+    cd /usr/share/codendi/
 
 Then export your AgileDashboard as an xml template:
 ::
