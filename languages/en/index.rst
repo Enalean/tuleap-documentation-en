@@ -31,6 +31,7 @@ Welcome to Tuleap's documentation!
    user-guide/project-website
    user-guide/project-links
    user-guide/tracker-v3
+   user-guide/agile-dashboard
    user-guide/other-services
    soap/tracker
    soap/trackerv3
