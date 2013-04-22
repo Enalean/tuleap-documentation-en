@@ -41,12 +41,14 @@ Let's assume you have an empty project with group_id = 123 in which you wish to 
 First, shell into the box and navigate to the Tuleap directory- this is normally
 ::
 
-    cd /usr/share/codendi/
+    $> cd /usr/share/codendi/
 
 Then feed your template to the AgileDashboard importer like so:
 ::
 
-    src/utils/php-launcher.sh src/utils/import_project_xml.php 123 /path/to/agiledashboard_template.xml
+    $> src/utils/php-launcher.sh src/utils/import_project_xml.php 123 admin /path/to/agiledashboard_template.xml
+
+    please note that "admin" correspond to a valid site admin user name.
 
 This should create new trackers and an AgileDashboard ontop of them.
 
@@ -62,11 +64,11 @@ Let's assume the AgileDashboard you wish to export is in the project has group_i
 First, shell into the box and navigate to the Tuleap directory- this is normally
 ::
 
-    cd /usr/share/codendi/
+    $> cd /usr/share/codendi/
 
 Then export your AgileDashboard as an xml template:
 ::
 
-    src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
+    $> src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
 
 This should create a new xml file that contains all the necessary data. Now use this file in the step above.
