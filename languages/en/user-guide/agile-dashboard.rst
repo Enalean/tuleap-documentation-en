@@ -11,10 +11,10 @@ It is highly configurable and adapts to almost any agile team.
 Features
 --------
 
-The tuleap AgileDashboard has many features including a cardwall and a backlog planner.
+The tuleap AgileDashboard has many features including a cardwall, a burndown and a backlog planner.
 
 The cardwall allows for the visual monitoring of an artifact's progress, the individuals who are working on it
-or the remaing effort.
+or the remaining effort.
 
 Interactive actions currently include on the fly assigning, edition of the remaining effort and
 the drag'n'drop within a workflow.
@@ -70,4 +70,20 @@ Then export your AgileDashboard as an xml template:
 
     $> src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
 
-This should create a new xml file that contains all the necessary data. Now use this file in the step above..
+This should create a new xml file that contains all the necessary data. Now use this file in the step above.
+
+Creating your Agile Dashboard from scratch
+``````````````````````````````````````````
+
+A training video is available to explain you how to create your agile dashboard.
+.. raw:: html
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
+
+
+Note that some field name are important to respect:
+* Remaining Effort: the field representing the remaining effort (mainly used in user stories or tasks) must have "remaining_effort" as field name
+* Start Date of a sprint: the field representing the start date must have "start_date" as field name
+* Capacity of a sprint: the field representing the capacity must have "capacity" as field name
+* Duration of a sprint: the field representing the duration must have "duration" as field name
+
+Note also that the burndown field can be configured for including or not the week-ends (Saturday and Sundays can be excluded from burndown graph)
