@@ -1,4 +1,3 @@
-
 .. |SYSPRODUCTNAME| replace:: Tuleap
 
 .. _agile-dashboard:
@@ -71,4 +70,4 @@ Then export your AgileDashboard as an xml template:
 
     $> src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
 
-This should create a new xml file that contains all the necessary data. Now use this file in the step above.
+This should create a new xml file that contains all the necessary data. Now use this file in the step above..
