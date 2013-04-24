@@ -76,7 +76,9 @@ Creating your Agile Dashboard from scratch
 ``````````````````````````````````````````
 
 A training video is available to explain you how to create your agile dashboard.
+
 .. raw:: html
+
    <iframe width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
 
 
