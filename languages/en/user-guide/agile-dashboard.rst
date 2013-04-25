@@ -79,7 +79,7 @@ A training video is available to explain you how to create your agile dashboard.
 
 .. raw:: html
 
-   <iframe align=center width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
 
 
 Note that some field name are important to respect:
@@ -110,11 +110,6 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 
    Agile Dashboard Homepage
 
-Note that a training video is available to explain you how to create your agile dashboard.
-
-.. raw:: html
-
-   <iframe align=center width="560" height="315" src="http://www.youtube.com/embed/wAJ_MosYgAM" frameborder="0" allowfullscreen></iframe>
 
 Plan releases and sprint
 ````````````````````````
@@ -124,3 +119,11 @@ Populate backlog
 
 Monitor project progress
 ````````````````````````
+
+Training Video
+``````````````
+Here is a training video explaining how to use the agile dashboard.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/wAJ_MosYgAM" frameborder="0" allowfullscreen></iframe>
