@@ -99,6 +99,8 @@ Main Menu located in the upper part of the page.
 
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Welcome Screen`_).
+This homepage gives short access to the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
+It provides also the latest sprint cardwall, so that the team can directly makes its daily stand up changes from this homepage.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_homepage.png
    :align: center
