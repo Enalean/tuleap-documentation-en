@@ -83,6 +83,7 @@ A training video is available to explain you how to create your agile dashboard.
 
 
 Note that some field name are important to respect:
+
 -  Remaining Effort: the field representing the remaining effort (mainly used in user stories or tasks) must have "remaining_effort" as field name
 -  Start Date of a sprint: the field representing the start date must have "start_date" as field name
 -  Capacity of a sprint: the field representing the capacity must have "capacity" as field name
@@ -98,6 +99,7 @@ Main Menu located in the upper part of the page.
 
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Welcome Screen`_).
+
 .. figure:: ../images/screenshots/sc_agiledashboard_homepage.png
    :align: center
    :alt: Agile Dashboard Homepage
@@ -106,6 +108,7 @@ You will be directed to the agile dashboard homepage of your project
    Agile Dashboard Homepage
 
 Note that a training video is available to explain you how to create your agile dashboard.
+
 .. raw:: html
 
    <iframe width="560" height="315" src="http://www.youtube.com/embed/wAJ_MosYgAM" frameborder="0" allowfullscreen></iframe>
