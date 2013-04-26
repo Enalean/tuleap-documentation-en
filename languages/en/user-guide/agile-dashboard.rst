@@ -5,13 +5,13 @@
 Agile Dashboard
 ===============
 
-The Tuleap AgileDashboard is a new service provided by Tuleap on top of trackers (see :ref:`trackers-and-real-time-reports`).
+The Tuleap Agile Dashboard is a new service provided by Tuleap on top of trackers (see :ref:`trackers-and-real-time-reports`).
 It is highly configurable and adapts to almost any agile team.
 
 Features
 --------
 
-The tuleap AgileDashboard has many features including a cardwall, a burndown and a backlog planner.
+The Tuleap Agile Dashboard has many features including a cardwall, a burndown and a backlog planner.
 
 The cardwall allows for the visual monitoring of an artifact's progress, the individuals who are working on it
 or the remaining effort.
@@ -28,21 +28,21 @@ Creating from Tuleap's template
 
 You can create one from scratch but, given the sheer number of configurations, it is
 easier to import and tweak it.
-Before anything, you need to ensure that the trackers and AgileDashboard services are installed and
+Before anything, you need to ensure that the trackers and Agile Dashboard services are installed and
 activated for your project.
 
-There is currently only one way to import an AgileDashboard and that is via the command line.
+There is currently only one way to import an Agile Dashboard and that is via the command line.
 To do this, you must have access and permissions on the directory in which Tuleap is installed.
-You can download an xml AgileDashboard template (agiledashboard_template.xml) from the Tuleap website.
+You can download an xml Agile Dashboard template (agiledashboard_template.xml) from the Tuleap website.
 
-Let's assume you have an empty project with group_id = 123 in which you wish to create an AgileDashboard.
+Let's assume you have an empty project with group_id = 123 in which you wish to create an Agile Dashboard.
 
 First, shell into the box and navigate to the Tuleap directory- this is normally
 ::
 
     $> cd /usr/share/codendi/
 
-Then feed your template to the AgileDashboard importer like so:
+Then feed your template to the Agile Dashboard importer like so:
 ::
 
     $> src/utils/php-launcher.sh src/utils/import_project_xml.php 123 admin /path/to/agiledashboard_template.xml
