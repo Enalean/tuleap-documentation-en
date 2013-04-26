@@ -146,7 +146,7 @@ Moreover, a red indicator is automatically displayed when the capacity of the sp
    :align: center
    :alt: Plan a sprint
    :name: Plan a sprint
-   :width: 1000px
+   :width: 1200px
 
    Agile Dashboard: Plan a sprint
 
