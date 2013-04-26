@@ -99,7 +99,9 @@ Main Menu located in the upper part of the page.
 
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Homepage`_).
+
 This homepage gives short access to the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
+
 It provides also the latest sprint cardwall, so that the team can directly makes its daily stand up changes from this homepage.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_homepage.png
@@ -115,6 +117,7 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 Plan releases and sprints
 ````````````````````````
 To create a new release or a new sprint, click on the arrow in the short access box (see `Create a new release or a new sprint`_).
+
 You will reach the release tracker form to create a new release.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
@@ -126,7 +129,9 @@ You will reach the release tracker form to create a new release.
    Agile Dashboard: Create a new release or a new sprint
 
 Once created, you will be redirected to the release backlog in order to plan your release (see `Plan a release`_).
+
 The Agile Dashboard lets you add easily epics, for instance, from your backlog (on the left side) to your release plan (on the right side).
+
 Epics can also be splitted into user stories by clicking to the arrow next to the epic id.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_release_plan.png
@@ -138,10 +143,15 @@ Epics can also be splitted into user stories by clicking to the arrow next to th
    Agile Dashboard: Plan a release
 
 From the release planning view, you can either create new sprints or access the existing ones.
+
 Plan a sprint (see `Plan a sprint`_) is as simple as the release plan.
+
 User stories can be added using the right arrow from release backlog to sprint.
+
 Moreover, a red indicator is automatically displayed when the capacity of the sprint is exceeded.
+
 Splitting user stories in tasks is also possible directly from the sprint planning.
+
 Using the arrow next to story provides you a direct link to create a new task, but also lets you edit your story.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_sprint_plan.png
@@ -158,6 +168,7 @@ A product owner can populate the backlog either going directly to the "Epics" an
 Agile Dashboard.
 
 To populate backlog using the agile dashboard, one release, at least, would have to be defined (see :ref:`plan-releases-and-sprints`).
+
 Then access to the backlog by using the short access boxes available in the Agile Dashboard Homepage.
 (see `Access to the Backlog`_).
 
@@ -194,11 +205,14 @@ elements (see `Rank the Backlog elements`_).
 Monitor project progress
 ````````````````````````
 By any moment of the sprint, the development team can monitor and update the progress of the sprint by going to the cardwall and the burndown.
+
 The latest sprint cardwall is available directly from the agile dashboard homepage or the short access boxes.
 
 The cardwall (see `Cardwall`_) lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
 and change the remaining effort on the fly, that is to say staying on the same page.
+
 The team can configure the display of the assignement by choosing between the display of the username or the avatar.
+
 This configuration will be the same for all the sprints, but can be changed at any moment.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_cardwall.png
