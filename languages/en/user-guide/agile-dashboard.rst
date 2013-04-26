@@ -114,6 +114,16 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 
 Plan releases and sprints
 ````````````````````````
+To create a new release or a new sprint, click on the arrow in the short access box (see `Agile Dashboard: Create a new release or a new sprint`_).
+
+
+.. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
+   :align: center
+   :alt: Create a new release or a new sprint
+   :name: Create a new release or a new sprint
+   :width: 600px
+
+   Agile Dashboard: Create a new release or a new sprint
 
 
 
@@ -123,7 +133,7 @@ A product owner can populate the backlog either going directly to the "Epics" an
 Agile Dashboard.
 
 To populate backlog using the agile dashboard, one release, at least, would have to be defined (see :ref:`plan-releases-and-sprints`).
-Then access to the backlog by using the short accesses available in the Agile Dashboard Homepage.
+Then access to the backlog by using the short access boxes available in the Agile Dashboard Homepage.
 (see `Agile Dashboard: Access to the Backlog`_).
 
 .. figure:: ../images/screenshots/sc_agiledashboard_access_backlog.png
