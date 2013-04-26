@@ -126,8 +126,30 @@ You will reach the release tracker form to create a new release.
 
    Agile Dashboard: Create a new release or a new sprint
 
-Once created, you will be redirected to the release backlog in order to plan your release.
+Once created, you will be redirected to the release backlog in order to plan your release (see `Agile Dashboard: Plan a release`_).
+The Agile Dashboard lets you add easily epics, for instance, from your backlog (on the left side) to your release plan (on the right side).
 
+
+.. figure:: ../images/screenshots/sc_agiledashboard_release_plan.png
+   :align: center
+   :alt: Plan a release
+   :name: Plan a release
+   :width: 800px
+
+   Agile Dashboard: Plan a release
+
+From the release planning view, you can either create new sprints or access the existing ones.
+Plan a sprint (see `Agile Dashboard: Plan a sprint`_) is as simple as the release plan.
+User stories can be added using the right arrow from release backlog to sprint.
+Moreover, a red indicator is automatically displayed when the capacity of the sprint is exceeded.
+
+.. figure:: ../images/screenshots/sc_agiledashboard_sprint_plan.png
+   :align: center
+   :alt: Plan a sprint
+   :name: Plan a sprint
+   :width: 800px
+
+   Agile Dashboard: Plan a sprint
 
 Populate backlog
 ````````````````
