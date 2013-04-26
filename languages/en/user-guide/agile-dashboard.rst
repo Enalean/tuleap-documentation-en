@@ -210,6 +210,7 @@ This configuration will be the same for all the sprints, but can be changed at a
    Agile Dashboard: Cardwall
 
 The team can follow the progress of the sprint by accessing the burndown in the short access boxes (see `Short Access boxes`_).
+
 The burndown graph is automatically generated depending on the remaining effort of the tasks the team update everyday.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_short_access.png
