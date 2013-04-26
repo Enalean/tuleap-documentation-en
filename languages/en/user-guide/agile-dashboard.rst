@@ -98,7 +98,7 @@ Dashboard (see :ref:`accessing-a-project-dashboard`) and click on the "Agile Das
 Main Menu located in the upper part of the page.
 
 You will be directed to the agile dashboard homepage of your project
-(see `Agile Dashboard Welcome Screen`_).
+(see `Agile Dashboard Homepage`_).
 This homepage gives short access to the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
 It provides also the latest sprint cardwall, so that the team can directly makes its daily stand up changes from this homepage.
 
@@ -116,7 +116,6 @@ Plan releases and sprints
 ````````````````````````
 To create a new release or a new sprint, click on the arrow in the short access box (see `Agile Dashboard: Create a new release or a new sprint`_).
 You will reach the release tracker form to create a new release.
-`Agile Dashboard: Create a new release or a new sprint`_
 
 .. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
    :align: center
@@ -147,7 +146,7 @@ Moreover, a red indicator is automatically displayed when the capacity of the sp
    :align: center
    :alt: Plan a sprint
    :name: Plan a sprint
-   :width: 800px
+   :width: 1000px
 
    Agile Dashboard: Plan a sprint
 
