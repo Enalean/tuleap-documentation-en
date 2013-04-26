@@ -116,7 +116,7 @@ Plan releases and sprints
 ````````````````````````
 To create a new release or a new sprint, click on the arrow in the short access box (see `Agile Dashboard: Create a new release or a new sprint`_).
 You will reach the release tracker form to create a new release.
-
+`Agile Dashboard: Create a new release or a new sprint`_
 
 .. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
    :align: center
