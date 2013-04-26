@@ -110,12 +110,41 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 
    Agile Dashboard Homepage
 
+.. _plan-releases-and-sprints:
 
-Plan releases and sprint
+Plan releases and sprints
 ````````````````````````
+
+
 
 Populate backlog
 ````````````````
+A product owner can populate the backlog either going directly to the "Epics" and "User Stories" trackers or using the
+Agile Dashboard.
+
+To populate backlog using the agile dashboard, one release, at least, would have to be defined (see :ref:`plan-releases-and-sprints`).
+Then access to the backlog by using the short accesses available in the Agile Dashboard Homepage.
+(see `Agile Dashboard: Access to the Backlog`_).
+
+.. figure:: ../images/screenshots/sc_agiledashboard_access_backlog.png
+   :align: center
+   :alt: Access to the Backlog
+   :name: Access to the Backlog
+   :width: 600px
+
+   Agile Dashboard: Access to the Backlog
+
+Then on the release backlog part on the left, click on "add" to add new epics to the backlog, or click on an epic to add 
+a user story to it. (see `Agile Dashboard: Populate the Backlog`_).
+
+.. figure:: ../images/screenshots/sc_agiledashboard_populate_backlog.png
+   :align: center
+   :alt: Populate the Backlog
+   :name: Populate the Backlog
+   :width: 600px
+
+   Agile Dashboard: Populate the Backlog
+
 
 Monitor project progress
 ````````````````````````
