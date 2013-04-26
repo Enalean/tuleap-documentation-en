@@ -187,7 +187,7 @@ elements (see `Rank the Backlog elements`_).
    :align: center
    :alt: Rank the Backlog elements
    :name: Rank the Backlog elements
-   :width: 800px
+   :width: 600px
 
    Agile Dashboard: Rank the Backlog elements
 
@@ -216,7 +216,7 @@ The burndown graph is automatically generated depending on the remaining effort 
    :align: center
    :alt: Short Access boxes
    :name: Short Access boxes
-   :width: 800px
+   :width: 600px
 
    Agile Dashboard: Short Access boxes
 
