@@ -49,23 +49,23 @@ Then feed your template to the AgileDashboard importer like so:
 
     please note that "admin" correspond to a valid site admin user name.
 
-This should create new trackers and an AgileDashboard ontop of them.
+This should create new trackers and an Agile Dashboard on top of them.
 
 
 Duplicating an existing one
 ```````````````````````````
 
-You can duplicate an AgileDashboard from one project to another. To do this, you need to
+You can duplicate an Agile Dashboard from one project to another. To do this, you need to
 export the one you want to duplicate. This is done in a very similar way to the import (above).
 
-Let's assume the AgileDashboard you wish to export is in the project has group_id = 456.
+Let's assume the Agile Dashboard you wish to export is in the project has group_id = 456.
 
 First, shell into the box and navigate to the Tuleap directory- this is normally
 ::
 
     $> cd /usr/share/codendi/
 
-Then export your AgileDashboard as an xml template:
+Then export your Agile Dashboard as an xml template:
 ::
 
     $> src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
@@ -127,7 +127,7 @@ You will reach the release tracker form to create a new release.
 
 Once created, you will be redirected to the release backlog in order to plan your release (see `Plan a release`_).
 The Agile Dashboard lets you add easily epics, for instance, from your backlog (on the left side) to your release plan (on the right side).
-
+Epics can also be splitted into user stories by clicking to the arrow next to the epic id.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_release_plan.png
    :align: center
@@ -141,6 +141,8 @@ From the release planning view, you can either create new sprints or access the 
 Plan a sprint (see `Plan a sprint`_) is as simple as the release plan.
 User stories can be added using the right arrow from release backlog to sprint.
 Moreover, a red indicator is automatically displayed when the capacity of the sprint is exceeded.
+Splitting user stories in tasks is also possible directly from the sprint planning.
+Using the arrow next to story provides you a direct link to create a new task, but also lets you edit your story.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_sprint_plan.png
    :align: center
@@ -191,6 +193,32 @@ elements (see `Rank the Backlog elements`_).
 
 Monitor project progress
 ````````````````````````
+By any moment of the sprint, the development team can monitor and update the progress of the sprint by going to the cardwall and the burndown.
+The latest sprint cardwall is available directly from the agile dashboard homepage or the short access boxes.
+
+The cardwall (see `Cardwall`_) lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
+and change the remaining effort on the fly, that is to say staying on the same page.
+The team can configure the display of the assignement by choosing between the display of the username or the avatar.
+This configuration will be the same for all the sprints, but can be changed at any moment.
+
+.. figure:: ../images/screenshots/sc_agiledashboard_cardwall.png
+   :align: center
+   :alt: Cardwall
+   :name: Cardwall
+   :width: 800px
+
+   Agile Dashboard: Cardwall
+
+The team can follow the progress of the sprint by accessing the burndown in the short access boxes (see `Short Access boxes`_).
+The burndown graph is automatically generated depending on the remaining effort of the tasks the team update everyday.
+
+.. figure:: ../images/screenshots/sc_agiledashboard_short_access.png
+   :align: center
+   :alt: Short Access boxes
+   :name: Short Access boxes
+   :width: 800px
+
+   Agile Dashboard: Short Access boxes
 
 Training Video
 ``````````````
