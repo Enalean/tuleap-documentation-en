@@ -106,7 +106,7 @@ It provides also the latest sprint cardwall, so that the team can directly makes
    :align: center
    :alt: Agile Dashboard Homepage
    :name: Agile Dashboard Homepage
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard Homepage
 
@@ -114,18 +114,18 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 
 Plan releases and sprints
 ````````````````````````
-To create a new release or a new sprint, click on the arrow in the short access box (see `Agile Dashboard: Create a new release or a new sprint`_).
+To create a new release or a new sprint, click on the arrow in the short access box (see `Create a new release or a new sprint`_).
 You will reach the release tracker form to create a new release.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
    :align: center
    :alt: Create a new release or a new sprint
    :name: Create a new release or a new sprint
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard: Create a new release or a new sprint
 
-Once created, you will be redirected to the release backlog in order to plan your release (see `Agile Dashboard: Plan a release`_).
+Once created, you will be redirected to the release backlog in order to plan your release (see `Plan a release`_).
 The Agile Dashboard lets you add easily epics, for instance, from your backlog (on the left side) to your release plan (on the right side).
 
 
@@ -133,12 +133,12 @@ The Agile Dashboard lets you add easily epics, for instance, from your backlog (
    :align: center
    :alt: Plan a release
    :name: Plan a release
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard: Plan a release
 
 From the release planning view, you can either create new sprints or access the existing ones.
-Plan a sprint (see `Agile Dashboard: Plan a sprint`_) is as simple as the release plan.
+Plan a sprint (see `Plan a sprint`_) is as simple as the release plan.
 User stories can be added using the right arrow from release backlog to sprint.
 Moreover, a red indicator is automatically displayed when the capacity of the sprint is exceeded.
 
@@ -157,29 +157,29 @@ Agile Dashboard.
 
 To populate backlog using the agile dashboard, one release, at least, would have to be defined (see :ref:`plan-releases-and-sprints`).
 Then access to the backlog by using the short access boxes available in the Agile Dashboard Homepage.
-(see `Agile Dashboard: Access to the Backlog`_).
+(see `Access to the Backlog`_).
 
 .. figure:: ../images/screenshots/sc_agiledashboard_access_backlog.png
    :align: center
    :alt: Access to the Backlog
    :name: Access to the Backlog
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard: Access to the Backlog
 
 Then on the release backlog part on the left, click on "add" to add new epics to the backlog, or click on an epic to add 
-a user story to it (see `Agile Dashboard: Populate the Backlog`_).
+a user story to it (see `Populate the Backlog`_).
 
 .. figure:: ../images/screenshots/sc_agiledashboard_populate_backlog.png
    :align: center
    :alt: Populate the Backlog
    :name: Populate the Backlog
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard: Populate the Backlog
 
 The agile dashboard also provides the possibility to prioritize the backlog, by using the bottom and up arrows on your
-elements (see `Agile Dashboard: Rank the Backlog elements`_).
+elements (see `Rank the Backlog elements`_).
 
 .. figure:: ../images/screenshots/sc_agiledashboard_backlog_ranking.png
    :align: center
