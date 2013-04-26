@@ -28,7 +28,7 @@ Creating from Tuleap's template
 
 You can create one from scratch but, given the sheer number of configurations, it is
 easier to import and tweak it.
-Before anthing, you need to ensure that the trackers and AgileDashboard services are installed and
+Before anything, you need to ensure that the trackers and AgileDashboard services are installed and
 activated for your project.
 
 There is currently only one way to import an AgileDashboard and that is via the command line.
@@ -82,9 +82,10 @@ A training video is available to explain you how to create your agile dashboard.
    <iframe width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
 
 
-Note that some field name are important to respect:
+Note that some field names are important to respect:
 
 -  Remaining Effort: the field representing the remaining effort (mainly used in user stories or tasks) must have "remaining_effort" as field name
+-  Impediment: the field representing an impediment must have "impediment" as field in order to be displayed on the cards of the cardwall
 -  Start Date of a sprint: the field representing the start date must have "start_date" as field name
 -  Capacity of a sprint: the field representing the capacity must have "capacity" as field name
 -  Duration of a sprint: the field representing the duration must have "duration" as field name
@@ -100,7 +101,7 @@ Main Menu located in the upper part of the page.
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Homepage`_).
 
-This homepage gives short access to the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
+This homepage is composed with short access boxes filled with the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
 
 It provides also the latest sprint cardwall, so that the team can directly makes its daily stand up changes from this homepage.
 
@@ -213,7 +214,8 @@ and change the remaining effort on the fly, that is to say staying on the same p
 
 The team can configure the display of the assignement by choosing between the display of the username or the avatar.
 
-This configuration will be the same for all the sprints, but can be changed at any moment.
+This configuration will be the same for all the sprints, but can be changed at any moment thanks to the "Settings"
+select box on the right.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_cardwall.png
    :align: center
