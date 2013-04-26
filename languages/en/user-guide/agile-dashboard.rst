@@ -5,7 +5,7 @@
 Agile Dashboard
 ===============
 
-The Tuleap AgileDashboard is a new service provided by Tuleap.
+The Tuleap AgileDashboard is a new service provided by Tuleap on top of trackers (see :ref:`trackers-and-real-time-reports`).
 It is highly configurable and adapts to almost any agile team.
 
 Features
@@ -115,16 +115,18 @@ It provides also the latest sprint cardwall, so that the team can directly makes
 Plan releases and sprints
 ````````````````````````
 To create a new release or a new sprint, click on the arrow in the short access box (see `Agile Dashboard: Create a new release or a new sprint`_).
+You will reach the release tracker form to create a new release.
 
 
 .. figure:: ../images/screenshots/sc_agiledashboard_create_new_release.png
    :align: center
    :alt: Create a new release or a new sprint
    :name: Create a new release or a new sprint
-   :width: 600px
+   :width: 800px
 
    Agile Dashboard: Create a new release or a new sprint
 
+Once created, you will be redirected to the release backlog in order to plan your release.
 
 
 Populate backlog
@@ -140,21 +142,31 @@ Then access to the backlog by using the short access boxes available in the Agil
    :align: center
    :alt: Access to the Backlog
    :name: Access to the Backlog
-   :width: 600px
+   :width: 800px
 
    Agile Dashboard: Access to the Backlog
 
 Then on the release backlog part on the left, click on "add" to add new epics to the backlog, or click on an epic to add 
-a user story to it. (see `Agile Dashboard: Populate the Backlog`_).
+a user story to it (see `Agile Dashboard: Populate the Backlog`_).
 
 .. figure:: ../images/screenshots/sc_agiledashboard_populate_backlog.png
    :align: center
    :alt: Populate the Backlog
    :name: Populate the Backlog
-   :width: 600px
+   :width: 800px
 
    Agile Dashboard: Populate the Backlog
 
+The agile dashboard also provides the possibility to prioritize the backlog, by using the bottom and up arrows on your
+elements (see `Agile Dashboard: Rank the Backlog elements`_).
+
+.. figure:: ../images/screenshots/sc_agiledashboard_backlog_ranking.png
+   :align: center
+   :alt: Rank the Backlog elements
+   :name: Rank the Backlog elements
+   :width: 800px
+
+   Agile Dashboard: Rank the Backlog elements
 
 Monitor project progress
 ````````````````````````
