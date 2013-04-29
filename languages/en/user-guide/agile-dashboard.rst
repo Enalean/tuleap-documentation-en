@@ -112,7 +112,7 @@ It provides also the latest sprint cardwall, so that the team can directly makes
    :align: center
    :alt: Agile Dashboard Homepage
    :name: Agile Dashboard Homepage
-   :width: 1200px
+   :width: 800px
 
    Agile Dashboard Homepage
 
