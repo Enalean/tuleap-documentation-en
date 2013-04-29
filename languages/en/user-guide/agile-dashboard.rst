@@ -162,7 +162,7 @@ Using the arrow next to story provides you a direct link to create a new task, b
    :align: center
    :alt: Plan a sprint
    :name: Plan a sprint
-   :width: 800px
+   :width: 1200px
 
    Agile Dashboard: Plan a sprint
 
