@@ -33,7 +33,8 @@ activated for your project.
 
 There is currently only one way to import an Agile Dashboard and that is via the command line.
 To do this, you must have access and permissions on the directory in which Tuleap is installed.
-You can download an xml Agile Dashboard template (agiledashboard_template.xml) from the Tuleap website.
+You can download an xml Agile Dashboard template (https://tuleap.net/plugins/docman/?group_id=101&action=show&id=438)
+from the Tuleap website.
 
 Let's assume you have an empty project with group_id = 123 in which you wish to create an Agile Dashboard.
 
@@ -89,6 +90,8 @@ Note that some field names are important to respect:
 -  Start Date of a sprint: the field representing the start date must have "start_date" as field name
 -  Capacity of a sprint: the field representing the capacity must have "capacity" as field name
 -  Duration of a sprint: the field representing the duration must have "duration" as field name
+-  Type of a task: the field representing the type must have "type" as field name in order to display the color
+   representing the type of the task on the cards of the cardwall.
 
 Note also that the burndown field can be configured for including or not the week-ends (Saturday and Sundays can be excluded from burndown graph)
 
