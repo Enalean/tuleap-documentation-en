@@ -220,6 +220,9 @@ The team can configure the display of the assignement by choosing between the di
 This configuration will be the same for all the sprints, but can be changed at any moment thanks to the "Settings"
 select box on the right.
 
+Finally, it offers the possibility to filter the cards thanks to the search at the top right of the cardwall. You will be able to filter by
+assignee for instance, or by the type of tracker (display only the tasks or only the user stories).
+
 .. figure:: ../images/screenshots/sc_agiledashboard_cardwall.png
    :align: center
    :alt: Cardwall
