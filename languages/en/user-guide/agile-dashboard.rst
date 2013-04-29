@@ -150,9 +150,9 @@ From the release planning view, you can either create new sprints or access the 
 
 Plan a sprint (see `Plan a sprint`_) is as simple as the release plan.
 
-User stories can be added using the right arrow from release backlog to sprint.
+User stories can be added using the right arrow to move it from the release backlog to the sprint.
 
-Moreover, a red indicator is automatically displayed when the capacity of the sprint is exceeded.
+Moreover, a red indicator is automatically displayed when the capacity exceeds of the team capacity for the sprint.
 
 Splitting user stories in tasks is also possible directly from the sprint planning.
 
@@ -228,7 +228,7 @@ select box on the right.
 
    Agile Dashboard: Cardwall
 
-The team can follow the progress of the sprint by accessing the burndown in the short access boxes (see `Short Access boxes`_).
+The team can follow the progress of the sprint by accessing the burndown via the homepage's short access boxes (see `Short Access boxes`_) or the "Burndown" tab.
 
 The burndown graph is automatically generated depending on the remaining effort of the tasks the team update everyday.
 
