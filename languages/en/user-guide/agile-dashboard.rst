@@ -128,7 +128,7 @@ You will reach the release tracker form to create a new release.
    :align: center
    :alt: Create a new release or a new sprint
    :name: Create a new release or a new sprint
-   :width: 1200px
+   :width: 500px
 
    Agile Dashboard: Create a new release or a new sprint
 
@@ -142,7 +142,7 @@ Epics can also be splitted into user stories by clicking to the arrow next to th
    :align: center
    :alt: Plan a release
    :name: Plan a release
-   :width: 1200px
+   :width: 800px
 
    Agile Dashboard: Plan a release
 
@@ -162,7 +162,7 @@ Using the arrow next to story provides you a direct link to create a new task, b
    :align: center
    :alt: Plan a sprint
    :name: Plan a sprint
-   :width: 1200px
+   :width: 800px
 
    Agile Dashboard: Plan a sprint
 
@@ -180,7 +180,7 @@ Then access to the backlog by using the short access boxes available in the Agil
    :align: center
    :alt: Access to the Backlog
    :name: Access to the Backlog
-   :width: 1200px
+   :width: 800px
 
    Agile Dashboard: Access to the Backlog
 
@@ -191,7 +191,7 @@ a user story to it (see `Populate the Backlog`_).
    :align: center
    :alt: Populate the Backlog
    :name: Populate the Backlog
-   :width: 1200px
+   :width: 800px
 
    Agile Dashboard: Populate the Backlog
 
@@ -202,7 +202,7 @@ elements (see `Rank the Backlog elements`_).
    :align: center
    :alt: Rank the Backlog elements
    :name: Rank the Backlog elements
-   :width: 600px
+   :width: 500px
 
    Agile Dashboard: Rank the Backlog elements
 
@@ -236,7 +236,7 @@ The burndown graph is automatically generated depending on the remaining effort 
    :align: center
    :alt: Short Access boxes
    :name: Short Access boxes
-   :width: 600px
+   :width: 500px
 
    Agile Dashboard: Short Access boxes
 
