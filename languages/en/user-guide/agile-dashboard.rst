@@ -5,13 +5,13 @@
 Agile Dashboard
 ===============
 
-The Tuleap Agile Dashboard is a new service provided by Tuleap on top of trackers (see :ref:`trackers-and-real-time-reports`).
+The |SYSPRODUCTNAME| Agile Dashboard is a new service provided by Tuleap on top of trackers (see :ref:`trackers-and-real-time-reports`).
 It is highly configurable and adapts to almost any agile team.
 
 Features
 --------
 
-The Tuleap Agile Dashboard has many features including a cardwall, a burndown and a backlog planner.
+The |SYSPRODUCTNAME| Agile Dashboard has many features including a cardwall, a burndown and a backlog planner.
 
 The cardwall allows for the visual monitoring of an artifact's progress, the individuals who are working on it
 or the remaining effort.
@@ -23,7 +23,7 @@ the drag'n'drop within a workflow.
 Creating an Agile Dashboard
 ---------------------------
 
-Creating from Tuleap's template
+Creating from |SYSPRODUCTNAME|'s template
 ```````````````````````````````
 
 You can create one from scratch but, given the sheer number of configurations, it is
