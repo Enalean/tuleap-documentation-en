@@ -1,7 +1,5 @@
 
 
-.. |SYS_DEFAULT_DOMAIN| replace:: tuleap.net
-
 Other Services
 ==============
 
@@ -67,10 +65,10 @@ storage will then be visible to any Tuleap users and all
 files placed in this directory can be freely downloaded. So make sure
 that you use this storage space for world readable files only.
 
--  Anonymous Users access: use an ftp client to connect to |SYS_DEFAULT_DOMAIN|. Use
+-  Anonymous Users access: use an ftp client to connect to tuleap.example.com. Use
    "ftp" as login and your email address as the password. Then ``cd/pub/projectname`` to access the FTP Anonymous space.
 
--  Project Members access: use an ftp client to connect to |SYS_DEFAULT_DOMAIN|. Use
+-  Project Members access: use an ftp client to connect to tuleap.example.com. Use
    Tuleap login and password and then type ``cd SYS_DATA_DIR/ftp/pub/projectname`` to access the FTP
    Anonymous space. From there project members have both read and write
    access which means that they can upload files.
@@ -78,7 +76,7 @@ that you use this storage space for world readable files only.
    To point to this storage space in your Web pages or your email to
    other users simply use the following URL:
 
-   ``ftp://projectname.SYS_DEFAULT_DOMAIN:/pub/projectname``
+   ``ftp://projectname.tuleap.example.com:/pub/projectname``
 
 SOAP API
 ---------
@@ -88,13 +86,13 @@ through web-services. At this time, only session (login/logout) and
 tracker services are available.
 
 A human-friendly description of the services is available at
-`http://SYS\_DEFAULT\_DOMAIN/soap/ <http://&SYS_DEFAULT_DOMAIN;/soap/>`__.
+`http://tuleap.example.com/soap/ <http://tuleap.example.com/soap/>`__.
 It is a list of services, with a description of each function, its
 input, output and documentation
 
 A more detailed description of the services is also available with the
 more formal WSDL language at
-`http://SYS\_DEFAULT\_DOMAIN/soap/?wsdl <http://&SYS_DEFAULT_DOMAIN;/soap/?wsdl>`__.
+`http://tuleap.example.com/soap/?wsdl <http://tuleap.example.com/soap/?wsdl>`__.
 The WSDL also includes the types definition.
 
 Tuleap Command Line Interface (CLI)
@@ -109,4 +107,4 @@ attach a file, a CC address or a dependency to an artifact), and the
 mail notification is not active with the CLI.
 
 The full CLI documentation is available at
-`http://SYS\_DEFAULT\_DOMAIN/documentation/cli/html/en\_US/ <http://&SYS_DEFAULT_DOMAIN;/documentation/cli/html/en_US/>`__
+`http://tuleap.example.com/documentation/cli/html/en\_US/ <http://tuleap.example.com/documentation/cli/html/en_US/>`__

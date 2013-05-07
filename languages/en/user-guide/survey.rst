@@ -81,7 +81,7 @@ following Web pointer (URL):
 
 ::
 
-    http://SYS_DEFAULT_DOMAIN/survey/survey.php?group_id=N&survey_id=X
+    http://tuleap.example.com/survey/survey.php?group_id=N&survey_id=X
 
 where N is your project ID number and X is the survey ID number as shown
 in the survey list displayed on the Survey Manager welcome screen. Your

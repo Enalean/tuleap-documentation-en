@@ -167,7 +167,7 @@ user is working on.
    ``Bookmarks->Add Repository...``
 
    When prompted enter the URL to your repository:
-   ``http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname``
+   ``http://svn.projectname.tuleap.example.com/svnroot/projectname``
 
 -  Click on the new bookmark corresponding to your repository and type
    you Tuleap user name and password when asked to. You
@@ -701,7 +701,7 @@ Place yourself into the ``topdirectory`` and type the following command
 ::
 
     svn --username loginname import . 
-    http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname 
+    http://svn.projectname.tuleap.example.com/svnroot/projectname 
     --message "Initial repository version"
             
 
@@ -717,9 +717,9 @@ Where:
     **Note**
 
     If your Subversion server is configured in secure mode, note that
-    you should use ``https://SYS_DEFAULT_DOMAIN/svnroot/projectname``
+    you should use ``https://tuleap.example.com/svnroot/projectname``
     instead of
-    ``http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname`` in
+    ``http://svn.projectname.tuleap.example.com/svnroot/projectname`` in
     all the examples given on these pages.
 
    **Tip**
@@ -776,7 +776,7 @@ command:
 
 ::
 
-    svn checkout http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname
+    svn checkout http://svn.projectname.tuleap.example.com/svnroot/projectname
 
 Where:
 
@@ -984,8 +984,8 @@ follows:
 ::
 
     svn copy
-    http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname/trunk
-    http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname/tags/myproject-1.4
+    http://svn.projectname.tuleap.example.com/svnroot/projectname/trunk
+    http://svn.projectname.tuleap.example.com/svnroot/projectname/tags/myproject-1.4
     -m "Tagging the 1.4 release"
 
 Your software release is now ready. Export a clean image of the release
@@ -995,7 +995,7 @@ by typing:
 ::
 
     svn export
-    http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname/tags/myproject-1.4
+    http://svn.projectname.tuleap.example.com/svnroot/projectname/tags/myproject-1.4
 
 Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 

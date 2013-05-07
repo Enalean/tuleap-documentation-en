@@ -1,8 +1,4 @@
 
-
-.. |SYS_DEFAULT_DOMAIN| replace:: tuleap.net
-.. |SYS_DEFAULT_DOMAINS| replace:: **tuleap.net**
-
 .. _continuous-integration-with-Hudson/Jenkins:
 
 Continuous Integration with Hudson/Jenkins
@@ -176,8 +172,8 @@ to use the default mail server (localhost).
 
 You can also define a default user email suffix. By default, all of the
 Tuleap users have an email address of the form
-**login@** |SYS_DEFAULT_DOMAINS| that is mapped to the real email address.
-You can then fill this field with the value **@** |SYS_DEFAULT_DOMAINS|
+**login@tuleap.example.com** that is mapped to the real email address.
+You can then fill this field with the value **@tuleap.example.com**
 and the emails will be automatically sent to the right users.
 
 You can also specify the system Admin Email Address. Notification
@@ -199,7 +195,7 @@ Jabber plug-in lets you the ability to send notification to users or
 chat rooms.
 
 To use the Jabber notification, please give the name of the server (by
-default |SYS_DEFAULT_DOMAIN|) as well as the JabberID of the user that
+default tuleap.example.com) as well as the JabberID of the user that
 will send the notifications.
 
 Hudson Plug-ins
@@ -250,7 +246,7 @@ expecting format is **:protocol:user@host:path**
 
 You can find the details of the expecting string selecting the CVS tab
 of your project in Tuleap. It looks like
-**:pserver:[username]@[projectname].** |SYS_DEFAULT_DOMAINS| **:/cvsroot/[projectname]**
+**:pserver:[username]@[projectname].tuleap.example.com:/cvsroot/[projectname]**
 
 You can also provide one or several modules and/or a branch.
 
@@ -260,7 +256,7 @@ Subversion
 To configure Subversion, you need to provide the URL of the repository.
 This piece of information is available on the Tuleap
 interface, by selecting the SVN tab of your project. It looks like
-**http://** |SYS_DEFAULT_DOMAINS| **/svnroot/[projectname]**
+**http://tuleap.example.com/svnroot/[projectname]**
 
 Hudson will then ask you to give credentials for Subversion, to be able
 to access the repository. You can then choose several options for
@@ -275,7 +271,7 @@ Finally, if you want to give the ability to the users to navigate in the
 source code repository through Hudson interface, you can select
 "ViewSVN" in the field "Repository browser", and then enter the folowing
 string:
-**http://** |SYS_DEFAULT_DOMAINS| **/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
+**http://tuleap.example.com/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
 
 Builds Schedule
 ````````````````

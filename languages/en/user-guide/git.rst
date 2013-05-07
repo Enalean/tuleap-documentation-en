@@ -44,7 +44,7 @@ A reference must be initialized:
         git init
         git add .
         git commit -m 'initial commit'
-        git push gitolite@SYS_DEFAULT_DOMAIN:<project_shortname>/<repo_name>.git master
+        git push gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git master
         
 
 If you have an existing repository with branches and tags you want to
@@ -52,7 +52,7 @@ push, as an alternative you can run:
 
 ::
 
-        git push --mirror gitolite@SYS_DEFAULT_DOMAIN:<project_shortname>/<repo_name>.git
+        git push --mirror gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git
         
 
 Fork

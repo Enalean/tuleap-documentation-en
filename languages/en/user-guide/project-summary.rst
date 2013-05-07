@@ -38,7 +38,7 @@ projects can be accessed at:
 
 ::
 
-    http://SYS_DEFAULT_DOMAIN/projects/short_project_name
+    http://tuleap.example.com/projects/short_project_name
 
 If your are thinking of visiting the Project Dashboard of a project on a
 regular basis we strongly advise you to bookmark it in your Personal

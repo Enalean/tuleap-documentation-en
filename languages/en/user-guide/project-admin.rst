@@ -1,7 +1,5 @@
 
 
-.. |SYS_DEFAULT_DOMAIN| replace:: Tuleap.net
-
 .. _project-administration:
 
 Project Administration
@@ -231,7 +229,7 @@ replaced by their value:
 -  **$projectname**: short name of the project
 
 -  **$sys\_default\_domain**: domain of your Tuleap server
-   (e.g. "|SYS_DEFAULT_DOMAIN|")
+   (e.g. "tuleap.example.com")
 
 -  **$group\_id**: project number.
 
@@ -903,7 +901,7 @@ Add your project database to Windows Data Sources. For Windows users:
    -  *Windows DSN Name*: is your choice of a name for this connection.
       Use "Project X Database" for instance.
 
-   -  *MySQL host (IP or Name)*; |SYS_DEFAULT_DOMAIN|
+   -  *MySQL host (IP or Name)*; tuleap.example.com
 
    -  *MySQL Database Name*: the database name is your project shortname
       prefixed by 'cx\_' as displayed by Tuleap after you

@@ -146,7 +146,7 @@ Login and Personal Page
 ------------------------
 
 To log into the Tuleap site, go to the Tuleap
-Site at `http://SYS\_DEFAULT\_DOMAIN <http://&SYS_DEFAULT_DOMAIN;/>`__
+Site at `http://tuleap.example.com <http://tuleap.example.com/>`__
 and click on the "Login" link. If you typed your login and password OK,
 Tuleap presents you with your Personal Page (or Personal
 Dashboard) (see `The Personal Page of a Tuleap user`_). At any point in time you can return to your

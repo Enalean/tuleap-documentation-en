@@ -124,7 +124,7 @@ login name, and "projectname" is the short project name.
 
    Enter the CVSROOT:
 
-   ``:pserver:username@cvs.projectname.SYS_DEFAULT_DOMAIN:/cvsroot/projectname``
+   ``:pserver:username@cvs.projectname.tuleap.example.com:/cvsroot/projectname``
 
    Make sure the Authentication is set to:
    ``"passwd" file on the cvs server``
@@ -517,7 +517,7 @@ command (in one line):
 
 ::
 
-    cvs -d:pserver:loginname@cvs.projectname.SYS_DEFAULT_DOMAIN:/cvsroot/projectname
+    cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     login
             
 
@@ -553,7 +553,7 @@ command in one line):
 ::
 
     $ cd topdirectory
-    $ cvs -d:pserver:loginname@cvs.projectname.SYS_DEFAULT_DOMAIN:/cvsroot/projectname
+    $ cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     import topdirectory vendor_tag start
             
 
@@ -623,7 +623,7 @@ To create a working copy type the following command:
 
 ::
 
-    cvs -d:pserver:loginname@cvs.projectname.SYS_DEFAULT_DOMAIN:/cvsroot/projectname
+    cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     checkout directory
 
 Where:
@@ -841,7 +841,7 @@ directory, type:
 
 ::
 
-    cvs -d:pserver:loginname@cvs.projectname.SYS_DEFAULT_DOMAIN:/cvsroot/projectname
+    cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     export projectname-1.2
 
 Create a ZIP or tar archive with the entire ``project-1.2/`` directory

@@ -18,14 +18,14 @@ different ways:
 
    ::
 
-       http://projectname.SYS_DEFAULT_DOMAIN
+       http://projectname.tuleap.example.com
                  
 
    Or, if your server is setup in secure mode:
 
    ::
 
-       https://projectname.SYS_DEFAULT_DOMAIN
+       https://projectname.tuleap.example.com
                  
 
 -  Click on the "Home Page" link in the Project Main menu at the top of
@@ -132,7 +132,7 @@ opposed to FrontPage, DreamWeaver fully support remote publication via
 FTP. To create a new site go to the Site -> New Site menu. In the local
 information, choose your site name and local root folder. For the remote
 information, choose FTP access and specify
-``projectname.SYS_DEFAULT_DOMAIN`` as host and
+``projectname.tuleap.example.com`` as host and
 ``/home/groups/projectname/htdocs`` as the host directory. The login is
 your Tuleap login.
 
@@ -144,7 +144,7 @@ export facility you can transfer your HTML files by other means.
 
 -  **FTP**: this is the simplest method for transferring your Web pages
    to the Tuleap remote location. Use ftp to connect to
-   ``projectname.SYS_DEFAULT_DOMAIN`` and use your Tuleap
+   ``projectname.tuleap.example.com`` and use your Tuleap
    username and password to login. Once logged in issue the following
    command:
 
@@ -196,7 +196,7 @@ following Web pointer:
 
 ::
 
-    http://SYS_DEFAULT_DOMAIN/sflogo.php?group_id=N&type=1
+    http://tuleap.example.com/sflogo.php?group_id=N&type=1
           
 
 Use "https" instead of "http" in the above URL if your server is setup
@@ -208,8 +208,8 @@ Dashboard:
 
 ::
 
-    <A href="http://SYS_DEFAULT_DOMAIN/projects/projectname">
-    <IMG src="http://SYS_DEFAULT_DOMAIN/sflogo.php?group_id=N&type=1 width="80"
+    <A href="http://tuleap.example.com/projects/projectname">
+    <IMG src="http://tuleap.example.com/sflogo.php?group_id=N&type=1 width="80"
          height="20" border="0" alt="Source Code Available !">
     </A>
             
