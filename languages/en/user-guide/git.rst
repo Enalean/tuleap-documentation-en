@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 .. _version-control-with-git:
 
@@ -7,7 +7,7 @@ Version Control with Git
 ========================
 
 This chapter is not a Git Tutorial. It focuses on the integration of Git
-with |SYSPRODUCTNAME| and how to use it in an optimal way in this
+with Tuleap and how to use it in an optimal way in this
 context. If you are not familiar with Git we warmly advise you to first
 read some of the documents listed in the references section (see `Git References`_).
 
@@ -66,7 +66,7 @@ In this context, developments should happen in developers repositories
 (on developer's computer) and are regularly pushed into a public
 repositories for sharing with other developers.
 
-|SYSPRODUCTNAME| "Personal Fork" are those public repositories.
+Tuleap "Personal Fork" are those public repositories.
 
 If you ever need to group the selected repositories into a common
 namespace, you can give a specific path the repositories will be created
@@ -150,7 +150,7 @@ addresses. Emails will contain:
 
 -  the modified files (+diffstats)
 
--  for each commit, the link to the diff in |SYSPRODUCTNAME| gitweb
+-  for each commit, the link to the diff in Tuleap gitweb
    interface
 
 -  for each reference (in commit description for instance), the

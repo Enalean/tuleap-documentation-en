@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 .. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
 .. _version-control-with-subversion:
@@ -8,7 +8,7 @@ Version Control with Subversion
 ===============================
 
 This chapter is not a Subversion Tutorial. It focuses on the integration
-of Subversion with |SYSPRODUCTNAME| and how to use it in an optimal
+of Subversion with Tuleap and how to use it in an optimal
 way in this context. If you are not familiar with Subversion we warmly
 advise you to first read some of the documents listed in the references
 section (see `Subversion References`_).
@@ -67,7 +67,7 @@ But Subversion also comes with a number of enhancements over CVS:
    add, delete, rename and copy files or entire directories without
    doing any compromise on the file naming or the file history.
 
--  **Atomic commits**: although |SYSPRODUCTNAME| provides an
+-  **Atomic commits**: although Tuleap provides an
    additional layer on top of CVS which gives an atomic view of the
    commits, CVS itself has no notion of the fact that you may have
    committed a dozen file at the same time to fix a single bug.
@@ -102,10 +102,10 @@ But Subversion also comes with a number of enhancements over CVS:
    disk space and, above all, it takes a constant amount of time
    regardless of the repository size.
 
--  **Fine grain access control**: in its |SYSPRODUCTNAME| incarnation,
+-  **Fine grain access control**: in its Tuleap incarnation,
    your Subversion repository operates on top of the HTTP (or HTTPS)
    protocol and it therefore take advantage of the rich HTTP
-   authentication mechanism. As a result |SYSPRODUCTNAME| allows you
+   authentication mechanism. As a result Tuleap allows you
    to fine tune who has access to which part of your Subversion
    repository whether for read, write or no access at all.
 
@@ -119,9 +119,9 @@ Subversion Clients
 ```````````````````
 
 Subversion has a client-server architecture. In other words,
-|SYSPRODUCTNAME| developers who want to interact with the Subversion
+Tuleap developers who want to interact with the Subversion
 repository of their project must have Subversion installed on their
-desktop machine, hereafter called client. The |SYSPRODUCTNAME| server
+desktop machine, hereafter called client. The Tuleap server
 permanently runs a Subversion server in the background to which
 Subversion clients talk to to act upon the Subversion repository.
 Subversion clients come in various flavors for all sorts of platforms
@@ -148,14 +148,14 @@ client that can run on any platform. As time goes the list of graphical
 front-ends will certainly grow. Refer to `Subversion References`_ for more information about
 those graphical clients.
 
-Setting up rapidSVN for |SYSPRODUCTNAME|
+Setting up rapidSVN for Tuleap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above, rapidSVN is the graphical user interface that comes
 with Subversion for Linux and Windows. Below are all the instructions
-needed to get rapidSVN running on a |SYSPRODUCTNAME| project. In the
-instructions below, "username" is the |SYSPRODUCTNAME| user login
-name, and "projectname" is the |SYSPRODUCTNAME| short project name the
+needed to get rapidSVN running on a Tuleap project. In the
+instructions below, "username" is the Tuleap user login
+name, and "projectname" is the Tuleap short project name the
 user is working on.
 
 -  Download rapidSVN from the Subversion Web site and install it on your
@@ -170,7 +170,7 @@ user is working on.
    ``http://svn.projectname.SYS_DEFAULT_DOMAIN/svnroot/projectname``
 
 -  Click on the new bookmark corresponding to your repository and type
-   you |SYSPRODUCTNAME| user name and password when asked to. You
+   you Tuleap user name and password when asked to. You
    should now be able to browse the repository and see the file status
    and revision history.
 
@@ -208,13 +208,13 @@ following documents:
 -  jSVN. A graphical 100% Java graphical client. See
    http://jsvn.alternatecomputing.com/.
 
-Subversion Integration in |SYSPRODUCTNAME|
+Subversion Integration in Tuleap
 -------------------------------------------
 
 The Subversion Repository
 ``````````````````````````
 
-Whenever a new project is hosted on |SYSPRODUCTNAME|, a new Subversion
+Whenever a new project is hosted on Tuleap, a new Subversion
 repository is automatically created and properly initialized. Each
 project has its own Subversion repository as opposed to what happens in
 most Subversion servers, where several projects share the same
@@ -228,8 +228,8 @@ project without impacting the others.
 
     All interactions with a Subversion repository should normally happen
     through a Subversion client. However if need be and if this feature
-    is available on your |SYSPRODUCTNAME| server, you can get access
-    to your Subversion repository via your |SYSPRODUCTNAME| shell
+    is available on your Tuleap server, you can get access
+    to your Subversion repository via your Tuleap shell
     account (see :ref:`shell-account`). Once the shell session is active you'll find your
     subversion repository under ``/svnroot/projectname`` you should
     never do that unless you know exactly what you are doing.
@@ -237,7 +237,7 @@ project without impacting the others.
 The Subversion Repository Structure
 `````````````````````````````````````
 
-When a new |SYSPRODUCTNAME| project is created, it comes with a virgin
+When a new Tuleap project is created, it comes with a virgin
 subversion repository that the project team must populate. Due to the
 fact that Subversion manages branching and tagging through its virtual
 filesystem (and not through labels attached to individual files as in
@@ -245,7 +245,7 @@ CVS) there is a recommended way to organize your repository. The layout
 suggested below can be considered as a de-facto standard and we highly
 recommend that you follow this best practice.
 
-If you expect your |SYSPRODUCTNAME| project to manage only one project
+If you expect your Tuleap project to manage only one project
 deliverable then you can create the following top-level directories in
 your repository:
 
@@ -260,7 +260,7 @@ where ``/trunk`` contains the main line of development, ``/branches``
 contains branch copies and ``/tags`` contains tag copies of your source
 code that generally correspond to a given release.
 
-If you expect your |SYSPRODUCTNAME| project to manage several software
+If you expect your Tuleap project to manage several software
 deliverables that are managed independently one from each other, then it
 is often a good idea to first create top-level directories that carry
 the name of the sub-project and under each of these directories repeat
@@ -284,7 +284,7 @@ in `Subversion References`_.
 The Subversion Browsing Interface
 ----------------------------------
 
-|SYSPRODUCTNAME| offers a number a facilities that allow you to
+Tuleap offers a number a facilities that allow you to
 interact with your Subversion repository through the Web interface. The
 Subversion Web interface does not intend to replace the Subversion
 client that you should normally use on your desktop computer. It rather
@@ -297,7 +297,7 @@ Public Area (see :ref:`an-example-of-project-dashboard`). The Subversion Web int
 features to end-users:
 
 -  **Accessing the Subversion repository**: The welcome page of the
-   |SYSPRODUCTNAME| Subversion service gives you all the information
+   Tuleap Subversion service gives you all the information
    you need to access the Subversion repository from your Subversion
    client. Among other things it tells you what the Subversion root path
    is and how to checkout the source code. This page may also be
@@ -309,12 +309,12 @@ features to end-users:
 
 -  **Querying Subversion**: If the Subversion tracking feature has been
    activated for your project all Subversion events (commit, file
-   addition or deletion) are tracked down in the |SYSPRODUCTNAME|
+   addition or deletion) are tracked down in the Tuleap
    database. This audit trail can be searched using several criteria.
 
 -  **Subversion Administration**: this service allows project
    administrator to perform the most common Subversion administration
-   and configuration tasks from the |SYSPRODUCTNAME| Web interface
+   and configuration tasks from the Tuleap Web interface
    (for more details see `Subversion Administration Interface`_).
 
 Let's review some of these features in more details.
@@ -323,8 +323,8 @@ Browsing The Subversion Repository
 ``````````````````````````````````
 
 In order to interact with the Subversion repository of any
-|SYSPRODUCTNAME|-hosted project, you normally need to have Subversion
-installed on your machine. However |SYSPRODUCTNAME| also offers a
+Tuleap-hosted project, you normally need to have Subversion
+installed on your machine. However Tuleap also offers a
 built-in Web browsing interface to the Subversion repository which
 allows you to navigate in the source code, download it, view a file
 history or compare two revisions of the same file.
@@ -390,10 +390,10 @@ support request) that led the developers to make a change in the code.
 And conversely, when reading the artifact description it is also very
 helpful to immediately see how the change was implemented.
 
-The integration of Subversion in |SYSPRODUCTNAME| precisely provides
-|SYSPRODUCTNAME| users with this bi-directional cross-referencing
+The integration of Subversion in Tuleap precisely provides
+Tuleap users with this bi-directional cross-referencing
 mechanism. This is achieved through the use of reference patterns that
-are automatically detected by |SYSPRODUCTNAME| in either the follow-up
+are automatically detected by Tuleap in either the follow-up
 comments of the project artifacts or in the messages attached to a
 Subversion commit.
 
@@ -405,19 +405,19 @@ as follows:
    name (e.g. "bug #123", "task #321", "req #12", etc.). If you don't
    know the tracker short name or don't want to specify it, you may
    simply use "art #NNN". When browsing a message containing this
-   pattern anywhere in |SYSPRODUCTNAME|, the pattern will be
+   pattern anywhere in Tuleap, the pattern will be
    automatically transformed into an hyperlink to the artifact
    description.
 
 -  **revision #YYY or rev #YYY**: this pattern refers to the commit YYY
    where YYY is the commit revision number. When browsing a message
-   containing this pattern anywhere in |SYSPRODUCTNAME|, the pattern
+   containing this pattern anywhere in Tuleap, the pattern
    will be automatically transformed into an hyperlink to the commit
    description which include log messages, impacted files, versions and
    author of the change(see `The detail of an atomic Subversion commit`_) .
 
--  The |SYSPRODUCTNAME| reference mechanism allows cross-referencing
-   with any |SYSPRODUCTNAME| object: artifacts, documents, files, etc.
+-  The Tuleap reference mechanism allows cross-referencing
+   with any Tuleap object: artifacts, documents, files, etc.
    Please refer to :ref:`reference-overview` for more details on References.
 
     .. figure:: ../images/screenshots/sc_svnshowcommit.png
@@ -439,7 +439,7 @@ as follows:
 Subversion Administration Interface
 ------------------------------------
 
-Through the |SYSPRODUCTNAME| Web interface, project administrators can
+Through the Tuleap Web interface, project administrators can
 perform the most common administration and configuration tasks on their
 Subversion repository. The administration functions can be accessed
 through the ``SVN Admin`` menu item in the Subversion menu bar.
@@ -454,15 +454,15 @@ General Settings
    Subversion client or through the Subversion Web Browsing interface.
 
    If you activate the Subversion tracking (default) for your project
-   |SYSPRODUCTNAME| will also keep track of all the code changes in
-   the |SYSPRODUCTNAME| database. This will give you extra
+   Tuleap will also keep track of all the code changes in
+   the Tuleap database. This will give you extra
    capabilities on your Subversion repository as explained in `Querying Subversion`_.
 
 -  **Subversion Preamble**: In some cases (e.g. when your project
    already has its own subversion server in place), the project
-   Subversion repository might not be hosted by the |SYSPRODUCTNAME|
+   Subversion repository might not be hosted by the Tuleap
    server. In this case, the Subversion information displayed in the
-   welcome page of the |SYSPRODUCTNAME| Subversion service are
+   welcome page of the Tuleap Subversion service are
    inadequate. Fortunately, the project administrator can customize the
    Subversion Information page here.
 
@@ -484,7 +484,7 @@ With respect to the public projects, the default access permissions are
 as follows:
 
 -  **Anonymous Users**: users who have not registered with
-   |SYSPRODUCTNAME| (or are not logged in) have *no access at all* to
+   Tuleap (or are not logged in) have *no access at all* to
    the Subversion repositories.
 
 -  **Registered Users**: have read-only access to Subversion
@@ -498,10 +498,10 @@ as follows:
        there is no access for non project members by default.
 
        **Note**: all source code accesses are recorded by
-       |SYSPRODUCTNAME|. Project administrators always have access to
+       Tuleap. Project administrators always have access to
        the list of people who accessed the source code (see :ref:`access-logs`).
 
--  **Project Members**: members of a |SYSPRODUCTNAME| hosted project
+-  **Project Members**: members of a Tuleap hosted project
    are granted a password protected read/write access. As mentioned
    above in the section about private projects, it is also possible to
    grant read-only access to the project members.
@@ -511,9 +511,9 @@ as follows:
 Customized Access Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Thanks to the integration of Subversion in the |SYSPRODUCTNAME|
+Thanks to the integration of Subversion in the Tuleap
 environment, project administrators can redefine access permissions for
-some or all |SYSPRODUCTNAME| users.
+some or all Tuleap users.
 
 This can be achieved by specifying access permission rules that will
 complement or even override the default settings. The syntax of the
@@ -531,7 +531,7 @@ where:
    ``/svnroot/projectname``) in your repository for which you want to
    redefine access permissions.
 
--  ``name`` is either a |SYSPRODUCTNAME| login name or group name. The
+-  ``name`` is either a Tuleap login name or group name. The
    name \* (star) means any registered user.
 
    If it is a group name it must be preceded with the @ character. The
@@ -546,14 +546,14 @@ where:
              
 
    All project defined user groups (see :ref:`user-groups`) are also defined in the
-   |SYSPRODUCTNAME| default permissions settings and ready to use if
+   Tuleap default permissions settings and ready to use if
    you wish to redefine access permissions.
 
 -  ``permission`` is either ``r`` for read-only access, ``rw`` for
    read-write access or blank if access is forbidden.
 
 As an illustration, the default permission settings of a
-|SYSPRODUCTNAME| repository as explained in the previous section are
+Tuleap repository as explained in the previous section are
 expressed through the following set of rules:
 
 ::
@@ -566,8 +566,8 @@ expressed through the following set of rules:
     @members = rw
           
 
-where ``member1,member2,...,memberN`` are the |SYSPRODUCTNAME| login
-name of the |SYSPRODUCTNAME| project members.
+where ``member1,member2,...,memberN`` are the Tuleap login
+name of the Tuleap project members.
 
 Additionally, all existing user groups defined in this project are
 listed in this section.
@@ -609,7 +609,7 @@ will indeed prevent registered users from reading the '/secret'
 directory.
 
 If you really need to prevent access to the whole repository, you should
-contact a |SYSPRODUCTNAME| administrator.
+contact a Tuleap administrator.
 
 For more information about the format of this file you should refer to
 the Subversion Book (see `Subversion References`_).
@@ -617,8 +617,8 @@ the Subversion Book (see `Subversion References`_).
 Subversion Email Notification
 ``````````````````````````````
 
-In addition to tracking the changes in the |SYSPRODUCTNAME| database,
-|SYSPRODUCTNAME| can also send a nicely formatted email message to
+In addition to tracking the changes in the Tuleap database,
+Tuleap can also send a nicely formatted email message to
 individual email addresses or mailing lists each time there is a change
 in the source code. The email message contains the log message, the
 author of the change, the list of impacted files and pointers to the
@@ -645,9 +645,9 @@ notification:
     If you intend to generate email notification for the changes made in
     your Subversion repository or a specific path, it is a good practice
     to create a specific mailing list called ``projectname-svnevents``.
-    By doing so, |SYSPRODUCTNAME| users and project members interested
+    By doing so, Tuleap users and project members interested
     in receiving the email notification just need to subscribe to the
-    mailing list. In addition, the |SYSPRODUCTNAME| mailing list
+    mailing list. In addition, the Tuleap mailing list
     manager will archive all the email messages which can prove very
     useful for future reference. See :ref:`mailing-lists` for mailing list creation.
 
@@ -657,21 +657,21 @@ A Typical Subversion Life Cycle
 As stated earlier, the intent of this chapter is not to give a formal
 Subversion training but rather to explain what are the steps a project
 team typically goes through when using Subversion and, more generally,
-all the |SYSPRODUCTNAME| tools involved in a Software release process.
+all the Tuleap tools involved in a Software release process.
 
 It also deals with the problem of contributing source code when you are
 not part of a project team. In this section all examples are given in
 the form of Subversion command lines but transposing them to graphical
 front-ends should be relatively straightforward.
 
-.. _a-typical-software-development-life-cycle-on-|SYSPRODUCTNAME|:
+.. _a-typical-software-development-life-cycle-on-Tuleap:
 
 .. figure:: ../images/screenshots/SVN_Life_Cycle.png
    :align: center
-   :alt: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
-   :name: A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+   :alt: A Typical Software Development Life Cycle on Tuleap
+   :name: A Typical Software Development Life Cycle on Tuleap
 
-   A Typical Software Development Life Cycle on |SYSPRODUCTNAME|
+   A Typical Software Development Life Cycle on Tuleap
 
 Logging In
 ```````````
@@ -688,7 +688,7 @@ Importing Existing Source Code
 
 *Audience: project members*
 
-As the happy administrator of a new |SYSPRODUCTNAME| project, the
+As the happy administrator of a new Tuleap project, the
 first thing to do is to populate your freshly brewed Subversion
 repository with your project source code. To do so, first create a new
 directory ``topdirectory`` on your workstation and populate this top
@@ -709,8 +709,8 @@ Where:
 
 -  ``projectname`` is the project short name
 
--  ``loginname`` is your |SYSPRODUCTNAME| login (all lowercase). The
-   --username option is only needed if your |SYSPRODUCTNAME| login
+-  ``loginname`` is your Tuleap login (all lowercase). The
+   --username option is only needed if your Tuleap login
    name is different from the Unix or Windows login name you are
    currently working with.
 
@@ -728,7 +728,7 @@ Where:
    into a fresh Subversion repository especially for new users. Typical
    mistakes are directories placed at the wrong level or with the wrong
    name. Nothing to fear though... If you want to start again from a
-   fresh Subversion repository contact the |SYSPRODUCTNAME| Team to
+   fresh Subversion repository contact the Tuleap Team to
    get your Subversion repository reinitialized. Alternatively you can
    easily delete or move directories and files with any subversion
    client afterwards.
@@ -736,11 +736,11 @@ Where:
     **Note**
 
     Note that if you already have a Subversion repository available, the
-    |SYSPRODUCTNAME| Team can help you migrate this repository on
-    |SYSPRODUCTNAME| and preserve all of your project history. We just
+    Tuleap Team can help you migrate this repository on
+    Tuleap and preserve all of your project history. We just
     need a dump of your Subversion tree generated with the
-    ``svnadmin dump`` command. With this dump the |SYSPRODUCTNAME|
-    Team will re-install everything for you on the |SYSPRODUCTNAME|
+    ``svnadmin dump`` command. With this dump the Tuleap
+    Team will re-install everything for you on the Tuleap
     server. Contact us for more information.
 
 Checking Code Out
@@ -748,7 +748,7 @@ Checking Code Out
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
-Once a Subversion repository has been populated other |SYSPRODUCTNAME|
+Once a Subversion repository has been populated other Tuleap
 users can checkout the source code and place it on their own
 workstation. The result is called a working copy in the Subversion
 jargon. Note that 'checkout' in the Subversion world does not mean that
@@ -949,7 +949,7 @@ from within a Subversion working copy.
 
 In both cases, you should redirect the output of the diff or svn diff
 command in a text file. Compress the output file if it's a large one and
-use the |SYSPRODUCTNAME| Patch Tracker (see ?) to submit your patch to
+use the Tuleap Patch Tracker (see ?) to submit your patch to
 the project team.
 
 And thanks for contributing some code!
@@ -960,7 +960,7 @@ Exporting and Packaging
 *Audience: project members*
 
 There is a quick and easy way to release a pre-packaged version of your
-source file and make it available to all |SYSPRODUCTNAME| users
+source file and make it available to all Tuleap users
 through the File Release mechanism (see :ref:`delivery-manager`).
 
 Make sure all the project members involved in software development have
@@ -1002,7 +1002,7 @@ Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 Deliver this archive through the File Release service (see :ref:`delivery-manager-administration`).
 
 Done! Nice job...Take a break. And remember to announce the availability
-of your new version via the |SYSPRODUCTNAME| News service (see :ref:`news-service`).
+of your new version via the Tuleap News service (see :ref:`news-service`).
 
 Subversion for Project Administrators
 --------------------------------------
@@ -1010,14 +1010,14 @@ Subversion for Project Administrators
 Subversion Hook Scripts
 ````````````````````````
 
-|SYSPRODUCTNAME| offers an easy to use Web interface to administrate
+Tuleap offers an easy to use Web interface to administrate
 the common settings of your Subversion repository like access control
 and email notification. In case project administrators want to go deeper
-in customizing the behavior of their |SYSPRODUCTNAME| repository, they
+in customizing the behavior of their Tuleap repository, they
 can get access to the Subversion hook scripts.
 
 In order to access those hook scripts, you must be granted the right to
-log into the |SYSPRODUCTNAME| server with your Shell Account (see
+log into the Tuleap server with your Shell Account (see
 :ref:`shell-account`) [#f1]_.
 
 
@@ -1039,11 +1039,11 @@ Once logged in, type the following commands at the shell prompt:
 
     If you decide to customize the Subversion hook scripts for your
     repository make sure to preserve the statements that could have been
-    inserted by |SYSPRODUCTNAME| in the first place. The
-    |SYSPRODUCTNAME| statements are clearly marked with a recognizable
+    inserted by Tuleap in the first place. The
+    Tuleap statements are clearly marked with a recognizable
     header and trailer.
 
 .. [#f1]
    The Shell Account may have been deactivated by your
-   |SYSPRODUCTNAME| site administrators.
+   Tuleap site administrators.
 

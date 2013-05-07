@@ -1,15 +1,15 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 Document Manager
 ================
 
 Documentation is probably the second most important deliverable in a
 software project after the software work products themselves.
-|SYSPRODUCTNAME| provides a specific service to manage your project
+Tuleap provides a specific service to manage your project
 documents.
 
-Although the |SYSPRODUCTNAME| Document Manager cannot be compared with
+Although the Tuleap Document Manager cannot be compared with
 dedicated document management systems, it is however very handy to
 publish documents that are critical to your community of users. Examples
 are: Installation, Administration or User Guide, API documentation,
@@ -17,7 +17,7 @@ Frequently Asked Questions, etc...
 
 The Document Manager features are as follows:
 
--  The |SYSPRODUCTNAME| Document Manager can handle any type of
+-  The Tuleap Document Manager can handle any type of
    document.
 
 -  Documents are stored in folders. You can have subfolders in a folder.

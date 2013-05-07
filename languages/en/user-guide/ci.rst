@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 .. |SYS_DEFAULT_DOMAIN| replace:: tuleap.net
 .. |SYS_DEFAULT_DOMAINS| replace:: **tuleap.net**
 
@@ -54,7 +54,7 @@ to your development process. For instance:
    tests, demo or distribution.
 
 The continuous integration tool we decided to integrate in
-|SYSPRODUCTNAME| is **Hudson/Jenkins**, which is one of the best tool.
+Tuleap is **Hudson/Jenkins**, which is one of the best tool.
 Jenkins is a fork of Hudson. So in this chapter we will use the name
 Hudson. It stands both for Hudson and Jenkins. Hudson configuration can
 be easily done on the web interface, and there is a contextual help for
@@ -74,7 +74,7 @@ Let's then give a definition:
         **Build**                   Process is made of several steps executed periodically on a continuous integration server.
         **Artifact**                Item are generated during the build, and are published  by the continuous integration tool. 
                                     The continuous integration notion of artifact is obviously different than the notion of a 
-                                    |SYSPRODUCTNAME| artifact (which is an item tracked in a tracker).
+                                    Tuleap artifact (which is an item tracked in a tracker).
         **Workspace**               Directory where the project will be deployed in order to perform the build, and 
                                     enventually publish artifacts.
         **Status (of the build)**   Build status can take several values regarding the tool. 
@@ -175,7 +175,7 @@ to state a mail server (SMTP server). Leave the field empty if you want
 to use the default mail server (localhost).
 
 You can also define a default user email suffix. By default, all of the
-|SYSPRODUCTNAME| users have an email address of the form
+Tuleap users have an email address of the form
 **login@** |SYS_DEFAULT_DOMAINS| that is mapped to the real email address.
 You can then fill this field with the value **@** |SYS_DEFAULT_DOMAINS|
 and the emails will be automatically sent to the right users.
@@ -193,7 +193,7 @@ Jabber Notification
 If you have installed the Jabber plug-in for Hudson (see `Hudson Plug-ins`_), you will
 find in the section "Manage Hudson" -> "Configure System" a part to
 configure Jabber notification. If the Jabber plugin for
-|SYSPRODUCTNAME| is installed and enabled, every |SYSPRODUCTNAME|
+Tuleap is installed and enabled, every Tuleap
 user has a Jabber account (see :ref:`instant-messaging-plug-in`) and each project has a Chat Room.
 Jabber plug-in lets you the ability to send notification to users or
 chat rooms.
@@ -238,7 +238,7 @@ CVS and Subversion
 ```````````````````
 
 By default, Hudson suggests the same two SCM (Source Code Management) as
-|SYSPRODUCTNAME|: CVS and Subversion. Select the manager you're using
+Tuleap: CVS and Subversion. Select the manager you're using
 for your project, and then enter the information about the paths to your
 project's repository.
 
@@ -249,7 +249,7 @@ To configure CVS, you need to give the CVSROOT of your project. The
 expecting format is **:protocol:user@host:path**
 
 You can find the details of the expecting string selecting the CVS tab
-of your project in |SYSPRODUCTNAME|. It looks like
+of your project in Tuleap. It looks like
 **:pserver:[username]@[projectname].** |SYS_DEFAULT_DOMAINS| **:/cvsroot/[projectname]**
 
 You can also provide one or several modules and/or a branch.
@@ -258,7 +258,7 @@ Subversion
 ~~~~~~~~~~
 
 To configure Subversion, you need to provide the URL of the repository.
-This piece of information is available on the |SYSPRODUCTNAME|
+This piece of information is available on the Tuleap
 interface, by selecting the SVN tab of your project. It looks like
 **http://** |SYS_DEFAULT_DOMAINS| **/svnroot/[projectname]**
 
@@ -288,15 +288,15 @@ the way hudson will schedule the build. Two main options are available:
 -  **Poll SCM**: will poll changes in your project SCM (CVS or
    Subversion). You can define the frequency following the cron syntax
    (see Hudson inline help). This option can however be expensive
-   operations for the |SYSPRODUCTNAME| server. You can think of using
+   operations for the Tuleap server. You can think of using
    the 'push' option to avoid this problem (see below).
 
 -  **Trigger builds remotely**: this 'push' option avoids server
    overloading. The build is triggered by an URL. To avoid anybody to
    trigger builds, you can protect the operation by specifying an
    authentication token. To really enable the build trigger after each
-   commit, you will need to configure it in |SYSPRODUCTNAME|, in the
-   'Build' tab of your project (See :ref:`link-hudson-job-with-your-|SYSPRODUCTNAME|-project`). You will be able to specify your
+   commit, you will need to configure it in Tuleap, in the
+   'Build' tab of your project (See :ref:`link-hudson-job-with-your-Tuleap-project`). You will be able to specify your
    token if you have defined one.
 
 Build configuration (steps)
@@ -382,28 +382,28 @@ After a build, Hudson can do some actions. Among them:
    do this, the continuous integration server must be well configured
    (see `Email Notification`_).
 
-Integration in |SYSPRODUCTNAME|
+Integration in Tuleap
 -------------------------------
 
 As continuous integration is a good practice in software engineering,
-|SYSPRODUCTNAME| integrates Hudson tool. We know how to install (see
+Tuleap integrates Hudson tool. We know how to install (see
 `Hudson Installation`_) and configure (see `Hudson Configuration`_) Hudson, and how to create and configure Hudson
 jobs (see `Hudson Jobs Creation and Configuration`_). Let's see now how Hudson is integrated to
-|SYSPRODUCTNAME|.
+Tuleap.
 
 Hudson Service
 ```````````````
 
-If Hudson plugin is installed and enabled on your |SYSPRODUCTNAME|
+If Hudson plugin is installed and enabled on your Tuleap
 server, each project can enable the Hudson service (see :ref:`service-configuration` to know how to
 enable services for your project).
 
 Once the service is enabled, you will see a "Build" tab in the service
 bar of your project : the Hudson continuous integration tab.
 
-.. _link-hudson-job-with-your-|SYSPRODUCTNAME|-project:
+.. _link-hudson-job-with-your-Tuleap-project:
 
-Link Hudson job with your |SYSPRODUCTNAME| project
+Link Hudson job with your Tuleap project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to link Hudson job with your project, select the Build tab of
@@ -426,7 +426,7 @@ trigger a build of the associated job, using the pre-commit hook (you
 don't have anything more to do).
 
 By the way, it is possible to link several Hudson jobs with one
-|SYSPRODUCTNAME| project.
+Tuleap project.
 
 Browse Hudson jobs and builds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,7 +437,7 @@ the current status (colored bullet left to the name of the job), the
 name, the last successfull build, the last failed build, if you have
 enabled SCM trigger or not (see ?). Project admins will also see for
 each job some icons that let them modify the job or delete it (remove
-the link with |SYSPRODUCTNAME|).
+the link with Tuleap).
 
 .. figure:: ../images/screenshots/sc_hudsonbrowsejobs.png
    :align: center
@@ -454,7 +454,7 @@ not allowed. They are replaced by (\_), in order to allow references.
 The name of the job and the latest builds are hypertext links that will
 be opened the corresponding Hudson section in a frame below the table.
 This is really convenient to browse Hudson interface while staying in
-the |SYSPRODUCTNAME| interface. If you want to open the Hudson frame
+the Tuleap interface. If you want to open the Hudson frame
 in a specific window, just select the 'show only this frame' link.
 
 The table provides also links to Hudson jobs RSS feed.
@@ -558,7 +558,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
 Hudson References
 ``````````````````
 
-It is possible to make references to Hudson items in |SYSPRODUCTNAME|.
+It is possible to make references to Hudson items in Tuleap.
 There are some predefined references (job, build), but you can also
 create your own references if needed (see :ref:`reference-overview` for more details about
 references)

@@ -1,15 +1,15 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 Project Dashboard
 =================
 
-The Project Dashboard is the entry point of a |SYSPRODUCTNAME| hosted
+The Project Dashboard is the entry point of a Tuleap hosted
 project. And, for any project, it is the only page you need to know
 about. From this page both ordinary registered users and project
 members/administrators can access all project resources and services.
 Unlike the Project Administration page (see :ref:`an-example-of-project-dashboard` ), the Project Dashboard is
-public and can be visited by any |SYSPRODUCTNAME| user including
+public and can be visited by any Tuleap user including
 anonymous ones. In some sense the Project Dashboard displays the public
 face of a project.
 
@@ -23,15 +23,15 @@ projects is pretty easy: go to your Personal Page and click on the
 appropriate project name.
 
 For registered users there are several ways by which you can access the
-Project Dashboard of a |SYSPRODUCTNAME| hosted project:
+Project Dashboard of a Tuleap hosted project:
 
 You can use the search box and look for a project name that you know of
 
 You can explore the Software Map if you know where the project is
 
 You can click on the Project name if it appears on the
-|SYSPRODUCTNAME| Site statistics on the right hand side of the
-|SYSPRODUCTNAME| home page
+Tuleap Site statistics on the right hand side of the
+Tuleap home page
 
 And finally you can type the Web URL to access the project page. All
 projects can be accessed at:
@@ -43,7 +43,7 @@ projects can be accessed at:
 If your are thinking of visiting the Project Dashboard of a project on a
 regular basis we strongly advise you to bookmark it in your Personal
 Page the first time you access the page by using the "Bookmark This
-Page" link in the |SYSPRODUCTNAME| Main Menu. (see :ref:`login-and-personal-page`)
+Page" link in the Tuleap Main Menu. (see :ref:`login-and-personal-page`)
 
     **Tip**
 
@@ -51,7 +51,7 @@ Page" link in the |SYSPRODUCTNAME| Main Menu. (see :ref:`login-and-personal-page
     Project Dashboard is a real-time overview of the project progress
     and activities but it is not a substitute for a real Web Site where
     you describe what the project is about, related links and resources,
-    etc. |SYSPRODUCTNAME| also offers a Web Site to each project. The
+    etc. Tuleap also offers a Web Site to each project. The
     "Home Page" item in the Project Main Menu is precisely a pointer to
     this Web Site (see :ref:`project-web-site` for more information on your Project Web Site
     and how to use it).
@@ -74,7 +74,7 @@ several areas:
 
 -  **Project members and Administrators**: are listed in the upper right
    corner of the page. A click on a name will direct you to the user
-   page where you can learn more about the |SYSPRODUCTNAME| user and
+   page where you can learn more about the Tuleap user and
    send him/her an e-mail.
 
 -  **A customizeable zone** (see below).
@@ -88,7 +88,7 @@ several areas:
 
    An example of Project Dashboard
 
-|SYSPRODUCTNAME| allows project admins to personalize the Project
+Tuleap allows project admins to personalize the Project
 Dashboard. The content of the page is made of *widgets*. All widgets can
 be moved, collapsed or closed. Some of them can provide an rss feed or
 preferences can be set.
@@ -109,7 +109,7 @@ incomplete list of available widgets for the project dashboard:
 
 -  **Latest News**: the last 10 pieces of news posted by the project
    members. Some of this news might also be visible on the
-   |SYSPRODUCTNAME| front page if the |SYSPRODUCTNAME| Team decided
+   Tuleap front page if the Tuleap Team decided
    that it was worth a site announcement.
 
 -  **Latest File Release**: show the list of most recent packages
