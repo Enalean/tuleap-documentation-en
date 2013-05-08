@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 Tracker (Legacy)
 ================
@@ -8,8 +8,8 @@ Tracker (Legacy)
 Tracker service. For documentation on the current tracker system (v5)
 see :ref:`trackers-and-real-time-reports`.
 
-The |SYSPRODUCTNAME| Tracker is one of the most powerful and versatile
-services offered to |SYSPRODUCTNAME| hosted projects. It allows for
+The Tuleap Tracker is one of the most powerful and versatile
+services offered to Tuleap hosted projects. It allows for
 the tracking of various artifacts like bugs, tasks, requirements, etc...
 and a project can create as many trackers as necessary.
 
@@ -44,7 +44,7 @@ are:
    information that help better characterize the nature of the artifact.
 
 -  **CC list**: any number of users can be notified of modification to
-   an artifact by including their |SYSPRODUCTNAME| user name or email
+   an artifact by including their Tuleap user name or email
    address in the CC list.
 
 Entering the Tracker Service
@@ -91,8 +91,8 @@ welcome screen (see `A sample artifact submission screen (the artifact is of typ
    A sample artifact submission screen (the artifact is of type "bug" here)
 
 `A sample artifact submission screen (the artifact is of type "bug" here)`_ shows 
-a sample submission screen from one of the |SYSPRODUCTNAME|
-hosted projects. Because of the |SYSPRODUCTNAME| Tracker high level of
+a sample submission screen from one of the Tuleap
+hosted projects. Because of the Tuleap Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
@@ -115,7 +115,7 @@ assigned to the submitted artifact.
 
 The values proposed by a field could depend upon other field value. If
 javascript is activated in your browser, fields will be filtered
-dynamically. Otherwise, |SYSPRODUCTNAME| will ensure that the values
+dynamically. Otherwise, Tuleap will ensure that the values
 you submit are correct.
 
 As explained above, artifact submission forms vary from one project to
@@ -136,17 +136,17 @@ finished !
 
     **Tip**
 
-    About to submit a bug or a support request to a |SYSPRODUCTNAME|
+    About to submit a bug or a support request to a Tuleap
     Project? Before you do that, make sure that others haven't yet
     submitted a similar artifact. To do so you can either browse the
     artifact database through the Artifact Selection and Browsing
-    facility or you can use the search box in the |SYSPRODUCTNAME|
+    facility or you can use the search box in the Tuleap
     Main Menu and search by keywords.
 
 Artifact Browsing
 ------------------
 
-|SYSPRODUCTNAME| offers the ability to browse the artifact database
+Tuleap offers the ability to browse the artifact database
 according to a variable set of criteria.
 
 Selection Criteria
@@ -293,11 +293,11 @@ Favorites and Predefined Tracker Queries
     query for later re-use. To do this: select the appropriate tracker
     report, then choose your search criteria, click on the "Browse"
     button to run the query. Finally click on the "Bookmark this Page"
-    item in the |SYSPRODUCTNAME| Main Menu. A new bookmark will show
+    item in the Tuleap Main Menu. A new bookmark will show
     up in your Personal Page. A click on this bookmark will run the
     exact same query again.
 
-Your favorite queries can be saved via the |SYSPRODUCTNAME| bookmark
+Your favorite queries can be saved via the Tuleap bookmark
 mechanism as explained in the Tip box but there are also shortcuts in
 the Tracker Menu Bar for the most common queries. They are:
 
@@ -305,11 +305,11 @@ the Tracker Menu Bar for the most common queries. They are:
    for this project.
 
 -  **My Artifacts**: display the artifacts assigned to you (based on the
-   |SYSPRODUCTNAME| account you are currently using)
+   Tuleap account you are currently using)
 
-Also notice that |SYSPRODUCTNAME| always keeps track of the last run
+Also notice that Tuleap always keeps track of the last run
 query. Next time you enter the tracker welcome screen,
-|SYSPRODUCTNAME| will use the same set of selection criteria in the
+Tuleap will use the same set of selection criteria in the
 selection fields and display the list of matching artifacts accordingly.
 
 Advanced Search Mode
@@ -324,7 +324,7 @@ suspended bugs assigned to project members A and B.
 Tracker Search Results
 ```````````````````````
 
-Based on your selection of search criteria, |SYSPRODUCTNAME| runs a
+Based on your selection of search criteria, Tuleap runs a
 query against the tracker database, selects the matching artifacts, and
 displays them right below the selection criteria. Columns displayed in
 the artifact list are entirely configurable by the project team (see `Tracker Reports`_).
@@ -339,7 +339,7 @@ from the one shown in `A sample Tracker browsing screen`_.
    A sample Tracker browsing screen
 
 Artifact severity is color coded. Colors associated with severity levels
-may vary from one |SYSPRODUCTNAME| site to another and it is therefore
+may vary from one Tuleap site to another and it is therefore
 shown at the bottom of the list of results generated by the search.
 Finally, results are listed by chunks of N artifacts where N is
 user-definable. If more than N artifacts are retrieved from the tracker
@@ -354,7 +354,7 @@ Artifact List Sorting
 
 By default, artifacts are sorted by ID which happens to be the
 chronological order in which they have been submitted and stored in the
-|SYSPRODUCTNAME| database.
+Tuleap database.
 
 The list of artifacts can be sorted by any of the columns displayed on
 the screen by clicking on the column heading. Clicking twice on the same
@@ -386,7 +386,7 @@ Export Tracker Search Results
 At the bottom of the Search Result screen you have a button to export
 all artifacts of your search result into CSV format. Using this facility
 you can easily select the tracker artifacts that you want to process
-with other tools outside |SYSPRODUCTNAME|.
+with other tools outside Tuleap.
 
 Printer Friendly Version
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -413,10 +413,10 @@ criteria and the columns used in the list of matching artifacts.
 Depending on the project, users may enjoy the ability to choose from
 several tracker reports by using the upper pull-down menu of the
 artifact browsing screen. If no project or user specific tracker report
-has been defined, the |SYSPRODUCTNAME| 'Default' report is the only
+has been defined, the Tuleap 'Default' report is the only
 one available.
 
-Any |SYSPRODUCTNAME| user with access to the tracker can define her
+Any Tuleap user with access to the tracker can define her
 own personal report. In this case the report is a personal one and is
 only visible to this particular user. On the contrary, tracker
 administrators have the ability to define project-wide reports that all
@@ -431,7 +431,7 @@ Depending on the project, users may enjoy the ability to choose from
 several graphical tracker reports by using the upper pull-down menu of
 the 'Charts' section
 
-Any |SYSPRODUCTNAME| user with access to the tracker can define her
+Any Tuleap user with access to the tracker can define her
 own personal graphical report. In this case the report is a personal one
 and is only visible to this particular user. On the contrary, tracker
 administrators have the ability to define project-wide graphical reports
@@ -490,7 +490,7 @@ extensions:
    repeatedly posted comments are: a thank you message to the
    originator, a request for the originator to provide commonly missing
    information like version numbers or type of machine used, etc. Rather
-   than typing the same comments all the time, |SYSPRODUCTNAME| allows
+   than typing the same comments all the time, Tuleap allows
    project members to create a predefined set of responses. Each canned
    response is defined by a name and by the body of the response.
 
@@ -502,7 +502,7 @@ extensions:
 
 -  **Comment Types**: in order to avoid the exponential growth of new
    artifact fields to store all sorts of free text information,
-   |SYSPRODUCTNAME| offers an interesting mechanism called Comment
+   Tuleap offers an interesting mechanism called Comment
    Types. The project team has the ability to define a list of labels
    that can be used to characterize the nature of a follow-up comment.
    This is a very helpful feature to define the nature of the
@@ -550,12 +550,12 @@ artifact.
 CC Names
 ~~~~~~~~
 
-The CC names can be either email addresses or a |SYSPRODUCTNAME| login
-name if the user has a |SYSPRODUCTNAME| account.
+The CC names can be either email addresses or a Tuleap login
+name if the user has a Tuleap account.
 
 -  **Tuleap login name**: when the person you want involve
-   in the notification process has a |SYSPRODUCTNAME| account use it
-   in place of her email address. Using the |SYSPRODUCTNAME| login
+   in the notification process has a Tuleap account use it
+   in place of her email address. Using the Tuleap login
    name give to the recipient the ability to customize the kind of
    update events they want to receive. For more information on how to
    customize notification preferences for a given project see `Email Notification Settings`_.
@@ -577,21 +577,21 @@ CC names addition and deletion is subject to a number of permission
 rules:
 
 -  Adding a CC name: Anonymous users cannot add CC names. Any other
-   |SYSPRODUCTNAME| user who is logged in can add CC names and the CC
+   Tuleap user who is logged in can add CC names and the CC
    list will clearly show who added this entry and when.
 
 -  Deleting a CC name: users with Tracker Administrator permissions on a
    given tracker (see :ref:`user-permissions`) can delete any entry in the CC list for any
    artifact of this tracker. All other users can delete CC entries that
    were either added by themselves or entries where the CC name matches
-   their own name or email address in any |SYSPRODUCTNAME| projects.
-   In other words a |SYSPRODUCTNAME| user has the right to undo what
+   their own name or email address in any Tuleap projects.
+   In other words a Tuleap user has the right to undo what
    they have done or remove themselves from a CC list in any tracker.
 
 Artifact Attachments
 `````````````````````
 
-In addition to comments, the |SYSPRODUCTNAME| Tracker allows you to
+In addition to comments, the Tuleap Tracker allows you to
 attach virtually any piece of information to an artifact in the form of
 a file. Typical examples of artifact attachments are application screen
 shots in PNG, GIF, JPEG or whatever image format is appropriate; it can
@@ -609,11 +609,11 @@ Artifact Dependencies
 The next section on the artifact update screen deals with artifact
 dependencies (see Artifact Dependencies). Users have the ability to establish a dependency
 link from an artifact to one or several other artifacts belonging to any
-of the tracker of any |SYSPRODUCTNAME| project. This is made possible
+of the tracker of any Tuleap project. This is made possible
 by the fact that artifacts have a unique ID across the entire
-|SYSPRODUCTNAME| system.
+Tuleap system.
 
-The |SYSPRODUCTNAME| system does not impose any semantic on the nature
+The Tuleap system does not impose any semantic on the nature
 of these dependency links. As a project team, you are free to agree on a
 specific meaning for these links. It can be a cause-effect type of
 relationship, a duplication of information or a time dependency for a
@@ -643,8 +643,8 @@ Artifact Cross-Referencing
 ```````````````````````````
 
 In addition to the rather formal way of expressing a dependency between
-two artifacts presented in `Artifact Dependencies`_, |SYSPRODUCTNAME| offers the ability to
-cross-reference any artifact, or any other |SYSPRODUCTNAME| object
+two artifacts presented in `Artifact Dependencies`_, Tuleap offers the ability to
+cross-reference any artifact, or any other Tuleap object
 from within a follow-up comment.
 
 When typing a follow-up comment, any text that follows the pattern "XXX
@@ -652,11 +652,11 @@ When typing a follow-up comment, any text that follows the pattern "XXX
 where NNN is the unique artifact ID, and XXX is the tracker short name
 (e.g. "bug #123", "task #321", "req #12", etc.). If you don't know the
 tracker short name or don't want to specify it, you may simply use "art
-#NNN". Each time |SYSPRODUCTNAME| displays a piece of text that
+#NNN". Each time Tuleap displays a piece of text that
 follows this pattern it will auto-magically create an hyperlink to the
 web page showing all the details of the artifact.
 
-|SYSPRODUCTNAME| reference patterns may be used to reference
+Tuleap reference patterns may be used to reference
 artifacts, as well as source code commits, documents, files, etc. Please
 refer to :ref:`reference-overview` for more details on References.
 
@@ -701,7 +701,7 @@ before the change took place, who changed it and when.
 Artifact Mass Change
 ---------------------
 
-|SYSPRODUCTNAME| provides project and tracker administrators with the
+Tuleap provides project and tracker administrators with the
 possibility to update several artifacts in one step: delete/add the same
 CC name entry or file attachment to a set of artifacts, assign a list of
 artifacts to a person, etc... A typical application of the mass update
@@ -793,7 +793,7 @@ Only project members are allowed to duplicate artifacts.
 E-mail Notification
 ---------------------
 
-The |SYSPRODUCTNAME| Tracker is equipped with a powerful and flexible
+The Tuleap Tracker is equipped with a powerful and flexible
 e-mail notification system. Unless otherwise instructed by the project
 administrators or the users themselves, the e-mail notification system
 follows simple default rules. Whenever an artifact is created or updated
@@ -813,24 +813,24 @@ following actors:
 -  All users who posted at least one follow-up comment to the artifact.
 
 Beside these simple rules, the Administration module of the
-|SYSPRODUCTNAME| Tracker allows |SYSPRODUCTNAME| users to customize
+Tuleap Tracker allows Tuleap users to customize
 the email notification process. For further information see `Email Notification Settings`_).
 
-The e-mail message generated by the |SYSPRODUCTNAME| Tracker first
+The e-mail message generated by the Tuleap Tracker first
 shows the most recent changes that occurred on the artifact in case of
 an update. It is then followed by a complete snapshot of the artifact.
 Web pointers are also included in the message to quickly and easily
-access the artifact form on |SYSPRODUCTNAME|.
+access the artifact form on Tuleap.
 
 Tracker Artifact Import
 -----------------------
 
 Project Administrators have the means to import artifacts into
-|SYSPRODUCTNAME| trackers using the well known CSV (Comma Separated
+Tuleap trackers using the well known CSV (Comma Separated
 Value) format supported by all of the major office productivity suites.
 The artifact import functionality greatly facilitates the migration and
 integration of external project tracking and management tools into
-|SYSPRODUCTNAME| trackers.
+Tuleap trackers.
 
 The import is divided into three steps:
 
@@ -856,12 +856,12 @@ You will find below a couple of suggestions regarding the use of the
 tracker import feature:
 
 -  Initial import from a project management software to your
-   |SYSPRODUCTNAME| task tracker.
+   Tuleap task tracker.
 
 -  Migration of your legacy defect tracking system into your new
-   |SYSPRODUCTNAME| defect tracker.
+   Tuleap defect tracker.
 
--  Migration of artifacts from one |SYSPRODUCTNAME| tracker to
+-  Migration of artifacts from one Tuleap tracker to
    another.
 
 Exporting Excel Sheets in CSV Format
@@ -960,28 +960,28 @@ e-mail notification is sent in response to the import.
     lines.
 
     The updated date format might not be compatible with the
-    |SYSPRODUCTNAME| date format and potentially cause troubles when
-    importing such updated CSV files back into |SYSPRODUCTNAME|. On
-    the other hand |SYSPRODUCTNAME|-exported CSV files might not open
+    Tuleap date format and potentially cause troubles when
+    importing such updated CSV files back into Tuleap. On
+    the other hand Tuleap-exported CSV files might not open
     correctly under Excel in certain Regionals.
 
     If you have a .csv file that either will not open correctly under
     Excel or was opened in Excel and will not import into
-    |SYSPRODUCTNAME| please try the following: Make sure all
+    Tuleap please try the following: Make sure all
     applications are closed. Change your system's regional settings
     (Start > Settings > Control Panel > Regional Options) to use the
     English with the following formats: Date = MM/dd/YYYY Time = hh:mm.
     Using Excel, open the .csv files that don't import, make a column
     width change, save the files and exit Excel. Go back and restore
     your original regional settings. Import the "fixed" .csv file into
-    |SYSPRODUCTNAME|.
+    Tuleap.
 
 Default Tracker Access Permissions
 -----------------------------------
 
 Depending on the class of citizen a user belongs to and the level of
 permissions granted as a project member, the various features of the
-|SYSPRODUCTNAME| Tracker may or may not be accessible. Please note
+Tuleap Tracker may or may not be accessible. Please note
 that the default access permissions listed below may change for a
 particular tracker if the tracker administrator modifies the access
 permission settings. For more information on how to configure tracker
@@ -991,19 +991,19 @@ the table below:
 =============================================================================================  ===========================================
  Tracker Feature                                                                               Access Permission                        
 =============================================================================================  ===========================================
- `New ArtifactSubmission <#ArtifactSubmission>`__                                              By default any |SYSPRODUCTNAME|        
+ `New ArtifactSubmission <#ArtifactSubmission>`__                                              By default any Tuleap        
                                                                                                visitor, whether logged in or not, has   
                                                                                                the ability to submit a new artifact to  
                                                                                                a tracker. The tracker administrator has 
                                                                                                the ability to limit the scope of this   
-                                                                                               feature to |SYSPRODUCTNAME| registered 
+                                                                                               feature to Tuleap registered 
                                                                                                users (anonymous users are requested to  
                                                                                                login first) or to the project members   
                                                                                                if the tracker is made private.          
 
  `Artifact  Browsing <#ArtifactBrowsing>`__                                                    Searching the Artifact database and      
                                                                                                browsing the results is available to all 
-                                                                                               |SYSPRODUCTNAME| visitors (whether     
+                                                                                               Tuleap visitors (whether     
                                                                                                registered or not) unless the tracker    
                                                                                                has been made private by the project     
                                                                                                administrator. If so the tracker is only 
@@ -1041,7 +1041,7 @@ the table below:
                                                                                                members with Admin. permission can       
                                                                                                define project wide tracker reports that 
                                                                                                will be available to all users. All      
-                                                                                               other |SYSPRODUCTNAME| users (except   
+                                                                                               other Tuleap users (except   
                                                                                                anonymous users) can define personal     
                                                                                                tracker reports.                         
 
@@ -1049,7 +1049,7 @@ the table below:
                                                                                                email addresses in the global email      
                                                                                                notification field. Project members can  
                                                                                                watch artifacts of other team members.   
-                                                                                               Any registered |SYSPRODUCTNAME| user   
+                                                                                               Any registered Tuleap user   
                                                                                                can customize her notification preferences.                             
 =============================================================================================  ===========================================
 
@@ -1065,7 +1065,7 @@ part of the tracker or in the Tracker Administration section.
 
     **Tip**
 
-    When a new project is created on |SYSPRODUCTNAME| a number of
+    When a new project is created on Tuleap a number of
     trackers are automatically created for this project. This would
     typically be a bug tracker, a task tracker and a support request
     tracker. If your project manages this type of artifact please use
@@ -1077,7 +1077,7 @@ To define a new tracker you must provide the following information (see
 
 -  **Name**: this is the name of your tracker. A tracker is typically
    named after the type of artifact it is going to manage. This name
-   will be used by |SYSPRODUCTNAME| in the title of the various
+   will be used by Tuleap in the title of the various
    screens of the trackers. Typical examples of tracker names are:
    Action Requests, Support Requests, Requirements, Defects, Bugs…
 
@@ -1086,7 +1086,7 @@ To define a new tracker you must provide the following information (see
 
 -  **Short name**: this is a short name that best describe the type of
    artifact managed in this tracker. This name must be quite short as it
-   is used in various screens of the |SYSPRODUCTNAME| Tracker like the
+   is used in various screens of the Tuleap Tracker like the
    artifact update form where it appears in the tracker menu and also
    next to the artifact ID. Following the examples given for the Name
    field above, short names can be: AR for Action Request, SR for
@@ -1102,8 +1102,8 @@ To define a new tracker you must provide the following information (see
 The next step is to decide upon the set of fields available for this
 tracker. In order to avoid the pain of defining the most common type of
 trackers again and again (e.g. Bug tracker, Support Request tracker,
-etc.) |SYSPRODUCTNAME| offers the ability to create a new tracker from
-a set of templates. Those templates are either |SYSPRODUCTNAME|-wide
+etc.) Tuleap offers the ability to create a new tracker from
+a set of templates. Those templates are either Tuleap-wide
 templates (also known as site templates) or project specific templates.
 
 **Remark**: using a template doesn't mean you have to stick to the list
@@ -1111,11 +1111,11 @@ of fields and field values defined in this template. You can always add
 or remove fields or fine-tune the field settings afterwards.
 
 -  **Tuleap-wide Template**: these are templates that have
-   been defined by the administrators of the |SYSPRODUCTNAME| site
+   been defined by the administrators of the Tuleap site
    because it is expected that most project needs them. It is also a way
    to ensure a certain level of harmonization across projects that will
    make developers' life easier. The list of available templates may
-   vary from one |SYSPRODUCTNAME| site to another but you will
+   vary from one Tuleap site to another but you will
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
@@ -1135,7 +1135,7 @@ or remove fields or fine-tune the field settings afterwards.
 Tuleap-wide Tracker Templates
 -----------------------------------------
 
-The standard trackers provided for each new |SYSPRODUCTNAME| project
+The standard trackers provided for each new Tuleap project
 are:
 
 -  Bugs
@@ -1151,7 +1151,7 @@ are:
 Each of those templates have predefined fields that correspond to the
 specific work processes around bugs, patches etc. In the following, we
 give a short overview of these different work processes. For each of
-those templates, the |SYSPRODUCTNAME| Team also tried to maintain a
+those templates, the Tuleap Team also tried to maintain a
 fair balance between sophistication and ease of use. As a consequence,
 fairly simple and straightforward templates are configured by default
 for all new hosted projects. Then it is up to the project members to
@@ -1168,7 +1168,7 @@ objective in mind.
 
 The template Bug Tracker comes pre-configured with a set of fields (used
 or not) that are probably enough for the majority of projects hosted on
-|SYSPRODUCTNAME|. You can either decide that the template is lacking
+Tuleap. You can either decide that the template is lacking
 some critical fields that you can create or, on the contrary, switch
 some fields to the "Unused" status to make the tracker simpler.
 
@@ -1187,12 +1187,12 @@ Subversion chapter (:ref:`contributing-your-changes-(for-other-users)`).
     *A note to the project team*
 
     Receiving source code modifications or other contributions from
-    other |SYSPRODUCTNAME| users does not imply that you have to
+    other Tuleap users does not imply that you have to
     accept the new code and insert it in your main source tree. It is up
     to the project team to decide what to do with it. One of the
     interesting features of the Patch tracker is that submitted patches
     are available to anybody at all time regardless of the final
-    decision of the project team. Therefore any |SYSPRODUCTNAME|
+    decision of the project team. Therefore any Tuleap
     visitor is free to download any submitted patch and apply it onto
     its own version of the software even if the project team has decided
     not to apply the patch on the main source tree.
@@ -1202,10 +1202,10 @@ The Support Request Tracker Template
 
 The Support Request (SR) tracker is one of the communication mechanisms
 that your project should offer to the project community. It allows any
-|SYSPRODUCTNAME| user to ask question to the project team and call for
+Tuleap user to ask question to the project team and call for
 assistance.
 
-|SYSPRODUCTNAME| users who have access to the tracker can follow the
+Tuleap users who have access to the tracker can follow the
 thread of discussions between the other users and the project team. It
 is also possible to review all the SRs that were posted in the past and
 the answer given by the project team. With the Support Request tracker,
@@ -1215,19 +1215,19 @@ activities.
 The Task Tracker Template
 ``````````````````````````
 
-The |SYSPRODUCTNAME| Task tracker is a task manager and not a project
+The Tuleap Task tracker is a task manager and not a project
 management software like CA-SuperProject, MS-Project or other powerful
 and complex desktop products available on the market. The
-|SYSPRODUCTNAME| Task Tracker cannot build a Pert chart, it doesn't
+Tuleap Task Tracker cannot build a Pert chart, it doesn't
 have any planning capabilities. It is rather a time sheet tool which
 allows project members to track their time and manage other things like
 weekly TODO list for instance.
 
-However the |SYSPRODUCTNAME| Task Tracker offer a number of features
+However the Tuleap Task Tracker offer a number of features
 that makes it very complementary with the above mentioned project
 planning tools:
 
--  Like all |SYSPRODUCTNAME| tools, the Task Tracker is entirely web
+-  Like all Tuleap tools, the Task Tracker is entirely web
    based. Therefore any project member can update his/her time sheet
    regardless of its physical location.
 
@@ -1239,7 +1239,7 @@ planning tools:
    audit trail of the past changes.
 
 -  Task data can be collected by the project leader(s) at any point in
-   time and exported out of the |SYSPRODUCTNAME| project thanks to the
+   time and exported out of the Tuleap project thanks to the
    Project Data Export facility (see :ref:`project-data-export`). This allows for an easy
    generation of progress reports or project re-planning.
 
@@ -1275,7 +1275,7 @@ updated, and new stories are selected for the next Sprint.
 Tracker Administration
 -----------------------
 
-As we went through the description of the |SYSPRODUCTNAME| Tracker
+As we went through the description of the Tuleap Tracker
 features, we referred several times to the flexibility of this system
 and how easy it is to customize your own tracker. This can be done
 through the Tracker Administration module available under the "All
@@ -1331,7 +1331,7 @@ configuration page. The properties are as follows:
 
 -  **Name**: this is the name of your tracker. More precisely you want
    to name your tracker after the type of artifact that are going to be
-   managed in your tracker. This name will be used by |SYSPRODUCTNAME|
+   managed in your tracker. This name will be used by Tuleap
    in the title of the various screens of the trackers. Typical example
    of tracker names are: Action Requests, Support Requests,
    Requirements, Defects or Bugs…
@@ -1341,7 +1341,7 @@ configuration page. The properties are as follows:
 
 -  **Short name**: this is a short name that best describe the type of
    artifact managed in this tracker. This name must be quite short as it
-   is used in various screens of the |SYSPRODUCTNAME| Tracker like the
+   is used in various screens of the Tuleap Tracker like the
    artifact update form next to the artifact ID. Following the examples
    given for the Name field above, short names can be: AR for Action
    Request, SR for Support Requests, Reqt for Requirements, bug for
@@ -1396,7 +1396,7 @@ Tracker and Artifacts Permissions Management
 When entering this module, a list of user groups appears along with
 their access permissions. The user group list first shows groups of
 users defined at the system level like all\_users, registered\_users,
-project\_members, etc. These are groups that |SYSPRODUCTNAME| manages
+project\_members, etc. These are groups that Tuleap manages
 for you so you don't have to keep them up to date when new users
 subscribe to the site or become member of your project. The second part
 of the user group list shows all groups of users defined at the project
@@ -1539,7 +1539,7 @@ Tracker Field Set List
 To manage the field sets for this tracker, select the item "Manage field
 sets" on the welcome page of any Tracker Administration screen. The
 Field Set screen (`Field Set screen of a project tracker`_) shows you a sample list of field sets available in
-the tracker of a |SYSPRODUCTNAME| project. The screen is divided in 2
+the tracker of a Tuleap project. The screen is divided in 2
 parts:
 
 the list of tracker field sets currently in use
@@ -1606,11 +1606,11 @@ Field Usage Management
 
 When a tracker is first created, it comes pre-configured with a set of
 fields inherited form the template that was used to create it. For the
-majority of projects hosted on |SYSPRODUCTNAME| it is very likely that
+majority of projects hosted on Tuleap it is very likely that
 the standard Tracker templates (e.g Bugs, Tasks, Support Requests) will
 cover most of the needs.
 
-However |SYSPRODUCTNAME| gives you the ability to customize the list
+However Tuleap gives you the ability to customize the list
 of fields for your trackers. It can be a variation on an existing
 template with some field addition or removal or it can be an entirely
 new tracker created from an empty template.
@@ -1660,7 +1660,7 @@ Tracker Field List
 To decide what field to use and what field not to use select the item
 "Manage Field Usage" on the welcome page of any Tracker Administration
 screen. The Field Usage screen (`Field Usage screen of a project tracker`_) shows you a sample list of fields
-available in the tracker of a |SYSPRODUCTNAME| project. The screen is
+available in the tracker of a Tuleap project. The screen is
 divided in 3 parts:
 
 the list of tracker fields currently in use
@@ -1726,7 +1726,7 @@ field label located on the left hand side of the field list.
     with new custom fields. However before you decide to create a new
     field make sure that there isn't a predefined field that already
     plays the same role. By using predefined fields whenever possible,
-    you'll contribute to keep the global |SYSPRODUCTNAME| environment
+    you'll contribute to keep the global Tuleap environment
     consistent and make it easier for visitors, contributors or new team
     members to switch from project to another.
 
@@ -1886,11 +1886,11 @@ The table of values shows the following information:
 
 The `List of values for the "Resolution" field`_ shows the list of available values for the Resolution field of
 tracker managing "Bugs" artifacts. The Resolution field comes with set
-of predefined values that are available to all |SYSPRODUCTNAME|
+of predefined values that are available to all Tuleap
 projects. By default 8 values are active (Accepted, Analyzed, etc.).
 
 Of course you are free to add your own values to the Resolution field.
-However, in order to keep a certain harmony from one |SYSPRODUCTNAME|
+However, in order to keep a certain harmony from one Tuleap
 tracker to another, we highly recommend that you use the list of
 predefined resolution values as much as you can before creating new
 ones.
@@ -1920,13 +1920,13 @@ field values (not shown on `Tracker field list with user definable values`_).
 Binding a Field to a List of Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not only does the |SYSPRODUCTNAME| Tracker allow you to create a list
+Not only does the Tuleap Tracker allow you to create a list
 of values for a select box but it also offers the ability to associate a
 select box with a list of predefined values that is actually dynamically
-generated by the |SYSPRODUCTNAME| system. A typical example of this is
+generated by the Tuleap system. A typical example of this is
 when one would like to create a new select box showing the list of
 project members. Instead of creating and maintaining the list of values
-manually, |SYSPRODUCTNAME| builds this list for you and allows you to
+manually, Tuleap builds this list for you and allows you to
 bind it to a field of type select box.
 
 Note that if you decide to bind a select box to a list of dynamically
@@ -1962,7 +1962,7 @@ label:
    smaller rank are displayed first. When the "None" value is available
    for this bug field it has a rank number of 10. This number is
    deliberately small because by convention "None" always appear at the
-   top of the pull-down menu. Please be a good |SYSPRODUCTNAME|
+   top of the pull-down menu. Please be a good Tuleap
    citizen and choose rank numbers higher than 10 for your own values.
 
 -  **Status**: Active or Hidden. As explained above going from one to
@@ -2117,7 +2117,7 @@ commonly missing information like version numbers or type of machine
 used, etc. (see `Definition of Canned Responses`_).
 
 Rather than repeatedly typing the same follow-up comments,
-|SYSPRODUCTNAME| allows project members to create a predefined set of
+Tuleap allows project members to create a predefined set of
 responses. After these canned responses have been defined, posting a
 follow-up comment is just a matter of selecting the appropriate response
 from the pull down menu in the artifact update form.
@@ -2137,8 +2137,8 @@ Tracker Report Management
 ``````````````````````````
 
 Knowing that project administrators, project members and other
-|SYSPRODUCTNAME| users may have different needs in searching the
-tracker database, |SYSPRODUCTNAME| offers the ability to define
+Tuleap users may have different needs in searching the
+tracker database, Tuleap offers the ability to define
 project or user specific tracker reports.
 
 Creating a tracker report consists in deciding what fields you want to
@@ -2158,14 +2158,14 @@ whereas all other users can only define reports for their personal use.
     going to use a search criteria but not the values of this search
     criteria. This is on purpose. Defining a report template and filling
     out the search template with content (values) are 2 distinct
-    operations on |SYSPRODUCTNAME|. Once a report template has been
+    operations on Tuleap. Once a report template has been
     defined in the administration module (e.g 'Simple Report', 'QA
     report', 'Daily report' ...) you can go to the tracker searching and
     browsing module and use the report template for all sorts of
     queries. Select the report you want from the pull-down menu, fill
     out the search form with the values you are interested in and click
     on the browse button. Then you can save the entire query (report
-    plus values) with the |SYSPRODUCTNAME| bookmarking mechanism (see
+    plus values) with the Tuleap bookmarking mechanism (see
     tip in `Selection Criteria`_). And voila!
 
 Browsing Tracker Reports
@@ -2401,20 +2401,20 @@ qualifying and dispatching the artifacts.
     **Tip**
 
     If you want to notify many people at once, we suggest that you use
-    the |SYSPRODUCTNAME| Mailing Lists service to create a
+    the Tuleap Mailing Lists service to create a
     distribution lists (see :ref:`mailing-lists`). Once the Mailing List is up and running
     type the e-mail address in the Global Email Notification field.
 
-    Creating a Mailing List on |SYSPRODUCTNAME| has several
+    Creating a Mailing List on Tuleap has several
     advantages: first individuals can (un)subscribe by themselves and
-    second all messages sent to a |SYSPRODUCTNAME| mailing list are
+    second all messages sent to a Tuleap mailing list are
     kept in an archive that can serve as an audit trail for your
     tracker.
 
 Tracker Watchers
 ~~~~~~~~~~~~~~~~
 
-The |SYSPRODUCTNAME| Tracker offers to all project members the ability
+The Tuleap Tracker offers to all project members the ability
 to be carbon-copied on all email notifications sent to some other
 project members.
 
@@ -2440,7 +2440,7 @@ extremely useful:
 
     Remark: The goal of the tracker watch feature is not to spy on you.
     To make sure that you are only watched by authorized persons,
-    |SYSPRODUCTNAME| always shows you the list of |SYSPRODUCTNAME|
+    Tuleap always shows you the list of Tuleap
     users who are currently watching your email notifications.
 
 Event/Role Based Notification Settings
@@ -2470,10 +2470,10 @@ There are 4 roles defined with respect to an artifact:
 -  **Commenter**: you have once posted a follow-up comment in the
    artifact.
 
-For each of these roles you can instruct the |SYSPRODUCTNAME| Tracker
+For each of these roles you can instruct the Tuleap Tracker
 to send email notifications to you only when some specific events occur.
 Nine different events (see the right most column on `Configuration of the Personal Notification Matrix`_) are monitored by
-the |SYSPRODUCTNAME| Tracker. The description of the events is self
+the Tuleap Tracker. The description of the events is self
 explanatory and only appeal one comment: the first 8 events in the list
 can only occur on artifact updates. Only the last event relates to the
 submission of a new artifact.
@@ -2487,7 +2487,7 @@ this user has configured her notification settings:
    time) then she is only interested in receiving email notification
    when the status of the artifact goes to "Closed" or when any of the
    fields Priority, Status and Severity is modified. All other events
-   will be ignored by the |SYSPRODUCTNAME| tracker and no notification
+   will be ignored by the Tuleap tracker and no notification
    will be sent to this user.
 
 -  Second, looking at the matrix by row, one can see that the user said

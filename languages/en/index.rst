@@ -1,4 +1,4 @@
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 .. Tuleap documentation master file, created by
    sphinx-quickstart on Thu Oct  4 21:33:56 2012.

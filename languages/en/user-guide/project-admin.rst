@@ -1,6 +1,4 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
-.. |SYS_DEFAULT_DOMAIN| replace:: Tuleap.net
 
 .. _project-administration:
 
@@ -12,7 +10,7 @@ its service you'll see a menu item called Admin appears in the project
 menu.
 
 Only project members can access the Project Administration page. All
-other |SYSPRODUCTNAME| users are denied access to this part of a
+other Tuleap users are denied access to this part of a
 project.
 
 Project Administration Menu
@@ -32,7 +30,7 @@ Adding/Removing Users
 
 *Location: Page Admin Content*
 
-User administration in |SYSPRODUCTNAME| is easy. Regarding the number
+User administration in Tuleap is easy. Regarding the number
 of users to need to add, you can use one the two following ways:
 
 Add a user
@@ -41,8 +39,8 @@ Add a user
 To add a new member to a project team one of the project administrator
 just has to type the login name of the invited member and click on the
 "Add User" button. If you don't know the login name of the new project
-member you want to add, open a new browser window on |SYSPRODUCTNAME|
-and use the search box in the |SYSPRODUCTNAME| Main Menu to search for
+member you want to add, open a new browser window on Tuleap
+and use the search box in the Tuleap Main Menu to search for
 the person's real name (first or last name or both) and don't forget to
 select "People" in the Search pull-down menu. The result list will show
 you the user real name and login name.
@@ -54,7 +52,7 @@ member can import a list of users from a simple text file. In order to
 do it, just click the link "Import List Of Users". Then, you can browse
 your local directory to select a file containing the list of users you
 want to import. The file will host one user per line, by specifying her
-email address, or her |SYSPRODUCTNAME| username (login name).
+email address, or her Tuleap username (login name).
 
 ::
 
@@ -69,7 +67,7 @@ The import process has two steps. First, it checks if the file is well
 formed, and it displays the users detected to be imported. After a
 confirmation, the import is done and the users are added to the project.
 The system doesn't perform the import in case of error (unknown user,
-user not recorded in |SYSPRODUCTNAME|, user not active, unknown email
+user not recorded in Tuleap, user not active, unknown email
 address, etc.) If a user is two times in the file, only one user is
 added and there is no error.
 
@@ -93,7 +91,7 @@ has administrator privilege.
 
     You have probably noticed that project member's name on the Project
     Administration page are actually hyperlinks. On this page as well as
-    in many other pages throughout |SYSPRODUCTNAME| a click on a login
+    in many other pages throughout Tuleap a click on a login
     name leads you to the user page where you can know more about the
     user (including its location, phone/fax number, etc. extracted from
     the LDAP Directory in real time) and send an e-mail message to this
@@ -124,7 +122,7 @@ Project Categorization
 This is where you can categorize your project. You can define up to 3
 values for each of the 7 criteria used in the Software Map. If you
 cannot find any matching value in the predefined list do not hesitate to
-contact the |SYSPRODUCTNAME| Team.
+contact the Tuleap Team.
 
 .. _project-type:
 
@@ -133,10 +131,10 @@ Project Type
 
 *Location: Page Admin Content*
 
-|SYSPRODUCTNAME| proposes three types of projects:
+Tuleap proposes three types of projects:
 
 -  **Project**: This is the type of standard projects hosted on
-   |SYSPRODUCTNAME|.
+   Tuleap.
 
 -  **Template Project**: If you choose this project type new projects
    can reuse this projects service configuration. When registering a new
@@ -172,10 +170,10 @@ Project Type
    -  the file packages and their permissions are copied
 
 -  **Test Project**: If you just need to test what is feasible with
-   |SYSPRODUCTNAME| projects use the Test Project type for your
+   Tuleap projects use the Test Project type for your
    project. Having defined that type, your project will not appear any
-   more in the |SYSPRODUCTNAME| Software Map nor on the
-   |SYSPRODUCTNAME| Dashboard.
+   more in the Tuleap Software Map nor on the
+   Tuleap Dashboard.
 
 .. _service-configuration:
 
@@ -202,8 +200,8 @@ There are two kinds of services:
 
 There is one exception, the **Home Page** service is a system service
 but it can be customized with any URL. Each project hosted on
-|SYSPRODUCTNAME| has its own virtual Web server available on the
-|SYSPRODUCTNAME| site. By default the "Home Page" in the Project
+Tuleap has its own virtual Web server available on the
+Tuleap site. By default the "Home Page" in the Project
 Service Bar links to this location (see :ref:`project-web-site` for more details). If you want
 the Home Page of your project to link to some other locations on the
 Intranet or on the Web, simply replace the default value with your own
@@ -230,8 +228,8 @@ replaced by their value:
 
 -  **$projectname**: short name of the project
 
--  **$sys\_default\_domain**: domain of your |SYSPRODUCTNAME| server
-   (e.g. "|SYS_DEFAULT_DOMAIN|")
+-  **$sys\_default\_domain**: domain of your Tuleap server
+   (e.g. "tuleap.example.com")
 
 -  **$group\_id**: project number.
 
@@ -275,7 +273,7 @@ administration of all services that have been activated for a given
 project. This is available in the form of a series of pointers located
 on the lower left part of the project administration page. Only project
 members with appropriate permission are allowed to access the
-|SYSPRODUCTNAME| services administration pages (see `User Permissions`_).
+Tuleap services administration pages (see `User Permissions`_).
 
 Reference Pattern Configuration
 --------------------------------
@@ -293,13 +291,13 @@ Reference Overview
 ```````````````````
 
 References are a powerful tool that allow cross-referencing of
-|SYSPRODUCTNAME| objects. Based on a text pattern, |SYSPRODUCTNAME|
+Tuleap objects. Based on a text pattern, Tuleap
 automatically creates hyperlinks to the desired object.
 
 When typing a follow-up comment or a commit message, any text containing
 the pattern "XXX #NNN" will be interpreted as a reference to the object
 of type XXX with ID number NNN. For instance, 'artifact #123' is
-recognized as a reference to artifact number 123, and |SYSPRODUCTNAME|
+recognized as a reference to artifact number 123, and Tuleap
 automatically creates a hyperlink that directly points to the details of
 artifact 123.
 
@@ -405,10 +403,10 @@ or a support request) that led the developers to make a change in the
 code. And conversely, when reading the artifact description it is also
 very helpful to immediately see how the change was implemented.
 
-The integration of CVS and Subversion in |SYSPRODUCTNAME| precisely
-provide the |SYSPRODUCTNAME| users with this bi-directional
+The integration of CVS and Subversion in Tuleap precisely
+provide the Tuleap users with this bi-directional
 cross-referencing mechanism. This is achieved through the use of
-references that are automatically detected by |SYSPRODUCTNAME| in
+references that are automatically detected by Tuleap in
 either the follow-up comments of the project artifacts or in the
 messages attached to a CVS or SVN commit.
 
@@ -416,7 +414,7 @@ The system is not limited to artifact and commit references, so you may
 also reference the forum message where the bug was found, the
 documentation that describes an issue, or the file that fixes it. The
 system is flexible enough to allow referencing of items that are not
-stored in |SYSPRODUCTNAME|. So you may now create your own reference
+stored in Tuleap. So you may now create your own reference
 pattern to link to an external document manager like DocuShare, or
 source code management tool like ClearCase
 
@@ -446,7 +444,7 @@ reference.
 
 **Reference Link**: This is the URL pointed by the reference, i.e. the
 address the user will be redirected to when clicking on a reference. The
-URL does not need to point to the |SYSPRODUCTNAME| server: you may
+URL does not need to point to the Tuleap server: you may
 create references pointing to external pages. The page will be loaded in
 the current window.
 
@@ -597,7 +595,7 @@ User Groups
 *Location: Project Administration Menu*
 
 A user group, sometimes called a "ugroup ", is simply a group of
-|SYSPRODUCTNAME| users. User groups are used to set specific
+Tuleap users. User groups are used to set specific
 permissions to some project data (e.g. software releases and packages -
 see :ref:`package-modification`). A user group is always attached to a project, but the users
 comprising the group do not necessarily belong to that project.
@@ -627,7 +625,7 @@ be granted the corresponding permission.
 
 **Custom User Groups** are defined by project administrators. They are
 composed of a static list of users. The only requirement is that any
-member must be a registered |SYSPRODUCTNAME| user. This list can be
+member must be a registered Tuleap user. This list can be
 modified at any time, but will not automatically be updated, except if a
 member is removed from the project or deleted from the system.
 
@@ -661,7 +659,7 @@ In the next page (see `User Group Edit`_), the project administrator may select
 individually the members of the new group.
 
 Two columns are displayed: the one on the left contains the list of all
-|SYSPRODUCTNAME| registered users, while the one on the right contains
+Tuleap registered users, while the one on the right contains
 the list of users already admitted to the group. Use the two arrows
 between the columns to move users from one column to the other.
 
@@ -678,7 +676,7 @@ created.
     **Tip**
 
     Sometimes, you might want to grant some permissions to all project
-    members and some other |SYSPRODUCTNAME| users. In this case, you
+    members and some other Tuleap users. In this case, you
     might be tempted to build a user group from the list of project
     members and to add the other users to the group. The issue with this
     solution is that if new members join the project, they will have to
@@ -737,24 +735,24 @@ Project Data Export
 
 *Location: Project Administration Menu*
 
-|SYSPRODUCTNAME| is very appealing to many project development teams
+Tuleap is very appealing to many project development teams
 because it provides full-featured project development and management
 tools. A software project can be managed almost entirely from within
-|SYSPRODUCTNAME|. However a project team may need to perform some
+Tuleap. However a project team may need to perform some
 additional processing on the project data. It may need to report about
 progress made, what goes well or wrong, how far you are from the end
 date, derive statistical data, etc.
 
-It is far beyond the scope of |SYSPRODUCTNAME| to provide project
+It is far beyond the scope of Tuleap to provide project
 teams with such reporting tools. There are many specialized tools on the
 market to generate progress reports and each project team has its
 favorite one. In order to satisfy this diversity of needs, the
-|SYSPRODUCTNAME| Team has developed a very efficient system that
+Tuleap Team has developed a very efficient system that
 allows the project team to export the project data outside of
-|SYSPRODUCTNAME| for re-use in other tools like MS Access, Excel,
+Tuleap for re-use in other tools like MS Access, Excel,
 Crystal Report, Open Office, or any other ad-hoc tools.
 
-|SYSPRODUCTNAME| provides you with 2 kinds of Data Export:
+Tuleap provides you with 2 kinds of Data Export:
 
 -  **Text File Export**: this is a simple text extract of your project
    data. It uses the well known CSV (Comma Separated Value) format. CSV
@@ -772,8 +770,8 @@ Crystal Report, Open Office, or any other ad-hoc tools.
 Exported Data
 ``````````````
 
-|SYSPRODUCTNAME| gives access to the following data (details on
-exported fields are listed on the |SYSPRODUCTNAME| page):
+Tuleap gives access to the following data (details on
+exported fields are listed on the Tuleap page):
 
 -  **Tracker**: the artifacts data, the changes history and the
    artifacts dependencies can be exported for each tracker.
@@ -843,7 +841,7 @@ specification.
 Direct Database Access
 ```````````````````````
 
-To offer maximum flexibility |SYSPRODUCTNAME| also provides a direct
+To offer maximum flexibility Tuleap also provides a direct
 access to your project data via an ODBC or JDBC database connection.
 Once installed on your PC the MySQL ODBC (or JDBC) driver allows a
 transparent access to your project specific database tables.
@@ -903,10 +901,10 @@ Add your project database to Windows Data Sources. For Windows users:
    -  *Windows DSN Name*: is your choice of a name for this connection.
       Use "Project X Database" for instance.
 
-   -  *MySQL host (IP or Name)*; |SYS_DEFAULT_DOMAIN|
+   -  *MySQL host (IP or Name)*; tuleap.example.com
 
    -  *MySQL Database Name*: the database name is your project shortname
-      prefixed by 'cx\_' as displayed by |SYSPRODUCTNAME| after you
+      prefixed by 'cx\_' as displayed by Tuleap after you
       generated your project database (see above)
 
    -  *User*: the user name is 'cxuser'.
@@ -977,7 +975,7 @@ Access Logs
 
 *Location: Project Administration Menu*
 
-Depending on the configuration of the |SYSPRODUCTNAME| site and on the
+Depending on the configuration of the Tuleap site and on the
 configuration of each project, source code access, documents and file
 release download permissions may be granted to various populations.
 
@@ -989,15 +987,15 @@ information:
    what file and when (date and time). The time of download is reported
    in local time relative to the project member time zone.
 
--  The |SYSPRODUCTNAME| users who used CVS to checkout or update the
+-  The Tuleap users who used CVS to checkout or update the
    sources on their local desktop machine or who browsed source code via
    the CVS Web interface.
 
--  The |SYSPRODUCTNAME| users who accessed the source code through the
+-  The Tuleap users who accessed the source code through the
    Subversion repository or who browsed source code via the CVS Web
    interface.
 
--  The |SYSPRODUCTNAME| users who downloaded documents, except for
+-  The Tuleap users who downloaded documents, except for
    those documents marked as being accessible to anonymous users in your
    Document Manager.
 
@@ -1014,7 +1012,7 @@ can also be adjusted to show more or less access log history.
 
 .. [#f1]
    CVS stands for Concurrent Versions System. It is one of the source
-   code version control system offered on the |SYSPRODUCTNAME| site.
+   code version control system offered on the Tuleap site.
    CVS is used by hundreds of thousands of software projects all over
    the world. See http://www.cvshome.org for more information.
 

@@ -1,7 +1,7 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
 
-Becoming a |SYSPRODUCTNAME| Citizen
+
+Becoming a Tuleap Citizen
 =====================================
 
 .. _classes-of-citizens:
@@ -10,29 +10,29 @@ Classes of Citizens
 --------------------
 
 Before we go further into the user registration process it is worth
-reviewing the various types of |SYSPRODUCTNAME| citizens. There are
+reviewing the various types of Tuleap citizens. There are
 basically 4 of them:
 
--  **Anonymous Users**: when you first visit the |SYSPRODUCTNAME| site
+-  **Anonymous Users**: when you first visit the Tuleap site
    you are typically an anonymous user. Anonymous users can browse the
-   |SYSPRODUCTNAME| site but many of the |SYSPRODUCTNAME| services
-   or |SYSPRODUCTNAME| resources cannot be used or accessed by an
+   Tuleap site but many of the Tuleap services
+   or Tuleap resources cannot be used or accessed by an
    anonymous user (e.g. source code access is not possible, all the
    monitoring facilities aren't either, etc.). So we strongly advise you
    to become a registered user to take full advantage of the
-   |SYSPRODUCTNAME| site.
+   Tuleap site.
 
 -  **Registered Users**: once you have created your own account (see
    below) you can use your login/password to authenticate yourself with
-   |SYSPRODUCTNAME|. Registered users have access to all
-   |SYSPRODUCTNAME| projects including source code unless the project
+   Tuleap. Registered users have access to all
+   Tuleap projects including source code unless the project
    administrators decided otherwise. And since the system knows about
    you, it enables you to customize your view of the system through your
    Personal Page, monitor Forums, software release, receive support
    request follow-ups, site updates and many other useful things.
 
 -  **Project Members**: users who are actively working on a
-   |SYSPRODUCTNAME| hosted project. To become a project member, you
+   Tuleap hosted project. To become a project member, you
    must first become a registered user and then ask a project
    administrator to include you in the project members. Most of the time
    project members are part of the project team but are not limited to
@@ -42,37 +42,37 @@ basically 4 of them:
    according to their role in the team (see :ref:`project-administration` for more details).
 
 -  **Project Administrators**: registered users who create a new
-   |SYSPRODUCTNAME| project are elected as the first Project
+   Tuleap project are elected as the first Project
    Administrators. Project Administrators have full rights over their
    projects except project deletion - a very unusual operation - that
-   can only be done by a |SYSPRODUCTNAME| Team member. In the course
+   can only be done by a Tuleap Team member. In the course
    of the project life, the initial project administrator can grant (or
    revoke) the status of project administrator to any project member.
 
 -  **Restricted Users**: users who are project members, or even project
    administrators, but with restricted access rights: they cannot access
    pages from projects they are not member of. This special role is only
-   enabled on |SYSPRODUCTNAME| servers in heterogeneous environments
+   enabled on Tuleap servers in heterogeneous environments
    where corporate users and external consultants share the same server.
 
 User Registration
 ------------------
 
 As suggested above, the first thing to do for a newcomer is to create
-her own account on |SYSPRODUCTNAME|. Becoming a registered
-|SYSPRODUCTNAME| user doesn't imply any commitment on your part to
-host any of your software projects on |SYSPRODUCTNAME|. It simply
+her own account on Tuleap. Becoming a registered
+Tuleap user doesn't imply any commitment on your part to
+host any of your software projects on Tuleap. It simply
 gives you more freedom when you browse the site and allows
-|SYSPRODUCTNAME| to serve you with personalized information.
+Tuleap to serve you with personalized information.
 
-Registering on |SYSPRODUCTNAME| is quick and easy:
+Registering on Tuleap is quick and easy:
 
     1. Select the "New User" link
 
     2. Give the following information (all items marked with an asterisk are
        mandatory):
 
-        a. **Login Name**: your user name. On some |SYSPRODUCTNAME| systems that
+        a. **Login Name**: your user name. On some Tuleap systems that
            are connected to an enterprise directory you may have to use a
            pre-defined user name.
 
@@ -88,17 +88,17 @@ Registering on |SYSPRODUCTNAME| is quick and easy:
            your mailbox and won't be able to complete the registration process.
 
         e. **Time Zone**: choose the time zone you live in. Choosing the correct
-           time zone is really important. Behind the scene |SYSPRODUCTNAME|
+           time zone is really important. Behind the scene Tuleap
            stores all time stamps in GMT time. Choosing the right time zone allow s
-           |SYSPRODUCTNAME| to translate all time stamps to your local time on
+           Tuleap to translate all time stamps to your local time on
            the Web pages.
 
         f. **Site Updates**: check this box if you want to receive site updates
-           from the |SYSPRODUCTNAME| Team. This is a low traffic distribution
+           from the Tuleap Team. This is a low traffic distribution
            list and we strongly advise you to check this box (default). You'll
            receive e-mail from us about the site maintenance, the important event
-           in the life of the site, |SYSPRODUCTNAME| presentation/training
-           announcement and the |SYSPRODUCTNAME| newsletter.
+           in the life of the site, Tuleap presentation/training
+           announcement and the Tuleap newsletter.
 
         g. **Additional Community Mailings**: check this box if you want to receive
            notification about less important events. You can safely check this box
@@ -107,13 +107,13 @@ Registering on |SYSPRODUCTNAME| is quick and easy:
 
     3. Shortly after you validate the registration form you will receive a
        message in your mailbox which includes a URL. Clicking on this URL will
-       bring you to a |SYSPRODUCTNAME| form asking for your login/password
+       bring you to a Tuleap form asking for your login/password
        again. If they match then your account is validated and you are now
-       logged into the |SYSPRODUCTNAME| site.
+       logged into the Tuleap site.
 
     **Tip**
 
-    Your |SYSPRODUCTNAME| server might be set up to use an external
+    Your Tuleap server might be set up to use an external
     LDAP directory for authentication. In this case, the registration
     phase is even simpler: simply type your LDAP login and password, and
     the system will automatically extract most of the required
@@ -122,16 +122,16 @@ Registering on |SYSPRODUCTNAME| is quick and easy:
 This 3 step registration process has been put in place for security
 reasons. Assuming people create their account with an alien e-mail
 address while they have access to the Intranet, they won't be able to
-validate their account from the outside because the |SYSPRODUCTNAME|
+validate their account from the outside because the Tuleap
 machine is behind the firewall. Therefore, an account cannot be
 validated from outside.
 
     **Tip**
 
     Don't Panic and, above all, do not create a new account! Go to the
-    |SYSPRODUCTNAME| Login Page and click on the [Lost your password?]
+    Tuleap Login Page and click on the [Lost your password?]
     link. You'll be asked your login name and from that
-    |SYSPRODUCTNAME| will send you an e-mail message with an embedded
+    Tuleap will send you an e-mail message with an embedded
     URL. Click on this URL and give your new password.
 
     And what if I loose both my login and password? Gee! In this case
@@ -145,19 +145,19 @@ validated from outside.
 Login and Personal Page
 ------------------------
 
-To log into the |SYSPRODUCTNAME| site, go to the |SYSPRODUCTNAME|
-Site at `http://SYS\_DEFAULT\_DOMAIN <http://&SYS_DEFAULT_DOMAIN;/>`__
+To log into the Tuleap site, go to the Tuleap
+Site at `http://tuleap.example.com <http://tuleap.example.com/>`__
 and click on the "Login" link. If you typed your login and password OK,
-|SYSPRODUCTNAME| presents you with your Personal Page (or Personal
+Tuleap presents you with your Personal Page (or Personal
 Dashboard) (see `The Personal Page of a Tuleap user`_). At any point in time you can return to your
-|SYSPRODUCTNAME| Personal Page by selecting the "My Personal Page" in
-the upper part of the |SYSPRODUCTNAME| Main Menu.
+Tuleap Personal Page by selecting the "My Personal Page" in
+the upper part of the Tuleap Main Menu.
 
 Your Personal Page is a dashboard from where you can quickly go to
-|SYSPRODUCTNAME| workplaces and information spaces. You'll see bugs
+Tuleap workplaces and information spaces. You'll see bugs
 and tasks assigned to you in the various projects you belong to. In
 addition the bug section also shows those bugs that you have submitted
-including to foreign projects. By doing so, |SYSPRODUCTNAME| allows
+including to foreign projects. By doing so, Tuleap allows
 you to follow the evolution of bugs that you have reported and you might
 be impatient to see fixed.
 
@@ -168,7 +168,7 @@ be impatient to see fixed.
 
    The Personal Page of a Tuleap user
 
-|SYSPRODUCTNAME| allows you to personalize your page to fit your
+Tuleap allows you to personalize your page to fit your
 needs. The content of your page is made of *widgets*. All widgets can be
 moved, collapsed or closed. Some of them can provide an rss feed or
 preferences can be set.
@@ -188,8 +188,8 @@ incomplete list of available widgets for the personal page:
    you, by project.
 
 -  **My Bookmarks** lists your favorite bookmarks (your favorite pages
-   in |SYSPRODUCTNAME| or external). Note that in many cases
-   |SYSPRODUCTNAME| uses URL with enough embedded information to
+   in Tuleap or external). Note that in many cases
+   Tuleap uses URL with enough embedded information to
    bookmark sophisticated items like Software Map browsing, typical
    search in your project Bug or Task database, etc ... Bookmarked items
    can be edited which means that both the title of the bookmark and its
@@ -209,25 +209,25 @@ Account Maintenance
 --------------------
 
 You provided a certain amount of demographic information to
-|SYSPRODUCTNAME| when you first registered on the |SYSPRODUCTNAME|
+Tuleap when you first registered on the Tuleap
 site. This and other information can be modified at any time by
-selecting the "Account Maintenance" item in the |SYSPRODUCTNAME| Main
+selecting the "Account Maintenance" item in the Tuleap Main
 Menu.
 
 Most of the items on the "Account Maintenance" page will look obvious to
 you. However, we would like to draw your attention on some of them:
 
 -  **Edit My Skills Profile**: a user can make his resume available on
-   |SYSPRODUCTNAME|. The intent here is to let people know about you,
+   Tuleap. The intent here is to let people know about you,
    your technical background and your domain of expertise. Very useful
    to get to know each other.
 
 -  **SSH shared keys**: this one has to do with the Shell Account
-   service. When you are a registered user, the |SYSPRODUCTNAME|
+   service. When you are a registered user, the Tuleap
    server gives you a personal shell account with the same
    login/password as for the Web interface. To automate the shell login
-   you can share a public encryption key with |SYSPRODUCTNAME| and use
-   the secure shell SSH to access |SYSPRODUCTNAME| instantly without
+   you can share a public encryption key with Tuleap and use
+   the secure shell SSH to access Tuleap instantly without
    having to type a password. More on that in :ref:`shell-account`
 
 .. _preferences:
@@ -239,16 +239,16 @@ Your preferences are available in My personal Page -> Preferences. Here
 are some of the preferences you can define:
 
 -  **Remember my Login/Password**: by default your current login session
-   on |SYSPRODUCTNAME| is terminated whenever you stop your Web
-   browser. When you restart your browser and visit |SYSPRODUCTNAME|
+   on Tuleap is terminated whenever you stop your Web
+   browser. When you restart your browser and visit Tuleap
    you will be asked for your login/password again. By checking this box
-   you ask |SYSPRODUCTNAME| to remember about your login/password
+   you ask Tuleap to remember about your login/password
    forever or at least until you explicitly select the "Logout" item in
-   the |SYSPRODUCTNAME| Main Menu. For security reasons we do not
+   the Tuleap Main Menu. For security reasons we do not
    recommend using this feature unless you are equipped with a strictly
    personal desktop machine
 
--  **CSV separator**: |SYSPRODUCTNAME| provides you export and import
+-  **CSV separator**: Tuleap provides you export and import
    functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
    format. Like CSV norm is not implemented by the same way in each
    software, we allow you to change the CSV separator, in order to fit
@@ -260,7 +260,7 @@ are some of the preferences you can define:
 
    -  tab (tab).
 
--  **CSV date format**: |SYSPRODUCTNAME| provides export and import
+-  **CSV date format**: Tuleap provides export and import
    functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
    format. Like CSV norm is not implemented by the same way in each
    software, we allow you to change the CSV date format, in order to fit
@@ -276,7 +276,7 @@ are some of the preferences you can define:
    value before importing. They should be the same format as defined in
    your preferences.
 
-.. |The Personal Page of a |SYSPRODUCTNAME| user| image:: ../../screenshots/en_US/sc_mypersonalpage.png
+.. |The Personal Page of a Tuleap user| image:: ../../screenshots/en_US/sc_mypersonalpage.png
 .. |image1| image:: ../images/icons/trash.png
 .. |image2| image:: ../images/icons/trash.png
 

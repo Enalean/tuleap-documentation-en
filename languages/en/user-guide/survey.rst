@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 Survey Manager
 ==============
@@ -7,13 +7,13 @@ Survey Manager
 The Survey Manager allows a project team to create surveys. Providing a
 survey service in an environment where most services are related to
 software development activities may seem a bit strange at first glance.
-However if you remember that |SYSPRODUCTNAME| is about source code
+However if you remember that Tuleap is about source code
 sharing and community building, you'll soon realize that part of the
 game in building a strong community is to listen to the community
 feedback and make it happy.
 
 Listening to your community can be done in various ways on
-|SYSPRODUCTNAME|:
+Tuleap:
 
 -  through your project mailing lists and web forums,
 
@@ -23,7 +23,7 @@ Listening to your community can be done in various ways on
 -  or by analyzing the profile of the submitted Support Requests over a
    period of time.
 
-All these communication channels allow |SYSPRODUCTNAME| users to push
+All these communication channels allow Tuleap users to push
 spontaneous feedback on a topic that they wholeheartedly cherish. But
 what if you want to collect the opinion of your community on a precise
 number of subjects and you want the answers to be taken from a set of
@@ -53,11 +53,11 @@ Publishing a Survey
 
 You have been working hard to produce this perfectly polished survey and
 now you want to reach the broadest possible audience. With
-|SYSPRODUCTNAME| you can make your survey visible in a number of ways:
+Tuleap you can make your survey visible in a number of ways:
 
 **Through the Survey Manager itself**: as soon as a survey is created it
 is visible in your Survey Manager Welcome screen (see `Survey Manager Welcome screen`_). So any
-|SYSPRODUCTNAME| user visiting your Project Dashboard will see that
+Tuleap user visiting your Project Dashboard will see that
 surveys are available in the "Public Area" (survey count not null) and
 by clicking on "Surveys" she will be able to take whatever survey is
 available.
@@ -66,22 +66,22 @@ available.
 you publish a piece of news about this survey: why you did it, who is
 expected to take it and type the Web location corresponding to the
 survey (see below). By publishing a piece of news you also have a chance
-to see it on the |SYSPRODUCTNAME| front page if the |SYSPRODUCTNAME|
+to see it on the Tuleap front page if the Tuleap
 Team decides so.
 
 **E-mail**: the survey you have created can be accessed directly via a
-Web pointer (URL) on the |SYSPRODUCTNAME| site. As a consequence you
+Web pointer (URL) on the Tuleap site. As a consequence you
 can push your survey to virtually anybody in the Corporation simply by
 referencing the survey Web pointer in an e-mail message, a web page or
-any kind of office document. Even non |SYSPRODUCTNAME| Users will be
+any kind of office document. Even non Tuleap Users will be
 able to take the survey.
 
-All surveys created on |SYSPRODUCTNAME| can be accessed through the
+All surveys created on Tuleap can be accessed through the
 following Web pointer (URL):
 
 ::
 
-    http://SYS_DEFAULT_DOMAIN/survey/survey.php?group_id=N&survey_id=X
+    http://tuleap.example.com/survey/survey.php?group_id=N&survey_id=X
 
 where N is your project ID number and X is the survey ID number as shown
 in the survey list displayed on the Survey Manager welcome screen. Your
@@ -91,7 +91,7 @@ screen (see `Survey Manager Welcome screen`_)
 Taking a survey is just a matter of accessing the survey by one of the
 previously mentioned method, answer the questions and click on the
 "Submit" button at the bottom of the page. A sample survey is shown on
-`A sample survey taken from the |SYSPRODUCTNAME| project`_.
+`A sample survey taken from the Tuleap project`_.
 
     **Tip**
 
@@ -105,10 +105,10 @@ previously mentioned method, answer the questions and click on the
 
 .. figure:: ../images/screenshots/sc_surveysample.png
    :align: center
-   :alt: A sample survey taken from the |SYSPRODUCTNAME| project
-   :name: A sample survey taken from the |SYSPRODUCTNAME| project
+   :alt: A sample survey taken from the Tuleap project
+   :name: A sample survey taken from the Tuleap project
 
-   A sample survey taken from the |SYSPRODUCTNAME| project
+   A sample survey taken from the Tuleap project
 
 Administering Surveys
 ----------------------
@@ -172,7 +172,7 @@ To create questions click on the "Add Questions" item either in the
 Survey Manager Administration menu or in the content of the page itself.
 Defining a question is simply a matter of typing the question itself and
 then choosing a response type. There are 5 types of possible responses
-(see `A sample survey taken from the |SYSPRODUCTNAME| project`_ for some sample questions):
+(see `A sample survey taken from the Tuleap project`_ for some sample questions):
 
 -  **Radio Buttons 1-5**: this response type will force the user to give
    an answer to the question on a scale from 1 to 5 using 5 radio
@@ -200,7 +200,7 @@ then choosing a response type. There are 5 types of possible responses
 
 -  **None**: Assigning this type to a question will result in the
    de-activation of the question. This question will disappear from all
-   the surveys using it. As usual in |SYSPRODUCTNAME| the question is
+   the surveys using it. As usual in Tuleap the question is
    not deleted and all the answers collected so far in the various
    survey where this question is used remain untouched.
 
@@ -243,7 +243,7 @@ Manager Administration menu or in the content of the page itself (see
 
 -  The status of the survey: you can make it active or not. As long as a
    survey is inactive it doesn't show up in the welcome screen of the
-   Survey Manager meaning that it is not visible to |SYSPRODUCTNAME|
+   Survey Manager meaning that it is not visible to Tuleap
    users. Similarly accessing the survey directly via its Web location
    will not work either.
 
@@ -292,5 +292,5 @@ value distribution for radio button answers.
     **Tip**
 
     If you want to further massage the results of your surveys remember
-    that |SYSPRODUCTNAME| allows project administrators to export
+    that Tuleap allows project administrators to export
     project data including survey results. For more details see :ref:`project-data-export`

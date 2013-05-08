@@ -1,5 +1,5 @@
 
-.. |SYSPRODUCTNAME| replace:: Tuleap
+
 
 .. _project-web-site:
 
@@ -9,7 +9,7 @@ Project Web Site
 Visiting a Web Site
 --------------------
 
-When a new project is created on |SYSPRODUCTNAME| a project specific
+When a new project is created on Tuleap a project specific
 Web Site is created as well. You can access a project Web site in 2
 different ways:
 
@@ -18,14 +18,14 @@ different ways:
 
    ::
 
-       http://projectname.SYS_DEFAULT_DOMAIN
+       http://projectname.tuleap.example.com
                  
 
    Or, if your server is setup in secure mode:
 
    ::
 
-       https://projectname.SYS_DEFAULT_DOMAIN
+       https://projectname.tuleap.example.com
                  
 
 -  Click on the "Home Page" link in the Project Main menu at the top of
@@ -33,7 +33,7 @@ different ways:
 
 If the project team has not yet created its own Web pages, you'll see
 the default project home page informing you that the site will come soon
-as well as a link back to the |SYSPRODUCTNAME| site.
+as well as a link back to the Tuleap site.
 
 Web Site Creation
 ------------------
@@ -50,7 +50,7 @@ store all these documents is:
 
     /home/groups/projectname
 
-If you use your Shell Account (see :ref:`shell-account`) to log into the |SYSPRODUCTNAME|
+If you use your Shell Account (see :ref:`shell-account`) to log into the Tuleap
 server and place yourself in this directory with the Unix command "cd
 /home/groups/projectname" you'll see 3 subdirectories:
 
@@ -79,7 +79,7 @@ server and place yourself in this directory with the Unix command "cd
    -  ``index.php`` if you use embedded PHP scripts
 
    If your own home page is called index.php then rename the default
-   index.php file created by |SYSPRODUCTNAME| into something else by
+   index.php file created by Tuleap into something else by
    using the following commands from your Shell Account:
 
    ``cd /home/groups/projectname/htdocs mv index.php index_default.php``
@@ -112,7 +112,7 @@ Web Site Publishing
 ````````````````````
 
 You can use various methods to publish your Web pages on your
-|SYSPRODUCTNAME| Web site:
+Tuleap Web site:
 
 -  Remote editing with HTML capable editors like Netscape or Mozilla
    Composer, Microsoft FrontPage or Emacs with transparent ftp access
@@ -121,7 +121,7 @@ You can use various methods to publish your Web pages on your
    ftp or, even better, via scp
 
 -  Small changes to web pages can be made from the shell account on
-   |SYSPRODUCTNAME|, using emacs or vi, but substantial editing is
+   Tuleap, using emacs or vi, but substantial editing is
    discouraged.
 
 Macromedia Dreamweaver
@@ -132,9 +132,9 @@ opposed to FrontPage, DreamWeaver fully support remote publication via
 FTP. To create a new site go to the Site -> New Site menu. In the local
 information, choose your site name and local root folder. For the remote
 information, choose FTP access and specify
-``projectname.SYS_DEFAULT_DOMAIN`` as host and
+``projectname.tuleap.example.com`` as host and
 ``/home/groups/projectname/htdocs`` as the host directory. The login is
-your |SYSPRODUCTNAME| login.
+your Tuleap login.
 
 Local Editing and Remote Transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,8 +143,8 @@ For those of you who use an HTML editing tool that has no built-in
 export facility you can transfer your HTML files by other means.
 
 -  **FTP**: this is the simplest method for transferring your Web pages
-   to the |SYSPRODUCTNAME| remote location. Use ftp to connect to
-   ``projectname.SYS_DEFAULT_DOMAIN`` and use your |SYSPRODUCTNAME|
+   to the Tuleap remote location. Use ftp to connect to
+   ``projectname.tuleap.example.com`` and use your Tuleap
    username and password to login. Once logged in issue the following
    command:
 
@@ -163,40 +163,40 @@ export facility you can transfer your HTML files by other means.
 
        scp -r * login@SYS_SHELL_HOST:/home/groups/projectname/htdocs/
 
-   where login is your |SYSPRODUCTNAME| login. The -r option stands
+   where login is your Tuleap login. The -r option stands
    for recursive copy and will copy all the files in the directory as
    well as all others in subdirectory while preserving your directory
    structure.
 
-Referencing the |SYSPRODUCTNAME| Site
+Referencing the Tuleap Site
 --------------------------------------
 
-The |SYSPRODUCTNAME| Team is asking that all project Web sites hosted
-on |SYSPRODUCTNAME| display the |SYSPRODUCTNAME| logo on their front
+The Tuleap Team is asking that all project Web sites hosted
+on Tuleap display the Tuleap logo on their front
 page. And ideally it would be great if you also cross-reference our site
 on other pages that are located on other servers. The rationale behind
 this request is twofold:
 
--  First, by referencing the |SYSPRODUCTNAME| site on your Web page
+-  First, by referencing the Tuleap site on your Web page
    you will allow your visitors to learn about the existence of the
-   |SYSPRODUCTNAME| site, give them a chance to visit it and also let
-   them learn about other projects hosted on |SYSPRODUCTNAME|. By
+   Tuleap site, give them a chance to visit it and also let
+   them learn about other projects hosted on Tuleap. By
    doing so you will augment the opportunity for re-use.
 
--  The second reason is that using the |SYSPRODUCTNAME| logo in your
+-  The second reason is that using the Tuleap logo in your
    Web site will automatically increase the Web access counter that
-   |SYSPRODUCTNAME| is maintaining for you. The number of accesses to
+   Tuleap is maintaining for you. The number of accesses to
    your site can be viewed by visiting your Project Dashboard and click
    on the "Statistics" link below the project description (see :ref:`an-example-of-project-dashboard`). This
    will also help us to identify projects that may require additional
    hosting resources due to large amounts of activity.
 
-To display the |SYSPRODUCTNAME| logo on your project Web page use the
+To display the Tuleap logo on your project Web page use the
 following Web pointer:
 
 ::
 
-    http://SYS_DEFAULT_DOMAIN/sflogo.php?group_id=N&type=1
+    http://tuleap.example.com/sflogo.php?group_id=N&type=1
           
 
 Use "https" instead of "http" in the above URL if your server is setup
@@ -208,8 +208,8 @@ Dashboard:
 
 ::
 
-    <A href="http://SYS_DEFAULT_DOMAIN/projects/projectname">
-    <IMG src="http://SYS_DEFAULT_DOMAIN/sflogo.php?group_id=N&type=1 width="80"
+    <A href="http://tuleap.example.com/projects/projectname">
+    <IMG src="http://tuleap.example.com/sflogo.php?group_id=N&type=1 width="80"
          height="20" border="0" alt="Source Code Available !">
     </A>
             
