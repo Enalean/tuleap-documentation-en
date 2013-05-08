@@ -1,9 +1,7 @@
-.. |SYSPRODUCTNAME| replace:: Tuleap
-
 Gerrit
 ======
 
-Gerrit integration is still pretty new so a good knowledge of both Gerrit and |SYSPRODUCTNAME|.
+Gerrit integration is still pretty new so a good knowledge of both Gerrit and Tuleap.
 
 Gerrit is a code review tool built on top of git. It also manage permissions for repository access.
 
@@ -13,7 +11,7 @@ Feature overview
 ----------------
 
 The integration is meant to be as lightweight as possible so end users can use all power of Gerrit.
-|SYSPRODUCTNAME| simplifies creation and management of the repositories, users and user groups.
+Tuleap simplifies creation and management of the repositories, users and user groups.
 It doesn't restrain gerrit features at all.
 
 Setup
