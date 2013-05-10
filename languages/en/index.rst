@@ -33,6 +33,7 @@ Welcome to Tuleap's documentation!
    user-guide/project-links
    user-guide/tracker-v3
    user-guide/agile-dashboard
+   user-guide/gerrit
    user-guide/other-services
    soap/tracker
    soap/trackerv3
