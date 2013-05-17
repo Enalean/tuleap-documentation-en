@@ -1,7 +1,7 @@
 Gerrit
 ======
 
-Gerrit integration is still pretty new so a good knowledge of both Gerrit and Tuleap.
+Gerrit integration is still pretty new so a good knowledge of both Gerrit and Tuleap is required.
 
 Gerrit is a code review tool built on top of git. It also manage permissions for repository access.
 
@@ -116,6 +116,7 @@ When someone join or leave your team, just add or remove it in Tuleap project an
 
 The user group management follow the same naming pattern than projects.
 Given I have a "mozilla" Tuleap project with one special user group "Developers", I will get on Gerrit server:
+
 * mozilla/project_members
 * mozilla/project_admins
 * mozilla/Developers
@@ -123,6 +124,7 @@ Given I have a "mozilla" Tuleap project with one special user group "Developers"
 The two first user groups are created by default out of "Members" and "Admins" list.
 
 As soon as one git repository was migrated to Gerrit. All modifications done to Tuleap project membership is replicated:
+
 * When I create a new Tuleap user group, a new Gerrit user group is created
 * When I add users as members of a user group on Tuleap, they became members of the corresponding user group on Gerrit
 * When I remove members on Tuleap, they are removed from corresponding Gerrit group
