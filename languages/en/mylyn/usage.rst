@@ -9,6 +9,13 @@ available from the "Help -> Eclipse Marketplace" menu. In the
 marketplace, you just have to search for Tuleap in order to find the
 latest version of the connector available.
 
+.. note::
+
+    If the installation of the connector fails, be sure to include the
+    following update site:
+    ``http://download.eclipse.org/mylyn/releases/latest``
+
+
 Connect to a Tuleap server
 --------------------------
 
