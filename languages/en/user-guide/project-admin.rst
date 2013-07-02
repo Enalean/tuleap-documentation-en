@@ -694,7 +694,7 @@ Creation, where you can update the name, description and composition of
 the user group.
 
 Deleting a User Group
-```````````````````````
+`````````````````````
 
 User groups can be deleted. Just click on the trash icon next to the
 group name in the group management page (`User Group Management Page`_) to suppress the user group
@@ -707,6 +707,43 @@ from the database. Only custom user groups can be deleted.
     group is the only one allowed to access a package and this group is
     deleted, the permission is also deleted and reset to default, so any
     registered user can access the package.
+
+
+User Group Binding
+``````````````````
+User Group Binding allows non project members who belong to a user group in
+another in project to be allocated rights without becoming project members
+themselves. To do this, you need to be project admin of both projects.
+
+Let's do this with an example. Say there is the user group 'some_people' in the project called
+'my project' and that you wish to give some rights to them in a project called 'my software'.
+
+In the project 'my software', go to the project admin area and click-on
+**User Groups Admin** then **Create a New User Group**. Call this group
+'my_project_users', for example, then click on **Create user Group**.
+
+.. figure:: ../images/screenshots/user_group_binding2.png
+   :align: center
+   :alt: User Group Creation
+   :name: User Group Creation
+
+   User Group Creation
+
+
+Once created, there will be a new screen with tabs to the left. Click on **Binding**
+then **Edit User group binding**. You will be asked to choose a source project.
+Choose 'my_project' and the user group 'some people'. Save by clicking on **Edit binding**.
+
+.. figure:: ../images/screenshots/user_group_binding3.png
+   :align: center
+   :alt: User Group Binding
+   :name: User Group Binding
+
+   User Group Binding
+
+This will create the binded user group that you can use anywhere in your project
+as you would any normal user group.
+
 
 Additional Information on User Groups
 ``````````````````````````````````````
