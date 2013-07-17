@@ -1882,6 +1882,19 @@ when you hover an artifact reference with your mouse.
 
 You can select all the fields you want to compose the artifact tooltip.
 
+Initial Effort (Agile Dashboard)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Initial Effort semantic is special in that it only exists if the project
+has the Agile Dashboard enabled. In the agile context, it is supposed to
+represent the estimated effort for a given task, story, sprint, release...
+
+In order to use this semantic you need to have a numeric field in your tracker
+that corresponds to this initial effort notion.
+
+The initial effort is used in the Agile Dashboard **content** and **planning**
+views.
+
 Field Dependencies
 ```````````````````
 
