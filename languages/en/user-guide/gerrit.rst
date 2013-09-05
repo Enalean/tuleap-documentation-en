@@ -328,3 +328,23 @@ If it doesn't exist then you need to create it via ``ssh-keygen`` as above.
     # Gerrit user on Gerrt server (replication)
     gerrit@gerrit.instance.com$ ssh gitolite@my.tuleap.server.net
 
+Enabling Gerrit project deletion via Tuleap
+"""""""""""""""""""""""""""""""""""""""""""
+[This plugin comes from https://gerrit.googlesource.com/plugins/delete-project]
+
+From Tuleap 6.5 onwards, it will be possible to delete a Gerrit project after it has been disconnected from Tuleap.
+For this option to be present in Tuleap, the Gerrit server needs to have an additional plugin.
+
+* First, download the plugin https://tuleap.net/file/download.php/101/65/p5_r58/deleteproject.jar
+
+* To install the plugin there are two options.
+
+  * option 1 - Put the plugin in the 'plugins' folder of your Gerrit instance then run
+  .. code-block:: bash
+
+    ssh -p29418 admin-my.tuleap.server.net@gerrit.instance.com gerrit plugin enable deleteproject
+
+  * option 2 - Put the plugin file somewhere accessible then run
+  .. code-block:: bash
+
+    ssh -p29418 admin-my.tuleap.server.net@gerrit.instance.com gerrit plugin install <url of the plugin>
