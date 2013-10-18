@@ -108,6 +108,35 @@ same page as before will bring you to archived messages grouped by
 month. Note that the current archiving software is not MIME-aware and
 does not support the archiving of attachments.
 
+Global Preferences
+``````````````````
+Setting a membersip maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tuleap has patched Mailman so that the system forge adminstrators can set the
+maximum number of users per mailing list. This feature is disabled by default.
+To enable it you need console access to the Tuleap machine.
+::
+
+    $ vi /usr/lib/mailman/Mailman/mm_cfg.py
+
+Say you want to limit the number of members to 100. Add/ edit the following lines
+::
+
+    # Limit number of users in mailing lists.
+    # Possible values: integer or 'false'
+    LIST_MEMBER_MAX = 100
+
+Then restart the service
+::
+
+    $ service mailman restart
+
+This will limit the number of people who can be subscribed to the mailing lists
+using the mass-import functionality of Mailman. However, it will not prevent
+members from subscribing one-by-one via the interface or directly through the
+mailing list.
+
 .. _news-service:
 
 News Service
