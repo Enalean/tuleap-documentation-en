@@ -37,6 +37,7 @@ Welcome to Tuleap's documentation!
    user-guide/other-services
    soap/tracker
    soap/trackerv3
+   rest/auth
    mylyn/usage
    user-guide/legal
 
