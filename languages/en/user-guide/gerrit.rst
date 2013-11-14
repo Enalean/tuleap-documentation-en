@@ -30,8 +30,11 @@ access rights at the time of migration.
 On Tuleap side, as soon as the git repository is migrated, the repository is turned read-only (the reference is now on Gerrit).
 User can still browse the repository through the web UI, clone it or fork it but all write operations are blocked (even for admins).
 
-However, all changes made on the corresponding Gerrit project are replicated to Tuleap. When developers make commits on Gerrit,
-there is a delay of a few seconds to see this commit replicated on Tuleap.
+However, all permanent changes (branches & tags) made on the corresponding Gerrit project are replicated to Tuleap. 
+When developers make commits on Gerrit, there is a delay of a few seconds to see this commit replicated.
+
+Please note however that review related things (patchsets, review & co) are *not* replicated. Technically speaking, 
+only refs/heads/* and refs/tags/* are.
 
 As a side effect of a project migration, all user groups are replicated to Gerrit too. See corresponding section below.
 
@@ -108,11 +111,25 @@ For details on on gerrit access rights please have a look to http://gerrit-docum
 As project administrator, you can redefine the whole Gerrit permission scheme as you wish. If you need to create new user groups to tailor
 your workflow, see "User groups management" section below.
 
+If you already are a gerrit power user and don't want default permission, you can also start with an empty permission scheme.
+Just untick "Migrate to gerrit the access rights defined in the Git plugin"
+
+.. figure:: ../images/screenshots/shot-migration.png
+   :align: center
+   :alt: Migrate to Gerrit without default permission scheme
+   :name: Migrate to Gerrit without default permission scheme
+
+   Migrate to Gerrit without default permission scheme
+
 User groups management
 ----------------------
 
 User group management helps to keep consistent your teams between Tuleap and Gerrit.
 When someone join or leave your team, just add or remove it in Tuleap project and it's automatically propagated to Gerrit.
+
+*Warning*: It's not safe to update those user groups directly *in gerrit*. If you add or remove someone manually Tuleap might
+undo this change without prior notice.
+If you ever need to have a user group with custom membership you should create a dedicated group in gerrit.
 
 The user group management follow the same naming pattern than projects.
 Given I have a "mozilla" Tuleap project with one special user group "Developers", I will get on Gerrit server:
@@ -145,8 +162,77 @@ This key management doesn't override Gerrit ssh keys, it will not delete keys Tu
 Note: the first connexion between Tuleap user account and Gerrit user account is not done automatically. Each user have to
 go on Tuleap "Account Maintenance" page and click "Push SSH keys" button. All future operations are automated.
 
+Delete or disconnect from Gerrit
+--------------------------------
+
+Once a repository is migrated, you can decide to revert this action and "disconnect" gerrit and tuleap.
+
+.. figure:: ../images/screenshots/shot-disconnect.png
+   :align: center
+   :alt: Disconnect & delete Gerrit project
+   :name: Disconnect & delete Gerrit project
+
+   Disconnect & delete Gerrit project
+
+There are three options:
+
+* Delete
+* Disconnect
+* Disconnect and keep read-only
+
+In all cases, it means that Tuleap repository will be writable directly again (you can change permissions,
+you can push, etc).
+
+Those actions are available on the "Gerrit" pane in git repository settings, there is a small delay between
+disconnect request and application.
+
+Delete
+``````
+
+Delete option is only possible if site admin configured "deleteproject" plugin on gerrit side (see setup part below).
+
+If delete is possible, it will be proposed as a checkbox next to disconnect button.
+
+Deletion will delete the corresponding Gerrit project (and only this project). All data (git commits, reviews, changeset, etc)
+will be permanently erased.
+
+After a deletion, if you ever want to re-migrate a repository, it's possible (it's not the case with Disconnect).
+
+Disconnect
+``````````
+If you choose not to delete, the Gerrit project *AND* the Tuleap repository will be *writable* in the same time.
+
+However, the gerrit project *will not be replicated*. It's likely that you will end-up with a fork: two different, incompatible versions
+of the same project. This is risky but it can be useful in scenario like:
+
+* you migrate to gerrit
+* your team fail to find the right workflow
+* you choose to disconnect for a time, but keeping Gerrit project for tests until the workflow and the team are ready
+* then you delete the gerrit project and start again.
+
+With a simple disconnect, you cannot re-migrate the git repository. You will be asked to delete it beforehand.
+
+.. figure:: ../images/screenshots/shot-reconnect.png
+   :align: center
+   :alt: Re-migrate a repository
+   :name: Re-migrate a repository
+
+   Before being able to re-migration, I should delete the Gerrit project.
+
+Disconnect and keep read-only
+`````````````````````````````
+A variation of disconnect is to "Disconnect and keep read-only".
+
+As expected, the corresponding Gerrit project will be turned in read only mode.
+
+It's useful for archiving purpose.
+
 Setup
 -----
+
+This section is for Tuleap site admin and explain how to setup Tuleap/Gerrit 
+integration.
+If you are developer, you don't have to read this section.
 
 Integration only works with 2.5.x version of gerrit.
 
