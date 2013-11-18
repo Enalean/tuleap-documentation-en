@@ -7,6 +7,15 @@ Gerrit is a code review tool built on top of git. It also manage permissions for
 
 More informations about gerrit on http://code.google.com/p/gerrit/
 
+Please note that this feature depends on LDAP authentication.
+
+.. figure:: ../images/screenshots/diffy-w200.png
+   :align: center
+   :alt: Gerrit logo
+   :name: Gerrit logo
+
+   Gerrit logo
+
 Feature overview
 ----------------
 
@@ -21,6 +30,16 @@ groups and user management.
 
 Migrate a git repository to Gerrit
 ----------------------------------
+
+The gerrit migration panel can be found in git repository settings. You need to be a project administrator to have
+access to it.
+
+.. figure:: ../images/screenshots/gerrit-migrate.png
+   :align: center
+   :alt: Migrate a project to gerrit
+   :name: Migrate a project to gerrit
+
+   Example of a migration panel to gerrit
 
 As a project administrator, you can migrate a git repository from Tuleap to Gerrit.
 
@@ -61,6 +80,9 @@ Permissions
 
 Tuleap comes with a default set of permissions for each Gerrit project. Those permissions are set at project migration only.
 No subsequent modifications of permissions are done by Tuleap.
+
+Default permissions
+"""""""""""""""""""
 
 Default Gerrit access rights are based permissions set on corresponding Tuleap git repository at migration.
 For details on on gerrit access rights please have a look to http://gerrit-documentation.googlecode.com/svn/Documentation/2.5.2/access-control.html
@@ -111,6 +133,9 @@ For details on on gerrit access rights please have a look to http://gerrit-docum
 As project administrator, you can redefine the whole Gerrit permission scheme as you wish. If you need to create new user groups to tailor
 your workflow, see "User groups management" section below.
 
+No permissions
+""""""""""""""
+
 If you already are a gerrit power user and don't want default permission, you can also start with an empty permission scheme.
 Just untick "Migrate to gerrit the access rights defined in the Git plugin"
 
@@ -120,6 +145,40 @@ Just untick "Migrate to gerrit the access rights defined in the Git plugin"
    :name: Migrate to Gerrit without default permission scheme
 
    Migrate to Gerrit without default permission scheme
+
+Setup parent projects (Umbrella)
+""""""""""""""""""""""""""""""""
+
+This section assume you already know what basics of `Gerrit project inheritance <https://gerrit-documentation.storage.googleapis.com/Documentation/2.5/access-control.html#_all_projects>`_
+
+This feature aims to address complex setups where a lot of Tuleap projects and git repositories are involved.
+The main objective is to simplify the definition of common rules and leverage on gerrit permission inheritance to apply them.
+
+Let's take again our mozilla based example:
+
+.. figure:: ../images/screenshots/gerrit-umbrella.png
+   :align: center
+   :alt: Example of gerrit umbrella projects
+   :name: Example of gerrit umbrella projects
+
+   Tuleap/gerrit umbrella projects mapping
+
+On Gerrit side, at mozilla level, I can define common permissions rules that will apply on all repositories (hence browser and mbox in our
+example). Those common rules might state that:
+
+* any member of mozilla organization is allowed to propose a contribution on any mozilla repository
+* any QA mozilla team member is allowed to -2 contribution on any repository
+* ...
+
+This inheritance is set automatically during repository migration as long as there is a parent project defined.
+This definition is done as project admin, in admin welcome panel, see screenshot below:
+
+.. figure:: ../images/screenshots/gerrit-parent.png
+   :align: center
+   :alt: Define a parent project
+   :name: Define a parent project
+
+   Define a parent project
 
 User groups management
 ----------------------
