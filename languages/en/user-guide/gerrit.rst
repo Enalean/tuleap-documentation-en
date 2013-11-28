@@ -84,6 +84,13 @@ No subsequent modifications of permissions are done by Tuleap.
 Default permissions
 """""""""""""""""""
 
+.. figure:: ../images/screenshots/gerrit/default-permissions-migration.png
+   :align: center
+   :alt: Migrate a project to gerrit with default permissions
+   :name: Migrate a project to gerrit with default permissions
+
+   Issue migration with default permissions
+
 Default Gerrit access rights are based permissions set on corresponding Tuleap git repository at migration.
 For details on on gerrit access rights please have a look to http://gerrit-documentation.googlecode.com/svn/Documentation/2.5.2/access-control.html
 
@@ -139,12 +146,38 @@ No permissions
 If you already are a gerrit power user and don't want default permission, you can also start with an empty permission scheme.
 Just untick "Migrate to gerrit the access rights defined in the Git plugin"
 
-.. figure:: ../images/screenshots/shot-migration.png
+.. figure:: ../images/screenshots/gerrit/migration-no-permissions.png
    :align: center
    :alt: Migrate to Gerrit without default permission scheme
    :name: Migrate to Gerrit without default permission scheme
 
    Migrate to Gerrit without default permission scheme
+
+Use templates
+""""""""""""""
+
+.. figure:: ../images/screenshots/gerrit/migration-select-template.png
+   :align: center
+   :alt: Migrate to Gerrit using a permissions template
+   :name: Migrate to Gerrit using a permissions template
+
+   Migrate to Gerrit using a permission's template
+
+You can also define templates to be applied to refs/meta/config on Gerrit and which defines the access rights.
+To apply a template on migration, you simply have to select it within the proposed selectbox as you can see on
+the figure above.
+
+These templates can be defined using the admin panel of Git. They must be valid ones in order to be correctly
+applied during the migration process. You can use the variable *%projectname%* which will be replaced by the
+project's name during migration. For further informations regarding these templates, please refer to the Gerrit's
+documentation.
+
+.. figure:: ../images/screenshots/gerrit/git-admin-section.png
+   :align: center
+   :alt: Git's admin section
+   :name: Git's admin section
+
+   Git's admin section
 
 Setup parent projects (Umbrella)
 """"""""""""""""""""""""""""""""
