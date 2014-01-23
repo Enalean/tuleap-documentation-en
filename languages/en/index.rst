@@ -25,6 +25,7 @@ Welcome to Tuleap's documentation!
    user-guide/svn
    user-guide/git
    user-guide/gerrit
+   user-guide/mediawiki
    user-guide/doc
    user-guide/ci
    user-guide/wiki
@@ -33,7 +34,6 @@ Welcome to Tuleap's documentation!
    user-guide/project-website
    user-guide/project-links
    user-guide/tracker-v3
-   user-guide/agile-dashboard
    user-guide/other-services
    soap/tracker
    soap/trackerv3
