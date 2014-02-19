@@ -25,10 +25,16 @@ If they aren't, they won't be able to access Mediawiki from public or private pr
 Permissions
 -----------
 
+Note for long time Mediawiki users. Contrary of default Mediawiki, in Tuleap 'anonymous' can only Read pages (they cannot create nor edit).
+
+As of today, when you have a public Tuleap project, you cannot block anonymous users to browse the pages.
+
+Shall you need to have a private Mediawiki, you should switch your project to Private.
+
 Mapping between Tuleap and Mediawiki user groups
 `````````````````````````````````````````````````
 
-There is a mapping between Tuleap and Mediawiki default user groups.
+There is a default mapping between Tuleap and Mediawiki default user groups.
 
 Users added in Tuleap groups will be automatically added in corresponding Mediawiki groups. It is no more possible
 to add users in Mediawiki groups directly from Mediawiki.
@@ -37,12 +43,23 @@ For instance, by adding a user in your project, he will be added in user, autoco
 This is fully transparent for users and project adminstrators. As of today, there is no way to create a
 custom mapping from the Mediawiki service.
 
-This mapping is defined as above:
+This default mapping is defined as above:
 
 .. figure:: ../images/screenshots/mediawiki_mapping.png
    	   :align: center
   	   :alt: Mediawiki groups mapping
-  	   :name: Mediawiki groups mapping/home/yannis/Pictures/mw_perms.png
+  	   :name: Mediawiki groups mapping
+
+As a project admin you can also define your own mapping between Tuleap and Mediawiki groups.
+
+.. figure:: ../images/screenshots/
+   	   :align: center
+  	   :alt: Mediawiki groups mapping administration
+  	   :name: Mediawiki groups mapping administration
+
+Please note that it's not possible to assign Tuleap special 'all_users' and 'registered_users' to Mediawiki groups.
+
+More details on Mediawiki groups and permissions: http://www.mediawiki.org/wiki/Manual:User_rights
 
 Synchronisation for Mediawiki users and groups
 ```````````````````````````````````````````````
@@ -61,4 +78,3 @@ Mediawiki References
 
 -  The official Mediawiki documentation: See http://www.mediawiki.org/wiki/Documentation
 
--  Mediawiki default rights: http://www.mediawiki.org/wiki/Manual:User_rights
