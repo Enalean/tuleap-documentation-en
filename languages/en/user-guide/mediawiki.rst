@@ -52,7 +52,7 @@ This default mapping is defined as above:
 
 As a project admin you can also define your own mapping between Tuleap and Mediawiki groups.
 
-.. figure:: ../images/screenshots/
+.. figure:: ../images/screenshots/mediawiki_admin_mapping.png
    	   :align: center
   	   :alt: Mediawiki groups mapping administration
   	   :name: Mediawiki groups mapping administration
