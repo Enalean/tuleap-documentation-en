@@ -33,6 +33,7 @@ Welcome to Tuleap's documentation!
    user-guide/survey
    user-guide/project-website
    user-guide/project-links
+   user-guide/sftp-browser
    user-guide/tracker-v3
    user-guide/other-services
    soap/tracker
