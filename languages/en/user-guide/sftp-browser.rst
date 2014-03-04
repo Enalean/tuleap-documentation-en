@@ -60,6 +60,8 @@ SFTP areas are defined per project basis. Each project administrator should defi
 - A group of users who can read (Readers)
 - A group of users who can write (Writers)
 
+*Warning: you have to select two different groups, one for writers and one for readers.* If you choose one group for both, nobody will be able to write.
+
 .. figure:: ../images/screenshots/sftp_admin.png
    	   :align: center
   	   :alt: SFTP administration panel
