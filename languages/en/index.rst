@@ -35,6 +35,7 @@ Welcome to Tuleap's documentation!
    user-guide/agile-dashboard
    user-guide/gerrit
    user-guide/other-services
+   user-guide/troubleshooting
    soap/tracker
    soap/trackerv3
    mylyn/usage
