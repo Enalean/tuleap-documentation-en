@@ -36,6 +36,7 @@ Welcome to Tuleap's documentation!
    user-guide/sftp-browser
    user-guide/tracker-v3
    user-guide/other-services
+   user-guide/troubleshooting
    soap/tracker
    soap/trackerv3
    rest/auth
