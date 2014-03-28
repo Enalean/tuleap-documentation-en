@@ -2535,8 +2535,14 @@ Migrate to tracker v5
 How to run a migration (for now, it requires to have an admin login on the server)
 
   .. code-block:: bash
+
       # Run the whole migration
       codendiadm@tuleap$ time sh /usr/share/tuleap/plugins/tracker/bin/migrate_tv3_to_tv5.sh tuleap_username 105 119 Defects "defect tracker" defect
+      # Parameter 1: project id
+      # Parameter 2: tracker v3 id
+      # Parameter 3: tracker v5 name
+      # Parameter 4: tracker v5 description
+      # Parameter 5: tracker v5 item name (short name / reference)
 
       # Just dump the tracker v3 for debug
       codendiadm@tuleap$ time /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/src/utils/TrackerV3-data-exporter.php -d 119 $HOME/archive.zip
@@ -2562,10 +2568,13 @@ Numeric fields
 
 Values of Integer (resp. Float) fields are exported as int (resp. int). It
 sounds obvious but as you may know by now the tracker v5 fields like Integer or
-Float cannot change their type whereas it was the case in v3. This means that
-in the history of an Integer (Float) field in v3 we may find values that are
+Float cannot change their type whereas it was the case in v3. 
+
+This means that in the history of an Integer (Float) field in v3 we may find values that are
 plain string instead of int (float) if the field type had been changed from
-String to Integer (float). The values are then cast into the right type in
+String to Integer (float). 
+
+The values are then cast into the right type in
 order to be imported into a tracker v5.
 
 Multi selectboxes
