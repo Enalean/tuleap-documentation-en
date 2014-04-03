@@ -1,5 +1,4 @@
 
-
 .. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
 .. _version-control-with-subversion:
@@ -607,9 +606,6 @@ restrict permissions on a subfolder:
 
 will indeed prevent registered users from reading the '/secret'
 directory.
-
-If you really need to prevent access to the whole repository, you should
-contact a Tuleap administrator.
 
 For more information about the format of this file you should refer to
 the Subversion Book (see `Subversion References`_).
