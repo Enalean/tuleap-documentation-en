@@ -211,17 +211,13 @@ Account Maintenance
 You provided a certain amount of demographic information to
 Tuleap when you first registered on the Tuleap
 site. This and other information can be modified at any time by
-selecting the "Account Maintenance" item in the Tuleap Main
-Menu.
+selecting the "My Account" item in the menu under your name (at the top right of
+the platform)
 
-Most of the items on the "Account Maintenance" page will look obvious to
+Most of the items on the "My Account" page will look obvious to
 you. However, we would like to draw your attention on some of them:
-
--  **Edit My Skills Profile**: a user can make his resume available on
-   Tuleap. The intent here is to let people know about you,
-   your technical background and your domain of expertise. Very useful
-   to get to know each other.
-
+-  Add an avatar by clicking on the image at the top left of the page.
+-  Change your password or email adress.
 -  **SSH shared keys**: this one has to do with the Shell Account
    service. When you are a registered user, the Tuleap
    server gives you a personal shell account with the same
@@ -230,12 +226,7 @@ you. However, we would like to draw your attention on some of them:
    the secure shell SSH to access Tuleap instantly without
    having to type a password. More on that in :ref:`shell-account`
 
-.. _preferences:
-
-Preferences
-------------
-
-Your preferences are available in My personal Page -> Preferences. Here
+Your preferences are available at the right of the page. Here
 are some of the preferences you can define:
 
 -  **Remember my Login/Password**: by default your current login session
@@ -276,7 +267,8 @@ are some of the preferences you can define:
    value before importing. They should be the same format as defined in
    your preferences.
 
-.. |The Personal Page of a Tuleap user| image:: ../../screenshots/en_US/sc_mypersonalpage.png
-.. |image1| image:: ../images/icons/trash.png
-.. |image2| image:: ../images/icons/trash.png
+-  **Activate the Lab mode**: give access to features in preview. This is for advanced users who
+    know what they are doing.
+
+
 
