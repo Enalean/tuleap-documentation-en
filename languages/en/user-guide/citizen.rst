@@ -216,15 +216,24 @@ the platform)
 
 Most of the items on the "My Account" page will look obvious to
 you. However, we would like to draw your attention on some of them:
+
 -  Add an avatar by clicking on the image at the top left of the page.
+
 -  Change your password or email adress.
--  **SSH shared keys**: this one has to do with the Shell Account
+
+-  **SSH shared keys**: this one has to do with the Shell Account 
    service. When you are a registered user, the Tuleap
    server gives you a personal shell account with the same
    login/password as for the Web interface. To automate the shell login
    you can share a public encryption key with Tuleap and use
    the secure shell SSH to access Tuleap instantly without
    having to type a password. More on that in :ref:`shell-account`
+
+   Your public key(s) here and they will be placed on the server in
+   your '~/.ssh/authorized_keys' file.
+   To generate a public key, run the program 'ssh-keygen' (or ssh-keygen1) on your desktop machine.
+   Then look at the file '~/.ssh/identity.pub' where the generated public key has been stored.
+   Read the ssh documentation for further information on sharing keys.
 
 Your preferences are available at the right of the page. Here
 are some of the preferences you can define:
