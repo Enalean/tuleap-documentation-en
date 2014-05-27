@@ -104,9 +104,14 @@ Main Menu located in the upper part of the page.
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Homepage`_).
 
-This homepage is composed with short access boxes filled with the 5 last items of the planning defined, for instance to the Sprint planning and the Release planning.
+The homepage lists and links to all the milestones in your project. they are sorted according to status and date.
 
-It provides also the latest sprint cardwall, so that the team can directly makes its daily stand up changes from this homepage.
+-  In the "Done" tab, you have all the milestones whose status is closed.
+-  In the "What's hot" tab, you have all the milestones whose status is open and whose start date and duration make them ongoing.
+-  In the "What's next" tab, you  have all the milestones whose status is open and whose start date and duration either places them in the future or are not set.
+
+
+If configured, it provides links to cardwalls, so that the team can directly makes its daily stand up changes.
 
 .. figure:: ../images/screenshots/sc_agiledashboard_homepage.png
    :align: center
