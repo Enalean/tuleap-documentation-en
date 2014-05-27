@@ -6,7 +6,7 @@ documentation for [Tuleap](http://tuleap.com/).
 
 Download the sources from GitHub
 --------------------------------
-    git clone git@github.com:Enalean/tuleap-documentation.git
+    git clone git@github.com:Enalean/tuleap-documentation-en.git
 
 
 Build the documentation
