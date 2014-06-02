@@ -521,6 +521,26 @@ You should pass all values each time.
     $soap_tracker->updateArtifact($hash, $project_id, $tracker_id, $artifact_id, $value, $comment, $comment_type);
     ?>
 
+Adding Select Box Values
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This method allows you to add select boxes values to a tracker field with static values via soap.
+
+.. code-block:: php
+   :linenos:
+
+   <?php
+
+   // Set the values
+   $values = array(
+        'green',
+        'blue',
+        'red'
+    );
+
+    $soap_tracker->addSelectBoxValues($hash, $tracker_id, $field_id, $values);
+    ?>
+
 Computed fields
 ~~~~~~~~~~~~~~~
 
