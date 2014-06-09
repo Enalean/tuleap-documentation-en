@@ -55,5 +55,7 @@ Tuleap developer-guide
 
    developer-guide/intro
    developer-guide/contrib
+   developer-guide/dir-structure
    developer-guide/dev-setup
    developer-guide/patches
+   developer-guide/i18n

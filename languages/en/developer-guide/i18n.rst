@@ -1,0 +1,27 @@
+Internationalization
+====================
+
+Because Tuleap is used by a large community of users and developpers, it is internationalized. For now, available languages are:
+
+- English
+- French
+
+Thus, there shouldn't be any words or sentences of natural language in source code.
+
+The class that manage i18n is BaseLanguage (src/common/language/BaseLanguage.class.php). A typical use in PHP is
+
+  .. code-block:: bash
+
+    $Language->getText('include_exit','error'));
+
+    $Language is initialized by pre.php, and language is set regarding the user preferences. This php code will be replaced by a string defined in languages file.
+
+Language files are available in site-content directory. For instance, the file used in the example is located at site-content/en_US/include/include.tab. Same file exists for french version: site-content/fr_FR/include/include.tab.
+
+These language files follow a defined syntax:
+
+  .. code-block:: bash
+
+    key1 [tab] key2 [tab] translated string
+
+and are separated by a carriage return. Keys are splitted in different files for convenience, but are "compiled" in a big unique file at execution. 
