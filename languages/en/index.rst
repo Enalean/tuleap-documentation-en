@@ -8,6 +8,9 @@
 Welcome to Tuleap's documentation!
 ==================================
 
+User-guide
+----------
+
 .. toctree::
    :numbered:
    :maxdepth: 3
@@ -43,4 +46,14 @@ Welcome to Tuleap's documentation!
    mylyn/usage
    user-guide/legal
 
+Tuleap developer-guide
+----------------
 
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   developer-guide/intro
+   developer-guide/contrib
+   developer-guide/dev-setup
+   developer-guide/patches
