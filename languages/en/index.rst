@@ -59,3 +59,4 @@ Tuleap developer-guide
    developer-guide/dev-setup
    developer-guide/patches
    developer-guide/i18n
+   developer-guide/continuous-integration
