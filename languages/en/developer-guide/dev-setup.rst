@@ -42,26 +42,27 @@ Advanced setup
 
 - This will start a Tuleap image named 'tuleap', and link it to a Elastic Search image named 'elast'
 
-  .. code-block:: bash
-    docker run -d --name=elast enalean/elasticsearch-tuleap
-    docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
+    .. code-block:: bash
+    
+      docker run -d --name=elast enalean/elasticsearch-tuleap
+      docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
 
 - You can add a LDAP server for development purpose with:
-  .. code-block:: bash
+    .. code-block:: bash
 
-    $ docker run -p 389:389 -d /srv/docker/ldap:/data enalean/ldap-dev
+      $ docker run -p 389:389 -d /srv/docker/ldap:/data enalean/ldap-dev
     
   Then you can start adding people (you can find a template here: https://github.com/Enalean/docker-ldap-dev/blob/master/bob.ldif):
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    $ ldapadd -f bob.ldif -x -D 'cn=Manager,dc=tuleap,dc=local' -w welcome0
-    $ ldapsearch -x -LLL -b 'dc=tuleap,dc=local' 'cn=bob*'
+      $ ldapadd -f bob.ldif -x -D 'cn=Manager,dc=tuleap,dc=local' -w welcome0
+      $ ldapsearch -x -LLL -b 'dc=tuleap,dc=local' 'cn=bob*'
     
-    Notes:
-      * The IP address you need to declare in Tuleap ldap plugin is the one of your host machine
-      * You might also want to use --link docker option instead of publish 389 on your localhost
-      * /srv/docker/ldap is were data will be stored on your host
+  Notes:
+    * The IP address you need to declare in Tuleap ldap plugin is the one of your host machine
+    * You might also want to use --link docker option instead of publish 389 on your localhost
+    * /srv/docker/ldap is were data will be stored on your host
     
     
 Vagrant
