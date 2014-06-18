@@ -3,7 +3,7 @@ Development set-up
 
 Virtual Machine
 ---------------
-This document explains the various steps needed to have a tuleap server on a virtual box. This box will be for development purpose, thus it is assumed that you already have cloned the sources of Tuleap in a directory (e.g: $HOME/tuleap/).
+This document explains the various steps needed to have a tuleap server on a virtual machine. This box will be for development purpose, thus it is assumed that you already have cloned the sources of Tuleap in a directory on the host (e.g: $HOME/tuleap/).
 
 Docker
 ``````
