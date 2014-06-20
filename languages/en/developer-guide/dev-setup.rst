@@ -3,13 +3,73 @@ Development set-up
 
 Virtual Machine
 ---------------
+This document explains the various steps needed to have a tuleap server on a virtual machine. This box will be for development purpose, thus it is assumed that you already have cloned the sources of Tuleap in a directory on the host (e.g: $HOME/tuleap/).
 
+Docker
+``````
+Introduction
+"""""""""""""
+
+
+Prerequisites:
+
+- docker
+- JQ
+
+Start a new docker container
+""""""""""""""""""""""""""""
+  .. code-block:: bash
+
+    $ cd /path/to/tuleap_workspace
+    $ tools/docker/dev_start.sh <name_of_the_server>
+
+And voila, your server is up and running. The first time you run this command, docker will download tuleap base image. It's 1,6GB so please be patient.
+Edit the /etc/hosts file of your host and add the line given by the script. Something like:
+
+  .. code-block:: bash
+
+    172.17.0.4     <name_of_the_server>.<name_of_host>
+
+You can start as many servers as you like, but they will all share the current tuleap source.
+  
+  .. NOTE:: Please note that the docker image is read-only, and every modification to the OS will be lost at reboot. 
+   If you need to add/change anything and make it persistant, fork and ammend the Dockerfile (https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/)
+   Everything but the OS (tuleap config, database, user home) is saved in /srv/dock/<name_of_the_server> on the host.
+   
+
+Advanced setup
+""""""""""""""
+
+- This will start a Tuleap image named 'tuleap', and link it to a Elastic Search image named 'elast'
+
+    .. code-block:: bash
+    
+      docker run -d --name=elast enalean/elasticsearch-tuleap
+      docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
+
+- You can add a LDAP server for development purpose with:
+    .. code-block:: bash
+
+      $ docker run -p 389:389 -d /srv/docker/ldap:/data enalean/ldap-dev
+    
+  Then you can start adding people (you can find a template here: https://github.com/Enalean/docker-ldap-dev/blob/master/bob.ldif):
+
+  .. code-block:: bash
+
+      $ ldapadd -f bob.ldif -x -D 'cn=Manager,dc=tuleap,dc=local' -w welcome0
+      $ ldapsearch -x -LLL -b 'dc=tuleap,dc=local' 'cn=bob*'
+    
+  Notes:
+    * The IP address you need to declare in Tuleap ldap plugin is the one of your host machine
+    * You might also want to use --link docker option instead of publish 389 on your localhost
+    * /srv/docker/ldap is were data will be stored on your host
+    
+    
 Vagrant
 ```````
 Introduction
 """""""""""""
 
-This document explains the various steps needed to have a tuleap server on a vagrant box. This box will be for development purpose, thus it is assumed that you already have cloned the sources of Tuleap in a directory (e.g: $HOME/tuleap/).
 
 Prerequisites:
 
