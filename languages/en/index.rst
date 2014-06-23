@@ -60,3 +60,12 @@ Tuleap developer-guide
    developer-guide/patches
    developer-guide/i18n
    developer-guide/continuous-integration
+
+Deployment guide
+----------------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   deployment-guide/intro
