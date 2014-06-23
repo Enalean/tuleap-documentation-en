@@ -52,7 +52,8 @@ We strongly recommend to use elasticsearch on a RHEL/CentOs 6.5 or newer server.
 
 Update of elasticsearch:
 
-* Setup yum repsitory as describled on `Elasticsearch repositories page <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html#_yum>`_
+* Setup yum repsitory as described on `Elasticsearch repositories page <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html#_yum>`_
+* Then install elasticsearch:
 
   .. sourcecode:: console
 
@@ -120,7 +121,7 @@ Delete existing docman mapping and setup a new one
 
   .. sourcecode:: console
 
-    $> curl -X DELETE "localhost:9200/tuleap/docman"
+    $> curl -X DELETE "localhost:9222/tuleap/docman"
     $> curl -u elasticsearch:password -X PUT "localhost:9222/docman" -d '{
         "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
     }'
