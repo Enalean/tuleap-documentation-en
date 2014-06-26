@@ -1,6 +1,6 @@
 This document explains the actions an admin must or should do during a given upgrade.
 
-Note about config files (Tuleap's *.inc): as long as you are OK with the defaults set by
+Note about config files (Tuleap's \*.inc): as long as you are OK with the defaults set by
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
@@ -17,6 +17,8 @@ New option in local.inc
     // Allow users to reply by mail to artifact notifications
     // As of today only adding a follow-up comment is supported
     $sys_enable_reply_by_mail = 0;
+
+See ``plugins/tracker/README.emailgateway.mkd`` for details about sudoers deployment.
 
 Subversion
 ----------
