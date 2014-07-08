@@ -18,15 +18,15 @@ your tuleap installation.
 If you think the appliance is what you need here is how to install it:
 
 
-Appliance prerequisite
-----------------------
+Requirements
+------------
 
 To play with the Tuleap appliance you'll need a virtualbox or a vmware host (you can download 
 virtualbox here: https://www.virtualbox.org/ ) and that's all!
 
 
-Appliance Download
-------------------
+Download
+--------
 
 You can download the latest appliance on the tuleap website here: https://tuleap.net/file/showfiles.php?group_id=101
 in the tuleap appliance section.
