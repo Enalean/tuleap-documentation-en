@@ -47,6 +47,7 @@ It will take a few minute to boot and then show you a message like
 
 
 ::
+
     To Begin using you tuleap instance you need to configure it:
 
     Open your web browser to this address:
@@ -62,9 +63,9 @@ Follow the instruction and go to the proposed page.
 
 The install webpage will ask you for two fields:
 
--  Your server name. If you have a dns record for this address, you can use it, otherwise, simply enter the IP address of the server.
+-  **Your server name**. If you have a dns record for this address, you can use it, otherwise, simply enter the IP address of the server.
 
--  Your company name. You can enter here what you want, this field will be used to lightly personalize the platform.
+-  **Your company name**. You can enter here what you want, this field will be used to lightly personalize the platform.
 
 
 Then click the install button. Currently the webpage is in beta stage and nothing will appear, but if you check the server it will reboot after a few minutes.
