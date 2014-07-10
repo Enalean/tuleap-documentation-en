@@ -56,6 +56,7 @@ Installation-guide
    installation-guide/intro.rst
    installation-guide/appliance-installation.rst
    installation-guide/full-installation.rst
+   installation-guide/basic-configuration.rst
    installation-guide/advanced-installation.rst
 
 Tuleap developer-guide
