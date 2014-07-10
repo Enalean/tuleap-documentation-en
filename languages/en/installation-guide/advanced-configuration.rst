@@ -1,5 +1,5 @@
 Advanced configuration
-----------------------
+======================
 
 You will learn some usefull tricks to configure your Tuleap installation, we assume you are expert enough to undestand what you are doing.
 
