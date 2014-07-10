@@ -46,6 +46,19 @@ User-guide
    mylyn/usage
    user-guide/legal
 
+Installation-guide
+------------------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   installation-guide/intro.rst
+   installation-guide/appliance-installation.rst
+   installation-guide/full-installation.rst
+   installation-guide/basic-configuration.rst
+   installation-guide/advanced-installation.rst
+
 Tuleap developer-guide
 ----------------
 
