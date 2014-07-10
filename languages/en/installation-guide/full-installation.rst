@@ -60,8 +60,8 @@ http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and
     yum install --enablerepo=rpmforge-extras tuleap-all
 
 
-Configuration
--------------
+Setup
+-----
 
 **Please do not repeat this step twice**. This script should only be executed once. If you have any errors in the previous steps, be sure to fix those before continuing.
 
@@ -77,13 +77,7 @@ It will ask you for:
 
 -  **Your Company name**. Who need more informations about this?
 
-
-Post-configuration
-------------------
-
--  Do not forget to setup your mail server (postfix is recommended) to receive email sent by the platform
-
--  On redhat systems, the firewall is activated by default. Open some ports:
+-  On redhat systems, the firewall is activated by default. Open needed ports:
 
     -  Web (TCP/80 & TCP/443)
 
@@ -91,7 +85,7 @@ Post-configuration
 
     -  SSH (git, admin): TCP/22
 
-    -  More if you need more.
+    -  More if you need more (FTP, SMTP, ...).
 
 
 First connection
