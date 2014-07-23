@@ -4,6 +4,52 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.3
+===
+
+CentOs packages dependency
+---------------------------
+
+For Tuleap 7.3, we updated our mediawiki package by adding new modules.
+For a new extension, we create a dependency with a packahe named `htmldoc`
+
+This package is only available in **EPEL** repositories. So, in order to be able to update your Tuleap,
+you have to activate EPEL on your server.
+
+FlamingParrot Variants
+----------------------
+
+Tuleap 7.3 introduce new FlamingParrot theme variants. To be more concrete, new colors are available for our new theme.
+
+You are able to choose which variants you want to enable on your Tuleap by adding a new enrty in the local.inc file
+(by default, all variants are activated):
+
+    .. sourcecode:: php
+
+        // List of available theme variant in forge
+        // Available variants:
+        // * FlamingParrot_Orange
+        // * FlamingParrot_Blue
+        // * FlamingParrot_Green
+        // * FlamingParrot_BlueGrey
+        // * FlamingParrot_Purple
+        // * FlamingParrot_Red
+        // * FlamingParrot_DarkOrange
+        // * FlamingParrot_DarkBlue
+        // * FlamingParrot_DarkGreen
+        // * FlamingParrot_DarkBlueGrey
+        // * FlamingParrot_DarkPurple
+        // * FlamingParrot_DarkRed
+        $sys_available_theme_variants = 'FlamingParrot_Orange,FlamingParrot_Blue,FlamingParrot_Green,FlamingParrot_BlueGrey,FlamingParrot_Purple,FlamingParrot_Red,FlamingParrot_DarkOrange,FlamingParrot_DarkBlue,FlamingParrot_DarkGreen,FlamingParrot_DarkBlueGrey,FlamingParrot_DarkPurple,FlamingParrot_DarkRed';
+
+
+In addition, you can choose your default color for the whole platforme by adding a variable in your local.inc file:
+
+    .. sourcecode:: php
+
+        // Default theme variant in forge
+        $sys_default_theme_variant = 'FlamingParrot_Orange';
+
 7.2
 ===
 
@@ -50,7 +96,7 @@ The main consequence are:
 * that plugin should be installed by hand instead of having RPMs.
 * we can no longer use jetty to restrict access to elasticsearch cluster. It's replaced by nginx as a filtering reverse proxy
 
-We strongly recommend to use elasticsearch on a RHEL/CentOs 6.5 or newer server.
+The requirement for elasticsearch is a RHEL/CentOs 6.5 or newer server.
 
 Update of elasticsearch:
 
