@@ -61,30 +61,6 @@ Installation-guide
    installation-guide/advanced-installation.rst
    installation-guide/advanced-configuration.rst
 
-Tuleap developer-guide
-----------------
-
-.. toctree::
-   :numbered:
-   :maxdepth: 3
-
-   developer-guide/intro
-   developer-guide/contrib
-   developer-guide/dir-structure
-   developer-guide/dev-setup
-   developer-guide/patches
-   developer-guide/i18n
-   developer-guide/coding-standards
-   developer-guide/continuous-integration
-
-Deployment guide
-----------------
-
-.. toctree::
-   :numbered:
-   :maxdepth: 3
-
-   deployment-guide/intro
 
 Administration guide
 --------------------
@@ -100,3 +76,29 @@ Administration guide
    administration-guide/backup
    administration-guide/services
    administration-guide/howto
+
+
+Deployment guide
+----------------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   deployment-guide/intro
+
+Tuleap developer-guide
+----------------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   developer-guide/intro
+   developer-guide/contrib
+   developer-guide/dir-structure
+   developer-guide/dev-setup
+   developer-guide/patches
+   developer-guide/i18n
+   developer-guide/coding-standards
+   developer-guide/continuous-integration
