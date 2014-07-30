@@ -1,11 +1,14 @@
+Services
+========
+
 Mysql
-=====
+-----
 
 Tuleap uses the MySQL database engine to store all of the project data.
 MySQL is fast, lightweight and very robust.
 
 Database Creation
------------------
+`````````````````
 
 The Tuleap database is created once when the Tuleap software is first
 installed. The scripts used to create and populate the database are
@@ -15,7 +18,7 @@ created or it will destroy all of your existing data !!
 
 
 Database Access Permissions
----------------------------
+```````````````````````````
 
 MySQL has its own access permission management system that is completely
 independent from the access permission management system of the
@@ -41,7 +44,7 @@ are as follows:
    export. No password is needed for this user.
 
 Command Line
-------------
+````````````
 
 From any Unix account, type:
 
@@ -62,14 +65,14 @@ running it on the production server. Except for SELECT statements which
 are harmless anyway.
 
 Apache
-======
+------
 
 The Apache master configuration file is in /etc/httpd/conf/httpd.conf.
 The master file also includes specific configuration files located at
 /etc/httpd/conf.d.
 
 FTP
-===
+---
 
 The FTP server configuration file is in /etc/vsftpd/vsftpd.conf and it
 has been configured to work with Tuleap. The default configuration
@@ -78,10 +81,10 @@ all registered users through their normal Tuleap login/password.
 
 
 CVS
-===
+---
 
 Tuleap specific CVS
---------------------
+````````````````````
 
 The CVS RPM packages installed on Tuleap contains a modified version of
 cvs. The reason the CVS source code has been modified is as follows:
@@ -108,7 +111,7 @@ version of the Tuleap specific CVS RPMs and you don't have to apply any
 of the patch by hand to the Tuleap sources.
 
 Running the CVS server
-----------------------
+``````````````````````
 
 The CVS server does not run permanently in the background. It is
 launched only when necessary through the inetd daemon that is configured
@@ -117,7 +120,7 @@ to listen on the port of the pserver protocol (tcp/2401). Look for
 
 
 DNS
-===
+---
 
 Tuleap can run its own internal domain : example.com. And the
 tuleap machine is the name server for this domain. The DNS
@@ -128,7 +131,7 @@ configuration files are located in:
    example.com domain is defined.
 
 Static configuration file
--------------------------
+`````````````````````````
 
 The top configuration file is in ``/etc/named.conf``. This file is
 static and must be edited by hand. Before the Tuleap server is
@@ -155,7 +158,7 @@ we may want to have a dedicated server to handle email for the tuleap
 domain. Hence the MX record.
 
 Wildcard DNS record
--------------------
+```````````````````
 
 As explained above each project on Tuleap has its own Web server that
 can be accessed at the URL http://projectname.your.example.com, as
@@ -165,7 +168,7 @@ subdomains. It it defined in tuleap.zone with these lines: (Xerox
 server)
 
 SSH
-===
+---
 
 The Secure Shell service is available on Tuleap. All registered user
 with an active account can use it to login into Tuleap in a secure way.
@@ -175,7 +178,7 @@ However we highly recommend not to enable telnet for security reasons
 and instruct your Windows users to install an SSH client instead.
 
 Postfix
-=======
+-------
 
 By default Tuleap uses postfix as its mail transport agent of choice
 to handle incoming and outgoing mail messages. The critical files for
@@ -187,7 +190,7 @@ the sendmail configuration are:
 
 
 Mailman
-=======
+-------
 
 The Mailman mailing lists manager requires little attention from the
 Tuleap administrators. The configuration is done at installation time
