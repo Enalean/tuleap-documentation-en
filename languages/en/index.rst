@@ -88,7 +88,7 @@ Deployment guide
    deployment-guide/intro
 
 Tuleap developer-guide
-----------------
+----------------------
 
 .. toctree::
    :numbered:

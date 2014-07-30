@@ -1,6 +1,23 @@
 Services
 ========
 
+Network Ports
+-------------
+
+* Apache ports: 80 (HTTP) and 443 (HTTPS)
+* CVS pserver port: 2401
+* FTP: port 21
+* SSH: port 22
+* SMTP: port 25
+* JDBC: port 3306 (for SaloméTMF JDBC-mode support)
+* OpenFire (instant messaging server):
+  * 9090 -> administration of OpenFire
+  * 9091 -> same in SSL
+  * 5222 -> XMPP port
+  * 5223 -> same in SSL
+  * 7777 -> proxy file transfer
+
+
 Mysql
 -----
 
@@ -122,7 +139,7 @@ to listen on the port of the pserver protocol (tcp/2401). Look for
 DNS
 ---
 
-Tuleap can run its own internal domain : example.com. And the
+Tuleap can run its own internal domain : tuleap.example.com. And the
 tuleap machine is the name server for this domain. The DNS
 configuration files are located in:
 
@@ -138,6 +155,92 @@ static and must be edited by hand. Before the Tuleap server is
 installed you must ask your network administrator to create the Tuleap
 domain your.example.com and delegate the administration of this
 domain to the Tuleap server.
+
+Example of named.conf
+
+    ::
+
+        /var/named/chroot/etc/named.conf is the master DNS configuration file. As an example, here is a sample file:
+        //
+        // named.caching-nameserver.conf
+        //
+        // Provided by Red Hat caching-nameserver package to configure the
+        // ISC BIND named(8) DNS server as a caching only nameserver
+        // (as a localhost DNS resolver only).
+        //
+        // See /usr/share/doc/bind*/sample/ for example named configuration files.
+        //
+        //
+        options {
+        //      listen-on port 53 { 127.0.0.1; };
+                listen-on-v6 port 53 { ::1; };
+                directory       "/var/named";
+                dump-file       "/var/named/data/cache_dump.db";
+                statistics-file "/var/named/data/named_stats.txt";
+                memstatistics-file "/var/named/data/named_mem_stats.txt";
+                query-source    port *;
+                query-source-v6 port *;
+                allow-query     { any; };
+        
+                forwarders {
+                        13.202.220.10; // Put your own DNS forwarders list here!!!
+                };
+        };
+        logging {
+                channel default_debug {
+                        file "data/named.run";
+                        severity dynamic;
+                };
+        };
+        
+        include "/etc/named.rfc1912.zones";
+        
+        zone "tuleap.example.com" {
+                        type master;
+                        file "tuleap.zone";
+        };
+
+Example of tuleap.zone:
+
+    ::
+
+       $TTL 3600
+       @               IN      SOA     csx1243.tuleap.example.com. (
+                                               2002101805      ; Serial
+                                               3600    ; Refresh 1 hour
+                                               900     ; Retry 15 minutes
+                                               604800  ; Expire in 7 days
+                                               3600 )  ; Minimum TTL 1 hours
+                       IN      NS      csx1243.tuleap.example.com.
+            localhost       IN      A       127.0.0.1
+       ;----------------------------------------------------------------------
+       
+       tuleap.example.com.                IN      A       13.0.33.116
+       csx1243                           IN      A       13.0.33.116 ; production server
+       csx12432                          IN      A       13.0.33.45  ; backup server
+       
+       tuleap.example.com.                IN      MX      0       csx1243.tuleap.example.com.
+       tuleap.example.com.                IN      MX      10      mailer-east.example.com.
+       ;
+       www                             IN      CNAME   csx1243
+       xww                             IN      CNAME   csx1243
+       cvs                             IN      CNAME   csx1243
+       cvs1                            IN      CNAME   csx1243
+       svn                             IN      CNAME   csx1243
+       svn1                            IN      CNAME   csx1243
+       download                        IN      CNAME   csx1243
+       shell                           IN      CNAME   csx1243
+       shell1                          IN      CNAME   csx1243
+       users                           IN      CNAME   csx1243
+       cxdocs                          IN      CNAME   csx1243
+       lists                           IN      A   13.0.33.116
+                                       IN      MX      0       lists.tuleap.example.com.
+                                       IN      MX      10      mailer-east.example.com.
+       
+       ;
+       ; Wildcard DNS entry, to match all possible hosts: projnamme.*, cvs.projname.*, svn.projname.*, etc.
+       ;
+       *                          IN      CNAME   csx1243
 
 The Tuleap zone is defined in ``/var/named/tuleap.zone`` . It contains
 the IP address for the master Tuleap server as well as a list of
@@ -198,3 +301,73 @@ and mailing list are entirely managed by the end users through the
 Mailman Web interface. Mailman has a super user password allowing
 Tuleap site administrators to access the administration interface of
 any mailing lists created by Tuleap projects.
+
+LDAP
+----
+
+In ``/etc/tuleap/conf/local.inc`` you should set ``$sys_auth_type = 'ldap';``
+
+Then update ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
+
+Example with Active Directory:
+
+    ::
+
+        $sys_ldap_server = 'ldapserver.mycompany.com';
+        
+        // To enable LDAP information on Codendi users, also define the DN 
+        // (distinguised name) to use in LDAP queries.
+        // The ldap filter is the filter to use to query the LDAP directory
+        // (%name% are substituted with the value from the user table)
+        $sys_ldap_dn     = 'DC=mygroup,DC=mycompany,DC=com';
+        $sys_ldap_filter = 'sAMAccountName=%ldap_name%';
+        
+        // For LDAP systems that do not accept anonymous binding, define here
+        // a valid DN and password:
+        $sys_ldap_bind_dn = "AD-DOMAIN\special_login";
+        $sys_ldap_bind_passwd = "xxxxx";
+        
+        // LDAP authentication:
+        $sys_ldap_auth_dn     = 'DC=mygroup,DC=mycompany,DC=com';
+        $sys_ldap_auth_filter = 'sAMAccountName=%ldap_name%';
+        
+        $sys_ldap_search_user='(|(sAMAccountName=%words%)(cn=%words%)(mail=%words%))';
+        $sys_ldap_eduid_filter='sAMAccountName=%eduid%';
+        
+        $sys_ldap_eduid = 'samaccountname';   
+        $sys_ldap_cn    = 'cn';
+        $sys_ldap_mail  = 'mail';
+        $sys_ldap_login = 'samaccountname';
+
+Example with OpenLDAP:
+
+    ::
+
+        // Should be either 'ldap' or 'codendi'
+        $sys_auth_type = 'ldap';
+        
+        $sys_ldap_server = 'myldapserver';
+        
+        // To enable LDAP information on CodeX users, also define the DN
+        // (distinguised name) to use in LDAP queries.
+        // The ldap filter is the filter to use to query the LDAP directory
+        // (%name% are substituted with the value from the user table)
+        $sys_ldap_dn     = 'DC=mygroup,DC=mycompany,DC=com';
+        $sys_ldap_filter = 'mail=%email%';
+        
+        // For LDAP systems that do not accept anonymous binding, define here
+        // a valid DN and password:
+        //$sys_ldap_bind_dn = "ldapsearch";
+        //$sys_ldap_bind_passwd = "xxxxxxxxx";
+        
+        // LDAP authentication:
+        $sys_ldap_auth_dn = 'uid=%ldap_name%,ou=People,dc=mygroup,dc=mycompany,dc=com';
+        $sys_ldap_auth_filter = 'uid=%ldap_name%';
+        
+        $sys_ldap_search_user='(|(uid=%words%)(cn=%words%)(mail=%words%))';
+        $sys_ldap_eduid_filter='uid=%eduid%';
+        
+        $sys_ldap_eduid = 'uid';
+        $sys_ldap_cn    = 'displayname';
+        $sys_ldap_mail  = 'mail';
+        $sys_ldap_login = 'uid';
