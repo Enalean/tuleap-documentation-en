@@ -85,3 +85,13 @@ Deployment guide
    :maxdepth: 3
 
    deployment-guide/intro
+
+Administration guide
+--------------------
+
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+
+   administration-guide/issues
