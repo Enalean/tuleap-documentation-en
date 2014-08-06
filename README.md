@@ -1,7 +1,7 @@
 Tuleap Documentation
 ====================
 
-This is a proposal to use Sphinx (instead of docbook) in order to generate the 
+This documentation uses Sphinx in order to generate the 
 documentation for [Tuleap](http://tuleap.org/).
 
 Download the sources from GitHub
