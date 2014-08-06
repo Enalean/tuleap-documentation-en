@@ -4,6 +4,26 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.4
+===
+
+Mediawiki extra plugins compatibility mode
+------------------------------------------
+
+Tuleap 7.4 comes with a maturity about the limits of integrating Medaiwiki and its numerous plugins such as "wiki editor" into Tuleap.
+In order to avoid impossible javascript and css conflicts there is now a compatibility that can be enabled if needed.
+It needs to be enabled at a forge level before it can be enabled at a project level and this is how:
+
+New option in /etc/<tuleap|codendi>/plugins/mediawiki/etc/mediawiki.inc
+    .. sourcecode:: php
+
+        $enable_compatibility_view = true;
+
+This option can then be toggled by site administrators in the "plugins administration" area.
+
+Activating the compatibility view for a project is then done in the "Administration" section of a given mediawiki in the UI.
+
+
 7.3
 ===
 
