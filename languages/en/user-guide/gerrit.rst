@@ -501,10 +501,10 @@ We can directly use the gerrit REST API to configure the ``admin-my.tuleap.serve
 
   .. code-block:: bash
 
-    curl --digest --user ``admin-my.tuleap.server.net``:``http_password`` 
-         -X PUT tuleap.server.net/a/accounts/self/emails/codendiadm@my.tuleap.server.net
+    curl --digest --user admin-my.tuleap.server.net:http_password
+         -X PUT tuleap.server.net:8080/a/accounts/self/emails/codendiadm@my.tuleap.server.net
          -H "Content-Type: application/json;charset=UTF-8"
-         -d'{"email": "codendiadm@my.tuleap.server.net", "no_confirmation": true}'
+         -d'{"no_confirmation": true}'
 
 Integrating Tuleap and Gerrit
 `````````````````````````````
@@ -587,5 +587,5 @@ To install the plugin, put delete-project.jar in the 'plugins' folder of your Ge
 
   .. code-block:: bash
 
-    curl --digest --user ``admin-my.tuleap.server.net``:``http_password``
+    curl --digest --user admin-my.tuleap.server.net:http_password
          -X POST tuleap.server.net/a/plugins/deleteproject/gerrit~enable
