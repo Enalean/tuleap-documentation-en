@@ -73,6 +73,14 @@ is launched when the following actions occured:
 
 -  Tuleap user is renamed
 
+
+Compatibility view
+------------------
+In order to accommodate for mediawiki plugins that are not compatible with Tuleap's window rendering there is an option to enable
+a compatibility view. If checked and if the site administrators have set it up then the mediawiki in that project will take a standalone
+appearance. There will be links on the sidebar that will bring you back to your project area.
+
+
 Mediawiki References
 ---------------
 
