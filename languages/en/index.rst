@@ -75,6 +75,7 @@ Administration guide
    administration-guide/daemons
    administration-guide/backup
    administration-guide/services
+   administration-guide/customisations
    administration-guide/howto
 
 
