@@ -155,6 +155,7 @@ Generate a password file:
 Then, setup reverse proxy. Edit ``/opt/rh/nginx14/root/etc/nginx/nginx.conf`` and add following snippet in ``http`` section:
 
   .. sourcecode:: console
+
        listen 9222;
 
        location / {
