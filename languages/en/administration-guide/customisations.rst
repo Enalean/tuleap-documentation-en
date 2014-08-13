@@ -76,16 +76,16 @@ First, create the folder /etc/tuleap/site-content/en_US/tour. **The tours are lo
 Next, you need to create a file that list which tours are available at which URL.
 This is a JSON file and it **must be named tour.json**. It's content must be an array of tour references, e.g.
 ::
-    #cat /etc/tuleap/site-content/en_US/tour/tour.json
+    #contents of /etc/tuleap/site-content/en_US/tour/tour.json:
 
     [
         {
             "tour_name" : "my_first_tour",
-            "url"       : "/plugins/trackers/?tracker={attribute_value}
+            "url"       : "/plugins/tracker/?tracker={attribute_value}"
         },
         {
             "tour_name" : "my_other_tour",
-            "url"       : "/svn/?group_id={project_id}
+            "url"       : "/svn/?group_id={project_id}"
         }
     ]
 
@@ -96,17 +96,17 @@ There are 3 placeholders that can be used in the url:
 
 The **tour_name** must correspond to a JSON file located in the same folder. E.g. my_first_tour.json
 ::
-    #cat /etc/tuleap/site-content/en_US/tour/my_first_tour.json
+    #contents of /etc/tuleap/site-content/en_US/tour/my_first_tour.json:
 
     {
         "steps" : [
             {
-                "element"  : "# tracker_report_config_options",
+                "element"  : "#tracker_report_config_options",
                 "title"    : "How to save a tracker report",
                 "content"  : "First click here"
             },
             {
-                "element"  : "# tracker_report_updater_duplicate",
+                "element"  : "#tracker_report_updater_duplicate",
                 "title"    : "How to configure a tracker report",
                 "content"  : "Then click here"
             }
