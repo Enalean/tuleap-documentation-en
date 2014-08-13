@@ -91,8 +91,8 @@ This is a JSON file and it **must be named tour.json**. It's content must be an 
 
 There are 3 placeholders that can be used in the url:
     - **{project_id}** This will match against any numeric project ID, e.g. 114, 256, 8569
-    - **{project_name}** This match against a project short (or linux) name
-    - **{attribute_value}** This match against any attribute value. The value can be a string or an integer.
+    - **{project_name}** This will match against a project short (or linux) name
+    - **{attribute_value}** This will match against any attribute value. The value can be a string or an integer.
 
 The **tour_name** must correspond to a JSON file located in the same folder. E.g. my_first_tour.json
 ::
