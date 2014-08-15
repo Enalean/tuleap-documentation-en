@@ -495,16 +495,6 @@ To have more details about the error you can issue the lessc command on the incr
         157   min-height: @inputHeight; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
         158   .box-sizing(border-box); // Makes inputs behave like true block-level elements
 
-LDAP
-----
-
-Setup
-``````
-
-    .. code-block:: bash
-
-        yum install openldap-servers
-
 Tests
 ------
 
@@ -522,6 +512,30 @@ To run tests you can either use:
 
 - the web interface available at http://localhost/plugins/tests/ (given localhost is your development server)
 - the CLI interface: make tests (at the root of the sources). You can run a file or a directory: php tests/bin/simpletest plugins/docman
+
+Run tests with docker
+````````````````````
+
+We have docker images to run unit tests on all environments:
+
+* centos5 + php 5.1: enalean/tuleap-test-ut-c5-php51
+* centos6 + php 5.3: enalean/tuleap-test-ut-c6-php53
+* centos6 + php 5.4: enalean/tuleap-test-ut-c6-php54
+* centos6 + php 5.5: enalean/tuleap-test-ut-c6-php55
+
+Basically, executing tests is as simple as, from root of Tuleap sources:
+
+    .. code-block:: bash
+
+        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-ut-c6-php54
+
+If there is only one file or directory you are intrested in:
+
+    .. code-block:: bash
+
+        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-ut-c6-php53 --nodb /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
+
+Please note the --nodb switch, it allows a faster start when there is no DB involved.
 
 Integration tests
 """""""""""""""""
