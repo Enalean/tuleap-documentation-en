@@ -26,7 +26,7 @@ The documentation is generated in `tuleap-documentation-en/_build/html/` You can
 Modify/ add to the documentation
 ------------------------
 
-    cd tuleap-ocumentation-en/languages/en/
+    cd tuleap-documentation-en/languages/en/
 
 There will be a few main folders in here which correspond to documentation sections. To add a new page, create the file in the correct directory then add the reference in `index.rst`.
 
