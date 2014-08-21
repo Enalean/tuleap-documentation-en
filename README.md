@@ -14,14 +14,14 @@ Download the sources from GitHub
 --------------------------------
 
     git clone git@github.com:Enalean/tuleap-documentation-en.git
-    cd tuleap-documentation-en
+    cd tuleap-documentation-en/
 
-Build the documentation (debian)
---------------------------------
+Build the documentation
+-----------------------
 
     make html
 
-The documentation is generated in `_build/html/` You can check the modifications by opening `index.html` with your firefox browser. You need to build the documentation in order to see your modifications.
+The documentation is generated in `tuleap-documentation-en/_build/html/` You can check the modifications by opening `index.html` with your web browser. You need to build the documentation in order to see your modifications.
 
 Modify/ add to the documentation
 ------------------------
