@@ -30,6 +30,7 @@ Modify/ add to the documentation
 
 There will be a few main folders in here which correspond to documentation sections. To add a new page, create the file in the correct directory then add the reference in `index.rst`.
 
+Note: All changes must be pushed on the `master` branch. 
 
 License
 -------
