@@ -74,6 +74,14 @@ is launched when the following actions occured:
 -  Tuleap user is renamed
 
 
+Mediawiki extensions
+--------------------
+Tuleap integrates the following Mediawiki extensions:
+- SyntaxHighlight_GeSHi (http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi): it allows to display formatted source code with the tag 
+- PdfBook (http://www.mediawiki.org/wiki/Extension:PdfBook): it lets you compose a book from articles in a category and exports as a PDF file.
+- ParserFunctions (http://www.mediawiki.org/wiki/Extension:ParserFunctions): it enhances the wikitext parser with helpful functions, mostly related to logic and string-handling.
+- WikiEditor (http://www.mediawiki.org/wiki/Extension:WikiEditor): it offers an editing interface. This extension is only available in compatibility view.
+
 Compatibility view
 ------------------
 In order to accommodate for mediawiki plugins that are not compatible with Tuleap's window rendering there is an option to enable
