@@ -4,6 +4,24 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.5
+===
+
+Full text search
+----------------
+
+The index mapping for artifact'ss follow-up comments changed, you need to delete the current index and to create an empty new one (all previously indexed comments will be lost):
+
+  .. sourcecode:: console
+
+    # Of course, you need to adapt username, password, servers and port to
+    # your configuration
+    $> curl -u superuser:Adm1n -X DELETE "localhost:9200/tracker"
+    $> curl -u superuser:Adm1n -X PUT "localhost:9200/tracker" -d '{
+        "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
+    }'
+
+
 7.4
 ===
 
