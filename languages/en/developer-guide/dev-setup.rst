@@ -769,6 +769,23 @@ Example config.php:
         $servers->setValue('login','bind_pass','welcome0');
 
 
+Using your local LDAP with a local gerrit
+`````````````````````````````````````````
+
+Use this config :
+Example config.php:
+
+    .. code-block:: bash
+
+        [auth]
+        type = LDAP
+        [ldap]
+            server = ldap://localhost
+            accountBase = ou=people,dc=tuleap,dc=local
+            groupBase = ou=groups,dc=tuleap,dc=local
+            accountFullName = cn
+            sslVerify = false
+
 ForgeUpgrade
 -------------
 
