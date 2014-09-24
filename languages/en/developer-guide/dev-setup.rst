@@ -772,13 +772,12 @@ Example config.php:
 Using your local LDAP with a local gerrit
 `````````````````````````````````````````
 
-Use this config :
-Example config.php:
+Use this config in ``etc/gerrit.conf``:
 
     .. code-block:: bash
 
         [auth]
-        type = LDAP
+            type = LDAP
         [ldap]
             server = ldap://localhost
             accountBase = ou=people,dc=tuleap,dc=local
