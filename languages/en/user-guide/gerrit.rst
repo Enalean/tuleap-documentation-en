@@ -479,7 +479,18 @@ On Gerrit server, as Administrator, go to Projects > List > All-projects > Acces
 Configure the email of the administrator
 """"""""""""""""""""""""""""""""""""""""
 
-This step cannot be done through the web ui since the email is hard coded to ``codendiadm@my.tuleap.server.net`` which by default has no mbox and a confirmation email is sent to this address.
+By default, the admin email of your Tuleap instance is hard coded to something like ``codendiadm@my.tuleap.server.net`` which by default has no mailbox.
+This value is set in ``/etc/codendi/conf/local.inc`` under the vatiable $sys_email_admin.
+
+
+The current value of the Tuleap admin email can be found by logging-in to Tuleap as admin and going to the ``My Account`` page.
+If the value of email does not correspond to a valid mailbox then this step cannot be done via the web UI.
+
+From now on, we will refer to the aforementioned email as ``admin_email``.
+
+In essence, what this step achieves is to have matching emails for the ``admin-my.tuleap.server.net`` account on Gerrit and the Tuleap admin user that pushes content to gerrit.
+
+
 
 Gerrit 2.5
 ''''''''''
@@ -489,8 +500,8 @@ First, shell into the box on which Tuleap is running as either ``codendiadm``. F
   .. code-block:: bash
 
     codendiadm@my.tuleap.server.net$ ssh -i /home/codendiadm/.ssh/id_rsa-gerrit admin-my.tuleap.server.net@gerrit.instance.com -p 29418 gerrit gsql
-    UPDATE account_external_ids SET email_address = 'codendiadm@my.tuleap.server.net' WHERE external_id LIKE '%:admin-my.tuleap.server.net';
-    UPDATE accounts SET preferred_email = 'codendiadm@my.tuleap.server.net' WHERE full_name = 'admin-my.tuleap.server.net';
+    UPDATE account_external_ids SET email_address = 'admin_email' WHERE external_id LIKE '%:admin-my.tuleap.server.net';
+    UPDATE accounts SET preferred_email = 'admin_email' WHERE full_name = 'admin-my.tuleap.server.net';
     exit;
     codendiadm@my.tuleap.server.net$ ssh -i /home/codendiadm/.ssh/id_rsa-gerrit admin-my.tuleap.server.net@gerrit.instance.com -p 29418 gerrit flush-caches
 
@@ -502,9 +513,13 @@ We can directly use the gerrit REST API to configure the ``admin-my.tuleap.serve
   .. code-block:: bash
 
     curl --digest --user admin-my.tuleap.server.net:http_password
-         -X PUT tuleap.server.net:8080/a/accounts/self/emails/codendiadm@my.tuleap.server.net
+         -X PUT tuleap.server.net:8080/a/accounts/self/emails/admin_email
          -H "Content-Type: application/json;charset=UTF-8"
          -d'{"no_confirmation": true}'
+
+
+Note: there may be permission issues when doing this with later versions of Gerrit. You will need to either
+give ``Administrators`` greater rights or fall-back to the other method (above).
 
 Integrating Tuleap and Gerrit
 `````````````````````````````
