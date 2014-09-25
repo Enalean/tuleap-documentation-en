@@ -75,13 +75,7 @@ This should create a new xml file that contains all the necessary data. Now use 
 
 Creating your Agile Dashboard from scratch
 ``````````````````````````````````````````
-
-A training video is available to explain you how to create your agile dashboard.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/sypv1C_yY_o" frameborder="0" allowfullscreen></iframe>
-
+You will have to create your own trackers and link them within the Agile Dashboard administration.
 
 Note that some field names are important to respect:
 
@@ -109,6 +103,8 @@ The homepage lists and links to all the milestones in your project. they are sor
 -  In the "Done" tab, you have all the milestones whose status is closed.
 -  In the "What's hot" tab, you have all the milestones whose status is open and whose start date and duration make them ongoing.
 -  In the "What's next" tab, you  have all the milestones whose status is open and whose start date and duration either places them in the future or are not set.
+If start_date and duration are not defined in the tracker, but status is open, you will have the milestones both in "What's hot" and "Next".
+If start_date and duration are defined but empty, you will have the milestones in the three tabs.
 
 
 If configured, it provides links to cardwalls, so that the team can directly makes its daily stand up changes.
