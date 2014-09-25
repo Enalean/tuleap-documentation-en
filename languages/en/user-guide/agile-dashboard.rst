@@ -232,22 +232,3 @@ assignee for instance, or by the type of tracker (display only the tasks or only
 
    Agile Dashboard: Cardwall
 
-The team can follow the progress of the sprint by accessing the burndown via the homepage's short access boxes (see `Short Access boxes`_) or the "Burndown" tab.
-
-The burndown graph is automatically generated depending on the remaining effort of the tasks the team update everyday.
-
-.. figure:: ../images/screenshots/sc_agiledashboard_short_access.png
-   :align: center
-   :alt: Short Access boxes
-   :name: Short Access boxes
-   :width: 500px
-
-   Agile Dashboard: Short Access boxes
-
-Training Video
-``````````````
-Here is a training video explaining how to use the agile dashboard.
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/wAJ_MosYgAM" frameborder="0" allowfullscreen></iframe>
