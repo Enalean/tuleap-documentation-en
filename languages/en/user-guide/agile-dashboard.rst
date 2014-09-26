@@ -109,7 +109,7 @@ If start_date and duration are defined but empty, you will have the milestones i
 
 If configured, it provides links to cardwalls, so that the team can directly makes its daily stand up changes.
 
-.. figure:: ../images/screenshots/sc_ad_homepage.png
+.. figure:: ../images/screenshots/sc_ad_homepage_new.png
    :align: center
    :alt: Agile Dashboard Homepage
    :name: Agile Dashboard Homepage
