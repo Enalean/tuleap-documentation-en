@@ -88,6 +88,15 @@ It will ask you for:
     -  More if you need more (FTP, SMTP, ...).
 
 
+(IM) CentOS 6
+`````````````
+Follow these commands until the required ports (above) are activated. We will be checking this each time we run ''netstat -lntp''
+
+* netstat -lntp
+* yum install glibc.i686
+* service openfire start
+* netstat -lntp
+
 First connection
 ----------------
 
