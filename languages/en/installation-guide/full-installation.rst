@@ -26,6 +26,8 @@ The server will need an Internet connection as it will download external package
 
 You can have a look at the Installation checklist here: https://tuleap.net/wiki/index.php?pagename=TuleapInstallationChecklist&group_id=101
 
+.. _tuleap_installation:
+
 Installation
 ------------
 

@@ -573,3 +573,46 @@ This allows to browse git repositories using gitweb along standard Tuleap Gitphp
 
 * Make sure that gitweb is working from the web at http://your_tuleap_url/gitweb/
 
+Deploy git mirroring
+--------------------
+
+Setup tuleap-gitolite-membership
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On your mirror, gitolite should be able to get the list of user groups
+one user belongs to.
+
+For this you need, on Tuleap:
+
+#. A user that will be used for user membership retrieval (should be dedicated to that).
+#. On tuleap, in "Admin > Delegation", create a new group with ``Retrieve User Membership Information`` permission and the user you just created.
+
+Then, on the mirror:
+
+#. configure yum repository as in :ref:`Tuleap installation <tuleap_installation>`
+#. install package: ``tuleap-gitolite-membership``
+#. update ``/etc/tuleap-gitolite-membership.ini`` and set the user/password defined in the previous section
+
+Then, as ``gitolite``, you can test:
+
+  .. sourcecode:: console
+
+    $> /usr/share/tuleap-gitolite-membership/tuleap-gitolite-membership.php username
+    site-active firefox_project_members ug_199
+
+If you get an empty list, you can run the debug mode with ``-vvv``
+
+Finally, when everything is running properly, you can update gitolite config ``.gitolite.rc`` with:
+
+  .. sourcecode:: perl
+
+    %RC = (
+
+        # ------------------------------------------------------------------
+
+        GROUPLIST_PGM                  => '/usr/share/tuleap-gitolite-membership/tuleap-gitolite-membership.php',
+
+        ...
+
+
+
