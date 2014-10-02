@@ -572,7 +572,7 @@ necessary.
 
 -  **Automatically edit fields**: Tuleap includes fields
    that are automatically set : "Artifact ID", "Last Update Date",
-   "Submitted By" and "Submitted On". The users can't edit that fields.
+   "Submitted By", "Submitted On" and "Priority". The users can't edit that fields.
 
 -  **Cross-Reference**: Tuleap offers another dynamic field
    which has the ability to cross-reference any artifact, or any other
@@ -1585,6 +1585,9 @@ Find below a detailed description of each type:
    references from and/or to this artifact. It displays all references
    from or to this artifact, grouped by reference type (artifact,
    document, wiki, etc.).
+
+-  *Priority*: this field is automatically updated by the AgileDashboard
+   plugin. It displays the artifact priority in the context of the plateform.
 
 Structural Elements
 ^^^^^^^^^^^^^^^^^^^
