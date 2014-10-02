@@ -647,6 +647,7 @@ As ``codendiadm``, in ``/usr/share/codendi``, run
     $> ./src/utils/php-launcher.sh plugins/docman/bin/import_from_docman_v1.php http://localhost/soap/?wsdl admin 114
 
 Where:
+
 * ``http://localhost/soap/?wsdl`` is the URL to the wsdl of your server (maybe https only)
 * ``admin`` is the name of a valid site admin account
 * ``114`` is the ID of the project
@@ -656,6 +657,7 @@ This directory is reserved to project administrators, they have to check the mig
 and change permissions if relevant.
 
 Project administrators must be very careful about the permissions as they are changed this way:
+
 * DOCUMENT_TECH and DOCUMENT_ADMIN are no longer used (tied to docman v1)
 * both are replaced by project_admins with a 'manager' permission.
 * if a group had a granted or forbidden access, those access are kept.
