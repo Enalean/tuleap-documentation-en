@@ -615,4 +615,47 @@ Finally, when everything is running properly, you can update gitolite config ``.
         ...
 
 
+.. _admin_howto_docmanv1_to_docmanv2:
 
+
+Import docman v1 into docman v2 (plugin)
+----------------------------------------
+
+Note: only matters if you got a Tuleap forge deployed before 2009.
+
+You can check if it's relevant to you with:
+
+ .. sourcecode:: perl
+
+   SELECT count(*) AS nb_docs_in_v1
+   FROM doc_data
+    JOIN doc_groups ON (doc_data.doc_group = doc_groups.doc_group)
+    JOIN groups ON (groups.group_id = doc_groups.group_id)
+   WHERE groups.status IN ('A');
+
+This will make your DBA happy because you will be able to save a lot of
+space in the DB (design of docman v1 implied storage of files... inside 
+the DB as blob).
+
+How to run migration for one project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As ``codendiadm``, in ``/usr/share/codendi``, run
+
+  .. sourcecode:: console
+
+    $> ./src/utils/php-launcher.sh plugins/docman/bin/import_from_docman_v1.php http://localhost/soap/?wsdl admin 114
+
+Where:
+* ``http://localhost/soap/?wsdl`` is the URL to the wsdl of your server (maybe https only)
+* ``admin`` is the name of a valid site admin account
+* ``114`` is the ID of the project
+
+The migration will produce a "Legacy documentation" directory in "Documents" service of the project.
+This directory is reserved to project administrators, they have to check the migration is OK for them
+and change permissions if relevant.
+
+Project administrators must be very careful about the permissions as they are changed this way:
+* DOCUMENT_TECH and DOCUMENT_ADMIN are no longer used (tied to docman v1)
+* both are replaced by project_admins with a 'manager' permission.
+* if a group had a granted or forbidden access, those access are kept.
