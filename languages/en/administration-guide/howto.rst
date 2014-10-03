@@ -671,6 +671,7 @@ Tuleap docman content can be imported/exported on the same platform or across pl
 As ``codendiadm``, in ``/usr/share/tuleap/plugins/docman/bin/DocmanExport``, run
 
   .. sourcecode:: console
+
     # first export
     $> cd /usr/share/tuleap/plugins/docman/bin/DocmanExport
     $> php export.php 114 /var/tmp/projectname
