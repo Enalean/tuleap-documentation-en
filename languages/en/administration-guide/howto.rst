@@ -661,3 +661,22 @@ Project administrators must be very careful about the permissions as they are ch
 * DOCUMENT_TECH and DOCUMENT_ADMIN are no longer used (tied to docman v1)
 * both are replaced by project_admins with a 'manager' permission.
 * if a group had a granted or forbidden access, those access are kept.
+
+
+Docman import export
+--------------------
+
+Tuleap docman content can be imported/exported on the same platform or across platforms.
+
+As ``codendiadm``, in ``/usr/share/tuleap/plugins/docman/bin/DocmanExport``, run
+
+  .. sourcecode:: console
+    # first export
+    $> cd /usr/share/tuleap/plugins/docman/bin/DocmanExport
+    $> php export.php 114 /var/tmp/projectname
+
+    # then import
+    $> cd /usr/share/tuleap/plugins/docman/bin/DocmanImport
+    $> php import.php --url=https://localhost --project=projectname --archive=/var/tmp/projectname
+
+    # you can run import.php --help for more options
