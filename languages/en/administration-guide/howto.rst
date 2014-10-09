@@ -579,15 +579,20 @@ Deploy git mirroring
 Setup tuleap-gitolite-membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On your mirror, gitolite should be able to get the list of user groups
-one user belongs to.
+Step 1: on the mirror, you need to setup minimal things:
 
-For this you need, on Tuleap:
+- install gitolite3:  ``yum install gitolite3``
+- create a user gitolite: ``useradd --home /var/lib/gitolite --create-home gitolite``
+- As user ``gitolite``, generate an ssh key (ssh-keygen)
+- Setup gitolite with ``gitolite setup -pk .ssh/id_rsa.pub``
+- Remove gitolite repositories (``rm -rf ~/repositories/*``)
 
-#. A user that will be used for user membership retrieval (should be dedicated to that).
-#. On tuleap, in "Admin > Delegation", create a new group with ``Retrieve User Membership Information`` permission and the user you just created.
+Step 2: on master, you need to create a new Mirror entry as site admin (Admin > Git plugin > Mirrors)
 
-Then, on the mirror:
+#. add the generated ssh key and define a password
+#. then go on "Admin > Delegation", create a new group with ``Retrieve User Membership Information`` permission and the user associated to the mirror (forge__gitmirror_X)
+
+Step 3: on the mirror, configure ``tuleap-gitolite-membership``:
 
 #. configure yum repository as in :ref:`Tuleap installation <tuleap_installation>`
 #. install package: ``tuleap-gitolite-membership``
@@ -614,6 +619,139 @@ Finally, when everything is running properly, you can update gitolite config ``.
 
         ...
 
+        GIT_CONFIG_KEYS                 =>  '.*',
+
+        ...
+
+Note you need to add ``GROUPLIST_PGM`` and update ``GIT_CONFIG_KEYS``
+
+Step 4: still on the mirror, you need to setup grokmirror:
+
+- deploy gitolite admin update script in ``/usr/local/bin/update_gladmin.sh`` 
+
+  .. sourcecode:: bash
+
+    #!/bin/sh
+     
+    git=$1
+    gitname="`basename $git`"
+     
+    if [ $gitname = gitolite-admin.git ]
+    then
+      cd $git
+      export GL_BINDIR=/usr/bin
+      export GL_LIBDIR=/usr/share/gitolite3
+      $HOME/.gitolite/hooks/gitolite-admin/post-update
+    fi
+
+- set it executable ``chmod +x /usr/local/bin/update_gladmin.sh`` 
+
+- Configure /etc/grokmirror/repos.conf (sample, replace %% variables)
+
+  .. sourcecode:: ini
+
+    # Fetched from
+    # https://raw.githubusercontent.com/mricon/grokmirror/v0.3.4/repos.conf
+    #
+    # You can pull from multiple grok mirrors, just create
+    # a separate section for each mirror. The name can be anything.
+    [%server_name%]
+    # The host part of the mirror you're pulling from.
+    #site = git://git.kernel.org
+    site = ssh://gitolite@%server_name%
+    #
+    # Where the grok manifest is published. The following protocols
+    # are supported at this time:
+    # http:// or https:// using If-Modified-Since http header
+    # file:// (when manifest file is on NFS, for example)
+    #manifest = http://git.kernel.org/manifest.js.gz
+    manifest = http://%server_name%/grokmirror/manifest_mirror_%mirror_no%.js.gz
+    #
+    # Where are we going to put the mirror on our disk?
+    #toplevel = /var/lib/git/mirror
+    toplevel = /var/lib/gitolite/repositories
+    #
+    # Where do we store our own manifest? Usually in the toplevel.
+    #mymanifest = /var/lib/git/mirror/manifest.js.gz
+    mymanifest = /var/lib/gitolite/manifest.js.gz
+    #
+    # Write out projects.list that can be used by gitweb or cgit.
+    # Leave blank if you don't want a projects.list.
+    #projectslist = /var/lib/git/mirror/projects.list
+    projectslist = /var/lib/gitolite/projects.list
+    #
+    # When generating projects.list, start at this subpath instead
+    # of at the toplevel. Useful when mirroring kernel or when generating
+    # multiple gitweb/cgit configurations for the same tree.
+    #projectslist_trimtop = /pub/scm/
+    projectslist_trimtop = /pub/scm/
+    #
+    # When generating projects.list, also create entries for symlinks.
+    # Otherwise we assume they are just legacy and keep them out of
+    # web interfaces.
+    #projectslist_symlinks = yes
+    projectslist_symlinks = no
+    #
+    # A simple hook to execute whenever a repository is modified.
+    # It passes the full path to the git repository modified as the only
+    # argument.
+    #post_update_hook = /usr/local/bin/make-git-fairies-appear
+    post_update_hook = /usr/local/bin/update_gladmin.sh
+    #
+    # If owner is not specified in the manifest, who should be listed
+    # as the default owner in tools like gitweb or cgit?
+    #default_owner = Grokmirror User
+    default_owner = Grokmirror User
+    #
+    # Where do we put the logs?
+    #log = /var/log/mirror/kernelorg.log
+    log = /var/log/grokmirror/kernelorg.log
+    #
+    # Log level can be "info" or "debug"
+    #loglevel = info
+    loglevel = info
+    #
+    # To prevent multiple grok-pull instances from running at the same
+    # time, we first obtain an exclusive lock.
+    #lock = /var/lock/mirror/kernelorg.lock
+    lock = /var/lock/grokmirror/kernelorg.lock
+    #
+    # Use shell-globbing to list the repositories you would like to mirror.
+    # If you want to mirror everything, just say "*". Separate multiple entries
+    # with newline plus tab. Examples:
+    #
+    # mirror everything:
+    #include = *
+    #
+    # mirror just the main kernel sources:
+    #include = /pub/scm/linux/kernel/git/torvalds/linux.git
+    #          /pub/scm/linux/kernel/git/stable/linux-stable.git
+    #          /pub/scm/linux/kernel/git/next/linux-next.git
+    #
+    # mirror just git:
+    #include = /pub/scm/git/*
+    include = *
+    #
+    # This is processed after the include. If you want to exclude some specific
+    # entries from an all-inclusive globbing above. E.g., to exclude all linux-2.4
+    # git sources:
+    #exclude = */linux-2.4*
+    exclude =
+
+Now you should be able to run the mirroring:
+- ``/usr/bin/grok-pull -r -p -c /etc/grokmirror/repos.conf``
+
+If everything is OK, you can consider adding it to crond ``/etc/cron.d/grokmirror.cron``
+
+  .. sourcecode:: ini
+
+    # Run grok-pull every minute as user "mirror"
+    * * * * * gitolite /usr/bin/grok-pull -p -r -c /etc/grokmirror/repos.conf
+
+In case of errors, check:
+
+- ``/var/lib/gitolite/.gitolite/logs``
+- ``/var/log/grokmirror/``
 
 .. _admin_howto_docmanv1_to_docmanv2:
 
