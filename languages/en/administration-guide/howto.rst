@@ -738,12 +738,11 @@ Step 4: still on the mirror, you need to setup grokmirror:
     #exclude = */linux-2.4*
     exclude =
 
-Now you should be able to run the mirroring:
-- ``/usr/bin/grok-pull -r -p -c /etc/grokmirror/repos.conf``
+Now you should be able to run the mirroring: ``/usr/bin/grok-pull -r -p -c /etc/grokmirror/repos.conf``
 
 If everything is OK, you can consider adding it to crond ``/etc/cron.d/grokmirror.cron``
 
-  .. sourcecode:: ini
+  .. sourcecode:: bash
 
     # Run grok-pull every minute as user "mirror"
     * * * * * gitolite /usr/bin/grok-pull -p -r -c /etc/grokmirror/repos.conf
