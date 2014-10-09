@@ -581,8 +581,9 @@ Setup tuleap-gitolite-membership
 
 Step 0 (to be done only once), on master, allow manifests to be fetched by http:
 
-- Copy ``/usr/share/tuleapplugins/git/etc/httpd/grokmirror.conf`` in ``/etc/httpd/conf.d/tuleap-plugins``
+- Copy ``/usr/share/tuleap/plugins/git/etc/httpd/grokmirror.conf`` in ``/etc/httpd/conf.d/tuleap-plugins``
 - Restart apache so your mirror can fetch the manifest file
+- Install grokmirror on the server and set ``$grokmanifest_path`` in ``/etc/tuleap/plugins/git/etc/config.inc``
 
 Step 1: on the mirror, you need to setup minimal things:
 
