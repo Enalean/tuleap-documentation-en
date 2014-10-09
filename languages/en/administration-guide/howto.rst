@@ -579,6 +579,11 @@ Deploy git mirroring
 Setup tuleap-gitolite-membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Step 0 (to be done only once), on master, allow manifests to be fetched by http:
+
+- Copy ``/usr/share/tuleapplugins/git/etc/httpd/grokmirror.conf`` in ``/etc/httpd/conf.d/tuleap-plugins``
+- Restart apache so your mirror can fetch the manifest file
+
 Step 1: on the mirror, you need to setup minimal things:
 
 - install gitolite3:  ``yum install gitolite3``
