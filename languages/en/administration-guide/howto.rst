@@ -613,6 +613,15 @@ Then, as ``gitolite``, you can test:
 
 If you get an empty list, you can run the debug mode with ``-vvv``
 
+You should also disable all write access on the mirror:
+
+  .. sourcecode:: console
+
+    $ gitolite writable @all off
+    ...please type the message to be shown to users:
+    This is a read-only mirror, please push on master
+    Ctrl+D
+
 Finally, when everything is running properly, you can update gitolite config ``.gitolite.rc`` with:
 
   .. sourcecode:: perl
@@ -628,6 +637,13 @@ Finally, when everything is running properly, you can update gitolite config ``.
         GIT_CONFIG_KEYS                 =>  '.*',
 
         ...
+    );
+
+    $UNSAFE_PATT = qr();
+
+    # ------------------------------------------------------------------------------
+    # per perl rules, this should be the last line in such a file:
+    1;
 
 Note you need to add ``GROUPLIST_PGM`` and update ``GIT_CONFIG_KEYS``
 
