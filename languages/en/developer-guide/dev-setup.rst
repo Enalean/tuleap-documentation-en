@@ -50,7 +50,7 @@ Advanced setup
 - You can add a LDAP server for development purpose with:
     .. code-block:: bash
 
-      $ docker run -p 389:389 -d /srv/docker/ldap:/data enalean/ldap-dev
+      $ docker run -p 389:389 -d -v /srv/docker/ldap:/data enalean/ldap-dev
     
   Then you can start adding people (you can find a template here: https://github.com/Enalean/docker-ldap-dev/blob/master/bob.ldif):
 
@@ -518,41 +518,36 @@ Run tests with docker
 
 We have docker images to run unit tests on all environments:
 
-* centos5 + php 5.1: enalean/tuleap-test-ut-c5-php51
-* centos6 + php 5.3: enalean/tuleap-test-ut-c6-php53
-* centos6 + php 5.4: enalean/tuleap-test-ut-c6-php54
-* centos6 + php 5.5: enalean/tuleap-test-ut-c6-php55
+* centos5 + php 5.1: enalean/tuleap-simpletest:c5-php51
+* centos6 + php 5.3: enalean/tuleap-simpletest:c6-php53
+* centos6 + php 5.4: enalean/tuleap-simpletest:c6-php54
+* centos6 + php 5.5: enalean/tuleap-simpletest:c6-php55
 
 Basically, executing tests is as simple as, from root of Tuleap sources:
 
     .. code-block:: bash
 
-        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-ut-c6-php54
+        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php54 /tuleap/tests/simpletest /tuleap/tests/integration /tuleap/plugins
 
 If there is only one file or directory you are intrested in:
 
     .. code-block:: bash
 
-        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-ut-c6-php53 --nodb /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
+        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php53 --nodb /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
 
 Please note the --nodb switch, it allows a faster start when there is no DB involved.
 
-Integration tests
-"""""""""""""""""
 
-A couple of tests interact with the database to ensure whole stack consistency.
 
-You cannot run them from the web interface yet, you should run it by hand:
+REST tests
+""""""""""
 
-    .. code-block:: bash
-
-        $> php tests/bin/simpletest tests/integration plugins/tracker/db_tests
-
-For this to work, you need to create a database for tests in your development environment (as mysql root):
+There is also a docker image for REST tests:
 
     .. code-block:: bash
 
-        mysql> GRANT ALL PRIVILEGES on integration_test.* to 'integration_test'@'localhost' identified by 'welcome0';
+        $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-rest
+
 
 Organize your tests
 ````````````````````
