@@ -740,8 +740,8 @@ In order to use it, extract the tarball content and launch the following command
 
     .. code-block:: bash
 
-        java -jar trang.jar -I rnc -O rng
-        TULEAP_PATH/plugins/tracker/www/resources/tracker.rnc
+      $ java -jar trang.jar -I rnc -O rng \
+        TULEAP_PATH/plugins/tracker/www/resources/tracker.rnc \
         TULEAP_PATH/plugins/tracker/www/resources/tracker.rng
 
 Which files need trang ?
