@@ -103,4 +103,5 @@ Developer guide
    developer-guide/i18n
    developer-guide/coding-standards
    developer-guide/continuous-integration
+   developer-guide/trackers
    developer-guide/howto
