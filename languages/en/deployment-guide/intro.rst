@@ -7,8 +7,21 @@ file, the default is automatically set for you.
 7.6
 ===
 
+Old Docman migration
+--------------------
+
 This release comes with a tool to assist admin of very old Tuleap to migrate from docman v1 to docman v2 (plugin). This might be relevant to you if you installed Tuleap before 2009. Check :ref:`Administration guide <admin_howto_docmanv1_to_docmanv2>`
 
+Git
+---
+
+Another change in this release is a dependency on a recent version of git. We know for sure that there are issues with git <= 1.7.4.1
+
+If in doubt, then you should upgrade to the latest version.
+
+  .. sourcecode:: console
+
+    $> yum update git
 
 7.5
 ===
