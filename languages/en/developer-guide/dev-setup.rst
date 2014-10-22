@@ -816,6 +816,27 @@ Use this config in ``etc/gerrit.conf``:
             accountFullName = cn
             sslVerify = false
 
+Angular
+-------
+
+Install
+    .. code-block:: bash
+
+        $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/angular/
+        $> npm install
+        $> sudo npm install -g bower
+        $> bower install
+        $> npm install -g grunt
+        $> sudo npm install -g grunt-cli
+
+Run
+    .. code-block:: bash
+
+        $> cd /my/tuleap/sources
+        $> grunt --gruntfile plugins/agiledashboard/www/js/angular/Gruntfile.js
+        or
+        $> grunt watch --gruntfile plugins/agiledashboard/www/js/angular/Gruntfile.js
+
 ForgeUpgrade
 -------------
 
