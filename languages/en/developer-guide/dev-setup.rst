@@ -18,6 +18,9 @@ Prerequisites:
 
 Start a new docker container
 """"""""""""""""""""""""""""
+
+**CentOS 6 docker**
+
   .. code-block:: bash
 
     $ cd /path/to/tuleap_workspace
@@ -36,6 +39,26 @@ You can start as many servers as you like, but they will all share the current t
    If you need to add/change anything and make it persistant, fork and ammend the Dockerfile (https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/)
    Everything but the OS (tuleap config, database, user home) is saved in /srv/dock/<name_of_the_server> on the host.
    
+
+
+**CentOS 5 docker**
+
+Although new installs should be in CentOS, you can test in a CentOS 5 environment, by using the appropriate docker container:
+
+  .. code-block:: bash
+
+    sudo docker run -ti -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 22:22 -v /srv/docker/mycentos5:/data enalean/tuleap-aio:centos5
+
+
+If you need to SSH on the container:
+
+  .. code-block:: bash
+
+    $> docker ps #copy the CONTAINER ID
+    $> sudo cat /srv/docker/mycentos5/root/.codendi_passwd #copy the password for root
+    $> docker inspect [CONTAINER ID] #look for "IPAddress"
+    $> ssh root@[IPAddress] #use password
+
 
 Advanced setup
 """"""""""""""
