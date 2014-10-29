@@ -54,9 +54,9 @@ If you need to SSH on the container:
 
   .. code-block:: bash
 
-    $> sudo docker ps #copy the CONTAINER ID
+    $> docker ps #copy the CONTAINER ID
     $> sudo cat /srv/docker/mycentos5/root/.codendi_passwd #copy the password for root
-    $> sudo docker inspect [CONTAINER ID] #look for "IPAddress"
+    $> docker inspect [CONTAINER ID] #look for "IPAddress"
     $> ssh root@[IPAddress] #use password
 
 
