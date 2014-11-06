@@ -80,6 +80,8 @@ The real work
    ``chown -R projectadminname.projectname top_level_dir*``
    where projectadminname is the Tuleap login of the project
    administrator
+#. Ensure that setgid bit is properly set on directory:
+   ``find /cvsroot/projectname -type d -exec chmod g+s {} \;``
 #. The CVS admin files in the CVSROOT directory must be examined one by
    one and the project specific instructions must be merged with the
    files by the same name in the CVSROOT directory created by Tuleap.
