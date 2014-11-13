@@ -4,6 +4,71 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.7
+===
+
+General
+-------
+
+Starting this release, the tuleap system logs are handled by logroate. 
+The default configuration is to rotate on weekly basis and to keep 4 weeks of logs.
+
+Local.inc:
+
+* ``$sys_create_project_in_one_step`` is no longer needed as legacy project creation is gone.
+* New option ``$sys_strip_outlook = 0;`` allow to test removal of outlook quote in tracker email reply (experimental)
+* New option ``$sys_default_mail_domain = "";`` Define the email domain for email gateway feature (By default, email domain = default Tuleap domain )
+
+
+Full text search
+----------------
+
+You need to clean and re-index all previously indexed projects:
+
+  .. sourcecode:: console
+
+    # Of course, you need to adapt username, password, servers and port to
+    # your configuration
+    $> curl -u superuser:Adm1n -X DELETE "localhost:9200/tracker"
+    $> curl -u superuser:Adm1n -X DELETE "localhost:9200/docman"
+    $> curl -u superuser:Adm1n -X DELETE "localhost:9200/wiki"
+    $> curl -u superuser:Adm1n -X PUT "localhost:9200/tracker" -d '{
+        "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
+    }'
+    $> curl -u superuser:Adm1n -X PUT "localhost:9200/docman" -d '{
+        "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
+    }'
+    $> curl -u superuser:Adm1n -X PUT "localhost:9200/wiki" -d '{
+        "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
+    }'
+
+Then, as a site admin, trigger re-index of projects.
+
+Git
+---
+
+You can configure git and http urls in ``git/etc/config.inc``:
+
+  .. sourcecode:: php
+    // Urls
+    // By default, only ssh is available for use and you can setup HTTP(s) access
+    // to your server.
+    // For convenience, you can either hardcode the URLs or you can use %server_name%
+    // variable that will be replace automatically by the value of $_SERVER['SERVER_NAME']
+    // this is typical the URL the user see in location bar of the browser
+    // Tell to Tuleap that an HTTPS server for git is available at the given
+    // address
+    // $git_http_url = "https://%server_name%/git";
+    
+    // Define a custom ssh URL to get access to the sources
+    // You can disable display of this url by activating this variable and setting
+    // to '' (empty string)
+    //
+    // $git_ssh_url = 'ssh://gitolite@%server_name%:2222';
+
+The ``$grokmanifest_path`` is no longer needed on server (you can remove grokmirror too).
+
+
 7.6
 ===
 
