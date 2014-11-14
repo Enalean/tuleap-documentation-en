@@ -841,3 +841,19 @@ As ``codendiadm``, in ``/usr/share/tuleap/plugins/docman/bin/DocmanExport``, run
     $> php import.php --url=https://localhost --project=projectname --archive=/var/tmp/projectname
 
     # you can run import.php --help for more options
+
+Activate reply to artifacts by email
+------------------------------------
+
+Starting Tuleap 7.2, users can reply to tracker notification emails directly from their mail client.
+
+In local.inc:
+
+  .. sourcecode:: php
+
+    // Allow users to reply by mail to artifact notifications
+    // As of today only adding a follow-up comment is supported
+    $sys_enable_reply_by_mail = 1;
+
+Please note that you have to wait for the next SYSTEM_CHECK SystemEvent before
+using the feature.
