@@ -4,6 +4,24 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.8
+===
+
+Full text search
+----------------
+
+The default time-out for a request to an elasticsearch server is 5 seconds. Now, administrators can choose
+the maximum time-out value in the configuration of the the fullTextSearch plugin.
+
+For upgrades, you need to copy a variable from
+``/usr/share/codendi/plugins/fulltextsearch/etc/fulltextsearch.inc.dist``
+to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
+
+  .. sourcecode:: php
+
+    $max_seconds_for_request = 10;
+
+
 7.7
 ===
 
@@ -50,6 +68,7 @@ Git
 You can configure git and http urls in ``git/etc/config.inc``:
 
   .. sourcecode:: php
+
     // Urls
     // By default, only ssh is available for use and you can setup HTTP(s) access
     // to your server.
