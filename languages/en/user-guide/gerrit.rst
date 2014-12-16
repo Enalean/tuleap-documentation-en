@@ -474,7 +474,7 @@ On Gerrit server, as Administrator, go to Projects > List > All-projects > Acces
 
 * Look for the reference /refs/*
 
-  * Add ``Forge Committer Identity`` permission for the group ``Administrators`` (this will allow Tuleap to push commits it's not the direct author of).
+  * Add ``Forge Committer Identity``  and ``Forge Author Identity`` permissions for the group ``Administrators`` (this will allow Tuleap to push commits it's not the direct author of).
 
 Configure the email of the administrator
 """"""""""""""""""""""""""""""""""""""""
