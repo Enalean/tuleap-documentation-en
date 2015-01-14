@@ -35,11 +35,19 @@ Integration of contributions
   **Note:** It is the responsibility of the contributor to resolve conflicts. Integrators should ask 
   to the contributor to rebase her changes in case of conflicts.
   
-* Edit ChangeLog and Version (all plugins & central). **Pro tip:** there is a generator for that:
+* Edit ChangeLog and Version (all plugins & central).
+
+  **Pro tip:** there is a generator for that:
 
   .. code-block:: bash
 
-    $  tools/utils/changelogs/generate.sh "Description of small feature or patch"
+    $ tools/utils/changelogs/generate.sh "Description of small feature or patch"
+
+  **Pro tip 2:** you can also use docker to generate them:
+
+  .. code-block:: bash
+
+    $ docker run -ti -v $PWD:/tuleap enalean/tuleap-generate-changelog "Description of small feature or patch"
 
   **Important:** Do **not** ``git add`` the updated changelogs and version.
 
