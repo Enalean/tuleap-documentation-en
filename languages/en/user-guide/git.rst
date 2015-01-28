@@ -170,8 +170,10 @@ configuration. See import repository section `Importing an existing Git Reposito
 Importing an existing Git Repository
 ------------------------------------
 
-There is no automatic procedure to perform repository import. Read
-administration guide related section.
+There is no automatic procedure to perform repository import. 
+To move one Git repository from one Tuleap project to another, there are two commands to type (after creating the new repository in the destination project):
+git clone --mirror gitolite@tuleap.example.com:<source_project_shortname>/<repo_name>.git 
+git push --mirror gitolite@tuleap.example.com:<destination_project_shortname>/<repo_name>.git
 
 Git References
 ---------------
