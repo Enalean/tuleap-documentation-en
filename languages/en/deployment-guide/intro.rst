@@ -4,6 +4,35 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+7.10
+====
+
+Git
+---
+
+* We drop the embedded version of gitphp in favor of the packaged one. This is reflected by the ``$gitphp_path`` in ``/etc/tuleap/plugins/git/etc/config.inc``
+* New installations have git HTTP access activated.
+* Existing installations without HTTP access can enable it by setting ``$git_http_url = "https://%server_name%/plugins/git";`` in ``/etc/tuleap/plugins/git/etc/config.inc``
+* Existing installations with HTTP access should keep existing HTTP access as default (without anonymous access) but can communicate to their users about the new URL ``https://%server_name%/plugins/git/%repo_path%`` for test.
+* gitolite3 path in ``sudoers.d/gitolite3-http`` file has been changed: ``codendiadm ALL= (gitolite) SETENV: NOPASSWD: /usr/share/gitolite3/gitolite-shell``
+
+LDAP
+----
+
+* Default search for daily syncho is now the whole LDAP subtree.
+ + If ``$sys_ldap_daily_sync`` was enabled (= 1), you should monitor duration of ``ROOT_DAILY`` system event (each night at 00:10)
+  - If duration is the same after upgrade, everything is fine
+  - If duration is really longer (20-30% longer). You can switch back to previous mode with ``$search_depth = 'onelevel';`` in ldap configuration ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
+ + If ``$sys_ldap_daily_sync`` was disabled ( = 0), you should be able to enable it
+  - Do it first on a QA server
+  - You should expect some people to be suspended on first run
+  - If most users get suspended, there is something wrong and you should keep the synchro disabled and report the issue
+
+Core
+----
+
+The default backup path for deleted projects is ``/var/tmp``. See ``$sys_project_backup_path`` in ``/etc/tuleap/conf/local.inc``.
+
 7.8
 ===
 
