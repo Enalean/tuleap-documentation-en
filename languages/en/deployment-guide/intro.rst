@@ -4,6 +4,27 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+
+7.11
+====
+
+CVS
+---
+
+We have enabled Tuleap to deal with incoming CVS commits from Windows machines. You can now toggle between allowing Windows
+encoding of the commit messages and utf-8 encoding. To set this up (CentOS 6):
+
+Local.inc:
+
+* Add ``$sys_cvs_convert_cp1252_to_utf8 = 1;`` at the end of the file.
+
+System:
+  .. sourcecode:: console
+
+    # Note: for CentOS 5, you need to manually source and install the package 'perl-Text-Iconv'
+    $> yum install perl-Text-Iconv
+    $> cp /usr/share/tuleap/src/utils/cvs1/log_accum /usr/lib/tuleap/bin/log_accum
+
 7.10
 ====
 
