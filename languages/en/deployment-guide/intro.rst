@@ -25,6 +25,27 @@ System:
     $> yum install perl-Text-Iconv
     $> cp /usr/share/tuleap/src/utils/cvs1/log_accum /usr/lib/tuleap/bin/log_accum
 
+
+FullText Search
+---------------
+
+It was reported that certain versions of elasticsearch  do not allow for the indexation of files above, say, 100 MB. In order to prevent these files
+being mistakingly indexed and causing the operation to fail, we did several things:
+
+ * All files above a certain size are skipped;
+ * The corresponding system event contains a warning;
+ * The system administrator is notified by mail
+
+In order for this to work you need to add the following lines to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
+  .. sourcecode:: console
+
+    // The maximum file size (in bytes) that can be indexed- be careful
+    // not to go above your server limits
+    $fulltextsearch_max_indexed_file_size = 100000000;
+
+This value can then be managed via the Tuleap ``Admin`` area -> ``plugin adminstration`` -> ``FullText Search``.
+
+
 7.10
 ====
 
