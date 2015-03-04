@@ -857,3 +857,48 @@ In local.inc:
 
 Please note that you have to wait for the next SYSTEM_CHECK SystemEvent before
 using the feature.
+
+Upgrade from gitolite2 to gitolite3
+-----------------------------------
+
+
+Pre-requisite
+~~~~~~~~~~~~~
+
+Upgrade will not work if there are bad ssh keys in your configuration.
+You should run the following commands before any upgrade:
+
+  .. sourcecode:: console
+
+      /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/tools/utils/purge_bad_sshkeys.php
+
+if there is any output wait for night run of daily compute (so keys are dumped again) or run the daily cron by hand
+
+Upgrade
+~~~~~~~
+
+You may need to adapt names and path to your version of tuleap
+
+  .. sourcecode:: console
+
+      # as root, service tuleap stop
+      # su - gitolite
+      # git clone /var/lib/tuleap/gitolite/repositories/gitolite-admin.git
+      # su to root
+      # yum install gitolite3
+      # yum remove gitolite
+      # cp ~codendiadm/.ssh/id_rsa_gl-adm.pub /tmp
+      # su - gitolite
+      # ln -s /var/lib/tuleap/gitolite/repositories
+      # cp -a .gitolite.rc gitolite2.rc
+      # cp -a /usr/share/tuleap/plugins/git/etc/gitolite3.rc.dist .gitolite.rc
+      # tar -czf gitolite2-logs.tgz ~/.gitolite/logs
+      # rm -rf repositories/gitolite-admin.git
+      # gitolite setup -pk /tmp/id_rsa_gl-adm.pub
+      # cd gitolite-admin
+      # gitolite push -f
+      # install -g gitolite -o gitolite -m 00755 /usr/share/tuleap/plugins/git/hooks/post-receive-gitolite /usr/com/gitolite/.gitolite/hooks/common/post-receive
+      # edit ~/.gitolite.rc and uncomment GROUPLIST_PGM line
+      # find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;
+      # find /var/lib/tuleap/gitolite/repositories/ -type l \( -name "post-receive.mirrorpush" -o -name "gitolite-hooked" \)  -exec rm {} \;
+      # as root, service tuleap start
