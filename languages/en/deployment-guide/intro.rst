@@ -8,6 +8,18 @@ file, the default is automatically set for you.
 7.11
 ====
 
+Logrotate
+---------
+
+Logrotate might be configured to use "dateext" instead of ``.X``. This might create garbage in logs and can be an issue when attempting to copy
+logs from ``/var/log/httpd/blalba.1`` to ``/var/log/tuleap/YYYY/MM/blalba_YYYYMMDD.log``. We prevent now this behavior by adding "nodateext" option 
+to ``/etc/logrotate.d/httpd``. 
+
+See ``/usr/share/tuleap/src/etc/logrotate.httpd.conf`` for reference.
+
+7.11
+====
+
 CVS
 ---
 
