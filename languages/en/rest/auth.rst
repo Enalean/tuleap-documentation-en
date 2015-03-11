@@ -11,8 +11,16 @@ You can also see it in action on https://tuleap.net/api/explorer/
 Overview
 --------
 
-The RESt API requires authentication for most of the actions. This authentication
-is token based to reduce the risk of leaking a password.
+The RESt API is accessible both anonymously and with authentication although some 
+resources are accessible with authentication only.
+
+You can authenticate via token and HTTP Basic authentication although the former is
+advised as it reduces the risk of leaking a password.
+
+Note that invalid credentials will result in a server error even if the resource is accessible anonymously.
+
+Token-based Authentication
+--------------------------
 
 The general principle is to issue a request to the  ``/api/tokens`` route to get a token
 and re-use this token later-on to prove identity.
@@ -20,7 +28,7 @@ and re-use this token later-on to prove identity.
 Issued tokens are automatically revoked after 24 hours.
 
 Authentication
---------------
+``````````````
 
 When authentication is required or when the password expires, you will get a 401 http error
 
@@ -46,7 +54,7 @@ Example:
   ``curl -XPOST --header 'Content-type: application/json' -d '{"username":"john_doe", "password":"weakpassword"}' https://example.com/api/tokens``
 
 Use of the token
-----------------
+````````````````
 
 You must include 2 custom headers in your request:
 
@@ -58,9 +66,18 @@ Example:
   ``curl -XGET --header 'Content-type: application/json' --header 'X-Auth-Token: abcd' --header 'X-Auth-UserId: 115' https://example.com/api/projects/112``
 
 Token expiration
-----------------
+````````````````
 
 A token lasts for 24 hours. Once it expires you will get a ``401`` HTTP error code.
+
+HTTP Basic authentication
+-------------------------
+
+In order to authenticate, simply add your username and password to each request.
+
+Example:
+
+  ``curl -XGET --header 'Content-type: application/json' -u username:password https://example.com/api/projects/112``
 
 
 REST with XML
