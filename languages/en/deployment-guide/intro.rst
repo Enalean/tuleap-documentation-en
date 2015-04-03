@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.1
+===
+
+REST API
+--------
+
+A new parameter in ``local.inc`` allow users to query api in HTTP without SSL. By default HTTPS is enforced.
+
+  .. sourcecode:: php
+  
+    // Can query REST API without using HTTPS
+    // /!\ This is unsafe unless you have something else (reverse-proxy) 
+    //      providing the SSL Layer between you and the server /!\
+    $sys_rest_api_over_http = 0;
 
 7.11
 ====
