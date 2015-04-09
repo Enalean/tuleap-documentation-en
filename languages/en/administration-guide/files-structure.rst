@@ -59,7 +59,7 @@ Subversion Repositories
 
 The Subversion repositories of all Tuleap projects are created under
 the /var/lib/tuleap/svnroot directory. This directory is linked from
-/svnroot in the top directory. /var/lib/tuleap/svnsroot/*ProjectName*
+/svnroot in the top directory. /var/lib/tuleap/svnroot/*ProjectName*
 is the Subversion repository of project *ProjectName*. As opposed to
 CVS, Subversion manages the repository in a database acting as a virtual
 filesystem. Therefore access permission do not rely on the Linux file
