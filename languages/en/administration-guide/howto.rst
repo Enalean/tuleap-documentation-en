@@ -1025,3 +1025,26 @@ Upgrade on centos 6
       # find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;
       # find /var/lib/tuleap/gitolite/repositories/ -type l \( -name "post-receive.mirrorpush" -o -name "gitolite-hooked" \)  -exec rm {} \;
       # as root, service tuleap start
+
+
+.. _admin_howto_mediawiki_123:
+
+
+Upgrade to Mediawiki 1.23
+-------------------------
+
+This requires Centos 6.
+
+As of Tuleap 8.1, upgrade to Mediawiki 1.23 is delegated project by project because
+we (Tuleap development team) don't have a good view of the possible impacts of this update.
+
+Both versions are running in parallel. The objective is to allow a progressive deployment.
+
+Install new package:
+
+  .. sourcecode:: console
+
+      $> yum install php-mediawiki-tuleap-123
+
+Then, as site admin, on Admin page you will find a link to Mediawiki and control the list
+of projects that are migrated to 1.23

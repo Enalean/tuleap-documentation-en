@@ -7,6 +7,11 @@ file, the default is automatically set for you.
 8.1
 ===
 
+Mediawiki
+---------
+
+* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_howto_mediawiki123>`
+
 REST API
 --------
 
