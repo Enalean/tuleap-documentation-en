@@ -178,11 +178,11 @@ incomplete list of available widgets for the personal page:
 
 -  **Monitored File Packages** lists packages that you are currently
    monitoring, by project. To cancel any of the monitored items just
-   click on the trash icon (|image1|) next to the item label.
+   click on the trash icon (|trash_icon|) next to the item label.
 
 -  **Monitored Forums** lists forums that you are currently monitoring,
    by project. To cancel any of the monitored items just click on the
-   trash icon (|image2|) next to the item label.
+   trash icon (|trash_icon|) next to the item label.
 
 -  **My Artifacts** lists artifacts you have submitted or assigned to
    you, by project.
@@ -203,6 +203,8 @@ incomplete list of available widgets for the personal page:
 -  **RSS Reader** allows you to include public rss (or atom) feeds into
    your personal page.
 
+.. |trash_icon| image:: ../images/icons/trash.png
+
 .. _account-maintenance:
 
 Account Maintenance
@@ -221,7 +223,7 @@ you. However, we would like to draw your attention on some of them:
 
 -  Change your password or email adress.
 
--  **SSH shared keys**: this one has to do with the Shell Account 
+-  **SSH shared keys**: this one has to do with the Shell Account
    service. When you are a registered user, the Tuleap
    server gives you a personal shell account with the same
    login/password as for the Web interface. To automate the shell login
@@ -278,6 +280,3 @@ are some of the preferences you can define:
 
 -  **Activate the Lab mode**: give access to features in preview. This is for advanced users who
     know what they are doing.
-
-
-
