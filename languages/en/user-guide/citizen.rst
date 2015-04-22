@@ -10,17 +10,7 @@ Classes of Citizens
 --------------------
 
 Before we go further into the user registration process it is worth
-reviewing the various types of Tuleap citizens. There are
-basically 4 of them:
-
--  **Anonymous Users**: when you first visit the Tuleap site
-   you are typically an anonymous user. Anonymous users can browse the
-   Tuleap site but many of the Tuleap services
-   or Tuleap resources cannot be used or accessed by an
-   anonymous user (e.g. source code access is not possible, all the
-   monitoring facilities aren't either, etc.). So we strongly advise you
-   to become a registered user to take full advantage of the
-   Tuleap site.
+reviewing the various types of Tuleap citizens. There are always 3 of them:
 
 -  **Registered Users**: once you have created your own account (see
    below) you can use your login/password to authenticate yourself with
@@ -45,15 +35,33 @@ basically 4 of them:
    Tuleap project are elected as the first Project
    Administrators. Project Administrators have full rights over their
    projects except project deletion - a very unusual operation - that
-   can only be done by a Tuleap Team member. In the course
+   can only be done by a Site Administrator. In the course
    of the project life, the initial project administrator can grant (or
    revoke) the status of project administrator to any project member.
+
+In addition to those roles, depending of the platform configuration, there might be
+two extra roles:
+
+-  **Anonymous Users**: when you first visit the Tuleap site
+   you are typically an anonymous user. Anonymous users can browse the
+   site but many of the or resources cannot be used or accessed by an
+   anonymous user.
 
 -  **Restricted Users**: users who are project members, or even project
    administrators, but with restricted access rights: they cannot access
    pages from projects they are not member of. This special role is only
-   enabled on Tuleap servers in heterogeneous environments
+   enabled on servers in heterogeneous environments
    where corporate users and external consultants share the same server.
+
++-----------------+-----------------------+--------+---------+
+|                 | Public inc. resricted | Public | Private |
++=================+=======================+========+=========+
+| Registered user |  OK                   | OK     |         | 
++-----------------+-----------------------+--------+---------+
+| Restricted user |  OK                   |        |         |
++-----------------+-----------------------+--------+---------+
+| Project member  |  OK                   | OK     | OK      |
++-----------------+-----------------------+--------+---------+
 
 User Registration
 ------------------

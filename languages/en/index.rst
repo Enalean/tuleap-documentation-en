@@ -21,6 +21,7 @@ User-guide
    user-guide/new-project
    user-guide/project-summary
    user-guide/project-admin
+   user-guide/site-access
    user-guide/tracker
    user-guide/agile-dashboard
    user-guide/frs
