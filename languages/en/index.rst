@@ -12,8 +12,7 @@ User-guide
 ----------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    user-guide/intro
    user-guide/overview
@@ -51,8 +50,7 @@ Installation-guide
 ------------------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    installation-guide/intro.rst
    installation-guide/appliance-installation.rst
@@ -67,8 +65,7 @@ Administration guide
 --------------------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    administration-guide/admin-tasks
    administration-guide/files-permissions
@@ -84,8 +81,7 @@ Deployment guide
 ----------------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    deployment-guide/intro
 
@@ -93,8 +89,7 @@ Developer guide
 ----------------------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    developer-guide/intro
    developer-guide/contrib
