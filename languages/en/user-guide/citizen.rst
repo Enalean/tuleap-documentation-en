@@ -1,67 +1,8 @@
-
-
-
 Becoming a Tuleap Citizen
 =====================================
 
-.. _classes-of-citizens:
-
-Classes of Citizens
---------------------
-
-Before we go further into the user registration process it is worth
-reviewing the various types of Tuleap citizens. There are always 3 of them:
-
--  **Registered Users**: once you have created your own account (see
-   below) you can use your login/password to authenticate yourself with
-   Tuleap. Registered users have access to all
-   Tuleap projects including source code unless the project
-   administrators decided otherwise. And since the system knows about
-   you, it enables you to customize your view of the system through your
-   Personal Page, monitor Forums, software release, receive support
-   request follow-ups, site updates and many other useful things.
-
--  **Project Members**: users who are actively working on a
-   Tuleap hosted project. To become a project member, you
-   must first become a registered user and then ask a project
-   administrator to include you in the project members. Most of the time
-   project members are part of the project team but are not limited to
-   software developers. They can be in charge of the support activity,
-   the project documentation or the project management. Project members
-   can be granted different rights by the Project Administrator
-   according to their role in the team (see :ref:`project-administration` for more details).
-
--  **Project Administrators**: registered users who create a new
-   Tuleap project are elected as the first Project
-   Administrators. Project Administrators have full rights over their
-   projects except project deletion - a very unusual operation - that
-   can only be done by a Site Administrator. In the course
-   of the project life, the initial project administrator can grant (or
-   revoke) the status of project administrator to any project member.
-
-In addition to those roles, depending of the platform configuration, there might be
-two extra roles:
-
--  **Anonymous Users**: when you first visit the Tuleap site
-   you are typically an anonymous user. Anonymous users can browse the
-   site but many of the or resources cannot be used or accessed by an
-   anonymous user.
-
--  **Restricted Users**: users who are project members, or even project
-   administrators, but with restricted access rights: they cannot access
-   pages from projects they are not member of. This special role is only
-   enabled on servers in heterogeneous environments
-   where corporate users and external consultants share the same server.
-
-+-----------------+-----------------------+--------+---------+
-|                 | Public inc. resricted | Public | Private |
-+=================+=======================+========+=========+
-| Registered user |  OK                   | OK     |         | 
-+-----------------+-----------------------+--------+---------+
-| Restricted user |  OK                   |        |         |
-+-----------------+-----------------------+--------+---------+
-| Project member  |  OK                   | OK     | OK      |
-+-----------------+-----------------------+--------+---------+
+You can learn more about the various class of citizen in the dedicated section
+(see  :ref:`classes-of-citizens`).
 
 User Registration
 ------------------
