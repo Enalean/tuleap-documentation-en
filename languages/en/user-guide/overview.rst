@@ -284,9 +284,7 @@ describes all the Tuleap tools and services. A click on the
 "Help Index" link will direct you to the table of content of the
 Tuleap User Guide. The same user guide is used throughout
 the Tuleap site in the "Help" links that you'll find in
-almost every menu appearing on Tuleap. A PDF version of the
-integral user guide is also available in the "Site Documentation"
-section.
+almost every menu appearing on Tuleap.
 
 Site Documentation
 ~~~~~~~~~~~~~~~~~~
