@@ -2,8 +2,7 @@ Administration guide
 --------------------
 
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :maxdepth: 1
 
    administration-guide/admin-tasks
    administration-guide/files-permissions
