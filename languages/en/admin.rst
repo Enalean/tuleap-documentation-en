@@ -1,13 +1,15 @@
-Installation-guide
-------------------
+Administration guide
+--------------------
 
 .. toctree::
-   :maxdepth: 1
+   :numbered:
+   :maxdepth: 3
 
-   installation-guide/intro.rst
-   installation-guide/appliance-installation.rst
-   installation-guide/full-installation.rst
-   installation-guide/basic-configuration.rst
-   installation-guide/update.rst
-   installation-guide/advanced-installation.rst
-   installation-guide/advanced-configuration.rst
+   administration-guide/admin-tasks
+   administration-guide/files-permissions
+   administration-guide/files-structure
+   administration-guide/daemons
+   administration-guide/backup
+   administration-guide/services
+   administration-guide/customisations
+   administration-guide/howto
