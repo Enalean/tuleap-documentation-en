@@ -94,6 +94,14 @@ Integration of contributions
     # OR, if you have gerrit as a remote
     $ git push gerrit HEAD:master
 
+* Update Gerrit security:
+
+  .. code-block:: bash
+
+    $ git push username@gerrit:tuleap stable/master:refs/heads/security
+    # OR, if you have gerrit as a remote
+    $ git push gerrit HEAD:security
+
 * Update the corresponding artifacts by setting them to ``closed`` and adding message ``Integrated in Tuleap 5.4.99.3``
 * Update the corresponding artifacts by adding the gerrit x-ref ``gerrit #2548`` (from the gerrit URL)
 * Update the release artifact by adding an artifact link to the closed artifact. e.g. ``4589``
