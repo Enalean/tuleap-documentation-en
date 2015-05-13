@@ -855,6 +855,25 @@ In case of errors, check:
 - ``/var/lib/gitolite/.gitolite/logs``
 - ``/var/log/grokmirror/``
 
+
+Setup a gitolite mirror's configuration based on hostnames
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to speedup mirroring, you may want that Tuleap writes a configuration based on mirror's hostnames, so that
+gitolite will take it into account and mirroring will then be faster as it will not replicate all repositories to then
+delete the unrelevant ones. Only the relevant ones will then be replicated on the relevant mirrors.
+
+A prerequisite is that you need to have ``gitolite 3`` installed on your server. You'll find how to do it in this
+documentation.
+
+You must then define a hostname for the master (aka your Tuleap instance). To do so, edit the ``.gitolite.rc`` file you
+should find in ``/usr/com/gitolite`` for centos5 installations or ``/var/lib/gitolite`` for centos6 and uncomment and set the
+``HOSTNAME`` variable you'll find there.
+
+Once you've done this, you must ask tuleap to re-dump its gitolite configuration. To do so, as a site admin go to
+``Admin > Git Plugin`` and click on the `"Dump mirrored repositories configuration"` red button you'll find there. It will
+generate a system event; once it has passed, you're done.
+
 .. _admin_howto_docmanv1_to_docmanv2:
 
 
