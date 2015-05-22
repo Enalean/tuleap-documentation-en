@@ -16,6 +16,41 @@ Prerequisites:
 - docker
 - JQ
 
+Installing Docker on Fedora
+"""""""""""""""""""""""""""
+
+**Fedora 21**
+
+See also the `Docker documentation`_.
+
+.. _Docker documentation: http://docs.docker.com/installation/fedora/
+
+  .. code-block:: bash
+
+    # Download and install Docker
+    $> sudo yum install docker
+    # Start the docker daemon
+    $> sudo systemctl start docker
+    # Make the docker daemon start at boot
+    $> sudo systemctl enable docker
+    # Add yourself to the docker group to enable running docker commands without prefixing with sudo
+    $> sudo groupadd docker
+    $> sudo chown root:docker /var/run/docker.sock
+    $> sudo usermod -a -G docker $USERNAME
+    # Configure docker to use our DNS container instead of the default and remove the selinux option
+    # In the OPTIONS key, replace '--selinux-enabled' by '--bip=172.17.42.1/16 --dns=172.17.42.1'
+    $> sudo vim /etc/sysconfig/docker
+    # The following is asked in the sysconfig/docker file but reports an error (with Docker 1.6.0 on Fedora 21)
+    $> sudo setsebool -P docker_transition_unconfined=true
+    # Resulted in Boolean docker_transition_unconfined is not defined
+    # Stop the firewall to enable the docker containers to use our DNS container (otherwise you can access your containers using DNS but they can't use it themselves to link with other containers)
+    $> sudo systemctl stop firewalld
+
+Next, open the Network Manager. Go to the PCI Ethernet configuration (or Wi-Fi if you use it).
+Open the IPv4 tab and in the DNS block toggle "Automatic" to Off and add "172.17.42.1" at the top of the DNS list. Also add "8.8.8.8" after it to keep access to the rest of the net.
+
+Then, reboot. Check that your DNS server is still set and that the docker daemon started.
+
 Start a new docker container
 """"""""""""""""""""""""""""
 
