@@ -4,7 +4,7 @@ Full Installation
 Why should I use the Tuleap full installation?
 ----------------------------------------------
 
-The full installation is the common way to install tuleap. 
+The full installation is the common way to install tuleap.
 It uses your distribution package system and will provide a fully configurable and adjustable
 environment. It is robust so you can deploy production environment this way.
 
@@ -13,7 +13,7 @@ Requirements
 ------------
 
 To install Tuleap you will need a **fully dedicated server**. It can be **virtualized or physical**.
-It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides 
+It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a mutualized server
 will certainly cause probleme in both Tuleap and your other applications.
 
@@ -33,7 +33,7 @@ Installation
 
 This installation guide will cover the installation on the recommended system: Redhat/Centos 6.x. For other installation procedure please refer to the advanced guide.
 
--  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor). Go to 
+-  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor). Go to
 http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and install the given package. For example:
 ::
 
@@ -95,7 +95,6 @@ It will ask you for:
 Follow these commands until the required ports (above) are activated. We will be checking this each time we run ''netstat -lntp''
 
 * netstat -lntp
-* yum install glibc.i686
 * service openfire start
 * netstat -lntp
 
