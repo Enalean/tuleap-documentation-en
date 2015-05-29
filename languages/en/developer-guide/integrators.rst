@@ -47,7 +47,7 @@ Integration of contributions
 
   .. code-block:: bash
 
-    $ docker run -ti -v $PWD:/tuleap enalean/tuleap-generate-changelog "Description of small feature or patch"
+    $ docker run -v $PWD:/tuleap enalean/tuleap-generate-changelog "Description of small feature or patch"
 
   **Important:** Do **not** ``git add`` the updated changelogs and version.
 
