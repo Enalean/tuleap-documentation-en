@@ -46,7 +46,7 @@ See also the `Docker documentation`_.
     # Install tool to configure firewalld to allow DNS requests to enable the docker containers to use our DNS container (otherwise you can access your containers using DNS but they can't use it themselves to link with other containers)
     $> sudo yum install firewall-config
 
-Next, open the Firewall tool and set and check the DNS box for each of the profiles you use. Then restart Firewalld with `$> sudo systemctl restart firewalld`.
+Next, open the Firewall tool and set and check the DNS box for each of the profiles you use. Then restart Firewalld with :code:`$> sudo systemctl restart firewalld`.
 
 Finally, open the Network Manager. Go to the PCI Ethernet configuration (or Wi-Fi if you use it).
 Open the IPv4 tab and in the DNS block toggle "Automatic" to Off and add "172.17.42.1" at the top of the DNS list. Also add "8.8.8.8" after it to keep access to the rest of the net.
