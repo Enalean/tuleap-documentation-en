@@ -43,10 +43,12 @@ See also the `Docker documentation`_.
     # The following is asked in the sysconfig/docker file but reports an error (with Docker 1.6.0 on Fedora 21)
     $> sudo setsebool -P docker_transition_unconfined=true
     # Resulted in Boolean docker_transition_unconfined is not defined
-    # Stop the firewall to enable the docker containers to use our DNS container (otherwise you can access your containers using DNS but they can't use it themselves to link with other containers)
-    $> sudo systemctl stop firewalld
+    # Install tool to configure firewalld to allow DNS requests to enable the docker containers to use our DNS container (otherwise you can access your containers using DNS but they can't use it themselves to link with other containers)
+    $> sudo yum install firewall-config
 
-Next, open the Network Manager. Go to the PCI Ethernet configuration (or Wi-Fi if you use it).
+Next, open the Firewall tool and set and check the DNS box for each of the profiles you use. Then restart Firewalld with `$> sudo systemctl restart firewalld`.
+
+Finally, open the Network Manager. Go to the PCI Ethernet configuration (or Wi-Fi if you use it).
 Open the IPv4 tab and in the DNS block toggle "Automatic" to Off and add "172.17.42.1" at the top of the DNS list. Also add "8.8.8.8" after it to keep access to the rest of the net.
 
 Then, reboot. Check that your DNS server is still set and that the docker daemon started.
