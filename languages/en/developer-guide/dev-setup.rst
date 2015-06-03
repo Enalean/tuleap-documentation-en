@@ -10,11 +10,10 @@ Docker
 Introduction
 """""""""""""
 
-
 Prerequisites:
 
-- docker
-- JQ
+- docker (1.6 minimum)
+- docker-compose
 
 Installing Docker on Fedora
 """""""""""""""""""""""""""
@@ -53,6 +52,12 @@ Open the IPv4 tab and in the DNS block toggle "Automatic" to Off and add "172.17
 
 Then, reboot. Check that your DNS server is still set and that the docker daemon started.
 
+Installing Docker on Ubuntu
+"""""""""""""""""""""""""""
+
+Place here the DNS configuration
+
+
 Start a new docker container
 """"""""""""""""""""""""""""
 
@@ -60,22 +65,22 @@ Start a new docker container
 
   .. code-block:: bash
 
-    $ cd /path/to/tuleap_workspace
-    $ tools/docker/dev_start.sh <name_of_the_server>
+    $ cd /path/to/tuleap (for the time being the folder must be named 'tuleap')
+    $ make dev-setup
+    $ make start-dns
+    $ make start
 
-And voila, your server is up and running. The first time you run this command, docker will download tuleap base image. It's 1,6GB so please be patient.
-Edit the /etc/hosts file of your host and add the line given by the script. Something like:
+And voila, your server is up and running. The first time you run this command, docker will download tuleap base image. It's 1,3GB so please be patient.
 
-  .. code-block:: bash
+This command will start 3 containers:
 
-    172.17.0.4     <name_of_the_server>.<name_of_host>
+* One for the web front end (you can access it at http://tuleap_web_1.tuleap-aio-dev.docker)
+* One for the LDAP (tuleap_ldap_1)
+* One for the mysql database (tuleap_db_1)
 
-You can start as many servers as you like, but they will all share the current tuleap source.
-  
   .. NOTE:: Please note that the docker image is read-only, and every modification to the OS will be lost at reboot. 
    If you need to add/change anything and make it persistant, fork and ammend the Dockerfile (https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/)
    Everything but the OS (tuleap config, database, user home) is saved in /srv/dock/<name_of_the_server> on the host.
-   
 
 
 **CentOS 5 docker**
@@ -106,23 +111,6 @@ Advanced setup
     
       docker run -d --name=elast enalean/elasticsearch-tuleap
       docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
-
-- You can add a LDAP server for development purpose with:
-    .. code-block:: bash
-
-      $ docker run -p 389:389 -d -v /srv/docker/ldap:/data enalean/ldap-dev
-    
-  Then you can start adding people (you can find a template here: https://github.com/Enalean/docker-ldap-dev/blob/master/bob.ldif):
-
-  .. code-block:: bash
-
-      $ ldapadd -f bob.ldif -x -D 'cn=Manager,dc=tuleap,dc=local' -w welcome0
-      $ ldapsearch -x -LLL -b 'dc=tuleap,dc=local' 'cn=bob*'
-    
-  Notes:
-    * The IP address you need to declare in Tuleap ldap plugin is the one of your host machine
-    * You might also want to use --link docker option instead of publish 389 on your localhost
-    * /srv/docker/ldap is were data will be stored on your host
     
     
 Vagrant
