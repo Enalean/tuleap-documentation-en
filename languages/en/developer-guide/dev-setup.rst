@@ -55,8 +55,15 @@ Then, reboot. Check that your DNS server is still set and that the docker daemon
 Installing Docker on Ubuntu
 """""""""""""""""""""""""""
 
-Place here the DNS configuration
+You should edit `/etc/default/docker` and add:
 
+  .. code-block:: bash
+  
+  # We add 8.8.8.8 as default dns server so that 
+  # we can access the Internet even if dnsdock image is not up
+  DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8"
+
+You may need to also add `nameserver 172.17.42.1` to your `resolv.conf` file.
 
 Start a new docker container
 """"""""""""""""""""""""""""
