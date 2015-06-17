@@ -1,4 +1,4 @@
-Upgrate to a newer version
+Upgrade to a newer version
 =========================
 
 You should inform in advance end users that the platform will be stopped.
