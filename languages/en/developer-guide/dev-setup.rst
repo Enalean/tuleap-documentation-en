@@ -58,8 +58,8 @@ Installing Docker on Ubuntu
 You should edit ``/etc/default/docker`` and add:
 
   .. code-block:: bash
-  
-    # We add 8.8.8.8 as default dns server so that 
+
+    # We add 8.8.8.8 as default dns server so that
     # we can access the Internet even if dnsdock image is not up
     DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8"
 
@@ -85,7 +85,7 @@ This command will start 3 containers:
 * One for the LDAP (tuleap_ldap_1)
 * One for the mysql database (tuleap_db_1)
 
-  .. NOTE:: Please note that the docker image is read-only, and every modification to the OS will be lost at reboot. 
+  .. NOTE:: Please note that the docker image is read-only, and every modification to the OS will be lost at reboot.
    If you need to add/change anything and make it persistant, fork and ammend the Dockerfile (https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/)
    Everything but the OS (tuleap config, database, user home) is saved in /srv/dock/<name_of_the_server> on the host.
 
@@ -115,11 +115,11 @@ Advanced setup
 - This will start a Tuleap image named 'tuleap', and link it to a Elastic Search image named 'elast'
 
     .. code-block:: bash
-    
+
       docker run -d --name=elast enalean/elasticsearch-tuleap
       docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
-    
-    
+
+
 Vagrant
 ```````
 Introduction
@@ -566,21 +566,21 @@ Go at the end of the ``/etc/httpd/conf.d/php.conf`` file and modify the latest l
         php_flag display_errors on
         php_flag html_errors on
         php_value error_reporting "6143"
-        
+
 Edit ``/etc/php.d/xdebug.ini`` and add those lines:
 
     .. code-block:: properties
 
         ; Enable xdebug extension module
         zend_extension=/usr/lib64/php/modules/xdebug.so
-        
+
         xdebug.max_nesting_level=200
-        
+
         xdebug.var_display_max_depth=3
         xdebug.profiler_enable_trigger=1
         xdebug.profiler_output_dir="/mnt/manuel/workspace/cachegrind"
         xdebug.profiler_output_name="cachegrind.out.%s.%r"
-        
+
 How to use it:
 
 - When you add ``XDEBUG_PROFILE=1`` as a request parameter (e.g. ￼``http://..../?stuff&XDEBUG_PROFILE=1``) it will generate a profile info into  ``profiler_output_dir``
@@ -898,7 +898,12 @@ ForgeUpgrade
 Database upgrading
 ```````````````````
 
-Each version of Tuleap is likely to differ from the next one on many levels including in it's database structure. To manage this, ForgeUpgrade? has inbuilt internal functionality akin to that of commonly used tools such as dbdeploy or MIGRATEdb. Whereas the latter use sql and xml scripts to describe each database change, ForgeUpgrade? uses php scripts. The upgrqding of the database happens when the above command is run: /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/codendi/forgeupgrade/config.ini update
+Each version of Tuleap is likely to differ from the next one on many levels including in it's database structure. To manage this, ForgeUpgrade? has inbuilt internal functionality akin to that of commonly used tools such as dbdeploy or MIGRATEdb. Whereas the latter use sql and xml scripts to describe each database change, ForgeUpgrade? uses php scripts.
+
+The upgrading of the database happens when the above command is run:
+  .. code-block:: bash
+
+    $> /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
 
 Database scripts
 """"""""""""""""
