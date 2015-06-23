@@ -156,7 +156,7 @@ to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
 General
 -------
 
-Starting this release, the tuleap system logs are handled by logroate.
+Starting this release, the tuleap system logs are handled by logrotate.
 The default configuration is to rotate on weekly basis and to keep 4 weeks of logs.
 
 Local.inc:
