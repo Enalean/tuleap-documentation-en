@@ -4,6 +4,32 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.3
+===
+
+Password storage
+--------
+
+We have added a new and more secure way to store passwords in Tuleap. This feature is activated
+default on new intalls but the legacy way is kept on the already running instances
+for compatibility purposes. We greatly advise to use this new functionality if you can.
+
+To activate the new password storage on a already existing instance you must add the
+following line in your ``local.inc``:
+  .. sourcecode:: php
+
+    $sys_keep_md5_hashed_password = false;
+
+Execute this script if you have the IM plugin installed:
+  .. sourcecode:: console
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
+
+Execute this script if you have the IM plugin installed:
+  .. sourcecode:: console
+
+    #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
+
 8.1
 ===
 
@@ -18,9 +44,9 @@ REST API
 A new parameter in ``local.inc`` allow users to query api in HTTP without SSL. By default HTTPS is enforced.
 
   .. sourcecode:: php
-  
+
     // Can query REST API without using HTTPS
-    // /!\ This is unsafe unless you have something else (reverse-proxy) 
+    // /!\ This is unsafe unless you have something else (reverse-proxy)
     //      providing the SSL Layer between you and the server /!\
     $sys_rest_api_over_http = 0;
 
@@ -31,8 +57,8 @@ Logrotate
 ---------
 
 Logrotate might be configured to use "dateext" instead of ``.X``. This might create garbage in logs and can be an issue when attempting to copy
-logs from ``/var/log/httpd/blalba.1`` to ``/var/log/tuleap/YYYY/MM/blalba_YYYYMMDD.log``. We prevent now this behavior by adding "nodateext" option 
-to ``/etc/logrotate.d/httpd``. 
+logs from ``/var/log/httpd/blalba.1`` to ``/var/log/tuleap/YYYY/MM/blalba_YYYYMMDD.log``. We prevent now this behavior by adding "nodateext" option
+to ``/etc/logrotate.d/httpd``.
 
 See ``/usr/share/tuleap/src/etc/logrotate.httpd.conf`` for reference.
 
@@ -130,7 +156,7 @@ to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
 General
 -------
 
-Starting this release, the tuleap system logs are handled by logroate. 
+Starting this release, the tuleap system logs are handled by logroate.
 The default configuration is to rotate on weekly basis and to keep 4 weeks of logs.
 
 Local.inc:
@@ -180,7 +206,7 @@ You can configure git and http urls in ``git/etc/config.inc``:
     // Tell to Tuleap that an HTTPS server for git is available at the given
     // address
     // $git_http_url = "https://%server_name%/git";
-    
+
     // Define a custom ssh URL to get access to the sources
     // You can disable display of this url by activating this variable and setting
     // to '' (empty string)
