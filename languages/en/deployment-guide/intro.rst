@@ -4,6 +4,32 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.4
+===
+
+Drop support of insecure SSL/TLS configurations
+--------
+With this release we have updated the default TLS Apache configuration we provide with Tuleap.
+All new instances of Tuleap will use this one but if you already have an installation,
+your configuration will be left untouched. However, we encourage you to update your
+configuration for security reasons. As a side effect, this change also prevents Internet Explorer 7 and
+Internet Explorer 8 on Windows XP to be able to connect to the HTTPS server.
+
+If you want to update your configuration, replace the line SSLProtocol and SSLCipherSuite
+``/etc/httpd/conf/ssl.conf`` by:
+  .. sourcecode:: configuration
+
+    # SSL Protocol support:
+    # List the enable protocol levels with which clients will be able to
+    # connect.  Disable SSLv2 and SSLv3 access by default:
+    SSLProtocol all -SSLv2 -SSLv3
+
+    #   SSL Cipher Suite:
+    # List the ciphers that the client is permitted to negotiate.
+    # See the mod_ssl documentation for a complete list.
+    SSLCipherSuite ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
+    SSLHonorCipherOrder on
+
 8.3
 ===
 
