@@ -62,7 +62,7 @@ Execute this script if you have the IM plugin installed:
 Mediawiki
 ---------
 
-* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_howto_mediawiki123>`
+* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_howto_mediawiki_123>`
 
 REST API
 --------
