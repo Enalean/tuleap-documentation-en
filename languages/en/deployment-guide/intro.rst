@@ -51,7 +51,7 @@ Execute this script if you have the IM plugin installed:
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
-Execute this script if you have the IM plugin installed:
+Execute this script if you have the Proftpd plugin installed:
   .. sourcecode:: console
 
     #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
