@@ -564,7 +564,7 @@ Here is a view of the Tuleap git plugin administration where you are able to add
     # codendiadm on Tuleap
     codendiadm@my.tuleap.server.net$ ssh -p 29418 -i /home/codendiadm/.ssh/id_rsa-gerrit admin-my.tuleap.server.net@gerrit.instance.com gerrit -h
 
-    # Gerrit user on Gerrt server (replication)
+    # Gerrit user on Gerrit server (replication)
     gerrit@gerrit.instance.com$ ssh gitolite@my.tuleap.server.net
 
 Enabling Gerrit project deletion via Tuleap
