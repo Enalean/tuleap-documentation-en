@@ -108,16 +108,11 @@ Then the list of available groups would be:
 Project's permissions
 ---------------------
 
-In addition to site configuration, project administrators can decide which user group has access to their project.
-Depending on the site access configuration, some of the following user groups will be available:
+In addition to site configuration, project administrators can decided whether their projects are:
 
-* **Anonymous**
-* **Registered + Restricted** (only if platform is ``Registered + Restricted``)
-* **Registered**
-* **Project Members**
-
-Note that if the project member chooses *Anonymous*, say, then every group with greater permissions than those
-of anonymous users such as *Registered* will also be granted access.
+* **Public**
+* **Private**
+* **Public inc. Restricted** (only if platform is ``Registered + Restricted``)
 
 Resources visibility
 ````````````````````
@@ -127,7 +122,7 @@ You can find bellow the complete matrix of *Who access What* depending to the va
 +-----------------------+---------------------------------------------+---------------------------------------------+-----------------------------------------------------------------------+
 |   Site configuration  |                 Anonymous                   |                 Registered                  |                      Registered + Restricted                          |
 +-----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+
-| Project configuration |       Anonymous      |    Project Members   |      Registered      |    Project Members   | Registered + Restricted |      Registered      |   Project Members    |
+| Project configuration |         Public       |       Private        |         Public       |       Private        | Public incl. Restricted |       Public         |         Private      |
 +=======================+======================+======================+======================+======================+=========================+======================+======================+
 |   Anonymous           |        **YES**       |          NO          |         N/A          |         N/A          |           N/A           |         N/A          |          N/A         |
 +-----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+
@@ -147,19 +142,19 @@ Notes:
 
 * N/A means that this option is not possible according to the configuration.
 * Project admins
-* At the time being, ``Authenticated users`` group is only available for "git repositories" and "mediawiki read/ write access" resource
+* At the time being, ``Authenticated users`` group is only available for "git repositories" resource
 
 Resource configuration
 ``````````````````````
 
 The following matrix describe the resource manager possibilities according to various configurations.
 
-At the time being, this applies only to "git repositories" and "mediawiki read/ write access"
+At the time being, this applies only to "git repositories"
 
 +-----------------------+---------------------------------------------+---------------------------------------------+-----------------------------------------------------------------------+
 |   Site configuration  |                 Anonymous                   |                 Registered                  |                      Registered + Restricted                          |
 +-----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+
-| Project configuration |       Anonymous      |    Project Members   |     Registered       |    Project Members   | Registered + Restricted |     Registered       |   Project Members    |
+| Project configuration |         Public       |       Private        |         Public       |       Private        | Public incl. Restricted |       Public         |         Private      |
 +=======================+======================+======================+======================+======================+=========================+======================+======================+
 |   Available groups    | * Anonymous          | * Project members    | * Registered user    | * Project members    | * Authenticated users   | * Registered user    | * Project members    |
 |                       | * Registered user    | * Project admins     | * Project members    | * Project admins     | * Registered user       | * Project members    | * Project admins     |
@@ -184,7 +179,7 @@ However, permissions apply the very same way:
 +-----------------------+---------------------------------------------+---------------------------------------------+-----------------------------------------------------------------------+
 |   Site configuration  |                 Anonymous                   |                 Registered                  |                      Registered + Restricted                          |
 +-----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+
-| Project configuration |      Anonymous       |    Project Members   |     Registered       |    Project Members   | Registered + Restricted |     Registered       |     Project Members  |
+| Project configuration |         Public       |       Private        |         Public       |       Private        | Public incl. Restricted |       Public         |         Private      |
 +=======================+======================+======================+======================+======================+=========================+======================+======================+
 |   Anonymous           |        **YES**       |          NO          |         NO           |         NO           |           NO            |         NO           |          NO          |
 +-----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+
