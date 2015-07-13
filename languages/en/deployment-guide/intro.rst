@@ -7,6 +7,14 @@ file, the default is automatically set for you.
 8.4
 ===
 
+API Explorer update
+--------
+We have updated the API Explorer. The package restler-api-explorer must be considered deprecated.
+To update to the new Explorer install the package tuleap-api-explorer and remove or
+at least comment the old Apache configuration. You probably have copied this configuration at
+``/etc/httpd/conf.d/tuleap-plugins/tuleap-api-explorer.conf``. After the removal,
+you need to restart Apache.
+
 Drop support of insecure SSL/TLS configurations
 --------
 With this release we have updated the default TLS Apache configuration we provide with Tuleap.
