@@ -4,6 +4,26 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.5
+===
+
+User management via Active Directory
+------------------------------------
+
+A new template has been added to help configure Tuleap with Active Directory. You can find
+it in the sources ``plugins/ldap/etc/ActiveDirectory.inc.dist``
+
+If you have an existing ldap set-up and wish to be compatible with Active Directory then you will need to update
+the file ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` with these extra properties
+
+.. sourcecode:: php
+
+        // The type of the ldap server
+        $sys_ldap_server_type = 'ActiveDirectory';
+
+        // The identifier of a user group
+        $sys_ldap_grp_uid = 'sAMAccountName';
+
 8.4
 ===
 

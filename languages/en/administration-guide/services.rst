@@ -305,72 +305,16 @@ any mailing lists created by Tuleap projects.
 LDAP
 ----
 
-In ``/etc/tuleap/conf/local.inc`` you should set ``$sys_auth_type = 'ldap';``
+You first need to install the ldap plugin in the Plugin Administration section.
+You will be asked to choose the default configuration template: either OpenLDAP or Active Directory.
 
-Then update ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
+In ``/etc/tuleap/conf/local.inc`` you need to then set ``$sys_auth_type = 'ldap';``
 
-Example with Active Directory:
 
-  .. sourcecode:: php
-
-        $sys_ldap_server = 'ldapserver.mycompany.com';
-        
-        // To enable LDAP information on Codendi users, also define the DN 
-        // (distinguised name) to use in LDAP queries.
-        // The ldap filter is the filter to use to query the LDAP directory
-        // (%name% are substituted with the value from the user table)
-        $sys_ldap_dn     = 'DC=mygroup,DC=mycompany,DC=com';
-        $sys_ldap_filter = 'sAMAccountName=%ldap_name%';
-        
-        // For LDAP systems that do not accept anonymous binding, define here
-        // a valid DN and password:
-        $sys_ldap_bind_dn = "AD-DOMAIN\special_login";
-        $sys_ldap_bind_passwd = "xxxxx";
-        
-        // LDAP authentication:
-        $sys_ldap_auth_dn     = 'DC=mygroup,DC=mycompany,DC=com';
-        $sys_ldap_auth_filter = 'sAMAccountName=%ldap_name%';
-        
-        $sys_ldap_search_user='(|(sAMAccountName=%words%)(cn=%words%)(mail=%words%))';
-        $sys_ldap_eduid_filter='sAMAccountName=%eduid%';
-        
-        $sys_ldap_eduid = 'samaccountname';   
-        $sys_ldap_cn    = 'cn';
-        $sys_ldap_mail  = 'mail';
-        $sys_ldap_login = 'samaccountname';
-
-Example with OpenLDAP:
-
-  .. sourcecode:: php
-
-        // Should be either 'ldap' or 'codendi'
-        $sys_auth_type = 'ldap';
-        
-        $sys_ldap_server = 'myldapserver';
-        
-        // To enable LDAP information on CodeX users, also define the DN
-        // (distinguised name) to use in LDAP queries.
-        // The ldap filter is the filter to use to query the LDAP directory
-        // (%name% are substituted with the value from the user table)
-        $sys_ldap_dn     = 'DC=mygroup,DC=mycompany,DC=com';
-        $sys_ldap_filter = 'mail=%email%';
-        
-        // For LDAP systems that do not accept anonymous binding, define here
-        // a valid DN and password:
-        //$sys_ldap_bind_dn = "ldapsearch";
-        //$sys_ldap_bind_passwd = "xxxxxxxxx";
-        
-        // LDAP authentication:
-        $sys_ldap_auth_dn = 'uid=%ldap_name%,ou=People,dc=mygroup,dc=mycompany,dc=com';
-        $sys_ldap_auth_filter = 'uid=%ldap_name%';
-        
-        $sys_ldap_search_user='(|(uid=%words%)(cn=%words%)(mail=%words%))';
-        $sys_ldap_eduid_filter='uid=%eduid%';
-        
-        $sys_ldap_eduid = 'uid';
-        $sys_ldap_cn    = 'displayname';
-        $sys_ldap_mail  = 'mail';
-        $sys_ldap_login = 'uid';
+Once the plugin is installed, you will need to customise the properties in order to
+adapt it to your ldap server. Although you can tweak the settings from the plugin administration view,
+greater details and hidden options are available if you update
+``/etc/tuleap/plugins/ldap/etc/ldap.inc`` directly.
 
 OpenFire (Instant Messaging)
 ----------------------------
