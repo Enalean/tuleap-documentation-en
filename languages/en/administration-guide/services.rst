@@ -316,6 +316,13 @@ adapt it to your ldap server. Although you can tweak the settings from the plugi
 greater details and hidden options are available if you update
 ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` directly.
 
+Things to note with Active Directory
+
+* The ``GUID`` property as an identifier is not yet supported; you should use ``sAMAccountName``
+* Consequently, if you rename a user, Tuleap is unable to know that the user has be renamed and considers that the user has been deleted and a new one created
+* The currently experimental ``ldap write`` feature only works with an OpenLDAP type of server and the write server must also be the read server.
+
+
 OpenFire (Instant Messaging)
 ----------------------------
 
