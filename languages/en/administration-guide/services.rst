@@ -305,6 +305,8 @@ any mailing lists created by Tuleap projects.
 LDAP
 ----
 
+**Set Up**
+
 You first need to install the ldap plugin in the Plugin Administration section.
 You will be asked to choose the default configuration template: either OpenLDAP or Active Directory.
 
@@ -316,12 +318,22 @@ adapt it to your ldap server. Although you can tweak the settings from the plugi
 greater details and hidden options are available if you update
 ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` directly.
 
-Things to note with Active Directory
+**Daily Synchronisation**
 
-* The ``GUID`` property as an identifier is not yet supported; you should use ``sAMAccountName``
-* Consequently, if you rename a user, Tuleap is unable to know that the user has be renamed and considers that the user has been deleted and a new one created
-* The currently experimental ``ldap write`` feature only works with an OpenLDAP type of server and the write server must also be the read server.
+You can enable the Daily Synchronisation by setting the property ``sys_ldap_daily_sync`` to ``1`` in the plugin administration section of the interface.
+If activated, once per day, Tuleap will go through all the platform's ldap users and
 
+* check they still exist in the LDAP directory. If not found, their accounts become suspended.
+* (OpenLDAP servers only) update the login name if it has changed.
+
+Note that you can also set the ``sys_ldap_daily_sync_retention_period`` (retention period) for suspended users, i.e. the number of days after which a suspended ldap user's status will switch to deleted. 
+Also, if you want to ensure that all your users do not become suspended due to a temporary server offline issue, you can set a threshold, ``sys_ldap_threshold_users_suspension``, i.e. the maximum percentage of users that can be suspended in one go.
+
+.. NOTE::
+  Active Directory limitations
+    * The ``GUID`` property as an identifier is not yet supported; you should use ``sAMAccountName``
+    * Consequently, if you rename a user, Tuleap is unable to know that the user has be renamed and considers that the user has been deleted and a new one created
+    * The currently experimental ``ldap write`` feature only works with an OpenLDAP type of server and the write server must also be the read server.
 
 OpenFire (Instant Messaging)
 ----------------------------
