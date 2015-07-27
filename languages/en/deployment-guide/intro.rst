@@ -72,7 +72,7 @@ To activate the new password storage on a already existing instance you must add
 following line in your ``local.inc``:
   .. sourcecode:: php
 
-    $sys_keep_md5_hashed_password = false;
+    $sys_keep_md5_hashed_password = 0;
 
 Execute this script if you have the IM plugin installed:
   .. sourcecode:: console
