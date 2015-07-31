@@ -308,7 +308,7 @@ To use it, you have to do:
 
         su - codendiadm
         cd /usr/share/tuleap/
-        src/utils/php-launcher.sh src/utils/import_project_xml.php PROJECT_ID_IMPORT PROJECT_ADMIN_USERNAME PATH_TO_ARCHIVE
+        src/utils/php-launcher.sh src/utils/import_project_xml.php -p PROJECT_ID_IMPORT -u PROJECT_ADMIN_USERNAME -i PATH_TO_ARCHIVE
 
 
 Known issues / limitation
