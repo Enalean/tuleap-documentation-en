@@ -98,7 +98,7 @@ The following conditions have to be met for your logo to be displayed in Mediawi
 
 - The logo must be named ``.wgLogo.png`` exactly (notice the dot prefix).
 - It must be located in ``/var/lib/tuleap/mediawiki/projects/<project-id>/images/``. Ask your site administrators to upload it there for you.
-- Its height and width _should_ be 155px x 155px but can be smaller or larger, as it will always be adapted to these dimensions.
+- Its height and width *should* be 155px x 155px but can be smaller or larger, as it will always be adapted to these dimensions.
 
 
 Mediawiki References
