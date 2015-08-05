@@ -25,21 +25,21 @@ If they aren't, they won't be able to access Mediawiki from public or private pr
 Permissions
 -----------
 
-Note for long time Mediawiki users. Contrary of default Mediawiki, in Tuleap 'anonymous' can only Read pages (they cannot create nor edit).
+Note for long time Mediawiki users. Contrary to default Mediawiki, in Tuleap 'anonymous' can only Read pages (they cannot create nor edit).
 
 As of today, when you have a public Tuleap project, you cannot block anonymous users to browse the pages.
 
-Shall you need to have a private Mediawiki, you should switch your project to Private.
+Should you need to have a private Mediawiki, you should switch your project to Private.
 
 Mapping between Tuleap and Mediawiki user groups
 `````````````````````````````````````````````````
 
 There is a default mapping between Tuleap and Mediawiki default user groups.
 
-Users added in Tuleap groups will be automatically added in corresponding Mediawiki groups. It is no more possible
+Users added in Tuleap groups will be automatically added in corresponding Mediawiki groups. It is no longer possible
 to add users in Mediawiki groups directly from Mediawiki.
 
-For instance, by adding a user in your project, he will be added in user, autoconfirmed and emailconfirmed Mediawiki groups.
+For instance, by adding a user in your project, he will be added in the user, autoconfirmed and emailconfirmed Mediawiki groups.
 This is fully transparent for users and project adminstrators. As of today, there is no way to create a
 custom mapping from the Mediawiki service.
 
@@ -91,6 +91,14 @@ Compatibility view
 In order to accommodate for mediawiki plugins that are not compatible with Tuleap's window rendering there is an option to enable
 a compatibility view. If checked and if the site administrators have set it up then the mediawiki in that project will take a standalone
 appearance. There will be links on the sidebar that will bring you back to your project area.
+
+Displaying your project's logo in Mediawiki
+-------------------------------------------
+The following conditions have to be met for your logo to be displayed in Mediawiki:
+
+- The logo must be named ``.wgLogo.png`` exactly (notice the dot prefix).
+- It must be located in ``/var/lib/tuleap/mediawiki/projects/<project-id>/images/``. Ask your site administrators to upload it there for you.
+- Its height and width _should_ be 155px x 155px but can be smaller or larger, as it will always be adapted to these dimensions.
 
 
 Mediawiki References
