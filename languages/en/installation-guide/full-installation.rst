@@ -18,7 +18,7 @@ a full suite of software and is deeply integrated with its host system. Installi
 will certainly cause probleme in both Tuleap and your other applications.
 
 Tuleap can be installed on linux x86_64 systems:
--  **Centos or Redhat 6.x** is the recommended platform
+-  **Centos or Redhat 6.x** is the recommended platform (note: version 7 is not yet supported)
 -  Centos or Redhat 5.x with php 5.3 is still maintained but not recommended anymore
 -  Debian 7.x is in alpha version. It is not recommended and maintained. Use it at your own risks.
 
@@ -58,6 +58,7 @@ http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and
 -  **Install Tuleap** by running the following command:
 
 ::
+
 
     yum install --enablerepo=rpmforge-extras tuleap-all
 
