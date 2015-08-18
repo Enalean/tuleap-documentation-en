@@ -122,24 +122,6 @@ the JSON of this file has to be valid.
 Finally, each tour is shown on the page until the user decides to "End" the tour. Upon clicking this, a user will not see a tour
 by that name again.
 
-Site Documentation
-------------------
-
-Site Documentation is available through "Help" in the menu. Note that it actually points to the Document Manager of the Admin Project. This project is automatically defined when the Tuleap database is initialized. It comes with group_id 1 (ONE).
-
-All documents stored in the document manager of the 'Admin Project' will automatically appear under 'Site Documentation' (except those with restricted access. See the User Guide for more details on the Document Manager service).
-
-Site Documentation contains Tuleap documentation which actually points to the User Guide. The User Guide has been written in XML with the DocBook? DTD and is stored under the top level 'documentation' directory in the Tuleap source repository. To activate the on-line help simply check out the documentation directory at the same place as the src and site-content directories.
-
-    *IMPORTANT REMARK**
-
-The User Guide contains references to the company name, server name running Tuleap, etc. These pieces of information vary from one site to another. Therefore a specific file has been introduced at /usr/share/codendi/documentation/user_guide/xml/ParametersLocal?.dtd that you can use to customize the content of the User Guide. To do so
-    Copy /usr/share/codendi/documentation/user_guide/xml/ParametersLocal?.dtd to /etc/codendi/documentation/user_guide/xml/ParametersLocal?.dtd Edit the file you just copied and redefine the XML entities that govern the site specific information. For a list of the available XML entities that you can redefine: see the /usr/share/codendi/documentation/user_guide/xml/en_US/ParametersDefault?.dtd . Regenerate the documentation by running the script /usr/share/codendi/src/utils/generate_doc.sh
-
-Also notice that the HTML and PDF versions of the User Guide are not stored in the source repository. They are generated from the XML files using the script /usr/share/codendi/src/utils/generate_doc.sh. You can run this script by hand from the codendiadm Linux account and our advice is also to include it in the codendiadm crontab so that it runs once a day and automatically regenerates the documentation when needed.
-
-For the script to work properly you must have the JRE (Java Runtime Environment) and the DocBook? processing chain installed properly. See the section about specific software packages to install.
-
 Project Web Site
 ~~~~~~~~~~~~~~~~
 
