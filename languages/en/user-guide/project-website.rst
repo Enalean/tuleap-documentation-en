@@ -35,6 +35,44 @@ If the project team has not yet created its own Web pages, you'll see
 the default project home page informing you that the site will come soon
 as well as a link back to the Tuleap site.
 
+Visiting a Web Site under HTTPS
+--------------------
+If you want to access to a project web site using HTTPS, you will need to edit
+the Apache TLS configuration in ``/etc/httpd/conf/ssl.conf``. Add the following informations:
+- Add ``NameVirtualHost *:443`` before any virtualhost declaration
+- Take example to this virtualhost to add at end of your file:
+
+::
+
+    <VirtualHost *:443>
+        ServerName diapason.intra.cea.fr
+        ServerAlias *.diapason.intra.cea.fr
+        VirtualDocumentRoot /home/groups/%1/htdocs
+        # We won't allow cgi scripts to run on project web sites. (see installation guide)
+        DirectoryIndex index.html index.php
+        # PHP variables
+        php_admin_value open_basedir "/home/groups/"
+        php_admin_value include_path "."
+        php_admin_flag safe_mode on
+        php_admin_flag safe_mode_gid on
+        <Directory /home/groups>
+               Options Indexes FollowSymlinks
+               AllowOverride All
+               order allow,deny
+               allow from all
+       </Directory>
+        LogFormat "%v %h %l %u %t \"%r\" %>s %b" vhost
+        CustomLog logs/vhosts-access_log vhost
+        SSLEngine on
+        SSLProtocol all -SSLv2 -SSLv3
+        SSLCipherSuite ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
+        SSLHonorCipherOrder on
+        SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+        SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+    </VirtualHost>
+
+Note that you will need to use a x509 wildcard certificate or a specific certificate for each website.
+
 Web Site Creation
 ------------------
 
