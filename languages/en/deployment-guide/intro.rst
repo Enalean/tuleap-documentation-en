@@ -4,6 +4,24 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.7
+===
+
+Git evolution on CentOS 5
+--------
+
+With the introduction of the truncated notifications in the Git plugin, we have been forced to do some changes.
+To kept the Git plugin fully functionnal, you must add the following informations at the end of your sudoers
+file which is generally located at /etc/sudoers:
+
+.. sourcecode:: bash
+
+        Defaults:gitolite !requiretty
+        Defaults:gitolite !env_reset
+        gitolite ALL= (codendiadm) SETENV: NOPASSWD: /usr/share/codendi/plugins/git/hooks/post-receive.php
+
+Note that only Tuleap instances running on CentOS 5 are concerned.
+
 8.5
 ===
 
