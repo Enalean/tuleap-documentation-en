@@ -17,10 +17,12 @@ It is not recommended to install Tuleap on a server that hosts other application
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a mutualized server
 will certainly cause probleme in both Tuleap and your other applications.
 
-Tuleap can be installed on linux x86_64 systems:
--  **Centos or Redhat 6.x** is the recommended platform
--  Centos or Redhat 5.x with php 5.3 is still maintained but not recommended anymore
--  Debian 7.x is in alpha version. It is not recommended and maintained. Use it at your own risks.
+Tuleap can be installed on the following Linux x86_64 systems:
+ -  **CentOS or RedHat 6.x** is the recommended platform
+ -  CentOS or RedHat 5.x with PHP 5.3 is still maintained but not recommended anymore
+ -  Debian 7.x is in alpha version. It is not recommended and maintained. Use it at your own risks.
+
+Note that **CentOS or RedHat 7.x is not yet supported**.
 
 The server will need an Internet connection as it will download external packages
 
@@ -58,6 +60,7 @@ http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and
 -  **Install Tuleap** by running the following command:
 
 ::
+
 
     yum install --enablerepo=rpmforge-extras tuleap-all
 
