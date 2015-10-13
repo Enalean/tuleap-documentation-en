@@ -19,6 +19,7 @@ or the remaining effort.
 Interactive actions currently include on the fly assigning, edition of the remaining effort and
 the drag'n'drop within a workflow.
 
+Tuleap also support Kanban methodology with a dedicated cardwall.
 
 Creating an Agile Dashboard
 ---------------------------
@@ -31,47 +32,27 @@ easier to import and tweak it.
 Before anything, you need to ensure that the trackers and Agile Dashboard services are installed and
 activated for your project.
 
-There is currently only one way to import an Agile Dashboard and that is via the command line.
-To do this, you must have access and permissions on the directory in which Tuleap is installed.
-You can download an xml Agile Dashboard template (https://tuleap.net/plugins/docman/?group_id=101&action=show&id=438)
-from the Tuleap website.
+Use default templates
+`````````````````````
 
-Let's assume you have an empty project with group_id = 123 in which you wish to create an Agile Dashboard.
+When you first come, as a project administrator, on Agile Dashboard service, you will be asked to create either a Scrum or a Kanban dashboard.
 
-First, shell into the box and navigate to the Tuleap directory- this is normally
-::
+.. figure:: ../images/screenshots/kanban-onboarding.png
+   :align: center
+   :alt: Agile Dashboard Configuration
+   :name: Agile Dashboard  Configuration
+   :width: 800px
 
-    $> cd /usr/share/codendi/
+   Agile Dashboard configuration
 
-Then feed your template to the Agile Dashboard importer like so:
-::
+Pick-up the one you need and it will automatically create and configure everything for you.
 
-    $> src/utils/php-launcher.sh src/utils/import_project_xml.php 123 admin /path/to/agiledashboard_template.xml
+You inherit a default template provided by Tuleap but you can modify whatever you want:
 
-    please note that "admin" correspond to a valid site admin user name.
-
-This should create new trackers and an Agile Dashboard on top of them.
-
-
-Duplicating an existing one
-```````````````````````````
-
-You can duplicate an Agile Dashboard from one project to another. To do this, you need to
-export the one you want to duplicate. This is done in a very similar way to the import (above).
-
-Let's assume the Agile Dashboard you wish to export is in the project has group_id = 456.
-
-First, shell into the box and navigate to the Tuleap directory- this is normally
-::
-
-    $> cd /usr/share/codendi/
-
-Then export your Agile Dashboard as an xml template:
-::
-
-    $> src/utils/php-launcher.sh src/utils/export_project_xml.php 456 > my_agiledashboard_template.xml
-
-This should create a new xml file that contains all the necessary data. Now use this file in the step above.
+- use both Scrum and Kanban
+- use serveral Kanban (you will have to create your own tracker first)
+- tweak Scrum to use more Plannings
+- ...
 
 Creating your Agile Dashboard from scratch
 ``````````````````````````````````````````
@@ -178,4 +159,3 @@ assignee for instance, or by the type of tracker (display only the tasks or only
    :width: 800px
 
    Agile Dashboard: Cardwall
-
