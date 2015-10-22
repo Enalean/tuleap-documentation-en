@@ -14,11 +14,11 @@ At the top of the left hand side Tuleap menu pane (just above the Logged In sect
 
 This is how Tuleap displays the logo :
 
-    - browser width > 1366px: organization_logo.png
-    - browser width <= 1366px AND browser width > 1300px: organization_logo_medium.png
-    - browser width < 1300px: organization_logo_small.png
+    - browser width > 1366px: organization_logo.png (recommended size: 200x45px)
+    - browser width <= 1366px AND browser width > 1300px: organization_logo_medium.png (recommended size: 155x45px)
+    - browser width < 1300px: organization_logo_small.png (recommended size: 45x45px)
 
-    Background colour: you need to add a background to your image if you want another background colour than the navbar colour. Note: the Tuleap FlamingParrot? theme has multiple colour variants.
+    Background colour: you need to add a background to your image if you want another background colour than the navbar colour. Note: the Tuleap FlamingParrot theme has multiple colour variants.
 
 Site content
 ------------
@@ -39,7 +39,7 @@ To customise the content of a given script for your site go through the followin
 
     - Centos6 & debian: under /etc/tuleap create the site-content directory if it doesn't exist.
     - Other OS: under /etc/codendi create the site-content directory if it doesn't exist.
-    
+
 For each piece of text that you want to customize, copy the original sometext.txt file under the /etc/tuleap/site-content/
 with the exact same path. For instance if you want to customise the introductory text of the home page,
 copy /usr/share/tuleap/site-content/en_US/homepage/welcome_intro.txt into /etc/site-content/en_US/homepage/welcome_intro.txt
