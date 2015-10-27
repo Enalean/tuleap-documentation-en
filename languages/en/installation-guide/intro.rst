@@ -14,3 +14,8 @@ with their benefits and disadvantages.
     -  Fully adaptable to your needs
     -  Installation can be tricky for linux beginners (but this guide will help you!)
 
+-  Ansible installation:
+    -  Require an ansible client
+    -  Quick and easy install
+    -  Deploy and manage multiple servers at once
+    -  A first default setup is done with ansible
