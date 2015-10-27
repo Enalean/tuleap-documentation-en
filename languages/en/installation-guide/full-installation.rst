@@ -101,6 +101,18 @@ Follow these commands until the required ports (above) are activated. We will be
 * service openfire start
 * netstat -lntp
 
+Mail configuration
+------------------
+Tuleap interacts with Postfix to process mails. The following lines should be uncommented/modified in
+the main Postfix configuration file generally located in /etc/postfix/main.cf:
+
+::
+
+     myhostname = mytuleap.domainname.example.com
+     alias_maps = hash:/etc/aliases,hash:/etc/aliases.codendi
+     alias_database = hash:/etc/aliases,hash:/etc/aliases.codendi
+     recipient_delimiter = +
+
 First connection
 ----------------
 
