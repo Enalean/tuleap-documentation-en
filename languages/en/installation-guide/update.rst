@@ -26,7 +26,7 @@ On RHEL6, run as root:
 
 ::
 
-    #Stop service
+    # Stop service
     /etc/init.d/tuleap stop
     service httpd stop
 
@@ -35,7 +35,7 @@ On RHEL6, run as root:
     # or to uprade the whole platform: yum update
 
     # Apply data upgrades
-    /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/codendi/forgeupgrade/config.ini update
+    /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
 
     # Restart service
     service httpd restart
