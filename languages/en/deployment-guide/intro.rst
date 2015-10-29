@@ -4,6 +4,21 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.8
+===
+
+Create artifact by mail
+-----------------------
+
+A new feature adding the possibility of creating an artifact by email has been added.
+If you want to make it work, you need to activate this option as a site administrator
+in the tracker plugin configuration. You also need to uncomment the following line
+in the main Postfix configuration file generally located in ``/etc/postfix/main.cf``:
+
+.. sourcecode:: configuration
+
+        recipient_delimiter = +
+
 8.7
 ===
 
