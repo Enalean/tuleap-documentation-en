@@ -877,20 +877,21 @@ Angular
 Install
     .. code-block:: bash
 
-        $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/angular/
+        $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
         $> npm install
         $> sudo npm install -g bower
         $> bower install
         $> sudo npm install -g grunt
         $> sudo npm install -g grunt-cli
 
-Run
+Compile
     .. code-block:: bash
 
-        $> cd /my/tuleap/sources
-        $> grunt --gruntfile plugins/agiledashboard/www/js/angular/Gruntfile.js
+        $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
+        $> grunt
         or
-        $> grunt watch --gruntfile plugins/agiledashboard/www/js/angular/Gruntfile.js
+        $> grunt watch
+
 
 ForgeUpgrade
 -------------
