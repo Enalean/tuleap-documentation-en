@@ -19,6 +19,9 @@ in the main Postfix configuration file generally located in ``/etc/postfix/main.
 
         recipient_delimiter = +
 
+After this modification, you need to reload the Postfix configuration with
+``# postfix reload``.
+
 8.7
 ===
 
