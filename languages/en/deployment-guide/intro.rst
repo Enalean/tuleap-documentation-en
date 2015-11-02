@@ -11,16 +11,8 @@ Create artifact by mail
 -----------------------
 
 A new feature adding the possibility of creating an artifact by email has been added.
-If you want to make it work, you need to activate this option as a site administrator
-in the tracker plugin configuration. You also need to uncomment the following line
-in the main Postfix configuration file generally located in ``/etc/postfix/main.cf``:
+check :ref:`Activate reply to artifacts by email <admin_tracker_reply_by_email>` in Administration guide.
 
-.. sourcecode:: configuration
-
-        recipient_delimiter = +
-
-After this modification, you need to reload the Postfix configuration with
-``# postfix reload``.
 
 8.7
 ===
