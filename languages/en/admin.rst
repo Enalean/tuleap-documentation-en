@@ -12,3 +12,4 @@ Administration guide
    administration-guide/services
    administration-guide/customisations
    administration-guide/howto
+   administration-guide/import-format
