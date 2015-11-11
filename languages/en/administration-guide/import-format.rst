@@ -4,9 +4,9 @@ Import format
 
 Tuleap is able to import a project with it's content from an XML file. This section
 describes what is the content of this file and how to proceed to generate an XML
-compatible with import tool.
+compatible with the import tool.
 
-As of today following things are covered by import:
+As of today, the following things are covered by the import tool:
 
 - user groups definition with members
 - trackers with contents and history (except artifact links)
