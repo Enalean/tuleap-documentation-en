@@ -2,7 +2,7 @@
 Import format
 =============
 
-Tuleap is able to create a project with it's content from an XML file. This section
+Tuleap is able to import a project with it's content from an XML file. This section
 describes what is the content of this file and how to proceed to generate an XML
 compatible with the import tool.
 
