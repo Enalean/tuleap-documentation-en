@@ -66,8 +66,8 @@ The real work
               - modules
               - commitinfo
               - .....
-          - top_level_dir1 
-          - top_level_dir2 
+          - top_level_dir1
+          - top_level_dir2
           - ....
           - top_level_dirN
 
@@ -730,15 +730,15 @@ Note you need to add ``GROUPLIST_PGM`` and update ``GIT_CONFIG_KEYS``
 
 Step 4: still on the mirror, you need to setup grokmirror:
 
-- deploy gitolite admin update script in ``/usr/local/bin/update_gladmin.sh`` 
+- deploy gitolite admin update script in ``/usr/local/bin/update_gladmin.sh``
 
   .. sourcecode:: bash
 
     #!/bin/sh
-     
+
     git=$1
     gitname="`basename $git`"
-     
+
     if [ $gitname = gitolite-admin.git ]
     then
       cd $git
@@ -747,7 +747,7 @@ Step 4: still on the mirror, you need to setup grokmirror:
       $HOME/.gitolite/hooks/gitolite-admin/post-update
     fi
 
-- set it executable ``chmod +x /usr/local/bin/update_gladmin.sh`` 
+- set it executable ``chmod +x /usr/local/bin/update_gladmin.sh``
 
 - Configure /etc/grokmirror/repos.conf (sample, replace %% variables)
 
@@ -893,7 +893,7 @@ You can check if it's relevant to you with:
    WHERE groups.status IN ('A');
 
 This will make your DBA happy because you will be able to save a lot of
-space in the DB (design of docman v1 implied storage of files... inside 
+space in the DB (design of docman v1 implied storage of files... inside
 the DB as blob).
 
 How to run migration for one project
@@ -962,7 +962,7 @@ Insecure email gateway is the most flexible solution. You can create or update a
 email address (forge__artifact+id@... to update an artifact and forge__tracker+id@... to create).
 
 However this option should only be enabled in environment were mail sender are carefuly controled (intranet)
-and should **NEVER** be activated on internet / extranet. This feature only rely on "From:" header of 
+and should **NEVER** be activated on internet / extranet. This feature only rely on "From:" header of
 incoming mail and this information can be spoofed by a 6 years old child.
 
 Once activated by site admin, each tracker admin that wants this feature to be enabled needs to manually
@@ -1212,3 +1212,41 @@ It could be needed to a new CA to the list of recognized CAs. On CentOS that cou
       #> update-ca-trust enable
       #> update-ca-trust extract
 
+Deploy Tuleap behind a reverse proxy
+------------------------------------
+
+We strongly recommend to setup the reverse proxy so that it terminates SSL.
+
+Configure Nginx
+~~~~~~~~~~~~~~~
+
+.. sourcecode:: nginx
+
+    upstream tuleap {
+        server 172.17.0.4:80;
+    }
+
+    server {
+        listen 443 ssl;
+        ssl_certificate /etc/nginx/ssl/server.crt;
+        ssl_certificate_key /etc/nginx/ssl/server.key;
+
+        # The 4 proxy_set_header are mandatory
+        location / {
+            proxy_pass http://tuleap;
+            proxy_set_header X-Real-IP         $remote_addr;
+            # Allow to know what is the original IP address (esp. for logging purpose as well as session management)
+            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+            # Allow to know what is the original protocol (so Tuleap knows if things were in HTTPS)
+            proxy_set_header X-Forwarded-Proto $scheme;
+            # What is the name of the platform to the end users
+            proxy_set_header Host              $host;
+        }
+    }
+
+    # Let Nginx manage "force HTTPS itself"
+    server {
+        listen       80;
+        server_name  my.tuleap.name;
+        return       301 https://$server_name:443$request_uri;
+    }
