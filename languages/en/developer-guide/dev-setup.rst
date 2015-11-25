@@ -12,8 +12,8 @@ Introduction
 
 Prerequisites:
 
-- docker (1.6 minimum)
-- docker-compose
+- docker (1.9 minimum)
+- docker-compose (1.5 minimum)
 
 Installing Docker on Fedora
 """""""""""""""""""""""""""
@@ -63,12 +63,23 @@ You should edit ``/etc/default/docker`` and add:
     # we can access the Internet even if dnsdock image is not up
     DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8"
 
-You may need to also add ``nameserver 172.17.42.1`` to your ``resolv.conf`` file.
+You may need to also add ``nameserver 172.17.42.1`` to your ``resolv.conf`` file:
+
+Edit /etc/resolvconf/resolv.conf.d/head and add:
+
+ .. code-block:: bash
+
+    nameserver 172.17.42.1
+
+Then force update of ``resolv.conf``:
+
+ .. code-block:: bash
+
+    $ sudo resolvconf -u
+
 
 Start a new docker container
 """"""""""""""""""""""""""""
-
-**CentOS 6 docker**
 
   .. code-block:: bash
 
@@ -76,6 +87,7 @@ Start a new docker container
     $ make dev-setup
     $ make start-dns
     $ make start
+    $ make less-docker
 
 And voila, your server is up and running. The first time you run this command, docker will download tuleap base image. It's 1,3GB so please be patient.
 
@@ -89,25 +101,20 @@ This command will start 3 containers:
    If you need to add/change anything and make it persistant, fork and ammend the Dockerfile (https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/)
    Everything but the OS (tuleap config, database, user home) is saved in /srv/dock/<name_of_the_server> on the host.
 
+Then, pro-tips:
 
-**CentOS 5 docker**
-
-Although new installs should be in CentOS 6, you can test in a CentOS 5 environment, by using the appropriate docker container:
-
-  .. code-block:: bash
-
-    sudo docker run -ti -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 22:22 -v /srv/docker/mycentos5:/data enalean/tuleap-aio:centos5
-
-
-If you need to SSH on the container:
+If you need to connect to the server you can run:
 
   .. code-block:: bash
 
-    $> docker ps #copy the CONTAINER ID
-    $> sudo cat /srv/docker/mycentos5/root/.codendi_passwd #copy the password for root
-    $> docker inspect [CONTAINER ID] #look for "IPAddress"
-    $> ssh root@[IPAddress] #use password
+    $ docker exec -ti tuleap_web_1 bash
+    # export TERM=linux
 
+And if you need to connect to the database:
+
+  .. code-block:: bash
+
+    $ docker run -it --link tuleap_db_1:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD" tuleap'
 
 Advanced setup
 """"""""""""""
@@ -118,6 +125,15 @@ Advanced setup
 
       docker run -d --name=elast enalean/elasticsearch-tuleap
       docker run -d --name=tuleap --link elast enalean/tuleap-aio-dev
+
+**CentOS 5 docker**
+
+Although new installs should be in CentOS 6, you can test in a CentOS 5 environment, by using the appropriate docker container:
+
+  .. code-block:: bash
+
+    sudo docker run -ti -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 22:22 -v /srv/docker/mycentos5:/data enalean/tuleap-aio:centos5
+
 
 
 Vagrant
