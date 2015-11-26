@@ -1,6 +1,122 @@
-.. _admin_importformat:
+
+Project export and import
+=========================
+
+Various tools are used to export and import a project structure. Those tools can be use to export and import inside the
+same Tuleap instance or between two different Tuleap instances.
+
+Known issues / limitation
+'''''''''''''''''''''''''
+
+Before going into details, here is the list of the known issues and limitation of the export and import scripts:
+
+1. The export and import scripts have to be run as ``codendiadm``. If they are run by ``root``, you can experience some
+   permissions denied while copying an imported artifact with attachments.
+
+2. Copied artifacts have their first changeset not well exported in XML.
+
+3. Permissions on artifact can have a different value during the export in a specific case. If the field is checked to
+   restrict access to ``all_users``, we assume that the field has no value set. The access to the artifact is not
+   changed, only the field value.
+
+4. The cross-references in followup comments are modified by adding a space between # and the number in order to not
+   leak data in the import in another Tuleap instance.
+
+5. The artifact-link field is neither exported nor imported because we don't know how to deal with it during an import
+   in another platform.
+
+Project Export
+''''''''''''''
+
+The export script is located in ``/usr/share/tuleap/src/utils/export_project_xml.php`` and
+must be use like:
+
+  .. code-block:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> src/utils/php-launcher.sh src/utils/export_project_xml.php \
+           -p PROJECT_ID_EXPORT \
+           -u SITE_ADMIN_USERNAME \
+           -t TRACKER_V5_ID \
+           -o PATH_TO_ARCHIVE
+
+This will generate a zip archive with:
+
+* a ``project.xml`` file that contains project data (usergroups with members + tracker structure + artifacts historized)
+* a ``users.xml`` file that contains users involved in project data
+* a folder ``data`` that contains artifact attachments, svn repository and so on.
+
+This archive is ready to be imported in a Tuleap instance.
+
+Project Import
+''''''''''''''
+
+The imported archive contains a list of users. Those users are not necessarily present on the target Tuleap instance.
+Therefore we need to know what action must be taken for unknown users; in some cases we will need to map to another
+existing users (*jdoe* on source instance may be *john.doe* on target instance), or we may have to create a new user.
+
+This is done thanks to a mapping file in csv format. Hopefully a script is here to generate this mapping file based on the
+archive and current users on target instance:
+
+  .. code-block:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> src/utils/php-launcher.sh src/utils/generate_user_mapping_for_project_import.php \
+           -u SITE_ADMIN_USERNAME \
+           -i PATH_TO_ARCHIVE \
+           -o PATH_TO_MAPPING_FILE
+
+The generated file will look like:
+
+  .. code-block:: csv
+
+        name,action,comments
+        jdoe,noop,"Status of existing user jdoe is [S]"
+        nterray,create:S,"Nicolas Terray (nterray) <nterray@example.com> must be created"
+        yrossetto,map:,"There is an existing user yrossetto but its email <yannis@example.com> does not match <yrossetto@example.com>. Use action "map:yrossetto" to confirm the mapping"
+        ...
+
+In this example:
+
+1. ``jdoe`` is a suspended user on the target instance. You may decide to do nothing (``noop``), or you can decide to map
+   ``jdoe`` to another user (see below).
+2. ``nterray`` does not exist, it should be created. It will be created with suspended status ``create:S``, with active
+   status ``create:A`` or with restricted status ``create:R``. Default status is suspended.
+3. ``yrossetto`` seems to already exist on the target platform but the email is not the same than the source one. In order
+   to not impersonate someone, you must confirm that both accounts relate to the same person. Maybe it is someone else,
+   therefore you can ``map:`` to another account.
+
+Comments column should give you all needed information about current status. Please note that this column is only
+informative and will not be used during the import.
+
+After having reviewed/edited the mapping file, you should pass it through a script in order to know if your choices are
+valid in regards to current status of the target instance:
+
+  .. code-block:: bash
+
+        $> src/utils/php-launcher.sh src/utils/check_user_mapping_for_project_import.php \
+           -u SITE_ADMIN_USERNAME \
+           -i PATH_TO_ARCHIVE \
+           -m PATH_TO_MAPPING_FILE
+
+This will generate some feedback about the wellness of the mapping file. You must fix any remaining errors before doing
+the real import:
+
+  .. code-block:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> src/utils/php-launcher.sh src/utils/import_project_xml.php \
+           -p PROJECT_ID_IMPORT \
+           -u PROJECT_ADMIN_USERNAME \
+           -i PATH_TO_ARCHIVE \
+           -m PATH_TO_MAPPING_FILE
+
+
 Import format
-=============
+*************
 
 Tuleap is able to import a project with it's content from an XML file. This section
 describes what is the content of this file and how to proceed to generate an XML
@@ -19,20 +135,20 @@ General informations
 
 The import should be a zip archive with
 
-- project.xml, description of project content
-- users.xml, list of all users that will appear in project.xml
-- data, a directory with data blob (should be referenced in project.xml)
+- description of project content in ``project.xml`` file
+- list of all users that will appear in project.xml in ``users.xml`` file
+- data blob (should be referenced in project.xml) in ``data`` directory
 
 Users management
 ----------------
 
-In project.xml, when we have to refer to a user the pattern is the following ``<node format="format">identifier</node>`` where ``format`` can either be:
+In ``project.xml``, when we have to refer to a user the pattern is the following ``<node format="format">identifier</node>`` where ``format`` can either be:
 
 - ``id`` a user unique id (integer)
 - ``username`` a user unique login name (string)
-- ``ldap`` user reference in LDAP, useful for in house data migration
+- ``ldap`` user reference in LDAP, useful for in house data migration (string)
 
-You can pick what ever format you want but it must be consistent on the whole file.
+You can pick whatever format you want.
 
 As soon as you reference a user in ``project.xml``, this user must be defined in ``users.xml`` like:
 
@@ -51,7 +167,7 @@ will be used to decide whether the user already exists on the platform or not (a
 
 ``id`` should be unique but will only be used if you are using ``<node format="id">123</node>`` references in project.xml. We recommend to have a numeric sequence (1, 2, 3...) here.
 
-``ldapid`` can be empty but if you move data from one service to another within the same organization, 
+``ldapid`` can be empty but if you move data from one service to another within the same organization,
 this might be useful to share the user base. This should be the unique identifier of the user in LDAP.
 Possible values from LDAP fields ``uid``, ``uuid``, etc. 99% of the time it's the unique part of LDAP ``dn``.
 
