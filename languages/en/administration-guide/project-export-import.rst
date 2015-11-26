@@ -5,25 +5,24 @@ Project export and import
 Various tools are used to export and import a project structure. Those tools can be use to export and import inside the
 same Tuleap instance or between two different Tuleap instances.
 
-Known issues / limitation
-'''''''''''''''''''''''''
+.. attention:: Known issues / limitation
 
-Before going into details, here is the list of the known issues and limitation of the export and import scripts:
+    Before going into details, here is the list of the known issues and limitation of the export and import scripts:
 
-1. The export and import scripts have to be run as ``codendiadm``. If they are run by ``root``, you can experience some
-   permissions denied while copying an imported artifact with attachments.
+    1. The export and import scripts have to be run as ``codendiadm``. If they are run by ``root``, you can experience some
+       permissions denied while copying an imported artifact with attachments.
 
-2. Copied artifacts have their first changeset not well exported in XML.
+    2. Copied artifacts have their first changeset not well exported in XML.
 
-3. Permissions on artifact can have a different value during the export in a specific case. If the field is checked to
-   restrict access to ``all_users``, we assume that the field has no value set. The access to the artifact is not
-   changed, only the field value.
+    3. Permissions on artifact can have a different value during the export in a specific case. If the field is checked to
+       restrict access to ``all_users``, we assume that the field has no value set. The access to the artifact is not
+       changed, only the field value.
 
-4. The cross-references in followup comments are modified by adding a space between # and the number in order to not
-   leak data in the import in another Tuleap instance.
+    4. The cross-references in followup comments are modified by adding a space between # and the number in order to not
+       leak data in the import in another Tuleap instance.
 
-5. The artifact-link field is neither exported nor imported because we don't know how to deal with it during an import
-   in another platform.
+    5. The artifact-link field is neither exported nor imported because we don't know how to deal with it during an import
+       in another platform.
 
 Project Export
 ''''''''''''''
@@ -48,6 +47,13 @@ This will generate a zip archive with:
 * a folder ``data`` that contains artifact attachments, svn repository and so on.
 
 This archive is ready to be imported in a Tuleap instance.
+
+.. note::
+
+    As of today, the following things are covered by the import tool:
+
+    * User groups definition with members
+    * One tracker with contents and history (except artifact links)
 
 Project Import
 ''''''''''''''
@@ -88,8 +94,11 @@ In this example:
    to not impersonate someone, you must confirm that both accounts relate to the same person. Maybe it is someone else,
    therefore you can ``map:`` to another account.
 
-Comments column should give you all needed information about current status. Please note that this column is only
-informative and will not be used during the import.
+Comments column should give you all needed information about current status.
+
+.. info::
+
+    Please note that this column is only informative and will not be used during the import.
 
 After having reviewed/edited the mapping file, you should pass it through a script in order to know if your choices are
 valid in regards to current status of the target instance:
@@ -122,13 +131,13 @@ Tuleap is able to import a project with it's content from an XML file. This sect
 describes what is the content of this file and how to proceed to generate an XML
 compatible with the import tool.
 
-As of today, the following things are covered by the import tool:
+.. note::
 
-- user groups definition with members
-- trackers with contents and history (except artifact links)
-- subversion
+    As of today, the following things are covered by the import tool:
 
-For more information on how to run import/export checkout :ref:`Project export and import <admin_tasks_import_export>`.
+    - user groups definition with members
+    - trackers with contents and history (except artifact links)
+    - subversion
 
 General informations
 --------------------
@@ -149,6 +158,11 @@ In ``project.xml``, when we have to refer to a user the pattern is the following
 - ``ldap`` user reference in LDAP, useful for in house data migration (string)
 
 You can pick whatever format you want.
+
+.. important:: Anonymous users
+
+    Another format can be used: ``email``. This is only to reference anonymous users on the source instance.
+    At import time, if the email match an existing user, it will be used (instead of treating the user as anonymous).
 
 As soon as you reference a user in ``project.xml``, this user must be defined in ``users.xml`` like:
 
@@ -193,6 +207,10 @@ Example of users.xml:
       </user>
     </users>
 
+.. danger::
+
+    if a user in ``project.xml`` is not referenced in ``users.xml`` then the script will stop during the import, leading
+    to half imported data.
 
 Core
 ----
@@ -216,6 +234,10 @@ Core information imported as of today:
       </ugroups>
       [... services ...]
     </project>
+
+.. note::
+
+    Users that are suspended won't be part of the imported project.
 
 Within [... services ...] each service can add a node with the content to export.
 
