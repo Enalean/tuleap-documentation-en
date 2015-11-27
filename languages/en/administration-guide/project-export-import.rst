@@ -96,9 +96,19 @@ In this example:
 
 Comments column should give you all needed information about current status.
 
-.. info::
+.. note::
 
     Please note that this column is only informative and will not be used during the import.
+
+.. note::
+
+    The following diagram explains how the décision is made while parsing the users.xml:
+
+    .. figure:: ../images/diagrams/mapping-users-during-project-import.png
+       :align: center
+       :alt: Agile Dashboard Configuration
+       :name: Agile Dashboard  Configuration
+
 
 After having reviewed/edited the mapping file, you should pass it through a script in order to know if your choices are
 valid in regards to current status of the target instance:
