@@ -797,6 +797,13 @@ At time of writing, there are 2 builders in Core aUser.php and aRequest.php:
 
 There are plenty of builders in plugins/tracker/tests/builders and you are strongly encouraged to add new one when relevant.
 
+Integration tests for REST API of plugins
+`````````````````````````````````````````
+
+If your new plugin provides some new REST routes, you should implement new integration tests. These tests must be put in the tests/rest/ directory of your plugin.
+
+If you want more details about integration tests for REST, go have a look at tuleap/tests/rest/README.md.
+
 Trang
 ------
 
