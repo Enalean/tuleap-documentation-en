@@ -4,6 +4,12 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.9
+===
+
+New configuration parameter in ``local.inc`` when Tuleap is behind a reverse proxy, check
+:ref:`Deploy Tuleap behind a reverse proxy <admin_howto_reverseproxy>` in Administration guide.
+
 8.8
 ===
 

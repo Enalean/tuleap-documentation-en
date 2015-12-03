@@ -1212,6 +1212,8 @@ It could be needed to a new CA to the list of recognized CAs. On CentOS that cou
       #> update-ca-trust enable
       #> update-ca-trust extract
 
+.. _admin_howto_reverseproxy:
+
 Deploy Tuleap behind a reverse proxy
 ------------------------------------
 
@@ -1250,3 +1252,17 @@ Configure Nginx
         server_name  my.tuleap.name;
         return       301 https://$server_name:443$request_uri;
     }
+
+Configure Tuleap
+~~~~~~~~~~~~~~~~
+
+You will need to tell Tuleap that the IP of the reverse proxy is trusted, in local.inc:
+
+.. sourcecode:: php
+
+    $sys_trusted_proxies = '172.17.0.2';
+
+Be careful with this value, once you set it, Tuleap will automatically trust some request
+headers when the request come from this IP address (``X_FORWARDED_FOR``, ``X_FORWARDED_PROTO``, ``REMOTE_ADDR``).
+So if your proxy is not properly configured to value those headers, it could be used by an
+attacker to spoof requests.
