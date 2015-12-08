@@ -24,7 +24,9 @@ Tuleap can be installed on the following Linux x86_64 systems:
 
 Note that **CentOS or RedHat 7.x is not yet supported**.
 
-The server will need an Internet connection as it will download external packages
+Currently, **Tuleap does not play well with SELinux**, you probably want to set SELinux's behavior to permissive mode to avoid issues.
+
+The server will need an Internet connection as it will download external packages.
 
 You can have a look at the Installation checklist here: https://tuleap.net/wiki/index.php?pagename=TuleapInstallationChecklist&group_id=101
 
