@@ -636,7 +636,7 @@ Basically, executing tests is as simple as, from root of Tuleap sources:
 
         $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php54 /tuleap/tests/simpletest /tuleap/tests/integration /tuleap/plugins
 
-If there is only one file or directory you are intrested in:
+If there is only one file or directory you are interested in:
 
     .. code-block:: bash
 

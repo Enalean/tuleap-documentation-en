@@ -50,7 +50,7 @@ Pick-up the one you need and it will automatically create and configure everythi
 You inherit a default template provided by Tuleap but you can modify whatever you want:
 
 - use both Scrum and Kanban
-- use serveral Kanban (you will have to create your own tracker first)
+- use several Kanban (you will have to create your own tracker first)
 - tweak Scrum to use more Plannings
 - ...
 
