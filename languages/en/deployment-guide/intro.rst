@@ -7,6 +7,19 @@ file, the default is automatically set for you.
 8.10
 ===
 
+Use tokens to authenticate a SVN user
+--------
+
+It is now possible to use a token instead of a password to authenticate users for SVN
+operations. In order to make that possible, it is necessary to grant more rights
+to the database user used to authenticate a user. You must run the following commands
+on your database with a privileged user:
+
+.. sourcecode:: sql
+
+        GRANT SELECT,UPDATE ON svn_token to dbauthuser;
+        FLUSH PRIVILEGES;
+
 Git evolution on CentOS 5 due to a system bug
 --------
 
