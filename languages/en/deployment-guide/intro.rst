@@ -5,7 +5,7 @@ the development team, there is no need for you to add those new variables in the
 file, the default is automatically set for you.
 
 8.10
-===
+====
 
 Use tokens to authenticate a SVN user
 --------
@@ -17,7 +17,14 @@ on your database with a privileged user:
 
 .. sourcecode:: sql
 
-        GRANT SELECT,UPDATE ON svn_token to dbauthuser;
+        GRANT SELECT,UPDATE ON svn_token TO dbauthuser;
+        FLUSH PRIVILEGES;
+
+If you use the LDAP plugin, you also need to grant this privilege:
+
+.. sourcecode:: sql
+
+        GRANT SELECT ON plugin_ldap_user TO dbauthuser;
         FLUSH PRIVILEGES;
 
 Git evolution on CentOS 5 due to a system bug
