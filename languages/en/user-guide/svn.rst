@@ -253,7 +253,7 @@ your repository:
     /trunk
     /branches
     /tags
-          
+
 
 where ``/trunk`` contains the main line of development, ``/branches``
 contains branch copies and ``/tags`` contains tag copies of your source
@@ -275,7 +275,7 @@ look like this:
     /client/trunk
     /client/branches
     /client/tags
-          
+
 
 More on the repository layout is available in the Subversion book listed
 in `Subversion References`_.
@@ -351,7 +351,7 @@ engineers:
    number) generated at each commit can be referenced in future commits,
    or in the follow-up comments of project artifacts like
    bugs/tasks/support requests simply by using the pattern
-   ``commit #XXXX``, or ``revision #XXXX`` or even ``rev #XXXX`` (where XXXX is the unique commit ID). 
+   ``commit #XXXX``, or ``revision #XXXX`` or even ``rev #XXXX`` (where XXXX is the unique commit ID).
    Any reference of that kind will be automatically transformed into an hyperlink to the
    Subversion tracking database. This mechanism makes it very easy to go
    from project artifacts like bugs, support requests or tasks to source
@@ -522,7 +522,7 @@ access permission rules follows the following pattern:
 
     [path]
     name = permission
-          
+
 
 where:
 
@@ -542,7 +542,7 @@ where:
 
        [groups]
        groupname = username1,username2,...
-             
+
 
    All project defined user groups (see :ref:`user-groups`) are also defined in the
    Tuleap default permissions settings and ready to use if
@@ -563,7 +563,7 @@ expressed through the following set of rules:
     [/]
     * = r
     @members = rw
-          
+
 
 where ``member1,member2,...,memberN`` are the Tuleap login
 name of the Tuleap project members.
@@ -574,6 +574,10 @@ listed in this section.
 Note that if the user group is not defined neither in the default
 permission settings nor defined by the user, each permission definition
 for that group will be commented.
+
+Attributing permissions to a specific user or to manually defined groups could
+cause security issues. It is recommended that you only use Tuleap user groups to
+define permissions.
 
 These default permission settings are automatically generated, and
 cannot be edited. You should consider this section as the beginning of
@@ -590,8 +594,8 @@ instance, adding:
 ::
 
     [/]
-    * = 
-          
+    * =
+
 
 will not prevent registered users to access the repository, since the
 default rule already grants this permission. However, it is possible to
@@ -600,9 +604,9 @@ restrict permissions on a subfolder:
 ::
 
     [/secret]
-    * = 
+    * =
     @members = rw
-          
+
 
 will indeed prevent registered users from reading the '/secret'
 directory.
@@ -696,10 +700,10 @@ Place yourself into the ``topdirectory`` and type the following command
 
 ::
 
-    svn --username loginname import . 
-    http://svn.projectname.tuleap.example.com/svnroot/projectname 
+    svn --username loginname import .
+    http://svn.projectname.tuleap.example.com/svnroot/projectname
     --message "Initial repository version"
-            
+
 
 Where:
 
@@ -790,7 +794,7 @@ of each source file from the repository. To update a working copy type:
 ::
 
     svn update
-            
+
 
 Examining your Changes
 ```````````````````````
@@ -801,7 +805,7 @@ copy since your last update, run the following command:
 ::
 
     svn status
-           
+
 
 Or wich files have changed on the Subversion repository since your last
 update :
@@ -809,7 +813,7 @@ update :
 ::
 
     svn status -u
-            
+
 
 The output will show you a list of files which undergo some changes
 either because they were modified, added or deleted.
@@ -820,7 +824,7 @@ version in the Subversion repository, you can use the diff command:
 ::
 
     svn diff filename
-            
+
 
 If no ``filename`` is specified the diff operation is applied
 recursively on all the files and sub-directories.
@@ -841,7 +845,7 @@ command:
 ::
 
     svn commit -m"Explain the nature of the change here..." filenames
-            
+
 
 Where:
 
@@ -1042,4 +1046,3 @@ Once logged in, type the following commands at the shell prompt:
 .. [#f1]
    The Shell Account may have been deactivated by your
    Tuleap site administrators.
-
