@@ -225,11 +225,12 @@ Example of users.xml:
 Core
 ----
 
-All projects related informations (core & services) are stored in ``project.xml``.
+All projects related information (core & services) are stored in ``project.xml``.
 
 Core information imported as of today:
 
 - user groups and membership (user are referenced by username or ldapId)
+- services to be enabled
 
 .. sourcecode:: xml
 
@@ -242,14 +243,19 @@ Core information imported as of today:
           </members>
         </ugroup>
       </ugroups>
-      [... services ...]
+      <services>
+        <service shortname="svn" enabled="true" />
+        <service shortname="cvs" enabled="false" />
+        <service shortname="plugin_git" enabled="true" />
+        <service shortname="plugin_tracker" enabled="true" />
+      </services>
     </project>
 
 .. note::
 
     Users that are suspended won't be part of the imported project.
 
-Within [... services ...] each service can add a node with the content to export.
+All services can then be configured using its own tag.
 
 Trackers
 --------
