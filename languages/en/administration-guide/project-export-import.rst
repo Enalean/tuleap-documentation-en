@@ -229,9 +229,12 @@ All projects related information (core & services) are stored in ``project.xml``
 
 Core information imported as of today:
 
-- project metadata: unix name, full name, description, long description, and access (for more information see "Create a new project")
-- user groups and membership (user are referenced by username or ldapId)
-- services to be enabled
+- Project metadata: unix name, full name, description, long description, and
+  access (for more information see "Create a new project")
+- User groups and membership (user are referenced by username or ldapId, and
+  group name can be dynamic group names where applicable)
+- Services to be enabled. If a service is not specified, the enabled status is
+  taken from the template project.
 
 .. sourcecode:: xml
 
@@ -241,22 +244,41 @@ Core information imported as of today:
         full-name="Project 42"
         description="Secret project to find the answer"
         access="public">
+
       <long-description>
           This is the long description of project 42
       </long-description>
+
       <ugroups>
+        <ugroup name="project_members" description="">
+          <members>
+            <member format="username">joey_star</member>
+            <member format="username">alice</member>
+            <member format="username">bob</member>
+          </members>
+        </ugroup>
+        <ugroup name="project_admins" description="">
+          <members>
+            <member format="username">alice</member>
+            <member format="username">bob</member>
+          </members>
+        </ugroup>
         <ugroup name="Developers" description="">
           <members>
             <member format="username">joey_star</member>
           </members>
         </ugroup>
       </ugroups>
+
       <services>
         <service shortname="svn" enabled="true" />
         <service shortname="cvs" enabled="false" />
         <service shortname="plugin_git" enabled="true" />
         <service shortname="plugin_tracker" enabled="true" />
       </services>
+
+      <!-- ... services ... -->
+
     </project>
 
 .. note::
@@ -310,6 +332,13 @@ Some insights to better understand how this works:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <project>
+      <services>
+        <service shortname="plugin_tracker" enabled="true" />
+        ...
+      </services>
+
+      ...
+
       <trackers>
         <tracker id="T239" parent_id="0" instantiate_for_new_projects="1">
           <name><![CDATA[Simple Tracker]]></name>
@@ -485,7 +514,13 @@ A single subversion repository can be imported. The XML syntax is:
 .. sourcecode:: xml
 
     <project>
+      <services>
+        <service shortname="svn" enabled="true" />
+        ...
+      </services>
+
       ...
+
       <svn dump-file="data/repository.dump">
 
         <!-- Access Rights -->
@@ -517,7 +552,13 @@ Multiple Git repositories can be imported. The XML syntax is:
 .. sourcecode:: xml
 
   <project>
+    <services>
+      <service shortname="plugin_git" enabled="true" />
+      <...
+    </services>
+
     ...
+
     <git>
         <repository bundle-path="tuleap_dev_bundle" name="dev/tuleap" description="Development git repository for tuleap">
             <read>
