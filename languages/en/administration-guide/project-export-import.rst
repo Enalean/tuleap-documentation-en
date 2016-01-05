@@ -229,13 +229,21 @@ All projects related information (core & services) are stored in ``project.xml``
 
 Core information imported as of today:
 
+- project metadata: unix name, full name, description, long description, and access (for more information see "Create a new project")
 - user groups and membership (user are referenced by username or ldapId)
 - services to be enabled
 
 .. sourcecode:: xml
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <project>
+    <project
+        unix-name="project42"
+        full-name="Project 42"
+        description="Secret project to find the answer"
+        access="public">
+      <long-description>
+          This is the long description of project 42
+      </long-description>
       <ugroups>
         <ugroup name="Developers" description="">
           <members>
