@@ -674,7 +674,7 @@ front-ends should be relatively straightforward.
    A Typical Software Development Life Cycle on Tuleap
 
 Logging In
-```````````
+``````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -682,6 +682,19 @@ Unlike CVS when used with the pserver protocol there is no explicit
 login command to issue to start working with a Subversion repository.
 Subversion will ask for your login name and password only when
 performing an operation (e.g. commit) that requires authentication.
+
+Access SVN with username/token instead of username/password
+```````````````````````````````````````````````````````````
+
+If the project allows it, you can use a token instead of your password when using SVN.
+
+1) Generate a token
+
+   First, you need to generate a token for your account. Go to you account preferences, generate a new SVN token. There's no way to retrieve this token so don't forget it. You can generate as many tokens as you want so if you loose one of your token, just delete it from you account preferences and generate another one.
+
+2) Use your token
+
+   If the project can manage SVN token, just use your token instead of your password when using SVN.
 
 Importing Existing Source Code
 ```````````````````````````````
