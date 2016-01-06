@@ -74,6 +74,13 @@ Then force update of ``resolv.conf``:
  .. code-block:: bash
 
     $ sudo resolvconf -u
+    
+
+
+Installing Docker on Mac OS X
+"""""""""""""""""""""""""""""
+
+Go to https://www.docker.com/docker-toolbox and download Docker Toolbox for Mac OS X. It will install Docker, Docker Machine, Docker Compose, Docker Kitematic and VirtualBox. Once the install is done, launch "Docker Quickstart Terminal", then follow this documentation.
 
 
 Start a new docker container
@@ -83,7 +90,7 @@ Start a new docker container
 
     $ cd /path/to/tuleap (for the time being the folder must be named 'tuleap')
     $ make dev-setup
-    $ make start-dns
+    $ make start-dns (if you're using OS X, do not execute this command)
     $ make start
     $ make less-docker
 
