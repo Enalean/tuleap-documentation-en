@@ -1185,7 +1185,7 @@ Existing Tuleap install
 ~~~~~~~~~~~~~~~~~~~~~~~
 Purge is not activated by default on existing Tuleap instances.
 
-**/!\\ PLEASE NOTE THAT THE FIRST PURGE CAN TAKES A LOT OF TIME**
+**/!\\ PLEASE NOTE THAT THE FIRST PURGE CAN TAKE A LOT OF TIME**
 
 To activate it and launch the first purge at the same time, you have to do:
 
