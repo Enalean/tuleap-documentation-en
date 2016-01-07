@@ -39,6 +39,24 @@ To kept the Git plugin fully functional, you must edit your sudoers file to matc
         Defaults:gitolite !env_reset
         gitolite ALL= (codendiadm) SETENV: NOPASSWD: /usr/share/codendi/src/utils/php-launcher.sh /usr/share/codendi/plugins/git/hooks/post-receive.php*
 
+Git evolution on CentOS 5 to import/export project archive
+--------
+
+Now that it is possible to import a git repository alongside a project archive, you must edit your sudoers file to match the following informations:
+
+.. sourcecode:: bash
+
+        Defaults:codendiadm !requiretty
+        Defaults:codendiadm !env_reset
+
+        # Gitolite restore tar repository
+        Cmnd_Alias RESTORE_TAR_REPO_CMD = %libbin_dir%/restore-tar-repository.php
+        
+        # Gitolite clone bundle
+        Cmnd_Alias BUNDLE_CMD = /usr/share/tuleap/plugins/git/bin/gl-clone-bundle.sh
+
+        codendiadm ALL= (gitolite) SETENV: NOPASSWD: RESTORE_TAR_REPO_CMD, BUNDLE_CMD
+
 8.9
 ===
 
