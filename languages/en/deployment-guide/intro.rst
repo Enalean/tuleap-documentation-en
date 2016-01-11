@@ -7,6 +7,24 @@ file, the default is automatically set for you.
 8.10
 ====
 
+Subversion packaging issue
+--------
+
+Due to a packaging issue we strongly suggest you install or force the reinstall of
+the following packages: tuleap-core-subversion and tuleap-core-subversion-modperl.
+
+Meaning that if these packages are not installed you can install them with:
+
+.. sourcecode:: console
+
+        #> yum install tuleap-core-subversion tuleap-core-subversion-modperl
+
+If the packages are already installed, you can reinstall them with:
+
+.. sourcecode:: console
+
+        #> yum reinstall tuleap-core-subversion tuleap-core-subversion-modperl
+
 Use tokens to authenticate a SVN user
 --------
 
@@ -51,7 +69,7 @@ Now that it is possible to import a git repository alongside a project archive, 
 
         # Gitolite restore tar repository
         Cmnd_Alias RESTORE_TAR_REPO_CMD = %libbin_dir%/restore-tar-repository.php
-        
+
         # Gitolite clone bundle
         Cmnd_Alias BUNDLE_CMD = /usr/share/tuleap/plugins/git/bin/gl-clone-bundle.sh
 
