@@ -19,6 +19,10 @@ And voila, your server is up and running! You can access it at
 http://tuleap_web_1.tuleap-aio-dev.docker. You can connect with ``admin``
 account, the password will be given by ``make show-passwords``.
 
+.. image:: ../../images/its-Magic.gif
+   :alt: It's Magic!
+   :align: center
+
 .. NOTE:: docker will download base images for mysql, tuleap, … Please be patient!
 
 Descriptions of commands
@@ -32,11 +36,11 @@ Descriptions of commands
 * ``make start``: This command is a wrapper around ``docker-compose up``. It
   starts 3 containers: ``web`` for the front end, ``ldap`` to manage users in an
   OpenLDAP server, and ``db`` for the mysql server.
-  
-  You can issue the following command in order to check that all three containers are started:
+
+  You can issue the following command in order to check that all four containers are started:
 
   .. code-block:: bash
-    
+
     $ docker ps --format "{{.ID}}: {{.Names}} — {{.Image}} {{.Ports}}"
     7ac93f72dbb6: dnsdock — tonistiigi/dnsdock 172.17.42.1:53->53/udp
     149428f796ea: tuleap_web_1 — enalean/tuleap-aio-dev:nodb 22/tcp, 80/tcp, 443/tcp
@@ -85,4 +89,3 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
   'tuleap_web_1.tuleap-aio-dev.docker`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
-
