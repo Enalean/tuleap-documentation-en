@@ -5,7 +5,7 @@ Install Docker Engine & Docker Compose
 
 We will install ``docker`` and ``docker-compose``. If you already have docker
 installed, you should still read this part as it contains important information
-about dns configuration.
+about DNS configuration.
 
 .. IMPORTANT::  Minimal versions: docker 1.9, docker-compose 1.5
 
@@ -106,7 +106,7 @@ then follow this documentation.
 Install Docker Compose
 ----------------------
 
-Once ``docker`` is installed, you must install ``docker-compose``. Follow step
+Once ``docker`` is installed, you must install ``docker-compose``. Follow steps
 3, 4 and 5 on `Docker Compose documentation <https://docs.docker.com/compose/install/>`_.
 
 .. NOTE:: There is no need to manually install ``docker-compose`` on Mac OS X since
