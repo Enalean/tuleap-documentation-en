@@ -28,6 +28,45 @@ A bad commit has:
 
 As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depends one of another if the very first one is not validated.
 
+Development repository is hosted on http://gerrit.tuleap.net
+
+You can checkout http://gerrit.tuleap.net/#/admin/projects/tuleap. You need an account on gerrit in order to do the checkout.
+
+.. NOTE::
+
+  The reference repository, stable, is "the true master" (ie. it's from this
+  repository that releases are rolled out). There are mirrors of stable
+  repository available on `Github <https://github.com/Enalean/tuleap/>`_
+  or `repo.or.cz <http://repo.or.cz/tuleap.git>`_, that are synchronized on
+  every push on master.
+
+Setting up your environment
+```````````````````````````
+
+1. configure your local config to rebase when you pull changes locally:
+
+  .. code-block:: bash
+
+    $> git config branch.autosetuprebase always
+
+2. install local hooks:
+
+  .. code-block:: bash
+
+    $> cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
+    $> curl -o .git/hooks/commit-msg http://gerrit.tuleap.net/tools/hooks/commit-msg
+    $> chmod u+x .git/hooks/commit-msg
+
+3. Configure your gerrit environement
+
+  Setup you account (please use the same login name than on tuleap.net) on
+  http://gerrit.tuleap.net and publish your ssh key (not needed if you are
+  using http as transport).
+
+  .. code-block:: bash
+
+    $> git remote add gerrit ssh://USERNAME@gerrit.tuleap.net:29418/tuleap.git
+
 
 Contribution type
 ------------------

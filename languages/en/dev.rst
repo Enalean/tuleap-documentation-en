@@ -4,10 +4,17 @@ Developer guide
 .. toctree::
    :maxdepth: 1
 
-   developer-guide/intro
    developer-guide/contrib
    developer-guide/dir-structure
-   developer-guide/dev-setup
+   developer-guide/quick-start
+   developer-guide/autoload
+   developer-guide/less
+   developer-guide/tests
+   developer-guide/trang
+   developer-guide/ldap
+   developer-guide/angular
+   developer-guide/forgeupgrade
+   developer-guide/debug
    developer-guide/patches
    developer-guide/i18n
    developer-guide/coding-standards
