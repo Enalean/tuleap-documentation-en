@@ -83,6 +83,6 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
   homepage, then it means that there is an issue with the dns.
 * Check that you can resolves tuleap_web_1.tuleap-aio-dev.docker: ``dig
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
-  'tuleap_web_1.tuleap-aio-dev.docker`` should returns a suitable answer
+  'tuleap_web_1.tuleap-aio-dev.docker`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
 
