@@ -24,16 +24,16 @@ account, the password will be given by ``make show-passwords``.
 Descriptions of commands
 ------------------------
 
-* ``make dev-setup``: This command generate some needed passwords (mysql, ldap,
-  …) and create data containers. Those data containers are used as volumes to
-  persist data (files, db, …). This command need only to run once.
-* ``make start-dns``: This command starts dnsdock that will resolv names for
-  our docker containers. This command need to be run before you run ``make start``.
-* ``make start``: This command is a wrapper around ``docker-compose up`` and
-  start 3 containers: ``web`` for the front end, ``ldap`` to manage users in an
+* ``make dev-setup``: This command generates some needed passwords (mysql, ldap,
+  …) and creates data containers. Those data containers are used as volumes to
+  persist data (files, db, …). This command needs to be run only once.
+* ``make start-dns``: This command starts dnsdock that will resolve names for
+  our docker containers. This command needs to be run before you run ``make start``.
+* ``make start``: This command is a wrapper around ``docker-compose up``. It
+  starts 3 containers: ``web`` for the front end, ``ldap`` to manage users in an
   OpenLDAP server, and ``db`` for the mysql server.
   
-  You can issue the followin command in order to check that all containers are started:
+  You can issue the following command in order to check that all three containers are started:
 
   .. code-block:: bash
     
@@ -70,8 +70,8 @@ And if you need to connect to the database:
 
     $ docker run -it --link tuleap_db_1:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD" tuleap'
 
-Troubleshootings
-----------------
+Troubleshooting
+---------------
 
 If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker/:
 
