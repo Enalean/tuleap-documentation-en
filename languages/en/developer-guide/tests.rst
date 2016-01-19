@@ -21,7 +21,6 @@ Run tests with docker
 
 We have docker images to run unit tests on all environments:
 
-* centos5 + php 5.1: enalean/tuleap-simpletest:c5-php51
 * centos6 + php 5.3: enalean/tuleap-simpletest:c6-php53
 * centos6 + php 5.4: enalean/tuleap-simpletest:c6-php54
 * centos6 + php 5.5: enalean/tuleap-simpletest:c6-php55
@@ -199,5 +198,3 @@ Integration tests for REST API of plugins
 If your new plugin provides some new REST routes, you should implement new integration tests. These tests must be put in the tests/rest/ directory of your plugin.
 
 If you want more details about integration tests for REST, go have a look at tuleap/tests/rest/README.md.
-
-
