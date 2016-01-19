@@ -65,6 +65,10 @@ clean:
 	-rm -rf tmp
 	-rm -rf $(BUILDDIR)/*
 
+errors: pre-build
+	@echo "Stopping on first warning…"
+	$(SPHINXBUILD) -W -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/$(LANG)
+
 html: pre-build
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/$(LANG)
 	@echo

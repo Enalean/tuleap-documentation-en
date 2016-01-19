@@ -68,14 +68,16 @@ As with other site-content files, you may customize the language files, so that 
     Repeat the operation for all the languages you need to support on your server.
 
 Custom Tuleap Tours
-------------
+-------------------
 
 Tours are step-by-step instructions in the form of help buttons in the UI. You can add your own on most parts of Tuleap.
 First, create the folder /etc/tuleap/site-content/en_US/tour. **The tours are localised** so you'll need to create ones in each language.
 
 Next, you need to create a file that list which tours are available at which URL.
 This is a JSON file and it **must be named tour.json**. It's content must be an array of tour references, e.g.
+
 ::
+
     #contents of /etc/tuleap/site-content/en_US/tour/tour.json:
 
     [
@@ -95,7 +97,9 @@ There are 3 placeholders that can be used in the url:
     - **{attribute_value}** This will match against any attribute value. The value can be a string or an integer.
 
 The **tour_name** must correspond to a JSON file located in the same folder. E.g. my_first_tour.json
+
 ::
+
     #contents of /etc/tuleap/site-content/en_US/tour/my_first_tour.json:
 
     {

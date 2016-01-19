@@ -30,7 +30,7 @@ Database Creation
 The Tuleap database is created once when the Tuleap software is first
 installed. The scripts used to create and populate the database are
 located in src/db/mysql.
- **Remark:** NEVER EVER run these SQL scripts once the DB has been
+**Remark:** NEVER EVER run these SQL scripts once the DB has been
 created or it will destroy all of your existing data !!
 
 
@@ -181,7 +181,7 @@ Example of named.conf
                 query-source    port *;
                 query-source-v6 port *;
                 allow-query     { any; };
-        
+
                 forwarders {
                         13.202.220.10; // Put your own DNS forwarders list here!!!
                 };
@@ -192,9 +192,9 @@ Example of named.conf
                         severity dynamic;
                 };
         };
-        
+
         include "/etc/named.rfc1912.zones";
-        
+
         zone "tuleap.example.com" {
                         type master;
                         file "tuleap.zone";
@@ -214,11 +214,11 @@ Example of tuleap.zone:
                        IN      NS      csx1243.tuleap.example.com.
             localhost       IN      A       127.0.0.1
        ;----------------------------------------------------------------------
-       
+
        tuleap.example.com.                IN      A       13.0.33.116
        csx1243                           IN      A       13.0.33.116 ; production server
        csx12432                          IN      A       13.0.33.45  ; backup server
-       
+
        tuleap.example.com.                IN      MX      0       csx1243.tuleap.example.com.
        tuleap.example.com.                IN      MX      10      mailer-east.example.com.
        ;
@@ -236,7 +236,7 @@ Example of tuleap.zone:
        lists                           IN      A   13.0.33.116
                                        IN      MX      0       lists.tuleap.example.com.
                                        IN      MX      10      mailer-east.example.com.
-       
+
        ;
        ; Wildcard DNS entry, to match all possible hosts: projnamme.*, cvs.projname.*, svn.projname.*, etc.
        ;
@@ -288,7 +288,7 @@ to handle incoming and outgoing mail messages. The critical files for
 the sendmail configuration are:
 
 * ``/etc/postfix/main.cf``: configuration file
-* ``/etc/aliases``: This is a small aliases file where you only want to configure system wide aliases like postmaster, webmaster,etc... When you modify this file run the command "newaliases" for the changes to take effect. 
+* ``/etc/aliases``: This is a small aliases file where you only want to configure system wide aliases like postmaster, webmaster,etc... When you modify this file run the command "newaliases" for the changes to take effect.
 * ``/etc/aliases.codendi``: This file is generated automatically by the Tuleap daemon scripts and must never be edited by hand. The beginning of the file contains some predefined aliases (admin, contact, noreply,...) that must not be modified.
 
 
@@ -326,7 +326,7 @@ If activated, once per day, Tuleap will go through all the platform's ldap users
 * check they still exist in the LDAP directory. If not found, their accounts become suspended.
 * (OpenLDAP servers only) update the login name if it has changed.
 
-Note that you can also set the ``sys_ldap_daily_sync_retention_period`` (retention period) for suspended users, i.e. the number of days after which a suspended ldap user's status will switch to deleted. 
+Note that you can also set the ``sys_ldap_daily_sync_retention_period`` (retention period) for suspended users, i.e. the number of days after which a suspended ldap user's status will switch to deleted.
 Also, if you want to ensure that all your users do not become suspended due to a temporary server offline issue, you can set a threshold, ``sys_ldap_threshold_users_suspension``, i.e. the maximum percentage of users that can be suspended in one go.
 
 .. NOTE::
@@ -456,4 +456,3 @@ Below we define what each of these parameters stands for.
 
 .. _`official website`: http://www.igniterealtime.org/projects/openfire/index.jsp
 .. _`official plug-in documentation`: http://www.igniterealtime.org/community/docs/DOC-1080
-

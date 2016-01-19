@@ -17,7 +17,7 @@ To run tests you can either use:
 - the CLI interface: make tests (at the root of the sources). You can run a file or a directory: php tests/bin/simpletest plugins/docman
 
 Run tests with docker
-````````````````````
+`````````````````````
 
 We have docker images to run unit tests on all environments:
 
@@ -145,7 +145,7 @@ Available syntaxic sugars:
 See details and more helpers in ``plugins/tests/www/MockBuilder.php``.
 
 Helpers and database
-`````````````````````
+````````````````````
 
 .. hint:: **A bit of vocabulary**
 
@@ -183,7 +183,7 @@ and ``returnsDarWithErrors()``.
         }
 
 Builders
-`````````
+````````
 
 Keep tests clean, small and readable is a key for maintainability (and avoid writing crappy tests).
 A convenient way to simplify tests is to use Builder Pattern to wrap build of complex objects.

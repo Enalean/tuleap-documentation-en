@@ -9,13 +9,13 @@ According to your Tuleap configuration there are several ways to
 activate an account:
 
 -  **Standard case, no administration approval is needed.**
-    Once the user created his account, he will receive an e-mail, and
+   Once the user created his account, he will receive an e-mail, and
    then when clicking on the link inside he will activate his account.
    The admin can also activate the account (if the user e-mail is not
    valid...) in the pending user interface.
 
 -  **Administration approval is needed (sys\_user\_approval = 1).**
-    Once the user created his account, the administrator is notified by
+   Once the user created his account, the administrator is notified by
    e-mail. He has to first validate the account in the pending user
    interface. Then an email is sent to the user. The account is
    activated once the user has followed the link sent in the email. The
@@ -26,7 +26,7 @@ activate an account:
 
 -  **Restricted user and administration approval is needed
    (sys\_allow\_register\_user=1 and sys\_user\_approval=1)**
-    Once the user created his account, the administrator is notified by
+   Once the user created his account, the administrator is notified by
    e-mail. He has to validate the account in the pending user interface.
    He can choose between standard user or restricted user. Then an email
    is sent to the user. The account is activated once the user has
@@ -36,7 +36,7 @@ activate an account:
    -  after validation, in the validated user interface
    -  or before validation directly in the pending user interface
 
- Here are the various possible status values for a Tuleap user:
+Here are the various possible status values for a Tuleap user:
 
 -  Pending (internal: 'P'): the account was submitted, but not validated
    or activated.

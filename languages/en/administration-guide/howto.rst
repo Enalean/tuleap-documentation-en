@@ -115,16 +115,15 @@ everything and want to start again from scratch*
 
 The fastest and safest way (where xxx is the project name):
 
--  Log as root
--  cd /cvsroot for a CVS repository, or cd /svnroot for a SVN repository
--  Make a backup copy of the current tree in /tmp just in case...:
-   ``tar cvfz /tmp/xxx_repository.tgz ./xxx   ``
--  Delete the CVS or SVN tree:
-   ``rm -rf  xxx``
--  Wait for the SYSTEM_CHECK system event to run.
--  Delete corresponding entries from cvs\_checkins, cvs\_commits and
-   cvs\_descs tables to prevent showing them while browsing commits with
-   viewVC.
+- Log as root
+- cd /cvsroot for a CVS repository, or cd /svnroot for a SVN repository
+- Make a backup copy of the current tree in /tmp just in case...:
+  ``tar cvfz /tmp/xxx_repository.tgz ./xxx``
+- Delete the CVS or SVN tree: ``rm -rf  xxx``
+- Wait for the SYSTEM_CHECK system event to run.
+- Delete corresponding entries from cvs\_checkins, cvs\_commits and
+  cvs\_descs tables to prevent showing them while browsing commits with
+  viewVC.
 
 Now you have a fresh CVS or SVN repository and the team can start the
 import again.
@@ -151,57 +150,72 @@ Change privileged account passwords
 Some companies have specific policies regarding passwords.
 
 **root** account:
- 1) Change *unix* password from **root**account:
- password (cr)
+
+.. code-block:: bash
+
+ # Change unix password from root account:
+ $ password
  [enter new password]
  [retype new password to confirm]
- 2) Change *mysql* password:
- mysqladmin --user=root -p password [new\_password]
+
+ # Change *mysql* password:
+ $ mysqladmin --user=root -p password [new\_password]
  enter password: [enter old password]
 
 **codendiadm** account:
- 1) Change *unix* password from **codendiadm** account:
- password (cr)
+
+.. code-block:: bash
+
+ # Change *unix* password from **codendiadm** account:
+ $ password
  [enter new password]
  [retype new password to confirm]
- 2) Change *mysql*password:
+
+ # Change mysql password:
  mysqladmin --user=codendiadm -p password [new\_password]
  enter password: [enter old password]
- 3) Modify /etc/tuleap/conf/database.inc
-- change **codendiadm** password
+
+ $ vim /etc/tuleap/conf/database.inc # change **codendiadm** password
 
 **admin** account:
- - The "admin" account is the first user that is created when a new
-Tuleap site is created.
- - The "admin" account is used as an "administrator" for orphaned
-projects.
- - The "admin" *unix* account is not a privileged account.
- - If you have defined other site administrators, you might as well
-suspend the "admin" account (thus, you won't need to update its
-password).
- 1) Change *unix* and *mysql* password for **admin** from Tuleap
+
+- The "admin" account is the first user that is created when a new
+  Tuleap site is created.
+- The "admin" account is used as an "administrator" for orphaned
+  projects.
+- The "admin" *unix* account is not a privileged account.
+- If you have defined other site administrators, you might as well
+  suspend the "admin" account (thus, you won't need to update its
+  password).
+
+Change *unix* and *mysql* password for **admin** from Tuleap
 website:
- - Go to the Tuleap web site
- - Log in as **admin**
- - Click "Account Maintenance" in left bar
- - Click "[Change Password]"
- - Follow directions for changing password
+
+- Go to the Tuleap web site
+- Log in as **admin**
+- Click "Account Maintenance" in left bar
+- Click "[Change Password]"
+- Follow directions for changing password
 
 **mailman** account:
- - The "mailman" account has the universal password for mailing lists.
- 1) su -
- 2) cd /usr/lib/mailman/bin
- 3) ./mmsitepass
- [enter new password when prompted]
- 4) Change *unix* password from **root** account:
- password mailman
- [enter new password when prompted]
- [retype new password to confirm]
- - To test the mailman account:
- - Go to http://lists.example.com/mailman/admin
- - Click on any mailing list
- - Type new global admin password
- If you see the admin page of the selected mailing list, then it is OK.
+
+- The "mailman" account has the universal password for mailing lists.
+
+  .. code-block:: bash
+
+     # as root
+     $ cd /usr/lib/mailman/bin
+     $ ./mmsitepass
+
+     # Change unix password for mailman user
+     $ password mailman
+
+- To test the mailman account:
+- Go to http://lists.example.com/mailman/admin
+- Click on any mailing list
+- Type new global admin password
+
+If you see the admin page of the selected mailing list, then it is OK.
 
 Enabling 'Restricted Users' on a Tuleap server
 -----------------------------------------------
@@ -567,7 +581,7 @@ want to expand the account validity, you have to reactivate the account
 **and** change the expiration date.
 
 How to change PhpWiki language for a project
------------------------------------------
+--------------------------------------------
 
 Once the language of a wiki is set for a project, it is "impossible" to
 change it. If an admin made a mistake and activated the wiki for his
@@ -1195,7 +1209,7 @@ To activate it and launch the first purge at the same time, you have to do:
 
 
 Deploy a permissions overrider
---------------------------------
+------------------------------
 
 Tuleap provides a way to have a permissions overrider to support very particular setups. The permissions overrider cannot restrict users it can only open permissions where Tuleap would normally restrict the user. In order to implement such an object, you have to create a ``/etc/tuleap/local_glue`` folder and a file ``PermissionsOverrider.php`` in it. This file must contains a class definition of ``PermissionsOverrider`` which implements the ``PermissionsOverrider_IOverridePermissions`` interface you may find in ``/usr/share/tuleap/src/common/include/PermissionsOverrider/IOverridePermissions.php``.
 
@@ -1203,7 +1217,8 @@ Once you've done this, your PermissionsOverrider object will be called for each 
 
 
 Add a new certification authority to the CA bundle
---------------------------------
+--------------------------------------------------
+
 It could be needed to a new CA to the list of recognized CAs. On CentOS that could be done this way:
 
 .. sourcecode:: console

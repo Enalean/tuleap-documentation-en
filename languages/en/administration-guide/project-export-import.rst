@@ -107,7 +107,7 @@ Comments column should give you all needed information about current status.
     .. figure:: ../images/diagrams/mapping-users-during-project-import.png
        :align: center
        :alt: Agile Dashboard Configuration
-       :name: Agile Dashboard  Configuration
+       :name: Agile Dashboard Configuration
 
 
 After having reviewed/edited the mapping file, you should pass it through a script in order to know if your choices are

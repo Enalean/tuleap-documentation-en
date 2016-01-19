@@ -8,7 +8,7 @@ file, the default is automatically set for you.
 ====
 
 Subversion packaging issue
---------
+--------------------------
 
 Due to a packaging issue we strongly suggest you install or force the reinstall of
 the following packages: tuleap-core-subversion and tuleap-core-subversion-modperl.
@@ -26,7 +26,7 @@ If the packages are already installed, you can reinstall them with:
         #> yum reinstall tuleap-core-subversion tuleap-core-subversion-modperl
 
 Use tokens to authenticate a SVN user
---------
+-------------------------------------
 
 It is now possible to use a token instead of a password to authenticate users for SVN
 operations. In order to make that possible, it is necessary to grant more rights
@@ -46,7 +46,7 @@ If you use the LDAP plugin, you also need to grant this privilege:
         FLUSH PRIVILEGES;
 
 Git evolution on CentOS 5 due to a system bug
---------
+---------------------------------------------
 
 To find a workaround a system bug, we have been forced to introduce a change.
 To kept the Git plugin fully functional, you must edit your sudoers file to match the following informations:
@@ -58,7 +58,7 @@ To kept the Git plugin fully functional, you must edit your sudoers file to matc
         gitolite ALL= (codendiadm) SETENV: NOPASSWD: /usr/share/codendi/src/utils/php-launcher.sh /usr/share/codendi/plugins/git/hooks/post-receive.php*
 
 Git evolution on CentOS 5 to import/export project archive
---------
+----------------------------------------------------------
 
 Now that it is possible to import a git repository alongside a project archive, you must edit your sudoers file to match the following informations:
 
@@ -95,7 +95,7 @@ check :ref:`Activate reply to artifacts by email <admin_tracker_reply_by_email>`
 ===
 
 Git evolution on CentOS 5
---------
+-------------------------
 
 With the introduction of the truncated notifications in the Git plugin, we have been forced to do some changes.
 To kept the Git plugin fully functional, you must add the following informations at the end of your sudoers
@@ -133,7 +133,8 @@ the file ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` with these extra properties
 ===
 
 API Explorer update
---------
+-------------------
+
 We have updated the API Explorer. The package restler-api-explorer must be considered deprecated.
 To update to the new Explorer install the package tuleap-api-explorer and remove or
 at least comment the old Apache configuration. You probably have copied this configuration at
@@ -141,7 +142,8 @@ at least comment the old Apache configuration. You probably have copied this con
 you need to restart Apache.
 
 Drop support of insecure SSL/TLS configurations
---------
+-----------------------------------------------
+
 With this release we have updated the default TLS Apache configuration we provide with Tuleap.
 All new instances of Tuleap will use this one but if you already have an installation,
 your configuration will be left untouched. However, we encourage you to update your
@@ -150,6 +152,7 @@ Internet Explorer 8 on Windows XP to be able to connect to the HTTPS server.
 
 If you want to update your configuration, replace the line SSLProtocol and SSLCipherSuite
 ``/etc/httpd/conf/ssl.conf`` by:
+
   .. sourcecode:: configuration
 
     # SSL Protocol support:
@@ -167,7 +170,7 @@ If you want to update your configuration, replace the line SSLProtocol and SSLCi
 ===
 
 Password storage
---------
+----------------
 
 We have added a new and more secure way to store passwords in Tuleap. This feature is activated
 default on new intalls but the legacy way is kept on the already running instances
@@ -175,16 +178,19 @@ for compatibility purposes. We greatly advise to use this new functionality if y
 
 To activate the new password storage on a already existing instance you must add the
 following line in your ``local.inc``:
+
   .. sourcecode:: php
 
     $sys_keep_md5_hashed_password = 0;
 
 Execute this script if you have the IM plugin installed:
+
   .. sourcecode:: console
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
 Execute this script if you have the Proftpd plugin installed:
+
   .. sourcecode:: console
 
     #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
@@ -278,13 +284,17 @@ LDAP
 ----
 
 * Default search for daily syncho is now the whole LDAP subtree.
- + If ``$sys_ldap_daily_sync`` was enabled (= 1), you should monitor duration of ``ROOT_DAILY`` system event (each night at 00:10)
-  - If duration is the same after upgrade, everything is fine
-  - If duration is really longer (20-30% longer). You can switch back to previous mode with ``$search_depth = 'onelevel';`` in ldap configuration ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
- + If ``$sys_ldap_daily_sync`` was disabled ( = 0), you should be able to enable it
-  - Do it first on a QA server
-  - You should expect some people to be suspended on first run
-  - If most users get suspended, there is something wrong and you should keep the synchro disabled and report the issue
+
+  * If ``$sys_ldap_daily_sync`` was enabled (= 1), you should monitor duration of ``ROOT_DAILY`` system event (each night at 00:10)
+
+    * If duration is the same after upgrade, everything is fine
+    * If duration is really longer (20-30% longer). You can switch back to previous mode with ``$search_depth = 'onelevel';`` in ldap configuration ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
+
+  * If ``$sys_ldap_daily_sync`` was disabled ( = 0), you should be able to enable it
+
+    * Do it first on a QA server
+    * You should expect some people to be suspended on first run
+    * If most users get suspended, there is something wrong and you should keep the synchro disabled and report the issue
 
 Core
 ----

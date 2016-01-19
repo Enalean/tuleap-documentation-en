@@ -29,7 +29,7 @@ The "b" is not symbolic of anything and must always be the first letter in the c
 sample script
 """""""""""""
 
-   .. code-block:: bash
+   .. code-block:: php
 
         <?php
         /**
@@ -64,5 +64,3 @@ sample script
         ?>
 
 When creating a new script, the only methods you generally need to change are description() and up().
-
-

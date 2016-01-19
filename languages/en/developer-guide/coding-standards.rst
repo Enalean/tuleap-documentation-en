@@ -20,14 +20,14 @@ Internal conventions
 * One True Brace style
 * No trailing whitespaces
 
-  **Note:** Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review. 
-  The code WONT be accepted. If your eyes are bleeding, conform to coding standard in a dedicated review, then 
+  **Note:** Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
+  The code WONT be accepted. If your eyes are bleeding, conform to coding standard in a dedicated review, then
   contribute your change.
 
 Copyright & license
 -------------------
 
-All source code files (php, js, bash, ...) must contain a page-level docblock at the top of each file. 
+All source code files (php, js, bash, ...) must contain a page-level docblock at the top of each file.
 This header includes your copyright and a reference to the license GPLv2+ of the script.
 
   .. code-block:: php
@@ -61,8 +61,8 @@ Tuleap is a big (`+600k LOC`_) and old (16 years) software and has probably an e
 Yet, it's not a fatality and we are on the way to, slowly and carefully clean things up. On our road toward a Clean Code, some motto might help you to make your design choices:
 
 - Test your code; TDD (Test Driven Development) should be the default.
-- Follow `￼SOLID`_ design principles.
-- Don't contribute `￼STUPID`_ code.
+- Follow SOLID_ design principles.
+- Don't contribute STUPID_ code.
 
 We also strongly suggest that you familiarize yourself with `￼Code Smells`_ as it might pop up during code reviews.
 
@@ -73,7 +73,7 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 
 - ￼http://www.phptherightway.com/
 
-.. _`+600k LOC`: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
-.. _`SOLID`: http://www.python.org/
-.. _`STUPID`: http://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
-.. _`￼Code Smells`: http://blog.codinghorror.com/code-smells/
+.. _+600k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
+.. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
+.. _STUPID: http://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
+.. _￼Code Smells: http://blog.codinghorror.com/code-smells/

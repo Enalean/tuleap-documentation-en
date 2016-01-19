@@ -22,7 +22,7 @@ nobody and group *ProjectName*. File permission is read only (r--r--r--)
 for files, while directories are user and group writable (rwxrwxr-x).
 This is defined by CVS and must not be touched.
 
- By default CVS servers on Tuleap are configured to perform all
+By default CVS servers on Tuleap are configured to perform all
 transactions through the pserver protocol. Tuleap can be tuned to use
 the ssh tunnelling protocol.
 
@@ -68,7 +68,7 @@ Subversion database. Project members and non project members permission
 can be defined through the Web interface of the Tuleap Subversion
 service.
 
- Beside the virtual file system managed in the Subversion databases
+Beside the virtual file system managed in the Subversion databases
 there are a number of files installed on the Linux file system that you
 must know about:
 
@@ -84,6 +84,8 @@ must know about:
    service. This file must not be modified or removed. Other hook
    scripts can be used by the project team if they have a shell account
    available on the server.
+
+.. _log-files:
 
 Log files
 ---------
@@ -119,7 +121,7 @@ is a simple daily copy of the Apache log file
 /var/log/httpd/vhosts-access\_log. that is later analyzed to feed the
 Tuleap database with statistical data about the project Web site
 activity. These files are generated daily by the logrotate script of
-Apache (see the `Log Files <#Log_Files>`_section)
+Apache (see :ref:`log-files` section)
 
 . /Year/Month/
 
@@ -127,13 +129,14 @@ File name pattern: ``http_combined_YYYYMMDD.log``
 
 This file contains the combined access logs to the main Tuleap Web
 site. They are generated daily by the logrotate script of Apache (see
-the `Log Files <#Log_Files>`_section). It is basically a copy of the
+:ref:`log-files` section). It is basically a copy of the
 /var/log/httpd/access\_log file
 
 File name pattern: ``ftp_xferlog_YYYYMMDD.log``
- This file contain the ftp access logs (upload and download) to the
+
+This file contain the ftp access logs (upload and download) to the
 Tuleap site. It is generated daily by the logrotate script of ftp (see
-the `Log Files <#Log_Files>`_section). It is basically a copy of the FTP
+:ref:`log-files` section). It is basically a copy of the FTP
 log file /var/log/xferlog.
 
 Dump files
@@ -160,13 +163,13 @@ Files found in this directory are
 -  **subversion\_dir\_dump** ready to use Apache config files with a
    list of all the per project subversion repositories. This will be
    copied as is in the ``/etc/httpd/conf.d/codendi_svnroot.conf`` file.
--  **db\_top\_groups\_calc\_output:**contains all sorts of statistics
+-  **db\_top\_groups\_calc\_output:** contains all sorts of statistics
    about the Tuleap hosted projects (project name, old project rank in
    terms of total number of downloads, old project rank in terms of
    number of downloads this past week, user rank - unused-, rank in
    terms of total number of forum posting this past week, total number
    of download, new rank of the projects in terms of number of
-   downloads,...
+   downloads, ...
 -  **group\_dump:** group (project) name dump with project ID, users
    belonging to the project and the project status (Active, Suspended,
    Deleted)
@@ -190,7 +193,7 @@ Each registered user has her own Unix account created and the home
 directory that goes with it. This user home directory is owned by
 UserName.UserName and has access permission rwxr-xr-x. This can be
 changed by the user if she wants to set access permission differently.
- There is currently no space quota on a user home directories.
+There is currently no space quota on a user home directories.
 
 Project Directories
 -------------------
@@ -238,7 +241,7 @@ uploaded files move to the final release space
 /var/lib/tuleap/ftp/tuleap/ProjectName (see above) when a new software
 release is created.
 
-**Remark:**There is a script in the root crontab that removes all the
+**Remark:** There is a script in the root crontab that removes all the
 files older than 2 weeks from this directory. The reason we do that is
 because this zone is shared by all the projects and we don't want that
 ghost files stay here for too long.
@@ -275,4 +278,4 @@ The logrotate configuration files located in /etc/logrotate.d/apache and
 /etc/logrotate.d/vsftpd.log have been customized for Tuleap. The
 customization consists in the execution of a post rotation script that
 makes a daily copy of the log files in the Tuleap log files area as
-described in the `Log Files <#Log_files>`_section.
+described in the :ref:`log-files` section.
