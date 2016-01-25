@@ -39,7 +39,9 @@ If there is only one file or directory you are interested in:
     $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php53 --nodb \
         /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
 
-Please note the --nodb switch, it allows a faster start when there is no DB involved.
+.. note::
+
+  Please note the --nodb switch, it allows a faster start when there is no DB involved.
 
 
 
@@ -51,6 +53,26 @@ There is also a docker image for REST tests:
 .. code-block:: bash
 
     $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-rest
+    
+How to debug tests
+""""""""""""""""""
+
+Docker containers are stopped and removed once the tests are finished. In case of failure, 
+if you want to debug things, you may need to start manually the container in order to parse logs for example.
+
+.. code-block:: bash
+
+   $> docker -ti --entrypoint bash -v $PWD:/tuleap enalean/tuleap-test-rest
+   $root@d4601e92ca3f> ./run.sh tests/rest/ArtifactFilesTest.php
+
+We are replacing the ``--rm=true`` parameter by ``-ti`` (for terminal interactivity) and ``--entrypoint bash`` (to override default one).
+
+In another terminal, you can attach to this running container:
+
+.. code-block:: bash
+
+   $> docker exec -ti <name-of-the-container> bash
+   $root@d4601e92ca3f> tail -f /var/log/httpd/error_log
 
 
 Organize your tests
