@@ -62,7 +62,7 @@ if you want to debug things, you may need to start manually the container in ord
 
 .. code-block:: bash
 
-   $> docker -ti --entrypoint bash -v $PWD:/tuleap enalean/tuleap-test-rest
+   $> docker run -ti --entrypoint bash -v $PWD:/tuleap enalean/tuleap-test-rest
    $root@d4601e92ca3f> ./run.sh tests/rest/ArtifactFilesTest.php
 
 We are replacing the ``--rm=true`` parameter by ``-ti`` (for terminal interactivity) and ``--entrypoint bash`` (to override default one).
