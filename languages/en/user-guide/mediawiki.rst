@@ -82,19 +82,10 @@ Mediawiki extensions
 
 Tuleap currently integrates the following Mediawiki extensions:
 
-Special Pages
-`````````````
-
 * `CategoryTree <https://www.mediawiki.org/wiki/Extension:CategoryTree>`_ : dynamically browses the
   structure of categories. For more information about this, please visit the project's mediawiki,
   click on **Special Pages**, then on **Version** to access the list of installed extensions.
  
-
-Parser plug-ins
-```````````````
-
-* CategoryTree: see above.
-
 * `Cite <https://www.mediawiki.org/wiki/Extension:Cite/Cite.php>`_ : adds ``<ref[name="id"]>`` and ``<references/>`` tags for references and footnotes.
 
 * `ImageMap <https://www.mediawiki.org/wiki/Extension:ImageMap>`_ : allows for client-side clickable images, thanks to the ``<imagemap>`` tag.
@@ -112,14 +103,9 @@ Parser plug-ins
 * `SyntaxHighlight_GeSHi <https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi>`_ : allows for source code syntax highlighting throught the ``<syntaxhighlight>`` tag
   and the `GeSHi syntax highlighting <http://qbnz.com/highlighter/>`_.
 
-Miscellaneous
-`````````````
+* **TuleapArtLinks**: provides artifact links integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact. 
 
-* `TuleapArtLinks <https://www.enalean.com/>`_ : provides **artifact links** integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as
-  **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact. 
-
-.. image:: ../images/screenshots/sc_mediawiki_tuleap_crossreference.png
-   :align: center
+* `WikiEditor <http://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
 
 Compatibility view
 ------------------
@@ -149,7 +135,7 @@ Contributions
 - **ImageMap** contributed by Tim Starling.
 - **InputBox** contributed by Erik Moeller, Leonardo Pimenta, Rob Church, Trevor Parscal and DaSch.
 - **LabeledSectionTransclusion** contributed by Steve Sanbeg.
-- **ParserFunctions** contributed by Tim Starling, Robert Rohde, Ross McClure et Juraj Simlovic.
+- **ParserFunctions** contributed by Tim Starling, Robert Rohde, Ross McClure and Juraj Simlovic.
 - **PdfBook** contributed by `Aran Dunkley <http://www.organicdesign.co.nz/nad>`_.
-- **SyntaxHighlight_GeSHi** contributed by Brion Vibber, Tim Starling, Rob Church et Niklas Laxström.
+- **SyntaxHighlight_GeSHi** contributed by Brion Vibber, Tim Starling, Rob Church and Niklas Laxström.
 - **TuleapArtLinks** contributed by `Enalean SAS <https://www.enalean.com/>`_.
