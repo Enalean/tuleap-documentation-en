@@ -136,6 +136,25 @@ to listen on the port of the pserver protocol (tcp/2401). Look for
 /etc/xinetd.conf/cvs for the command line used to run the cvs server.
 
 
+Subversion
+----------
+
+Known cache issues with mod_perl
+``````````````````````````
+mod_perl SVN cache is defined by repository.
+A user will kept his previous permissions until Apache module cache is cleared:
+
+- no more a project member
+- user is either restricted, suspended or deleted
+- project moves from public to private
+- user revoked a token
+
+Cache is cleared after ten different users connect to this SVN repository or
+Apache is restarted.
+
+You can force Apache restart to manually Apache module cache with
+``service httpd graceful``.
+
 DNS
 ---
 
