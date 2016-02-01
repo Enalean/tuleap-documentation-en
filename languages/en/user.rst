@@ -28,6 +28,7 @@ User-guide
    user-guide/project-links
    user-guide/sftp-browser
    user-guide/tracker-v3
+   user-guide/notification
    user-guide/other-services
    user-guide/troubleshooting
    soap/tracker
