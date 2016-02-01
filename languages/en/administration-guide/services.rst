@@ -142,17 +142,29 @@ Subversion
 Known cache issues with mod_perl
 ``````````````````````````
 mod_perl SVN cache is defined by repository.
-A user will kept his previous permissions until Apache module cache is cleared:
+Some actions don't clear automatically the Apache cache and can lead to permission issues:
 
-- no more a project member
-- user is either restricted, suspended or deleted
-- project moves from public to private
-- user revoked a token
+- User is no more a project member
+- User status update: restricted, suspended or deleted
+- Project visibility changes: public, private, ...
+- User revokes a token
 
-Cache is cleared after ten different users connect to this SVN repository or
-Apache is restarted.
+A user will keep his previous access until Apache module cache is cleared.
 
-You can force Apache restart to manually Apache module cache with
+Cache invalidation (cleared):
+
+- after ten different users connect to a SVN repository
+- or Apache is restarted
+
+By default, the Tuleap restarts Apache:
+
+- once a week (default crontab)
+- on any project creation, deletion or rename
+- activation / deactivation of subversion service in any project
+- when site admin activate / deactivate token usage for project
+
+
+You can force Apache restart to manually clear Apache module cache with
 ``service httpd graceful``.
 
 DNS
