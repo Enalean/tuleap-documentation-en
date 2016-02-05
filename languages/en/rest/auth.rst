@@ -275,13 +275,13 @@ produces :
 
 ::
 
-With the previsous parameters, the task is displayed :
+With the previous parameters, the task is displayed :
 
 .. image:: ../images/screenshots/jetbrains/jetbrains_tasksearch.png
    :alt: Search a task
    :align: center   
 	
-A issue may occur for using SNIExtension on the JVM. To fix it, add the flag ``-Djsse.enableSNIExtension=false`` on the .vmoptions files of your IDE.
+An issue may occur for using SNIExtension on the JVM. To fix it, add the flag ``-Djsse.enableSNIExtension=false`` on the .vmoptions files of your IDE.
 
 
 
