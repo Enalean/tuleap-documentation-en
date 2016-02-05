@@ -85,8 +85,8 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
 * Check that apache serves files by executing a ``wget -O -
   http://localhost/`` once connected to the ``web`` container (see
   :ref:`protips`). If you see a long html output that contains typical Tuleap
-  homepage, then it means that there is an issue with the dns.
+  homepage, then it means that there is an issue with the dns. (You may need to ``yum install wget`` first).
 * Check that you can resolve tuleap_web_1.tuleap-aio-dev.docker: ``dig
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
-  'tuleap_web_1.tuleap-aio-dev.docker`` should return a suitable answer
+  'tuleap_web_1.tuleap-aio-dev.docker'`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
