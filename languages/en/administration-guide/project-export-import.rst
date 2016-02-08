@@ -688,8 +688,10 @@ A file is constructed using a ``<file/>`` XML element containing:
 - A ``name`` attribute: the file name (optional)
 - A ``release-time`` attribute: the ISO-8601 representation of the time when the file was released (optional, current time used if not provided)
 - A ``post-date`` attribute encoded in ISO-8601 (optional, current time used if not provided)
-- An ``arch`` attribute: the name of the architecture of the file as appearing in the table ``frs_processor``
-- A ``filetype`` attribute: the name of the file type of the file as appearing in the column ``frs_filetype``
+- An ``arch`` attribute: the name of the architecture of the file as appearing in the table ``frs_processor``.
+  On a fresh install, the processor list is ``i386``, ``x86_64``, ``PPC``, ``MIPS``, ``Sparc``, ``UltraSparc``, ``IA64``, ``Alpha``, ``Any``, ``Other``.
+- A ``filetype`` attribute: the name of the file type of the file as appearing in the column ``frs_filetype``.
+  On a fresh install, the file types available are ``Binary .rpm``, ``Binary .deb``, ``Binary .zip``, ``Binary .bz2``, ``Binary .gz``, ``Binary .tar.gz, .tgz``, ``Binary .jar``, ``Binary installer``, ``Other Binary File``, ``Source .rpm``, ``Source .zip``, ``Source .bz2``, ``Source .gz``, ``Source .tar.gz, .tgz``, ``Other Source File``, ``.Documentation (any format)``, ``text``, ``html``, ``pdf``, ``Other``.
 - An optional ``<description/>`` element containing a file description
 - An optional ``<user/>`` element describing the user who posted the file
 
