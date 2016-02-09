@@ -695,3 +695,30 @@ A file is constructed using a ``<file/>`` XML element containing:
 
 
 Access definitions consists of zero to many ``<ugroup/>`` tags, each containing the name of the user group that is allowed access.
+
+
+Mediawiki
+------------------------
+The Mediawiki can also be imported. For the moment only pages import is supported.
+
+The XML syntax is:
+
+.. sourcecode:: xml
+
+    <mediawiki pages-backup="wiki_pages.xml" language="fr_FR"/>
+
+``language`` is the language of the wiki. Currently only ``en_EN`` and ``fr_FR`` are supported.
+
+``wiki_pages.xml`` is the wiki pages backup done with the ``dumpBackup.php``
+`maintenance script`_ provided by the Mediawiki project.
+
+For the moment, to export the pages of a tuleap Mediawiki please use the script located at
+``$TULEAP_ROOT/plugins/mediawiki/bin/mw-maintenance-wrapper.php``.
+
+For example, to export the mediawiki of the project named "toto"
+use ``$TULEAP_ROOT/plugins/mediawiki/bin/mw-maintenance-wrapper.php toto dumpBackup.php --full``.
+
+The schema is available here : `mediawiki schema`_.
+
+.. _mediawiki schema: https://www.mediawiki.org/xml/export-0.7.xsd
+.. _maintenance script: https://www.mediawiki.org/wiki/Manual:DumpBackup.php
