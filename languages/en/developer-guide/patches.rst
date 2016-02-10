@@ -86,12 +86,12 @@ Publish workflow
 
 The workflow is always the same:
 
-# Create a local branch
-# Hack & commit within the branch
-# Before publishing, ensure every commit is relevant (history rewrite)
-# Push in draft
-# Ensure everything is correct gerrit side
-# Publish !
+#. Create a local branch
+#. Hack & commit within the branch
+#. Before publishing, ensure every commit is relevant (history rewrite)
+#. Push in draft
+#. Ensure everything is correct gerrit side
+#. Publish !
 
 
 Detailed steps:
