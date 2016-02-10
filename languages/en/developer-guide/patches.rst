@@ -1,9 +1,6 @@
 Push your code
 ==============
 
-Basic workflow
----------------
-
 Tuleap project uses Gerrit to ensure a proper review and integration of contributed code. It means that:
 
 - Each and every commit are reviewed individually
@@ -168,3 +165,81 @@ is fine.
 
 When everything is allright, publish the patch ("Publish" button) and set
 "tuleap-integrators" as reviewers
+
+Update a contribution
+---------------------
+
+You got a review and you need to make a change? There are several ways to do it
+
+#. Commit fix and rebase
+#. Fix during rebase
+#. Checkout and amend
+
+Commit fix and rebase
+`````````````````````
+
+The basic workflow is:
+
+#. checkout your branch
+#. make the modifications
+#. commit the fix with commit message like "fix issue" (we will squash it after)
+#. rebase & fixup
+#. push draft
+#. publish
+
+Most of the things were already described in the precedent section, we will focus
+on the "rebase and fixup".
+
+Once you made your fix, the result of a `git log` is something like:
+
+  .. code-block:: bash
+
+    $> git log
+    c36944f request #123: validate git repository name
+    098369f fix issue from code review
+
+Then, you want to incorporate the fix with the initial commit, so you need to rebase:
+
+.. code-block:: bash
+
+  $> git rebase -i origin/master
+  pick c36944f request #123: validate git repository name
+  pick 098369f fix issue from code review
+
+Make your changes:
+
+.. code-block:: bash
+
+  $> git rebase -i origin/master
+  pick c36944f request #123: validate git repository name
+  f 098369f fix issue from code review
+  # save and let rebase do the job
+
+Now you only have one commit and you can push and eventually publish.
+
+.. NOTE::
+
+  This works best when
+
+  * You have few commits in your branch
+  * Those commits are not modifying the same place you have to modify
+
+  This doesn't work when:
+
+  * Someone else modified your commit (you will have to follow the "Checkout and amend" way)
+
+Fix during rebase
+`````````````````
+
+TBD
+
+.. code-block:: bash
+
+  $> git rebase -i origin/master
+  edit
+  $> git push origin HEAD:refs/drafts/master
+
+Checkout and amend
+`````````````````
+
+TBD
