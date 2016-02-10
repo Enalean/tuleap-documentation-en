@@ -28,9 +28,9 @@ A bad commit has:
 
 As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depends one of another if the very first one is not validated.
 
-Development repository is hosted on http://gerrit.tuleap.net
+Development repository is hosted on https://gerrit.tuleap.net
 
-You can checkout http://gerrit.tuleap.net/#/admin/projects/tuleap. You need an account on gerrit in order to do the checkout.
+You can checkout https://gerrit.tuleap.net/#/admin/projects/tuleap. You need an account on gerrit in order to do the checkout.
 
 .. NOTE::
 
@@ -42,7 +42,6 @@ You can checkout http://gerrit.tuleap.net/#/admin/projects/tuleap. You need an a
 
 Setting up your environment
 ```````````````````````````
-
 1. configure your local config to rebase when you pull changes locally:
 
   .. code-block:: bash
@@ -59,79 +58,113 @@ Setting up your environment
 
 3. Configure your gerrit environement
 
-  Setup you account (please use the same login name than on tuleap.net) on
-  http://gerrit.tuleap.net and publish your ssh key (not needed if you are
+  Login on https://gerrit.tuleap.net (same account than tuleap.net) and publish your ssh key (not needed if you are
   using http as transport).
 
   .. code-block:: bash
 
-    $> git remote add gerrit ssh://USERNAME@gerrit.tuleap.net:29418/tuleap.git
+    $> git clone ssh://USERNAME@gerrit.tuleap.net:29418/tuleap.git
+
+Push you changes
+----------------
+
+Tuleap follows the "master only" approach: each and every feature (or fix) shall be decomposed in small chunks meant to be included into master.
+
+Most of the time (everything but small bug fix) the development of a feature
+require several commit. Hence you should decompose your work so each commit is a
+small progress toward your goal: the final feature.
+
+Each commit should work but, most important should not break anything.
+
+Publish workflow
+````````````````
+
+.. NOTE::
+
+  You should always reference a public artifact in your commit from either the
+  request or the story tracker.
+
+The workflow is always the same:
+
+# Create a local branch
+# Hack & commit within the branch
+# Before publishing, ensure every commit is relevant (history rewrite)
+# Push in draft
+# Ensure everything is correct gerrit side
+# Publish !
 
 
-Contribution type
-------------------
+Detailed steps:
 
-Bug fix or small feature (one commit)
-`````````````````````````````````````
-
-A bug fix or a tiny feature (that doesn't need more than one commit) can be contributed directly on master
+1. Create local branch:
 
   .. code-block:: bash
 
-    $> git checkout -b fix_some_stuff origin/master
-    $> $EDITOR files
-    $> git commit -am "My commit message"
+    $> git checkout -b my_fix
 
-    # Push for review
-    $> git push gerrit HEAD:refs/drafts/master
+2. Hack & commit
 
-If the drafts looks OK on the web site, you can publish it with "Publish button" and add "Tuleap-Integrators" as reviewers.
+  .. code-block:: bash
 
-If you are not satisfied (pushed too much content, etc), you should delete the change and start over.
+    $> $EDITOR ...
+    $> git commit -am "stuff"
 
-Start a feature from scratch
-`````````````````````````````
+3. Prepare for publish
 
-- Create a story artifact.
-- Ask for creation of a feature branch to tuleap-integrators (tuleap-devel mailing list)
-- Jump to next paragraph
+Here you look at the history and decide whether all the intermediate steps (commits)
+are relevant or if you need to clean up a bit
 
-Contribute to an existing branch
-````````````````````````````````
+  .. code-block:: bash
 
-- Fetch gerrit repository: git fetch origin
-- Checkout the branch: git checkout -b branch_name
-- Make your commit: git commit
-- Retrieve the latest updates: git pull --rebase
-- Push it to the branch: git push gerrit HEAD:refs/drafts/branch_name
-- Loop to step 3 until the development is completed and ask for a merge on master (tuleap-devel mailing list)
+    $> git fetch origin
+    $> git rebase origin/master
+    $> git log origin/master...
 
-Common use cases
------------------
+If there is only one commit, no problem (ensure there is a public reference like request #1234)
+you can move one.
 
-Update an existing changeset after review
-``````````````````````````````````````````
+If there are several small commits (like "Work in progress", "typo", ...) they
+should be "squashed" together with `git rebase -i`. Example:
 
-- Checkout the patchset: git review -d 1234 (where 1234 is the id of the review under gerrit
-- Make your modifs ($EDITOR)
-- Amend your commit: git commit --amend (do not change the last line "ChangeId?: ...")
-- Publish: git review -R
+  .. code-block:: bash
 
-Manually rebase a change (OUTDATED dependency + automatic rebase fail)
-``````````````````````````````````````````````````````````````````````
+    $> git rebase -i origin/master
+    -> you get an editor with
+    pick c36944f request #123: validate git repository name
+    pick 098369f fix tests
+    pick 3e040e7 typo
 
-This might happen when you are in the following situation:
+Here we have 3 commits but what we want to publish is one commit with the 3 changes.
+To do that, you can change the commands in the `git-rebase-todo` file like:
 
-- I push commit A
-- Then I push commit B (B depends on A)
-- A needs some changes so I pick-up the commit, hack, amend and push for review
-- B is shows an outdated dependency
-- I try to rebase B from the web ui but it fails because there are conflicts (that was expected)
+  .. code-block:: bash
 
-The solution is to cherry-pick commit B on to of commit A, resolve the conflicts, commit and push:
+    $> git rebase -i origin/master
+    pick c36944f request #123: validate git repository name
+    fixup 098369f fix tests
+    fixup 3e040e7 typo
 
-- fetch commit A (take the command in gerrit UI)
-- cherry-pick commit B (take the command in gerrit UI)
-- edit/resolve conflicts
-- commit
-- push
+Save and quit, git will squash the 3 commits in one:
+
+  .. code-block:: bash
+
+    $> git log origin/master...
+    c36944f request #123: validate git repository name
+
+You are ready to publish !
+
+4. Send for review
+
+  .. code-block:: bash
+
+    $> git push origin HEAD:refs/drafts/master
+
+5. Check result on gerrit
+
+The push command should have an url as output, open it and check that everything
+is fine.
+
+6. Publish
+
+When everything is allright, publish the patch ("Publish" button) and set
+"tuleap-integrators" as reviewers
