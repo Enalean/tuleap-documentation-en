@@ -34,6 +34,5 @@ Advanced topics
    developer-guide/trang
    developer-guide/ldap
    developer-guide/angular
-   developer-guide/continuous-integration
    developer-guide/trackers
    developer-guide/howto
