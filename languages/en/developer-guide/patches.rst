@@ -38,7 +38,7 @@ You can checkout https://gerrit.tuleap.net/#/admin/projects/tuleap. You need an 
   every push on master.
 
 Setting up your environment
-```````````````````````````
+---------------------------
 1. configure your local config to rebase when you pull changes locally:
 
   .. code-block:: bash
@@ -73,13 +73,28 @@ small progress toward your goal: the final feature.
 
 Each commit should work but, most important should not break anything.
 
-Publish workflow
-````````````````
+Commit message
+``````````````
+
+A good contrib has a good commit message. You can look at `Tuleap WIP dashboard <https://gerrit.tuleap.net/#/projects/tuleap,dashboards/main:wip>`_
+to see what is expected.
+
+Basically a good commit message has:
+
+* One summary line that starts with the artifact reference (request #123, story #21)
+* Summary line ~50 chars
+* A description that explain the intend of the change (WHY you made those changes and not WHAT is inside the commit)
 
 .. NOTE::
 
-  You should always reference a public artifact in your commit from either the
-  request or the story tracker.
+  You should always reference a public artifact in your commit:
+
+  * You should reference a `request <https://tuleap.net/plugins/tracker/?tracker=140>`_ when it's bug.
+  * You should reference a `story <https://tuleap.net/plugins/tracker/?tracker=147>`_ when it's a new development.
+
+
+Publish workflow
+````````````````
 
 The workflow is always the same:
 
@@ -172,7 +187,6 @@ Update a contribution
 You got a review and you need to make a change? There are several ways to do it
 
 #. Commit fix and rebase
-#. Fix during rebase
 #. Checkout and amend
 
 Commit fix and rebase
@@ -200,20 +214,20 @@ Once you made your fix, the result of a `git log` is something like:
 
 Then, you want to incorporate the fix with the initial commit, so you need to rebase:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  $> git rebase -i origin/master
-  pick c36944f request #123: validate git repository name
-  pick 098369f fix issue from code review
+    $> git rebase -i origin/master
+    pick c36944f request #123: validate git repository name
+    pick 098369f fix issue from code review
 
 Make your changes:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  $> git rebase -i origin/master
-  pick c36944f request #123: validate git repository name
-  f 098369f fix issue from code review
-  # save and let rebase do the job
+    $> git rebase -i origin/master
+    pick c36944f request #123: validate git repository name
+    f 098369f fix issue from code review
+    # save and let rebase do the job
 
 Now you only have one commit and you can push and eventually publish.
 
@@ -228,18 +242,55 @@ Now you only have one commit and you can push and eventually publish.
 
   * Someone else modified your commit (you will have to follow the "Checkout and amend" way)
 
-Fix during rebase
-`````````````````
-
-TBD
-
-.. code-block:: bash
-
-  $> git rebase -i origin/master
-  edit
-  $> git push origin HEAD:refs/drafts/master
 
 Checkout and amend
 `````````````````
 
-TBD
+In the gerrit interface for your patchset, you have a "Download" section with a
+ready to copy/paste git command. Ensure "checkout" is selected and copy/paste
+into your git repository.
+
+You should get a message like:
+
+  .. code-block:: bash
+
+    $ git fetch ssh://vaceletm@gerrit.tuleap.net:29418/tuleap refs/changes/50/5050/3 && git checkout FETCH_HEAD
+    remote: Counting objects: 13902, done
+    remote: Finding sources: 100% (10/10)
+    remote: Total 10 (delta 9), reused 9 (delta 9)
+    Unpacking objects: 100% (10/10), done.
+    From ssh://gerrit.tuleap.net:29418/tuleap
+     * branch            refs/changes/50/5050/3 -> FETCH_HEAD
+    Warning: you are leaving 1 commit behind, not connected to
+    any of your branches:
+
+      457871b request #8804 TV5 : accented letters converted to HTML entities when switching from HTML format to Text format
+
+    If you want to keep them by creating a new branch, this may be a good time
+    to do so with:
+
+     git branch new_branch_name 457871b
+
+    HEAD is now at 7de74b4... request #8840 Remove usage of Bless
+
+You can make your own changes.
+
+Then you should `amend` the commit with your changes:
+
+  .. code-block:: bash
+
+    $ git commit -a --amend
+
+And finally you can push your changes (git push origin HEAD:refs/drafts/master & publish)
+
+.. NOTE::
+
+  This works best when
+
+  * You have only one commit to fix
+  * You no longer have the commit locally
+  * Someonelse commited in your patchset (so your local reference is no longer up-to-date)
+
+  This far from ideal when
+
+  * You have commits with dependencies (the dependent commits will be OUTDATED)
