@@ -11,7 +11,7 @@ You can also see it in action on https://tuleap.net/api/explorer/
 Overview
 --------
 
-The RESt API is accessible both anonymously and with authentication although some 
+The REST API is accessible both anonymously and with authentication although some 
 resources are accessible with authentication only.
 
 You can authenticate via token and HTTP Basic authentication although the former is
