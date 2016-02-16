@@ -506,6 +506,66 @@ Some insights to better understand how this works:
       </trackers>
     </project>
 
+Permissions
+```````````
+
+In the previous example, you can see a block for permissions management at the end
+.. sourcecode:: xml
+
+    <permissions>
+      <permission scope="tracker" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_ACCESS_FULL"/>
+      <permission scope="field" REF="F6683" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6684" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6677" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6677" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
+      <permission scope="field" REF="F6677" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
+      <permission scope="field" REF="F6678" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6678" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
+      <permission scope="field" REF="F6678" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
+      <permission scope="field" REF="F6679" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6679" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
+      <permission scope="field" REF="F6679" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
+      <permission scope="field" REF="F6680" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+      <permission scope="field" REF="F6680" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
+      <permission scope="field" REF="F6680" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
+    </permissions>
+
+There are 2 scopes for permissions:
+
+* `tracker`
+* `field`
+
+Fore each we have the same type of attributes:
+
+* `REF` reference a field defined in tracker structure
+* `ugroup` is one group that have the given `type` of permission
+* `type` is the access right granted (depend of the scope)
+
+Supported `ugroup` values:
+
+* `UGROUP_ANONYMOUS`
+* `UGROUP_REGISTERED`
+* `UGROUP_PROJECT_MEMBERS`
+* `UGROUP_PROJECT_ADMIN`
+
+Custom ugroups are not supported yet.
+
+If several ugroups should have the same permission, there should be several lines
+
+Supported `type` value for `tracker` scope:
+
+* `PLUGIN_TRACKER_ADMIN` grant tracker administration capabilities to group
+* `PLUGIN_TRACKER_ACCESS_FULL` grant access to tracker to group
+* `PLUGIN_TRACKER_ACCESS_ASSIGNEE` grant access to all artifacts assigned to people of the group (eg. Alice and Bob belong to "project_members", Astrid belong to "project admin". Alice will see all artifacts assigned to herself or assigned to bob but not those assigned to Astrid)
+* `PLUGIN_TRACKER_ACCESS_SUBMITTER` grant access to all artifacts submitted by people from the group (see previous example but with "submitted by" instead of "assigned to")
+* `PLUGIN_TRACKER_ACCESS_SUBMITTER_ONLY`, for this group people see only the artifacts they submitted (eg. HelpDesk).
+
+Supported `type` for `field` scope:
+
+* `PLUGIN_TRACKER_FIELD_READ` ugroup can see the field content
+* `PLUGIN_TRACKER_FIELD_SUBMIT` ugroup can set value for the field at artifact creation
+* `PLUGIN_TRACKER_FIELD_UPDATE` ugroup can upgrade the field value after creation
+
 Subversion repository
 ---------------------
 
