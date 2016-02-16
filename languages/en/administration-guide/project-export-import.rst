@@ -510,6 +510,7 @@ Permissions
 ```````````
 
 In the previous example, you can see a block for permissions management at the end
+
 .. sourcecode:: xml
 
     <permissions>
