@@ -103,9 +103,13 @@ Tuleap currently integrates the following Mediawiki extensions:
 * `SyntaxHighlight_GeSHi <https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi>`_ : allows for source code syntax highlighting throught the ``<syntaxhighlight>`` tag
   and the `GeSHi syntax highlighting <http://qbnz.com/highlighter/>`_.
 
-* **TuleapArtLinks**: provides artifact links integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact. 
 
 * `WikiEditor <http://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
+
+Tuleap Specific extension
+`````````````````````````
+
+* **TuleapArtLinks**: provides artifact links integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact. 
 
 Compatibility view
 ------------------
