@@ -4,6 +4,38 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.11
+====
+
+Legacy themes removal
+---------------------
+
+Few themes are removed:
+
+- CodexSTN (tuleap-theme-codexstn)
+- Dawn (tuleap-theme-dawn)
+- savannah (tuleap-theme-savannah)
+- Steerforge (tuleap-theme-steerforge)
+- STTab (tuleap-theme-sttab)
+
+They are automatically replaced by FlammingParrot, if you don't have it installed yet
+it should be automatically fetched as a dependency. However, if it's not, you should
+install it by hand:
+
+.. sourcecode:: console
+
+        #> yum install tuleap-theme-flamingparrot
+
+For end users that where using the old theme, they are automatically switch to the
+default theme defined in local.inc. If the default theme was one of them, it's
+flaming parrot that is used in last resort.
+
+Legacy packages removed
+-----------------------
+
+OpenId (tuleap-plugin-openid) is gone. You can try OpenID connect instead (require
+manual setup as of 8.11).
+
 8.10
 ====
 
