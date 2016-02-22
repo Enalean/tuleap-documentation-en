@@ -37,11 +37,19 @@ Installation
 
 Once Virtualbox is installed and you have downloaded the latest appliance, you can start the installation.
 
-First of all start your virtualbox appliance, go to File > Import Appliance and choose the image you have juste downloaded.
-Then you will be able to choose some options like the name you want to use for the virtual machine. It is recommended to check the "Reinitialize the MAC address of all networks cards" box to avoid problems.
-Click the import button and wait a few minutes for the creation to complete.
+First of all start your virtualbox appliance:
 
-Once the installation is complete, verify that you will be using a bridge network interface. Go to Settings > Network > Adaptater 1 and choose "Attached to: Bridged adaptater". Then validate and start your VM.
+- Go to File > Import Appliance
+- Choose the image you have juste downloaded
+- Check Reinitialize the MAC address of all networks cards
+- Import the appliance
+
+Once the installation is complete, verify that you will be using a bridge network interfacer:
+
+- Go to Settings > Network > Adaptater 1
+- Choose "Attached to: Bridged adaptater"
+- Then validate and start your VM.
+
 
 It will take a few minute to boot and then show you a message like
 
