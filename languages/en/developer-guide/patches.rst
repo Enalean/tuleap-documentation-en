@@ -1,20 +1,20 @@
 Push your code
 ==============
 
-Tuleap project uses Gerrit to ensure a proper review and integration of contributed code. It means that:
+The Tuleap project uses Gerrit to ensure a proper review and integration of contributed code. It means that:
 
-- Each and every commit are reviewed individually
+- Each and every commits is reviewed individually
 - A Tuleap-contributor can vote between -2..+2 on each contribution
 - A Tuleap-integrator submit is mandatory
 
-As a commit is reviewed individually, it must me "autonomous" (corresponding to a task).
+As a commit is reviewed individually, it must be "autonomous" (corresponding to a task).
 It's a small part of a bigger story but it's fully functional at its level.
 
-Ideally a commit is the smallest possible part of a feature.
+Ideally, a commit is the smallest possible part of a feature.
 
 A good commit:
 
-- Doesn't break existing behaviour (unless it's intended too, well documented and with an escape path for current users).
+- Doesn't break existing behaviour (unless it's intended to, well documented and with an escape path for current users).
 - Has tests (automated: unit, REST, SOAP or functional, described in commit message)
 - Has security guards (filter inputs, escape outputs, csrf tokens)
 - Has I18N code
@@ -28,7 +28,7 @@ A bad commit has:
 - Cannot work without "the next one"
 - A meaningless commit message
 
-As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depends one of another if the very first one is not validated.
+As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depend of one another if the very first one is not validated.
 
 Development repository is hosted on https://gerrit.tuleap.net
 
@@ -58,7 +58,7 @@ Setting up your environment
     $> curl -o .git/hooks/commit-msg http://gerrit.tuleap.net/tools/hooks/commit-msg
     $> chmod u+x .git/hooks/commit-msg
 
-3. Configure your gerrit environement
+3. Configure your gerrit environment
 
   Login on https://gerrit.tuleap.net (same account than tuleap.net) and publish your ssh key (not needed if you are
   using http as transport).
@@ -73,22 +73,21 @@ Push you changes
 Tuleap follows the "master only" approach: each and every feature (or fix) shall be decomposed in small chunks meant to be included into master.
 
 Most of the time (everything but small bug fix) the development of a feature
-require several commit. Hence you should decompose your work so each commit is a
+require several commits. Therefore you should decompose your work so each commit is a
 small progress toward your goal: the final feature.
 
-Each commit should work but, most important should not break anything.
+Each commit should work but, most important, should not break anything.
 
 Commit message
 ``````````````
 
-A good contrib has a good commit message. You can look at `Tuleap WIP dashboard <https://gerrit.tuleap.net/#/projects/tuleap,dashboards/main:wip>`_
-to see what is expected.
+A good contrib has a good commit message. You can look at `Tuleap WIP dashboard <https://gerrit.tuleap.net/#/projects/tuleap,dashboards/main:wip>`_ to see what is expected.
 
 Basically a good commit message has:
 
 * One summary line that starts with the artifact reference (request #123, story #21)
 * Summary line ~50 chars
-* A description that explain the intend of the change (WHY you made those changes and not WHAT is inside the commit)
+* A description that explains the intent of the change (WHY you made those changes and not WHAT is inside the commit)
 
 .. NOTE::
 
