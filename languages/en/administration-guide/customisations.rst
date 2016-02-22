@@ -37,7 +37,7 @@ where:
 
 To customise the content of a given script for your site go through the following steps:
 
-    - Centos6 & debian: under /etc/tuleap create the site-content directory if it doesn't exist.
+    - Centos6: under /etc/tuleap create the site-content directory if it doesn't exist.
     - Other OS: under /etc/codendi create the site-content directory if it doesn't exist.
 
 For each piece of text that you want to customize, copy the original sometext.txt file under the /etc/tuleap/site-content/

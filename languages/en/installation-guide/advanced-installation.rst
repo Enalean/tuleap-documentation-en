@@ -124,31 +124,3 @@ To proceed use the same procedure used for rhel6 except:
     [root@dev ~]# yum remove php-common && yum install php53-common tuleap-all
 
 
-Debian 7 Wheezy - (Alpha Version)
---------------------------------
-
-**Tuleap for Debian is in alpha version. Do not use it for production**
-
-This means you should not install tuleap on debian except if you want to help us spot and correct bugs for this version. This is not maintained at all, there are missing plugins and we are aware of bugs.
-
-This is also only working for x86_64 architectures.
-
-Now you are warned, here is how to proceed:
-
--  Add tuleap and backport repositories:
-
-::
- 
-    echo "deb http://pkg.tuleap.net/debian tuleap-dev main" > /etc/apt/sources.list.d/tuleap.net.list
-    echo "deb http://ftp.de.debian.org/debian wheezy-backports main" > /etc/apt/sources.list.d/backports.list
-
--  Then run:
-
-::
- 
-    sudo apt-get update
-    sudo apt-get install tuleap-archive-keyring
-    sudo apt-get update
-    sudo apt-get install tuleap-all
-
--  Then run the setup script and follow the normal procedure.
