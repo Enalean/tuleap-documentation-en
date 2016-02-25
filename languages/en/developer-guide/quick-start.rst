@@ -11,5 +11,6 @@ on your workstation. Ready to code?
    quick-start/clone-tuleap
    quick-start/install-docker
    quick-start/run-tuleap
+   quick-start/run-tuleap-realtime
 
    

@@ -1215,6 +1215,7 @@ Tuleap provides a way to have a permissions overrider to support very particular
 
 Once you've done this, your PermissionsOverrider object will be called for each access of a user to the platform or to a particular project.
 
+.. _admin_howto_add_certicate:
 
 Add a new certification authority to the CA bundle
 --------------------------------------------------
