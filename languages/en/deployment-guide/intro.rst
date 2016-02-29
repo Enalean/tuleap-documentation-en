@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.12
+====
+
+Planning v1 removal
+-------------------
+
+Agile Dashboard Planning v1 (deprecated since 2 releases) is not anymore available. You can safely remove the following variable from your ``/etc/tuleap/conf/local.inc`` file:
+
+.. sourcecode:: php
+
+        // Display deprecated planning V1
+        $sys_showdeprecatedplanningv1 = 0;
+
+
 8.11
 ====
 
