@@ -312,6 +312,7 @@ The example below is a simple tracker made of following fields
 - Id (type: artifact id)
 - Submitted by (type: submitted by)
 - Title (type: string, associated to "title" semantic)
+- Dependency (type: artifact link)
 - Description (type: text)
 - 2 structure fields columns (C1 and C2)
 - Product (type: multiselectbox)
@@ -359,6 +360,10 @@ Some insights to better understand how this works:
               <name>title</name>
               <label><![CDATA[Title]]></label>
               <properties size="30"/>
+            </formElement>
+            <formElement type="art_link" ID="F6676" rank="6">
+              <name>depends</name>
+              <label><![CDATA[Depends]]></label>
             </formElement>
             <formElement type="text" ID="F6678" rank="11892">
               <name>description</name>
@@ -454,6 +459,9 @@ Some insights to better understand how this works:
             <permission scope="tracker" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_ACCESS_FULL"/>
             <permission scope="field" REF="F6683" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
             <permission scope="field" REF="F6684" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+            <permission scope="field" REF="F6676" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
+            <permission scope="field" REF="F6676" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
+            <permission scope="field" REF="F6676" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
             <permission scope="field" REF="F6677" ugroup="UGROUP_ANONYMOUS" type="PLUGIN_TRACKER_FIELD_READ"/>
             <permission scope="field" REF="F6677" ugroup="UGROUP_REGISTERED" type="PLUGIN_TRACKER_FIELD_SUBMIT"/>
             <permission scope="field" REF="F6677" ugroup="UGROUP_PROJECT_MEMBERS" type="PLUGIN_TRACKER_FIELD_UPDATE"/>
@@ -496,6 +504,42 @@ Some insights to better understand how this works:
                     <body format="text"><![CDATA[Some work done]]></body>
                   </comment>
                 </comments>
+                <field_change field_name="status" type="list" bind="static">
+                  <value format="id">7680</value>
+                </field_change>
+              </changeset>
+            </artifact>
+            <artifact id="446">
+              <changeset>
+                <submitted_by format="username">vaceletm</submitted_by>
+                <submitted_on format="ISO8601">2015-11-10T09:05:19+01:00</submitted_on>
+                <comments/>
+                <field_change field_name="title" type="string">
+                  <value><![CDATA[A demo bug (2)]]></value>
+                </field_change>
+                <field_change field_name="description" type="text">
+                  <value format="text"><![CDATA[With some content]]></value>
+                </field_change>
+                <field_change field_name="product" type="list" bind="static">
+                  <value format="id">7675</value>
+                </field_change>
+                <field_change field_name="status" type="list" bind="static">
+                  <value format="id">7678</value>
+                </field_change>
+              </changeset>
+              <changeset>
+                <submitted_by format="username">vaceletm</submitted_by>
+                <submitted_on format="ISO8601">2015-11-10T09:05:46+01:00</submitted_on>
+                <comments>
+                  <comment>
+                    <submitted_by format="username">vaceletm</submitted_by>
+                    <submitted_on format="ISO8601">2015-11-10T09:05:46+01:00</submitted_on>
+                    <body format="text"><![CDATA[Some work done]]></body>
+                  </comment>
+                </comments>
+                <field_change field_name="depends" type="art_link">
+                  <value>445</value>
+                </field_change>
                 <field_change field_name="status" type="list" bind="static">
                   <value format="id">7680</value>
                 </field_change>
