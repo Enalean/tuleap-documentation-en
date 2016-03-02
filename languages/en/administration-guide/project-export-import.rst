@@ -592,8 +592,7 @@ Supported `ugroup` values:
 * `UGROUP_REGISTERED`
 * `UGROUP_PROJECT_MEMBERS`
 * `UGROUP_PROJECT_ADMIN`
-
-Custom ugroups are not supported yet.
+* Any custom ugroup name
 
 If several ugroups should have the same permission, there should be several lines
 
