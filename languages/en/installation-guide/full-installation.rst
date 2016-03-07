@@ -36,17 +36,12 @@ Installation
 
 This installation guide will cover the installation on the recommended system: Redhat/Centos 6.x. For other installation procedure please refer to the advanced guide.
 
--  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor). Go to
-http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and install the given package. For example:
+-  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor). 
+
 ::
 
-    rpm -ivh http://fr2.rpmfind.net/linux/epel/6/i386/epel-release-6-8.noarch.rpm
+    yum install -y epel-release
 
--  **Install and configure RPMForge** The git version provided by RHEL is too old, you need to install an external one, like RPMForge.
-    -  Install RPMForge with this procedure: http://wiki.centos.org/AdditionalResources/Repositories/RPMForge#head-f0c3ecee3dbb407e4eed79a56ec0ae92d1398e01
-    -  Configure RPMForge by editing /etc/yum.repos.d/rpmforge.repo
-        -  In [rpmforge] section replace set enabled = 0
-        -  In [rpmforge-extras] section add includepkgs = git* perl-Git*
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
@@ -63,7 +58,7 @@ http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html and
 ::
 
 
-    yum install --enablerepo=rpmforge-extras tuleap-all
+    yum install -y tuleap-all tuleap-plugin-git-gitolite3
 
 
 Setup
