@@ -41,8 +41,8 @@ First connect to Node.js server:
     $ cd tuleap-realtime
     $ docker run -it --rm -v "$PWD/":/nodeapp --entrypoint=bash -p 4443:4443 enalean/node-dev-simple
 
-Install the certificate on your TUleap server
----------------
+Install the certificate on your Tuleap server
+---------------------------------------------
 
 Add the generated certificate to the trusted certificate lists on your Tuleap server.
 
@@ -97,7 +97,7 @@ Connect to the Tuleap server and change the '/etc/tuleap/conf/local.inc' file:
 .. NOTE:: To connect to the Tuleap server you can follow instructions of :ref:`protips`.
 
 Run the Node.js server
----------------
+----------------------
 
 Run the Node.js server with your config file argument.
 
