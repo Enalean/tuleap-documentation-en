@@ -1,6 +1,12 @@
 Push your code
 ==============
 
+.. IMPORTANT::
+
+  As a prerequisite, please read `Don't "Push" Your Pull Requests`_.
+  
+.. _Don't "Push" Your Pull Requests: https://www.igvita.com/2011/12/19/dont-push-your-pull-requests/
+
 The Tuleap project uses Gerrit to ensure a proper review and integration of contributed code. It means that:
 
 - Each and every commits is reviewed individually
