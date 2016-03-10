@@ -1,13 +1,22 @@
-Run Tuleap Realtime
-==========
+Realtime
+========
+
+Introduction
+------------
+
+Tuleap Realtime brings interactivity when users are viewing the same screen at the same time.
+For example in Kanban, when one user move a card from one column to another, then the card is
+automatically moved for every users that are on the same Kanban.
+
+This is an optional component, Tuleap will work pretty fine if you don't use it.
 
 First start of Tuleap Realtime
----------------------
+------------------------------
 
 Clone the "realtime" project on gerrit Projects.
 
 Generate a self signed certificate
----------------------
+----------------------------------
 
 Before you start, you need to generate a self signed certificate for Node.js server.
 
