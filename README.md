@@ -1,8 +1,8 @@
 Tuleap Documentation
 ====================
 
-This documentation uses Sphinx in order to generate the 
-documentation for [Tuleap](http://tuleap.org/).
+[Tuleap](http://tuleap.org/) uses Sphinx in order to generate [its 
+documentation](http://doc-en.tuleap.net/en/latest/).
 
 Set-up your environment (debian)
 --------------------------------
