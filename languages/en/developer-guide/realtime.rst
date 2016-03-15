@@ -113,5 +113,6 @@ Run the Node.js server with your config file argument.
 .. code-block:: bash
 
     $ cd tuleap-realtime
+    $ npm install
     $ docker run -it --rm -v "$PWD/":/nodeapp --entrypoint=bash -p 4443:4443 enalean/node-dev-simple
     > node server.js --config='etc/tuleap-realtime/config.json'
