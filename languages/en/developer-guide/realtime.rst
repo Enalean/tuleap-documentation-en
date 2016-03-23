@@ -128,11 +128,12 @@ Install dependencies:
     $ cd tuleap-realtime
     $ npm install
 
-Run your Node.js server machine if it isn't started:
+Run the Node.js server machine:
 
 .. code-block:: bash
 
-    $ docker exec -ti <your_image_id> /bin/bash
+    $ cd tuleap-realtime
+    $ docker run -it --rm -v "$PWD/":/nodeapp --entrypoint=bash -p 4443:4443 enalean/node-dev-simple
 
 On your server machine bash run the Node.js server with your config file argument:
 
