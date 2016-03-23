@@ -15,6 +15,21 @@ First start of Tuleap Realtime
 
 Clone the "realtime" project on gerrit Projects.
 
+.. code-block:: bash
+
+    $ git clone ssh://....@gerrit.tuleap.net:29418/realtime tuleap-realtime
+
+Build package
+-------------
+
+.. code-block:: bash
+
+    $ cd tuleap-realtime
+    $ docker run --rm -v $PWD:/realtime enalean/build-tuleap-realtime
+
+And copy the generated rpm in the server that will run realtime server.
+
+
 Generate a self signed certificate
 ----------------------------------
 
