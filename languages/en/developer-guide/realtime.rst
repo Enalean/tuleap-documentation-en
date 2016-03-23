@@ -33,12 +33,11 @@ And copy the generated rpm in the server that will run realtime server.
 Generate a self signed certificate
 ----------------------------------
 
-Before you start, you need to generate a self signed certificate for Node.js server.
+Before you start, you need to generate a self signed certificate for Node.js server machine.
 
 .. code-block:: bash
 
-    $ mkdir ssl
-    $ cd ssl
+    $ cd /etc/pki/tls/
     $ openssl genrsa -out tuleap-realtime-key.pem 2048
     $ openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem
     $ openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem
@@ -55,32 +54,22 @@ Descriptions of commands
 * ``openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem``: Create a certificate signing request with the private key. 'tuleap-realtime-csr.pem' file contains the public key.
 * ``openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem``: Auto-sign the certificate signing request. 'tuleap-realtime-cert.pem' file is the certificate.
 
-Install the server certificate on Node.js server
---------
+Install the certificate on your Tuleap server machine
+-----------------------------------------------------
 
-First connect to Node.js server:
-
-.. code-block:: bash
-
-    $ cd tuleap-realtime
-    $ docker run -it --rm -v "$PWD/":/nodeapp --entrypoint=bash -p 4443:4443 enalean/node-dev-simple
-
-Install the certificate on your Tuleap server
----------------------------------------------
-
-Add the generated certificate to the trusted certificate lists on your Tuleap server.
+Add the generated certificate to the trusted certificate lists on your Tuleap server machine.
 
 .. NOTE:: Please read and follow instructions of :ref:`admin_howto_add_certicate` before continuing.
 
 Then associate the hostname 'NodeJS' to the Node Docker container's ip in '/etc/hosts/ on the Tuleap server.
 
 Install the certificate on the client
----------------
+-------------------------------------
 
 Add the certificate on your browser. Then to declare at your browser it uses a correct certificate, associate the hostname 'NodeJS' to the Node Docker container's ip in '/etc/hosts' on your machine.
 
 Create your own config file for Node.js server
----------------
+----------------------------------------------
 
 The default config.json file look like:
 
@@ -95,8 +84,11 @@ The default config.json file look like:
       "process_gid": 1000
     }
 
-Create your own config file in '/etc/tuleap-realtime/config.json' for example.
-Generate a private key that will be shared between Node.js server and Tuleap server:
+.. IMPORTANT:: If you use the rpm package the file '/etc/tuleap-realtime/config.json' is directly created at package's installation.
+    You just need to modify it.
+
+If you want your own config file you can create a file in '/etc/tuleap-realtime/config.json'.
+Generate a private key that will be shared between Node.js server machine and Tuleap server machine:
 
 .. code-block:: bash
 
@@ -108,10 +100,10 @@ Add the path of 'cert.pem' and 'key.pem' files respectively with json keys "full
 .. IMPORTANT:: This private key generated is used by JsonWebToken to permit secure communication between servers.
     Consequently it's necessary to set the same private key on Node.js server and Tuleap server.
 
-Change configurations on Tuleap server
----------------
+Change configurations on Tuleap server machine
+----------------------------------------------
 
-Connect to the Tuleap server and change the '/etc/tuleap/conf/local.inc' file:
+Connect to the Tuleap server machine and change the '/etc/tuleap/conf/local.inc' file:
 
 .. code-block:: txt
 
@@ -123,6 +115,9 @@ Connect to the Tuleap server and change the '/etc/tuleap/conf/local.inc' file:
 Run the Node.js server
 ----------------------
 
+If you don't use the rpm package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Install dependencies:
 
 .. code-block:: bash
@@ -130,14 +125,32 @@ Install dependencies:
     $ cd tuleap-realtime
     $ npm install
 
-Run your image if it isn't started:
+Run your Node.js server machine if it isn't started:
 
 .. code-block:: bash
 
     $ docker exec -ti <your_image_id> /bin/bash
 
-On your image bash run the Node.js server with your config file argument:
+On your server machine bash run the Node.js server with your config file argument:
 
 .. code-block:: bash
 
-    > node server.js --config='etc/tuleap-realtime/config.json'
+    # node server.js --config='etc/tuleap-realtime/config.json'
+
+If you use the rpm package
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can use your machine as Node.js server machine or what you want.
+
+Install package on Node.js server machine:
+
+.. code-block:: bash
+
+    # yum install <package_name>.rpm
+
+You can modify your config file in "/etc/tuleap-realtime/config.json". Verify if your image docker is running with the same port written in your config file.
+Run the Node.js server:
+
+.. code-block:: bash
+
+    # service tuleap-realtime start
