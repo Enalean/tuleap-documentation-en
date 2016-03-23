@@ -24,11 +24,11 @@ Before you start, you need to generate a self signed certificate for Node.js ser
 
     $ mkdir ssl
     $ cd ssl
-    $ openssl genrsa -out key.pem 2048
-    $ openssl req -new -key key.pem -out csr.pem
-    $ openssl x509 -req -days 800 -in csr.pem -signkey key.pem -out cert.pem
+    $ openssl genrsa -out tuleap-realtime-key.pem 2048
+    $ openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem
+    $ openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem
 
-.. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'key.pem' and 'cert.pem' files.
+.. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'tuleap-realtime-key.pem' and 'tuleap-realtime-cert.pem' files.
 
 .. IMPORTANT:: When you generate the CSR, only the Common Name is important and it has to be the site name to secure.
     As this is a dev setup, you can set the name to 'NodeJS' (used after).
@@ -36,9 +36,9 @@ Before you start, you need to generate a self signed certificate for Node.js ser
 Descriptions of commands
 ------------------------
 
-* ``openssl genrsa -out key.pem 2048``: Generate an RSA private key with a 2048 module size. 'key.pem' is the private key.
-* ``openssl req -new -key key.pem -out csr.pem``: Create a certificate signing request with the private key. 'csr.pem' file contains the public key.
-* ``openssl x509 -req -days 800 -in csr.pem -signkey key.pem -out cert.pem``: Auto-sign the certificate signing request. 'cert.pem' file is the certificate.
+* ``openssl genrsa -out tuleap-realtime-key.pem 2048``: Generate an RSA private key with a 2048 module size. 'key.pem' is the private key.
+* ``openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem``: Create a certificate signing request with the private key. 'tuleap-realtime-csr.pem' file contains the public key.
+* ``openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem``: Auto-sign the certificate signing request. 'tuleap-realtime-cert.pem' file is the certificate.
 
 Install the server certificate on Node.js server
 --------
