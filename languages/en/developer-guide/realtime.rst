@@ -40,7 +40,10 @@ Before you start, you need to generate a self signed certificate for Node.js ser
     $ cd /etc/pki/tls/
     $ openssl genrsa -out tuleap-realtime-key.pem 2048
     $ openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem
-    $ openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem
+    $ openssl x509 -req -days 800 \
+        -in tuleap-realtime-csr.pem \
+        -signkey tuleap-realtime-key.pem \
+        -out tuleap-realtime-cert.pem
 
 .. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'tuleap-realtime-key.pem' and 'tuleap-realtime-cert.pem' files.
 
@@ -50,9 +53,9 @@ Before you start, you need to generate a self signed certificate for Node.js ser
 Descriptions of commands
 ------------------------
 
-* ``openssl genrsa -out tuleap-realtime-key.pem 2048``: Generate an RSA private key with a 2048 module size. 'key.pem' is the private key.
-* ``openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem``: Create a certificate signing request with the private key. 'tuleap-realtime-csr.pem' file contains the public key.
-* ``openssl x509 -req -days 800 -in tuleap-realtime-csr.pem -signkey tuleap-realtime-key.pem -out tuleap-realtime-cert.pem``: Auto-sign the certificate signing request. 'tuleap-realtime-cert.pem' file is the certificate.
+* ``openssl genrsa ...``: Generate an RSA private key with a 2048 module size. 'key.pem' is the private key.
+* ``openssl req ...``: Create a certificate signing request with the private key. 'tuleap-realtime-csr.pem' file contains the public key.
+* ``openssl x509 ...``: Auto-sign the certificate signing request. 'tuleap-realtime-cert.pem' file is the certificate.
 
 Install the certificate on your Tuleap server machine
 -----------------------------------------------------
