@@ -110,8 +110,8 @@ Connect to the Tuleap server machine and change the '/etc/tuleap/conf/local.inc'
 
 .. code-block:: txt
 
-    $nodejs_server = 'NodeJS:4443'
-    $nodejs_server_jwt_private_key = <your_private_key_generated>
+    $nodejs_server = 'NodeJS:4443';
+    $nodejs_server_jwt_private_key = '<your_private_key_generated>';
 
 .. NOTE:: To connect to the Tuleap server you can follow instructions of :ref:`protips`.
 
