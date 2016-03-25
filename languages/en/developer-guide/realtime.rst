@@ -91,11 +91,13 @@ The default config.json file look like:
     You just need to modify it.
 
 If you want your own config file you can create a file in '/etc/tuleap-realtime/config.json'.
-Generate a private key that will be shared between Node.js server machine and Tuleap server machine:
+Generate a private key that will be shared between Node.js server machine and Tuleap server machine.
+You can use the following command. Be careful, Node.js server uses HS512 (HMAC and SHA-512) algorithm to sign tokens.
+Consequently to have a robust private key you need to generate a random key on 64 bytes (512 bits) or more.
 
 .. code-block:: bash
 
-    head -c 32 /dev/urandom | base64
+    $ head -c 64 /dev/urandom | base64
 
 Set this private key in your 'config.json' file at the "nodejs_server_jwt_private_key" property.
 Add the path of 'cert.pem' and 'key.pem' files respectively with json keys "full_path_ssl_cert" and "full_path_ssl_key".
