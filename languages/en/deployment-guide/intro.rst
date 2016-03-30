@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.13
+====
+
+New dependency required for Tuleap
+----------------------------------
+
+Tuleap now requires the package php-paragonie-random-compat to work. If you have
+followed the installation guide, the package will be installed automatically from
+the EPEL repository if you use CentOS 6 or from the Tuleap repository if you use
+CentOS 5.
+
+If you have not followed the installation guide and the dependency can not be found
+you must install it by hand.
+
 8.12
 ====
 
