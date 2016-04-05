@@ -17,7 +17,8 @@ Internal conventions
 * constants in UPPER_CASE
 * public methods documented (at least @return statement)
 * class documented (``I'm responsible of…``)
-* One True Brace style
+* All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in 
+  order to not clutter the review of your functional change.
 * No trailing whitespaces
 
   **Note:** Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
