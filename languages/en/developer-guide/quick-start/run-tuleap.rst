@@ -90,3 +90,13 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
   'tuleap_web_1.tuleap-aio-dev.docker'`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
+  
+If you don't receive email, this is because we configured postfix to not deliver emails by default. You may need to manually add the emails you use for your development:
+
+.. code-block:: bash
+
+    $ docker exec -ti tuleap_web_1 bash
+    $> vi /data/etc/email_whitelist # enter your email
+    $> ./whitelist_emails.sh
+    $> service postfix reload
+
