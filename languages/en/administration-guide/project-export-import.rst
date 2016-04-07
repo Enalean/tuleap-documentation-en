@@ -340,7 +340,7 @@ Some insights to better understand how this works:
 
       ...
 
-      <trackers>
+      <trackers use-natures="true">
         <tracker id="T239" parent_id="0" instantiate_for_new_projects="1">
           <name><![CDATA[Simple Tracker]]></name>
           <item_name>simple</item_name>
@@ -537,8 +537,10 @@ Some insights to better understand how this works:
                     <body format="text"><![CDATA[Some work done]]></body>
                   </comment>
                 </comments>
-                <field_change field_name="depends" type="art_link">
-                  <value>445</value>
+                <field_change field_name="Artifact Links" type="art_link">
+                  <value nature="reported_in">1234</value>
+                  <value nature="_is_child">12</value>
+                  <value>42</value>
                 </field_change>
                 <field_change field_name="status" type="list" bind="static">
                   <value format="id">7680</value>
@@ -549,6 +551,11 @@ Some insights to better understand how this works:
         </tracker>
       </trackers>
     </project>
+
+.. attention::
+    If you wish to use the new version of artifact links, which introduce
+    the ``nature`` concept, you must set the ``use-natures`` attribute to
+    ``true`` as stated in the example.
 
 Permissions
 -----------
