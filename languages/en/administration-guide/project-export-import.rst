@@ -135,7 +135,7 @@ the real import:
 
 
 Import format
-*************
+'''''''''''''
 
 Tuleap is able to import a project with it's content from an XML file. This section
 describes what is the content of this file and how to proceed to generate an XML
@@ -150,7 +150,7 @@ compatible with the import tool.
     - subversion
 
 General informations
---------------------
+********************
 
 The import should be a zip archive with
 
@@ -159,7 +159,7 @@ The import should be a zip archive with
 - data blob (should be referenced in project.xml) in ``data`` directory
 
 Users management
-----------------
+****************
 
 In ``project.xml``, when we have to refer to a user the pattern is the following ``<node format="format">identifier</node>`` where ``format`` can either be:
 
@@ -223,7 +223,7 @@ Example of users.xml:
     to half imported data.
 
 Core
-----
+****
 
 All projects related information (core & services) are stored in ``project.xml``.
 
@@ -288,7 +288,7 @@ Core information imported as of today:
 All services can then be configured using its own tag.
 
 Trackers
---------
+********
 
 Basics:
 
@@ -305,7 +305,7 @@ Basics:
   the ``<formElements>`` section of ``<tracker>``.
 
 Example of a simple tracker with a few fields
-`````````````````````````````````````````````
+---------------------------------------------
 
 The example below is a simple tracker made of following fields
 
@@ -551,7 +551,7 @@ Some insights to better understand how this works:
     </project>
 
 Permissions
-```````````
+-----------
 
 In the previous example, you can see a block for permissions management at the end
 
@@ -611,7 +611,7 @@ Supported `type` for `field` scope:
 * `PLUGIN_TRACKER_FIELD_UPDATE` ugroup can upgrade the field value after creation
 
 Subversion repository
----------------------
+*********************
 
 A single subversion repository can be imported. The XML syntax is:
 
@@ -654,7 +654,7 @@ A single subversion repository can be imported. The XML syntax is:
   by commas.
 
 Git repositories
----------------------
+****************
 
 Multiple Git repositories can be imported. The XML syntax is:
 
@@ -714,7 +714,7 @@ Multiple Git repositories can be imported. The XML syntax is:
 
 
 Releases and Files (FRS)
-------------------------
+************************
 
 The released files (FRS) can be imported, the XML syntax is:
 
@@ -818,7 +818,8 @@ Access definitions consists of zero to many ``<ugroup/>`` tags, each containing 
 
 
 Mediawiki
-------------------------
+*********
+
 The Mediawiki can also be imported. For the moment only pages import is supported.
 
 The XML syntax is:
