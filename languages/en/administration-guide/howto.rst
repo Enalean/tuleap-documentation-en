@@ -1123,6 +1123,7 @@ Upgrade on centos 6
       # find /var/lib/tuleap/gitolite/repositories/ -type l \( -name "post-receive.mirrorpush" -o -name "gitolite-hooked" \)  -exec rm {} \;
       # as root, service tuleap start
 
+Adapt ``/etc/httpd/conf.d/tuleap-plugins/git.conf`` with ``ScriptAlias /git/ /usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh/``.
 
 .. _admin_howto_mediawiki_123:
 
