@@ -60,9 +60,10 @@ Setting up your environment
 
   .. code-block:: bash
 
-    $> cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
     $> curl -o .git/hooks/commit-msg http://gerrit.tuleap.net/tools/hooks/commit-msg
     $> chmod u+x .git/hooks/commit-msg
+
+.. NOTE:: Please run ``make dev-setup`` to install needed hooks
 
 3. Configure your gerrit environment
 
