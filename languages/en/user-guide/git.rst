@@ -178,8 +178,8 @@ To move one Git repository from one Tuleap project to another, there are two com
         git clone --mirror gitolite@tuleap.example.com:<source_project_shortname>/<repo_name>.git 
         git push --mirror gitolite@tuleap.example.com:<destination_project_shortname>/<repo_name>.git
 
-Integration continue whith Hudson/Jenkins
------------------------------------------
+Continuous integration with Hudson/Jenkins
+------------------------------------------
 
 The best way to integrate a project with Hudson/Jenkins is to activate the hudson_git plugin.
 Once installed a new tab is aviable in git administration plugin :
