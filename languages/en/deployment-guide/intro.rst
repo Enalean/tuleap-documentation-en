@@ -4,6 +4,15 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.14
+====
+
+Changes in git plugin configuration
+-----------------------------------
+
+For Urls, Git plugin uses local.inc sys_default_domain instead of apache SERVER_NAME.
+
+
 8.13
 ====
 
