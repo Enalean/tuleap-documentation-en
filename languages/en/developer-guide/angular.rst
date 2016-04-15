@@ -13,6 +13,13 @@ Prepare your environment
         $> npm config set prefix $HOME/.node_modules_global
         $> npm install -g bower grunt-cli
 
+    Then add the following lines to your '.bashrc' file to add the newly created 'node_modules_global' folder to your PATH:
+
+    .. code-block:: bash
+
+        export NPM_GLOBAL_HOME=~/.node_modules_global/bin
+        export PATH=$NPM_GLOBAL_HOME:$PATH
+
     To turn off the progress notification when you do 'npm install':
 
     .. code-block:: bash
