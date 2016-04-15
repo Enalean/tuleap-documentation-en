@@ -182,7 +182,7 @@ Continuous integration with Hudson/Jenkins
 ------------------------------------------
 
 The best way to integrate a project with Hudson/Jenkins is to activate the hudson_git plugin.
-Once installed a new tab is aviable in git administration plugin :
+Once installed a new tab is available in git administration plugin :
 
 .. figure:: ../images/screenshots/sc_git_hooks.png
 
