@@ -1,15 +1,30 @@
 Angular
 -------
 
+Prepare your environment
+
+    You only need to do this once, when installing your machine.
+    You'll need to have a version of NodeJS v4.x. See https://github.com/nodesource/distributions.
+
+    .. code-block:: bash
+
+        $> mkdir ~/.node_modules_global
+        $> npm config set prefix $HOME/.node_modules_global
+        $> npm install -g bower grunt-cli
+
+    To turn off the progress notification when you do 'npm install':
+
+    .. code-block:: bash
+
+        $> npm config set progress false
+
+
 Install
     .. code-block:: bash
 
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
         $> npm install
-        $> sudo npm install -g bower
         $> bower install
-        $> sudo npm install -g grunt
-        $> sudo npm install -g grunt-cli
 
 Compile
     .. code-block:: bash
