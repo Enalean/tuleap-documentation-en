@@ -2,9 +2,10 @@ Angular
 -------
 
 Prepare your environment
+""""""""""""""""""""""""
 
     You only need to do this once, when installing your machine.
-    You'll need to have a version of NodeJS v4.x. See https://github.com/nodesource/distributions.
+    You'll need to have a version of NodeJS v4.x. See https://github.com/nodesource/distributions
 
     .. code-block:: bash
 
@@ -20,6 +21,7 @@ Prepare your environment
 
 
 Install
+"""""""
     .. code-block:: bash
 
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
@@ -27,6 +29,7 @@ Install
         $> bower install
 
 Compile
+"""""""
     .. code-block:: bash
 
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
