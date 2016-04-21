@@ -23,7 +23,7 @@ The integration is meant to be as lightweight as possible so end users can use a
 Tuleap simplifies creation and management of the repositories, users and user groups.
 It doesn't restrain gerrit features at all.
 
-You can connect several Gerrit instances to one Tuleap server. One Gerrit instance can be connect to several 
+You can connect several Gerrit instances to one Tuleap server. One Gerrit instance can be connect to several
 Tuleap servers. A Gerrit server connected to Tuleap can also be used without Tuleap in full autonomy for projects,
 groups and user management.
 
@@ -49,10 +49,10 @@ access rights at the time of migration.
 On Tuleap side, as soon as the git repository is migrated, the repository is turned read-only (the reference is now on Gerrit).
 User can still browse the repository through the web UI, clone it or fork it but all write operations are blocked (even for admins).
 
-However, all permanent changes (branches & tags) made on the corresponding Gerrit project are replicated to Tuleap. 
+However, all permanent changes (branches & tags) made on the corresponding Gerrit project are replicated to Tuleap.
 When developers make commits on Gerrit, there is a delay of a few seconds to see this commit replicated.
 
-Please note however that review related things (patchsets, review & co) are *not* replicated. Technically speaking, 
+Please note however that review related things (patchsets, review & co) are *not* replicated. Technically speaking,
 only refs/heads/* and refs/tags/* are.
 
 As a side effect of a project migration, all user groups are replicated to Gerrit too. See corresponding section below.
@@ -322,7 +322,7 @@ It's useful for archiving purpose.
 Setup
 -----
 
-This section is for Tuleap site admin and explain how to setup Tuleap/Gerrit 
+This section is for Tuleap site admin and explain how to setup Tuleap/Gerrit
 integration.
 If you are developer, you don't have to read this section.
 
@@ -410,10 +410,10 @@ To configure gerrit replication we need to use the gerrit replication plugin. Th
 * Finally, you need to configure the plugin. Go to ``gerrit_testsite/etc/`` and create a file called ``replication.config``:
 
   .. code-block:: bash
-  
+
     gerrit@gerrit.instance.com$ cd gerrit_testsite/etc
     gerrit@gerrit.instance.com$ touch replication.config
-  
+
 
 * In this file put the following contents
 
@@ -544,6 +544,7 @@ If it doesn't exist then you need to create it via ``ssh-keygen`` as above.
   Replication SSH Key    copy and paste the output of the public key
   Gerrit server version  check the right value regarding your gerrit server
   Http password          copy the gerrit http password
+  Authentication type    Either Digest (default) or basic. This depends of the configuration of your gerrit server. If you didn't set ``[Auth] gitBasicAuth = true`` in gerrit config let "Digest" as default.
 =======================  ==============================================
 
 Here is a view of the Tuleap git plugin administration where you are able to add new gerrit servers:
