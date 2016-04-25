@@ -7,19 +7,21 @@ Which browser should I use to browse Tuleap?
 
 Tuleap is compatible with the following browsers:
 
-* Internet Explorer ≥9
+* Internet Explorer ≥11
 * Firefox
 * Chrome
 
-IE7 browser is deprecated and while most of Tuleap still work on it, latest
+IE browser < 11 is deprecated and while most of Tuleap still work on it, latest
 development don't. Please upgrade your browser or use an alternative.
 
-IE9 browser may be in compatibility mode. Tuleap will offer a bad user
+IE browser may be in compatibility mode. Tuleap will offer a bad user
 experience if you are using the compatibility mode. Here are the steps to
 configure Internet Explorer:
 
 Configuring Internet Explorer
 -----------------------------
+
+.. NOTE:: instructions below are based on IE9. Please adapt them to your environment.
 
 Why do I need to change my Internet Explorer configuration?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
