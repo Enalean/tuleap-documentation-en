@@ -12,6 +12,11 @@ Changes in git plugin configuration
 
 For Urls, Git plugin uses local.inc sys_default_domain instead of apache SERVER_NAME.
 
+Changes in SVN multirepositories plugin
+---------------------------------------
+
+The public URL for repositories changes. All users will have to update their checkout/checkin links.
+
 
 8.13
 ====
