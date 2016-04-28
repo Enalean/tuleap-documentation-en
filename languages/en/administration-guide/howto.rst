@@ -955,6 +955,113 @@ As ``codendiadm``, in ``/usr/share/tuleap/plugins/docman/bin/DocmanExport``, run
 
     # you can run import.php --help for more options
 
+Expected format and example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The expected folder hierarchy must be the following:
+
+::
+
+    projectname
+       ├── projectname
+       │   ├── content00000.bin
+       │   ├── content00004.bin
+       │   └── content00005.bin
+       └── projectname.xml
+
+In this example, the XML file could be like:
+
+.. sourcecode:: xml
+
+    <!DOCTYPE docman SYSTEM "http://tuleap_web_1.tuleap-aio-dev.docker/plugins/docman/docman-1.0.dtd">
+    <docman>
+      <propdefs>
+        <propdef name="metadata" type="text" multivalue="false" empty="true"/>
+      </propdefs>
+      <item type="folder">
+        <properties>
+          <title>Project Documentation</title>
+          <create_date>2015-10-28T15:22:18+01:00</create_date>
+          <update_date>2016-04-15T11:41:19+02:00</update_date>
+          <owner>admin</owner>
+          <property title="metadata"></property>
+        </properties>
+        <item type="embeddedfile">
+          <properties>
+            <title>test</title>
+            <description>description</description>
+            <create_date>2016-04-15T11:41:19+02:00</create_date>
+            <update_date>2016-04-15T11:41:19+02:00</update_date>
+            <owner>testman</owner>
+            <property title="metadata"></property>
+          </properties>
+          <versions>
+            <version>
+              <author>testman</author>
+              <changelog>Initial version</changelog>
+              <date>2016-04-15T11:41:19+02:00</date>
+              <filename>file</filename>
+              <filetype>text/html</filetype>
+              <content>content00000.bin</content>
+            </version>
+          </versions>
+        </item>
+        <item type="folder">
+          <properties>
+            <title>New folder</title>
+            <description>New folder</description>
+            <create_date>2016-03-22T09:38:33+01:00</create_date>
+            <update_date>2016-03-22T09:49:42+01:00</update_date>
+            <owner>testman</owner>
+            <property title="metadata">New folder</property>
+          </properties>
+          <item type="embeddedfile">
+            <properties>
+              <title>doc01</title>
+              <create_date>2016-03-22T09:49:42+01:00</create_date>
+              <update_date>2016-03-22T09:49:42+01:00</update_date>
+              <owner>testman</owner>
+              <property title="metadata">New folder</property>
+            </properties>
+            <versions>
+              <version>
+                <author>testman</author>
+                <changelog>Initial version</changelog>
+                <date>2016-03-22T09:49:42+01:00</date>
+                <filename>file</filename>
+                <filetype>text/html</filetype>
+                <content>content00004.bin</content>
+              </version>
+            </versions>
+          </item>
+        </item>
+        <item type="file">
+          <properties>
+            <title>PDF</title>
+            <description>PDF</description>
+            <create_date>2015-12-15T15:56:33+01:00</create_date>
+            <update_date>2015-12-15T15:56:33+01:00</update_date>
+            <owner>testman</owner>
+            <property title="metadata"></property>
+          </properties>
+          <versions>
+            <version>
+              <author>testman</author>
+              <changelog>Initial version</changelog>
+              <date>2015-12-15T15:56:33+01:00</date>
+              <filename>file.pdf</filename>
+              <filetype>application/pdf</filetype>
+              <content>content00005.bin</content>
+            </version>
+          </versions>
+        </item>
+      </item>
+    </docman>
+
+.. attention:: Known issues / limitation
+
+    All the metadata provided in the XML file must exist on the traget docman, otherwise the import will fail.
+
 .. _admin_tracker_reply_by_email:
 
 Activate reply to artifacts by email
