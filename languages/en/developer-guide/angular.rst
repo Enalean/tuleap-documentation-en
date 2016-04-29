@@ -5,7 +5,8 @@ Prepare your environment
 """"""""""""""""""""""""
 
     You only need to do this once, when installing your machine.
-    You'll need to have a version of NodeJS v4.x. See https://github.com/nodesource/distributions
+    You'll need to have NodeJS >= v4.x. See https://github.com/nodesource/distributions
+    You will also need to have npm >= 2.x. You can run `npm install -g npm` to update it.
 
     .. code-block:: bash
 
