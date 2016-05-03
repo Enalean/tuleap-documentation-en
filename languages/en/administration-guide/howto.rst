@@ -951,7 +951,7 @@ As ``codendiadm``, in ``/usr/share/tuleap/plugins/docman/bin/DocmanExport``, run
 
     # then import
     $> cd /usr/share/tuleap/plugins/docman/bin/DocmanImport
-    $> php import.php --url=https://localhost --project=projectname --archive=/var/tmp/projectname
+    $> /usr/share/tuleap/src/utils/php-launcher.sh import.php --url=https://localhost --project=projectname --archive=/var/tmp/projectname
 
     # you can run import.php --help for more options
 
