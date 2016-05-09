@@ -31,8 +31,9 @@ User-guide
    user-guide/notification
    user-guide/other-services
    user-guide/troubleshooting
+   user-guide/rest
    soap/tracker
    soap/trackerv3
-   rest/auth
+   user-guide/ide/jetbrains
    mylyn/usage
    user-guide/legal
