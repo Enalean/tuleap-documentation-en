@@ -1,3 +1,5 @@
+.. _rest-update:
+
 Udpate an artifact
 ==================
 
