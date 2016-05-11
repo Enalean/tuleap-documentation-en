@@ -86,3 +86,8 @@ Example:
     $ curl -XGET --header 'Content-type: application/json' \
       -u username:password \
       https://example.com/api/projects/112
+
+Conclusions
+-----------
+
+Now that we are able to do authenticated calls we can continue to data retrieval in next section :ref:`rest-query`.

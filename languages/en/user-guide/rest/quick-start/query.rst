@@ -6,7 +6,7 @@ Query the artifacts
 Basic usage
 -----------
 
-Now that we have a token to initiate authenticated calls to the API (if it is not the case,
+We have a token to initiate authenticated calls to the API (if it is not the case,
 please go back to :ref:`rest-auth`), we can now query a tracker to retrieve some artifacts.
 
 For example to retrieve all artifacts that are in *Completed* status we will issue the following query:
@@ -59,6 +59,9 @@ with ``GET /api/artifacts/220``.
   From here I can get the list of trackers of the project with ``GET /api/projects/110/trackers``, etc. Which calls you
   have to orchestrate will depend on your business case.
 
+  In our example, getting the structure of the tracker is important as we need to know the id of the fields/values (either
+  ``projects/110/trackers`` or ``trackers/123`` will give us the structure).
+
 Pagination
 ----------
 
@@ -96,7 +99,7 @@ Routes that return paginated collection accept two parameters that we will adjus
 .. NOTE::
 
   Pagination is here to save resources (server, bandwidth, client) by not returning all items at once. You can adjust
-  the limit to retrieve more items at once or less items at once. However do not ask too few items in order to not
+  the limit to retrieve more items or less items at once. However do not ask too few items in order to not
   penalize user experience (YAY network latency).
 
 Conclusions
