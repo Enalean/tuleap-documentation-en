@@ -4,6 +4,19 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.15
+====
+
+A new option for setup.sh
+--------------------------
+
+Now setup.sh is checking if your domain name is valid. And for your automation or if you are sure, you can still bypass the check with option:
+
+.. sourcecode:: console
+
+        #> setup.sh --disable-domain-name-check
+
+
 8.14
 ====
 
