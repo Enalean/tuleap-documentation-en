@@ -3,21 +3,21 @@ Tuleap coding standards
 
 As Tuleap is mainly written in PHP, we use the PSR standards:
 
-* PSR-0 http://www.php-fig.org/psr/psr-0/
-* PSR-1 http://www.php-fig.org/psr/psr-1/
-* PSR-2 http://www.php-fig.org/psr/psr-2/
+* PSR-0_
+* PSR-1_
+* PSR-2_
 
 Internal conventions
 --------------------
 
-* Use an indent of 4 spaces, with no tabs. This helps to avoid problems with diffs, patches, git history ...
+* Use an indent of 4 spaces, with no tabs. This helps to avoid problems with diffs, patches, git history…
 * It is recommended to keep lines at approximately 85-100 characters long for better code readability.
 * methodsInCamelCase()
 * $variables_in_snake_case
 * constants in UPPER_CASE
 * public methods documented (at least @return statement)
 * class documented (``I'm responsible of…``)
-* All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in 
+* All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in
   order to not clutter the review of your functional change.
 * No trailing whitespaces
 
@@ -65,16 +65,19 @@ Yet, it's not a fatality and we are on the way to, slowly and carefully clean th
 - Follow SOLID_ design principles.
 - Don't contribute STUPID_ code.
 
-We also strongly suggest that you familiarize yourself with `￼Code Smells`_ as it might pop up during code reviews.
+We also strongly suggest that you familiarize yourself with  `Code Smells`_ as it might pop up during code reviews.
 
 Resources
 ~~~~~~~~~
 
 A couple of documents worth to read when you consider contributing to Tuleap:
 
-- ￼http://www.phptherightway.com/
+- http://www.phptherightway.com/
 
 .. _+600k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
-.. _STUPID: http://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
-.. _￼Code Smells: http://blog.codinghorror.com/code-smells/
+.. _STUPID: https://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
+.. _Code Smells: https://blog.codinghorror.com/code-smells/
+.. _PSR-0: http://www.php-fig.org/psr/psr-0/
+.. _PSR-1: http://www.php-fig.org/psr/psr-1/
+.. _PSR-2: http://www.php-fig.org/psr/psr-2/
