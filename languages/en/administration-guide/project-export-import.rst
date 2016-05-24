@@ -739,8 +739,8 @@ The released files (FRS) can be imported, the XML syntax is:
       <package
         name="package1"
         rank="1"
-        hidden="false">
-
+        hidden="false"
+        artifact_id="101">
         <read-access>
           <ugroup>project_members</ugroup>
           ...
@@ -800,6 +800,7 @@ A release is constructed using a ``<release/>`` XML element containing:
 - A ``name`` attribute
 - A ``time`` attribute containing the ISO-8601 representation of the release date.
 - A ``preformatted`` attribute containing a boolean that indicates if the release notes and changelog are preformatted.
+- An ``artifact_id`` attribute referencing an artifact that must be present in the XML content. The FRS plugin must be installed to take into account the value.
 - A single ``<read-access/>`` element containing the access definitions.
 - A single ``<notes/>`` element containing the release notes
 - A single ``<changes/>`` element containing the changelog
