@@ -442,6 +442,12 @@ Then click on generate.
 
    You have to generate an http password in order to use a gerrit 2.8+ server.
 
+Update, If gerrit config have set ``gitBasicAuth = true`` in ``[auth]`` section:
+
+* Not need generate http password in gerrit interface because use the http password of ``admin-my.tuleap.server.net`` defined in LDAP.
+
+* Must configure gerrit server with "Basic" Auth instead of "Digest" Auth when add a gerrit server in section "Integrating Tuleap and Gerrit".
+
 Connect Gerrit and Tuleap servers
 `````````````````````````````````
 
@@ -543,7 +549,9 @@ If it doesn't exist then you need to create it via ``ssh-keygen`` as above.
   Identity File          ``/home/codendiadm/.ssh/id_rsa-gerrit``
   Replication SSH Key    copy and paste the output of the public key
   Gerrit server version  check the right value regarding your gerrit server
-  Http password          copy the gerrit http password
+  Http password          If have "Digest" Auth then copy the gerrit http password.
+
+                         If have "Basic" Auth then copy the LDAP http password of ``admin-my.tuleap.server.net``.
   Authentication type    Either Digest (default) or basic. This depends of the configuration of your gerrit server. If you didn't set ``[Auth] gitBasicAuth = true`` in gerrit config let "Digest" as default.
 =======================  ==============================================
 
