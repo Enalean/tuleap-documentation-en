@@ -1,18 +1,16 @@
 Becoming a Tuleap Citizen
 =====================================
 
-You can learn more about the various class of citizen in the dedicated section
+You can learn more about the various class of Tuleap citizens in the dedicated section
 (see  :ref:`classes-of-citizens`).
 
 User Registration
 ------------------
 
-As suggested above, the first thing to do for a newcomer is to create
-her own account on Tuleap. Becoming a registered
-Tuleap user doesn't imply any commitment on your part to
-host any of your software projects on Tuleap. It simply
-gives you more freedom when you browse the site and allows
-Tuleap to serve you with personalized information.
+As suggested above, the first thing to do for newcomers is to create their own account
+on Tuleap. Becoming a registered Tuleap user doesn't imply any commitment on your part
+to host any of your software projects on Tuleap. It simply gives you more freedom when
+you browse the site and allows Tuleap to provide you with personalized information.
 
 Registering on Tuleap is quick and easy:
 
@@ -22,11 +20,11 @@ Registering on Tuleap is quick and easy:
        mandatory):
 
         a. **Login Name**: your user name. On some Tuleap systems that
-           are connected to an enterprise directory you may have to use a
+           are connected to an enterprise directory, you may have to use a
            pre-defined user name.
 
-        b. **Password**: 6 characters minimum and repeat it twice to make sure you
-           didn't make any typo in the first occurrence
+        b. **Password**: 6 characters minimum, type it twice to make sure you
+           didn't make any typo
 
         c. **Full Real Name**: what's your name again?
 
@@ -73,11 +71,11 @@ reasons. Assuming people create their account with an alien e-mail
 address while they have access to the Intranet, they won't be able to
 validate their account from the outside because the Tuleap
 machine is behind the firewall. Therefore, an account cannot be
-validated from outside.
+validated from the outside.
 
     **Tip**
 
-    Don't Panic and, above all, do not create a new account! Go to the
+    Don't panic and, above all, do not create a new account! Go to the
     Tuleap Login Page and click on the [Lost your password?]
     link. You'll be asked your login name and from that
     Tuleap will send you an e-mail message with an embedded
@@ -96,8 +94,8 @@ Login and Personal Page
 
 To log into the Tuleap site, go to the Tuleap
 Site at `http://tuleap.example.com <http://tuleap.example.com/>`__
-and click on the "Login" link. If you typed your login and password OK,
-Tuleap presents you with your Personal Page (or Personal
+and click on the "Login" link. If you typed your login and password correctly,
+Tuleap displays your Personal Page (or Personal
 Dashboard) (see `The Personal Page of a Tuleap user`_). At any point in time you can return to your
 Tuleap Personal Page by selecting the "My Personal Page" in
 the upper part of the Tuleap Main Menu.
@@ -117,12 +115,12 @@ be impatient to see fixed.
 
    The Personal Page of a Tuleap user
 
-Tuleap allows you to personalize your page to fit your
+Tuleap allows you to customize your page to fit your
 needs. The content of your page is made of *widgets*. All widgets can be
-moved, collapsed or closed. Some of them can provide an rss feed or
+moved, collapsed or closed. Some of them can provide an RSS feed or
 preferences can be set.
 
-New widgets can be added through the link "Add widgets". Here is an
+New widgets can be added through the "Add widgets" link. Here is an
 incomplete list of available widgets for the personal page:
 
 -  **Monitored File Packages** lists packages that you are currently
