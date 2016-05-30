@@ -690,14 +690,14 @@ If the project allows it, you can use a token instead of your password when usin
 
 1) Generate a token
 
-   First, you need to generate a token for your account. Go to you account preferences, generate a new SVN token. **There's no way to retrieve this token so don't forget it**. You can generate as many tokens as you want so if you loose one of your token, just delete it from you account preferences and generate another one.
+   First, you need to generate a token for your account. Go to you account preferences, generate a new SVN token. **There's no way to retrieve this token so don't forget it**. You can generate as many tokens as you want so if you loose one of your tokens, just delete it from you account preferences and generate another one.
 
    .. image:: ../images/screenshots/svn-token.gif
       :scale: 50 %
 
 2) Use your token
 
-   If the project can manage SVN token, just use your token instead of your password when using SVN.
+   If the project can manage SVN tokens, just use your token instead of your password when using SVN.
 
 Importing Existing Source Code
 ```````````````````````````````
