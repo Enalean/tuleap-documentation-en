@@ -5,8 +5,8 @@ Web site
 --------
 
 The Tuleap Web front end files are all under **/usr/share/tuleap.**
-Except otherwise specified this directories and all the files and
-directories under it belongs to user.group: **codendiadm.codendiadm**
+Except where otherwise specified, this directory and all the files and
+directories under it belong to user.group: **codendiadm.codendiadm**
 (rwxr-xr-x)
 
 CVS Repositories
@@ -22,7 +22,7 @@ nobody and group *ProjectName*. File permission is read only (r--r--r--)
 for files, while directories are user and group writable (rwxrwxr-x).
 This is defined by CVS and must not be touched.
 
-By default CVS servers on Tuleap are configured to perform all
+By default, CVS servers on Tuleap are configured to perform all
 transactions through the pserver protocol. Tuleap can be tuned to use
 the ssh tunnelling protocol.
 
@@ -134,7 +134,7 @@ site. They are generated daily by the logrotate script of Apache (see
 
 File name pattern: ``ftp_xferlog_YYYYMMDD.log``
 
-This file contain the ftp access logs (upload and download) to the
+This file contains the ftp access logs (upload and download) to the
 Tuleap site. It is generated daily by the logrotate script of ftp (see
 :ref:`log-files` section). It is basically a copy of the FTP
 log file /var/log/xferlog.
@@ -163,7 +163,7 @@ Files found in this directory are
 -  **subversion\_dir\_dump** ready to use Apache config files with a
    list of all the per project subversion repositories. This will be
    copied as is in the ``/etc/httpd/conf.d/codendi_svnroot.conf`` file.
--  **db\_top\_groups\_calc\_output:** contains all sorts of statistics
+-  **db\_top\_groups\_calc\_output:** contains different sorts of statistics
    about the Tuleap hosted projects (project name, old project rank in
    terms of total number of downloads, old project rank in terms of
    number of downloads this past week, user rank - unused-, rank in
@@ -193,7 +193,7 @@ Each registered user has her own Unix account created and the home
 directory that goes with it. This user home directory is owned by
 UserName.UserName and has access permission rwxr-xr-x. This can be
 changed by the user if she wants to set access permission differently.
-There is currently no space quota on a user home directories.
+There currently is no space quota on users home directories.
 
 Project Directories
 -------------------
@@ -225,11 +225,11 @@ File Release Space
 /var/lib/tuleap/ftp/tuleap/ProjectName
 
 This is where all the uploaded files associated with a given release of
-project ProjectNameare actually stored. Normally
+project ProjectName are actually stored. Normally
 neither the Tuleap Administration Team nor the Project Admin Team
 should mess up with this area by hand using their shell account. Files
-are deposited here by the fileforge  utility. This
-directory belongs to the project group ID of course and is group
+are deposited here by the fileforge utility. This
+directory belongs to the project group ID of course and it is group
 writable.
 
 /var/lib/tuleap/ftp/incoming
