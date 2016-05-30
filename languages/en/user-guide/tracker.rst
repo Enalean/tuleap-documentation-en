@@ -1746,7 +1746,7 @@ responsabilities:
    :alt: Select box bound to a list of user groups
    :name: Select box bound to a list of user groups
 
-   Select box bond to a list of user groups
+   Select box bound to a list of user groups
 
 Modify the field of a tracker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1757,7 +1757,7 @@ Edit the field of a tracker
 In order to make some change on a field, you can simply edit it by
 clicking on the Edit icon.
 
-The edition mode allow fields configuration not available at the
+The edition mode allows for fields configuration not available at the
 creation :
 
 -  **Change the field name**: the field name is different from the field
