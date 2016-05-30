@@ -25,18 +25,18 @@ With Tuleap, you will be able to:
 
 -  favour collaboration between project members.
 
-Tuleap 's high customization capability enables you to
+Tuleap's high customization capability enables you to
 tailor each tool to your processes and business requirements. `More info
 on Tuleap features . <http://www.tuleap.com/>`__
 
 We want you to experience the full power of Tuleap
-technology. So we do not distinguish between a Enterprise version and a
-Community version. In the same idea, we provide you in this guide all
-useful information and good practices to get the most of Tuleap Suite.
+technology. So we do not distinguish between an Enterprise version and a
+Community version. Likewise, this guide provides you with all
+useful information and good practices to get the most of the Tuleap suite.
 
-Tuleap Team makes great work to make this guide updated to
+The Tuleap team makes great work to make this guide updated to
 every new release. Do not hesitate to help us improve it, share your
-experience and tips: write to the mailing list tuleap-devel
+experience and tips: write to the mailing list `tuleap-devel <mailto:tuleap-devel@tuleap.net>`_.
 
 Enjoy Tuleap capabilities and let us know how you use it!
 
