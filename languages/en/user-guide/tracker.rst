@@ -1435,7 +1435,7 @@ Field Usage Management
 ```````````````````````
 
 When a tracker is first created, it comes pre-configured with a set of
-fields inherited form the template that was used to create it. For the
+fields inherited from the template that was used to create it. For the
 majority of projects hosted on Tuleap it is very likely that
 the standard Tracker templates (e.g Bugs, Tasks, User strories) will
 cover most of the needs.
@@ -1724,10 +1724,10 @@ properties that can be tuned :
 
       .. figure:: ../images/screenshots/sc_conf_vs_end_user.png
          :align: center
-         :alt: Select box bond to a list of users
-         :name: Select box bond to a list of users   
+         :alt: Select box bound to a list of users
+         :name: Select box bound to a list of users   
 
-         Select box bond to a list of users
+         Select box bound to a list of users
 
    -  **Binding a field to a list of user groups**: It's an extension of
       "binding to a list of user" but with user groups. It behaves the same
@@ -1743,8 +1743,8 @@ responsabilities:
 
 .. figure:: ../images/screenshots/sc_conf_vs_end_usergroup.png
    :align: center
-   :alt: Select box bond to a list of user groups
-   :name: Select box bond to a list of user groups
+   :alt: Select box bound to a list of user groups
+   :name: Select box bound to a list of user groups
 
    Select box bond to a list of user groups
 
