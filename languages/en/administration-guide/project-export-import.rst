@@ -739,8 +739,7 @@ The released files (FRS) can be imported, the XML syntax is:
       <package
         name="package1"
         rank="1"
-        hidden="false"
-        artifact_id="101">
+        hidden="false">
         <read-access>
           <ugroup>project_members</ugroup>
           ...
@@ -749,7 +748,8 @@ The released files (FRS) can be imported, the XML syntax is:
         <release
           name="release"
           time="2015-12-03T14:55:00"
-          preformatted="false">
+          preformatted="false"
+          artifact_id="101">
 
           <read-access>
             <ugroup>project_members</ugroup>
