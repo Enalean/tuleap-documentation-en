@@ -220,11 +220,11 @@ A custom webhook is an endpoint url which is called with the following payload.
         }
     }
 
-The call is made in a ``HTTP POST`` with a ``Content-Type: application/x-www-form-urlencoded``, and the json encoded
+The call is made in a ``HTTP POST`` with a ``Content-Type: application/x-www-form-urlencoded``, and the JSON encoded
 payload is given as argument in the ``payload`` parameter of the request. The endpoint can use the information included
-if this payload in order to perform various tasks (continuous deployment, backup, …).
+in this payload in order to perform various tasks (continuous deployment, backup…).
 
-You can see the status of the response (``200 OK``, ``404 Not Found``, …) in the logs section of each webhook.
+You can see the status of the response (``200 OK``, ``404 Not Found``…) in the logs section of each webhook.
 
 Jenkins Webhooks
 ````````````````
