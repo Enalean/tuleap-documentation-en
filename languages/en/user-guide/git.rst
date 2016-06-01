@@ -45,7 +45,7 @@ A reference must be initialized:
         git add .
         git commit -m 'initial commit'
         git push gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git master
-        
+
 
 If you have an existing repository with branches and tags you want to
 push, as an alternative you can run:
@@ -53,7 +53,7 @@ push, as an alternative you can run:
 ::
 
         git push --mirror gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git
-        
+
 
 Fork
 -----
@@ -170,23 +170,75 @@ configuration. See import repository section `Importing an existing Git Reposito
 Importing an existing Git Repository
 ------------------------------------
 
-There is no automatic procedure to perform repository import. 
+There is no automatic procedure to perform repository import.
 To move one Git repository from one Tuleap project to another, there are two commands to type (after creating the new repository in the destination project):
 ::
 
-        
-        git clone --mirror gitolite@tuleap.example.com:<source_project_shortname>/<repo_name>.git 
+
+        git clone --mirror gitolite@tuleap.example.com:<source_project_shortname>/<repo_name>.git
         git push --mirror gitolite@tuleap.example.com:<destination_project_shortname>/<repo_name>.git
 
-Continuous integration with Hudson/Jenkins
-------------------------------------------
+Webhooks
+--------
 
-The best way to integrate a project with Hudson/Jenkins is to activate the hudson_git plugin.
-Once installed a new tab is available in git administration plugin :
+You can configure you repository so that each time a ``push`` is made, a webhook endpoint is called. Two categories of
+webhooks are available:
 
-.. figure:: ../images/screenshots/sc_git_hooks.png
+#. Custom Webhooks
+#. Jenkins Webhooks
 
-For more information, see https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin#GitPlugin-Pushnotificationfromrepository
+Custom Webhooks
+```````````````
+
+A custom webhook is an endpoint url which is called with the following payload.
+
+.. code-block:: javascript
+
+    {
+        "ref":"refs\/heads\/master",
+        "after":"65039e81678ab6d9f158d5620da18aae917ca278",
+        "before":"6029350e6ebf0b6aa9d2fd57938f1e806abf9ffc",
+        "repository":{
+            "id":"123",
+            "name":"my-git-repository",
+            "full_name":"my-git-repository"
+        },
+        "pusher":{
+            "name":"jdoe",
+            "email":"john.doe@tuleap.example.com"
+        },
+        "sender":{
+            "id":102,
+            "uri":"users/102",
+            "user_url":"/users/jdoe",
+            "real_name":"John Doe",
+            "display_name":"John Doe (jdoe)",
+            "username":"jdoe",
+            "ldap_id":"102",
+            "avatar_url":"http://tuleap.example.com/users/jdoe/avatar.png",
+            "is_anonymous":false
+        }
+    }
+
+The call is made in a ``HTTP POST`` with a ``Content-Type: application/x-www-form-urlencoded``, and the json encoded
+payload is given as argument in the ``payload`` parameter of the request. The endpoint can use the information included
+if this payload in order to perform various tasks (continuous deployment, backup, …).
+
+You can see the status of the response (``200 OK``, ``404 Not Found``, …) in the logs section of each webhook.
+
+Jenkins Webhooks
+````````````````
+
+The best way to integrate a project with Hudson/Jenkins is to configure a Jenkins Webhook. Only one Jenkins Webhook is
+needed so you cannot create more than one. Please read `Push notification from repository`_ from Jenkins documentation
+for more information.
+
+You can see the list of triggered jobs in the logs section of the Jenkins Webhook.
+
+.. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
+  your site administrator if it is not the case on your Tuleap instance.
+
+.. _Push notification from repository: https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin#GitPlugin-Pushnotificationfromrepository
 
 Git References
 ---------------
