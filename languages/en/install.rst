@@ -5,7 +5,7 @@ Installation-guide
    :maxdepth: 1
 
    installation-guide/intro.rst
-   installation-guide/appliance-installation.rst
+   installation-guide/docker-image.rst
    installation-guide/full-installation.rst
    installation-guide/ansible-installation.rst
    installation-guide/basic-configuration.rst

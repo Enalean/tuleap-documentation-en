@@ -4,10 +4,10 @@ Introduction
 This document aims to help you install Tuleap on your server. Multiple ways to install Tuleap are supported
 with their benefits and disadvantages.
 
--  Appliance:
+-  Docker image
     -  Quick and easy install
     -  Let you test Tuleap 
-    -  Not recommended for production environment
+    -  Not recommended for production environment (For now!)
 
 -  Dedicated installation:
     -  Common way to install your production environment
