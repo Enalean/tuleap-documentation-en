@@ -737,6 +737,7 @@ The released files (FRS) can be imported, the XML syntax is:
     <frs>
 
       <package
+        id="12"
         name="package1"
         rank="1"
         hidden="false">
@@ -746,6 +747,7 @@ The released files (FRS) can be imported, the XML syntax is:
         </read-access>
 
         <release
+          id="30"
           name="release"
           time="2015-12-03T14:55:00"
           preformatted="false"
@@ -927,10 +929,13 @@ Example of references:
         </git>
         <frs>
             <package id="10012" name="My package">...</package>
-            <package id="10013" name="My other package">...</package>
+            <package id="10013" name="My other package">
+                <release id="2345">...</release>
+            </package>
             <references>
                 <reference source="pkg23" target="10012" />
                 <reference source="pkg75" target="10013" />
+                <reference source="rel465" target="2345" />
             </references>
         </frs>
         <mediawiki pages-backup="wiki_pages.xml" language="fr_FR">
