@@ -876,6 +876,7 @@ Supported references:
 
 * artfXXX for artifacts
 * pkgXXX for packages
+* relXXX for releases
 * wikiXXX for wiki pages
 * cmmtXXX for git or svn commits
 
@@ -888,6 +889,15 @@ Supported references:
     * referencealias_mediawiki
     * referencealias_svn
     * referencealias_tracker
+
+.. note::
+
+    When you import serveral times the same project (for test purpose for instance)
+    it can be convenient to have the references that points to the last version
+    of the import.
+
+    To do so you can use the --force=references switch on the import command
+    line.
 
 Example of references:
 
