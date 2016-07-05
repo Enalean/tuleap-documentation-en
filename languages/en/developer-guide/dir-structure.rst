@@ -3,9 +3,7 @@ Tuleap Directory Structure
 
 In this paragraph, we will focus on the source code directory structure. For a more general presentation of Tuleap File Structure, see the Tuleap Administration Guide.
 
-Here is a description of the main directories (path is given as relative to '/usr/share/codendi' or '/usr/share/tuleap' regarding your OS version):
-
-- **cgi-bin** This is the directory containing the only CGI script: the CVSWeb interface script, written in Perl.
+Here is a description of the main directories (path is given as relative to '/usr/share/tuleap'):
 
 - **tools** contains several tools and utilities used in Tuleap administration: DB backup script, installation scripts, etc.
 

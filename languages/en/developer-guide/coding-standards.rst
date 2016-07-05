@@ -1,14 +1,19 @@
 Tuleap coding standards
 =======================
 
+Code formatting
+---------------
+
 As Tuleap is mainly written in PHP, we use the PSR standards:
 
 * PSR-0_
 * PSR-1_
 * PSR-2_
 
+Rule of thumb: *All new classes MUST respect PSR-2*
+
 Internal conventions
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 * Use an indent of 4 spaces, with no tabs. This helps to avoid problems with diffs, patches, git history…
 * It is recommended to keep lines at approximately 85-100 characters long for better code readability.
@@ -26,7 +31,7 @@ Internal conventions
   contribute your change.
 
 Copyright & license
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 All source code files (php, js, bash, ...) must contain a page-level docblock at the top of each file.
 This header includes your copyright and a reference to the license GPLv2+ of the script.
@@ -81,3 +86,95 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _PSR-0: http://www.php-fig.org/psr/psr-0/
 .. _PSR-1: http://www.php-fig.org/psr/psr-1/
 .. _PSR-2: http://www.php-fig.org/psr/psr-2/
+
+Tuleap principles
+-----------------
+
+Output something / templating system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All new code must output content based on `Mustache <https://mustache.github.io/>`_ templates. The code is typically organized in 3 files:
+
+- The template
+- The presenter
+- The calling code (in a Controller for instance)
+
+Example of template:
+
+  .. code-block:: html
+
+    <h1>Hello</h1>
+
+    <p>Welcome to {{ title }}</p>
+    <!-- please note the spaces between {{, variable name and }} -->
+
+Example of Presenter
+
+  .. code-block:: php
+
+    class Presenter {
+
+        public function title() {
+            return "My title";
+        }
+    }
+
+Example of calling code:
+
+  .. code-block:: php
+
+    $renderer = TemplateRendererFactory::build()->getRenderer('/path/to/template/directory');
+
+    // Output content directly (to the browser for instance)
+    $renderer->renderToPage('template_name', new Presenter());
+
+    // Return the content for futur reuse
+    $string = $renderer->renderToString('template_name', new Presenter());
+
+
+  .. attention:: Known issues / limitation
+
+    Few points to keep in mind:
+
+    - It's recommended to use {{  }} notation to benefit from mustache automatic escaping.
+    - If you have to use {{{ }}} notation, the presenter MUST deal with output escaping (with Codendi_HTMLPurifier).
+
+.. note::
+
+    For existing code, it's acceptable to output content with "echo" to keep consistency.
+
+Secure forms against CSRF
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+Secure DB against SQL injections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+All code related to database MUST deal with data types and do the proper escaping
+of values before executing the query.
+
+Example of DataAccessObject:
+
+  .. code-block:: php
+
+    namespace Tuleap/Git;
+
+    use DataAccessObject;
+
+    class RepositoryDao extends DataAccessObject {
+
+        public function searchByName($project_id, $name) {
+            // project_id is supposed to be an int
+            $project_id = $this->da->escapeInt($project_id);
+
+            // name is supposed to be a string
+            $name = $this->da->quoteSmart($name);
+
+            $sql = "SELECT *
+                    FROM plugin_git_repositories
+                    WHERE project_id = $project_id
+                      AND name = $name";
+            return $this->retrieve($sql);
+        }
+    }
