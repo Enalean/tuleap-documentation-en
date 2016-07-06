@@ -112,9 +112,10 @@ Example of Presenter
 
   .. code-block:: php
 
-    class Presenter {
-
-        public function title() {
+    class Presenter
+    {
+        public function title()
+        {
             return "My title";
         }
     }
@@ -162,9 +163,10 @@ Example of DataAccessObject:
 
     use DataAccessObject;
 
-    class RepositoryDao extends DataAccessObject {
-
-        public function searchByName($project_id, $name) {
+    class RepositoryDao extends DataAccessObject
+    {
+        public function searchByName($project_id, $name)
+        {
             // project_id is supposed to be an int
             $project_id = $this->da->escapeInt($project_id);
 
