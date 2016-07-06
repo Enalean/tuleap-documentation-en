@@ -105,8 +105,10 @@ Example of template:
 
     <h1>Hello</h1>
 
-    <p>Welcome to {{ title }}</p>
-    <!-- please note the spaces between {{, variable name and }} -->
+    <p>Welcome to {{ my_title }}</p>
+    <!-- For readability, please note :                  -->
+    <!--   * the spaces between {{, variable name and }} -->
+    <!--   * the use of snake_case for variables         -->
 
 Example of Presenter
 
@@ -114,9 +116,12 @@ Example of Presenter
 
     class Presenter
     {
-        public function title()
+        /** @var string */
+        public $my_title;
+        
+        public function __construct()
         {
-            return "My title";
+            $this->my_title = "My title";
         }
     }
 
