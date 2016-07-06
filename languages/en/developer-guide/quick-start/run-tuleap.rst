@@ -13,7 +13,7 @@ First start of Tuleap
     $ make dev-setup
     $ make start-dns # if you're using OS X, do not execute this command
     $ make start
-    $ make less-docker
+    $ make sass-docker
 
 And voila, your server is up and running! You can access it at
 http://tuleap_web_1.tuleap-aio-dev.docker. You can connect with ``admin``
