@@ -557,6 +557,57 @@ Some insights to better understand how this works:
     the ``nature`` concept, you must set the ``use-natures`` attribute to
     ``true`` as stated in the example.
 
+Computed field import
+---------------------
+The new computed field can have have manual or autocomputed values.
+The <manual_value> node enable to keep the manual value for the field,
+the <is_autocompute> node keeps the field in autocompute mode.
+
+.. sourcecode:: xml
+  :linenos:
+  :emphasize-lines: 51,56,57,58,59,78,146
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project>
+      <services>
+        <service shortname="plugin_tracker" enabled="true" />
+        ...
+      </services>
+      ...
+      <trackers use-natures="true">
+        <tracker id="T239" parent_id="0" instantiate_for_new_projects="1">
+          <name><![CDATA[Simple Tracker]]></name>
+          <item_name>simple</item_name>
+          <description><![CDATA[simple tracker example]]></description>
+          <color>inca_silver</color>
+          <cannedResponses/>
+          <formElements>
+            <formElement type="computed" ID="F123" rank="97">
+              <name>computed_field_name</name>
+              <label><![CDATA[Computed_Field_Label]]></label>
+            </formElement>
+          </formElements>
+          ...
+          <artifacts>
+            <artifact id="445">
+              <changeset>
+                <submitted_by format="username">vaceletm</submitted_by>
+                <submitted_on format="ISO8601">2015-11-10T09:05:19+01:00</submitted_on>
+                <comments/>
+                <field_change field_name="computed_field_name" type="computed">
+                  <manual_value><![CDATA[11]]></manual_value>
+                </field_change>
+                <field_change field_name="computed_field_name" type="computed">
+                  <is_autocomputed>1</is_autocomputed>
+                </field_change>
+              </changeset>
+              ...
+            </artifact>
+          </artifacts>
+        </tracker>
+      </trackers>
+    </project>
+
 Permissions
 -----------
 
