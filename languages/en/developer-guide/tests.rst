@@ -22,14 +22,13 @@ Run tests with docker
 We have docker images to run unit tests on all environments:
 
 * centos6 + php 5.3: enalean/tuleap-simpletest:c6-php53
-* centos6 + php 5.4: enalean/tuleap-simpletest:c6-php54
-* centos6 + php 5.5: enalean/tuleap-simpletest:c6-php55
+* centos6 + php 5.6: enalean/tuleap-simpletest:c6-php56
 
 Basically, executing tests is as simple as, from root of Tuleap sources:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php54 \
+    $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-simpletest:c6-php53 \
         /tuleap/tests/simpletest /tuleap/tests/integration /tuleap/plugins
 
 If there is only one file or directory you are interested in:
@@ -52,20 +51,25 @@ There is also a docker image for REST tests:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap enalean/tuleap-test-rest
-    
+    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51
+    # Also exists for php 5.6:
+    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php56-httpd24-mysql56
+
+
 How to debug tests
 """"""""""""""""""
 
-Docker containers are stopped and removed once the tests are finished. In case of failure, 
+Docker containers are stopped and removed once the tests are finished. In case of failure,
 if you want to debug things, you may need to start manually the container in order to parse logs for example.
 
 .. code-block:: bash
 
-   $> docker run -ti --entrypoint bash -v $PWD:/tuleap enalean/tuleap-test-rest
-   $root@d4601e92ca3f> ./run.sh tests/rest/ArtifactFilesTest.php
-
-We are replacing the ``--rm=true`` parameter by ``-ti`` (for terminal interactivity) and ``--entrypoint bash`` (to override default one).
+   $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51 bash
+   $root@d4601e92ca3f> /usr/share/tuleap/tests/rest/bin/setup.sh
+   $root@d4601e92ca3f>/usr/share/tuleap/vendor/bin/phpunit \
+       -d includePath=/usr/share/tuleap/src/www/include:/usr/share/tuleap/src \
+       -d date.timezone=Europe/Paris \
+       /usr/share/tuleap/tests/rest/ArtifactFilesTest.php
 
 In another terminal, you can attach to this running container:
 
