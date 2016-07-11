@@ -67,7 +67,7 @@ if you want to debug things, you may need to start manually the container in ord
    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51 bash
    $root@d4601e92ca3f> /usr/share/tuleap/tests/rest/bin/setup.sh
    $root@d4601e92ca3f>/usr/share/tuleap/vendor/bin/phpunit \
-       -d includePath=/usr/share/tuleap/src/www/include:/usr/share/tuleap/src \
+       --include-path '/usr/share/tuleap/src/www/include:/usr/share/tuleap/src' \
        -d date.timezone=Europe/Paris \
        /usr/share/tuleap/tests/rest/ArtifactFilesTest.php
 
