@@ -66,7 +66,7 @@ if you want to debug things, you may need to start manually the container in ord
 
    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51 bash
    $root@d4601e92ca3f> /usr/share/tuleap/tests/rest/bin/setup.sh
-   $root@d4601e92ca3f>/usr/share/tuleap/vendor/bin/phpunit \
+   $root@d4601e92ca3f> /usr/share/tuleap/vendor/bin/phpunit \
        --include-path '/usr/share/tuleap/src/www/include:/usr/share/tuleap/src' \
        -d date.timezone=Europe/Paris \
        /usr/share/tuleap/tests/rest/ArtifactFilesTest.php
@@ -119,8 +119,7 @@ Differences with simpletest:
 
 .. code-block:: php
 
-   public function itThrowsAnExceptionWhenCalledWithNull() {
-   }
+   public function itThrowsAnExceptionWhenCalledWithNull()
 
 On top of simpletest we added a bit of syntactic sugar to help writing readable tests.
 Most of those helpers are meant to help dealing with mock objects.
@@ -129,15 +128,18 @@ Most of those helpers are meant to help dealing with mock objects.
 
     <?php
 
-    class Bar_IsAvailableTest extends TuleapTestCase {
+    class Bar_IsAvailableTest extends TuleapTestCase
+    {
 
-        public function itThrowsAnExceptionWhenCalledWithNull() {
+        public function itThrowsAnExceptionWhenCalledWithNull()
+        {
             $this->expectException();
             $bar = new Bar();
             $bar->isAvailable(null);
         }
 
-        public function itIsAvailableIfItHasMoreThan3Elements() {
+        public function itIsAvailableIfItHasMoreThan3Elements()
+        {
             $foo = mock('Foo');
             stub($foo)->count()->returns(4);
             // Syntaxic sugar for :
@@ -148,7 +150,8 @@ Most of those helpers are meant to help dealing with mock objects.
             $this->assertTrue($bar->isAvailable($foo));
         }
 
-        public function itIsNotAvailableIfItHasLessThan3Elements() {
+        public function itIsNotAvailableIfItHasLessThan3Elements()
+        {
             $foo = stub('Foo')->count()->returns(2);
 
             $bar = new Bar();
@@ -186,7 +189,8 @@ and ``returnsDarWithErrors()``.
 
 .. code-block:: php
 
-        public function itDemonstrateHowToUseReturnsDar() {
+        public function itDemonstrateHowToUseReturnsDar()
+        {
 
             $project_id = 15;
             $project    = stub('Project')->getId()->returns($project_id);
@@ -221,7 +225,8 @@ At time of writing, there are 2 builders in Core aUser.php and aRequest.php:
 
 .. code-block:: php
 
-    public function itDemonstrateHowToUseUserAndRequest() {
+    public function itDemonstrateHowToUseUserAndRequest()
+    {
 
         $current_user = aUser()->withId(12)->withUserName('John Doe')->build();
         $new_user     = aUser()->withId(655957)->withUserName('Usain Bolt')->build();
