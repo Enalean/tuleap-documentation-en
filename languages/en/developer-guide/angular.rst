@@ -6,12 +6,13 @@ Prepare your environment
 
     You only need to do this once, when installing your machine.
     You'll need to have NodeJS >= v4.x. See https://github.com/nodesource/distributions
-    You will also need to have npm >= 2.x. You can run `npm install -g npm` to update it.
+    You will also need to have npm >= 2.x. You can run 'npm install -g npm' to update it.
 
     .. code-block:: bash
 
         $> mkdir ~/.node_modules_global
         $> npm config set prefix $HOME/.node_modules_global
+        $> npm install -g npm
         $> npm install -g bower grunt-cli
 
     Then add the following lines to your '.bashrc' file to add the newly created 'node_modules_global' folder to your PATH:
@@ -41,9 +42,18 @@ Compile
     .. code-block:: bash
 
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
-        $> grunt
-        or
-        $> grunt watch
+        $> npm run build
+        # or
+        $> npm run watch
+
+Tests and test coverage
+""""""""""""""""""""""
+    .. code-block:: bash
+    
+        $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
+        $> npm run test
+        # To see what parts of your code are covered by tests:
+        $> npm run coverage
 
 Working on artifact-modal
 '''''''''''''''''''''''''
@@ -65,11 +75,11 @@ Then, we'll make a symbolic link in the modal's parent application:
         $> rm -rf vendor/artifact-modal/
         $> ln -s /my/artifact-modal/sources/ vendor/artifact-modal
 
-Every time you change something, you'll have to run `grunt` in the artifact-modal **and** in the parent application (in that order):
+Every time you change something, you'll have to run 'npm run build' in the artifact-modal **and** in the parent application (in that order):
 
     .. code-block:: bash
 
-        $> (cd /my/artifact-modal/sources/ && grunt) && \
-        (cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/ && grunt)
+        $> (cd /my/artifact-modal/sources/ && npm run build) && \
+        (cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/ && npm run build)
 
 
