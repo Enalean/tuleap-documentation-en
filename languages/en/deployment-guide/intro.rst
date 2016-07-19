@@ -4,6 +4,16 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.17
+====
+
+Dependency to PHP Guzzle
+------------------------
+
+Tuleap starts using Guzzle package from the EPEL repository (``php-guzzle-Guzzle``) instead of
+the package provided until now by the Tuleap repository (``php-guzzle``). You should check if this
+package is not ignored by your yum configuration.
+
 8.15
 ====
 
