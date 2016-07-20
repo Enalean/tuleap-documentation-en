@@ -19,7 +19,7 @@ Development 101, what you need to know
 
    developer-guide/dir-structure
    developer-guide/autoload
-   developer-guide/less
+   developer-guide/sass
    developer-guide/tests
    developer-guide/forgeupgrade
    developer-guide/debug

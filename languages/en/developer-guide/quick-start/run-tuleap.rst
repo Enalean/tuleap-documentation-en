@@ -47,8 +47,8 @@ Descriptions of commands
     7cd1e645b3a9: tuleap_ldap_1 — enalean/ldap:latest 389/tcp, 636/tcp
     9d026f381fbf: tuleap_db_1 — mysql:5.5 3306/tcp
 
-* ``make less-docker``: This command compiles all less files into css. You must
-  execute this command for the first run and everytime you change a .less file.
+* ``make sass-docker``: This command compiles all SCSS files into CSS. You must
+  execute this command for the first run and everytime you change a .scss file.
 
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
@@ -90,7 +90,7 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
   'tuleap_web_1.tuleap-aio-dev.docker'`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
-  
+
 If you don't receive email, this is because we configured postfix to not deliver emails by default. You may need to manually add the emails you use for your development:
 
 .. code-block:: bash
@@ -99,4 +99,3 @@ If you don't receive email, this is because we configured postfix to not deliver
     $> vi /data/etc/email_whitelist # enter your email
     $> ./whitelist_emails.sh
     $> service postfix reload
-
