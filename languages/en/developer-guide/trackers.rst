@@ -19,7 +19,7 @@ irrelevant for some type of fields.
   * Definition is NOT given through SOAP @deprecated
   * Definition is given through REST (representations)
   * Migrate field from TV3 (if not done)
-  * Definition is given through SOAP & REST
+  * Definition is given through SOAP & RES
 
 * Artifacts
 
@@ -30,6 +30,10 @@ irrelevant for some type of fields.
   * New value is sent in notifications
   * Diff of the field appears in changesets
   * Get/create/update NOT through SOAP @deprecated
+  * New value is Copyed on Artifact copy
+  * New value can be used in semantic
+  * New value can be updated on masschanges
+  * On an artifact with artifact links, on creating directly a child the field can be used
 
 * Reports
 
@@ -46,5 +50,7 @@ irrelevant for some type of fields.
   * Cardwall edit in place
   * Card field in planning v2
   * Card field in kanban + filter + highlight
+  * Modal edit Release
+  * Modal add a Task
 
 * User documentation is accurate
