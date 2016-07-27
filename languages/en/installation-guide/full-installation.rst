@@ -19,7 +19,6 @@ will certainly cause probleme in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
  -  **CentOS or RedHat 6.x** is the recommended platform
- -  CentOS or RedHat 5.x with PHP 5.3 is still maintained but not recommended anymore
 
 Note that **CentOS or RedHat 7.x is not yet supported**.
 
@@ -36,7 +35,7 @@ Installation
 
 This installation guide will cover the installation on the recommended system: Redhat/Centos 6.x. For other installation procedure please refer to the advanced guide.
 
--  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor). 
+-  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor).
 
 ::
 
