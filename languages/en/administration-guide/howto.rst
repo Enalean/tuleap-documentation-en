@@ -1348,6 +1348,18 @@ Configure Nginx
 
 .. sourcecode:: nginx
 
+    # ++ Cache and compress (not mandatory for reverse proxy)
+    proxy_cache_path    /tmp/nginx_cache levels=1:2 keys_zone=cache_zone:200m
+                        max_size=1g inactive=30m;
+    proxy_cache_key     "$scheme$request_method$host$request_uri";
+    gzip            on;
+    gzip_vary       on;
+    gzip_proxied    expired no-cache no-store private auth;
+    gzip_types      text/plain text/css text/xml text/javascript
+                    application/x-javascript application/xml;
+    gzip_disable    "MSIE [1-6]\.";
+    # -- Cache and compress
+
     upstream tuleap {
         server 172.17.0.4:80;
     }
@@ -1356,6 +1368,24 @@ Configure Nginx
         listen 443 ssl;
         ssl_certificate /etc/nginx/ssl/server.crt;
         ssl_certificate_key /etc/nginx/ssl/server.key;
+
+        # ++ Cache media (not mandatory for reverse proxy)
+        location ~* \.(?:js|css|png|gif|eot|woff)$ {
+            access_log              off;
+            add_header              X-Cache-Status $upstream_cache_status;
+            proxy_cache             cache_zone;
+            proxy_cache_valid       200 302 1h;
+            proxy_ignore_headers    "Set-Cookie";
+            proxy_hide_header       "Set-Cookie";
+            expires                 1h;
+
+            proxy_pass http://tuleap;
+            proxy_set_header X-Real-IP         $remote_addr;
+            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Host              $host;
+        }
+        # -- Cache media
 
         # The 4 proxy_set_header are mandatory
         location / {
