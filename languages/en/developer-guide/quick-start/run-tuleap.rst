@@ -52,7 +52,7 @@ Descriptions of commands
 * ``make sass-docker``: This command compiles all SCSS files into CSS. You must
   execute this command for the first run and everytime you or someone else change a .scss file.
 
-* ``npm install`: Install the packages needed to build javascript code.
+* ``npm install``: Install the packages needed to build javascript code.
 
 * ``npm run build``: Generate the javascript file to be used by the browser. you
   need to run this command everytime a javascript file is updated (either by you
