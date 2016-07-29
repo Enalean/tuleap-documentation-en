@@ -1347,6 +1347,7 @@ Configure Nginx
 ~~~~~~~~~~~~~~~
 
 .. sourcecode:: nginx
+
     # ++ Disable emitting nginx version in response header
     server_tokens off;
     # -- Disable emitting nginx version in response header
