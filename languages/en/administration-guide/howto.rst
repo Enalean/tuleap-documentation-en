@@ -1347,6 +1347,9 @@ Configure Nginx
 ~~~~~~~~~~~~~~~
 
 .. sourcecode:: nginx
+    # ++ Disable emitting nginx version in response header
+    server_tokens off;
+    # -- Disable emitting nginx version in response header
 
     # ++ Cache and compress (not mandatory for reverse proxy)
     proxy_cache_path    /tmp/nginx_cache levels=1:2 keys_zone=cache_zone:200m
