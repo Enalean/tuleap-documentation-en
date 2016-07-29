@@ -14,6 +14,8 @@ First start of Tuleap
     $ make start-dns # if you're using OS X, do not execute this command
     $ make start
     $ make sass-docker
+    $ npm install
+    $ npm run build
 
 And voila, your server is up and running! You can access it at
 http://tuleap_web_1.tuleap-aio-dev.docker. You can connect with ``admin``
@@ -48,8 +50,13 @@ Descriptions of commands
     9d026f381fbf: tuleap_db_1 — mysql:5.5 3306/tcp
 
 * ``make sass-docker``: This command compiles all SCSS files into CSS. You must
-  execute this command for the first run and everytime you change a .scss file.
+  execute this command for the first run and everytime you or someone else change a .scss file.
 
+* ``npm install`: Install the packages needed to build javascript code.
+
+* ``npm run build``: Generate the javascript file to be used by the browser. you
+  need to run this command everytime a javascript file is updated (either by you
+  or if you switch to a branch with new javascript).
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
     lost at reboot. If you need to add/change anything and make it persistant, fork
