@@ -651,6 +651,59 @@ notification:
     manager will archive all the email messages which can prove very
     useful for future reference. See :ref:`mailing-lists` for mailing list creation.
 
+
+Subversion Immutable tags
+`````````````````````````
+
+Thanks to the integration of Subversion in Tuleap, SVN Administrators
+can define immutable tag paths.
+An immutable tag is a path where contributors won't have right to
+update or delete exiting files.
+
+**Immutable Tags:**
+
+Given the following structure :
+::
+
+ - /repository_name/tags
+ - /repository_name/tags/README.txt
+
+And given an immutable tag define on /repository_name/tags :
+::
+
+ - I cannot update or delete README.txt
+ - I can create a new file like /repository_name/tags/new_file.txt
+
+**Whitelist:**
+
+It is possible to define folders where you can enhance this rule
+and add new content by defining paths in immutable tags whitelist.
+
+Given the following structure :
+::
+
+ - /moduleA/trunks
+ - /moduleB/trunks
+ - /tags
+
+
+Given an immutable tag define on /tags
+and a global whitelist defined on /tags/module*
+::
+
+ - I can add content in /tags/moduleA or /tags/moduleB
+ - I cannot update or delete content in /tags/moduleA or /tags/moduleB
+ - I still cannot update or delete /tags/moduleA/README.txt or /tags/moduleB/README.txt
+ - I still can add new file like /tags/moduleA/new_file.txt or /tags/new_file.txt
+
+.. figure:: ../images/screenshots/immutable_tags.png
+   :align: center
+   :alt: Immutable tags Tuleap interface
+   :name: Immutable tags Tuleap interface
+
+   Immutable tags Tuleap interface
+
+
 A Typical Subversion Life Cycle
 --------------------------------
 
