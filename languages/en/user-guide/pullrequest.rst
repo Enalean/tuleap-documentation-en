@@ -90,11 +90,78 @@ Those informations can be edited directly from the web browser.
 Review the code
 '''''''''''''''
 
+Once Bob has created the pull request, Alice can review it. The majority of the
+work is available in the "Files" tab.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step6.png
+      :align: center
+      :alt: View files
+      :name: View files
+
+.. attention:: Important about diff
+
+    The diff is generated between the latest commit and the base of the branch
+    (common anscestor).
+
+    If master evolved in the mean time, you won't see those changes (and potential
+    conflicts) in this view.
+
+    To propose an accurate review, you should rebase your work locally with the
+    tip of the branch you want to push in before creating the pull request.
+
+Alice can then comment inline the diff by clicking on the line number.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step7.png
+      :align: center
+      :alt: Inline comment
+      :name: Inline comment
+
 Update a pull request
 '''''''''''''''''''''
 
+Bob can see all the comments of Alice from the discussion view.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step8.png
+      :align: center
+      :alt: Discussion thread
+      :name: Discussion thread
+
+Then he should go back to work and update the branch, the pull request will be
+automatically updated.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step9.png
+      :align: center
+      :alt: After PR update
+      :name: After PR update
+
+.. note::
+
+    You can notice that Alice comments are greyed out. We can see that she placed
+    a comment but we can no longer see it in the diff nor we can accessing the
+    line from the comment.
+
+    This is a known limitation when lines moves from one diff to another. The
+    comment was placed on Makefile L4 at the first review but in the second
+    review L4 was changed (the 2 first lines of the Makefile were removed).
+
+    .. figure:: ../images/screenshots/pullrequest/simple_step10.png
+          :align: center
+          :alt: Diff detail
+          :name: Diff detail
+
 Merge the request
 '''''''''''''''''
+
+The work is now done, Alice can click on the "Merge" button and the code will be
+integrated inside master.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step11.png
+      :align: center
+      :alt: After merge in master
+      :name: After merge in master
+
+Alice can also merge "by hand" in her own working copy and then push to the repository
+the result will be the same.
 
 Advanced workflow
 -----------------
@@ -104,6 +171,7 @@ To be done...
 Integrate with Jenkins
 ----------------------
 
+To be completed
 
 .. sourcecode:: bash
 
