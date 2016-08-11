@@ -87,6 +87,9 @@ Those informations can be edited directly from the web browser.
       :alt: Pull request screen
       :name: Pull request screen
 
+Review the code
+'''''''''''''''
+
 Update a pull request
 '''''''''''''''''''''
 
@@ -96,5 +99,27 @@ Merge the request
 Advanced workflow
 -----------------
 
+To be done...
+
 Integrate with Jenkins
 ----------------------
+
+
+.. sourcecode:: bash
+
+    mytuleap="https://my.tuleap.tld"
+    repo_id=1
+    rev=$(git rev-parse HEAD)
+    branch="${GIT_BRANCH#*/}"
+    token="generated token"
+
+    if [ -f testpass ]; then
+        status="S"
+    else
+        status="F"
+    fi
+
+    curl "https://$mytuleap/api/git/$repo_id/build_status" \
+        -H 'Content-Type: application/json' \
+        -H 'Accept: application/json' \
+         --data-binary "{ \"status\": \"$status\", \"branch\": \"$branch\", \"commit_reference\": \"$rev\", \"token\": \"$token\"}"
