@@ -56,6 +56,36 @@ request
    :alt: Push code and create PR
    :name: Push code and create PR
 
+Once the code is on the server, Bob goes to the Tuleap web interface, in the
+repository (git service).
+
+From there he can create a pull request by selecting the source and target branches.
+
+
+.. figure:: ../images/screenshots/pullrequest/simple_step3.png
+   :align: center
+   :alt: Create the pull request
+   :name: Create the pull request
+
+Source branch is where the work was done, target is where it should be integrated.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step4.png
+      :align: center
+      :alt: Select branches
+      :name: Select branches
+
+Bob is redirected on the pull request screen where he can quickly see the major
+informations about his work.
+
+The PR summary is automatically extracted from the first line of the first commit
+message in the branch. The description is the rest of the commit message.
+
+Those informations can be edited directly from the web browser.
+
+.. figure:: ../images/screenshots/pullrequest/simple_step5.png
+      :align: center
+      :alt: Pull request screen
+      :name: Pull request screen
 
 Update a pull request
 '''''''''''''''''''''
