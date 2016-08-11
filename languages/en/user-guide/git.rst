@@ -54,6 +54,7 @@ push, as an alternative you can run:
 
         git push --mirror gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git
 
+.. _git-personal-fork:
 
 Fork
 -----

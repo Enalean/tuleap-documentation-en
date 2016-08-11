@@ -1,7 +1,7 @@
-Gerrit
-======
+.. _code-review-with-gerrit:
 
-Gerrit integration is still pretty new so a good knowledge of both Gerrit and Tuleap is required.
+Code review with Gerrit
+=======================
 
 Gerrit is a code review tool built on top of git. It also manage permissions for repository access.
 
