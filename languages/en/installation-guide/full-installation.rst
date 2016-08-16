@@ -33,7 +33,7 @@ You can have a look at the Installation checklist here: https://tuleap.net/wiki/
 Installation
 ------------
 
-This installation guide will cover the installation on the recommended system: Redhat/Centos 6.x. For other installation procedure please refer to the advanced guide.
+This installation guide will cover the installation on the recommended system: Redhat/CentOS 6.x.
 
 -  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor).
 

@@ -881,7 +881,7 @@ A prerequisite is that you need to have ``gitolite 3`` installed on your server.
 documentation.
 
 You must then define a hostname for the master (aka your Tuleap instance). To do so, edit the ``.gitolite.rc`` file you
-should find in ``/usr/com/gitolite`` for centos5 installations or ``/var/lib/gitolite`` for centos6 and uncomment and set the
+should find in ```/var/lib/gitolite`` and uncomment and set the
 ``HOSTNAME`` variable you'll find there.
 
 Once you've done this, you must ask tuleap to re-dump its gitolite configuration. To do so, as a site admin go to
@@ -1158,49 +1158,7 @@ You should run the following commands before any upgrade:
 
 if there is any output wait for night run of daily compute (so keys are dumped again) or run the daily cron by hand
 
-Upgrade on centos 5
-~~~~~~~~~~~~~~~~~~~
-
-You may need to adapt names and path to your version of tuleap
-
-  .. sourcecode:: console
-
-      # as root, service codendi stop
-      # su - gitolite
-      # git clone /var/lib/codendi/gitolite/repositories/gitolite-admin.git
-      # su to root
-      # yum install gitolite3
-      # rpm -e --nodeps gitolite
-      # cp ~codendiadm/.ssh/id_rsa_gl-adm.pub /tmp
-      # su - gitolite
-      # ln -s /var/lib/codendi/gitolite/repositories
-      # cp -a .gitolite.rc gitolite2.rc
-      # cp -a /usr/share/codendi/plugins/git/etc/gitolite3.rc.dist .gitolite.rc
-      # tar -czf gitolite2-logs.tgz ~/.gitolite/logs
-      # rm -rf repositories/gitolite-admin.git
-      # gitolite setup -pk /tmp/id_rsa_gl-adm.pub
-      # cd gitolite-admin
-      # gitolite push -f
-      # install -g gitolite -o gitolite -m 00755 /usr/share/codendi/plugins/git/hooks/post-receive-gitolite /usr/com/gitolite/.gitolite/hooks/common/post-receive
-      # edit ~/.gitolite.rc and uncomment GROUPLIST_PGM line
-      # find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;
-      # find /var/lib/codendi/gitolite/repositories/ -type l \( -name "post-receive.mirrorpush" -o -name "gitolite-hooked" \)  -exec rm {} \;
-      # as root, service codendi start
-
-If you are using legacy http access (on /git endpoint)
-
-Pre-requisite: you were already running HTTP integration on top of gitolite2 (see README-http.txt)
-
-  .. sourcecode:: console
-
-      install -g codendiadm -o codendiadm -m 00755 /usr/share/codendi/plugins/git/bin/gitolite3-suexec-wrapper.sh /usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh
-      install -g root -o root -m 00600 /usr/share/codendi/plugins/git/etc/sudoers.d/gitolite3-http /etc/sudoers.d/gitolite3-http
-
-You need to adapt  ``/usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh`` with ``GITOLITE_HTTP_HOME="/usr/com/gitolite"``
-
-Finally you need to adapt ``/etc/httpd/conf.d/tuleap-plugins/git.conf`` with ``ScriptAlias /git/ /usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh/``
-
-Upgrade on centos 6
+Upgrade on CentOS 6
 ~~~~~~~~~~~~~~~~~~~
 
   .. sourcecode:: console
