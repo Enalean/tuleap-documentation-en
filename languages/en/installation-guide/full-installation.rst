@@ -102,4 +102,4 @@ First connection
 
 Once these steps are completed, you can access the Tuleap server with the web interface. Go to your Tuleap domain name (e.g. http://tuleap.example.com)
 
-Default admin credentials are login: admin and password: siteadmin . Change it as soon as possible.
+Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Change it as soon as possible.
