@@ -81,20 +81,9 @@ It will ask you for:
 
     -  Web (TCP/80 & TCP/443)
 
-    -  Jabber (Instant messaging): TCP/5222, TCP/9090, TCP/9091
-
     -  SSH (git, admin): TCP/22
 
     -  More if you need more (FTP, SMTP, ...).
-
-
-(IM) CentOS 6
-`````````````
-Follow these commands until the required ports (above) are activated. We will be checking this each time we run ''netstat -lntp''
-
-* netstat -lntp
-* service openfire start
-* netstat -lntp
 
 Mail configuration
 ------------------
