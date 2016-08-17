@@ -10,6 +10,7 @@ Administration guide
    administration-guide/daemons
    administration-guide/backup
    administration-guide/services
+   administration-guide/logs
    administration-guide/customisations
    administration-guide/howto
    administration-guide/project-export-import
