@@ -1301,6 +1301,11 @@ Deploy Tuleap behind a reverse proxy
 
 We strongly recommend to setup the reverse proxy so that it terminates SSL.
 
+Install Nginx
+~~~~~~~~~~~~~
+
+See documentation on scl web site: https://www.softwarecollections.org/en/scls/rhscl/rh-nginx18/
+
 Configure Nginx
 ~~~~~~~~~~~~~~~
 
@@ -1323,11 +1328,12 @@ Configure Nginx
     # -- Cache and compress
 
     upstream tuleap {
-        server 172.17.0.4:80;
+        server 127.0.0.1:8080;
     }
 
     server {
         listen 443 ssl;
+        server_name my.tuleap.name;
         ssl_certificate /etc/nginx/ssl/server.crt;
         ssl_certificate_key /etc/nginx/ssl/server.key;
         ssl_session_timeout 1d;
@@ -1387,9 +1393,11 @@ You will need to tell Tuleap that the IP of the reverse proxy is trusted, in loc
 
 .. sourcecode:: php
 
-    $sys_trusted_proxies = '172.17.0.2';
+    $sys_trusted_proxies = '127.0.0.1';
 
 Be careful with this value, once you set it, Tuleap will automatically trust some request
 headers when the request come from this IP address (``X_FORWARDED_FOR``, ``X_FORWARDED_PROTO``, ``REMOTE_ADDR``).
 So if your proxy is not properly configured to value those headers, it could be used by an
 attacker to spoof requests.
+
+Please note that you can also use CIDR notation like ``192.168.0.0/24`` as well.
