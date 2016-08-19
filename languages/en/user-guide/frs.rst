@@ -169,7 +169,7 @@ of the file and follow the instructions.
 Delivery manager Administration
 --------------------------------
 
-This section is for project admins and file admins. It goes through a
+This section is accessible by project admin or have write files permissions. It goes through a
 detailed explanation of the Delivery Manager process. This is a 2-step
 process:
 
@@ -180,7 +180,7 @@ update an existing one in them at any time.
 **Release Creation**: Once a package has been created, you can add (and
 update) releases to it
 
-When you are project admin or file admin, you are able to perform the
+When you are Files Administrator, you are able to perform the
 admin actions on the Delivery Manager home page. (See `The Delivery Manager screen of the Playground project, when you are an admin`_ )
 
 .. figure:: ../images/screenshots/sc_filereleasedownloadsadmin.png
@@ -190,10 +190,29 @@ admin actions on the Delivery Manager home page. (See `The Delivery Manager scre
 
    The Delivery Manager screen of the Playground project, when you are an admin
 
+Files Permissions
+``````````````````
+
+Files permission is based on Tuleap permissions model.
+
+Global files permissions
+`````````````````````````
+
+There is two level of permissions :
+   **Write**: defines the user groups who can administrates Files and create packages and releases
+   **Read**: defines the user groups who can read packages and release content
+
+.. figure:: ../images/screenshots/frs_global_permissions.png
+   :align: center
+   :alt: The global permission screen for Files
+   :name: The global permission screen for Files
+
+   The global permission screen for Files
+
 Package Administration
 ```````````````````````
 
-To administrate packages, you must be project admin or file admin.
+To administrate packages, you must be project admin or have write files permissions.
 Package creation and modification are nearly the same.
 
 Package Creation
@@ -235,6 +254,8 @@ one, except that you can set read permissions on the package (see `Package editi
 A project member with the 'File Manager Admin' right (see :ref:`user-permissions`) can attach
 access permissions to any existing package.
 
+If you do not specify any access permissions for a package,
+it inherits the global access permissions.
 By default, permissions attached to a package apply to all releases and
 files that belong to this package. But you may also set different
 permissions to specific releases (see below).
@@ -242,7 +263,7 @@ permissions to specific releases (see below).
 Release Administration
 ```````````````````````
 
-To administrate releases, you must be project admin or file admin.
+To administrate releases, you must be project admin or have write files permissions.
 Release creation and modification are the same.
 
 Release Creation and modification
@@ -394,8 +415,9 @@ case, you can update the release at any time
 Processor List Administration
 ------------------------------
 
-Project admins and file admins can manage the processor list per
-project. The processor is an (optional) attribute of a released file.
+Project admins or user groups who have write files permissions can manage
+the processor list per project. The processor is an (optional) attribute of
+a released file.
 Depending the project or working domain, you could be interested in
 adding processors to the existing list. To do it, follow the admin link
 "Manage processors" of the Delivery Manager. Then, you have the list of
