@@ -4,6 +4,13 @@
 Tracker (Legacy)
 ================
 
+.. attention:: Deprecation notice
+
+  Tracker v3 are deprected. There is no longer functional update on them.
+  Only security bugs might be fixed when possible.
+
+  It's highly recommended to switch to Tracker V5 :ref:`trackers-and-real-time-reports`
+
 **Disclaimer:** this chapter covers the legacy version (aka v3) of
 Tracker service. For documentation on the current tracker system (v5)
 see :ref:`trackers-and-real-time-reports`.
@@ -91,14 +98,14 @@ welcome screen (see `A sample artifact submission screen (the artifact is of typ
 
    A sample artifact submission screen (the artifact is of type "bug" here)
 
-`A sample artifact submission screen (the artifact is of type "bug" here)`_ shows 
+`A sample artifact submission screen (the artifact is of type "bug" here)`_ shows
 a sample submission screen from one of the Tuleap
 hosted projects. Because of the Tuleap Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
 
-In the example provided on `A sample artifact submission screen (the artifact is of type "bug" here)`_ 
+In the example provided on `A sample artifact submission screen (the artifact is of type "bug" here)`_
 the artifact type is a bug (also know as
 "defect" in corporate language). The user is asked to choose a bug
 Category, a bug Group, a Priority and an Assignee from a series of pull
@@ -990,68 +997,68 @@ access permissions see `Permissions Management`_. Default permission settings ar
 the table below:
 
 =============================================================================================  ===========================================
- Tracker Feature                                                                               Access Permission                        
+ Tracker Feature                                                                               Access Permission
 =============================================================================================  ===========================================
- `New ArtifactSubmission <#ArtifactSubmission>`__                                              By default any Tuleap        
-                                                                                               visitor, whether logged in or not, has   
-                                                                                               the ability to submit a new artifact to  
-                                                                                               a tracker. The tracker administrator has 
-                                                                                               the ability to limit the scope of this   
-                                                                                               feature to Tuleap registered 
-                                                                                               users (anonymous users are requested to  
-                                                                                               login first) or to the project members   
-                                                                                               if the tracker is made private.          
+ `New ArtifactSubmission <#ArtifactSubmission>`__                                              By default any Tuleap
+                                                                                               visitor, whether logged in or not, has
+                                                                                               the ability to submit a new artifact to
+                                                                                               a tracker. The tracker administrator has
+                                                                                               the ability to limit the scope of this
+                                                                                               feature to Tuleap registered
+                                                                                               users (anonymous users are requested to
+                                                                                               login first) or to the project members
+                                                                                               if the tracker is made private.
 
- `Artifact  Browsing <#ArtifactBrowsing>`__                                                    Searching the Artifact database and      
-                                                                                               browsing the results is available to all 
-                                                                                               Tuleap visitors (whether     
-                                                                                               registered or not) unless the tracker    
-                                                                                               has been made private by the project     
-                                                                                               administrator. If so the tracker is only 
-                                                                                               visible to project members.              
+ `Artifact  Browsing <#ArtifactBrowsing>`__                                                    Searching the Artifact database and
+                                                                                               browsing the results is available to all
+                                                                                               Tuleap visitors (whether
+                                                                                               registered or not) unless the tracker
+                                                                                               has been made private by the project
+                                                                                               administrator. If so the tracker is only
+                                                                                               visible to project members.
 
- `Artifact Update <#ArtifactUpdate>`__                                                         By default only project members can      
-                                                                                               update an artifact. Non members have     
-                                                                                               only limited access and can only add a   
-                                                                                               comment or attach a file.                
+ `Artifact Update <#ArtifactUpdate>`__                                                         By default only project members can
+                                                                                               update an artifact. Non members have
+                                                                                               only limited access and can only add a
+                                                                                               comment or attach a file.
 
- `Mass Update of Artifacts <#ArtifactMassChange>`__                                            Only available to project administrators 
-                                                                                               and project members with Admin. and      
-                                                                                               Tech. permission on this tracker.        
+ `Mass Update of Artifacts <#ArtifactMassChange>`__                                            Only available to project administrators
+                                                                                               and project members with Admin. and
+                                                                                               Tech. permission on this tracker.
 
- `Tracker Artifact Import <#ArtifactImport>`__                                                 Only available to project administrators 
-                                                                                               and project members with Admin. and      
-                                                                                               Tech. permission on this tracker.        
+ `Tracker Artifact Import <#ArtifactImport>`__                                                 Only available to project administrators
+                                                                                               and project members with Admin. and
+                                                                                               Tech. permission on this tracker.
 
- `Tracker Creation <#TrackerFieldUsageManagement>`__                                           Only available to project                
-                                                                                               administrators.                          
-                                                                  
- `Tracker Administration - General Settings <#TrackerFieldUsageManagement>`__                  Only available to project administrators 
-                                                                                               and project members with Admin.          
-                                                                                               permission on this tracker.              
+ `Tracker Creation <#TrackerFieldUsageManagement>`__                                           Only available to project
+                                                                                               administrators.
 
- `Tracker Administration - Field Usage Management <#TrackerFieldUsageManagement>`__            Only available to project administrators 
-                                                                                               and project members with Admin.          
-                                                                                               permission on this tracker.              
+ `Tracker Administration - General Settings <#TrackerFieldUsageManagement>`__                  Only available to project administrators
+                                                                                               and project members with Admin.
+                                                                                               permission on this tracker.
 
- `Tracker Administration - Field Values Management <#TrackerFieldValuesManagement>`__          Only available to project administrators 
-                                                                                               and project members with Admin.          
-                                                                                               permission on this tracker.              
+ `Tracker Administration - Field Usage Management <#TrackerFieldUsageManagement>`__            Only available to project administrators
+                                                                                               and project members with Admin.
+                                                                                               permission on this tracker.
 
- `Tracker Administration - Reports Management <#TrackerReportManagement>`__                    Only Project administrators and project  
-                                                                                               members with Admin. permission can       
-                                                                                               define project wide tracker reports that 
-                                                                                               will be available to all users. All      
-                                                                                               other Tuleap users (except   
-                                                                                               anonymous users) can define personal     
-                                                                                               tracker reports.                         
+ `Tracker Administration - Field Values Management <#TrackerFieldValuesManagement>`__          Only available to project administrators
+                                                                                               and project members with Admin.
+                                                                                               permission on this tracker.
 
- `Tracker Administration - Email Notification Settings <#TrackerEmailNotificationSettings>`__  Only Project administrators can add      
-                                                                                               email addresses in the global email      
-                                                                                               notification field. Project members can  
-                                                                                               watch artifacts of other team members.   
-                                                                                               Any registered Tuleap user   
-                                                                                               can customize her notification preferences.                             
+ `Tracker Administration - Reports Management <#TrackerReportManagement>`__                    Only Project administrators and project
+                                                                                               members with Admin. permission can
+                                                                                               define project wide tracker reports that
+                                                                                               will be available to all users. All
+                                                                                               other Tuleap users (except
+                                                                                               anonymous users) can define personal
+                                                                                               tracker reports.
+
+ `Tracker Administration - Email Notification Settings <#TrackerEmailNotificationSettings>`__  Only Project administrators can add
+                                                                                               email addresses in the global email
+                                                                                               notification field. Project members can
+                                                                                               watch artifacts of other team members.
+                                                                                               Any registered Tuleap user
+                                                                                               can customize her notification preferences.
 =============================================================================================  ===========================================
 
                             Table: Default Tracker Access Permissions
@@ -1127,8 +1134,8 @@ or remove fields or fine-tune the field settings afterwards.
    that you'd like to reuse, you just have to specify the project ID and
    tracker ID either by hand or from the pull down menus and click on
    the create button to create the exact same tracker in your project
-   
-    **Note** 
+
+    **Note**
 
     This does not copy the artifacts of the original tracker
     but only the field settings.
@@ -2272,7 +2279,7 @@ Information available on this screen are as follows:
    :alt: Setting a Tracker Report
    :name: Setting a Tracker Report
 
-   Setting a Tracker Report 
+   Setting a Tracker Report
 
 Tracker Graphical Report Setting
 `````````````````````````````````
@@ -2568,11 +2575,11 @@ Numeric fields
 
 Values of Integer (resp. Float) fields are exported as int (resp. int). It
 sounds obvious but as you may know by now the tracker v5 fields like Integer or
-Float cannot change their type whereas it was the case in v3. 
+Float cannot change their type whereas it was the case in v3.
 
 This means that in the history of an Integer (Float) field in v3 we may find values that are
 plain string instead of int (float) if the field type had been changed from
-String to Integer (float). 
+String to Integer (float).
 
 The values are then cast into the right type in
 order to be imported into a tracker v5.

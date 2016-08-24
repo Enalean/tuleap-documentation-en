@@ -1,6 +1,13 @@
 Tracker SOAP API
 ================
 
+.. attention:: Deprecation notice
+
+   SOAP API for Tracker v5 is deprected. Only security fix are applied when
+   possible.
+
+   We strongly recommend to switch to :ref:`REST APIs <rest_api>`
+
 All the examples below a provided in PHP but you can use any language with a SOAP
 library.
 
@@ -21,8 +28,8 @@ Basic usage of API
    $host_tracker = $host .'/plugins/tracker/soap/?wsdl';
    // SOAP options for debug
    $soap_option  = array(
-       'cache_wsdl' => WSDL_CACHE_NONE, 
-       'exceptions' => 1, 
+       'cache_wsdl' => WSDL_CACHE_NONE,
+       'exceptions' => 1,
        'trace'      => 1
    );
 
@@ -550,4 +557,3 @@ Permissions
 ~~~~~~~~~~~
 
 Not taken into account yet.
-

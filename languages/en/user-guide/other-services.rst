@@ -29,16 +29,7 @@ Tuleap Shell Account in 2 ways:
 
        ssh -l loginname SYS_SHELL_HOST
 
--  **Telnet**: telnet comes standard with Windows and Unix environment.
-   Use the following command to connect to the Tuleap Shell
-   Account server and provide your login and password as requested.
-   (Remark: on some site telnet might be disabled for security reasons)
-
-   ::
-
-       telnet SYS_SHELL_HOST
-
-Whether you use SSH or Telnet, a welcome banner will be displayed right
+Whether you use SSH, a welcome banner will be displayed right
 after you log in. This message tells you what are the directories you
 are allowed to access. Use the Unix "cd" command to change the current
 working directory. Once logged in and if you are a member of several

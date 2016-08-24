@@ -20,7 +20,7 @@ Basic usage of API
    <?php
     $host         = 'http://tuleap.example.com';
     $host_login   = $host .'/soap/index.php?wsdl';
-    
+
     // SOAP options for debug
     $soap_option  = array(
         'cache_wsdl' => WSDL_CACHE_NONE,
@@ -65,4 +65,3 @@ Basic usage of API
     // Cancel session
     $client->logout($session_hash);
    ?>
-

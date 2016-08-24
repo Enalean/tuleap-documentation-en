@@ -202,6 +202,11 @@ forum.
 Instant Messaging Plug-in
 --------------------------
 
+
+.. attention:: Deprecation notice
+
+   Instant messaging plugin is no longer maintained.
+
 Tuleap is bundled with a Jabber server and an Instant
 Messaging (IM) Plug-In that allows a certain level of integration
 between them.
@@ -231,7 +236,7 @@ The status of a user using a Jabber client (online, busy, away) is
 displayed in Tuleap.
 
 Jabber Related Information on the Tuleap Web Page
-````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````
 
 Tuleap provides several bits of information regarding the
 Instant Messaging on its web interface. Thus, each user has access to
@@ -325,7 +330,7 @@ The web interface of the chat room is composed of several areas:
    in the room, who left) are displayed in bold.
 
    Messages are displayed without specific format, but you can add some
-   if you want (see :ref:`Formatting and special commands <formatting-and-special-commands>` for that). 
+   if you want (see :ref:`Formatting and special commands <formatting-and-special-commands>` for that).
    URLs are displayed as hyperlinks (and are opened in another window). Project references are also displayed
    as hyperlinks (for instance, if you write the message bug #23 in the
    chat room, a click on the word 'bug #23' will open a new window and
@@ -361,7 +366,7 @@ The web interface of the chat room is composed of several areas:
    ::
 
        /topic The new topic of the room
-                           
+
 
 -  Below the writing area is located a status zone, corresponding to
    your IM status. This status can be useful to tell the other if your
@@ -379,7 +384,7 @@ The web interface of the chat room is composed of several areas:
        Multi-User Chat Room in the web interface of Tuleap
 
     **Tip**
-    
+
     .. _formatting-and-special-commands:
 
     **Formatting and special commands:**
@@ -472,7 +477,7 @@ message (hour and minute), the author of the message (username on the
 Tuleap server), and of course the message itself. Nickname
 changes are not logged. System messages are present. This is very useful
 to know who was in the room when what thing has been told. URLs and
-cross-references will appear as hyperlinks, but special commands 
+cross-references will appear as hyperlinks, but special commands
 (see :ref:`Formatting and special commands <formatting-and-special-commands>`)
 won't be interpreted.
 
