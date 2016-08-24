@@ -4,19 +4,19 @@ Tuleap Customisations
 System configuration file (local.inc)
 -------------------------------------
 
-The PHP scripts take many values from a configuration file located in /etc/codendi/conf/local.inc. Make sure that you read this file where the role of each variable is well documented.
+The PHP scripts take many values from a configuration file located in ``/etc/tuleap/conf/local.inc``. Make sure that you read this file where the role of each variable is well documented.
 
 
 Organization Logo
 -----------------
 
-At the top of the left hand side Tuleap menu pane (just above the Logged In section) is an empty area where you can dock the logo of your organization. This can be achieved by putting your nice logos in /etc/codendi/themes/common/images/organization_logo.png.
+At the top of the left hand side Tuleap menu pane (just above the Logged In section) is an empty area where you can dock the logo of your organization. This can be achieved by putting your nice logos in /etc/tuleap/themes/common/images/organization_logo.png.
 
 This is how Tuleap displays the logo :
 
-    - browser width > 1366px: organization_logo.png (recommended size: 200x45px)
-    - browser width <= 1366px AND browser width > 1300px: organization_logo_medium.png (recommended size: 155x45px)
-    - browser width < 1300px: organization_logo_small.png (recommended size: 45x45px)
+    - browser width > 1366px: ``organization_logo.png`` (recommended size: 200x45px)
+    - browser width <= 1366px AND browser width > 1300px: ``organization_logo_medium.png`` (recommended size: 155x45px)
+    - browser width < 1300px: ``organization_logo_small.png`` (recommended size: 45x45px)
 
     Background colour: you need to add a background to your image if you want another background colour than the navbar colour. Note: the Tuleap FlamingParrot theme has multiple colour variants.
 
@@ -27,7 +27,7 @@ Several PHP scripts in the source code contain pieces of text or code that are g
 
 These pieces of text or code are isolated from the PHP scripts themselves and they are all placed under the top directory 'site-content'. The file path to the content of a given script (or part of a script) follows the following pattern:
 
-site-content/LANG_COUNTRY/src_path/sometext.txt
+``site-content/LANG_COUNTRY/src_path/sometext.txt``
 
 where:
 
@@ -36,13 +36,11 @@ where:
     sometext.txt is a file name that contains the piece of text itself.
 
 To customise the content of a given script for your site go through the following steps:
+    - under /etc/tuleap create the site-content directory if it doesn't exist.
 
-    - Centos6: under /etc/tuleap create the site-content directory if it doesn't exist.
-    - Other OS: under /etc/codendi create the site-content directory if it doesn't exist.
-
-For each piece of text that you want to customize, copy the original sometext.txt file under the /etc/tuleap/site-content/
+For each piece of text that you want to customize, copy the original sometext.txt file under the ``/etc/tuleap/site-content/``
 with the exact same path. For instance if you want to customise the introductory text of the home page,
-copy /usr/share/tuleap/site-content/en_US/homepage/welcome_intro.txt into /etc/site-content/en_US/homepage/welcome_intro.txt
+copy ``/usr/share/tuleap/site-content/en_US/homepage/welcome_intro.txt`` into ``/etc/site-content/en_US/homepage/welcome_intro.txt``
 and edit it as you like.
 Be careful that some of these files contain PHP scripting that you probably want to preserve in your customised version.
 Deleting the PHP scripting could break the entire PHP scripts.
@@ -62,7 +60,7 @@ The format of the message files is very simple: one line per message, with the f
 
 As with other site-content files, you may customize the language files, so that you can change a few specific messages:
 
-    Copy the language file you need to customize from the /usr/share/tuleap/site-content subdirectory to the corresponding subdirectory in /etc/tuleap/site-content (see Site content above).
+    Copy the language file you need to customize from the ``/usr/share/tuleap/site-content`` subdirectory to the corresponding subdirectory in ``/etc/tuleap/site-content`` (see Site content above).
     Remove all lines that you don't need to change and only keep the lines you will modify.
     Change the messages.
     Repeat the operation for all the languages you need to support on your server.
@@ -71,7 +69,7 @@ Custom Tuleap Tours
 -------------------
 
 Tours are step-by-step instructions in the form of help buttons in the UI. You can add your own on most parts of Tuleap.
-First, create the folder /etc/tuleap/site-content/en_US/tour. **The tours are localised** so you'll need to create ones in each language.
+First, create the folder ``/etc/tuleap/site-content/en_US/tour``. **The tours are localised** so you'll need to create ones in each language.
 
 Next, you need to create a file that list which tours are available at which URL.
 This is a JSON file and it **must be named tour.json**. It's content must be an array of tour references, e.g.
@@ -93,7 +91,7 @@ This is a JSON file and it **must be named tour.json**. It's content must be an 
 
 There are 3 placeholders that can be used in the url:
     - **{project_id}** This will match against any numeric project ID, e.g. 114, 256, 8569
-    - **{project_name}** This will match against a project short (or linux) name
+    - **{project_name}** This will match against a project short name
     - **{attribute_value}** This will match against any attribute value. The value can be a string or an integer.
 
 The **tour_name** must correspond to a JSON file located in the same folder. E.g. my_first_tour.json
@@ -129,4 +127,4 @@ by that name again.
 Project Web Site
 ~~~~~~~~~~~~~~~~
 
-When a project is registered on Tuleap a new web site is created for that project. A default home page is installed for that project from the /usr/share/codendi/site-content/en_US/others/default_page.php file. You may want to create your own custom file for your own Tuleap site. To do so, copy the /usr/share/codendi/site-content/en_US/others/default_page.php file in the /etc/codendi/site-content/en_US/others/ directory if not already there. Then, edit the custom file and customize it to your liking
+When a project is registered on Tuleap a new web site is created for that project. A default home page is installed for that project from the ``/usr/share/tuleap/site-content/en_US/others/default_page.php`` file. You may want to create your own custom file for your own Tuleap site. To do so, copy the ``/usr/share/tuleap/site-content/en_US/others/default_page.php`` file in the ``/etc/tuleap/site-content/en_US/others/`` directory if not already there. Then, edit the custom file and customize it to your liking
