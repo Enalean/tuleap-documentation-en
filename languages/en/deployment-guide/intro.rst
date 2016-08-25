@@ -4,6 +4,40 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+8.19
+====
+
+SVN specific access logfile is always empty on recent installation
+------------------------------------------------------------------
+
+Tuleap instances installed between Tuleap 8.14.99.59 and now are impacted by a bug
+leaving the SVN specific access logfile always empty (``/var/log/httpd/svn_log``).
+
+The issue impacts the generation of usage statistics for SVN.
+
+The bug has been fixed for new installations but requires a manual modification
+for impacted instances. In the configuration file ``/etc/httpd/conf.d/tuleap-vhost.conf``,
+you should look for 2 sections like:
+
+  .. sourcecode:: ApacheConf
+
+    LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+    CustomLog logs/access_log commonvhost
+
+    #Uncomment the two following lines in order to display the username newt to the access url
+    #LogFormat "%h %l %{username}n %t \"%r\" %>s %b" common_with_tuleap_unix_username
+    #CustomLog logs/access_log_with_username common_with_tuleap_unix_username
+
+
+And then replace these 2 sections by:
+
+  .. sourcecode:: ApacheConf
+
+    LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+    CustomLog logs/access_log commonvhost
+    CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
+
+
 8.17
 ====
 
