@@ -11,7 +11,7 @@ Code review with Tuleap Pull requests
 Tuleap pull requests (aka PR) are built on top of Git. They provide an easy way to do
 code review and integration workflow.
 
-Tuleap also support code review with :ref:`Gerrit <code-review-with-gerrit>`.
+Tuleap also supports code review with :ref:`Gerrit <code-review-with-gerrit>`.
 
 Features:
 
@@ -26,7 +26,7 @@ Ways of working
 ---------------
 
 There is not a single way to use pullrequests. The way you will use it depends
-on the size of your team, the knowlege team members have with git and the workflow
+on the size of your team, the knowledge team members have with git and the workflow
 you are already used to.
 
 In this documentation we will present two possible workflows that will allow to
@@ -42,7 +42,7 @@ We have 2 developers, Alice and Bob. Bob is a contributor who wants to push a
 new feature into the repository and Alice is the integrator who will review and
 eventually merge the code produced by Bob.
 
-Bob has a local working copy of libaa and made a new contrib "feature 1". He thinks
+Bob has a local working copy of libaa and made a new contribution "feature 1". He thinks
 the feature is ready to be integrated inside the public repository.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step1.png
@@ -53,8 +53,8 @@ the feature is ready to be integrated inside the public repository.
 Create a pull request
 '''''''''''''''''''''
 
-Bob needs to push his development to the Tuleap server and then, generate a pull
-request.
+Bob needs to push his development to the Tuleap server and then generate a pull
+request.p
 
 .. figure:: ../images/screenshots/pullrequest/simple_step2.png
    :align: center
@@ -181,7 +181,7 @@ For developers with more git skills there are two popular practices:
 * Rebase
 * Rebase and squash
 
-Those two practicies happen at the end of the review cycle, when the branch is
+Those two practices happen at the end of the review cycle, when the branch is
 "ready to go".
 
 Rebase
@@ -206,9 +206,9 @@ given branch.
 .. attention::
 
       Be very careful with "rewind" permssion. People granted to rewind can completly
-      earse the repository if they want to.
+      erase the repository if they want to.
 
-      If you want to generalise the rebase pattern we strongly suggest that you either:
+      If you want to generalize the rebase pattern we strongly suggest that you either:
 
       * Use path based permission to grant rewind to developers into a given namespace eg ``dev/*``
       * Use personal fork so developers can mess-up their own repository without impacting anyone else.
@@ -237,7 +237,7 @@ group all those commit into one:
       $> git checkout dev/feature1
       $> git rebase -i origin/master
 
-At this step, your favorite text editor will pops-up and present a "menu" of changes:
+At this step, your favorite text editor will pop-up and present a "menu" of changes:
 
   .. code-block:: text
 
@@ -324,7 +324,7 @@ The integration is a two step process:
 Configure Tuleap to Jenkins trigger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to configure Jenkins webhook as describe in the  :ref:`git documentation section<git-jenkins-webhook>`.
+You need to configure Jenkins webhook as described in the  :ref:`git documentation section<git-jenkins-webhook>`.
 
 .. note::
 
@@ -338,8 +338,8 @@ Configure Jenkins to Tuleap feedback
 There is no Tuleap jenkins plugin yet so you will need to add the quick snippet of
 shell code at the end of your job to send the status of your build to Tuleap server.
 
-Beforehand deploying the script you will need a special, secret, token to ensure
-that it's your jenkins job that recored build status. To do so, go into repository
+Before deploying the script you will need a special, secret token to ensure
+that it's your jenkins job that recorded the build status. To do so, go into repository
 settings > API token:
 
 .. figure:: ../images/screenshots/pullrequest/ci-token.png
