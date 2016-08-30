@@ -171,22 +171,67 @@ To be done...
 Integrate with Jenkins
 ----------------------
 
-To be completed
+A good pullrequest is a pullrequest that doesn't break master.
+
+Hence, before reviewing a PR, the team can ensure that the proposed code has the
+green light from Jenkins.
+
+The integration is a two step process:
+
+* first you need to configure your repository to trigger builds on Jenkins whenever
+  there is a commit in your repository
+* then, in the jenkins job definition, you must add an extra step to feed tuleap
+  back with job status (success or failure).
+
+Configure Tuleap to Jenkins trigger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You need to configure Jenkins webhook as describe in the  :ref:`git documentation section<git-jenkins-webhook>`.
+
+.. note::
+
+    The continuous integration status is associated with the branch at the origin
+    of the pull request so if you are using PR across repositories, you must
+    ensure that the CI job is properly configured in source repo.
+
+Configure Jenkins to Tuleap feedback
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is no Tuleap jenkins plugin yet so you will need to add the quick snippet of
+shell code at the end of your job to send the status of your build to Tuleap server.
+
+Beforehand deploying the script you will need a special, secret, token to ensure
+that it's your jenkins job that recored build status. To do so, go into repository
+settings > API token:
+
+.. figure:: ../images/screenshots/pullrequest/ci-token.png
+      :align: center
+      :alt: CI token
+      :name: CI token
+
+Then deploy the snippet bellow after having tailored the ``Configure`` arguments
+to your context:
 
 .. sourcecode:: bash
 
+    # Configure: Tuleap server URL
     mytuleap="https://my.tuleap.tld"
+    # Configure: id of your repository
     repo_id=1
-    rev=$(git rev-parse HEAD)
-    branch="${GIT_BRANCH#*/}"
-    token="generated token"
+    # Configure: paste the token generated in repository admin
+    token="356c8877fee88a6951a6081026702e2b3420c5cbccfa85195246873861023f68"
 
+    # following is the test to send either "Success" (S) or "Failure" (F) to
+    # Tuleap server
     if [ -f testpass ]; then
         status="S"
     else
         status="F"
     fi
 
+    # REST call, you shouldn't need to modify this
+    rev=$(git rev-parse HEAD)
+    branch="${GIT_BRANCH#*/}"
     curl "https://$mytuleap/api/git/$repo_id/build_status" \
         -H 'Content-Type: application/json' \
         -H 'Accept: application/json' \
