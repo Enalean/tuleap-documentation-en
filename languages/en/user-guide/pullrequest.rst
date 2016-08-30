@@ -359,9 +359,10 @@ to your context:
     # Configure: paste the token generated in repository admin
     token="356c8877fee88a6951a6081026702e2b3420c5cbccfa85195246873861023f68"
 
+    # Configure: add your own tests instead of 'make all'
     # following is the test to send either "Success" (S) or "Failure" (F) to
     # Tuleap server
-    if [ -f testpass ]; then
+    if make all; then
         status="S"
     else
         status="F"

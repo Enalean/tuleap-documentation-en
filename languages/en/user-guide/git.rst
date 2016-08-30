@@ -227,6 +227,8 @@ in this payload in order to perform various tasks (continuous deployment, backup
 
 You can see the status of the response (``200 OK``, ``404 Not Found``…) in the logs section of each webhook.
 
+.. _git-jenkins-webhook:
+
 Jenkins Webhooks
 ````````````````
 
