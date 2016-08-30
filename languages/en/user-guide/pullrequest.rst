@@ -11,7 +11,7 @@ Tuleap also support code review with :ref:`Gerrit <code-review-with-gerrit>`.
 Features supported by Pullrequests:
 
 * Create requests across branches in the same repository
-* Create requests from a :ref:`personal forks <git-personal-fork>`
+* Create requests from :ref:`personal forks <git-personal-fork>`
 * Comment requests inline
 * Comment requests globaly
 * (cross)-reference requests from any point of Tuleap
@@ -28,7 +28,7 @@ In this documentation we will present two possible workflows that will allow to
 demonstrate all supported features. Keep in mind that you can define your own.
 
 Simple workflow
----------------
+~~~~~~~~~~~~~~~
 
 The simple workflow doesn't require specific setup or to do advanced command with
 git. It's suited for a small team or for git beginners.
@@ -164,9 +164,40 @@ Alice can also merge "by hand" in her own working copy and then push to the repo
 the result will be the same.
 
 Advanced workflow
------------------
+~~~~~~~~~~~~~~~
 
 To be done...
+
+Reference pull requests
+-----------------------
+
+One of the key feature of Tuleap is to be able to reference anything from anywhere
+and having a back reference automatically created on the other end. Pull requests
+make no exceptions and follow this pattern.
+
+From the PR, either in description, in global comments or directly within the diff
+you can reference any Tuleap element (artifact, document, file release, ...). The
+example below is a reference to an artifact in PR description:
+
+.. figure:: ../images/screenshots/pullrequest/xref-to-tracker.png
+      :align: center
+      :alt: Cross reference from pull request
+      :name: Cross reference from pull request
+
+Note: in this example, the bug n°1, automatically got a link back to pull request:
+
+.. figure:: ../images/screenshots/pullrequest/xref-backlink.png
+      :align: center
+      :alt: Cross reference backlink
+      :name: Cross reference backlink
+
+From any element in Tuleap, you can reference the pull request using ``pr`` or
+``pullrequest`` keywords:
+
+.. figure:: ../images/screenshots/pullrequest/xref-from-tracker.png
+      :align: center
+      :alt: Cross reference to pull request
+      :name: Cross reference to pull request
 
 Integrate with Jenkins
 ----------------------
