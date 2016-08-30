@@ -11,18 +11,18 @@ Tuleap also support code review with :ref:`Gerrit <code-review-with-gerrit>`.
 Features:
 
 * Create requests across branches in the same repository
-* Create requests from :ref:`personal forks <git-personal-fork>`
-* Comment requests inline
-* Comment requests globaly
+* Create requests from a :ref:`personal fork <git-personal-fork>`
+* Comment in files reviewed
+* Comment requests globally
 * (cross)-reference requests from any point of Tuleap
-* Integrate with Jenkins to know if the code to integrate pass the tests
+* Integrate with Jenkins to know if tests passed on the code to integrate
 
 Ways of working
 ---------------
 
 There is not a single way to use pullrequests. The way you will use it depends
 on the size of your team, the knowlege team members have with git and the workflow
-you are already use to.
+you are already used to.
 
 In this documentation we will present two possible workflows that will allow to
 demonstrate all supported features. Keep in mind that you can define your own.
@@ -30,14 +30,14 @@ demonstrate all supported features. Keep in mind that you can define your own.
 Simple workflow
 ~~~~~~~~~~~~~~~
 
-The simple workflow doesn't require specific setup or to do advanced command with
+The simple workflow doesn't require specific setup or to do advanced commands with
 git. It's suited for a small team or for git beginners.
 
-We have 2 developers, Alice and Bob. Bob is a contributor that want to push a
+We have 2 developers, Alice and Bob. Bob is a contributor who wants to push a
 new feature into the repository and Alice is the integrator who will review and
-eventually merge the code produced by Bob
+eventually merge the code produced by Bob.
 
-Bob got a local working copy of libaa and made a new contrib "feature 1". He thinks
+Bob has a local working copy of libaa and made a new contrib "feature 1". He thinks
 the feature is ready to be integrated inside the public repository.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step1.png
@@ -48,8 +48,8 @@ the feature is ready to be integrated inside the public repository.
 Create a pull request
 '''''''''''''''''''''
 
-Bob need to push his development to the Tuleap server and then, generate a pull
-request
+Bob needs to push his development to the Tuleap server and then, generate a pull
+request.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step2.png
    :align: center
@@ -75,12 +75,12 @@ Source branch is where the work was done, target is where it should be integrate
       :name: Select branches
 
 Bob is redirected on the pull request screen where he can quickly see the major
-informations about his work.
+information about his work.
 
-The PR summary is automatically extracted from the first line of the first commit
+The pull request's summary is automatically extracted from the first line of the first commit
 message in the branch. The description is the rest of the commit message.
 
-Those informations can be edited directly from the web browser.
+This information can be edited directly from the web browser.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step5.png
       :align: center
@@ -98,18 +98,18 @@ work is available in the "Files" tab.
       :alt: View files
       :name: View files
 
-.. attention:: Important about diff
+.. attention:: Important information about diff
 
     The diff is generated between the latest commit and the base of the branch
-    (common anscestor).
+    (common ancestor).
 
     If master evolved in the mean time, you won't see those changes (and potential
     conflicts) in this view.
 
-    To propose an accurate review, you should rebase your work locally with the
+    To have an accurate review, you should rebase your work locally with the
     tip of the branch you want to push in before creating the pull request.
 
-Alice can then comment inline the diff by clicking on the line number.
+Alice can then comment lines of the diff by clicking on the line number.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step7.png
       :align: center
@@ -119,14 +119,14 @@ Alice can then comment inline the diff by clicking on the line number.
 Update a pull request
 '''''''''''''''''''''
 
-Bob can see all the comments of Alice from the discussion view.
+Bob can see all of Alice's comments from the discussion view.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step8.png
       :align: center
       :alt: Discussion thread
       :name: Discussion thread
 
-Then he should go back to work and update the branch, the pull request will be
+Then he should go back to work and update the branch. When he pushes his work again, the pull request will be
 automatically updated.
 
 .. figure:: ../images/screenshots/pullrequest/simple_step9.png
@@ -136,13 +136,13 @@ automatically updated.
 
 .. note::
 
-    You can notice that Alice comments are greyed out. We can see that she placed
-    a comment but we can no longer see it in the diff nor we can accessing the
+    You can notice that Alice's comments are greyed out. We can see that she placed
+    a comment but we can no longer see it in the diff nor can we access the
     line from the comment.
 
-    This is a known limitation when lines moves from one diff to another. The
+    This is a known limitation when lines change from one diff to another. The
     comment was placed on Makefile L4 at the first review but in the second
-    review L4 was changed (the 2 first lines of the Makefile were removed).
+    review L4 was changed (the first 2 lines of the Makefile were removed).
 
     .. figure:: ../images/screenshots/pullrequest/simple_step10.png
           :align: center
@@ -160,8 +160,8 @@ integrated inside master.
       :alt: After merge in master
       :name: After merge in master
 
-Alice can also merge "by hand" in her own working copy and then push to the repository
-the result will be the same.
+Alice can also merge "by hand" in her own working copy and then push to the repository,
+the end result will be the same.
 
 Advanced workflows
 ~~~~~~~~~~~~~~~~~~
