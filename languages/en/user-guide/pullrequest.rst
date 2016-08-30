@@ -3,6 +3,11 @@
 Code review with Tuleap Pull requests
 =====================================
 
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
 Tuleap pull requests (aka PR) are built on top of Git. They provide an easy way to do
 code review and integration workflow.
 
@@ -98,7 +103,7 @@ work is available in the "Files" tab.
       :alt: View files
       :name: View files
 
-.. attention:: Important information about diff
+.. attention::
 
     The diff is generated between the latest commit and the base of the branch
     (common ancestor).
