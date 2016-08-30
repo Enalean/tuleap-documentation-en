@@ -3,12 +3,12 @@
 Code review with Tuleap Pull requests
 =====================================
 
-Tuleap pull requests are built on top of Git. They provide an easy way to do
+Tuleap pull requests (aka PR) are built on top of Git. They provide an easy way to do
 code review and integration workflow.
 
 Tuleap also support code review with :ref:`Gerrit <code-review-with-gerrit>`.
 
-Features supported by Pullrequests:
+Features:
 
 * Create requests across branches in the same repository
 * Create requests from :ref:`personal forks <git-personal-fork>`
@@ -163,10 +163,112 @@ integrated inside master.
 Alice can also merge "by hand" in her own working copy and then push to the repository
 the result will be the same.
 
-Advanced workflow
-~~~~~~~~~~~~~~~
+Advanced workflows
+~~~~~~~~~~~~~~~~~~
 
-To be done...
+In the previous example, we followed a basic "feature branch" model where only
+basic git features are involved. It's the easiest way to start with code reviews
+because it basically change nothing to developers workflow (they create branches,
+commit within and when the work is ready, merge in master).
+
+For developers with more git skills there are two popular practices:
+
+* Rebase
+* Rebase and squash
+
+Those two practicies happen at the end of the review cycle, when the branch is
+"ready to go".
+
+Rebase
+''''''
+
+As already said, the diff under review in a PR is a difference of the branch itself.
+It doesn't reflect the changes that were done on the target branch (typically master).
+
+So when a feature is ready, integrator might ask for a rebase. Developer would
+then run on its working copy:
+
+  .. code-block:: bash
+
+      $> git fetch origin
+      $> git checkout dev/feature1
+      $> git rebase origin/master
+      $> git push -f origin dev/feature1
+
+For this to work, developer must be granted the "rewind" permission on the
+given branch.
+
+.. attention::
+
+      Be very careful with "rewind" permssion. People granted to rewind can completly
+      earse the repository if they want to.
+
+      If you want to generalise the rebase pattern we strongly suggest that you either:
+
+      * Use path based permission to grant rewind to developers into a given namespace eg ``dev/*``
+      * Use personal fork so developers can mess-up their own repository without impacting anyone else.
+
+Rebase & squash
+'''''''''''''''
+
+As you might expect, rebase and squash is a variation of the previous one. In addition
+to rebasing your work with the target, `squash` means that you will rewrite the branch
+history to only keep what is relevant as history steps.
+
+Imagine your branch ``git log`` after Alice review:
+
+* 2c74d67ae fix after review 1
+* c8658adbc fix after alice comment
+* 676b89ac3 typo
+* 9792c7bed request #2314: fix OutOfMemory exception in core
+
+Most of this history doesn't really make sense and will polluate master. You can
+group all those commit into one:
+
+
+  .. code-block:: bash
+
+      $> git fetch origin
+      $> git checkout dev/feature1
+      $> git rebase -i origin/master
+
+At this step, your favorite text editor will pops-up and present a "menu" of changes:
+
+  .. code-block:: text
+
+      pick 9792c7bed request #2314: fix OutOfMemory exception in core
+      pick 676b89ac3 typo
+      pick c8658adbc fix after alice comment
+      pick 2c74d67ae fix after review 1
+
+      # Rebase 9792c7bed..2c74d67ae onto 274b801 (4 command(s))
+      #...
+
+You can dig into ``git help rebase`` menu to understand all the possible commands
+but if you want to only have one commit that groups the 4 changes, you'll need to
+update and save the file like:
+
+
+  .. code-block:: text
+
+      pick 9792c7bed request #2314: fix OutOfMemory exception in core
+      fixup 676b89ac3 typo
+      fixup c8658adbc fix after alice comment
+      fixup 2c74d67ae fix after review 1
+
+      # Rebase 9792c7bed..2c74d67ae onto 274b801 (4 command(s))
+      #...
+
+After save, the rebase will be applied (you might have to solve some conflicts)
+and then, if you issue ``git log`` again you will see only one commit:
+
+* 2de53ac74 request #2314: fix OutOfMemory exception in core
+
+And you can push the result to the branch:
+
+  .. code-block:: bash
+
+      $> git push -f origin dev/feature1
 
 Reference pull requests
 -----------------------
