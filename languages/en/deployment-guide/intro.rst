@@ -7,6 +7,14 @@ file, the default is automatically set for you.
 8.19
 ====
 
+Removal of the ``sys_strip_outlook`` option
+-------------------------------------------
+
+The option ``sys_strip_outlook`` has been removed and the behavior this option activated
+is now enabled by default.
+
+Since this option is not used anymore, you can remove it from your configuration file (``local.inc``).
+
 SVN specific access logfile is always empty on recent installation
 ------------------------------------------------------------------
 
