@@ -18,6 +18,7 @@ User-guide
    user-guide/svn
    user-guide/git
    user-guide/gerrit
+   user-guide/pullrequest
    user-guide/mediawiki
    user-guide/doc
    user-guide/ci

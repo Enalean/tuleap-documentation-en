@@ -54,6 +54,7 @@ push, as an alternative you can run:
 
         git push --mirror gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git
 
+.. _git-personal-fork:
 
 Fork
 -----
@@ -225,6 +226,8 @@ payload is given as argument in the ``payload`` parameter of the request. The en
 in this payload in order to perform various tasks (continuous deployment, backup…).
 
 You can see the status of the response (``200 OK``, ``404 Not Found``…) in the logs section of each webhook.
+
+.. _git-jenkins-webhook:
 
 Jenkins Webhooks
 ````````````````
