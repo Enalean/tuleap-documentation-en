@@ -19,7 +19,8 @@ irrelevant for some type of fields.
   * Definition is NOT given through SOAP @deprecated
   * Definition is given through REST (representations)
   * Migrate field from TV3 (if not done)
-  * Definition is given through SOAP & RES
+  * Definition is given through SOAP & REST
+  * Does new field can be used for burndown? Has it its own calculation mode?
 
 * Artifacts
 
@@ -50,6 +51,7 @@ irrelevant for some type of fields.
   * Cardwall edit in place
   * Card field in planning v2
   * Card field in kanban + filter + highlight
+  * Does field can be directly updated in Cardwall
   * Modal edit Release
   * Modal add a Task
 
