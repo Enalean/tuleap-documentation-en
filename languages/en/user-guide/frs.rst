@@ -251,7 +251,7 @@ one, except that you can set read permissions on the package (see `Package editi
 
           Package editing of the Camellia package
 
-A project member with the 'File Manager Admin' right (see :ref:`user-permissions`) can attach
+Files writers (see `Global files permissions`) can attach
 access permissions to any existing package.
 
 If you do not specify any access permissions for a package,
@@ -353,8 +353,8 @@ case, you can update the release at any time
 
 -  **Step 4 - Set permissions to the Release (optional)**
 
-   By default, releases have no specific access permissions: access to
-   all files is granted to any Tuleap registered user
+   By default, if your project is public, releases have no specific access
+   permissions: access to all files is granted to any Tuleap registered user
    (anonymous users are not allowed to download release files). However,
    in some cases, you might want to limit the users allowed to download
    your software. In these specific cases, you can restrict access

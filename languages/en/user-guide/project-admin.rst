@@ -557,7 +557,7 @@ project member. Let's review the column one by one:
       new artifact categories, new predefined values for artifact
       fields, etc.
 
--  **Forums, Documentation Manager, File Manager**:
+-  **Forums, Documentation Manager**:
 
    -  *None*: the user has the same permissions on this tool as a non
       project member.
@@ -571,12 +571,6 @@ project member. Let's review the column one by one:
    -  *Editor*: (Doc Mgr only): An editor has the ability to review and
       validate a document prior to its publication. S/he can also update
       and delete a document.
-
-   -  *Administrator*: (File Mgr only): A file manager administrator has
-      the ability to upload and manage file packages and releases. S/he
-      can also set access permissions to user groups on packages and
-      releases, even though s/he cannot define or update user groups
-      (only a project administrator can).
 
 -  **Member of user groups**: For each individual members, the column
    lists all the project user groups s/he belongs to. See `User Groups`_ for more
