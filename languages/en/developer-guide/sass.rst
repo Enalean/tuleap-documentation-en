@@ -11,12 +11,14 @@ Please refer to the `Sass documentation <http://sass-lang.com/documentation/file
 Compile SCSS files
 ```````````````````
 
+From the root directory of the Tuleap sources (you must have npm installed):
 .. code-block:: bash
 
-   $ make sass-docker
+   $ npm install
+   $ npm run build
 
 This command will transpile all SCSS files present in ``plugin`` and ``src`` directories.
 
 .. important::
-    * you have to run ``make sass-docker`` everytime you edit a SCSS file.
+    * you have to run ``npm run build`` everytime you edit a SCSS file.
     * all modifications must be done in SCSS file, not in CSS file.
