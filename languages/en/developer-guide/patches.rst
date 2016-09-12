@@ -13,6 +13,13 @@ The Tuleap project uses Gerrit to ensure a proper review and integration of cont
 - A Tuleap-contributor can vote between -2..+2 on each contribution
 - A Tuleap-integrator submit is mandatory
 
+.. figure:: ../images/diagrams/development_organization.png
+   	   :align: center
+  	   :alt: Activity diagram: Tuleap contribution
+  	   :name: Activity diagram: Tuleap contribution
+
+  	   Activity diagram: Tuleap contribution
+
 As a commit is reviewed individually, it must be "autonomous" (corresponding to a task).
 It's a small part of a bigger story but it's fully functional at its level.
 
