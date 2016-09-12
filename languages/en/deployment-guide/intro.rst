@@ -7,6 +7,26 @@ file, the default is automatically set for you.
 8.19
 ====
 
+New integration of ViewVC for SVN single and multi repositories and CVS
+-----------------------------------------------------------------------
+
+We now use the package viewvc from the EPEL repository instead of the package viewvc-tuleap to
+CVS and SVN repositories.
+The switch between the two packages is not automatic for now but we encourage you
+to do it to benefit of a nicer integration of ViewVC into Tuleap.
+
+To do that, you must swap the packages once you have updated Tuleap:
+
+.. sourcecode:: console
+
+    #> yum shell -y <<EOF
+    remove viewvc-tuleap
+    install viewvc
+    run
+    quit
+    EOF
+
+
 Removal of the ``sys_strip_outlook`` option
 -------------------------------------------
 
