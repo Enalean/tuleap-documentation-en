@@ -26,6 +26,9 @@ To do that, you must swap the packages once you have updated Tuleap:
     quit
     EOF
 
+Once you have swapped the packages, you should if do have a line saying ``Include conf.d/viewvc.conf``
+in your Apache configuration (``/etc/httpd/conf/httpd.conf``). If that's the case, please remove it
+and reload Apache.
 
 Removal of the ``sys_strip_outlook`` option
 -------------------------------------------
