@@ -1376,6 +1376,12 @@ Configure Nginx
             proxy_set_header X-Forwarded-Proto $scheme;
             # What is the name of the platform to the end users
             proxy_set_header Host              $host;
+            # Write Destination header for Subversion COPY and MOVE operations
+            set $fixed_destination $http_destination;
+            if ( $http_destination ~* ^https(.*)$ ) {
+                set $fixed_destination http$1;
+            }
+            proxy_set_header Destination $fixed_destination;
         }
     }
 
