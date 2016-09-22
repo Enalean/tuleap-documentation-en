@@ -21,6 +21,7 @@ Features:
 * Comment requests globally
 * (cross)-reference requests from any point of Tuleap
 * Integrate with Jenkins to know if tests passed on the code to integrate
+* Dedicated dashboard to follow-up pull requests status
 
 Ways of working
 ---------------
