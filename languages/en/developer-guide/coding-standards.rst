@@ -118,7 +118,7 @@ Example of Presenter
     {
         /** @var string */
         public $my_title;
-        
+
         public function __construct()
         {
             $this->my_title = "My title";
@@ -150,12 +150,83 @@ Example of calling code:
     For existing code, it's acceptable to output content with "echo" to keep consistency.
 
 Secure forms against CSRF
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+All state-changing actions MUST be protected against CSRF vulnerabilities.
+In order to do that, a specific token must be added to your forms and verified
+before the execution of the action.
+
+Example:
+
+Controller.php:
+
+  .. code-block:: php
+
+    namespace Tuleap/CsrfExample;
+
+    use CSRFSynchronizerToken;
+    use TemplateRendererFactory;
+
+    class Controller
+    {
+        public function display()
+        {
+            $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
+            $presenter  = new Presenter($csrf_token);
+            $renderer   = TemplateRendererFactory::build()->getRenderer(CSRF_EXAMPLE_TEMPLATE_DIR);
+
+            $renderer->renderToPage('csrf-example', $presenter);
+        }
+
+        public function process()
+        {
+            $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
+            $csrf_token->check();
+
+            do_things();
+        }
+    }
+
+Presenter.php:
+
+  .. code-block:: php
+
+    namespace Tuleap/CsrfExample;
+
+    use CSRFSynchronizerToken;
+
+    class Presenter
+    {
+        /**
+         * @var CSRFSynchronizerToken
+         */
+         public $csrf_token;
+
+        public function __construct(CSRFSynchronizerToken $csrf_token)
+        {
+            $this->csrf_token = $csrf_token;
+        }
+    }
+
+csrf-example.mustache:
+
+  .. code-block:: html
+
+    <form method="post">
+        {{# csrf_token }}
+            {{> csrf_token_input }}
+        {{/ csrf_token }}
+        <input type="submit">
+    </form>
+
+
+.. note::
+    For existing code rendering HTML without using templates, it can be acceptable to use
+    the fetchHTMLInput method of the CSRFSynchronizerToken class.
+
 
 Secure DB against SQL injections
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All code related to database MUST deal with data types and do the proper escaping
 of values before executing the query.
