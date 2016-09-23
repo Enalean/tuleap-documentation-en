@@ -27,7 +27,7 @@ With Tuleap, you will be able to:
 
 Tuleap's high customization capability enables you to
 tailor each tool to your processes and business requirements. `More info
-on Tuleap features . <http://www.tuleap.com/>`__
+on Tuleap features . <http://www.tuleap.org/>`__
 
 We want you to experience the full power of Tuleap
 technology. So we do not distinguish between an Enterprise version and a

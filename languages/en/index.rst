@@ -1,15 +1,15 @@
+.. figure:: images/logo-tuleap.png
+   :align: center
+   :alt: Tuleap logo
+   :name: Tuleap logo
 
+Tuleap is an all-in-one software engineering platform that helps team to develop
+better and faster together.
 
-.. Tuleap documentation master file, created by
-   sphinx-quickstart on Thu Oct  4 21:33:56 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Tuleap's documentation!
-==================================
+You can learn more about the project on `Tuleap web site <https://www.tuleap.org/>`_
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    user
    install
