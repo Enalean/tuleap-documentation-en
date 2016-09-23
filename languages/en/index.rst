@@ -1,3 +1,6 @@
+Welcome to Tuleap documentation !
+=================================
+
 .. figure:: images/logo-tuleap.png
    :align: center
    :alt: Tuleap logo
