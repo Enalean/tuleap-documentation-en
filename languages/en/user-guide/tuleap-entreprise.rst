@@ -9,6 +9,7 @@ enhanced reliability.
 Some features are only distributed to Tuleap Enterprise subscribers:
 
 * :ref:`Pull requests <code-review-with-pullrequest>`.
+* :ref:`TrafficLights test management <testmgmt-trafficlights>`.
 
 More information on `Enalean web site`_.
 

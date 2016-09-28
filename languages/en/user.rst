@@ -13,6 +13,7 @@ User-guide
    user-guide/site-access
    user-guide/tracker
    user-guide/agile-dashboard
+   user-guide/trafficlights
    user-guide/frs
    user-guide/cvs
    user-guide/svn
