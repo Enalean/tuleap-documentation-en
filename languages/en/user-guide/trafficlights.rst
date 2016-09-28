@@ -8,34 +8,33 @@ Test management with TrafficLights
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-TrafficLights is the test management solution integrated into Tuleap. It's an
-in-house development that aims to provide an simple and easy way to deal with
-Test campaigns.
+TrafficLights is the test management solution provided by Tuleap. It aims at providing a simple and easy way to deal with
+test campaigns.
 
 TrafficLights features:
 
-* Create and maintain test case definition
+* Create and maintain test case definitions
 * Create test campaigns as a collection of test cases
-* Follow test execution (Not run, passed, failed, blocked)
+* Follow test executions (Not run, passed, failed, blocked)
 * Realtime update for concurrent test execution by team
 
 Overview
 --------
 
-There are main concepts in TrafficLights
+Here are the main concepts with TrafficLights
 
 * Test Case: it's the description of something to test. The definition is meant to be re-used
 * Test Campaign: a collection of Test Case to run.
 * Test Execution: it's the execution of one Test Case in the context of a Test Campaign
-* Environment: a given Test Excecution can be ran in different contextes (Same test but different setup)
+* Environment: a given Test Excecution can run in different contexts (Same test but different setup)
 
 Test Case, Test Campaign and Test Execution are 3 different trackers. Environment is a property of "Test execution".
 
 .. note::
 
     TrafficLights is stable and used since 1.5 year at Enalean for all Tuleap
-    releases without any issues. However some parts are not nicely integrated
-    inside TrafficLights any you might need to go into trackers to configure
+    releases without any issues. However some parts can be better integrated
+    inside TrafficLights and you might need to go into trackers to configure
     things.
 
 Run a Test Campaign
@@ -58,7 +57,7 @@ In the following figure, the user selected a test that "Passed".
    :alt: TrafficLights test list
    :name: TrafficLights test list
 
-Tests can have following states:
+Tests can have following status:
 
 * Not run, this is the default
 * Passed, the test was successful
