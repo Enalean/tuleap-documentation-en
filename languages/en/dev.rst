@@ -37,3 +37,4 @@ Advanced topics
    developer-guide/realtime
    developer-guide/trackers
    developer-guide/howto
+   developer-guide/gerrit
