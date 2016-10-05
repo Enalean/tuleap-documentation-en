@@ -557,6 +557,53 @@ Some insights to better understand how this works:
     the ``nature`` concept, you must set the ``use-natures`` attribute to
     ``true`` as stated in the example.
 
+Folders
+-------
+If you have existing folders you want to keep at import, you have to define the tracker which
+will be flagged as folder with the attribute "is_folder".
+
+To import your artifacts with link "In folder", the system nature _in_folder will be used.
+
+.. sourcecode:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project>
+          <services>
+            <service shortname="plugin_tracker" enabled="true" />
+            ...
+          </services>
+          ...
+          <trackers use-natures="true">
+            <tracker id="T239" parent_id="0" instantiate_for_new_projects="1" is_folder="true">
+              <name><![CDATA[Simple Tracker]]></name>
+              <item_name>simple</item_name>
+              <description><![CDATA[simple tracker example]]></description>
+              <color>inca_silver</color>
+              <cannedResponses/>
+              <formElements>
+                <formElement type="computed" ID="F123" rank="97">
+                  <name>computed_field_name</name>
+                  <label><![CDATA[Computed_Field_Label]]></label>
+                </formElement>
+              </formElements>
+              ...
+              <artifacts>
+                <artifact id="445">
+                  <changeset>
+                    <submitted_by format="username">vaceletm</submitted_by>
+                    <submitted_on format="ISO8601">2015-11-10T09:05:19+01:00</submitted_on>
+                    <comments/>
+                    <field_change field_name="Artifact Links" type="art_link">
+                      <value nature="_in_folder">12</value>
+                    </field_change>
+                  </changeset>
+                  ...
+                </artifact>
+              </artifacts>
+            </tracker>
+          </trackers>
+    </project>
+
 Computed field import
 ---------------------
 The new computed field can have have manual or autocomputed values.
