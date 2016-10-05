@@ -12,3 +12,4 @@ Installation-guide
    installation-guide/update.rst
    installation-guide/advanced-installation.rst
    installation-guide/advanced-configuration.rst
+   installation-guide/import.rst
