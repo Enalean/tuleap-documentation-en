@@ -891,6 +891,19 @@ generate a system event; once it has passed, you're done.
 .. _admin_howto_docmanv1_to_docmanv2:
 
 
+Import all gitolite3 logs
+-------------------------
+
+You can parse all your gitolite3 log by running next script,
+logs previsously parsed won't be taken in account.
+
+    .. sourcecode:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> ./src/utils/php-launcher.sh plugins/git/bin/import_all_giotlite3_logs.php
+
+
 Import docman v1 into docman v2 (plugin)
 ----------------------------------------
 
