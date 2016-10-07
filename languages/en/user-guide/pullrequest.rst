@@ -23,6 +23,11 @@ Features:
 * Integrate with Jenkins to know if tests passed on the code to integrate
 * Dedicated dashboard to follow-up pull requests status
 
+.. figure:: ../images/screenshots/pullrequest/pr-home.png
+   :align: center
+   :alt: Pull requests home page
+   :name: Pull requests home page
+
 Ways of working
 ---------------
 
