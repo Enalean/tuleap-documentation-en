@@ -326,13 +326,9 @@ This section is for Tuleap site admin and explain how to setup Tuleap/Gerrit
 integration.
 If you are developer, you don't have to read this section.
 
-Integration works with:
- * 2.5.x version of gerrit.
- * 2.8+ version of gerrit.
-
 Prerequisites:
 
-* You need to have your Tuleap instance running with PHP 5.3.x in order to link Tuleap with gerrit 2.8+
+* Gerrit, minimal version 2.8. Recommended version: 2.12.x (at time of writing)
 * LDAP plugin must be installed, configured and active. Both Tuleap and Gerrit rely on LDAP for common user management.
 
 From now on, you will need:
@@ -351,15 +347,14 @@ Install and configure Gerrit server
 ```````````````````````````````````
 
 Follow the steps here up until and including the section:
-  * `Gerrit 2.5: Initialize the Site <http://gerrit-documentation.googlecode.com/svn/Documentation/2.5.2/install-quick.html>`_
-  * `Gerrit 2.8: Initialize the Site <https://gerrit-documentation.storage.googleapis.com/Documentation/2.8/install.html>`_
+  * `Initialize the Site <https://gerrit-documentation.storage.googleapis.com/Documentation/2.12/install.html>`_
 
 Configure LDAP integration
 """"""""""""""""""""""""""
 
 To connect as ``gerrit-adm``, you first need to configure gerrit to authenticate with LDAP.
 
-* Edit ``etc/gerrit.config`` to use `LDAP auth <http://gerrit.googlecode.com/svn/documentation/2.5.2/config-gerrit.html#ldap>`_. Example:
+* Edit ``etc/gerrit.config`` to use `LDAP auth <https://gerrit-documentation.storage.googleapis.com/Documentation/2.12/config-gerrit.html#ldap>`_. Example:
 
   .. code-block:: ini
 
@@ -391,7 +386,7 @@ Create the gerrit administrator account
 Configure gerrit replication
 """"""""""""""""""""""""""""
 
-To configure gerrit replication we need to use the gerrit replication plugin. This plugin comes as part of the gerrit package (gerrit-full-2.5.1.war or gerrit2.8.war) that you have downloaded. There are two steps to using this package. Let's assume you have already followed the steps in the link above and have a folder called _gerrit_testsite_ where all the gerrit files are located.
+To configure gerrit replication we need to use the gerrit replication plugin. This plugin comes as part of the gerrit package that you have downloaded. There are two steps to using this package. Let's assume you have already followed the steps in the link above and have a folder called _gerrit_testsite_ where all the gerrit files are located.
 
 * First login as ``admin-my.tuleap.server.net`` on ``gerrit.instance.com`` and create the group ``my.tuleap.server.net-replication``. Do not add any users to it. Make group visible to all registered users:
 
@@ -425,13 +420,10 @@ To configure gerrit replication we need to use the gerrit replication plugin. Th
       push = +refs/tags/*:refs/tags/*
       authGroup = my.tuleap.server.net-replication
 
-Generating http password (Gerrit 2.8+ only)
-"""""""""""""""""""""""""""""""""""""""""""
+Generating http password
+""""""""""""""""""""""""
 
-Since gerrit 2.8. we need new information in order to have a fully working integration.
-This information is an http password for your Gerrit admin user ``admin-my.tuleap.server.net``.
-
-You have to generate this http password through the Gerrit web interface.
+You need to generate an http password through the Gerrit web interface for Gerrit admin user ``admin-my.tuleap.server.net``.
 
 To do this, log-in into your Gerrit instance as ``admin-my.tuleap.server.net``, go to settings menu, and choose http password.
 Then click on generate.
@@ -439,8 +431,6 @@ Then click on generate.
 .. figure:: ../images/screenshots/gerrit/gerrit_2-8_http_password.png
    :alt: http_password
    :name: http_password
-
-   You have to generate an http password in order to use a gerrit 2.8+ server.
 
 Connect Gerrit and Tuleap servers
 `````````````````````````````````
@@ -482,31 +472,12 @@ Configure the email of the administrator
 By default, the admin email of your Tuleap instance is hard coded to something like ``codendiadm@my.tuleap.server.net`` which by default has no mailbox.
 This value is set in ``/etc/codendi/conf/local.inc`` under the vatiable $sys_email_admin.
 
-
 The current value of the Tuleap admin email can be found by logging-in to Tuleap as admin and going to the ``My Account`` page.
 If the value of email does not correspond to a valid mailbox then this step cannot be done via the web UI.
 
 From now on, we will refer to the aforementioned email as ``admin_email``.
 
 In essence, what this step achieves is to have matching emails for the ``admin-my.tuleap.server.net`` account on Gerrit and the Tuleap admin user that pushes content to gerrit.
-
-
-
-Gerrit 2.5
-''''''''''
-
-First, shell into the box on which Tuleap is running as either ``codendiadm``. From there, you will need to run this:
-
-  .. code-block:: bash
-
-    codendiadm@my.tuleap.server.net$ ssh -i /home/codendiadm/.ssh/id_rsa-gerrit admin-my.tuleap.server.net@gerrit.instance.com -p 29418 gerrit gsql
-    UPDATE account_external_ids SET email_address = 'admin_email' WHERE external_id LIKE '%:admin-my.tuleap.server.net';
-    UPDATE accounts SET preferred_email = 'admin_email' WHERE full_name = 'admin-my.tuleap.server.net';
-    exit;
-    codendiadm@my.tuleap.server.net$ ssh -i /home/codendiadm/.ssh/id_rsa-gerrit admin-my.tuleap.server.net@gerrit.instance.com -p 29418 gerrit flush-caches
-
-Gerrit 2.8
-''''''''''
 
 We can directly use the gerrit REST API to configure the ``admin-my.tuleap.server.net`` email:
 
@@ -578,26 +549,8 @@ For this option to be present in Tuleap, the Gerrit server needs to have an addi
 
 * First, download the plugin:
 
-  * Gerrit 2.5: https://tuleap.net/file/download.php/101/65/p22_r76/deleteproject.jar
   * Gerrit 2.8: https://tuleap.net/file/download.php/101/92/p22_r77/delete-project.jar
-
-Gerrit 2.5
-''''''''''
-
-* To install the plugin there are two options.
-
-  * option 1 - Put the plugin in the 'plugins' folder of your Gerrit instance then run
-  .. code-block:: bash
-
-    ssh -p29418 admin-my.tuleap.server.net@gerrit.instance.com gerrit plugin enable deleteproject
-
-  * option 2 - Put the plugin file somewhere accessible then run
-  .. code-block:: bash
-
-    ssh -p29418 admin-my.tuleap.server.net@gerrit.instance.com gerrit plugin install <url of the plugin>
-
-Gerrit 2.8
-''''''''''
+  * For later version, you have to build the plugin yourself.
 
 To install the plugin, put delete-project.jar in the 'plugins' folder of your Gerrit instance then run
 
