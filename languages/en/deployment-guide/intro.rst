@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.0
+===
+
+Import all gitolite3 logs
+-------------------------
+You can parse all your gitolite3 log by running next script,
+logs previsously parsed won't be taken in account.
+
+    .. sourcecode:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> ./src/utils/php-launcher.sh plugins/git/bin/import_all_giotlite3_logs.php
+
 8.19
 ====
 
