@@ -1045,7 +1045,7 @@ can also be adjusted to show more or less access log history.
    CVS stands for Concurrent Versions System. It is one of the source
    code version control system offered on the Tuleap site.
    CVS is used by hundreds of thousands of software projects all over
-   the world. See http://www.cvshome.org for more information.
+   the world. See http://cvs.nongnu.org/ for more information.
 
 .. [#f2]
    For example, by default, the separator for the french version of

@@ -185,15 +185,7 @@ about CVS refer to the following documents:
    CVS Black Book". Also available in printed form from Coriolis Press.
    See http://cvsbook.red-bean.com/.
 
--  The official CVS Manual. Otherwise known as the "Cederqvist" after
-   the name of the author. See
-   http://www.cvshome.org/docs/manual/index.html\ This document is also
-   contained in the CVS software releases - see below.
-
--  Various CVS Docs and FAQs. See
-   http://www.loria.fr/~molli/cvs-index.html.
-
--  The Official CVS Web Site. See http://www.cvshome.org/.
+-  The Official CVS Web Site. See http://cvs.nongnu.org/.
 
 CVS Integration in Tuleap
 -----------------------------------
@@ -519,7 +511,7 @@ command (in one line):
 
     cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     login
-            
+
 
 Where:
 
@@ -555,7 +547,7 @@ command in one line):
     $ cd topdirectory
     $ cvs -d:pserver:loginname@cvs.projectname.tuleap.example.com:/cvsroot/projectname
     import topdirectory vendor_tag start
-            
+
 
 Where:
 
@@ -654,7 +646,7 @@ copy with terse output mode type:
 ::
 
     cvs -q update
-            
+
 
 If you simply want to know what files have changed on the CVS repository
 since your last update but don't want to update your working, you can
@@ -663,7 +655,7 @@ run the cvs command with the "show-me-but-don't-do" flag (-n):
 ::
 
     cvs -n -q update
-            
+
 
 Remark: The CVS update command is among the most semantically rich in
 the CVS command set. It is used not only as described above, but also to
@@ -686,7 +678,7 @@ command:
 ::
 
     cvs commit -m"Explain the nature of the change here..." [filenames]
-            
+
 
 Where:
 
@@ -912,4 +904,3 @@ cited in :ref:`CVS-reference` for more information about CVS administrative file
    There are many version control software available on the market
    whether Free Software (SCCS, RCS, PKS, Arch, Monotone......) or
    Commercial (SourceSafe, ClearCase, TeamWare...)
-
