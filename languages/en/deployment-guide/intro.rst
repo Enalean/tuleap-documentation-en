@@ -7,6 +7,25 @@ file, the default is automatically set for you.
 9.0
 ===
 
+Definitive removal of the deprecated password storage
+-----------------------------------------------------
+This release can only work with the password storage introduced in Tuleap 8.3.
+You must ensure that you have properly updated the IM and Proftpd plugin.
+
+For the IM plugin you must have executed the following script:
+
+.. sourcecode:: console
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
+
+For the Proftpd plugin you must have executed this script:
+
+.. sourcecode:: console
+
+    #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
+
+You must also check that in ``/etc/proftpd.conf``, the parameter SQLAuthTypes is set to Crypt and not MD5.
+
 Import all gitolite3 logs
 -------------------------
 You can parse all your gitolite3 log by running next script,
