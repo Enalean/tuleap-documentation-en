@@ -17,7 +17,7 @@ First start of Tuleap
     $ npm run build
 
 And voila, your server is up and running! You can access it at
-http://tuleap_web_1.tuleap-aio-dev.docker. You can connect with ``admin``
+https://tuleap-web.tuleap-aio-dev.docker. You can connect with ``admin``
 account, the password will be given by ``make show-passwords``.
 
 .. image:: ../../images/its-Magic.gif
@@ -44,7 +44,7 @@ Descriptions of commands
 
     $ docker ps --format "{{.ID}}: {{.Names}} — {{.Image}} {{.Ports}}"
     7ac93f72dbb6: dnsdock — tonistiigi/dnsdock 172.17.42.1:53->53/udp
-    149428f796ea: tuleap_web_1 — enalean/tuleap-aio-dev:nodb 22/tcp, 80/tcp, 443/tcp
+    149428f796ea: tuleap-web — enalean/tuleap-aio-dev:nodb 22/tcp, 80/tcp, 443/tcp
     7cd1e645b3a9: tuleap_ldap_1 — enalean/ldap:latest 389/tcp, 636/tcp
     9d026f381fbf: tuleap_db_1 — mysql:5.5 3306/tcp
 
@@ -69,7 +69,7 @@ If you need to connect to the server you can run:
 
 .. code-block:: bash
 
-    $ docker exec -ti tuleap_web_1 bash
+    $ docker exec -ti tuleap-web bash
     $> export TERM=linux
 
 And if you need to connect to the database:
@@ -81,7 +81,7 @@ And if you need to connect to the database:
 Troubleshooting
 ---------------
 
-If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker/:
+If your browser cannot manage to reach https://tuleap-web.tuleap-aio-dev.docker/:
 
 * Check that all containers are up and running with ``docker ps``. If it is not
   the case, inspect logs ``docker-compose logs db`` or ``docker-compose logs web``.
@@ -89,16 +89,16 @@ If your browser cannot manage to reach http://tuleap_web_1.tuleap-aio-dev.docker
   http://localhost/`` once connected to the ``web`` container (see
   :ref:`protips`). If you see a long html output that contains typical Tuleap
   homepage, then it means that there is an issue with the dns. (You may need to ``yum install wget`` first).
-* Check that you can resolve tuleap_web_1.tuleap-aio-dev.docker: ``dig
+* Check that you can resolve tuleap-web.tuleap-aio-dev.docker: ``dig
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
-  'tuleap_web_1.tuleap-aio-dev.docker'`` should return a suitable answer
+  'tuleap-web.tuleap-aio-dev.docker'`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
 
 If you don't receive email, this is because we configured postfix to not deliver emails by default. You may need to manually add the emails you use for your development:
 
 .. code-block:: bash
 
-    $ docker exec -ti tuleap_web_1 bash
+    $ docker exec -ti tuleap-web bash
     $> vi /data/etc/email_whitelist # enter your email
     $> ./whitelist_emails.sh
     $> service postfix reload
