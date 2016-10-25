@@ -101,14 +101,14 @@ OS X. It will install Docker, Docker Machine, Docker Compose, Docker Kitematic
 and VirtualBox. Once the install is done, launch "Docker Quickstart Terminal",
 then follow this documentation.
 
-You should also add the entry ``tuleap_web_1.tuleap-aio-dev.docker`` to your ``/etc/hosts``. Run ``docker-machine env`` to get your docker machine IP if need be (usually ``192.168.99.100``).
+You should also add the entry ``tuleap-web.tuleap-aio-dev.docker`` to your ``/etc/hosts``. Run ``docker-machine env`` to get your docker machine IP if need be (usually ``192.168.99.100``).
 
     # contents of /etc/hosts
     127.0.0.1       localhost
     255.255.255.255 broadcasthost
     ::1             localhost
 
-    192.168.99.100  tuleap_web_1.tuleap-aio-dev.docker
+    192.168.99.100  tuleap-web.tuleap-aio-dev.docker
 
 
 Install Docker Compose
