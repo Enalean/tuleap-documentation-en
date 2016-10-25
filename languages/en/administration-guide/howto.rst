@@ -986,7 +986,7 @@ In this example, the XML file could be like:
 
 .. sourcecode:: xml
 
-    <!DOCTYPE docman SYSTEM "http://tuleap_web_1.tuleap-aio-dev.docker/plugins/docman/docman-1.0.dtd">
+    <!DOCTYPE docman SYSTEM "http://tuleap-web.tuleap-aio-dev.docker/plugins/docman/docman-1.0.dtd">
     <docman>
       <propdefs>
         <propdef name="metadata" type="text" multivalue="false" empty="true"/>
