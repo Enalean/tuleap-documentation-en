@@ -138,12 +138,12 @@ Example of calling code:
     $string = $renderer->renderToString('template_name', new Presenter());
 
 
-  .. attention:: Known issues / limitation
+  .. attention::
 
     Few points to keep in mind:
 
-    - It's recommended to use {{  }} notation to benefit from mustache automatic escaping.
-    - If you have to use {{{ }}} notation, the presenter MUST deal with output escaping (with Codendi_HTMLPurifier).
+    - It's HIGHLY recommended to use {{  }} notation to benefit from mustache automatic escaping.
+    - If you really have to use {{{ }}} notation – for template inclusion, or for light formatting (don't put whole tag soup in .tab file) — then presenter MUST deal with output escaping (with Codendi_HTMLPurifier/CODENDI_PURIFIER_LIGHT).
 
 .. note::
 
