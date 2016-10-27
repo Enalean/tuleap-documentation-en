@@ -101,7 +101,7 @@ project repositories. This includes:
 -  and "Email notification on push"
 
 Access control
-```````````````
+``````````````
 
 Project administrators can control permissions details of each
 repository. By default a repository is readable by all active users of
@@ -126,8 +126,30 @@ the User Groups allowed to:
 
    	   Control Git repository permissions
 
+Fine grained permissions
+````````````````````````
+
+For a better permissions customization, project administrators can manage
+permissions branch by branch and tag by tag.
+
+To do it, administrators must enabled fine-grained permissions.
+If the platform allows it, regexp can be used in pattern.
+
+.. IMPORTANT:: When regex are enabled, they are kept the way administrators
+  wrote them, it might end up in a non working state, invalids regex
+  are ignored without errors. Please see Gitolite regex documentation:
+  http://gitolite.com/gitolite/regex.html
+
+
+.. figure:: ../images/screenshots/fined_grained.png
+    :align: center
+    :alt: Control Git repository fined grained permissions
+    :name: Control Git repository fined grained permissions
+
+    Control Git repository fined grained permissions
+
 Email notification
-````````````````````
+``````````````````
 
 It's often a good idea to notify the whole team when someone pushes some
 new content into a repository. You can configure your repository to send
