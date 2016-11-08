@@ -25,6 +25,7 @@ Internal conventions
 * All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in
   order to not clutter the review of your functional change.
 * No trailing whitespaces
+* In DataAccessObject, convention is to name ``searchXxx()`` the methods that returns a DataAccessResult (eg. ``searchProjectsUserIsAdmin(…)``, and ``getXxx``, ``isXxx``, ``hasXxx`` for other cases (eg. ``doesUserHavePermission(…)``).
 
   **Note:** Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
   The code WONT be accepted. If your eyes are bleeding, conform to coding standard in a dedicated review, then
