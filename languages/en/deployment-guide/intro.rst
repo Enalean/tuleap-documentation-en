@@ -9,6 +9,7 @@ file, the default is automatically set for you.
 
 We put some gloss, makeup and rhinestones on site administration. This is the introduction of a new theme named BurningParrot. It is transparent for the users – no need to change the user preferences, however it comes as a dependency of ``tuleap-all`` package. When you upgrade to 9.1, if you don't have/upgrade ``tuleap-all`` package then you should manually install ``tuleap-theme-burningparrot`` package. Enjoy <3
 
+In the same vein, we removed the old and nasty theme named 'Tuleap'. You must issue the following command if you have installed it: ``yum remove tuleap-theme-tuleap``.
 
 9.0
 ===
