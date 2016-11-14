@@ -476,7 +476,7 @@ Importing an existing Subversion repository in Tuleap
 How to properly install a project team's existing SVN repository into the project specific repository.
 
 It is important to understand that *each* project has its own SVN repository. This root dir is created and initialized by Tuleap whenever a new
-project is registered. Its name is ``/svnroot/projectname``.
+project is registered. Its name is ``/svnroot/projectname`` or ``/var/lib/tuleap/svn_plugin/<project_id>/<repo_name>`` if you use SVN plugin.
 
 The real work
 ~~~~~~~~~~~~~
@@ -492,11 +492,6 @@ The real work
   ::
 
       scp svn_dumpfile username@tuleap.example.com:/home/groups/projectname
-
-
-  where ``svn.dump`` is the subversion dump file, and ``user_map.txt`` a file
-  with author name to change (1 user per line) ``old_author_name=new_author_name``
-  (``default=default_login`` may be added to process unknown users.)
 
 * then a site administrator needs to load the repository content into the
   existing repository on Tuleap. Note that the directory can be a bit different if you use the SVN plugin (``/var/lib/tuleap/svn_plugin/<project_id>/<repo_name>``):
