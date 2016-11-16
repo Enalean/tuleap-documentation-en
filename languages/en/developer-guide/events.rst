@@ -36,8 +36,8 @@ page to the requester, there is a hook called:
             'project_creation_data' => $data,
         ));
 
-All hooks are handled by `EventManager` singleton (hence usage of `::instance()`). The
-hook name is `Event::REGISTER_PROJECT_CREATION` (in Event class you will find the documentation
+All hooks are handled by ``EventManager`` singleton (hence usage of ``::instance()``). The
+hook name is ``Event::REGISTER_PROJECT_CREATION`` (in Event class you will find the documentation
 of the hook, esp. the parameters). The second parameter of hook call is an array with values.
 
 On plugin side, to listen to the hook, in plugin constructor, developer should add:
@@ -46,7 +46,7 @@ On plugin side, to listen to the hook, in plugin constructor, developer should a
 
         $this->addHook(Event::REGISTER_PROJECT_CREATION);
 
-and implement a public method `register_project_creation` (from AgileDashboard plugin):
+and implement a public method ``register_project_creation`` (from AgileDashboard plugin):
 
     .. code-block:: php
 
@@ -107,12 +107,73 @@ Example of leak:
       }
 
 Here we have a code (maybe from docman) that sends an event after the update of
-an item with `item_metdata` passed by reference (for modification).
+an item with ``item_metdata`` passed by reference (for modification).
 
 But the code, in the docman, check a specific value depending on a very specific
 other plugin (mediawiki). It's bad because docman should have no knowledge at all
 that mediawiki even exist.
 
-
 System Events
 -------------
+
+System events are meant for running tasks in the background. There is no way to
+give end user feedback other than email notification about things that are done
+during system events.
+
+System events are basically a queue (there are several as plugins can manage
+their own queues). The queues are consumed on regular basis by a backend process.
+This backend process is a managed by a cron job (see ``src/utils/cron.d/codendi``)
+that launch every minute the command ``src/utils/process_system_events.php``
+
+In Core, all system events are managed by ``SystemEventManager`` (which is, bye
+the way a good example of Core listening on Core events...). Let's have a look
+at how users are renamed.
+
+In site administration ``usergroup.php`` there is an event triggered when user
+name change:
+
+.. code-block:: php
+
+        EventManager()::instance()->processEvent(Event::USER_RENAME, array(
+            'user_id'  => $user->getId(),
+            'new_name' => $request->get('form_loginname'),
+            'old_user' => $user)
+        );
+
+
+This event is listened by ``SystemEventManager`` that will queue a ``SystemEvent``:
+
+.. code-block:: php
+
+        case Event::USER_RENAME:
+            $this->createEvent(
+                SystemEvent::TYPE_USER_RENAME,
+                $this->concatParameters($params, array('user_id', 'new_name', 'old_user')),
+                SystemEvent::PRIORITY_HIGH
+             );
+
+And finaly, there a class that corresponds to the system event type, ``SystemEvent_USER_RENAME``
+that will hold the user renaming
+
+.. code-block:: php
+
+    public function process() {
+       list($user_id, $new_name) = $this->getParametersAsArray();
+
+       ...
+       $user = $this->getUser($user_id);
+       $old_user_name = $user->getUserName();
+       if (! $backend_system->renameUserHomeDirectory($user, $new_name)) {
+           $this->error("Home directory not renamed");
+       }
+       ...
+       $this->done();
+   }
+
+Wrap-up, to add a new system event, developer should:
+
+- Create a new event
+- Listen to this event in ``SystemEventManager`` to properly queue the SystemEvent
+- Have class named after SystemEvent_EVENT_TYPE with a ``process`` method that finish by ``$this->done()`` when successful or ``$this->error()`` otherwise.
+
+That's all! All the process of instanciation and queue management is done by Tuleap.
