@@ -484,10 +484,9 @@ We can directly use the gerrit REST API to configure the ``admin-my.tuleap.serve
   .. code-block:: bash
 
     curl --digest --user admin-my.tuleap.server.net:http_password
-         -X PUT tuleap.server.net:8080/a/accounts/self/emails/admin_email
+         -X PUT gerrit.instance.com/a/accounts/self/emails/admin_email
          -H "Content-Type: application/json;charset=UTF-8"
          -d'{"no_confirmation": true}'
-
 
 Note: there may be permission issues when doing this with later versions of Gerrit. You will need to either
 give ``Administrators`` greater rights or fall-back to the other method (above).
