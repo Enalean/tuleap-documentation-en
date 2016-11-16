@@ -56,9 +56,8 @@ Descriptions of commands
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
     lost at reboot. If you need to add/change anything and make it persistant, fork
-    and ammend the `Dockerfile <https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/>`_.
-    Everything but the OS (tuleap config, database, user home) is saved in
-    ``/srv/dock/<name_of_the_server>`` on the host.
+    and amend the `Dockerfile <https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/>`_.
+    Everything but the OS (tuleap config, database, user home) is saved in docker volumes held by ``tuleap_data``.
 
 .. _protips:
 
