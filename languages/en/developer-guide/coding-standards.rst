@@ -138,17 +138,39 @@ Example of calling code:
     // Return the content for futur reuse
     $string = $renderer->renderToString('template_name', new Presenter());
 
-
-  .. attention::
-
-    Few points to keep in mind:
-
-    - It's HIGHLY recommended to use {{  }} notation to benefit from mustache automatic escaping.
-    - If you really have to use {{{ }}} notation – for template inclusion, or for light formatting (don't put whole tag soup in .tab file) — then presenter MUST deal with output escaping (with Codendi_HTMLPurifier/CODENDI_PURIFIER_LIGHT).
-
 .. note::
 
     For existing code, it's acceptable to output content with "echo" to keep consistency.
+
+
+Escaping
+~~~~~~~~
+
+You should rely on Mustache ``{{ }}`` notation to benefit from automatic escaping.
+
+If you need to put light formatting in you localised string, then you should escape beforehand and use ``{{{ }}}`` notation. As it produces a code that is less auditable (reviewer has to manually check if injections are not possible), the convention is to prefix the variable with ``purified_`` and manually purify the variable in the presenter.
+
+  .. code-block:: php
+  
+    class Presenter
+    {
+        public $purified_description;
+        
+        public function __construct()
+        {
+            $this->purified_description = Codendi_HTMLPurifier::instance()->purify(
+                $GLOBALS['Language']->getText('key1', 'key2', 'https://example.com'),
+                CODENDI_PURIFIER_LIGHT
+            );
+        }
+    }
+    
+    // .tab file:
+    // key1    key2    This is the <b>description</b> you can put <a href="$1">light formatting</a>
+    
+    // .mustache file:
+    // <p>{{{ purified_description }}}</p>
+
 
 Secure forms against CSRF
 ~~~~~~~~~~~~~~~~~~~~~~~~~
