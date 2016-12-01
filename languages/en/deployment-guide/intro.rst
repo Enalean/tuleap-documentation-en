@@ -4,6 +4,15 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.2
+===
+
+HTTP persistent connection is now enabled by default on new installations
+-------------------------------------------------------------------------
+The default Apache configuration that is deployed during Tuleap installation now enable HTTP persistent connection.
+We encourage existing instances to do the same as it can improve performance by setting the option ``KeepAlive``
+to ``On`` in the configuration file ``/etc/httpd/conf/httpd.conf``.
+
 9.1
 ===
 
