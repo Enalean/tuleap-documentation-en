@@ -39,6 +39,7 @@ Development 101, what you need to know
    developer-guide/i18n
    developer-guide/integrators
    developer-guide/events
+   developer-guide/plugins
 
 Advanced topics
 
