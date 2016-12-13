@@ -108,7 +108,7 @@ plugin is activated. Example with the corresponding ``www/index.php``:
     if ($plugin && $plugin_manager->isPluginAvailable($plugin)) {
         $plugin->process();
     } else {
-        header('Location: '.get_server_url());
+        $GLOBALS['Response']->redirect('/');
     }
 
 Bring a new service to life
