@@ -145,8 +145,6 @@ incomplete list of available widgets for the personal page:
 -  **My Projects** lists the projects you belong to. Selecting any of
    these projects brings you to the corresponding Project Dashboard.
 
--  **Quick Survey**: On going site survey (if any) not yet taken.
-
 -  **RSS Reader** allows you to include public rss (or atom) feeds into
    your personal page.
 

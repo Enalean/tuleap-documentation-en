@@ -33,7 +33,7 @@ Here is a description of the main directories (path is given as relative to '/us
 
            - **SF/utils/underworld-root** contains cron jobs dealing with statistics.
 
-       - **src/www contains** all the PHP scripts (except those in SF/common). Services are organized in different directories (e.g. tracker, forum, survey, docman, cvs etc.). Most services are quite independent from each other, so you can modify one without interfering with others. There are some special directories though; here are a few examples:
+       - **src/www contains** all the PHP scripts (except those in SF/common). Services are organized in different directories (e.g. tracker, forum, docman, cvs etc.). Most services are quite independent from each other, so you can modify one without interfering with others. There are some special directories though; here are a few examples:
 
            - **src/www/include** contains PHP scripts that are included by all other scripts, e.g. pre.php.
 

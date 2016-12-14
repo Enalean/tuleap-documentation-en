@@ -265,17 +265,6 @@ noreply email address is an alias to admin then multiple copies
 will be received by Tuleap administrators. The noreply address may also
 be aliased to /dev/null to avoid this problem (see /etc/aliases).
 
-Developer Survey
-----------------
-
-The **Developer Survey** is a special survey that appears in the user's
-personal page. The developer is a general survey that gives site
-administrators the opportunity to better understand the population of
-users (e.g. how they heard about Tuleap, do they like it, etc.). This
-survey can only be answered once. The Developer Survey is automatically
-created at Tuleap installation time (survey id 1, associated to project
-1), but it is inactive by default and does not contain any question.
-
 .. _admin_tasks_import_export:
 
 Project export and import

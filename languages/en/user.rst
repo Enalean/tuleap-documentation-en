@@ -25,7 +25,6 @@ User-guide
    user-guide/ci
    user-guide/wiki
    user-guide/communication
-   user-guide/survey
    user-guide/project-website
    user-guide/project-links
    user-guide/sftp-browser

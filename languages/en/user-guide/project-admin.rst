@@ -807,9 +807,6 @@ exported fields are listed on the Tuleap page):
 -  **Tracker**: the artifacts data, the changes history and the
    artifacts dependencies can be exported for each tracker.
 
--  **Survey Responses**: all responses to all the surveys you have
-   created in your project.
-
 Text File Export
 `````````````````
 
