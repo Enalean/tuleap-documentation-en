@@ -817,6 +817,85 @@ Multiple Git repositories can be imported. The XML syntax is:
   different permissions of the repository to the given repository. The ``<ugroup>`` tag must contain only
   one ugroup name.
 
+Another synthax exists for the git XML import:
+
+.. sourcecode:: xml
+
+  <project>
+    <services>
+      <service shortname="plugin_git" enabled="true" />
+      ...
+    </services>
+
+    ...
+
+    <git>
+        <ugroups-admin>
+            <ugroup>Contributors</ugroup>
+            ...
+        </ugroups-admin>
+        <repository bundle-path="tuleap_dev_bundle" name="dev/tuleap" description="Development git repository for tuleap">
+            <permissions>
+                <read>
+                    <ugroup>project_members</ugroup>
+                    ...
+                </read>
+                <write>
+                    <ugroup>Contributors</ugroup>
+                    ...
+                </write>
+                <wplus>
+                    <ugroup>project_admins</ugroup>
+                    ...
+                </wplus>
+                <fine_grained enabled="1" use_regexp="1">
+                    <pattern value="*" type="branch">
+                        <write>
+                            <ugroup>Contributors</ugroup>
+                            ...
+                        </write>
+                        <wplus>
+                            <ugroup>project_admins</ugroup>
+                            ...
+                        </wplus>
+                    </pattern>
+                    <pattern value="*" type="tag">
+                        <write>
+                            <ugroup>Contributors</ugroup>
+                            ...
+                        </write>
+                        <wplus>
+                            <ugroup>project_admins</ugroup>
+                            ...
+                        </wplus>
+                    </pattern>
+                </fine_grained>    
+            </permissions>
+        </repository>
+        <repository bundle-path="tuleap_stable_bundle" name="stable/tuleap" description="Frozen git repository for tuleap, contains only tags.">
+            ...
+        </repository>
+      ...
+
+    </git>
+    ...
+  </project>
+
+The big change is in the ``<repository>`` tag:
+
+- The tag ``<permissions>`` containing ``<read|write|wplus>`` and an optional tag named ``<fine_grained>``
+- The tag ``<read|write|wplus>`` containing one or multiple ``<ugroup>`` tags. It allows to give the
+  different permissions of the repository to the given repository. The ``<ugroup>`` tag must contain only
+  one ugroup name.
+
+- The tag ``<fine_grained>`` containing one or multiple ``<pattern>`` tag.
+- The attribute ``enabled`` which defines if this permission option is used for the repository or not
+- The attribute ``use_regexp`` which defines if patterns with regexp are authorized or not
+
+- The tag ``<pattern>`` containing ``<write|wplus>`` tags.
+- The attribute ``value`` which defines the gitolite path checked by the pattern
+- The attribute ``type`` which defines if this permission is a branch or a tag permission. The possible values are ``tag`` and ``branch``
+
 
 Releases and Files (FRS)
 ************************
