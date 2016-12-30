@@ -4,6 +4,19 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.3
+===
+
+Snippets are disabled
+---------------------
+
+The snippets are now disabled unless specifically forced and this feature will
+be completely removed in Tuleap 9.5. If you think you have a valid use case and
+think this feature should be kept, please manifest yourself on the
+`tuleap-devel <https://tuleap.net/plugins/forumml/message.php?group_id=101&list=1>`_
+mailing list. In the meantime, the feature can be force activated by setting
+``$sys_use_snippet`` to ``'false'``.
+
 9.2
 ===
 
