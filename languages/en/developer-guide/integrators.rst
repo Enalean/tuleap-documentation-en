@@ -33,7 +33,8 @@ Integration of contributions
       git merge --no-ff --no-commit --log FETCH_HEAD
 
   **Note:** It is the responsibility of the contributor to resolve conflicts. Integrators should ask 
-  to the contributor to rebase her changes in case of conflicts.
+  to the contributor to rebase her changes in case of conflicts. (Except for ``autoload.php`` conflicts where integrators can run ``make autoload-docker`` + ``git add``. In other cases, the rebase must be done by the contributor.)
+  
   
 * Edit ChangeLog and Version (all plugins & central).
 
