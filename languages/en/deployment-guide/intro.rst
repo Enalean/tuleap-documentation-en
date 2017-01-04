@@ -14,8 +14,8 @@ The snippets are now disabled unless specifically forced and this feature will
 be completely removed in Tuleap 9.5. If you think you have a valid use case and
 think this feature should be kept, please manifest yourself on the
 `tuleap-devel <https://tuleap.net/plugins/forumml/message.php?group_id=101&list=1>`_
-mailing list. In the meantime, the feature can be force activated by setting
-``$sys_use_snippet`` to ``'false'``.
+mailing list. In the meantime, if you really need it, the feature can be force activated by setting
+``$sys_use_snippet`` to ``'force'``.
 
 9.2
 ===
