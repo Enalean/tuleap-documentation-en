@@ -12,6 +12,7 @@ User-guide
    user-guide/project-admin
    user-guide/site-access
    user-guide/tracker
+   user-guide/tql
    user-guide/agile-dashboard
    user-guide/trafficlights
    user-guide/frs
