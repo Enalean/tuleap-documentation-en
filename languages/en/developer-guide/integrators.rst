@@ -36,50 +36,33 @@ Integration of contributions
   to the contributor to rebase her changes in case of conflicts. (Except for ``autoload.php`` conflicts where integrators can run ``make autoload-docker`` + ``git add``. In other cases, the rebase must be done by the contributor.)
   
   
-* Edit ChangeLog and Version (all plugins & central).
+* Edit Version numbers (all plugins & central).
 
   **Pro tip:** there is a generator for that:
 
   .. code-block:: bash
 
-    $ tools/utils/changelogs/generate.sh "Description of small feature or patch"
+    $ tools/utils/version_numbers/generate.sh
 
   **Pro tip 2:** you can also use docker to generate them:
 
   .. code-block:: bash
 
-    $ docker run -v $PWD:/tuleap enalean/tuleap-generate-changelog "Description of small feature or patch"
+    $ docker run -v $PWD:/tuleap enalean/tuleap-generate-changelog
 
-  **Important:** Do **not** ``git add`` the updated changelogs and version.
-
-* Run
-
-  .. code-block:: bash
-
-    $  git status
-
-  If there are any changes in ``src/`` then manually edit the Changelog file at the project root to reflect changes.
+  **Important:** Do **not** ``git add`` the updated version files.
   
 * Commit (signed) **only** the merge (**do not touch the commit message**).
 
   .. code-block:: bash
 
     $  git commit -v -S
-
-* Copy the new version number:
-
-  .. code-block:: bash
-
-    $  cat VERSION
-    5.4.99.3
-
-  We will use it for commit messages below.
   
-* Commit (signed) the new version/changelogs (Commit message: ``This is Tuleap 5.4.99.3`` )
+* Commit (signed) the new version files
 
   .. code-block:: bash
 
-    $ git commit -av -S
+    $ git commit -av -S -m "This is Tuleap $(cat VERSION)"
 
 * Push your merge to stable:
 
