@@ -1,16 +1,13 @@
+Tuleap Query Language (TQL)
+===========================
 
-
-
-
-Tracker Query Language (TQL)
-==============================
-
-The Tracker Query Language is a pseudo-language to search artifacts in trackers.
+The Tuleap Query Language is a pseudo-language to search items in the platform. As of today
+only artifacts in trackers can be retrieved.
 
 TQL on reports
---------------------------------
+--------------
 
-The Tracker Query Language can be used in "Expert" mode on tracker's reports in the search area.
+TQL can be used in "Expert" mode on tracker's reports in the search area.
 The saving of the query matches the usual saving of the report.
 
 .. figure:: ../images/screenshots/tql/expert_query.png
@@ -18,20 +15,30 @@ The saving of the query matches the usual saving of the report.
    :alt: Tracker Welcome Screen
    :name: Tracker Welcome Screen
 
-   Tracker Query Language on reports
+   Tuleap Query Language on reports
 
 Queries
---------------------------------
+-------
 
-Currently, the language supports string and text fields and (), AND, OR operators.
+Currently, the language supports:
+
+- Logical operators: AND, OR
+- Parenthesis to force precedence
+- Comparison operators:
+
+  * For string and text fields: =, !=
+  * For integer and fload fields: =, !=, <, <=, =>, >, between()
+
 Therefore to construct a query you can combine these elements.
-Be careful, you must use name of fields and not label of fields to construct queries.
+
+.. NOTE:: Be careful, you must use name of fields and not label to construct queries.
 
 Query example:
 
 .. code-block:: sql
 
-    (summary="soap" or summary="rest") and description="documentation"
+    (summary = "soap" OR summary = "rest")
+      AND description = "documentation" AND story_points BETWEEN(3, 8)
 
 Sending the query to the server can throw following errors:
 
@@ -43,7 +50,7 @@ Sending the query to the server can throw following errors:
 .. IMPORTANT:: The query is too complex when it exceeds a limit. This limit is defined by SiteAdministrators on SiteAdmin > Tracker > Report.
 
 Pro-tips
------------------------------
+--------
 
 For a better usability in building query there is a syntax highlighting
 and an auto-completion (``ctrl+space`` on field names).
@@ -56,7 +63,7 @@ and an auto-completion (``ctrl+space`` on field names).
    Highlighting and auto-completion
 
 Moreover to know allowed fields there is a selected box with all usable
-fields labels. If you click on one of them the field's name is introduced in
+fields. If you click on one of them the field's name is introduced in
 the query.
 
 .. figure:: ../images/screenshots/tql/expert_query_allowed_fields.png
