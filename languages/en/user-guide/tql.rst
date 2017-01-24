@@ -22,16 +22,22 @@ Queries
 
 Currently, the language supports:
 
-- Logical operators: AND, OR
+- Logical operators: ``AND``, ``OR``
 - Parenthesis to force precedence
 - Comparison operators:
 
-  * For string and text fields: =, !=
-  * For integer and fload fields: =, !=, <, <=, =>, >, between()
+  * For string and text fields: ``=``, ``!=``
+  * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
+
+- Dynamic value for date fields: ``NOW()``.
+
+  * ``start_date > NOW()`` matches all artifacts where start_date is greater than the current time (time when the query
+    is displayed).
+  * You can use interval periods with NOW(), for example ``submitted_on > NOW() - 1m`` will matches
+    all artifacts that have been created during the last month. The supported specificators are: years (``y``),
+    months (``m``), weeks (``w``) and days (``d``).
 
 Therefore to construct a query you can combine these elements.
-
-.. NOTE:: Be careful, you must use name of fields and not label to construct queries.
 
 Query example:
 
@@ -39,6 +45,8 @@ Query example:
 
     (summary = "soap" OR summary = "rest")
       AND description = "documentation" AND story_points BETWEEN(3, 8)
+
+.. NOTE:: Be careful, you must use name of fields and not label to construct queries.
 
 Sending the query to the server can throw following errors:
 
