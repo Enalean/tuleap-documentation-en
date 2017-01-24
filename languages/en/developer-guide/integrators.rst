@@ -36,19 +36,11 @@ Integration of contributions
   to the contributor to rebase her changes in case of conflicts. (Except for ``autoload.php`` conflicts where integrators can run ``make autoload-docker`` + ``git add``. In other cases, the rebase must be done by the contributor.)
   
   
-* Edit Version numbers (all plugins & central).
-
-  **Pro tip:** there is a generator for that:
+* Edit VERSION numbers:
 
   .. code-block:: bash
 
     $ tools/utils/version_numbers/generate.sh
-
-  **Pro tip 2:** you can also use docker to generate them:
-
-  .. code-block:: bash
-
-    $ docker run -v $PWD:/tuleap enalean/tuleap-generate-changelog
 
   **Important:** Do **not** ``git add`` the updated version files.
   
