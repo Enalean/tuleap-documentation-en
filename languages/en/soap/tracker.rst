@@ -1,3 +1,5 @@
+.. _tracker_soap:
+
 Tracker SOAP API
 ================
 

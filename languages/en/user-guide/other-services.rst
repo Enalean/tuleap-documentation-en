@@ -72,19 +72,29 @@ that you use this storage space for world readable files only.
 SOAP API
 ---------
 
+.. attention:: Deprecation notice
+
+   SOAP API is deprected. Only security fix are applied when
+   possible.
+
+   We strongly recommend to switch to :ref:`REST APIs <rest_api>`
+
 Tuleap provides a SOAP API to access Tuleap
 through web-services. At this time, only session (login/logout) and
 tracker services are available.
 
 A human-friendly description of the services is available at
-`http://tuleap.net/soap/ <http://tuleap.net/soap/>`__.
+`https://tuleap.net/soap/ <http://tuleap.net/soap/>`__.
 It is a list of services, with a description of each function, its
 input, output and documentation
 
 A more detailed description of the services is also available with the
 more formal WSDL language at
-`http://tuleap.net/soap/?wsdl <http://tuleap.net/soap/?wsdl>`__.
+`https://tuleap.net/soap/?wsdl <http://tuleap.net/soap/?wsdl>`__.
 The WSDL also includes the types definition.
+
+You can fine some examples of SOAP usage in these two sections: :ref:`Tracker SOAP <tracker_soap>` and :ref:`Legacy tracker SOAP <tracker_v3_soap>`
+
 
 Tuleap Command Line Interface (CLI)
 ----------------------------------------------
