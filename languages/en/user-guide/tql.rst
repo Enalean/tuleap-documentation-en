@@ -90,3 +90,5 @@ When searching on date fields using TQL, you should be aware of the sometimes su
    :align: center
    :alt: Explanation of date operators
    :name: Explanation of date operators
+
+   Explanation of date operators
