@@ -4,6 +4,26 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.4
+===
+
+End of support of package ``viewvc-tuleap``
+-------------------------------------------
+
+Since Tuleap 8.19, Tuleap is able to use the package ``viewvc`` provided by EPEL.
+Starting Tuleap 9.4, the package ``viewvc-tuleap`` is removed from the official
+Tuleap repository. For those of you that have still not made the switch, we urge
+you to do it for security reasons. The swap of the packages can be done this way:
+
+.. sourcecode:: console
+
+    #> yum shell -y <<EOF
+    remove viewvc-tuleap
+    install viewvc
+    run
+    quit
+    EOF
+
 9.3
 ===
 
