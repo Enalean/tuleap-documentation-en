@@ -84,9 +84,9 @@ the query.
 Date operators
 --------------
 
-When searching on date fields using TQL, you should be aware of the sometimes subtle differences between the various operators. We have found this diagram helpful. Here, we use all available operators supporting date fields and a given date ("2017-01-18") and represent the period that will be selected as a result. For example, ``date_field > "2017-01-18"`` means ``date_field`` is later than 2017-01-18 23:59:59, while ``date_field >= "2017-01-18"`` means ``date_field`` is later than 2017-01-18 00:00:00
+When searching on date fields using TQL, you should be aware of the sometimes subtle differences between the various operators. We have found this diagram helpful. Here, we use all available operators supporting date fields and a given date ("2017-01-18") and represent the period that will be selected as a result. For example, ``date_field > "2017-01-18"`` means ``date_field`` is later than 2017-01-18 23:59:59, while ``date_field >= "2017-01-18"`` means ``date_field`` is later than or equal to 2017-01-18 00:00:00
 
-.. figure:: ../images/screenshots/tql/expert_query_date_operators.png
+.. figure:: ../images/diagrams/tql/expert_query_date_operators.png
    :align: center
    :alt: Explanation of date operators
    :name: Explanation of date operators
