@@ -7,6 +7,13 @@ file, the default is automatically set for you.
 9.4
 ===
 
+Invalidation of all existing user sessions
+------------------------------------------
+
+Tuleap 9.4 introduces a change in the way the user sessions are handled. All
+existing user sessions are flushed during this upgrade, this will force your
+users to log in again.
+
 End of support of package ``viewvc-tuleap``
 -------------------------------------------
 
