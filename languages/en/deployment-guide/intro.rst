@@ -7,6 +7,16 @@ file, the default is automatically set for you.
 9.4
 ===
 
+Merge of fusionforge_compat plugin with the Mediawiki plugin
+------------------------------------------------------------
+
+Since Tuleap 9.3 the fusionforge_compat plugin has been merged with the Mediawiki
+plugin. As a result the package ``tuleap-plugin-fusionforge_compat`` is an empty
+shell that can be safely removed with ``yum remove tuleap-plugin-fusionforge_compat``.
+
+The package ``tuleap-plugin-fusionforge_compat`` is going to be removed completely
+in the next version of Tuleap.
+
 Invalidation of all existing user sessions
 ------------------------------------------
 
