@@ -6,12 +6,12 @@ This section is only relevant to Tuleap integrators that are responsible to revi
 Environment setup
 -----------------
 
-You need to be ale to sign the commits/tags/merges in stable repository. 
-For this you need to generate a gpg key (``gpg --gen-key``) and indicates 
+You need to be ale to sign the commits/tags/merges in stable repository.
+For this you need to generate a gpg key (``gpg --gen-key``) and indicates
 to git which key to use:
 
   .. code-block:: bash
-  
+
     $ git config --global user.signingkey <gpg-key-id>
 
 
@@ -32,10 +32,10 @@ Integration of contributions
     $ git fetch ssh://username@gerrit.tuleap.net:29418/tuleap refs/changes/52/52/8 && \
       git merge --no-ff --no-commit --log FETCH_HEAD
 
-  **Note:** It is the responsibility of the contributor to resolve conflicts. Integrators should ask 
+  **Note:** It is the responsibility of the contributor to resolve conflicts. Integrators should ask
   to the contributor to rebase her changes in case of conflicts. (Except for ``autoload.php`` conflicts where integrators can run ``make autoload-docker`` + ``git add``. In other cases, the rebase must be done by the contributor.)
-  
-  
+
+
 * Edit VERSION numbers:
 
   .. code-block:: bash
@@ -43,13 +43,13 @@ Integration of contributions
     $ tools/utils/version_numbers/generate.sh
 
   **Important:** Do **not** ``git add`` the updated version files.
-  
+
 * Commit (signed) **only** the merge (**do not touch the commit message**).
 
   .. code-block:: bash
 
     $  git commit -v -S
-  
+
 * Commit (signed) the new version files
 
   .. code-block:: bash
@@ -69,14 +69,6 @@ Integration of contributions
     $ git push username@gerrit:tuleap stable/master:refs/heads/master
     # OR, if you have gerrit as a remote
     $ git push gerrit HEAD:master
-
-* Update Gerrit security:
-
-  .. code-block:: bash
-
-    $ git push username@gerrit:tuleap stable/master:refs/heads/security
-    # OR, if you have gerrit as a remote
-    $ git push gerrit HEAD:security
 
 * Update the corresponding artifacts by setting them to ``closed`` and adding message ``Integrated in Tuleap 5.4.99.3``
 * Update the corresponding artifacts by adding the gerrit x-ref ``gerrit #2548`` (from the gerrit URL)
