@@ -7,13 +7,22 @@ file, the default is automatically set for you.
 9.4
 ===
 
+End of life for the Subversion authentication mod ``modmysql`` and ``modldap``
+------------------------------------------------------------------------------
+
+In Tuleap 9.5 the remaining SVN repositories still not using ``modperl`` as the authentication
+mod will be migrated and ``modmysql`` and ``modldap`` will not be available anymore.
+
+To ease the migration, we encourage you to make the switch today by setting in
+your ``local.inc`` the parameter ``sys_auth_svn_mod`` to ``modperl``.
+
 Block mail notification option
 ------------------------------
 
 Tuleap 9.4 introduces a change on the way mail notifications are handled.
 You can choose to never send notifications to non projects member of private project.
 
-This feature is disabled by default, if you want to enable it, update local.inc and set sys_mail_secure_mode to true.
+This feature is disabled by default, if you want to enable it, update ``local.inc`` and set ``sys_mail_secure_mode`` to 1.
 
 .. sourcecode:: php
 
