@@ -7,6 +7,20 @@ file, the default is automatically set for you.
 9.4
 ===
 
+Block mail notification option
+------------------------------
+
+Tuleap 9.4 introduces a change on the way mail notifications are handled.
+You can choose to never send notifications to non projects member of private project.
+
+This feature is disabled by default, if you want to enable it, update local.inc and set sys_mail_secure_mode to true.
+
+.. sourcecode:: php
+
+        // When 0 mail sent to everybody can lead to information leak, non projects members can receive mails of private projects
+        $sys_mail_secure_mode = 1;
+
+
 Update default TLS configuration
 --------------------------------
 

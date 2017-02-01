@@ -1,6 +1,14 @@
 Notifications in Tuleap
 ======================
 
+Mail notification in private projects
+-------------------------------------
+Administrator can choose the way mails are handle in private project.
+
+-  When platform is in "insecure way" mails are sent to users who are explicitly set in services even when they are not project members.
+
+-  When platform is in "secure way" only project members will receive notifications.
+
 Mail notification to several users
 ----------------------------------
 
