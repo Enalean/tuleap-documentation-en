@@ -60,6 +60,12 @@ Tuleap 9.4 introduces a change in the way the user sessions are handled. All
 existing user sessions are flushed during this upgrade, this will force your
 users to log in again.
 
+If you use the IM plugin you also must redeploy the authentication provider:
+
+.. sourcecode:: console
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
+
 End of support of package ``viewvc-tuleap``
 -------------------------------------------
 
