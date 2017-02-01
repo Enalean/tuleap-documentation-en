@@ -7,6 +7,28 @@ file, the default is automatically set for you.
 9.4
 ===
 
+Update default TLS configuration
+--------------------------------
+
+With this release we have updated the default TLS Apache configuration we provide with Tuleap.
+This change can result in small performance gain and use the safest cipher suite
+we have available.
+
+All new instances of Tuleap will use this new configuration but if you already
+have an installation, your configuration will be left untouched.
+
+We encourage you to update it. To do it, replace the line SSLCipherSuite
+in ``/etc/httpd/conf/ssl.conf`` or ``/etc/httpd/conf.d/tuleap-vhost.conf``,
+depending how old your installation is, by:
+
+  .. sourcecode:: ApacheConf
+
+    #   SSL Cipher Suite:
+    # List the ciphers that the client is permitted to negotiate.
+    # See the mod_ssl documentation for a complete list.
+    SSLCipherSuite ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS
+
+
 Merge of fusionforge_compat plugin with the Mediawiki plugin
 ------------------------------------------------------------
 
