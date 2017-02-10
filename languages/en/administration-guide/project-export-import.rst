@@ -48,13 +48,6 @@ This will generate a zip archive with:
 
 This archive is ready to be imported in a Tuleap instance.
 
-.. note::
-
-    As of today, the following things are covered by the import tool:
-
-    * User groups definition with members
-    * One tracker with contents and history (except artifact links)
-
 Project Import
 ''''''''''''''
 
@@ -869,7 +862,7 @@ Another synthax exists for the git XML import:
                             ...
                         </wplus>
                     </pattern>
-                </fine_grained>    
+                </fine_grained>
             </permissions>
         </repository>
         <repository bundle-path="tuleap_stable_bundle" name="stable/tuleap" description="Frozen git repository for tuleap, contains only tags.">
