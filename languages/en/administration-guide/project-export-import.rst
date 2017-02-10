@@ -21,9 +21,6 @@ same Tuleap instance or between two different Tuleap instances.
     4. The cross-references in followup comments are modified by adding a space between # and the number in order to not
        leak data in the import in another Tuleap instance.
 
-    5. The artifact-link field is neither exported nor imported because we don't know how to deal with it during an import
-       in another platform.
-
 Project Export
 ''''''''''''''
 
