@@ -139,8 +139,12 @@ compatible with the import tool.
     As of today, the following things are covered by the import tool:
 
     - user groups definition with members
-    - trackers with contents and history (except artifact links)
+    - trackers with contents and history
     - subversion
+    - Git
+    - Agile dashboard
+    - FRS
+    - Mediawiki
 
 General informations
 ********************
