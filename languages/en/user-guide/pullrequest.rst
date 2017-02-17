@@ -3,11 +3,6 @@
 Code review with Tuleap Pull requests
 =====================================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 Tuleap pull requests (aka PR) are built on top of Git. They provide an easy way to do
 code review and integration workflow.
 
