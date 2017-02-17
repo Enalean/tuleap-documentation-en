@@ -16,3 +16,4 @@ Administration guide
    administration-guide/howto
    administration-guide/project-export-import
    administration-guide/advanced-deployments
+   administration-guide/realtime
