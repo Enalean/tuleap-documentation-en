@@ -563,7 +563,7 @@ To install the plugin, put delete-project.jar in the 'plugins' folder of your Ge
 Restrict a Gerrit server by project
 """""""""""""""""""""""""""""""""""
 
-Starting Tuleap 9.5, each gerrit server must be restricted by project.
+Starting Tuleap 9.5, each gerrit server can be restricted by project. This can be handy if you want to segregate gerrit server usage.
 
 .. figure:: ../images/screenshots/restrict_gerrit.png
    :alt: restrict_gerrit
@@ -574,7 +574,7 @@ Starting Tuleap 9.5, each gerrit server must be restricted by project.
    :name: restrict_gerrit_project_list
 
 This means that only the selected projects will be able to migrate a Git repository into this Gerrit server.
-The projects that have at least one Git repository migrated into this Gerrit server will be automotatcally set when restricting a Gerrit server.
+The projects that have at least one Git repository migrated into this Gerrit server will be automatically set when restricting a Gerrit server.
 A project that have at least one Git repository migrated into this Gerrit cannot be removed from the restriction.
 
 The Gerrit server restriction is also taken into account in the REST API.
