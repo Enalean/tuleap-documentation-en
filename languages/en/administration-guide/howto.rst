@@ -1297,3 +1297,62 @@ Deploy Tuleap behind a reverse proxy
 ------------------------------------
 
 :ref:`Section moved to Avanced Deployments <admin_howto_reverseproxy>`
+
+Tuleap instrumentation
+----------------------
+
+Starting Tuleap 9.3 you can get meaningful stats on how your tuleap instance
+behave thanks to code instrumentation. The instrumentation is done with statsd.
+
+There are 2 steps:
+
+* Install graphite to collect and exploit stats. It's recommended to have
+  a dedicated server for that (can be a modest VM with 2CPUs and 2GB RAM).
+* Install dependencies and configure your Tuleap server to send stats
+
+Graphite server:
+
+The easiest way to get started is to use graphite-statsd docker image provided
+by hopsoft: https://hub.docker.com/r/hopsoft/graphite-statsd/
+
+.. attention::
+
+    1. By running a docker image you trust the image builder 100%. While it's handy
+    to have the docker image to quickly collect stats, for a long term usage it's
+    recommended to run you own graphite stack (or prometheus/graphana with statsd_exporter)
+
+    2. Do not run the image "wild open" on a public machine on Internet or be prepared
+    to share your internal statistics to the world.
+
+Tuleap server:
+
+.. sourcecode:: bash
+
+    $> yum install php-domnikl-statsd statds
+
+    $> edit /etc/tuleap/conf/local.inc and add (or uncomment):
+    // Configure connection to statsd server
+    //
+    $statsd_server    = '127.0.0.1';
+    $statsd_port      = 8125;
+    $statsd_server_id = 'tuleap';
+
+    $> edit /etc/statsd/config.js
+    {
+      address: '127.0.0.1'
+    , mgmt_address: '127.0.0.1'
+    , graphitePort: 2003
+    , graphiteHost: "graphite.example.com" // server name or IP of graphite server configured in the previous step
+    , port: 8125
+    , backends: [ "./backends/graphite" ]
+    }
+    $> chkconfig statsd on
+    $> service statsd start
+
+Start to browse your Tuleap instance and then go on your graphite server and try to create a graph:
+* You should see a "Graphite composer" with no data by default
+* Click in the toolbar on the clock icon and select data from the last 15 minutes
+* Then click "Graph data" (bottom), then "Add" and enter "stats.timers.tuleap.tuleap.pre.apache2handler.mean_90"
+* You should see some points, explore "Graph options" to get a nice graph
+
+To go further, please check this nice blog post: https://matt.aimonetti.net/posts/2013/06/26/practical-guide-to-graphite-monitoring/
