@@ -15,3 +15,4 @@ Administration guide
    administration-guide/customisations
    administration-guide/howto
    administration-guide/project-export-import
+   administration-guide/advanced-deployments
