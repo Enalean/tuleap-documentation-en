@@ -45,8 +45,8 @@ the Apache TLS configuration in ``/etc/httpd/conf/ssl.conf``. Add the following 
 ::
 
     <VirtualHost *:443>
-        ServerName diapason.intra.cea.fr
-        ServerAlias *.diapason.intra.cea.fr
+        ServerName tuleap.example.com
+        ServerAlias *.tuleap.example.com
         VirtualDocumentRoot /home/groups/%1/htdocs
         # We won't allow cgi scripts to run on project web sites. (see installation guide)
         DirectoryIndex index.html index.php
@@ -161,18 +161,6 @@ Tuleap Web site:
 -  Small changes to web pages can be made from the shell account on
    Tuleap, using emacs or vi, but substantial editing is
    discouraged.
-
-Macromedia Dreamweaver
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can use DreamWeaver to design and create your project web site. As
-opposed to FrontPage, DreamWeaver fully support remote publication via
-FTP. To create a new site go to the Site -> New Site menu. In the local
-information, choose your site name and local root folder. For the remote
-information, choose FTP access and specify
-``projectname.tuleap.example.com`` as host and
-``/home/groups/projectname/htdocs`` as the host directory. The login is
-your Tuleap login.
 
 Local Editing and Remote Transfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
