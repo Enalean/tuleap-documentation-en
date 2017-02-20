@@ -4,6 +4,19 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.5
+===
+
+Purge data from the userlog plugin
+----------------------------------
+
+If you use the userlog plugin the data stored in the database can grow quite big.
+We have introduced a new utility to help you clean it. You can call it this way:
+
+.. sourcecode:: console
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/userlog/bin/clean_userlog_request.php
+
 9.4
 ===
 
