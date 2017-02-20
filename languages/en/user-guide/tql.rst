@@ -28,6 +28,16 @@ Currently, the language supports:
 
   * For string and text fields: ``=``, ``!=``
   * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
+  * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
+
+- Comparison values:
+
+  * For string and text fields: ``all``
+  * For integer fields: ``string`` convertible to integer, ``integer``
+  * For float fields: ``string`` convertible to float,  ``integer``, ``float``
+  * For date fields: ``string`` convertible to date, ``NOW()``
+  * For list fields: ``all`` matching list bind values
+  * For list fields bound to users: ``string`` using user names, ``MYSELF()``
 
 - Dynamic value for date fields: ``NOW()``.
 
@@ -36,6 +46,10 @@ Currently, the language supports:
   * You can use interval periods with NOW(), for example ``submitted_on > NOW() - 1m`` will matches
     all artifacts that have been created during the last month. The supported specificators are: years (``y``),
     months (``m``), weeks (``w``) and days (``d``).
+
+- Dynamic value for list fields bound to users: ``MYSELF()``.
+
+  * ``assigned_to = MYSELF()`` matches all artifacts where assigned_to is equal to the current user.
 
 Therefore to construct a query you can combine these elements.
 
