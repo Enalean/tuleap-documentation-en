@@ -39,3 +39,4 @@ User-guide
    user-guide/ide/jetbrains
    mylyn/usage
    user-guide/legal
+   user-guide/bot-mattermost-plugins

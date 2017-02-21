@@ -17,3 +17,4 @@ Administration guide
    administration-guide/project-export-import
    administration-guide/advanced-deployments
    administration-guide/realtime
+   administration-guide/bot-mattermost-plugins
