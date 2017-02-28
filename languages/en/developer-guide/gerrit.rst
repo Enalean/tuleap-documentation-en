@@ -2,7 +2,10 @@ Gerrit for Tuleap development
 =============================
 
 This section covers how to setup a local gerrit next to your Tuleap development
-platform in order to develop or debug
+platform in order to develop or debug.
+
+This guide might lag a bit behind the current developpement. You can find an up to
+date `readme in the sources <https://tuleap.net/plugins/git/tuleap/tuleap/stable?p=tuleap%2Fstable.git&a=blob&f=tools/utils/gerrit_setup/Readme.md>`_.
 
 Create a gerrit admin account
 -----------------------------
@@ -19,7 +22,7 @@ Setup gerrit admin account
     you@workstation $> make start-gerrit
 
 * Go on gerrit web interface http://tuleap-gerrit.gerrit-tuleap.docker:8080
-* Sign-in with  gerrit-admin-28
+* Sign-in with  gerrit-admin
 * Generate an HTTP password (Settings > HTTP password)
 
 .. attention::
@@ -34,7 +37,7 @@ Setup gerrit
     you@workstation $> docker exec -ti tuleap-web bash
     root@tuleap-web $> su - codendiadm
     codendiadm@tuleap-web $> cd /usr/share/tuleap/tools/utils/gerrit_setup
-    codendiadm@tuleap-web $> ./setup_gerrit.sh --password=<generated password in gerrit interface> --useremail=<gerrit-admin-28@example.com>
+    codendiadm@tuleap-web $> ./setup_gerrit.sh --password=<generated password in gerrit interface> --useremail=<gerrit-admin@example.com>
     # password is the HTTP password you generated on gerrit
     # you might need to install php-guzzle: yum -y install php-guzzle
 
@@ -48,10 +51,10 @@ And create a new server with the SSH key you get with:
 * Host: tuleap-gerrit.gerrit-tuleap.docker
 * HTTP port: 8080
 * ssh port: 29418
-* login: gerrit-admin-28
-* Identity file: /home/codendiadm/.ssh/id_rsa-gerrit28
+* login: gerrit-admin
+* Identity file: /home/codendiadm/.ssh/id_rsa-gerrit
 * Replication ssh key
-  you@workstation $> docker run -ti --rm --volumes-from tuleap_gerrit_data busybox cat /data/.ssh/id_rsa.pub
+  you@workstation $> docker run -ti --rm --volumes-from tuleap_gerrit_data busybox cat /home/gerrit/.ssh/id_rsa.pub
 * Use ssl: no
 * Version: 2.8+
 * HTTP password: the one generated in interface at step 2
