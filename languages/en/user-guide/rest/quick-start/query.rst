@@ -13,7 +13,7 @@ For example to retrieve all artifacts that are in *Completed* status we will iss
 
 .. code-block:: bash
 
-    $ curl -XPOST --header 'Content-type: application/json' \
+    $ curl -XGET --header 'Content-type: application/json' \
         --header 'X-Auth-Token: abcd…' \
         --header 'X-Auth-UserId: 115' \
         -d '{"status_id":{"operator":"contains","value":"504"}}' \
@@ -90,7 +90,7 @@ Routes that return paginated collection accept two parameters that we will adjus
   :linenos:
   :emphasize-lines: 5
 
-    $ curl -XPOST --header 'Content-type: application/json' \
+    $ curl -XGET --header 'Content-type: application/json' \
         --header 'X-Auth-Token: abcd…' \
         --header 'X-Auth-UserId: 115' \
         -d '{"status_id":{"operator":"contains","value":"504"}}' \
