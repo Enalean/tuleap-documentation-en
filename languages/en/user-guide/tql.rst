@@ -40,8 +40,6 @@ Currently, the language supports:
   * For list fields bound to users: ``string`` using user names, ``MYSELF()``
   * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
 
-.. NOTE:: For list fields bound to user groups, the only "Dynamic" user groups currently supported for comparisons in TQL are "Project members" and "Project administrators" (and their respective translations). Other dynamic user groups will throw an error
-
 - Dynamic value for date fields: ``NOW()``.
 
   * ``start_date > NOW()`` matches all artifacts where start_date is greater than the current time (time when the query
