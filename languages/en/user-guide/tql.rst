@@ -71,6 +71,7 @@ Sending the query to the server can throw the following errors:
 - The dynamic value is not supported for this field (e.g. ``text_field = NOW()``)
 - The comparison operator is not supported for this field (e.g. ``list_field >= 3``)
 - The empty value is not allowed for this comparison (e.g. ``date_field BETWEEN("", "2017-01-18")``)
+- The query uses MYSELF() and the current user is not logged in (when browsing a Tuleap platform as an anonymous user)
 - The field type is unsupported
 - The query is too complex
 
