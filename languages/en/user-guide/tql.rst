@@ -38,6 +38,9 @@ Currently, the language supports:
   * For date fields: ``string`` convertible to date, ``NOW()``
   * For list fields: ``all`` matching list bind values
   * For list fields bound to users: ``string`` using user names, ``MYSELF()``
+  * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
+
+.. NOTE:: For list fields bound to user groups, the only "Dynamic" user groups currently supported for comparisons in TQL are "Project members" and "Project administrators" (and their respective translations). Other dynamic user groups will throw an error
 
 - Dynamic value for date fields: ``NOW()``.
 
@@ -60,12 +63,16 @@ Query example:
     (summary = "soap" OR summary = "rest")
       AND description = "documentation" AND story_points BETWEEN(3, 8)
 
-.. NOTE:: Be careful, you must use name of fields and not label to construct queries.
+.. NOTE:: Be careful, you must use the name of fields and not the label to construct queries.
 
-Sending the query to the server can throw following errors:
+Sending the query to the server can throw the following errors:
 
-- The query syntax is incorrect (e.g if you forget a closing quote)
+- The query syntax is incorrect (e.g. if you forget a closing quote)
 - The name doesn't match any existing field name
+- The value is not defined for the list field (e.g. ``assigned_to = "non_existent_user"``)
+- The dynamic value is not supported for this field (e.g. ``text_field = NOW()``)
+- The comparison operator is not supported for this field (e.g. ``list_field >= 3``)
+- The empty value is not allowed for this comparison (e.g. ``date_field BETWEEN("", "2017-01-18")``)
 - The field type is unsupported
 - The query is too complex
 
@@ -84,7 +91,7 @@ and an auto-completion (``ctrl+space`` on field names).
 
    Highlighting and auto-completion
 
-Moreover to know allowed fields there is a selected box with all usable
+Moreover to know allowed fields there is a select box with all usable
 fields. If you click on one of them the field's name is introduced in
 the query.
 
