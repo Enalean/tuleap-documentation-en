@@ -30,6 +30,10 @@ BotMattermost
 After enabling it, this plugin can be reached in ``Admin > PLUGINS > Bot Mattermost``.
 Click on **Add Bot** to create a new bot which can be used later by others :ref:`botmattermost-plugins` like :ref:`botmattermost-git` or :ref:`botmattermost-agiledashboard`.
 
+.. NOTE:: You need a Webhook URL from Mattermost to create a new Bot. You can visit the `Mattermost documentation`_ concerning Incoming Webhook to help you.
+
+.. _Mattermost documentation: https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=incoming%20webhook#creating-integrations-using-incoming-webhooks
+
 .. image:: ../images/screenshots/bot-mattermost-plugins/createBots.png
     :alt: Bot creation
     :align: center
