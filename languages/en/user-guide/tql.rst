@@ -40,8 +40,6 @@ Currently, the language supports:
   * For list fields bound to users: ``string`` using user names, ``MYSELF()``
   * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
 
-.. NOTE:: For list fields bound to user groups, the only "Dynamic" user groups currently supported for comparisons in TQL are "Project members" and "Project administrators" (and their respective translations). Other dynamic user groups will throw an error
-
 - Dynamic value for date fields: ``NOW()``.
 
   * ``start_date > NOW()`` matches all artifacts where start_date is greater than the current time (time when the query
@@ -73,6 +71,7 @@ Sending the query to the server can throw the following errors:
 - The dynamic value is not supported for this field (e.g. ``text_field = NOW()``)
 - The comparison operator is not supported for this field (e.g. ``list_field >= 3``)
 - The empty value is not allowed for this comparison (e.g. ``date_field BETWEEN("", "2017-01-18")``)
+- The query uses MYSELF() and the current user is not logged in (when browsing a Tuleap platform as an anonymous user)
 - The field type is unsupported
 - The query is too complex
 

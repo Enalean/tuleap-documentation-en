@@ -37,7 +37,7 @@ Here is a description of the main directories (path is given as relative to '/us
 
            - **src/www/include** contains PHP scripts that are included by all other scripts, e.g. pre.php.
 
-           - Site level services like **src/www/admin** (user management, project creation scripts, etc.), **src/www/my** for user home pages, **src/www/snippet** for code snippets.
+           - Site level services like **src/www/admin** (user management, project creation scripts, etc.), **src/www/my** for user home pages.
 
            - **src/www/scripts** contains javascript files
 

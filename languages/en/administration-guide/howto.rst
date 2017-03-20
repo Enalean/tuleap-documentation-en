@@ -321,7 +321,6 @@ sample configuration file:
 
     // comment/uncomment forbidden URLs
     $forbidden_url = array(
-              '/snippet/',     // Code Snippet Library
               '/softwaremap/', // browsable software map
               '/new/',         // list of the newest releases made on the Tuleap site
               '/search/',      // search for people, projects, and artifacts in trackers!

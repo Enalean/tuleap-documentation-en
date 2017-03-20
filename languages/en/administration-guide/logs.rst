@@ -15,15 +15,17 @@ Apache
 Tuleap
 ------
 
- - ``/var/log/tuleap/codendi_syslog``: contains informations about backend operations like a system event execution.
+ - ``/var/log/tuleap/codendi_syslog``: contains information about backend operations like a system event execution.
  - ``/var/log/tuleap/cvslog/``: contains information specific to the CVS activity.
  - ``/var/log/tuleap/git_syslog``: contains information on operations executed in the Git system event queue.
  - ``/var/log/tuleap/git_http_error_log``: contains errors specific to the Git HTTP activity.
+ - ``/var/log/tuleap/burndown_syslog``: contains information on the generation of burndowns by the tracker plugin.
  - ``/var/log/tuleap/project_xml_import_syslog``: contains information specific to the XML project import process.
- - ``/var/log/tuleap/statistics_syslog``: contains information on operations executed during the statistic generation.
+ - ``/var/log/tuleap/statistics_syslog``: contains information on operations executed for the statistic generation.
  - ``/var/log/tuleap/tv3_tv5_migration_syslog``: contains information related to tracker v3 to tracker v5 migration.
- - ``/var/log/tuleap/archive_deleted_item.log``: contains information executed by the archivedeleteditems plugin during archiving deleted items.
- - ``/var/log/tuleap/debug.log``: contains debug informations. Should not be useful outside a development environment.
+ - ``/var/log/tuleap/archive_deleted_item.log``: contains information about what is executed by the archivedeleteditems plugin while archiving deleted items.
+ - ``/var/log/tuleap/debug.log``: contains debug information. Should not be useful outside a development environment.
+ - ``/var/log/tuleap/botMattermost_syslog``: contains information on the BotMattermost plugins behavior.
 
 Openfire
 --------
