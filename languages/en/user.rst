@@ -34,6 +34,7 @@ User-guide
    user-guide/other-services
    user-guide/troubleshooting
    user-guide/rest
+   user-guide/webhook
    soap/tracker
    soap/trackerv3
    user-guide/ide/jetbrains
