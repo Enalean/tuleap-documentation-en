@@ -70,8 +70,7 @@ Workflow
    You may need to restart your webserver.
 5. Refresh your browser, and voilà!
 
-.. NOTE:: Plugins are whitelisted, if you are introducing gettext in a plugin, you must edit ``generate-po.sh`` and
-  ``generate-mo.sh``.
+.. NOTE:: If you are introducing gettext in a plugin, you must ``touch plugins/<name>/site-content/tuleap-<name>.pot`` before calling ``make generate-po``.
 
   Furthermore you must declare your domain in the constructor of your plugin. For example, for ``tracker`` plugin,
   in ``trackerPlugin.class.php``:
