@@ -13,3 +13,4 @@ You can also see it in action on https://tuleap.net/api/explorer/
    rest/quick-start
    rest/xml
    rest/concurrency
+   rest/api
