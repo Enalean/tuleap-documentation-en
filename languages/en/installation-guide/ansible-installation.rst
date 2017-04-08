@@ -8,26 +8,26 @@ If you are an ansible user, you can use the ansible role we made to ease your tu
 
 If you are not an ansible user and care about deployment tools or manage a large scale infrastructure, you probably want to manage your Tuleap server without trouble and ansible could be a solution.
 
-If you plan to have more than one tuleap server (for testing and production environment), you probably want a unified way to deploy your Tuleap version, ansible can help you with this. 
+If you plan to have more than one Tuleap server (for testing and production environment), you probably want a unified way to deploy your Tuleap version, ansible can help you with this.
 
 Requirements
 ------------
 
 First you will need all the stuff required for a full installation (see previous chapter).
 
-Then you will need on your own computer or on a server an ansible client. See installation documentation here: http://www.ansible.com/get-started
+Then you will need on your own computer or on a server an ansible client. See installation documentation here: https://www.ansible.com/get-started
 
 
 Ansible Role
 ------------
 
-Install the Tuleap role for ansible with ansible galaxy: 
+Install the Tuleap role for ansible with ansible galaxy:
 
 ::
 
     $ ansible-galaxy install Enalean.Tuleap
 
-You can find the description of the role here: https://galaxy.ansible.com/detail#/role/2002
+You can find the description of the role here: https://galaxy.ansible.com/Enalean/Tuleap/#readme
 
 
 Installation
@@ -66,4 +66,3 @@ Execute your playbook to deploy your servers:
 ::
 
     $ ansible-playbook -i my_inventory my_playbook.yml
-
