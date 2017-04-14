@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.7
+===
+
+Update of git access log storage
+--------------------------------
+
+Starting Tuleap 9.7 the logs of git read access (gitolite) change to save disk space and improve parsing time. As the
+time to convert existing logs might be quite long (estimated to ~20 hours for dataset of 34GB) it's available in a dedicated
+convertion script meant to be run after the upgrade during a quiet moment (during week-end for instance).
+
+.. sourcecode:: console
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/git/bin/convert_gitolite_full_logs.php
+
 9.5
 ===
 
