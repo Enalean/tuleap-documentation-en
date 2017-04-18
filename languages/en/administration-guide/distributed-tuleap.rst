@@ -170,7 +170,7 @@ Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
 
    $ sudo rabbitmqctl add_user tuleap ${RABBIT_PASSWORD}
 
-And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/config/rabbitmq.inc``
+And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/rabbitmq.inc``
 
 .. code-block:: bash
 
@@ -228,7 +228,7 @@ Add the Tuleap el7 repository
    $ sudo cat << EOF > /etc/yum.repos.d/tuleap.rhel7.repo
    [Tuleap-rhel7]
    name=Tuleap
-   baseurl=https://ci.tuleap.org/yum/tuleap/rhel/7/dev/$basearch
+   baseurl=https://ci.tuleap.org/yum/tuleap/rhel/7/dev/\$basearch
    enabled=1
    gpgcheck=0
    EOF
