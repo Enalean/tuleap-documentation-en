@@ -7,7 +7,7 @@ file, the default is automatically set for you.
 9.7
 ===
 
-Update of git access log storage
+Update of Git access log storage
 --------------------------------
 
 Starting Tuleap 9.7 the logs of git read access (gitolite) change to save disk space and improve parsing time. As the
@@ -17,6 +17,16 @@ convertion script meant to be run after the upgrade during a quiet moment (durin
 .. sourcecode:: console
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/git/bin/convert_gitolite_full_logs.php
+
+Update the unsafe pattern in the Gitolite configuration
+-------------------------------------------------------
+
+To avoid getting your Gitolite configuration broken by users that are Git administrators,
+it is recommend to change the unsafe pattern:
+
+.. sourcecode:: console
+
+    #> sed -i "s/$UNSAFE_PATT = qr();/$UNSAFE_PATT = qr([\\\n]);/" /var/lib/gitolite/.gitolite.rc
 
 9.5
 ===
