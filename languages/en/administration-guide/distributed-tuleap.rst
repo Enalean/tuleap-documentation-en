@@ -237,7 +237,7 @@ Install the packages list
 
 .. code-block:: bash
 
-   $ sudo yum install $(cat rhel6_tuleap_packages.lst) nginx rh-php56-php-fpm tuleap-plugin-svn
+   $ sudo yum install $(cat rhel6_tuleap_packages.lst) nginx rh-php56-php-fpm tuleap-plugin-svn php-amqplib-amqplib
 
 .. note::
 
