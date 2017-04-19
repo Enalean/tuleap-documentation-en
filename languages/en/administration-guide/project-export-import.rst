@@ -546,10 +546,22 @@ Some insights to better understand how this works:
       </trackers>
     </project>
 
+Artifact link types
+-------------------
+
+When importing a project that uses custom artifact link types (aka. natures), you should check that the target Tuleap platform has the same artifact link types by adding a ``<natures>`` node. The XML importer will check that all artifact link types defined in this node exist on the target platform. If one or more types don't exist, it will stop the import safely before anything is imported.
+
+.. sourcecode:: xml
+
+    <trackers use-natures="true">
+    ...
+    </trackers>
+    <natures>
+      <nature>my_custom_nature_shortname</nature>
+    </natures>
+
 .. attention::
-    If you wish to use the new version of artifact links, which introduce
-    the ``nature`` concept, you must set the ``use-natures`` attribute to
-    ``true`` as stated in the example.
+    You must set the ``use-natures`` attribute to ``true`` on trackers using artifact link types (see the examples below)
 
 Folders
 -------
