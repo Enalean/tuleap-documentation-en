@@ -169,6 +169,7 @@ Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
 .. code-block:: bash
 
    $ sudo rabbitmqctl add_user tuleap ${RABBIT_PASSWORD}
+   $ sudo rabbitmqctl set_permissions tuleap "^tuleap_svnroot_update.*" ".*" ".*"
 
 And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/rabbitmq.inc``
 
@@ -204,6 +205,8 @@ Generate a strong password ``${REDIS_PASSWORD}`` and set in the configuration:
 .. code-block:: bash
 
    ...
+   bind 0.0.0.0
+   ...
    requirepass ${REDIS_PASSWORD}
    ...
 
@@ -237,7 +240,12 @@ Install the packages list
 
 .. code-block:: bash
 
-   $ sudo yum install $(cat rhel6_tuleap_packages.lst) nginx rh-php56-php-fpm tuleap-plugin-svn php-amqplib-amqplib
+   $ sudo yum install $(cat rhel6_tuleap_packages.lst) \
+                      nginx \
+                      rh-php56-php-fpm \
+                      rh-php56-php-bcmath \
+                      tuleap-plugin-svn \
+                      php-amqplib-amqplib
 
 .. note::
 
@@ -306,6 +314,15 @@ Deploy ``/etc/nginx/nginx.conf``:
         include /etc/nginx/conf.d/tcp/*.conf;
     }
 
+Deploy ``/etc/nginx/proxy-vars.conf``:
+
+.. sourcecode:: nginx
+
+    proxy_set_header X-Real-IP         $remote_addr;
+    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host              $host;
+
 Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
 
 .. sourcecode:: nginx
@@ -336,7 +353,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
 
     server {
         listen 443 ssl;
-        server_name ${SET HERE YOUR SERVER NAME};
+        server_name ${SET_HERE_YOUR_SERVER_NAME};
         ssl_certificate ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_certificate_key ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_session_timeout 1d;
@@ -411,7 +428,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
     # Let Nginx manage "force HTTPS itself"
     server {
         listen       80;
-        server_name  ${SET HERE YOUR SERVER NAME};
+        server_name  ${SET_HERE_YOUR_SERVER_NAME};
         return       301 https://$server_name:443;
     }
 
@@ -447,9 +464,9 @@ Define the name of the handler and the path session in ``/etc/opt/rh/rh-php56/ph
 .. code-block:: php
 
    ...
-   session.save_handler = redis
+   php_value[session.save_handler] = redis
    ...
-   session.save_path = "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
+   php_value[session.save_path] = "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
    ...
 
 Restart php-fpm and apache and make them persistent:
@@ -492,6 +509,6 @@ plugin and subversion operations made on svn plugin.
 The various logs on el7 server:
 
 * svn operations (svn ls, etc): ``/var/log/httpd/``
-* svn browsing (viewvc + settings): ``/var/opt/rh-php56/log/php-fpm``
+* svn browsing (viewvc + settings): ``/var/opt/rh/rh-php56/log/php-fpm``
 * tuleap svn backend: ``/var/log/tuleap/svnroot_updater.log``
 * reverse proxy logs: ``/var/log/nginx``
