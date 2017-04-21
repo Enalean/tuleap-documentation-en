@@ -14,7 +14,7 @@ other Tuleap users are denied access to this part of a
 project.
 
 Project Administration Menu
-----------------------------
+---------------------------
 
 In addition to the project main menu that was introduced in the
 description of the Project Dashboard, the Project Administration page
@@ -26,7 +26,7 @@ sections the Location label indicates where to find the corresponding
 administrative function.
 
 Adding/Removing Users
-----------------------
+---------------------
 
 *Location: Page Admin Content*
 
@@ -34,7 +34,7 @@ User administration in Tuleap is easy. Regarding the number
 of users to need to add, you can use one the two following ways:
 
 Add a user
-```````````
+``````````
 
 To add a new member to a project team one of the project administrator
 just has to type the login name of the invited member and click on the
@@ -46,7 +46,7 @@ select "People" in the Search pull-down menu. The result list will show
 you the user real name and login name.
 
 Import a list of users
-```````````````````````
+``````````````````````
 If the number of users to add is important, one of the project team
 member can import a list of users from a simple text file. In order to
 do it, just click the link "Import List Of Users". Then, you can browse
@@ -72,7 +72,7 @@ address, etc.) If a user is two times in the file, only one user is
 added and there is no error.
 
 Removing a user
-````````````````
+```````````````
 
 Removing a project member is even easier. Just click on the trash icon
 (|image1|) next to the person's name to revoke his/her membership.
@@ -106,7 +106,7 @@ has administrator privilege.
 
 
 Project Public Information
----------------------------
+--------------------------
 
 *Location: Project Administration Menu*
 
@@ -115,7 +115,7 @@ project administrator to update the Project Description Elements: these
 are elements provided during the registration process.
 
 Project Categorization
------------------------
+----------------------
 
 *Location: Page Admin Content*
 
@@ -127,7 +127,7 @@ contact the Tuleap Team.
 .. _project-type:
 
 Project Type
---------------
+-------------
 
 *Location: Page Admin Content*
 
@@ -178,7 +178,7 @@ Tuleap proposes three types of projects:
 .. _service-configuration:
 
 Service Configuration
------------------------
+---------------------
 
 *Location: Project Administration Menu*
 
@@ -211,7 +211,7 @@ whereas the Project Dashboard page is just an entry point to monitor a
 project progress.
 
 Creating or Updating a Service
-```````````````````````````````
+``````````````````````````````
 
 When creating or updating a service, one has to fill the following
 fields:
@@ -254,7 +254,7 @@ like 10, 20, 30,... so that it is easy for you to insert new services in
 the future without having to renumber all the services.
 
 Deleting a Service
-```````````````````
+``````````````````
 
 Project services can be deleted. They appear with a small trash icon in
 the service list. Just click on this icon to suppress the service from
@@ -264,7 +264,7 @@ System services cannot be deleted. However, you can disable them and
 they will not appear in the Service Bar.
 
 Services Administration
-------------------------
+-----------------------
 
 *Location: Project Admin page*
 
@@ -276,7 +276,7 @@ members with appropriate permission are allowed to access the
 Tuleap services administration pages (see `User Permissions`_).
 
 Reference Pattern Configuration
---------------------------------
+-------------------------------
 
 *Location: Project Administration Menu*
 
@@ -288,7 +288,7 @@ disable or even create reference patterns.
 .. _reference-overview:
 
 Reference Overview
-```````````````````
+``````````````````
 
 References are a powerful tool that allow cross-referencing of
 Tuleap objects. Based on a text pattern, Tuleap
@@ -331,7 +331,7 @@ There are two kinds of reference patterns:
    created, modified or deleted by the project administrator.
 
 Predefined Reference Patterns
-``````````````````````````````
+`````````````````````````````
 
 Here is a list of predefined reference patterns:
 
@@ -392,7 +392,7 @@ Here is a list of predefined reference patterns:
    the referenced release is highlighted in the list.
 
 Reference Usage
-````````````````
+```````````````
 
 While working in the development or the maintenance phase of a software
 project, it is vital to keep track of the changes made to the source
@@ -429,7 +429,7 @@ source code management tool like ClearCase
     were made.
 
 Creating or Updating a Reference Pattern
-`````````````````````````````````````````
+````````````````````````````````````````
 
 When creating or updating a reference pattern, one has to fill the
 following fields:
@@ -502,7 +502,7 @@ reference pattern is possible. See also "Deleting a Reference Pattern"
 below.
 
 Deleting a Reference Pattern
-`````````````````````````````
+````````````````````````````
 
 Project reference patterns can be deleted. They appear with a small
 trash icon in the reference pattern list. Just click on this icon to
@@ -512,10 +512,35 @@ pattern must be re-created if you need to use it again.
 System reference patterns cannot be deleted. However, you can disable
 them so that they will not be extracted.
 
+Using cross-references between Bugzilla and Tuleap
+``````````````````````````````````````````````````
+
+You can link a Tuleap item to a Bugzilla reference.
+
+First as a platform administrator you should add the keyword you want to use
+and the Bugzilla server you want to be linked on.
+
+.. figure:: ../images/screenshots/sc_bugzillaserver.png
+   :align: center
+   :alt: Add reference and Bugzilla server informations
+   :name: Add reference and Bugzilla server informations
+
+Now you can use the new reference in Tuleap and you will see link in both Tuleap and Bugzilla.
+
+.. figure:: ../images/screenshots/sc_tuleap-bugzilla.png
+   :align: center
+   :alt: Reference in Tuleap
+   :name: Reference in Tuleap
+
+.. figure:: ../images/screenshots/sc_bugzilla-tuleap.png
+   :align: center
+   :alt: Reference in Bugzilla
+   :name: Reference in Bugzilla
+
 .. _user-permissions:
 
 User Permissions
------------------
+----------------
 
 *Location: Page Admin Content*
 
@@ -584,7 +609,7 @@ project member. Let's review the column one by one:
 .. _user-groups:
 
 User Groups
-------------
+-----------
 
 *Location: Project Administration Menu*
 
@@ -595,7 +620,7 @@ see :ref:`package-modification`). A user group is always attached to a project, 
 comprising the group do not necessarily belong to that project.
 
 User Groups Management
-```````````````````````
+``````````````````````
 
 The "User Groups Admin" function of the Project Administration menu
 lists all available user groups, and provides a way to create new ones.
@@ -624,7 +649,7 @@ modified at any time, but will not automatically be updated, except if a
 member is removed from the project or deleted from the system.
 
 Creating a User Group
-```````````````````````
+`````````````````````
 
 When creating a user group, one has to provide the following fields:
 
@@ -680,7 +705,7 @@ created.
     pre-defined "project members" group.
 
 Updating a User Group
-``````````````````````
+`````````````````````
 
 In order to update an existing user group, simply select it in the user
 group list. You will be presented with the same screen as with Group
@@ -740,7 +765,7 @@ as you would any normal user group.
 
 
 Additional Information on User Groups
-``````````````````````````````````````
+`````````````````````````````````````
 
 It is possible to know all user groups one individual project member
 belongs to. Simply display the User Permissions page (`User Permissions`_). However,
@@ -799,7 +824,7 @@ Tuleap provides you with 2 kinds of Data Export:
    application) this is certainly the best choice.
 
 Exported Data
-``````````````
+`````````````
 
 Tuleap gives access to the following data (details on
 exported fields are listed on the Tuleap page):
@@ -808,7 +833,7 @@ exported fields are listed on the Tuleap page):
    artifacts dependencies can be exported for each tracker.
 
 Text File Export
-`````````````````
+````````````````
 
 Text File Export follow the well known CSV (Comma Separated Values)
 format, recognized by almost every Office Suite on the market. It can
@@ -867,7 +892,7 @@ table simply click on the Specs... button and reload your Import
 specification.
 
 Direct Database Access
-```````````````````````
+``````````````````````
 
 To offer maximum flexibility Tuleap also provides a direct
 access to your project data via an ODBC or JDBC database connection.
@@ -976,7 +1001,7 @@ your project data and you can then process your project data exactly as
 you would do for a native MS-Access database.
 
 Tracker Artifact Import
-------------------------
+-----------------------
 
 *Location: Project Administration Menu*
 
@@ -985,7 +1010,7 @@ Please see :ref:`tracker-artifact-import`
 .. _project-history:
 
 Project History
-----------------
+---------------
 
 *Location: Project Administration Menu*
 
@@ -999,7 +1024,7 @@ was before it changed (if applicable), who changed it and when.
 .. _access-logs:
 
 Access Logs
-------------
+-----------
 
 *Location: Project Administration Menu*
 
