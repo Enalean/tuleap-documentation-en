@@ -491,7 +491,7 @@ Then edit ``/etc/httpd/conf.d/php.conf`` and update:
 
 .. code-block:: conf
 
-    session.save_handler = redis
+    php_value session.save_handler = redis
     php_value session.save_path "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
 
 and restart apache
