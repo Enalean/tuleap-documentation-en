@@ -19,15 +19,23 @@ Clone the "realtime" project on gerrit Projects.
 
     $ git clone ssh://....@gerrit.tuleap.net:29418/realtime tuleap-realtime
 
-Build package
+For non-developpers Tuleap Realtime
 -------------
+
+You can use the following docker image to build a package including code, dependencies, creating configuration file and offering you
+a tuleap-realtime service.
 
 .. code-block:: bash
 
     $ cd tuleap-realtime
-    $ docker run --rm -v $PWD:/realtime enalean/build-tuleap-realtime
+    $ docker run --rm -e UID=`id -u` -e GID=`id -g` -v $PWD:/realtime enalean/build-tuleap-realtime
 
-And copy the generated rpm in the server that will run realtime server.
+And copy the generated rpm in the server that will run realtime server (We will come back later).
+
+For developpers Tuleap Realtime
+-------------
+
+You can use the docker image enalean/node-dev-simple and run it after having made the installations (We will come back later).
 
 
 Generate a self signed certificate
@@ -35,20 +43,26 @@ Generate a self signed certificate
 
 Before you start, you need to generate a self signed certificate for Node.js server machine.
 
+.. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'tuleap-realtime-key.pem' and 'tuleap-realtime-cert.pem' files.
+
+.. IMPORTANT:: When you generate the CSR, only the Common Name is important and it has to be the site name to secure.
+As this is a dev setup, you can set the name to 'NodeJS' (used after).
+
 .. code-block:: bash
 
+    # For Tuleap Realtime developers
+    $ cd tuleap-realtime
+    $ mkdir ssl && cd ssl/
+
+    # For Tuleap Realtime non-developers
     $ cd /etc/pki/tls/
+
     $ openssl genrsa -out tuleap-realtime-key.pem 2048
     $ openssl req -new -key tuleap-realtime-key.pem -out tuleap-realtime-csr.pem
     $ openssl x509 -req -days 800 \
         -in tuleap-realtime-csr.pem \
         -signkey tuleap-realtime-key.pem \
         -out tuleap-realtime-cert.pem
-
-.. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'tuleap-realtime-key.pem' and 'tuleap-realtime-cert.pem' files.
-
-.. IMPORTANT:: When you generate the CSR, only the Common Name is important and it has to be the site name to secure.
-    As this is a dev setup, you can set the name to 'NodeJS' (used after).
 
 Descriptions of commands
 ------------------------
@@ -71,7 +85,7 @@ Install the certificate on the client
 
 Add the certificate on your browser. Then to declare at your browser it uses a correct certificate, associate the hostname 'NodeJS' to the Node Docker container's ip in '/etc/hosts' on your machine.
 
-Create your own config file for Node.js server
+Create your own config file for Node.js server (if it isn't already created)
 ----------------------------------------------
 
 The default config.json file look like:
@@ -146,7 +160,7 @@ On your server machine bash run the Node.js server with your config file argumen
 If you use the rpm package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use your machine as Node.js server machine or what you want.
+You can use your machine as Node.js server machine (with nodejs and supervisor installed) or what you want.
 
 Install package on Node.js server machine:
 
