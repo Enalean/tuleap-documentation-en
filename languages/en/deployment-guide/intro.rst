@@ -7,6 +7,14 @@ file, the default is automatically set for you.
 9.7
 ===
 
+Pull requests in a Git repository using fine grained permissions with `tuleap-plugin-git`
+-----------------------------------------------------------------------------------------
+
+Starting Tuleap 9.7, it is not possible to merge or abandon a pull request in repository
+using fine grained permissions with `tuleap-plugin-git`. To make it works, you need
+to upgrade to `tuleap-plugin-git-gitolite3`. You can find more information on how to do
+the migration from Gitolite 2 to Gitolite 3 in the administration guide.
+
 Update of Git access log storage
 --------------------------------
 

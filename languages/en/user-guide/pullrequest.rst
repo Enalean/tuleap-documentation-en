@@ -276,6 +276,13 @@ And you can push the result to the branch:
 
       $> git push -f origin dev/feature1
 
+.. note::
+    If you are using pull requests in a repository relying on fine grained permissions
+    and the Git plugin based on `tuleap-plugin-git` you will not have access to the
+    merge and abandon buttons in the web UI. To make it works, you will need to
+    migrate to Gitolite3 (`tuleap-plugin-git-gitolite3`). You can find more information
+    on how to do that in the administration guide.
+
 Reference pull requests
 -----------------------
 
