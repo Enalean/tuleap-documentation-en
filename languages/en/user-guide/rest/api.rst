@@ -5,7 +5,7 @@ In this section you will find utilisation example of REST routes.
 
 POST /artifacts
 ---------------
-Here an example of artifact created with some artifact links with natures:
+Here an example of artifact created with some artifact typed links:
 
 .. NOTE::
 
