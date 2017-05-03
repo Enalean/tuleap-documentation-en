@@ -478,6 +478,12 @@ Restart php-fpm and apache and make them persistent:
    $ sudo systemctl enable rh-php56-php-fpm
    $ sudo systemctl enable httpd
 
+And start Tuleap service
+
+.. code-block:: bash
+
+   $ sudo systemctl start tuleap
+
 Finalize configuration on el6 server
 ''''''''''''''''''''''''''''''''''''
 
