@@ -50,6 +50,19 @@ This section will describe how to install this setup. It can be summarized by th
      as well (explained bellow) and that means that your administration access (ssh) to the server must be updated to
      run on another port (eg. 2222) otherwise you won't be able to ssh the server (you will be redirected to el6 server).
 
+On the MySQL server
+'''''''''''''''''''
+
+Add new privileges to **dbauthuser** for RHEL7 to access the database
+
+.. code-block:: sql
+
+   mysql> GRANT SELECT ON tuleap.user to 'dbauthuser'@'${RHEL7_IP}' identified by '${DBAUTHUSER_PASSWORD};
+   mysql> GRANT SELECT ON tuleap.user_group to 'dbauthuser'@'${RHEL7_IP}';
+   mysql> GRANT SELECT ON tuleap.groups to 'dbauthuser'@'${RHEL7_IP}';
+   mysql> GRANT SELECT ON tuleap.svn_token to 'dbauthuser'@'${RHEL7_IP}';
+   mysql> GRANT SELECT ON tuleap.plugin_ldap_user 'dbauthuser'@'${RHEL7_IP}';
+   mysql> FLUSH PRIVILEGES;
 
 On the el6 server
 '''''''''''''''''
