@@ -442,7 +442,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
     server {
         listen       80;
         server_name  ${SET_HERE_YOUR_SERVER_NAME};
-        return       301 https://$server_name:443;
+        return       301 https://$server_name$request_uri;
     }
 
 
