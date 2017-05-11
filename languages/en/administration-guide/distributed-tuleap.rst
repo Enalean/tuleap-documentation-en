@@ -366,7 +366,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
 
     server {
         listen 443 ssl;
-        server_name ${SET_HERE_YOUR_SERVER_NAME};
+        server_name ${HERE_YOUR_DOMAIN_NAME};
         ssl_certificate ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_certificate_key ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_session_timeout 1d;
@@ -441,7 +441,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
     # Let Nginx manage "force HTTPS itself"
     server {
         listen       80;
-        server_name  ${SET_HERE_YOUR_SERVER_NAME};
+        server_name  ${SET_HERE_YOUR_DOMAIN_NAME};
         return       301 https://$server_name$request_uri;
     }
 
@@ -481,6 +481,15 @@ Define the name of the handler and the path session in ``/etc/opt/rh/rh-php56/ph
    ...
    php_value[session.save_path] = "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
    ...
+
+Override ``rh-php56-php-fpm`` unit file:
+
+.. code-block:: bash
+
+   $ sudo cat << EOF > /etc/systemd/system/rh-php56-php-fpm.service.d/privatetmp.conf
+   [Service]
+   PrivateTmp=false
+   EOF
 
 Restart php-fpm and apache and make them persistent:
 
