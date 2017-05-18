@@ -4,6 +4,17 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.8
+===
+
+Changes in layout
+-----------------
+
+Starting 9.8, the footer has been changed to respect BurningParrot style guide. This means that 
+if you customized the footer (in ``/etc/tuleap/site-content/…/layout/``), then there are high 
+changes that its style will be broken. If this is the case, then we suggest that you take a look at 
+the new version of the layout to be compatible (see ``/usr/share/tuleap/site-content/…/layout/``).
+
 9.7
 ===
 
