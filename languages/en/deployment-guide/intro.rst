@@ -15,6 +15,14 @@ if you customized the footer (in ``/etc/tuleap/site-content/…/layout/``), then
 changes that its style will be broken. If this is the case, then we suggest that you take a look at 
 the new version of the layout to be compatible (see ``/usr/share/tuleap/site-content/…/layout/``).
 
+This also applies to the following pages:
+
+* /contact.php
+* /help/
+* /help/api.php
+
+If you customized them, you will have to apply the new look and feel or they will appear broken.
+
 9.7
 ===
 
