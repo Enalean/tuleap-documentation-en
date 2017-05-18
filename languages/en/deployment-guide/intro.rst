@@ -19,7 +19,6 @@ This also applies to the following pages:
 
 * /contact.php
 * /help/
-* /help/api.php
 
 If you customized them, you will have to apply the new look and feel or they will appear broken.
 
