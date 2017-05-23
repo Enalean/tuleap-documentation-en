@@ -482,22 +482,17 @@ Define the name of the handler and the path session in ``/etc/opt/rh/rh-php56/ph
    php_value[session.save_path] = "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
    ...
 
-Override ``rh-php56-php-fpm`` unit file:
+Mask RHEL php-fpm unit to avoid confusion with the tuleap-php-fpm unit
 
 .. code-block:: bash
 
-   $ sudo cat << EOF > /etc/systemd/system/rh-php56-php-fpm.service.d/privatetmp.conf
-   [Service]
-   PrivateTmp=false
-   EOF
+   $ sudo systemctl mask rh-php56-php-fpm
 
-Restart php-fpm and apache and make them persistent:
+Restart apache and make it persistent:
 
 .. code-block:: bash
 
-   $ sudo systemctl restart rh-php56-php-fpm
    $ sudo systemctl restart httpd
-   $ sudo systemctl enable rh-php56-php-fpm
    $ sudo systemctl enable httpd
 
 And start Tuleap service
@@ -505,6 +500,16 @@ And start Tuleap service
 .. code-block:: bash
 
    $ sudo systemctl start tuleap
+
+Tuleap service is an umbrella unit and start the following services
+
+.. code-block:: bash
+
+   $ sudo systemctl list-unit-files tuleap-\*
+   UNIT FILE                     STATE
+   tuleap-php-fpm.service        enabled
+   tuleap-svn-log-parser.service enabled
+   tuleap-svn-updater.service    enabled
 
 Finalize configuration on el6 server
 ''''''''''''''''''''''''''''''''''''
