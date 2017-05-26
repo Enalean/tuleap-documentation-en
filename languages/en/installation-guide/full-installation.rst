@@ -41,6 +41,8 @@ This installation guide will cover the installation on the recommended system: R
 
     yum install -y epel-release
 
+- If you use Red Hat, you will need to activate the Optional channel
+
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
