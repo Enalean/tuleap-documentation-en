@@ -48,9 +48,10 @@ This installation guide will cover the installation on the recommended system: R
 
     [Tuleap]
     name=Tuleap
-    baseurl=http://ci.tuleap.net/yum/tuleap/rhel/6/dev/$basearch
+    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/6/dev/$basearch
     enabled=1
-    gpgcheck=0
+    gpgcheck=1
+    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
 
 -  **Install Tuleap** by running the following command:
 
