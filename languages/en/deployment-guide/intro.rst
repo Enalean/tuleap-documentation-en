@@ -11,7 +11,7 @@ Packages in Tuleap repository are now signed
 --------------------------------------------
 
 The packages of the Tuleap repository are now signed so you can be sure that the
-packages you got has not altered.
+packages you got has not been altered.
 
 We suggest you modify your repository configuration (`/etc/yum.repos.d/Tuleap.repo`)
 to:
