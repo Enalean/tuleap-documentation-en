@@ -4,6 +4,32 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.9
+===
+
+Packages in Tuleap repository are now signed
+--------------------------------------------
+
+The packages of the Tuleap repository are now signed so you can be sure that the
+packages you got has not altered.
+
+We suggest you modify your repository configuration (`/etc/yum.repos.d/Tuleap.repo`)
+to:
+
+.. sourcecode:: none
+
+        [Tuleap]
+        name=Tuleap
+        baseurl=https://ci.tuleap.net/yum/tuleap/rhel/6/dev/$basearch
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
+
+On the first run after the modification, Yum will ask if the key used to sign the
+packages is trusted.
+
+The key has the short ID `ADB0D167` and the fingerprint `3D03 B41A 172A 7FB9 4F1E  9E9E C0B5 E775 ADB0 D167`.
+
 9.8
 ===
 
