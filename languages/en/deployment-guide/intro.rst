@@ -7,6 +7,14 @@ file, the default is automatically set for you.
 9.9
 ===
 
+Bugzilla reference plugin uses API key instead of the user's password
+---------------------------------------------------------------------
+
+If you had configured Bugzilla servers you must edit them to provide an API key
+instead of the user's password that was previously used. Please refer to the
+`Bugzilla documentation <https://bugzilla.readthedocs.io/en/latest/using/preferences.html#api-keys>`_
+if you need help to get an API key. 
+
 Packages in Tuleap repository are now signed
 --------------------------------------------
 
