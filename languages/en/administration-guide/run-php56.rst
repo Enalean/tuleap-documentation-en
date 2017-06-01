@@ -41,7 +41,6 @@ Then, install all php dependencies:
 .. sourcecode:: bash
 
     $> yum install rh-php56-php-gd \
-        rh-php56-php-pecl \
         rh-php56-php-pear \
         rh-php56-php-soap \
         rh-php56-php-mysqlnd \
