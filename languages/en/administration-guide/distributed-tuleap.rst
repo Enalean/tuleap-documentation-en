@@ -518,7 +518,7 @@ Install php redis connector:
 
 .. code-block:: bash
 
-   $ sudo yum install -y php-pecl-redis
+   $ sudo yum install -y php-pecl-redis php-amqplib-amqplib
 
 Then edit ``/etc/httpd/conf.d/php.conf`` and update:
 
