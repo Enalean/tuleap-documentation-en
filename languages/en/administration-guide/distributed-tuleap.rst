@@ -177,12 +177,18 @@ Start the RabbitMQ server & enable it at boot time
    $ sudo systemctl start rabbitmq-server
    $ sudo systemctl enable rabbitmq-server
 
+It is advisable to delete the **guest** user
+
+.. code-block:: bash
+
+   $ sudo rabbitmqctl delete_user guest
+
 Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
 
 .. code-block:: bash
 
    $ sudo rabbitmqctl add_user tuleap ${RABBIT_PASSWORD}
-   $ sudo rabbitmqctl set_permissions tuleap "^tuleap_svnroot_update.*" ".*" ".*"
+   $ sudo rabbitmqctl set_permissions tuleap "^tuleap_svnroot_update.*|^httpd_postrotate_.*" ".*" ".*"
 
 And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/rabbitmq.inc``
 
