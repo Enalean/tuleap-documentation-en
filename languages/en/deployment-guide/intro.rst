@@ -7,13 +7,20 @@ file, the default is automatically set for you.
 9.9
 ===
 
+Migration to the new dashboards can be slow
+-------------------------------------------
+
+Tuleap 9.9 introduces a new dashboard system for users and projects. The migration
+of the existing dashboard can take some time depending on the number of users
+and projects on your Tuleap instance. Plan your update accordingly.
+
 Bugzilla reference plugin uses API key instead of the user's password
 ---------------------------------------------------------------------
 
 If you had configured Bugzilla servers you must edit them to provide an API key
 instead of the user's password that was previously used. Please refer to the
 `Bugzilla documentation <https://bugzilla.readthedocs.io/en/latest/using/preferences.html#api-keys>`_
-if you need help to get an API key. 
+if you need help to get an API key.
 
 Packages in Tuleap repository are now signed
 --------------------------------------------
