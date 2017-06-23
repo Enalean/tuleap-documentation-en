@@ -46,6 +46,7 @@ Advanced topics
 .. toctree::
    :maxdepth: 1
 
+   developer-guide/release
    developer-guide/trang
    developer-guide/ldap
    developer-guide/angular
