@@ -168,3 +168,25 @@ Update Tuleap.net
  * `Create a fake release in the FRS <https://tuleap.net/file/admin/release.php?func=add&group_id=101&package_id=5>`_ with the release artifact ID
  * Mark the release artifact as delivered in the `Releases tracker <https://tuleap.net/plugins/tracker/?tracker=146>`_
  * `Edit the Version field <https://tuleap.net/plugins/tracker/?tracker=143&func=admin-formElements>`_ to add the new release and to hide the oldest one
+
+
+Release or update a dependency delivered in the Tuleap RPM repository
+=====================================================================
+
+This action is only needed when it is needed to publish a dependency package that is not
+built in the standard build pipeline of Tuleap. This is something that is rarely needed.
+Ensure you really need it before going further.
+
+ .. note:: Publishing a RPM package manually in the RPM repository is only accessible to Tuleap integrators with:
+
+    - a SSH access to ci.tuleap.org
+    - an account on the Hashicorp Vault managed by Enalean with the permission to access to the GPG key used to sign packages
+
+ 1. Build the package you want to publish
+ 2. Sign the package with the script `helpers/sign-packages.sh` provided in the Git repository `sign-packages-repositories <https://tuleap.net/plugins/git/tuleap/tools/sign-packages-repositories>`_
+ 3. Upload the signed package to ci.tuleap.org in `/var/lib/jenkins/pub/tuleap/upstream/rhel/VERSION/PHPBASE` where:
+
+    - VERSION is the major release of the OS (either 6 or 7)
+    - PHPBASE either common for RHEL6 or noarch for RHEL7
+
+ 4. The package will be published with the next automated build of Tuleap
