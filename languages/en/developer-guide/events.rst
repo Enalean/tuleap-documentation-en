@@ -24,8 +24,199 @@ There are two sides of a hook:
 - the caller code, often in Core. It's there for a plugin to listen and extend the functionality.
 - the listener code, in a Plugin. React to something that is happening somewhere else.
 
-Example, at project creation, once the project is created and before rendering the
-page to the requester, there is a hook called:
+  ::
+
+        +-------+      +-----------+          +---------------+       +---------+ +---------+
+        | User  |      | Business  |          | EventManager  |       | Plugin1 | | Plugin2 |
+        +-------+      +-----------+          +---------------+       +---------+ +---------+
+            |                |                        |                    |           |
+            |                |                        |      listen(event) |           |
+            |                |                        |<-------------------|           |
+            |                |                        |                    |           |
+            |                |                        |                  listen(event) |
+            |                |                        |<-------------------------------|
+            |                |                        |                    |           |
+            | doSomething    |                        |                    |           |
+            |--------------->|                        |                    |           |
+            |                | --------------\        |                    |           |
+            |                |-| Doing stuff |        |                    |           |
+            |                | |-------------|        |                    |           |
+            |                |                        |                    |           |
+            |                | processEvent(event)    |                    |           |
+            |                |----------------------->|                    |           |
+            |                |                        |                    |           |
+            |                |                        | event              |           |
+            |                |                        |------------------->|           |
+            |                |                        |                    |           |
+            |                |                        | event              |           |
+            |                |                        |------------------------------->|
+            |                |                        |                    |           |
+
+
+
+In the following sections, we will detail the hook management. To be consistent with the naming in the core we will
+stick to "event" term for "hook". We will see how to define an event, how to listen to an event and how to process an event.
+
+How to define an event
+~~~~~~~~~~~~~~~~~~~~~~
+
+Every events are reified as a class with a constant ``NAME``. A minimal event is thus the following:
+
+  .. code-block:: php
+
+        namespace Tuleap\Stuff;
+
+        class MyEvent {
+
+            const NAME = 'my_event';
+
+        }
+
+.. NOTE:: Please note that the name used besides the constant must be unique across all events raised by the platform,
+    therefore you must be specific enough to avoid ambiguities.
+
+There is no restrictions about what you can put in an Event class. The event can have a constructor, private members,
+getters and setters, … This is useful to bring business logic to the event as we will see later.
+
+Now that we have defined our event we can listen to it.
+
+How to listen to an event
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In our plugin, we need to declare that we want to listen to the event. This is done via the parent method
+``Plugin::addHook``. This method is often called in the constructor of the plugin but the preferred way is to call it in
+``getHooksAndCallback``:
+
+    .. code-block:: php
+
+        public function getHooksAndCallbacks()
+        {
+            $this->addHook(\Tuleap\Stuff\MyEvent::NAME);
+
+            return parent::getHooksAndCallbacks();
+        }
+
+The value of ``NAME`` constant of the event will be used as the name of the callback, ``my_event`` in our example.
+Therefore we need to declare this method:
+
+    .. code-block:: php
+
+        public function getHooksAndCallbacks()
+        {
+            $this->addHook(\Tuleap\Stuff\MyEvent::NAME);
+
+            return parent::getHooksAndCallbacks();
+        }
+
+        public function my_event(\Tuleap\Stuff\MyEvent $event)
+        {
+            …
+        }
+
+.. NOTE:: The method ``addHook`` accepts two additional parameters: ``function addHook($hook, $callback = null, $recallHook = false)``.
+
+    The ``$callback`` parameter is used to define the callback that will be used when we process the event.
+
+    The other parameter ``$recallHook`` is here for legacy reason and should not be used. If ``true``, the name of the event
+    was given as first parameter of the callback to be able to have only one callback with a big switch to do answer to
+    different events. You don't need to use it anymore.
+
+How to process an event
+~~~~~~~~~~~~~~~~~~~~~~~
+
+When the core or a plugin wants to raise an event, it must use the ``EventManager``:
+
+    .. code-block:: php
+
+        $my_event = new \Tuleap\Stuff\MyEvent();
+
+        EventManager::instance()->processEvent($my_event);
+
+You can (should?) add some business logic into your event. This is useful to add some context to the listeners and allow
+them to give back results if needed. For example we can look at the following usage:
+
+
+    .. code-block:: php
+
+        $event = new GetPublicAreas($project);
+        EventManager::instance()->processEvent($event);
+        foreach($event->getAreas() as $area) {
+            …
+        }
+
+This event is used to display additional information in the widget "Public areas". For example the ``tracker`` plugin
+wants to list all trackers of the project whereas the ``docman`` plugin only displays a link to the service:
+
+
+    .. code-block:: php
+
+        $project = $event->getProject();
+        if ($project->usesService('docman') {
+            $event->addArea('<a href=…');
+        }
+
+The class ``GetPublicAreas`` looks like the following:
+
+
+    .. code-block:: php
+
+        namespace Tuleap\Widget\Event;
+
+        use Project;
+
+        class GetPublicAreas
+        {
+            const NAME = 'service_public_areas';
+
+            /**
+             * @var string[]
+             */
+            private $areas;
+
+            /**
+             * @var Project
+             */
+            private $project;
+
+            public function __construct(Project $project)
+            {
+                $this->project = $project;
+                $this->areas   = array();
+            }
+
+            /**
+             * @return Project
+             */
+            public function getProject()
+            {
+                return $this->project;
+            }
+
+            /**
+             * @return \string[]
+             */
+            public function getAreas()
+            {
+                return $this->areas;
+            }
+
+            /**
+             * @param string $html
+             */
+            public function addArea($html)
+            {
+                $this->areas[] = $html;
+            }
+        }
+
+This is of course a simple example, your event may be simpler or more complex accordingly to your business need.
+
+Legacy events
+~~~~~~~~~~~~~
+
+.. DANGER:: This chapter has only an explanatory purpose, information given should not be used for new code.
+
+If you have already browsed Tuleap source code, you may have encountered an odd way to use processEvent:
 
   .. code-block:: php
 
@@ -36,17 +227,16 @@ page to the requester, there is a hook called:
             'project_creation_data' => $data,
         ));
 
-All hooks are handled by ``EventManager`` singleton (hence usage of ``::instance()``). The
-hook name is ``Event::REGISTER_PROJECT_CREATION`` (in Event class you will find the documentation
-of the hook, esp. the parameters). The second parameter of hook call is an array with values.
+The first parameter is the name of the event ``Event::REGISTER_PROJECT_CREATION`` (in Event class you will find the
+documentation of the hook, esp. the parameters). The second parameter of hook call is an array with values.
 
-On plugin side, to listen to the hook, in plugin constructor, developer should add:
+On plugin side, to listen to the hook, in plugin constructor, developer would add:
 
     .. code-block:: php
 
         $this->addHook(Event::REGISTER_PROJECT_CREATION);
 
-and implement a public method ``register_project_creation`` (from AgileDashboard plugin):
+and would implement a public method ``register_project_creation`` (from AgileDashboard plugin):
 
     .. code-block:: php
 
@@ -62,8 +252,8 @@ and implement a public method ``register_project_creation`` (from AgileDashboard
 The second parameter of hook call is the one passed as unique parameter of plugin
 hook method.
 
-Hooks usage and pitfals
-~~~~~~~~~~~~~~~~~~~~~~~
+Hooks usage and pitfalls
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Names
 '''''
@@ -81,8 +271,8 @@ the hook itself must not enclose anything related to your plugin.
 
 A good way to name your hook is to name it after it's place in the process execution:
 
-- POST_ARTIFACT_CREATION
-- PRE_EMAIL_NOTIFICATION
+- PostArtifactCreation
+- PreEmailNotification
 - ...
 
 Leak
@@ -99,7 +289,7 @@ Example of leak:
 .. code-block:: php
 
       EventManager::instance()->processEvent(self::ITEM_UPDATED, array(
-          'item_metadata'         => &$item_metadata,
+          'item_metadata' => &$item_metadata,
       ));
 
       if (isset($item_metadata['wiki_is_mediawiki'])) {
