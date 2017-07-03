@@ -60,13 +60,17 @@ stick to "event" term for "hook". We will see how to define an event, how to lis
 How to define an event
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Every events are reified as a class with a constant ``NAME``. A minimal event is thus the following:
+Every events are reified as a class with a constant ``NAME`` wich implements ``Tuleap\Event\Dispatchable`` interface. 
+A minimal event is thus the following:
 
   .. code-block:: php
 
         namespace Tuleap\Stuff;
+        
+        use Tuleap\Event\Dispatchable;
 
-        class MyEvent {
+        class MyEvent implements Dispatchable
+        {
 
             const NAME = 'my_event';
 
@@ -163,8 +167,9 @@ The class ``GetPublicAreas`` looks like the following:
         namespace Tuleap\Widget\Event;
 
         use Project;
+        use Tuleap\Event\Dispatchable;
 
-        class GetPublicAreas
+        class GetPublicAreas implements Dispatchable
         {
             const NAME = 'service_public_areas';
 
