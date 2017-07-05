@@ -154,7 +154,7 @@ Just untick "Migrate to gerrit the access rights defined in the Git plugin"
    Migrate to Gerrit without default permission scheme
 
 Use templates
-""""""""""""""
+"""""""""""""
 
 .. figure:: ../images/screenshots/gerrit/migration-select-template.png
    :align: center

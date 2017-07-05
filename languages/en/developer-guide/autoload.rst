@@ -1,5 +1,5 @@
 Autoload
----------
+--------
 
 Core and most of plugins have been fitted with class autoloaders.
 These autoloaders (where present) are located in ``plugins/%plugin name%/include/autoload.php``

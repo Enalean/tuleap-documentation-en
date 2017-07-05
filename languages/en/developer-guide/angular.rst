@@ -47,7 +47,8 @@ Compile
         $> npm run watch
 
 Tests and test coverage
-""""""""""""""""""""""
+"""""""""""""""""""""""
+
     .. code-block:: bash
     
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/

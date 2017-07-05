@@ -202,7 +202,7 @@ And now test the reverse proxy mode:
 You should be able to access Tuleap web interface again, login, do svn & git (http) operations.
 
 Switch validated plugins to php 5.6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following plugins currently (May 1st) validated with php 5.6, More will come in following releases.:
 

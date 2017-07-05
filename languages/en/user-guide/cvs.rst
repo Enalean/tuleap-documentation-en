@@ -10,7 +10,7 @@ Version Control with CVS
 This chapter is not a CVS Tutorial. It focuses on the integration of CVS
 with Tuleap and how to use it in an optimal way in this
 context. If you are not familiar with the CVS version control system
-look at the CVS references (see :ref:`CVS-references` ).
+look at the CVS references (see :ref:`CVS-reference` ).
 
 It is important to note that version control is just a part of the
 overall configuration management activity. Therefore, CVS alone does not
@@ -29,7 +29,7 @@ do communicate regularly with the project members and improve your
 configuration management plan on a regular basis.
 
 CVS: Concurrent Version Control
---------------------------------
+-------------------------------
 
 CVS stands for Concurrent Versions System. It allows a team of multiple
 developers to concurrently manage their own version of the same source
@@ -67,7 +67,7 @@ is a very valid choice for several reasons:
    distributed under the GNU GPL License.
 
 CVS Clients
-````````````
+```````````
 
 CVS has a client-server architecture. In other words, Tuleap
 developers who want to interact with the CVS repository of their project
@@ -85,7 +85,7 @@ CVS originates from the Unix world and therefore all the CVS functions
 can be controlled from a command line interface. Even though CVS has
 multiple command line options, most commands that you normally use have
 one or two command-line options and are very easy to remember. Refer to
-:ref:`CVS-references` for more information about how to use CVS.
+:ref:`CVS-reference` for more information about how to use CVS.
 
 Graphical Front-ends
 ~~~~~~~~~~~~~~~~~~~~
@@ -108,7 +108,7 @@ comes with CVS plugins either provided natively or by 3rd party
 companies.
 
 Setting up WinCVS for Tuleap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above, WinCVS is one of the most popular CVS clients on
 Windows. Below are all the instructions needed to get WinCVS running on
@@ -188,10 +188,10 @@ about CVS refer to the following documents:
 -  The Official CVS Web Site. See http://cvs.nongnu.org/.
 
 CVS Integration in Tuleap
------------------------------------
+-------------------------
 
 The CVS Repository
-```````````````````
+``````````````````
 
 Whenever a new project is hosted on Tuleap, a new CVS
 repository is automatically created and properly initialized. Each
@@ -212,7 +212,7 @@ repository.
     that unless you know exactly what you are doing.
 
 CVS Access Control
-```````````````````
+``````````````````
 
 CVS access permission depends upon the project status (private or
 public) and the class of citizen a user belongs to (see ?).
@@ -254,7 +254,7 @@ as follows:
 -  **Project Administrators**: same as project members.
 
 The CVS Web Interface
-----------------------
+---------------------
 
 Tuleap offers a number of facilities that allow you to
 interact with your CVS repository through the Web interface. The CVS Web
@@ -289,7 +289,7 @@ interface provides the following features:
 Let's review some of these features in more details:
 
 Browsing The CVS Repository
-````````````````````````````
+```````````````````````````
 
 In order to interact with the CVS repository of any
 Tuleap-hosted project, you normally need to have CVS
@@ -306,7 +306,7 @@ compare two revisions of the same file.
    	   Browsing the CVS repository - A sample session
 
 Querying CVS
-`````````````
+````````````
 
 If a project has the CVS Tracking feature activated (see :ref:`CVS-administration`), the CVS Web
 interface will bring very useful features to the software engineers:
@@ -332,29 +332,15 @@ interface will bring very useful features to the software engineers:
    You can search code changes by authors (who made the change), by
    commit ID, by tag or by keywords to be found in the log message.
    Results can also be sorted by clicking on the headers of the search
-   results (see `Querying the CVS tracking database of a given project`_).
+   results.
 
    A click on one of the selected commit ID brings you to a complete
    description of the change, the files that were impacted and the
    nature of the change with a direct link into the CVS repository if
-   you want to browse the file or look at the code modification (see `The detail of an atomic CVS commit`_).
-
-.. figure:: ../images/screenshots/sc_cvssearch.png
-   	   :align: center
-  	   :alt: Querying the CVS tracking database of a given project
-  	   :name: Querying the CVS tracking database of a given project
-
-   	   Querying the CVS tracking database of a given project
-
-.. figure:: ../images/screenshots/sc_cvsshowcommit.png
-   	   :align: center
-  	   :alt: The detail of an atomic CVS commit
-  	   :name: The detail of an atomic CVS commit
-
-   	   The detail of an atomic CVS commit
+   you want to browse the file or look at the code modification.
 
 Cross-Referencing Artifacts and CVS Commits
-````````````````````````````````````````````
+```````````````````````````````````````````
 
 While working in the development or the maintenance phase of a software
 project, it is vital to keep track of the changes made to the source
@@ -407,7 +393,7 @@ as follows:
 .. _CVS-administration:
 
 CVS Administration
-```````````````````
+``````````````````
 
 Through the Web interface, Tuleap allows you to configure
 the following settings:
@@ -471,7 +457,7 @@ the following settings:
     future reference. See ? for mailing list creation.
 
 A Typical CVS Life Cycle
--------------------------
+------------------------
 
 Again the intent of this section is not to give formal CVS training but
 rather to explain what are the steps a project team typically goes
@@ -483,15 +469,8 @@ not part of a project team. In this section all examples are given in
 the form of CVS command lines but transposing them to graphical
 front-ends should not be a problem.
 
-.. figure:: ../images/screenshots/CVS_Life_Cycle.png
-   	   :align: center
-  	   :alt: A Typical Software Development Life Cycle on Tuleap
-  	   :name: A Typical Software Development Life Cycle on Tuleap
-
-   	   A Typical Software Development Life Cycle on Tuleap
-
 Logging In
-```````````
+``````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -530,7 +509,7 @@ CVS connection "open" when you leave your office, use the
 "``cvs logout``\ " command.
 
 Importing Existing Source Code
-```````````````````````````````
+``````````````````````````````
 
 *Audience: project members*
 
@@ -583,7 +562,7 @@ Where:
     the Tuleap server. Contact us for more information.
 
 Checking Code Out
-``````````````````
+`````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -634,7 +613,7 @@ Where:
    Interface (see `The CVS Web Interface`_)
 
 Updating the Source Code
-`````````````````````````
+````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -664,7 +643,7 @@ changing the branch to which your working copy points. Refer to your CVS
 documentation for complete details.
 
 Committing your Changes
-````````````````````````
+```````````````````````
 
 *Audience: project members*
 
@@ -794,7 +773,7 @@ project team).
 And thanks for contributing some code!
 
 Exporting and Packaging
-`````````````````````````
+```````````````````````
 
 *Audience: project members*
 
@@ -844,7 +823,7 @@ Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the Tuleap News service (see ?).
 
 CVS for Project Administrators
--------------------------------
+------------------------------
 
 There are a few things that Project Administrators must absolutely be
 aware of to manage their CVS repository well.
@@ -872,7 +851,7 @@ the following commands at the shell prompt:
 -  ``exit`` (Logout)
 
 CVS Administrative Files
-``````````````````````````
+````````````````````````
 
 Each CVS repository comes with a number of administrative files that are
 all located in the ``CVSROOT`` directory. These files gives project

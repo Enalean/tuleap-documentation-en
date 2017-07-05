@@ -50,11 +50,9 @@ with ``GET /api/artifacts/220``.
         {
           "type": "trackers",
           "uri": "projects/110/trackers"
-        },
-        ...
-      }
-    },
-    ...]
+        }
+      ]
+    }]
 
   From here I can get the list of trackers of the project with ``GET /api/projects/110/trackers``, etc. Which calls you
   have to orchestrate will depend on your business case.

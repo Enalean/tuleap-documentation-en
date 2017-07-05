@@ -1,11 +1,11 @@
 Becoming a Tuleap Citizen
-=====================================
+=========================
 
 You can learn more about the various class of Tuleap citizens in the dedicated section
 (see  :ref:`classes-of-citizens`).
 
 User Registration
-------------------
+-----------------
 
 As suggested above, the first thing to do for newcomers is to create their own account
 on Tuleap. Becoming a registered Tuleap user doesn't imply any commitment on your part
@@ -90,7 +90,7 @@ validated from the outside.
 .. _login-and-personal-page:
 
 Login and Personal Page
-------------------------
+-----------------------
 
 To log into the Tuleap site, go to the Tuleap
 Site at `http://tuleap.example.com <http://tuleap.example.com/>`__
@@ -153,7 +153,7 @@ incomplete list of available widgets for the personal page:
 .. _account-maintenance:
 
 Account Maintenance
---------------------
+-------------------
 
 You provided a certain amount of demographic information to
 Tuleap when you first registered on the Tuleap
@@ -181,6 +181,7 @@ you. However, we would like to draw your attention on some of them:
    To generate a public key, run the program 'ssh-keygen' (or ssh-keygen1) on your desktop machine.
    Then look at the file '~/.ssh/identity.pub' where the generated public key has been stored.
    Read the ssh documentation for further information on sharing keys.
+
 
 Your preferences are available at the right of the page. Here
 are some of the preferences you can define:

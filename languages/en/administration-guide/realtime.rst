@@ -2,7 +2,7 @@ Tuleap Realtime
 ===============
 
 What is Realtime
------------------
+----------------
 
 Tuleap Realtime brings interactivity when users are viewing the same screen at the same time.
 For example in Kanban, when one user moves a card from one column to another, then the card is automatically moved for every users that are on the same Kanban.
@@ -58,7 +58,7 @@ You also have to replace the value of ``nodejs_server_jwt_private_key`` in the `
 
 
 Run Tuleap Realtime server
----------------------------
+--------------------------
 
 A service tuleap-realtime is available. You can ``start|stop|condrestart|status`` the server.
 

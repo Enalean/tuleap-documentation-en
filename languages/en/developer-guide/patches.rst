@@ -262,7 +262,7 @@ Now you only have one commit and you can push and eventually publish.
 
 
 Checkout and amend
-`````````````````
+``````````````````
 
 In the gerrit interface for your patchset, you have a "Download" section with a
 ready to copy/paste git command. Ensure "checkout" is selected and copy/paste

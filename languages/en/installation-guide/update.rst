@@ -1,5 +1,5 @@
 Upgrade to a newer version
-=========================
+==========================
 
 You should inform in advance end users that the platform will be stopped.
 It can be done through mass mail engine and with a side-wide banner.

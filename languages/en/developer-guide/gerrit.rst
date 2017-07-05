@@ -67,7 +67,7 @@ Initialize replication
     you@workstation $> make start-gerrit
 
 Replication
-------------
+-----------
 
 In your gerrit container :
 

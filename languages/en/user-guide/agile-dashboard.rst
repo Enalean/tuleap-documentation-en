@@ -39,11 +39,11 @@ When you first come, as a project administrator, on Agile Dashboard service, you
 
 .. figure:: ../images/screenshots/kanban-onboarding.png
    :align: center
-   :alt: Agile Dashboard Configuration
-   :name: Agile Dashboard  Configuration
+   :alt: Agile Dashboard welcome screen
+   :name: Agile Dashboard  welcome screen
    :width: 800px
 
-   Agile Dashboard configuration
+   Agile Dashboard welcome screen
 
 Pick-up the one you need and it will automatically create and configure everything for you.
 
@@ -84,6 +84,7 @@ The homepage lists and links to all the milestones in your project. they are sor
 -  In the "Done" tab, you have all the milestones whose status is closed.
 -  In the "What's hot" tab, you have all the milestones whose status is open and whose start date and duration make them ongoing.
 -  In the "What's next" tab, you  have all the milestones whose status is open and whose start date and duration either places them in the future or are not set.
+
 If start_date and duration are not defined in the tracker, but status is open, you will have the milestones both in "What's hot" and "Next".
 If start_date and duration are defined but empty, you will have the milestones in the three tabs.
 
@@ -101,7 +102,8 @@ If configured, it provides links to cardwalls, so that the team can directly mak
 .. _plan-releases-and-sprints:
 
 Plan releases and sprints
-````````````````````````
+`````````````````````````
+
 Tuleap Agile Dashboard lets you plan easily your releases.
 
 .. figure:: ../images/screenshots/sc_plan_releases.png

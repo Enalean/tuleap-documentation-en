@@ -20,7 +20,7 @@ Clone the "realtime" project on gerrit Projects.
     $ git clone ssh://....@gerrit.tuleap.net:29418/realtime tuleap-realtime
 
 For non-developpers Tuleap Realtime
--------------
+-----------------------------------
 
 You can use the following docker image to build a package including code, dependencies, creating configuration file and offering you
 a tuleap-realtime service.
@@ -33,7 +33,7 @@ a tuleap-realtime service.
 And copy the generated rpm in the server that will run realtime server (We will come back later).
 
 For developpers Tuleap Realtime
--------------
+-------------------------------
 
 You can use the docker image enalean/node-dev-simple and run it after having made the installations (We will come back later).
 
@@ -46,7 +46,7 @@ Before you start, you need to generate a self signed certificate for Node.js ser
 .. NOTE:: These generated files can be where you want. Just after you will need to specify the path of 'tuleap-realtime-key.pem' and 'tuleap-realtime-cert.pem' files.
 
 .. IMPORTANT:: When you generate the CSR, only the Common Name is important and it has to be the site name to secure.
-As this is a dev setup, you can set the name to 'NodeJS' (used after).
+   As this is a dev setup, you can set the name to 'NodeJS' (used after).
 
 .. code-block:: bash
 
@@ -86,7 +86,7 @@ Install the certificate on the client
 Add the certificate on your browser. Then to declare at your browser it uses a correct certificate, associate the hostname 'NodeJS' to the Node Docker container's ip in '/etc/hosts' on your machine.
 
 Create your own config file for Node.js server (if it isn't already created)
-----------------------------------------------
+----------------------------------------------------------------------------
 
 The default config.json file look like:
 
@@ -124,7 +124,7 @@ Change configurations on Tuleap server machine
 
 Connect to the Tuleap server machine and change the '/etc/tuleap/conf/local.inc' file:
 
-.. code-block:: txt
+.. code-block:: php
 
     $nodejs_server = 'NodeJS:4443';
     $nodejs_server_jwt_private_key = '<your_private_key_generated>';

@@ -12,8 +12,8 @@ The saving of the query matches the usual saving of the report.
 
 .. figure:: ../images/screenshots/tql/expert_query.png
    :align: center
-   :alt: Tracker Welcome Screen
-   :name: Tracker Welcome Screen
+   :alt: Tuleap Query Language on reports
+   :name: Tuleap Query Language on reports
 
    Tuleap Query Language on reports
 
@@ -85,8 +85,8 @@ and an auto-completion (``ctrl+space`` on field names).
 
 .. figure:: ../images/screenshots/tql/expert_query_autocompletion.png
    :align: center
-   :alt: Tracker Welcome Screen
-   :name: Tracker Welcome Screen
+   :alt: Highlighting and auto-completion
+   :name: Highlighting and auto-completion
 
    Highlighting and auto-completion
 
@@ -96,8 +96,8 @@ the query.
 
 .. figure:: ../images/screenshots/tql/expert_query_allowed_fields.png
    :align: center
-   :alt: Tracker Welcome Screen
-   :name: Tracker Welcome Screen
+   :alt: Allowed fields
+   :name: Allowed fields
 
    Allowed fields
 

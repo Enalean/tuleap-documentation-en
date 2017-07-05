@@ -10,6 +10,5 @@ Installation-guide
    installation-guide/ansible-installation.rst
    installation-guide/basic-configuration.rst
    installation-guide/update.rst
-   installation-guide/advanced-installation.rst
    installation-guide/advanced-configuration.rst
    installation-guide/import.rst

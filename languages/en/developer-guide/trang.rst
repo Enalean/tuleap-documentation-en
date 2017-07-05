@@ -1,12 +1,12 @@
 Trang
-------
+-----
 
 Trang is an opensource tool used by Tuleap to transform a RNC schema in RNG, or vice versa.
 
 The trang tarball is hosted on tuleap.net and can be downloaded here: https://tuleap.net/plugins/docman/?group_id=101&action=show&id=502
 
 How to use it
-``````````````
+`````````````
 
 In order to use it, extract the tarball content and launch the following command:
 
@@ -17,7 +17,7 @@ In order to use it, extract the tarball content and launch the following command
         TULEAP_PATH/plugins/tracker/www/resources/tracker.rng
 
 Which files need trang ?
-``````````````````````````
+````````````````````````
 
 Currently, there are 4 schema files which need trang in case of modification:
 
@@ -27,7 +27,7 @@ Currently, there are 4 schema files which need trang in case of modification:
 * plugins/cardwall/www/resources/xml_project_cardwall.rnc
 
 Documentation
-``````````````
+`````````````
 
 You can find the trang documentation here: http://www.thaiopensource.com/relaxng/trang-manual.html
 

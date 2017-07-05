@@ -11,7 +11,7 @@ library.
 This documentation goes hand-in-hand with the WSDL specifications https://tuleap.net/soap/wsdl#op.id1167451753957
 
 Update an artifact
----------------
+------------------
 
 Basic usage of API
 

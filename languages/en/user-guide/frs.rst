@@ -7,7 +7,7 @@ Delivery Manager
 ================
 
 Guidelines
------------
+----------
 
 There are 2 ways by which project administrators can provide access to
 their project source code on Tuleap: the software
@@ -44,7 +44,7 @@ help project teams understand why these two services are highly
 complementary a typical project life cycle is documented on :ref:`a-typical-software-development-life-cycle-on-Tuleap`.
 
 Delivery Manager Jargon
-------------------------
+-----------------------
 
 Before we get further into the description of the Delivery Manager let's
 review the terms used throughout this section. These terms are key for
@@ -100,7 +100,7 @@ administrators (see `Delivery Manager Structure`_).
     right way. Do not overlook this part of your project.
 
 File Release Browsing and Download
------------------------------------
+----------------------------------
 
 The latest version of each project package (if any) is always visible on
 the Project Dashboard (see :ref:`an-example-of-project-dashboard`). The latest version can immediately be
@@ -119,7 +119,7 @@ The first example given on `Example of a Delivery Manager screen`_ shows the Del
 Playground project.
 
 Browsing packages
-``````````````````
+`````````````````
 
 As explained in the `Delivery Manager Jargon`_, projects can contain several packages. In the
 example, the Playground project has four packages.
@@ -138,7 +138,7 @@ package, there is a red sign on the bell. If you don't monitor the
 package, the bell has a green *plus* on it.
 
 Browsing releases
-``````````````````
+`````````````````
 
 A package can contain several releases. In the example, the package
 "Camellia" has 2 releases called v6.34 and v.620, listed in
@@ -153,7 +153,7 @@ After each release name, the icon representing a text file let you read
 the notes and the changelog of the current release.
 
 Downloading files
-``````````````````
+`````````````````
 
 Each release contains a certain number of files to be downloaded. In the
 case of the release 3.0.1, two ISO image archives can be downloaded.
@@ -167,7 +167,7 @@ of the file and follow the instructions.
 .. _delivery-manager-administration:
 
 Delivery manager Administration
---------------------------------
+-------------------------------
 
 This section is accessible by project admin or have write files permissions. It goes through a
 detailed explanation of the Delivery Manager process. This is a 2-step
@@ -191,12 +191,12 @@ admin actions on the Delivery Manager home page. (See `The Delivery Manager scre
    The Delivery Manager screen of the Playground project, when you are an admin
 
 Files Permissions
-``````````````````
+`````````````````
 
 Files permission is based on Tuleap permissions model.
 
 Global files permissions
-`````````````````````````
+````````````````````````
 
 There is two level of permissions :
    **Write**: defines the user groups who can administrates Files and create packages and releases
@@ -210,7 +210,7 @@ There is two level of permissions :
    The global permission screen for Files
 
 Package Administration
-```````````````````````
+``````````````````````
 
 To administrate packages, you must be project admin or have write files permissions.
 Package creation and modification are nearly the same.
@@ -261,7 +261,7 @@ files that belong to this package. But you may also set different
 permissions to specific releases (see below).
 
 Release Administration
-```````````````````````
+``````````````````````
 
 To administrate releases, you must be project admin or have write files permissions.
 Release creation and modification are the same.
@@ -359,7 +359,7 @@ case, you can update the release at any time
    in some cases, you might want to limit the users allowed to download
    your software. In these specific cases, you can restrict access
    permissions to your packages and releases to specific user groups.
-   See :ref:`usre-groups` for more information on user groups. To define or to change the
+   See :ref:`user-groups` for more information on user groups. To define or to change the
    permissions on a release, click the [view/change] link in the
    permissions frame.
 
@@ -413,7 +413,7 @@ case, you can update the release at any time
        course)
 
 Processor List Administration
-------------------------------
+-----------------------------
 
 Project admins or user groups who have write files permissions can manage
 the processor list per project. The processor is an (optional) attribute of

@@ -1,8 +1,8 @@
 ForgeUpgrade
--------------
+------------
 
 Database upgrading
-```````````````````
+``````````````````
 
 Each version of Tuleap is likely to differ from the next one on many levels including in it's database structure. To manage this, ForgeUpgrade? has inbuilt internal functionality akin to that of commonly used tools such as dbdeploy or MIGRATEdb. Whereas the latter use sql and xml scripts to describe each database change, ForgeUpgrade? uses php scripts.
 

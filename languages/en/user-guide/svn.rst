@@ -33,7 +33,7 @@ but do communicate regularly with the project members and improve your
 configuration management plan on a regular basis.
 
 Subversion: The Next Generation CVS
-------------------------------------
+-----------------------------------
 
 Subversion is an Open Source version control system that manages your
 files and directories history over time. The Subversion effort started
@@ -115,7 +115,7 @@ But Subversion also comes with a number of enhancements over CVS:
    languages like C/C++, Java, Python and Perl.
 
 Subversion Clients
-```````````````````
+``````````````````
 
 Subversion has a client-server architecture. In other words,
 Tuleap developers who want to interact with the Subversion
@@ -148,7 +148,7 @@ front-ends will certainly grow. Refer to `Subversion References`_ for more infor
 those graphical clients.
 
 Setting up rapidSVN for Tuleap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above, rapidSVN is the graphical user interface that comes
 with Subversion for Linux and Windows. Below are all the instructions
@@ -188,7 +188,7 @@ user is working on.
    your are done.
 
 Subversion References
-``````````````````````
+`````````````````````
 
 As stated earlier in this chapter, this document is not a Subversion
 Tutorial. If you want to learn more about Subversion refer to the
@@ -208,10 +208,10 @@ following documents:
    http://jsvn.alternatecomputing.com/.
 
 Subversion Integration in Tuleap
--------------------------------------------
+--------------------------------
 
 The Subversion Repository
-``````````````````````````
+`````````````````````````
 
 Whenever a new project is hosted on Tuleap, a new Subversion
 repository is automatically created and properly initialized. Each
@@ -234,7 +234,7 @@ project without impacting the others.
     never do that unless you know exactly what you are doing.
 
 The Subversion Repository Structure
-`````````````````````````````````````
+```````````````````````````````````
 
 When a new Tuleap project is created, it comes with a virgin
 subversion repository that the project team must populate. Due to the
@@ -281,7 +281,7 @@ More on the repository layout is available in the Subversion book listed
 in `Subversion References`_.
 
 The Subversion Browsing Interface
-----------------------------------
+---------------------------------
 
 Tuleap offers a number a facilities that allow you to
 interact with your Subversion repository through the Web interface. The
@@ -336,7 +336,7 @@ history or compare two revisions of the same file.
    Browsing the Subversion repository - A sample session
 
 Querying Subversion
-````````````````````
+```````````````````
 
 If a project has the Subversion Tracking feature activated (see `Subversion Administration Interface`_), the
 Subversion Web interface will bring very useful features to the software
@@ -378,7 +378,7 @@ engineers:
    Querying the Subversion tracking database of a given project
 
 Cross-Referencing Artifacts and Subversion Commits
-```````````````````````````````````````````````````
+``````````````````````````````````````````````````
 
 While working in the development or the maintenance phase of a software
 project, it is vital to keep track of the changes made to the source
@@ -436,7 +436,7 @@ as follows:
     trying to keep track of the changes and why they were made.
 
 Subversion Administration Interface
-------------------------------------
+-----------------------------------
 
 Through the Tuleap Web interface, project administrators can
 perform the most common administration and configuration tasks on their
@@ -444,7 +444,7 @@ Subversion repository. The administration functions can be accessed
 through the ``SVN Admin`` menu item in the Subversion menu bar.
 
 General Settings
-`````````````````
+````````````````
 
 -  **Subversion Tracking**: Being a version control system Subversion
    is, of course, natively taking care of all your file history and is
@@ -466,7 +466,7 @@ General Settings
    Subversion Information page here.
 
 Subversion Access Control
-``````````````````````````
+`````````````````````````
 
 Default Access Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -615,7 +615,7 @@ For more information about the format of this file you should refer to
 the Subversion Book (see `Subversion References`_).
 
 Subversion Email Notification
-``````````````````````````````
+`````````````````````````````
 
 In addition to tracking the changes in the Tuleap database,
 Tuleap can also send a nicely formatted email message to
@@ -705,7 +705,7 @@ and a global whitelist defined on /tags/module*
 
 
 A Typical Subversion Life Cycle
---------------------------------
+-------------------------------
 
 As stated earlier, the intent of this chapter is not to give a formal
 Subversion training but rather to explain what are the steps a project
@@ -813,7 +813,7 @@ Where:
     server. Contact us for more information.
 
 Checking Code Out
-``````````````````
+`````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -852,7 +852,7 @@ Where:
 -  ``projectname`` is the project short name
 
 Updating the Source Code
-``````````````````````````
+````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -866,7 +866,7 @@ of each source file from the repository. To update a working copy type:
 
 
 Examining your Changes
-```````````````````````
+``````````````````````
 
 If you want to know which files have been modified in your own working
 copy since your last update, run the following command:
@@ -899,7 +899,7 @@ If no ``filename`` is specified the diff operation is applied
 recursively on all the files and sub-directories.
 
 Committing your Changes (project team)
-```````````````````````````````````````
+``````````````````````````````````````
 
 *Audience: project members*
 
@@ -952,7 +952,7 @@ Where:
 .. _contributing-your-changes-(for-other-users):
 
 Contributing your Changes (for other users)
-````````````````````````````````````````
+```````````````````````````````````````````
 
 *Audience: all* |SYSPRODUCTNAMES| *users*
 
@@ -1024,7 +1024,7 @@ the project team.
 And thanks for contributing some code!
 
 Exporting and Packaging
-````````````````````````
+```````````````````````
 
 *Audience: project members*
 
@@ -1074,10 +1074,10 @@ Done! Nice job...Take a break. And remember to announce the availability
 of your new version via the Tuleap News service (see :ref:`news-service`).
 
 Subversion for Project Administrators
---------------------------------------
+-------------------------------------
 
 Subversion Hook Scripts
-````````````````````````
+```````````````````````
 
 Tuleap offers an easy to use Web interface to administrate
 the common settings of your Subversion repository like access control

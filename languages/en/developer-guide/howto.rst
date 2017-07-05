@@ -28,7 +28,7 @@ Build Tuleap RPM
     $ make -C tools/rpm OS=rhel6 clean rpmprep rpm
 
 Pimp your Tuleap under development
-------------------------------------
+----------------------------------
 
 When your are hacking Tuleap localized on your own server or virtual machine, you often
 have tuleap.net open in another tab in order to have access to bug and requirement tracker.

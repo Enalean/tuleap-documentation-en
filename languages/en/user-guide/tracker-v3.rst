@@ -1,6 +1,3 @@
-
-
-
 Tracker (Legacy)
 ================
 
@@ -25,7 +22,7 @@ project can be fully customized.
 
 
 Terminology and common features
---------------------------------
+-------------------------------
 
 Before we explain the features of the tracker service, it's worth
 spending some time on the terminology used in the tracker service as
@@ -56,7 +53,7 @@ are:
    address in the CC list.
 
 Entering the Tracker Service
------------------------------
+----------------------------
 
 To enter the Tracker service of a given project, first go to the Project
 Summary page (see :ref:`accessing-a-project-dashboard`) and either click the "Trackers" item in the Project
@@ -65,21 +62,14 @@ choose a tracker from the trackers listed in the Public Area of the
 Project Summary page.
 
 You will be presented with a list of trackers available for this
-particular project (see `Tracker Welcome Screen`_). Select the tracker you are interested in.
+particular project . Select the tracker you are interested in.
 Entering the tracker will give you access to various tracker functions
 depending on the permissions you have with this tracker. You may be able
 to submit new artifacts, update existing ones, search and browse the
 artifact database or configure the tracker.
 
-.. figure:: ../images/screenshots/sc_trackerwelcomescreen.png
-   :align: center
-   :alt: Tracker Welcome Screen
-   :name: Tracker Welcome Screen
-
-   Tracker Welcome Screen
-
 New Artifact Submission
-------------------------
+-----------------------
 
 To submit a new artifact to a given project you must first access the
 appropriate tracker of that project as indicated in the section above
@@ -89,30 +79,12 @@ When entering a given tracker you are presented with the artifact
 selection and browsing screen (more about this facility in `Artifact Browsing`_). For now
 let's click on the "Submit a New Artifact" item (or whatever the
 artifact name is) from the Tracker Menu Bar in the upper part of the
-welcome screen (see `A sample artifact submission screen (the artifact is of type "bug" here)`_).
+welcome screen.
 
-.. figure:: ../images/screenshots/sc_artifactsubmission.png
-   :align: center
-   :alt: A sample artifact submission screen (the artifact is of type "bug" here)
-   :name: A sample artifact submission screen (the artifact is of type "bug" here)
-
-   A sample artifact submission screen (the artifact is of type "bug" here)
-
-`A sample artifact submission screen (the artifact is of type "bug" here)`_ shows
-a sample submission screen from one of the Tuleap
-hosted projects. Because of the Tuleap Tracker high level of
+Because of the Tuleap Tracker high level of
 customizability no two submission screens look alike. Depending on the
 project more or less fields may appear on the tracker submission form
 and the name of artifact managed by the tracker may change as well.
-
-In the example provided on `A sample artifact submission screen (the artifact is of type "bug" here)`_
-the artifact type is a bug (also know as
-"defect" in corporate language). The user is asked to choose a bug
-Category, a bug Group, a Priority and an Assignee from a series of pull
-down menus. Then comes a one-line description for the bug and a longer
-text entry field where you can fully characterize the bug. After
-clicking on the Submit button, a unique ID is automatically assigned to
-the submitted artifact.
 
 When submitting a new artifact, make the Summary and the detailed
 description as explicit as possible. Do not use a clueless summary like:
@@ -130,14 +102,7 @@ As explained above, artifact submission forms vary from one project to
 another depending on the fields used by the tracker. The submission form
 can also vary according to the permission level. Depending whether you
 are a project member or an ordinary registered user the artifact fields
-displayed on the screen may differ. As an example, on `A sample artifact submission screen (the artifact is of type "bug" here)`_, the bug
-submitter using the form is probably a project member because giving
-access to the "Assigned to" field to an ordinary registered user doesn't
-make much sense. It is very unlikely that users external to the project
-team know enough about the project organization to correctly assign the
-bug. That's the reason why artifact fields shown to users on the
-submission form can be configured in the Tracker Administration module
-(see `Tracker Administration`_)
+displayed on the screen may differ.
 
 In any case don't forget to click on the "Submit" button when you are
 finished !
@@ -152,17 +117,16 @@ finished !
     Main Menu and search by keywords.
 
 Artifact Browsing
-------------------
+-----------------
 
 Tuleap offers the ability to browse the artifact database
 according to a variable set of criteria.
 
 Selection Criteria
-```````````````````
+``````````````````
 
 The upper part of the artifact browsing screen is devoted to the
-selection criteria. `A sample Tracker browsing screen`_ shows the default set of selection criteria that
-is available when a new tracker is created. You can select bugs by
+selection criteria. You can select bugs by
 Category (the module in which the bug occurred), Group (nature of the
 bug like Crash, Documentation Typo, ...), Status (e.g. Open, Closed,
 ...) and Assignee (the person in charge of the bug). Other trackers may
@@ -292,7 +256,7 @@ the values you can specify in such a field:
    characters in between including the decimal point.
 
 Favorites and Predefined Tracker Queries
-`````````````````````````````````````````
+````````````````````````````````````````
 
     **Tip**
 
@@ -330,21 +294,12 @@ selection criteria. Using this mode you could search for both open and
 suspended bugs assigned to project members A and B.
 
 Tracker Search Results
-```````````````````````
+``````````````````````
 
 Based on your selection of search criteria, Tuleap runs a
 query against the tracker database, selects the matching artifacts, and
 displays them right below the selection criteria. Columns displayed in
 the artifact list are entirely configurable by the project team (see `Tracker Reports`_).
-Therefore, the artifact browsing screen might look completely different
-from the one shown in `A sample Tracker browsing screen`_.
-
-.. figure:: ../images/screenshots/sc_legacyartifactbrowsing.png
-   :align: center
-   :alt: A sample Tracker browsing screen
-   :name: A sample Tracker browsing screen
-
-   A sample Tracker browsing screen
 
 Artifact severity is color coded. Colors associated with severity levels
 may vary from one Tuleap site to another and it is therefore
@@ -447,7 +402,7 @@ that all users will be able to use. See `Tracker Graphical Report Setting`_ for 
 tracker reports.
 
 Artifact Update
-----------------
+---------------
 
 Selecting an artifact ID from the list generated by a search operation
 will bring you to a screen with all the artifact details. Depending on
@@ -463,27 +418,27 @@ The Artifact Update screen is divided in several parts: **Header,
 Comments, CC List, Artifact Attachments, Dependencies and History.**
 
 Header
-```````
+``````
 
 The header zone is where you'll find all the fields associated with an
-artifact. As shown on `Header of Tracker Update screen (artifact fields)`_, many of these fields are assigned a set of
+artifact. As shown on `Header of artifact update screen (artifact fields)`_, many of these fields are assigned a set of
 predefined values (Status, Category, Resolution) while some others have
 a number format (Effort) or a free text format (Summary). For more
 clarity, the fields are grouped in field sets. The set of fields used in
 a given tracker, as well as the related set of predefined values and the
 field sets can be configured by project members who have administration
-permissions on this tracker. (see `Header of Tracker Update screen (artifact fields)`_ for more details on the Tracker
+permissions on this tracker. (see `Header of artifact update screen (artifact fields)`_ for more details on the Tracker
 configuration).
 
 .. figure:: ../images/screenshots/sc_artifactupdateheader.png
    :align: center
-   :alt: Header of Tracker Update screen (artifact fields)
-   :name: Header of Tracker Update screen (artifact fields)
+   :alt: Header of artifact update screen (artifact fields)
+   :name: Header of artifact update screen (artifact fields)
 
-   Header of Tracker Update screen (artifact fields)
+   Header of artifact update screen (artifact fields)
 
 Comments
-`````````
+````````
 
 As many follow-up comments as needed can be attached to any given
 artifact. Follow-up comments are free text fields where virtually any
@@ -533,13 +488,13 @@ extensions:
 
 .. figure:: ../images/screenshots/sc_artifactupdatecomments.png
    :align: center
-   :alt: Follow-up comments attached to an artifact
-   :name: Follow-up comments attached to an artifact
+   :alt: Follow-up comments
+   :name: Follow-up comments
 
-   Follow-up comments attached to an artifact
+   Follow-up comments
 
 CC List
-````````
+```````
 
 As explained later in this chapter (see `E-mail Notification`_) Tracker offers a powerful
 email notification system for those users who, at some point, were
@@ -597,7 +552,7 @@ rules:
    they have done or remove themselves from a CC list in any tracker.
 
 Artifact Attachments
-`````````````````````
+````````````````````
 
 In addition to comments, the Tuleap Tracker allows you to
 attach virtually any piece of information to an artifact in the form of
@@ -612,10 +567,10 @@ attachment. The maximum size of a file attachment is site dependent. The
 default is 2 MByte.
 
 Artifact Dependencies
-``````````````````````
+`````````````````````
 
 The next section on the artifact update screen deals with artifact
-dependencies (see Artifact Dependencies). Users have the ability to establish a dependency
+dependencies . Users have the ability to establish a dependency
 link from an artifact to one or several other artifacts belonging to any
 of the tracker of any Tuleap project. This is made possible
 by the fact that artifacts have a unique ID across the entire
@@ -626,13 +581,6 @@ of these dependency links. As a project team, you are free to agree on a
 specific meaning for these links. It can be a cause-effect type of
 relationship, a duplication of information or a time dependency for a
 task tracker.
-
-.. figure:: ../images/screenshots/sc_artifactupdatedependencies.png
-   :align: center
-   :alt: Artifact Dependencies
-   :name: Artifact Dependencies
-
-   Artifact Dependencies
 
 To create an artifact dependency, type one or several artifact IDs
 (comma separated) and submit the form. The cross-referenced artifacts
@@ -648,10 +596,10 @@ shows the list of artifact(s) the displayed artifact depends on but also
 the list of artifacts that depend upon the one you are browsing.
 
 Artifact Cross-Referencing
-```````````````````````````
+``````````````````````````
 
 In addition to the rather formal way of expressing a dependency between
-two artifacts presented in `Artifact Dependencies`_, Tuleap offers the ability to
+two artifacts presented earlier, Tuleap offers the ability to
 cross-reference any artifact, or any other Tuleap object
 from within a follow-up comment.
 
@@ -673,7 +621,7 @@ commits are stored in the database. They are displayed in the next
 section, ordered by type and initial reference direction.
 
 Permissions on artifacts
-``````````````````````````
+````````````````````````
 
 Tracker admins can restrict access to artifact. Those permissions are a
 complement to the permissions defined at tracker level.
@@ -682,32 +630,18 @@ The tracker admin just has to edit the artifact and update permissions
 like in the example below (where the artifact is currently restricted to
 project admins and members).
 
-.. figure:: ../images/screenshots/sc_artifactpermissions.png
-   :align: center
-   :alt: Permissions d'un artefact
-   :name: Permissions d'un artefact
-
-   Permissions d'un artefact
-
 Artifact History
-`````````````````
+````````````````
 
 The last part of the artifact update screen is devoted to the artifact
-history (see `Artifact History`_). The artifact history keeps track of all the changes
+history. The artifact history keeps track of all the changes
 that occurred on all artifact fields since the creation of the artifact.
 
 The artifact history shows what fields changed, what the old value was
 before the change took place, who changed it and when.
 
-.. figure:: ../images/screenshots/sc_artifacthistory.png
-   :align: center
-   :alt: Artifact History
-   :name: Artifact History
-
-   Artifact History
-
 Artifact Mass Change
----------------------
+--------------------
 
 Tuleap provides project and tracker administrators with the
 possibility to update several artifacts in one step: delete/add the same
@@ -717,7 +651,7 @@ feature is when a person leaves a project and all the artifacts that are
 assigned to her have to be re-affected to another person.
 
 Selection Criteria for Mass Change
-```````````````````````````````````
+``````````````````````````````````
 
 The artifacts to be updated can be selected according to a set of
 criteria. These criteria are the same as for artifact browsing. For
@@ -725,20 +659,8 @@ fine-grained control you may also select individually all artifacts
 concerned by the mass change. Please see the :ref:`accessing-a-project-dashboard` for more detail on how to
 fill out the selection criteria.
 
-In the sample screen in `Artifact Selection screen for the artifact mass change`_ hitting the left button "Mass Change Selected
-Items" will select the three items checked individually, hitting the
-right button "Mass Change All Items" will select all nine items
-corresponding to the selection criteria.
-
-.. figure:: ../images/screenshots/sc_masschangeselection.png
-   :align: center
-   :alt: Artifact Selection screen for the artifact mass change
-   :name: Artifact Selection screen for the artifact mass change
-
-   Artifact Selection screen for the artifact mass change
-
 Update
-```````
+``````
 
 Once you have selected all the artifacts to be updated you can now
 proceed to affect these changes via the Update screen. The Update screen
@@ -746,33 +668,14 @@ for the Mass Change is very similar to the normal Artifact Update
 screen. It is divided into the following parts: Header, Comments, CC
 List, Artifact Attachments, and Dependencies.
 
-.. figure:: ../images/screenshots/sc_masschangeupdate_header.png
-   :align: center
-   :alt: Header of Artifact Update screen for the artifact mass change
-   :name: Header of Artifact Update screen for the artifact mass change
-
-   Header of Artifact Update screen for the artifact mass change
-
 In the Header zone you find all the fields associated to the artifact.
 Only those that are changed from Unchanged to a defined value will be
-taken into account for the update. In our example in `Header of Artifact Update screen for the artifact mass change`_ only the
-"Assigned to" field of the three artifacts will be updated to a new
-value. All other fields remain unchanged.
-
-.. figure:: ../images/screenshots/sc_masschangeupdate_cc.png
-   :align: center
-   :alt: CC list of Artifact Update screen for the artifact mass change
-   :name: CC list of Artifact Update screen for the artifact mass change
-
-   CC list of Artifact Update screen for the artifact mass change
+taken into account for the update.
 
 The CC List zone differs from the normal Artifact CC List zone in that
 it contains all the CC names of the selected artifacts with the
 information of in how many artifacts a CC name is used. If you add a CC
-Name it will be added to all the three artifacts. In our example in `CC list of Artifact Update screen for the artifact mass change`_,
-there is one CC Name used in one of the three selected artifacts. By
-checking the "Delete?" box, the given CC Name will be deleted from this
-artifact.
+Name it will be added to all the three artifacts.
 
 Equally, the Attachment zone contains any files attached to the selected
 artifacts with the information as to how many of those artifacts each
@@ -783,7 +686,7 @@ Each mass change is tracked in the project history (:ref:`project-history`). On 
 hand, no e-mail notification is sent in response to the mass change.
 
 Artifact Duplication
----------------------
+--------------------
 
 If artifact duplication is allowed for the tracker (see section `General Configuration Settings`_),
 project members can duplicate an artifact. To duplicate an artifact,
@@ -799,7 +702,7 @@ duplicated artifact.
 Only project members are allowed to duplicate artifacts.
 
 E-mail Notification
----------------------
+-------------------
 
 The Tuleap Tracker is equipped with a powerful and flexible
 e-mail notification system. Unless otherwise instructed by the project
@@ -858,7 +761,7 @@ The import is divided into three steps:
    artifacts are created or existing ones updated.
 
 When to use the Import
-```````````````````````
+``````````````````````
 
 You will find below a couple of suggestions regarding the use of the
 tracker import feature:
@@ -873,7 +776,7 @@ tracker import feature:
    another.
 
 Exporting Excel Sheets in CSV Format
-`````````````````````````````````````
+````````````````````````````````````
 
 To export an Excel sheet to CSV format, simply follow the steps below:
 
@@ -882,14 +785,14 @@ To export an Excel sheet to CSV format, simply follow the steps below:
 -  In the dialog window choose ``CSV`` as the ``Save as type``
 
 CSV File Parsing
-`````````````````
+````````````````
 
 The CSV format that is accepted as import input is accessible over the
 CSV file submission screen. This page allows manual validation of the
 tracker field labels, indicating which fields are mandatory in case of a
 new artifact submission. In addition, it gives you a sample CSV file. As
 for the export feature, you can specify the separator used in the CSV
-file you want to import as well as the date format (See :ref:`preferences`). If you
+file you want to import as well as the date format (See :ref:`account-maintenance`). If you
 already use the Tracker Artifact Export (see :ref:`project-data-export`) you will notice that the
 format of the files to import and the exported files are exactly the
 same. This means that if you changed your CSV separator for exporting
@@ -938,7 +841,7 @@ All other potential errors have to be checked manually by looking at the
 parse report table.
 
 The Database Update
-````````````````````
+```````````````````
 
 If you import new artifacts, all non-mandatory fields that are omitted
 in the CSV file will be initialized to their default value.
@@ -985,7 +888,7 @@ e-mail notification is sent in response to the import.
     Tuleap.
 
 Default Tracker Access Permissions
------------------------------------
+----------------------------------
 
 Depending on the class of citizen a user belongs to and the level of
 permissions granted as a project member, the various features of the
@@ -1064,7 +967,7 @@ the table below:
                             Table: Default Tracker Access Permissions
 
 Tracker Creation
------------------
+----------------
 
 Before one can define what fields and field values to use in a tracker
 it must first be created. Tracker creation can be accessed from the
@@ -1141,7 +1044,7 @@ or remove fields or fine-tune the field settings afterwards.
     but only the field settings.
 
 Tuleap-wide Tracker Templates
------------------------------------------
+-----------------------------
 
 The standard trackers provided for each new Tuleap project
 are:
@@ -1167,7 +1070,7 @@ decide how much information they want to see attached to an artifact and
 customize their tracker configuration accordingly.
 
 The Bug Tracker Template
-``````````````````````````
+````````````````````````
 
 One of the golden rules in a collaborative project environment is to let
 your project community test the software and freely report on any defect
@@ -1181,7 +1084,7 @@ some critical fields that you can create or, on the contrary, switch
 some fields to the "Unused" status to make the tracker simpler.
 
 The Patch Tracker Template
-````````````````````````````
+``````````````````````````
 
 The role of the Patch tracker is to let non project members or project
 members with restricted permissions to contribute source code
@@ -1206,7 +1109,7 @@ Subversion chapter (:ref:`contributing-your-changes-(for-other-users)`).
     not to apply the patch on the main source tree.
 
 The Support Request Tracker Template
-``````````````````````````````````````
+````````````````````````````````````
 
 The Support Request (SR) tracker is one of the communication mechanisms
 that your project should offer to the project community. It allows any
@@ -1221,7 +1124,7 @@ a project team can easily and efficiently coordinate technical support
 activities.
 
 The Task Tracker Template
-``````````````````````````
+`````````````````````````
 
 The Tuleap Task tracker is a task manager and not a project
 management software like CA-SuperProject, MS-Project or other powerful
@@ -1252,7 +1155,7 @@ planning tools:
    generation of progress reports or project re-planning.
 
 The Scrum Backlog Template
-````````````````````````````
+``````````````````````````
 
 Codendi makes it easy to implement the Scrum methodology, by providing a
 Scrum Backlog tracker to each project. You will find a comprehensive
@@ -1281,7 +1184,7 @@ the new Sprint Meeting. User stories selected in the past Sprint are
 updated, and new stories are selected for the next Sprint.
 
 Tracker Administration
------------------------
+----------------------
 
 As we went through the description of the Tuleap Tracker
 features, we referred several times to the flexibility of this system
@@ -1330,7 +1233,7 @@ sections:
    personal email notification settings.
 
 General Configuration Settings
-````````````````````````````````
+``````````````````````````````
 
 This module allows you to define a series of properties for your
 tracker. Some of those properties have already been defined in the
@@ -1528,7 +1431,7 @@ changes associated with each artifact and finally in the email
 notification sent to this group of users.
 
 Field Sets Management
-``````````````````````
+`````````````````````
 
 In order to improve the input of the artifact submission form, the
 fields of the trackers are grouped in field sets. This allows to open up
@@ -1610,7 +1513,7 @@ Properties that can be tuned for a tracker field set are as follows:
    sets.
 
 Field Usage Management
-```````````````````````
+``````````````````````
 
 When a tracker is first created, it comes pre-configured with a set of
 fields inherited form the template that was used to create it. For the
@@ -1807,7 +1710,7 @@ Properties that can be tuned for a tracker field are as follows:
        :alt: Tracker field usage settings
        :name: Tracker field usage settings
 
-        Tracker field usage settings
+       Tracker field usage settings
 
 -  **Allow Empty Value**: determines whether leaving the field blank in
    the artifact submission or update form is allowed or not. If
@@ -1816,7 +1719,7 @@ Properties that can be tuned for a tracker field are as follows:
    start on the submission and modification forms.
 
 -  **Keep Change History**: determines whether changes made to this
-   field will be kept in the artifact history (see `Artifact History`_ )
+   field will be kept in the artifact history
 
 -  **Use this field**: This checkbox only appears on the field usage
    modification screen. When first created a field is automatically
@@ -1828,7 +1731,7 @@ Properties that can be tuned for a tracker field are as follows:
    destroys the field data (see `Tracker Field List`_).
 
 Field Values Management
-````````````````````````
+```````````````````````
 
 Once fields have been defined for your tracker, the next step is to
 define a set of values for your fields. This mostly applies to "Select
@@ -1995,7 +1898,7 @@ label:
     avoid a tedious renumbering of the existing items.
 
 Field Dependencies
-```````````````````
+``````````````````
 
 Field dependencies allow us to link source field values to target field
 values. In other words, the values proposed to a final user for a field
@@ -2115,14 +2018,14 @@ points:
    satisfy the dependencies.
 
 Canned Responses
-`````````````````
+````````````````
 
 One frequently sees project members in charge of the artifact
 classification and dispatch process posting the same follow-up comments
 repeatedly. Typical examples of repeated posted comments are: a thank
 you message to the originator, a request for the originator to provide
 commonly missing information like version numbers or type of machine
-used, etc. (see `Definition of Canned Responses`_).
+used, etc. (see `Canned responses`_).
 
 Rather than repeatedly typing the same follow-up comments,
 Tuleap allows project members to create a predefined set of
@@ -2132,17 +2035,17 @@ from the pull down menu in the artifact update form.
 
 Also note that defining a new Canned Response can be done on the fly
 from the artifact update form by clicking on the "define a new Canned
-Response" link (see `Follow-up comments attached to an artifact`_).
+Response" link (see `Follow-up comments`_).
 
 .. figure:: ../images/screenshots/sc_legacytrackercannedresponses.png
    :align: center
-   :alt: Definition of Canned Responses
-   :name: Definition of Canned Responses
+   :alt: Canned responses
+   :name: Canned responses
 
-   Definition of Canned Responses
+   Canned responses
 
 Tracker Report Management
-``````````````````````````
+`````````````````````````
 
 Knowing that project administrators, project members and other
 Tuleap users may have different needs in searching the
@@ -2282,7 +2185,7 @@ Information available on this screen are as follows:
    Setting a Tracker Report
 
 Tracker Graphical Report Setting
-`````````````````````````````````
+````````````````````````````````
 
 After you click on a graphical report ID in the graphical report list
 (see `Browsing Tracker Reports`_), the report setting screen appears. This screen allows you to
@@ -2379,7 +2282,7 @@ Specific informations available for the Gantt graph are as follows:
    Creating / Editing a Gantt graph
 
 Email Notification Settings
-````````````````````````````
+```````````````````````````
 
 As explained earlier in `E-mail Notification`_ Tracker comes with a predefined set of rules
 to keep relevant people aware of the artifact life. The default rules

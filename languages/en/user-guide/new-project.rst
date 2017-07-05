@@ -119,7 +119,7 @@ including a pointer to your new "Project Dashboard" page. Bookmark it in
 a safe place!
 
 Post-Registration Configuration
---------------------------------
+-------------------------------
 
 The first thing to do after you receive the confirmation for your
 project registration is to visit the "Project Dashboard" page (URL
