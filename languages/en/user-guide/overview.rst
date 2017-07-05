@@ -1,26 +1,8 @@
-
-
-
 Tuleap Overview
-===========================
-
-Tuleap Home Page
-----------------------------
-
-Tuleap Homepage is the global welcome page of the forge. It aims at
-helping new users to create an account, join or create a project. It
-gives also activity streams and news of the hosted projects. You can
-customize some areas with your own logo for example
-
-.. figure:: ../images/screenshots/sc_homepage.png
-   :align: center
-   :alt: The Tuleap HomePage
-   :name: The Tuleap HomePage
-
-   The Tuleap HomePage
+===============
 
 Main Menu
-----------
+---------
 
 The Tuleap main menu is a permanent piece of information
 that you'll always see on your screen wherever you are in the
@@ -51,7 +33,7 @@ in the document in the related service description.
 .. _software-map-(or Project Tree):
 
 Software Map (or Project Tree)
-````````````````````````````````
+``````````````````````````````
 
 The Software Map is a pivotal service in Tuleap that you can
 (should) use to determine if there are some pieces of software that you
@@ -137,7 +119,7 @@ the screen.
     it an appropriate description.
 
 Help
-``````
+````
 
 Help Index
 ~~~~~~~~~~
@@ -161,7 +143,7 @@ includes presentation material, the user guide and other important
 documents. Read them carefully.
 
 Tuleap Developers Channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One of the top priority objectives of the Tuleap site is to
 become a discussion forum for the software developers regardless of the
@@ -188,7 +170,7 @@ interesting features:
    rather than individual messages.
 
 Tuleap Discussion Forums
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Discussion Forums are an alternate way to keep in touch with the
 Tuleap community. The Tuleap Discussion Forums
@@ -212,7 +194,7 @@ Us" link to get in touch with the Tuleap Team.
 Do not hesitate to bug the "Contact Us" link. We are here to help.
 
 Search area
-`````````````
+```````````
 
 Tuleap allows you to search almost any piece of
 Tuleap information through a keyword search mechanism. When
@@ -236,7 +218,7 @@ in the following resources:
    allowing you to actually search this tracker database.
 
 News and activity streams
----------------------------
+-------------------------
 
 Tuleap homepage is a sort of a fish-eye view of the global
 Tuleap activity. Several indicators are available:
