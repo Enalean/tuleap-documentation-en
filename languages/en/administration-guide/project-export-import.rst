@@ -1,3 +1,4 @@
+.. _project-export-import:
 
 Project export and import
 =========================
@@ -66,7 +67,7 @@ archive and current users on target instance:
 
 The generated file will look like:
 
-  .. code-block:: csv
+  .. code-block:: text
 
         name,action,comments
         jdoe,noop,"Status of existing user jdoe is [S]"

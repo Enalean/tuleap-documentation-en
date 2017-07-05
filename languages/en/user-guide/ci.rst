@@ -86,10 +86,11 @@ Let's then give a definition:
         **Trend (of the builds)**   Trend based on the latest 5 builds. This trend is represented by a weather report 
                                     (sun, thunder, etc.) meaning that the trend is good or not.
 =================================   ============================================================================================
+
                     Glossary of Hudson and continuous integration specific words
 
 Hudson Installation
---------------------
+-------------------
 
 A JVM (1.5 or higher) is required for Hudson installation. Hudson can be
 run standalone, but we will describe the installation in a container,
@@ -100,14 +101,14 @@ the war file in Tomcat manager. You're done! Hudson is installed. By
 default, you can access the interface at http://localhost:8080/hudson
 
 Hudson Configuration
----------------------
+--------------------
 
 Before creating your own jobs, (see `Hudson Jobs Creation and Configuration`_), you need to configure Hudson.
 All these steps are optional, you only have to configure what you really
 need.
 
 System Configuration
-`````````````````````
+````````````````````
 
 To configure Hudson, select the link "Manage Hudson" in the top menu in
 Hudson interface, and then the link "Configure System".
@@ -199,7 +200,7 @@ default tuleap.example.com) as well as the JabberID of the user that
 will send the notifications.
 
 Hudson Plug-ins
-`````````````````
+```````````````
 
 Lots of plug-ins are available to extend Hudson. Among them, we can
 quote: checkstyle, CI game, Crap4J, LDAP Email, MSBuild, NAnt, NUnit,
@@ -215,7 +216,7 @@ To install a plug-in, check the box in front of the wished plug-in,
 press the Install button and then follow the instructions.
 
 Hudson Jobs Creation and Configuration
----------------------------------------
+--------------------------------------
 
 Once the system is configured, you can start defining your jobs. To do
 that, select the link "New job" in the menu on top left. You just have
@@ -231,7 +232,7 @@ the way that Hudson will handle the source code updates, define the
 steps of the build, and tell Hudson what to do after the build.
 
 CVS and Subversion
-```````````````````
+``````````````````
 
 By default, Hudson suggests the same two SCM (Source Code Management) as
 Tuleap: CVS and Subversion. Select the manager you're using
@@ -274,7 +275,7 @@ string:
 **http://tuleap.example.com/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
 
 Builds Schedule
-````````````````
+```````````````
 
 As explained in introduction, the big thing with continuous integration
 is the fact that once configured, the build is continuously done, and
@@ -296,7 +297,7 @@ the way hudson will schedule the build. Two main options are available:
    token if you have defined one.
 
 Build configuration (steps)
-````````````````````````````
+```````````````````````````
 
 You now need to define what the build will effectively do (compile your
 project, generate documentation, launch unit tests, etc.). To do that,
@@ -323,7 +324,7 @@ The step configuration is specific to your project. We will let you
 configure it as needed.
 
 Post-build Actions
-```````````````````
+``````````````````
 
 After a build, Hudson can do some actions. Among them:
 
@@ -379,7 +380,7 @@ After a build, Hudson can do some actions. Among them:
    (see `Email Notification`_).
 
 Integration in Tuleap
--------------------------------
+---------------------
 
 As continuous integration is a good practice in software engineering,
 Tuleap integrates Hudson tool. We know how to install (see
@@ -388,7 +389,7 @@ jobs (see `Hudson Jobs Creation and Configuration`_). Let's see now how Hudson i
 Tuleap.
 
 Hudson Service
-```````````````
+``````````````
 
 If Hudson plugin is installed and enabled on your Tuleap
 server, each project can enable the Hudson service (see :ref:`service-configuration` to know how to
@@ -400,7 +401,7 @@ bar of your project : the Hudson continuous integration tab.
 .. _link-hudson-job-with-your-Tuleap-project:
 
 Link Hudson job with your Tuleap project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to link Hudson job with your project, select the Build tab of
 your project, and then select the 'Add a job' link. You need then to
@@ -456,7 +457,7 @@ in a specific window, just select the 'show only this frame' link.
 The table provides also links to Hudson jobs RSS feed.
 
 Hudson Widgets
-```````````````
+``````````````
 
 Hudson service lets you adorn your personal and project dashboard with
 many widgets. To know how to add widgets to your personal dashboard, see
@@ -552,7 +553,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Last artifacts of the Build" Widget
 
 Hudson References
-``````````````````
+`````````````````
 
 It is possible to make references to Hudson items in Tuleap.
 There are some predefined references (job, build), but you can also

@@ -16,7 +16,7 @@ face of a project.
 .. _accessing-a-project-dashboard:
 
 Accessing a Project Dashboard
-------------------------------
+-----------------------------
 
 For project members, accessing the Project Dashboard of one of their
 projects is pretty easy: go to your Personal Page and click on the
@@ -59,7 +59,7 @@ Page" link in the Tuleap Main Menu. (see :ref:`login-and-personal-page`)
 .. _project-dashboard-content:
 
 Project Dashboard Content
---------------------------
+-------------------------
 
 A sample Project Dashboard is available in :ref:`an-example-of-project-dashboard`. The page is split in
 several areas:

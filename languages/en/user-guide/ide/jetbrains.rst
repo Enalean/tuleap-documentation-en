@@ -3,18 +3,18 @@ JetBrains IDE integration
 
 Currently available data for an artifact are :
 
-	* ID
-	* Summary
-	* Description
-	* Creation date
-	* Last update date
+* ID
+* Summary
+* Description
+* Creation date
+* Last update date
 
 First, add a generic tracker server	: Tools > Tasks & Contexts > Configure Servers ... Then add a **Generic** tracker server. Set :
 
-	* **Server URL** : Tuleap server (HTTPS Only)
-	* **Username** : Your Tuleap username
-	* **Password** : Your Tuleap password
-	* Check **Use HTTP authentication**
+* **Server URL** : Tuleap server (HTTPS Only)
+* **Username** : Your Tuleap username
+* **Password** : Your Tuleap password
+* Check **Use HTTP authentication**
 
 .. image:: ../../images/screenshots/jetbrains/jetbrains_addandconfigure.png
    :alt: Add server and general configuration
@@ -99,7 +99,6 @@ produces :
       "last_modified_date": "2013-02-04T11:06:36+01:00"
     }
 
-::
 
 With the previous parameters, the task is displayed :
 

@@ -7,7 +7,7 @@ Project Web Site
 ================
 
 Visiting a Web Site
---------------------
+-------------------
 
 When a new project is created on Tuleap a project specific
 Web Site is created as well. You can access a project Web site in 2
@@ -36,7 +36,8 @@ the default project home page informing you that the site will come soon
 as well as a link back to the Tuleap site.
 
 Visiting a Web Site under HTTPS
---------------------
+-------------------------------
+
 If you want to access to a project web site using HTTPS, you will need to edit
 the Apache TLS configuration in ``/etc/httpd/conf/ssl.conf``. Add the following informations:
 - Add ``NameVirtualHost *:443`` before any virtualhost declaration
@@ -74,10 +75,10 @@ the Apache TLS configuration in ``/etc/httpd/conf/ssl.conf``. Add the following 
 Note that you will need to use a x509 wildcard certificate or a specific certificate for each website.
 
 Web Site Creation
-------------------
+-----------------
 
 Directory Structure and Location
-`````````````````````````````````
+````````````````````````````````
 
 Each project has its own specific location where to store their
 collection of HTML pages along with the images or related data files and
@@ -130,7 +131,7 @@ server and place yourself in this directory with the Unix command "cd
    in it.
 
 Web Site Scripting with PHP
-````````````````````````````
+```````````````````````````
 
 Project members can build sophisticated project Web sites by using the
 `PHP language <http://www.php.net>`__. PHP, is becoming extremely
@@ -147,7 +148,7 @@ document root of your project (e.g.
 ``/home/groups/projectname/htdocs``).
 
 Web Site Publishing
-````````````````````
+```````````````````
 
 You can use various methods to publish your Web pages on your
 Tuleap Web site:

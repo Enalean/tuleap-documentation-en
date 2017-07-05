@@ -1,5 +1,5 @@
 Notifications in Tuleap
-======================
+=======================
 
 Mail notification in private projects
 -------------------------------------

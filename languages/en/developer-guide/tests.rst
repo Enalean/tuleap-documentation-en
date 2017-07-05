@@ -1,10 +1,10 @@
 Tests
-------
+-----
 
 We strongly encourage developers to apply TDD. Not only as a test tool but as a design tool.
 
 Run tests
-``````````
+`````````
 
 Tuleap comes with a handy test environment, based on SimpleTest. File organization:
 
@@ -80,7 +80,7 @@ In another terminal, you can attach to this running container:
 
 
 Organize your tests
-````````````````````
+```````````````````
 
 All the tests related to one class (therefore to one file) should be kept in one
 test file (``src/common/foo/Bar.class.php`` tests should be in

@@ -57,7 +57,7 @@ Add new privileges to **dbauthuser** for RHEL7 to access the database
 
 .. code-block:: sql
 
-   mysql> GRANT SELECT ON tuleap.user to 'dbauthuser'@'${RHEL7_IP}' identified by '${DBAUTHUSER_PASSWORD};
+   mysql> GRANT SELECT ON tuleap.user to 'dbauthuser'@'${RHEL7_IP}' identified by '${DBAUTHUSER_PASSWORD}';
    mysql> GRANT SELECT ON tuleap.user_group to 'dbauthuser'@'${RHEL7_IP}';
    mysql> GRANT SELECT ON tuleap.groups to 'dbauthuser'@'${RHEL7_IP}';
    mysql> GRANT SELECT ON tuleap.svn_token to 'dbauthuser'@'${RHEL7_IP}';
@@ -528,7 +528,7 @@ Install php redis connector:
 
 Then edit ``/etc/httpd/conf.d/php.conf`` and update:
 
-.. code-block:: conf
+.. code-block:: apacheconf
 
     php_value session.save_handler = redis
     php_value session.save_path "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"

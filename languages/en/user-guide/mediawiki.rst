@@ -33,7 +33,7 @@ As of today, when you have a public Tuleap project, you cannot prevent anonymous
 If you need to have a private Mediawiki, then you should switch your project to Private.
 
 Mapping between Tuleap and Mediawiki user groups
-`````````````````````````````````````````````````
+````````````````````````````````````````````````
 
 There is a default mapping between Tuleap and Mediawiki default user groups.
 
@@ -65,7 +65,7 @@ Please note that it's not possible to assign Tuleap special **all_users** and **
    http://www.mediawiki.org/wiki/Manual:User_rights
 
 Synchronisation for Mediawiki users and groups
-```````````````````````````````````````````````
+``````````````````````````````````````````````
 
 In order to have fully relevant users and groups in Mediawiki, the synchronisation
 is launched when the following actions occured:

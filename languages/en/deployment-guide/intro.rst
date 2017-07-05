@@ -31,7 +31,7 @@ packages you got has not been altered.
 We suggest you modify your repository configuration (`/etc/yum.repos.d/Tuleap.repo`)
 to:
 
-.. sourcecode:: none
+.. sourcecode:: ini
 
         [Tuleap]
         name=Tuleap
@@ -91,7 +91,7 @@ Starting Tuleap 9.7 the logs of git read access (gitolite) change to save disk s
 time to convert existing logs might be quite long (estimated to ~20 hours for dataset of 34GB) it's available in a dedicated
 convertion script meant to be run after the upgrade during a quiet moment (during week-end for instance).
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/git/bin/convert_gitolite_full_logs.php
 
@@ -101,7 +101,7 @@ Update the unsafe pattern in the Gitolite configuration
 To avoid getting your Gitolite configuration broken by users that are Git administrators,
 it is recommend to change the unsafe pattern:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> sed -i "s/$UNSAFE_PATT = qr();/$UNSAFE_PATT = qr([\\\n]);/" /var/lib/gitolite/.gitolite.rc
 
@@ -114,7 +114,7 @@ Purge data from the userlog plugin
 If you use the userlog plugin the data stored in the database can grow quite big.
 We have introduced a new utility to help you clean it. You can call it this way:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/userlog/bin/clean_userlog_request.php
 
@@ -185,7 +185,7 @@ users to log in again.
 
 If you use the IM plugin you also must redeploy the authentication provider:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
@@ -197,7 +197,7 @@ Starting Tuleap 9.4, the package ``viewvc-tuleap`` is removed from the official
 Tuleap repository. For those of you that have still not made the switch, we urge
 you to do it for security reasons. The swap of the packages can be done this way:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> yum shell -y <<EOF
     remove viewvc-tuleap
@@ -245,13 +245,13 @@ You must ensure that you have properly updated the IM and Proftpd plugin.
 
 For the IM plugin you must have executed the following script:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
 For the Proftpd plugin you must have executed this script:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
 
@@ -281,7 +281,7 @@ to do it to benefit of a nicer integration of ViewVC into Tuleap.
 
 To do that, you must swap the packages once you have updated Tuleap:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
     #> yum shell -y <<EOF
     remove viewvc-tuleap
@@ -349,11 +349,11 @@ package is not ignored by your yum configuration.
 ====
 
 A new option for setup.sh
---------------------------
+-------------------------
 
 Now setup.sh is checking if your domain name is valid. And for your automation or if you are sure, you can still bypass the check with option:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
         #> setup.sh --disable-domain-name-check
 
@@ -418,7 +418,7 @@ They are automatically replaced by FlammingParrot, if you don't have it installe
 it should be automatically fetched as a dependency. However, if it's not, you should
 install it by hand:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
         #> yum install tuleap-theme-flamingparrot
 
@@ -443,13 +443,13 @@ the following packages: tuleap-core-subversion and tuleap-core-subversion-modper
 
 Meaning that if these packages are not installed you can install them with:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
         #> yum install tuleap-core-subversion tuleap-core-subversion-modperl
 
 If the packages are already installed, you can reinstall them with:
 
-.. sourcecode:: console
+.. sourcecode:: shell
 
         #> yum reinstall tuleap-core-subversion tuleap-core-subversion-modperl
 
@@ -581,7 +581,7 @@ Internet Explorer 8 on Windows XP to be able to connect to the HTTPS server.
 If you want to update your configuration, replace the line SSLProtocol and SSLCipherSuite
 ``/etc/httpd/conf/ssl.conf`` by:
 
-  .. sourcecode:: configuration
+  .. sourcecode:: apacheconf
 
     # SSL Protocol support:
     # List the enable protocol levels with which clients will be able to
@@ -613,13 +613,13 @@ following line in your ``local.inc``:
 
 Execute this script if you have the IM plugin installed:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
 Execute this script if you have the Proftpd plugin installed:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
 
@@ -669,7 +669,7 @@ Local.inc:
 * Add ``$sys_cvs_convert_cp1252_to_utf8 = 1;`` at the end of the file.
 
 System:
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     # Note: for CentOS 5, you need to manually source and install the package 'perl-Text-Iconv'
     $> yum install perl-Text-Iconv
@@ -687,7 +687,7 @@ being mistakingly indexed and causing the operation to fail, we did several thin
  * The system administrator is notified by mail
 
 In order for this to work you need to add the following lines to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     // The maximum file size (in bytes) that can be indexed- be careful
     // not to go above your server limits
@@ -768,7 +768,7 @@ Full text search
 
 You need to clean and re-index all previously indexed projects:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     # Of course, you need to adapt username, password, servers and port to
     # your configuration
@@ -828,7 +828,7 @@ Another change in this release is a dependency on a recent version of git. We kn
 
 If in doubt, then you should upgrade to the latest version.
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> yum update git
 
@@ -840,7 +840,7 @@ Full text search
 
 The index mapping for artifact'ss follow-up comments changed, you need to delete the current index and to create an empty new one (all previously indexed comments will be lost):
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     # Of course, you need to adapt username, password, servers and port to
     # your configuration
@@ -874,7 +874,7 @@ Activating the compatibility view for a project is then done in the "Administrat
 ===
 
 CentOs packages dependency
----------------------------
+--------------------------
 
 For Tuleap 7.3, we updated our mediawiki package by adding new modules.
 For a new extension, we create a dependency with a packahe named `htmldoc`
@@ -969,7 +969,7 @@ Update of elasticsearch:
 * Setup yum repsitory as described on `Elasticsearch repositories page <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html#_yum>`_
 * Then install elasticsearch:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> yum install java-1.7.0-openjdk
     $> yum install elasticsearch
@@ -977,7 +977,7 @@ Update of elasticsearch:
 
 Note, ensure your elasticsearch cluster uniqueness, in ``/etc/elasticsearch/elasticsearch.yml``
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     cluster.name: <unique-name>
 
@@ -985,7 +985,7 @@ Then you shall setup nginx for security.
 
 We use nginx for its reverse proxy capabilities, the installation package comes from `RedHat controlled Software Collections <https://www.softwarecollections.org>`_
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> yum install scl-utils
     $> rpm -i https://www.softwarecollections.org/en/scls/rhscl/nginx14/epel-6-x86_64/download/rhscl-nginx14-epel-6-x86_64-1-2.noarch.rpm
@@ -994,13 +994,13 @@ We use nginx for its reverse proxy capabilities, the installation package comes 
 
 Generate a password file:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> htpasswd -c /opt/rh/nginx14/root/etc/nginx/htpasswd elasticsearch
 
 Then, setup reverse proxy. Edit ``/opt/rh/nginx14/root/etc/nginx/nginx.conf`` and add following snippet in ``http`` section:
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
        listen 9222;
 
@@ -1021,7 +1021,7 @@ Then, setup reverse proxy. Edit ``/opt/rh/nginx14/root/etc/nginx/nginx.conf`` an
 
 Finally, start the proxy (password is the one you defined in previous step):
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> chkconfig nginx14-nginx on
     $> service nginx14-nginx start
@@ -1034,7 +1034,7 @@ Update elasticsearch mapping
 
 Delete existing docman mapping and setup a new one
 
-  .. sourcecode:: console
+  .. sourcecode:: shell
 
     $> curl -X DELETE "localhost:9222/tuleap/docman"
     $> curl -u elasticsearch:password -X PUT "localhost:9222/docman" -d '{

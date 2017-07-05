@@ -822,7 +822,7 @@ the Project Data Export page generates and downloads a CSV file that you
 can save on your local disk or directly open in Excel or any other
 spreadsheet of your choice. No particular setting is required in most
 cases. Nevertheless, you can change the CSV separator and the date
-format (see :ref:`preferences`) if the default one doesn't correspond with your Excel
+format (see :ref:`account-maintenance`) if the default one doesn't correspond with your Excel
 version  [#f2]_.
 
 Importing CSV Files in MS-Access
@@ -914,9 +914,7 @@ Add your project database to Windows Data Sources. For Windows users:
 
 -  Use your normal user account to login.
 
--  Go to ``Start menu -> Settings -> Control
-           Panel -> Administrative Tools -> Data Sources
-           (ODBC)``
+-  Go to ``Start menu -> Settings -> Control Panel -> Administrative Tools -> Data Sources (ODBC)``
 
 -  Select the "User DSN" tab and then click on the "Add" button
 
@@ -955,7 +953,7 @@ Using Your Project Database From MS-Access
 
 Before you use MS-Access to connect to your project database make sure
 that the MySQL ODBC driver has been installed on your PC (see `Installing and Configuring the MySQL ODBC Driver`_) and
-that you have generated your project database (see `Generate the MySQL ODBC Driver`_). Then go through
+that you have generated your project database. Then go through
 the following steps:
 
 -  Launch MS-Access and open a new database.

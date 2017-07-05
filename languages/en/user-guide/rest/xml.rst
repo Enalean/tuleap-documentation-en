@@ -1,5 +1,5 @@
 REST with XML
-==============
+=============
 
 *WARNING*: It is possible that the REST API is not working properly using XML. It has been tested only
 on those endpoints so far:

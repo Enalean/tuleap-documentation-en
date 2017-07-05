@@ -66,3 +66,4 @@ Execute your playbook to deploy your servers:
 ::
 
     $ ansible-playbook -i my_inventory my_playbook.yml
+

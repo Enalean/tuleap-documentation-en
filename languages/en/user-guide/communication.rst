@@ -18,12 +18,12 @@ Plug-in.
 .. _mailing-lists:
 
 Mailing Lists
----------------
+-------------
 
 .. _creation:
 
 Creation
-`````````
+````````
 
 Each project can create as many mailing lists (ML) as needed. To create
 a mailing list click on the "Lists" item in the Project Main menu, then
@@ -69,7 +69,7 @@ Where:
    to follow this well established practice.
 
 Administration
-```````````````
+``````````````
 
 The ML administration is also entirely Web based. You can access the ML
 administration page by using the URL that you received when you first
@@ -94,7 +94,7 @@ page at least once to get an idea about the feature set.
     Tuleap user passwords.
 
 (Un)Subscription, Archive and Preferences
-``````````````````````````````````````````
+`````````````````````````````````````````
 
 Unless its owner marks a ML as private, any Tuleap user can
 subscribe to a project Mailing List (ML). To subscribe to a mailing list
@@ -140,7 +140,7 @@ mailing list.
 .. _news-service:
 
 News Service
--------------
+------------
 
 The News service complements your mailing lists. This service allows you
 to publish pieces of news related to your project. Any event in the life
@@ -170,7 +170,7 @@ news, you can request a promotion for the Tuleap front page
 to the administrator.
 
 Web Forums
------------
+----------
 
 This is the third form of communication offered by Tuleap.
 Web Forums are more or less equivalent to mailing list except that the
@@ -200,7 +200,7 @@ forum.
 .. _instant-messaging-plug-in:
 
 Instant Messaging Plug-in
---------------------------
+-------------------------
 
 
 .. attention:: Deprecation notice
@@ -270,7 +270,7 @@ If a project is deleted, the corresponding chat room and shared group
 will be destroyed as well.
 
 Jabber Client Configuration
-````````````````````````````
+```````````````````````````
 
 Configuring a Jabber client to use your Tuleap account is
 straightforward. In case you are using a multi protocol client the first
@@ -306,7 +306,7 @@ scope of this guide to talk about them, so please refer to your Jabber
 client documentation for further information on this topic.
 
 Multi-User Chat Room (MUC)
-```````````````````````````
+``````````````````````````
 
 As stated before, the IM plug-in creates a multi-user chat room for each
 project. This room is named after the project name and is opened only
@@ -461,7 +461,7 @@ For further information on how to invite external users to chat rooms
 using your Jabber client please refer to its documentation.
 
 MUC Room Logs
-```````````````
+`````````````
 
 Conversations in chat rooms are logged (private conversation are not).
 To access the log, select the link 'Logs' in the IM tab of your project.
@@ -487,7 +487,7 @@ least 10 minutes.
 
 You can export the room logs, in CSV format. To do this, click on the
 Export button at the end of the logs. The export will use your user
-preferences for CSV separator and date format (see :ref:`preferences`).
+preferences for CSV separator and date format (see :ref:`account-maintenance`).
 
 .. [#f1]
    Behind the scene, each piece of news is actually managed exactly like

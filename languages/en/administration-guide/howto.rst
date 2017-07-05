@@ -2,7 +2,7 @@ Administration HowTo
 ====================
 
 Importing an existing CVS repository in Tuleap
------------------------------------------------
+----------------------------------------------
 
 How to properly install a project team's existing CVS repository into
 the Tuleap project specific repository
@@ -108,7 +108,7 @@ The real work
 That's all folks!
 
 Regenerating a fresh CVS or SVN repository for a Tuleap project
-----------------------------------------------------------------
+---------------------------------------------------------------
 
 *When the first import goes wrong or the project team screwed up
 everything and want to start again from scratch*
@@ -218,7 +218,7 @@ website:
 If you see the admin page of the selected mailing list, then it is OK.
 
 Enabling 'Restricted Users' on a Tuleap server
------------------------------------------------
+----------------------------------------------
 
 Overview
 ~~~~~~~~
@@ -856,7 +856,7 @@ In case of errors, check:
 
 
 Setup a gitolite mirror's configuration based on hostnames
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to speedup mirroring, you may want that Tuleap writes a configuration based on mirror's hostnames, so that
 gitolite will take it into account and mirroring will then be faster as it will not replicate all repositories to then
@@ -1096,7 +1096,7 @@ Please note that HTML body is not taken into account.
 There is a specific postfix configuration to activate the feature. In the main Postfix configuration file,
 generally located in ``/etc/postfix/main.cf``:
 
-.. sourcecode:: configuration
+.. sourcecode:: cfg
 
         recipient_delimiter = +
 

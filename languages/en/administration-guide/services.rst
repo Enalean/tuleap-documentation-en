@@ -101,7 +101,7 @@ CVS
 ---
 
 Tuleap specific CVS
-````````````````````
+```````````````````
 
 The CVS RPM packages installed on Tuleap contains a modified version of
 cvs. The reason the CVS source code has been modified is as follows:
@@ -140,7 +140,8 @@ Subversion
 ----------
 
 Known cache issues with mod_perl
-``````````````````````````
+````````````````````````````````
+
 mod_perl SVN cache is defined by repository.
 Some actions don't clear automatically the Apache cache and can lead to permission issues:
 

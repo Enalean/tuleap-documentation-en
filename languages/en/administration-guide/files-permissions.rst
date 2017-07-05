@@ -1,5 +1,5 @@
 Tuleap File Permissions
-========================
+=======================
 
 The Tuleap Web interface use the paradigm of project and project
 members to manage access permissions to the various project data.

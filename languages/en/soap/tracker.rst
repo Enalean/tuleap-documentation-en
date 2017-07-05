@@ -280,7 +280,7 @@ Same as SelectBox but with (possibly) several values:
 Open List
 ~~~~~~~~~
 
-Unlike for *Box we rely on ``bind_value_label`` only, the ``bind_value_id`` is ignored.
+Unlike for \*Box we rely on ``bind_value_label`` only, the ``bind_value_id`` is ignored.
 
 .. code-block:: php
    :linenos:
