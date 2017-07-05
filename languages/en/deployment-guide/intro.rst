@@ -4,6 +4,20 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.10
+====
+
+Custom plugins impacted by _addHook removal
+-------------------------------------------
+
+We have done some code clean up in plugins management. You may be interested if you have custom 
+plugins installed on your platform: starting Tuleap 9.9.99.73, we removed the deprecated method 
+``_addHook`` (replaced by ``addHook``). Your platform will display a blank page if you are still
+using the former version.
+
+In order to fix the issue (if any), please replace all occurrences of ``_addHook`` by ``addHook`` 
+in your custom plugins.
+
 9.9
 ===
 
