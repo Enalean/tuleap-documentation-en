@@ -459,11 +459,12 @@ The table provides also links to Hudson jobs RSS feed.
 Hudson Widgets
 ``````````````
 
-Hudson service lets you adorn your personal and project dashboard with
+Hudson service lets you adorn your personal and project dashboards with
 many widgets. To know how to add widgets to your personal dashboard, see
-:ref:`login-and-personal-page`. The procedure is similar to add widgets to dashboard project (see :ref:`project-dashboard-content`).
+:ref:`login-and-personal-page`. The procedure is similar to add widgets to
+project dashboards (see :ref:`project-dashboard-content`).
 
--  **My Hudson jobs**: only available on the personal dashboard. By
+-  **My Hudson jobs**: only available on the personal dashboards. By
    default, it gives an overview of all the jobs of all the projects you
    are member of. You can of course select the jobs you wish to display
    by selecting the preferences link of the widget.
@@ -476,7 +477,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "My Hudson Jobs" Widget
 
 -  **Jobs Overview**: this widget is only available on project
-   dashboard. It can display an overview of all the jobs associated with
+   dashboards. It can display an overview of all the jobs associated with
    this project. You can always choose the ones you want to display in
    the widget (preferences link).
 
@@ -488,7 +489,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Jobs Overview" Widget
 
 -  **Last Builds**: this widget is available for both personal and
-   project dashboard. It is linked to only one job, and show the last
+   project dashboards. It is linked to only one job, and show the last
    builds for this job (last one, last successfull, last failed). It
    also displays the project weather report (project trend, see `Introduction to Continuous Integration`_).
 
@@ -500,7 +501,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Lasts Builds" Widget
 
 -  **Test Results**: this widget is available for both personal and
-   project dashboard. It is linked to only one job, and show the test
+   project dashboards. It is linked to only one job, and show the test
    results of the latest build for the selected job. To display
    something, your job needs to execute tests and publish them. The
    result is shown on a pie chart.
@@ -513,7 +514,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Test results" Widget
 
 -  **Test Trend**: this widget is available for both personal and
-   project dashboard. It is linked to only one job, and show the test
+   project dashboards. It is linked to only one job, and show the test
    result trend for the job. Of course, your job needs to have tests to
    display something. The graph will show the number of tests (failed
    and successfull) along time. It can be very convenient for project
@@ -528,7 +529,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Tests Trend" Widget
 
 -  **Build History**: this widget is available for both personal and
-   project dashboard. It is linked to only one job, and show the build
+   project dashboards. It is linked to only one job, and show the build
    history, under the form of RSS feed. For each build of the list, you
    can see the build number, the status and the date the build has been
    scheduled.
@@ -541,7 +542,7 @@ many widgets. To know how to add widgets to your personal dashboard, see
    "Builds History" Widget
 
 -  **Last Artifacts of the Build**: this widget is available for both
-   personal and project dashboard. It is linked to only one job, and
+   personal and project dashboards. It is linked to only one job, and
    show the last artifacts published. To display something, your job
    needs to publish artifacts.
 

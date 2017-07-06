@@ -292,8 +292,8 @@ Subversion clients.
 
 The Subversion Web interface can be accessed via the "Subversion" item
 in the Project Main Menu or via the Subversion service listed in the
-Public Area (see :ref:`an-example-of-project-dashboard`). The Subversion Web interface provides the following
-features to end-users:
+Public Area widget (see :ref:`project-dashboard-content`). The Subversion
+Web interface provides the following features to end-users:
 
 -  **Accessing the Subversion repository**: The welcome page of the
    Tuleap Subversion service gives you all the information

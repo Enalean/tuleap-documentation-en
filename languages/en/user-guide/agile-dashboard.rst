@@ -72,9 +72,9 @@ Note also that the burndown field can be configured for including or not the wee
 
 Using an Agile Dashboard
 ------------------------
-To enter the Agile Dashboard service of a given project, first go to the Project
-Dashboard (see :ref:`accessing-a-project-dashboard`) and click on the "Agile Dashboard" item in the Project
-Main Menu located in the upper part of the page.
+
+To enter the Agile Dashboard service of a given project, first go to
+the project and click on the "Agile Dashboard" item in the sidebar.
 
 You will be directed to the agile dashboard homepage of your project
 (see `Agile Dashboard Homepage`_).

@@ -262,8 +262,8 @@ interface does not intend to replace the CVS client that you should
 normally use on your desktop computer. It rather focuses on providing
 you with additional features not found in cvs clients. The CVS Web
 interface can be accessed via the "CVS" item in the Project Main Menu or
-via the CVS service listed in the Public Area (see :ref:`an-example-of-project-dashboard`). The CVS Web
-interface provides the following features:
+via the CVS service listed in the Public Area widget (see :ref:`project-dashboard-content`).
+The CVS Web interface provides the following features:
 
 -  **Accessing the CVS repository**: The welcome page of the
    Tuleap CVS service gives you all the information you need
