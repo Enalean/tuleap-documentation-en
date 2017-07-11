@@ -55,11 +55,8 @@ are:
 Entering the Tracker Service
 ----------------------------
 
-To enter the Tracker service of a given project, first go to the Project
-Summary page (see :ref:`accessing-a-project-dashboard`) and either click the "Trackers" item in the Project
-Main Menu located in the upper part of the page or you can directly
-choose a tracker from the trackers listed in the Public Area of the
-Project Summary page.
+To enter the Tracker service of a given project, first go to the project
+and click on the "Trackers v3" item in the sidebar.
 
 You will be presented with a list of trackers available for this
 particular project . Select the tracker you are interested in.
@@ -656,8 +653,7 @@ Selection Criteria for Mass Change
 The artifacts to be updated can be selected according to a set of
 criteria. These criteria are the same as for artifact browsing. For
 fine-grained control you may also select individually all artifacts
-concerned by the mass change. Please see the :ref:`accessing-a-project-dashboard` for more detail on how to
-fill out the selection criteria.
+concerned by the mass change.
 
 Update
 ``````

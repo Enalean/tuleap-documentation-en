@@ -102,8 +102,8 @@ administrators (see `Delivery Manager Structure`_).
 File Release Browsing and Download
 ----------------------------------
 
-The latest version of each project package (if any) is always visible on
-the Project Dashboard (see :ref:`an-example-of-project-dashboard`). The latest version can immediately be
+The latest version of each project package (if any) might be visible on
+the Project Dashboard (see :ref:`project-dashboard-content`). The latest version can immediately be
 downloaded by clicking on the "Download" link or visit the complete list
 of packages and release by clicking on the "[View ALL project files]"
 link.

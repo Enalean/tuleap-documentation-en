@@ -41,11 +41,8 @@ will be added in the follow-ups flow.
 Entering the Tracker Service
 ----------------------------
 
-To enter the Tracker service of a given project, first go to the Project
-Dashboard (see :ref:`accessing-a-project-dashboard`) and either click the "Trackers" item in the Project
-Main Menu located in the upper part of the page or you can directly
-choose a tracker from the trackers listed in the Public Area of the
-Project Dashboard.
+To enter the Tracker service of a given project, first go to the project
+and click on the "Trackers" item in the sidebar.
 
 You will be presented with a list of trackers available for this
 particular project (see `Tracker Welcome Screen`_). Select the tracker you are interested in.
