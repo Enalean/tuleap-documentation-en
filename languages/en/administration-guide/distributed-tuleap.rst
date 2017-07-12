@@ -123,7 +123,7 @@ Create ``codendiadm`` user with the same ids than on el6 (UID & GID corresponds 
 
 .. code-block:: bash
 
-   $ sudo groupadd groupadd -g GID codendiadm
+   $ sudo groupadd -g GID codendiadm
    $ sudo useradd -g codendiadm -M -d /var/lib/tuleap -u UID codendiadm
 
 Mount ``/etc/tuleap`` and ``/var/lib/tuleap/svn_plugin`` directories on el7.
