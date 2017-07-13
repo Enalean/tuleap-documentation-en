@@ -6,6 +6,10 @@
 Project Web Site
 ================
 
+ .. warning:: Enabling this feature has major security consequences, as such the
+    feature is disabled by default. It is **strongly** advised to let it disabled.
+
+
 Visiting a Web Site
 -------------------
 
@@ -19,14 +23,14 @@ different ways:
    ::
 
        http://projectname.tuleap.example.com
-                 
+
 
    Or, if your server is setup in secure mode:
 
    ::
 
        https://projectname.tuleap.example.com
-                 
+
 
 -  Click on the "Home Page" link in the Project Main menu at the top of
    the Project Dashboard.
