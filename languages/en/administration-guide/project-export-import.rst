@@ -619,7 +619,7 @@ the <is_autocompute> node keeps the field in autocompute mode.
 
 .. sourcecode:: xml
   :linenos:
-  :emphasize-lines: 51,56,57,58,59,78,146
+  :emphasize-lines: 15,16,17,18,19,20,29,32
 
     <?xml version="1.0" encoding="UTF-8"?>
     <project>
