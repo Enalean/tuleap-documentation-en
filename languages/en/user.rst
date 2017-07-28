@@ -18,6 +18,7 @@ User-guide
    user-guide/frs
    user-guide/cvs
    user-guide/svn
+   user-guide/svn-plugin
    user-guide/git
    user-guide/gerrit
    user-guide/pullrequest
