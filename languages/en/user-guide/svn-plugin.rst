@@ -1,7 +1,7 @@
 
 .. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
-.. _version-control-with-subversion:
+.. _version-control-with-multiple-svn-repo:
 
 Version Control with Multiple SVN repositories plugin
 ================================
@@ -19,35 +19,16 @@ Subversion clients.
 The Multiple SVN repositories plugin can be accessed via the "SVN" item
 in your project menu. It provides the following features to end-users:
 
--  **Accessing the SVN repositories**: The welcome page of the
-   Tuleap Subversion service gives you all the information
-   you need to access the Subversion repository from your Subversion
-   client. Among other things it tells you what the Subversion root path
-   is and how to checkout the source code. This page may also be
-   customized to display project specific instructions (see `Subversion Administration Interface`_).
-
--  **Browsing a SVN repository**: this feature allows you to
-   browse the Subversion repository even if you don't have a Subversion
-   client installed on your desktop machine.
-
--  **Subversion Administration**: this service allows project
-   administrator to perform the most common Subversion administration
-   and configuration tasks from the Tuleap Web interface
-   (for more details see `Subversion Administration Interface`_).
-
-Let's review some of these features in more details.
-
 Accessing the SVN repositories
 ``````````````````````````````
 The welcome page of the Tuleap SVN service lists all the existing repositories, and gives you a quick access to
 their administration if you are allowed to.
 You can also create new svn repository.
+
 .. figure:: ../images/screenshots/svn-plugin/repo-list.png
    :align: center
    :alt: SVN plugin welcome page
    :name: SVN plugin welcome page
-
-   SVN plugin welcome page
 
 Browsing The SVN Repository
 ```````````````````````````
@@ -57,14 +38,14 @@ Tuleap-hosted project, you normally need to have Subversion
 installed on your machine. However Tuleap also offers a
 built-in Web browsing interface to the Subversion repository which
 allows you to navigate in the source code, download it, view a file
-history or compare two revisions of the same file.
+history or compare two revisions of the same file. It also indicates what the Subversion root path
+is and how to checkout the source code.
 
 .. figure:: ../images/screenshots/svn-plugin/browse-repo.png
    :align: center
    :alt: Browse a SVN repository
    :name: Browse a SVN repository
 
-   Browsing a SVN repo
 
 Cross-Referencing Artifacts and Subversion Commits
 ``````````````````````````````````````````````````
@@ -121,8 +102,6 @@ as follows:
    :align: center
    :alt: Notifications
    :name: Notifications
-
-   Notifications
 
 Subversion Settings
 -----------------------------------
