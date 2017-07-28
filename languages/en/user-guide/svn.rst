@@ -5,8 +5,9 @@
 
 Version Control with Subversion
 ===============================
-``This service is deprecated. A multiple repositories SVN service is proposed instead (see :ref:`version-control-with-multiple-svn-repo`)``
--------------------------------------------------------------------------------------------------------------------------------------------
+``This service is deprecated.``
+-------------------------------
+``A multiple repositories SVN service is proposed instead``(see :ref:`version-control-with-multiple-svn-repo`)
 
 This chapter is not a Subversion Tutorial. It focuses on the integration
 of Subversion with Tuleap and how to use it in an optimal
