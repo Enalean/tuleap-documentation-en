@@ -886,6 +886,81 @@ e-mail notification is sent in response to the import.
     your original regional settings. Import the "fixed" .csv file into
     Tuleap.
 
+Complex field
+-------------
+
+Computed field
+``````````````
+In Tuleap, computed fields are special fields that allows you to to the sum of
+all your child field in a tracker hierarchy.
+
+A common use case for this field is calculation of remaining effort in release.
+Release remaining effort is the sum of sprint remaining effort
+and sprint remaining effort is the sum of user stories
+
+Computation rules:
+ - we never compute twice the same node,
+   if a user story is linked to two sprint, the release remaining effort add only one time the user story remaining effort
+ - manual value break the calculation,
+   when calculation encounter a manual value we never computed children of node, we keep manual value for computation.
+ - permissions are not taken in account during calculation process,
+   user will see the remaining effort global, even he/she can't see some artifacts.
+
+Example of how computation works:
+
+.. figure:: ../images/screenshots/tracker/computed.png
+   :align: center
+   :alt: Example of computed field calculation
+      :name: Example of computed field calculation
+
+- User story "6 remaining effort is count just once for release, but sprint #2 and #3 reflects correct remaining effort
+- If I manually set remaining effort for Sprint #2 to 10, release remaining effort will be 60 (10+30+20)
+- I am connected a a member who only can see release, I will see 60 as remaining effort
+
+
+Burndown field
+``````````````
+Burndown is a graphical representation of remaining effort,
+and is used to track team progress.
+In burndown every dot represents a remaining effort for a given day.
+
+Burndown display is based on a cache table:
+ - every night yesterday value is computed and cached
+ - the value for the day "today" is never cached and calculated at every display
+ - if burndown has missing day, we generate the full burndown
+ - if start date or duration is updated, the full burndown is calculated again
+ - project admin can force cache generation
+ - data are not displayed until the cache is complete
+
+It's possible to use burndown over different timezones:
+
+Let's imagine you team is split in Montreal and in Tokyo:
+
+========================== =======================
+Team A                     Team B
+Montreal                   Tokyo
+31th July 2017 1:00 AM     1th August 2017 3:00 PM
+========================== =======================
+
+With a server located in Paris
+
+========================== =====================
+Server time                31th July 2017 8:00AM
+Today remaining effort     10
+========================== =====================
+
+My team B, update the remaining effort to 9 at 3:00PM,
+burndown will reflects following values:
+
+========================== ===============================
+in Montreal                value for 31th July will be 9.
+in Montreal                value for 1th August will be 9.
+in Tokyo                   value for 31th July will be 10.
+in Tokyo                   value for 1th August will be 9.
+========================== ===============================
+
+
+
 Default Tracker Access Permissions
 ----------------------------------
 
@@ -901,61 +976,61 @@ the table below:
 ============================================================================================= ===========================================
         Tracker Feature                                                                           Access Permission
 ============================================================================================= ===========================================
-`New Artifact Submission <#TrackerV5ArtifactSubmission>`_                                     By default any Tuleap visitor, 
-                                                                                              whether logged in or not, has the ability 
+`New Artifact Submission <#TrackerV5ArtifactSubmission>`_                                     By default any Tuleap visitor,
+                                                                                              whether logged in or not, has the ability
                                                                                               to submit a new artifact to a tracker. The
-                                                                                              tracker administrator has the ability to 
+                                                                                              tracker administrator has the ability to
                                                                                               limit the scope of this feature to
-                                                                                              Tuleap registered users 
-                                                                                              (anonymous users are requested to login 
-                                                                                              first) or to the project members if the 
-                                                                                              tracker is made private. 
-`Artifact Browsing <#TrackerV5ArtifactBrow sing>`_                                            Searching the Artifact database and 
-                                                                                              browsing the results is available to all 
-                                                                                              Tuleap visitors (whether 
-                                                                                              registered or not) unless the tracker has 
-                                                                                              been made private by the project 
-                                                                                              administrator. If so the tracker is only 
+                                                                                              Tuleap registered users
+                                                                                              (anonymous users are requested to login
+                                                                                              first) or to the project members if the
+                                                                                              tracker is made private.
+`Artifact Browsing <#TrackerV5ArtifactBrow sing>`_                                            Searching the Artifact database and
+                                                                                              browsing the results is available to all
+                                                                                              Tuleap visitors (whether
+                                                                                              registered or not) unless the tracker has
+                                                                                              been made private by the project
+                                                                                              administrator. If so the tracker is only
                                                                                               visible to project members.
-`Artifact Update <#TrackerV5ArtifactUpdate>`_                                                 By default only project members can 
-                                                                                              update an artifact. Non members have only 
-                                                                                              limited access and can only add a comment 
-                                                                                              or attach a file. 
-`Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_                        Only Project administrators and project 
-                                                                                              members with Admin. permission can 
-                                                                                              import data into trackers. 
+`Artifact Update <#TrackerV5ArtifactUpdate>`_                                                 By default only project members can
+                                                                                              update an artifact. Non members have only
+                                                                                              limited access and can only add a comment
+                                                                                              or attach a file.
+`Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_                        Only Project administrators and project
+                                                                                              members with Admin. permission can
+                                                                                              import data into trackers.
 `Tracker Creation <#TrackerV5Creation>`_                                                      Only available to project administrators.
-`Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_                      Only available to project administrators 
-                                                                                              and project members with Admin. 
+`Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_                      Only available to project administrators
+                                                                                              and project members with Admin.
                                                                                               permission on this tracker.
-`Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_          Only available to project administrators 
-                                                                                              and project members with Admin. 
+`Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_          Only available to project administrators
+                                                                                              and project members with Admin.
                                                                                               permission on this tracker.
-`Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_                Only available to project administrators 
-                                                                                              and project members with Admin. permission 
+`Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_                Only available to project administrators
+                                                                                              and project members with Admin. permission
                                                                                               on this tracker.
-`Tracker Administration - Workflow Management <#TrackerV5Workflow>`_                          Only Project administrators and project 
-                                                                                              members with Admin. permission can define 
+`Tracker Administration - Workflow Management <#TrackerV5Workflow>`_                          Only Project administrators and project
+                                                                                              members with Admin. permission can define
                                                                                               and configure workflow.
-`Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_          Only Project administrators and project 
-                                                                                              members with Admin. permission can define 
+`Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_          Only Project administrators and project
+                                                                                              members with Admin. permission can define
                                                                                               tracker permissions.
-`Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_           Only Project administrators and project 
-                                                                                              members with Admin. permission can define 
+`Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_           Only Project administrators and project
+                                                                                              members with Admin. permission can define
                                                                                               canned responses.
-`Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ Only Project administrators can add email 
-                                                                                              addresses in the global email notification 
+`Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ Only Project administrators can add email
+                                                                                              addresses in the global email notification
                                                                                               field. Project members can watch artifacts
-                                                                                              of other team members. Any registered 
-                                                                                              Tuleap user can customize her 
+                                                                                              of other team members. Any registered
+                                                                                              Tuleap user can customize her
                                                                                               notification preferences.
-`Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_                 Only Project administrators and project 
-                                                                                              members with Admin. permission can export 
+`Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_                 Only Project administrators and project
+                                                                                              members with Admin. permission can export
                                                                                               tracker structure.
 ============================================================================================= ===========================================
 
                                                 Default Tracker Access Permissions
-   
+
 Tracker Creation
 ----------------
 
@@ -1021,7 +1096,7 @@ or remove fields or fine-tune the field settings afterwards.
    typically find templates for Bugs, Tasks, etc. A specific tracker
    called "Empty" allows you to create a virgin tracker with no
    predefined fields other than the minimal set of required fields. See
-   `Tracker Templates`_ for more explanations on the semantic 
+   `Tracker Templates`_ for more explanations on the semantic
    of those templates.
 
 -  **Project Templates**: in case you have already defined a tracker
@@ -1721,7 +1796,7 @@ properties that can be tuned :
       .. figure:: ../images/screenshots/sc_conf_vs_end_user.png
          :align: center
          :alt: Select box bound to a list of users
-         :name: Select box bound to a list of users   
+         :name: Select box bound to a list of users
 
          Select box bound to a list of users
 
@@ -1917,20 +1992,20 @@ First, you select a source field.
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_01.png
    :align: center
-   :alt: 
+   :alt:
 
 Once the source field selected (here, "Operating System"), you can
 select the target field.
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_02.png
    :align: center
-   :alt: 
+   :alt:
 
 Then submit, and a matrix with all values is displayed:
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_03.png
    :align: center
-   :alt: 
+   :alt:
 
 You can now check the boxes corresponding to the dependencies. In the
 example, if the source field value is "Linux", the corresponding target
@@ -1938,7 +2013,7 @@ values are "2.0", "2.2", "2.4", "2.6".
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_04.png
    :align: center
-   :alt: 
+   :alt:
 
 Once a field dependency has been created, it appeared at the "Choose
 Source/Target" page as a quick link if you need to edit it. Note that to
@@ -1946,7 +2021,7 @@ delete a field dependency, you need to empty the matrix.
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_05.png
    :align: center
-   :alt: 
+   :alt:
 
 Once dependencies are defined, the final user (when submitting/updating
 an artifact) will see the Version options filtered according to the
@@ -1954,19 +2029,19 @@ selection of the Operating System:
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_07.png
    :align: center
-   :alt: 
+   :alt:
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_08.png
    :align: center
-   :alt: 
+   :alt:
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_09.png
    :align: center
-   :alt: 
+   :alt:
 
 .. figure:: ../images/screenshots/sc_trackerfielddependencies_10.png
    :align: center
-   :alt: 
+   :alt:
 
 When you define your dependencies, please be aware of the following
 points:
