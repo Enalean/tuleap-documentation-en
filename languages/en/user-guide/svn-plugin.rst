@@ -9,7 +9,7 @@ Version Control with Multiple SVN repositories plugin
 The Subversion Browsing Interface
 ---------------------------------
 
-Tuleap offers a number a facilities that allow you to
+Tuleap offers a number of facilities that allow you to
 interact with several Subversion repositories within the same project.
 The Subversion user interface does not intend to replace the Subversion
 client that you should normally use on your computer. It rather
@@ -98,11 +98,6 @@ as follows:
     follow-up comment. You will find this extremely convenient while
     trying to keep track of the changes and why they were made.
 
-.. figure:: ../images/screenshots/svn-plugin/notif-svn.png
-   :align: center
-   :alt: Notifications
-   :name: Notifications
-
 Subversion Settings
 -----------------------------------
 
@@ -131,6 +126,11 @@ notification:
 -  **Monitored Path**: subversion path on which notification will be sent.
 
 -  **Notification list**: you can define users, groups or emails.
+
+.. figure:: ../images/screenshots/svn-plugin/notif-svn.png
+   :align: center
+   :alt: Notifications
+   :name: Notifications
 
     **Tip**
 
