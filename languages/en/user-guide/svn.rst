@@ -5,9 +5,9 @@
 
 Version Control with Subversion
 ===============================
-``This service is deprecated.``
--------------------------------
-``A multiple repositories SVN service is proposed instead``(see :ref:`version-control-with-multiple-svn-repo`)
+
+.. warning:: This service is deprecated.
+    A multiple repositories SVN service is proposed instead (see :ref:`version-control-with-multiple-svn-repo`)
 
 This chapter is not a Subversion Tutorial. It focuses on the integration
 of Subversion with Tuleap and how to use it in an optimal
@@ -702,7 +702,6 @@ and a global whitelist defined on /tags/module*
 .. figure:: ../images/screenshots/immutable_tags.png
    :align: center
    :alt: Immutable tags Tuleap interface
-   :name: Immutable tags Tuleap interface
 
    Immutable tags Tuleap interface
 
@@ -720,12 +719,9 @@ not part of a project team. In this section all examples are given in
 the form of Subversion command lines but transposing them to graphical
 front-ends should be relatively straightforward.
 
-.. _a-typical-software-development-life-cycle-on-Tuleap:
-
 .. figure:: ../images/screenshots/SVN_Life_Cycle.png
    :align: center
    :alt: A Typical Software Development Life Cycle on Tuleap
-   :name: A Typical Software Development Life Cycle on Tuleap
 
    A Typical Software Development Life Cycle on Tuleap
 

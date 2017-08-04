@@ -4,7 +4,7 @@
 .. _version-control-with-multiple-svn-repo:
 
 Version Control with Multiple SVN repositories plugin
-================================
+=====================================================
 
 The Subversion Browsing Interface
 ---------------------------------
@@ -83,7 +83,7 @@ as follows:
    containing this pattern anywhere in Tuleap, the pattern
    will be automatically transformed into an hyperlink to the commit
    description which include log messages, impacted files, versions and
-   author of the change(see `The detail of an atomic Subversion commit`_) .
+   author of the change.
 
 -  The Tuleap reference mechanism allows cross-referencing
    with any Tuleap object: artifacts, documents, files, etc.
@@ -130,7 +130,9 @@ notification:
 .. figure:: ../images/screenshots/svn-plugin/notif-svn.png
    :align: center
    :alt: Notifications
-   :name: Notifications
+
+   ..
+
 
     **Tip**
 
@@ -290,7 +292,7 @@ will indeed prevent registered users from reading the '/secret'
 directory.
 
 For more information about the format of this file you should refer to
-the Subversion Book (see `Subversion References`_).
+the Subversion Book.
 
 Subversion Immutable tags
 `````````````````````````
@@ -339,7 +341,6 @@ and a global whitelist defined on /tags/module*
 .. figure:: ../images/screenshots/immutable_tags.png
    :align: center
    :alt: Immutable tags Tuleap interface
-   :name: Immutable tags Tuleap interface
 
    Immutable tags Tuleap interface
 
@@ -362,7 +363,6 @@ front-ends should be relatively straightforward.
 .. figure:: ../images/screenshots/SVN_Life_Cycle.png
    :align: center
    :alt: A Typical Software Development Life Cycle on Tuleap
-   :name: A Typical Software Development Life Cycle on Tuleap
 
    A Typical Software Development Life Cycle on Tuleap
 
@@ -399,8 +399,7 @@ As the happy administrator of a new Tuleap project, the
 first thing to do is to populate your freshly brewed Subversion
 repository with your project source code. To do so, first create a new
 directory ``topdirectory`` on your workstation and populate this top
-level directory with the recommended directory layout documented earlier
-(see `The Subversion Repository Structure`_).
+level directory with the directory you want to use.
 
 Place yourself into the ``topdirectory`` and type the following command
 (in one line):
@@ -408,7 +407,7 @@ Place yourself into the ``topdirectory`` and type the following command
 ::
 
     svn --username loginname import .
-    http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame
+    https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame
     --message "Initial repository version"
 
 
@@ -538,5 +537,3 @@ by typing:
 Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 
 Deliver this archive through the File Release service (see :ref:`delivery-manager-administration`).
-
-
