@@ -14,7 +14,7 @@ Tuleap is compatible with the following browsers:
 IE browser < 11 is deprecated and while most of Tuleap still work on it, latest
 development don't. Please upgrade your browser or use an alternative.
 
-IE browser may be in compatibility mode. Tuleap will offer a bad user
+IE browser should not be in compatibility mode. Tuleap will offer a bad user
 experience if you are using the compatibility mode. Here are the steps to
 configure Internet Explorer:
 
