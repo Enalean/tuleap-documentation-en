@@ -1,34 +1,6 @@
 Angular
 -------
 
-Prepare your environment
-""""""""""""""""""""""""
-
-    You only need to do this once, when installing your machine.
-    You'll need to have NodeJS >= v4.x. See https://github.com/nodesource/distributions
-    You will also need to have npm >= 2.x. You can run 'npm install -g npm' to update it.
-
-    .. code-block:: bash
-
-        $> mkdir ~/.node_modules_global
-        $> npm config set prefix $HOME/.node_modules_global
-        $> npm install -g npm
-        $> npm install -g bower grunt-cli
-
-    Then add the following lines to your '.bashrc' file to add the newly created 'node_modules_global' folder to your PATH:
-
-    .. code-block:: bash
-
-        export NPM_GLOBAL_HOME=~/.node_modules_global/bin
-        export PATH=$NPM_GLOBAL_HOME:$PATH
-
-    To turn off the progress notification when you do 'npm install':
-
-    .. code-block:: bash
-
-        $> npm config set progress false
-
-
 Install
 """""""
     .. code-block:: bash
@@ -50,7 +22,7 @@ Tests and test coverage
 """""""""""""""""""""""
 
     .. code-block:: bash
-    
+
         $> cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/
         $> npm run test
         # To see what parts of your code are covered by tests:
@@ -82,5 +54,3 @@ Every time you change something, you'll have to run 'npm run build' in the artif
 
         $> (cd /my/artifact-modal/sources/ && npm run build) && \
         (cd /my/tuleap/sources/plugins/agiledashboard/www/js/[kanban|planning-v2]/ && npm run build)
-
-

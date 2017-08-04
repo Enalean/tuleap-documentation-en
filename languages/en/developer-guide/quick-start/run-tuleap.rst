@@ -4,6 +4,16 @@ Run Tuleap
 .. NOTE:: Please read and follow instructions of both :ref:`clone-tuleap` and
     :ref:`install-docker` sections before executing this one.
 
+Mandatory development dependencies
+----------------------------------
+
+You will need the following tools to develop on Tuleap, please refer to their
+respective documentation for installation instructions:
+
+- `npm <https://docs.npmjs.com/>`_ >= 5.3.0
+- make
+
+
 First start of Tuleap
 ---------------------
 
