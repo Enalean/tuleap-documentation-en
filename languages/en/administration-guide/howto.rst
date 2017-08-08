@@ -1159,6 +1159,14 @@ if there is any output wait for night run of daily compute (so keys are dumped a
 Upgrade on CentOS 6
 ~~~~~~~~~~~~~~~~~~~
 
+If you use the pullrequest plugin, it will be removed during the procedure, do not
+forget to install it back at the end with ``yum install tuleap-plugin-pullrequest``.
+
+Unless you are running in RHEL environnement that has been migrated from RHEL5,
+the command ``find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;``
+might fail during the procedure because ``/usr/com/gitolite`` does not exist. It
+is not an issue, you can safely finish the migration.
+
   .. sourcecode:: console
 
       # as root, service tuleap stop
