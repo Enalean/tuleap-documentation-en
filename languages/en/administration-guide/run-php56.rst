@@ -69,19 +69,6 @@ Edit ``/etc/httpd/conf/httpd.conf`` and change the values for:
 * ``<VirtualHost *:8080>``
 * ``#Include conf/ssl.conf``
 
-Edit ``/etc/httpd/conf.d/tuleap-vhost.conf`` and comment the part of SSL Virtual Host:
-
-.. sourcecode:: bash
-
-    ##
-    ## SSL Virtual Host Context
-    ##
-    # <VirtualHost *:443>
-    #
-    ...
-    #     CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
-    # </VirtualHost>
-
 Restart apache (``service httpd restart``). Tuleap web interface is no longer accessible.
 
 Deploy FPM configuration
@@ -187,7 +174,7 @@ Configuration:
         ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
         ssl_prefer_server_ciphers on;
 
-        include conf.d/tuleap.d/*.conf;
+        include conf.d/tuleap-plugins/*.conf;
 
         # The 4 proxy_set_header are mandatory
         location / {
@@ -207,12 +194,6 @@ Configuration:
 
 * Adapt it to your context (%server_name%, /path/to/ssl, etc)
 * Update ``/etc/tuleap/conf/local.inc`` and set (or add): ``$sys_trusted_proxies = '127.0.0.1';``
-
-Deploy tuleap core configuration:
-
-.. sourcecode:: bash
-
-    cp /usr/share/tuleap/src/etc/nginx18/tuleap.d/* /etc/nginx/conf.d/tuleap.d/
 
 And now test the reverse proxy mode:
 
