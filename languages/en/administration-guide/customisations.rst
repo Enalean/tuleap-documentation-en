@@ -15,7 +15,6 @@ At the top of the left hand side Tuleap menu pane (just above the Logged In sect
 This is how Tuleap displays the logo :
 
     - browser width > 1366px: ``organization_logo.png`` (recommended size: 200x45px)
-    - browser width <= 1366px AND browser width > 1300px: ``organization_logo_medium.png`` (recommended size: 155x45px)
     - browser width < 1300px: ``organization_logo_small.png`` (recommended size: 45x45px)
 
     Background colour: you need to add a background to your image if you want another background colour than the navbar colour. Note: the Tuleap FlamingParrot theme has multiple colour variants.
