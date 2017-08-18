@@ -21,6 +21,7 @@ First start of Tuleap
 .. code-block:: bash
 
     $ cd /path/to/tuleap
+    $ make composer
     $ make dev-setup
     $ make start-dns # if you're using OS X, do not execute this command
     $ make start
