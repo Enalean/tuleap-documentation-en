@@ -11,6 +11,7 @@ You will need the following tools to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
 - `npm <https://docs.npmjs.com/>`_ >= 5.3.0
+- `composer <https://getcomposer.org/>`_
 - make
 
 
