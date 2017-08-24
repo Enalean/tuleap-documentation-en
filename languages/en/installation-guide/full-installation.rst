@@ -43,6 +43,20 @@ This installation guide will cover the installation on the recommended system: R
 
 - If you use Red Hat, you will need to activate the Optional channel
 
+- **Install the Software Collections repositories**
+
+On CentOS this is done by:
+
+::
+
+    yum install centos-release-scl
+
+On RedHat this is done by:
+
+::
+
+    yum-config-manager --enable rhel-server-rhscl-6-rpms
+
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 

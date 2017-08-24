@@ -4,18 +4,46 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.12
+====
+
+Plugin Git with Gitolite3 now requires Git 2.9
+----------------------------------------------
+
+If you have the package ``tuleap-plugin-git-gitolite3`` installed you will need
+to enable the Software Collections repositories to be able to retrieve Git 2.9.
+
+In a CentOS environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum install centos-release-scl
+
+In a RHEL environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum-config-manager --enable rhel-server-rhscl-6-rpms
+
+The configuration of Gitolite must also been manually updated to take into account
+the new path to the Git binaries. The update can be done with the following command:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/git19/root/usr/bin#/opt/rh/rh-git29/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
+
 9.10
 ====
 
 Custom plugins impacted by _addHook removal
 -------------------------------------------
 
-We have done some code clean up in plugins management. You may be interested if you have custom 
-plugins installed on your platform: starting Tuleap 9.9.99.73, we removed the deprecated method 
+We have done some code clean up in plugins management. You may be interested if you have custom
+plugins installed on your platform: starting Tuleap 9.9.99.73, we removed the deprecated method
 ``_addHook`` (replaced by ``addHook``). Your platform will display a blank page if you are still
 using the former version.
 
-In order to fix the issue (if any), please replace all occurrences of ``_addHook`` by ``addHook`` 
+In order to fix the issue (if any), please replace all occurrences of ``_addHook`` by ``addHook``
 in your custom plugins.
 
 9.9
