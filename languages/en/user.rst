@@ -14,7 +14,7 @@ User-guide
    user-guide/tracker
    user-guide/tql
    user-guide/agile-dashboard
-   user-guide/trafficlights
+   user-guide/testmanagement
    user-guide/frs
    user-guide/cvs
    user-guide/svn

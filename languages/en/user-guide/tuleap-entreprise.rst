@@ -10,7 +10,7 @@ enhanced reliability.
 
 Some features are only distributed to Tuleap Enterprise subscribers:
 
-* :ref:`TrafficLights test management <testmgmt-trafficlights>`.
+* :ref:`Test Management <testmgmt>`.
 
 More information on `Enalean web site`_.
 
