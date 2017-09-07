@@ -32,6 +32,14 @@ the new path to the Git binaries. The update can be done with the following comm
 
     #> sed -i "s#/opt/rh/git19/root/usr/bin#/opt/rh/rh-git29/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
 
+Deprecated feature
+------------------
+
+- Direct Database Access is disabled by default, and will be removed in a next release. 
+  If users complain, you can enable the feature by adding 
+  ``$sys_enable_deprecated_feature_database_export = 1;`` into ``/etc/tuleap/conf/local.inc`` file.
+  Please contact us if it is the case, else we will remove completely the feature.
+
 9.10
 ====
 
