@@ -7,6 +7,17 @@ file, the default is automatically set for you.
 9.12
 ====
 
+Update to the Test Management plugin
+------------------------------------
+
+Instances with the :ref:`Test Management<testmgmt>` plugin installed and activated
+must execute the following SQL query before running the ``forgeupgrade`` command
+during the update procedure:
+
+.. sourcecode:: sql
+
+    UPDATE plugin SET name = 'testmanagement' WHERE name = 'trafficlights';
+
 Plugin Git with Gitolite3 now requires Git 2.9
 ----------------------------------------------
 
@@ -35,8 +46,8 @@ the new path to the Git binaries. The update can be done with the following comm
 Deprecated feature
 ------------------
 
-- Direct Database Access is disabled by default, and will be removed in a next release. 
-  If users complain, you can enable the feature by adding 
+- Direct Database Access is disabled by default, and will be removed in a next release.
+  If users complain, you can enable the feature by adding
   ``$sys_enable_deprecated_feature_database_export = 1;`` into ``/etc/tuleap/conf/local.inc`` file.
   Please contact us if it is the case, else we will remove completely the feature.
 
