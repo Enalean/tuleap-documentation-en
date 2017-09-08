@@ -4,8 +4,8 @@ Trackers
 Create a new field
 ------------------
 
-Here are important points to be checked while developing a new field. This applies 
-also for new types of bind for list fields. Please note that some points may be 
+Here are important points to be checked while developing a new field. This applies
+also for new types of bind for list fields. Please note that some points may be
 irrelevant for some type of fields.
 
 * Setup acceptance criteria in test suite
@@ -44,9 +44,10 @@ irrelevant for some type of fields.
   * Field is used for aggregates
   * Field is used to build charts
   * Field is used to build cardwall
-         
+
 
 * Angular
+
   * Create/ edit modal
   * Cardwall edit in place
   * Card field in planning v2
