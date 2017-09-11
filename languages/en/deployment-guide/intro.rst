@@ -11,12 +11,12 @@ Update to the Test Management plugin
 ------------------------------------
 
 Instances with the :ref:`Test Management<testmgmt>` plugin installed and activated
-must execute the following SQL query before running the ``forgeupgrade`` command
+must execute the following command before running the ``forgeupgrade`` command
 during the update procedure:
 
-.. sourcecode:: sql
+.. sourcecode:: shell
 
-    UPDATE plugin SET name = 'testmanagement' WHERE name = 'trafficlights';
+    #> sed -i 's#/usr/share/tuleap/plugins/trafficlights#/usr/share/tuleap/plugins/testmanagement#' /etc/tuleap/forgeupgrade/config.ini
 
 Plugin Git with Gitolite3 now requires Git 2.9
 ----------------------------------------------
