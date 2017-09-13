@@ -118,6 +118,7 @@ and restart mysql.
 
 Then update your password, as ``codendiadm`` and ``dbauthuser`` DB user:
 
+* ``SET SESSION old_passwords=0;``
 * ``SET PASSWORD = PASSWORD('your_existing_password')``
 
 Deploy base nginx configuration
