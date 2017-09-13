@@ -10,6 +10,9 @@ file, the default is automatically set for you.
 Update to the Test Management plugin
 ------------------------------------
 
+The :ref:`Test Management<testmgmt>` plugin is only available with
+:ref:`Tuleap Enterprise<tuleap-enterprise>`.
+
 Instances with the :ref:`Test Management<testmgmt>` plugin installed and activated
 must execute the following command before running the ``forgeupgrade`` command
 during the update procedure:
@@ -17,6 +20,17 @@ during the update procedure:
 .. sourcecode:: shell
 
     #> sed -i 's#/usr/share/tuleap/plugins/trafficlights#/usr/share/tuleap/plugins/testmanagement#' /etc/tuleap/forgeupgrade/config.ini
+
+Instances with the plugin installed should update their repo file
+(probably ``/etc/yum.repos.d/tuleap.repo``) to set the base URL of the Test Management
+repository to something like: ``https://<companyname>:<password>@my.enalean.com/pub/tuleap-by-enalean/tuleap-testmanagement/current/rhel6/noarch/``.
+If you encounter troubles to update your configuration, please contact your
+:ref:`Tuleap Enterprise<tuleap-enterprise>` support.
+
+After the upgrade, when you access for the first time in each project Test Management,
+a project administrator will need to link the service to a tracker to collect issues
+in the service administration. The tracker can be a tracker already existing
+or you can create a new one dedicated to issues found while executing a test suite.
 
 Plugin Git with Gitolite3 now requires Git 2.9
 ----------------------------------------------
