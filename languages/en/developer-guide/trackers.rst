@@ -1,8 +1,22 @@
 Trackers
 ========
 
-Create a new field
-------------------
+Structure
+---------
+
+Here is a (old) global overview of the structure of trackers. The aim is to give to the developer
+a bird's-eye view of objects relationship and underlying database structure.
+
+
+.. figure:: ../images/diagrams/tracker-structure.png
+    :align: center
+    :alt: Overview of tracker structure
+    :name: Overview of tracker structure
+    :target: ../_images/tracker-structure.png
+
+
+Creating a new field
+--------------------
 
 Here are important points to be checked while developing a new field. This applies
 also for new types of bind for list fields. Please note that some points may be
