@@ -10,7 +10,7 @@ Mandatory development dependencies
 You will need the following tools to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
-- `npm <https://docs.npmjs.com/>`_ >= 5.3.0
+- `npm <https://docs.npmjs.com/>`_ >= 5.4.0
 - `composer <https://getcomposer.org/>`_
 - make
 
