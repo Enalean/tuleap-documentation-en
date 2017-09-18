@@ -6,14 +6,6 @@
 Version Control with Multiple SVN repositories plugin
 =====================================================
 
-The REST API
-------------
-Repository creation and settings definition can be done in REST API.
-
-You are now able to search, create, update and delete a repository trough the API.
-You can find more documentation about it directly in routes documentation.
-
-
 The Subversion Browsing Interface
 ---------------------------------
 

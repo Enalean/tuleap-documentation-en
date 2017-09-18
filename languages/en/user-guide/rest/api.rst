@@ -32,3 +32,44 @@ Here an example of artifact created with some artifact typed links:
         }
       ]
     }
+
+
+
+POST /svn
+---------
+Repository creation and settings definition can be done in REST API.
+
+::
+
+    {
+       "project_id": 122,
+       "name" : "repo01",
+       "settings": {
+         "commit_rules": {
+           "is_reference_mandatory": true,
+           "is_commit_message_change_allowed": false
+         }
+    }
+
+
+PUT /svn/{id}
+---------
+When you update an artifact you must provide all settings, for instance if you want to
+allow commit message change you should provide following information to the route:
+
+::
+
+    {
+      "settings": {
+        "commit_rules": {
+          "is_reference_mandatory": true ,
+          "is_commit_message_change_allowed": true
+        },
+        "immutable_tags": {
+          "paths": [],
+          "whitelist": []
+        },
+        "access_file": "",
+        "email_notifications": []
+      }
+     }
