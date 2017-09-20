@@ -33,8 +33,9 @@ irrelevant for some type of fields.
   * Definition is NOT given through SOAP @deprecated
   * Definition is given through REST (representations)
   * Migrate field from TV3 (if not done)
-  * Definition is given through SOAP & REST
-  * Does new field can be used for burndown? Has it its own calculation mode?
+  * Does new field can be used for burndown?
+  * Can the field be required?
+  * What level of permissions this field supports?
 
 * Artifacts
 
