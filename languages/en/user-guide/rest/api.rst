@@ -53,7 +53,7 @@ Repository creation and settings definition can be done in REST API.
 
 
 PUT /svn/{id}
----------
+-------------
 When you update an artifact you must provide all settings, for instance if you want to
 allow commit message change you should provide following information to the route:
 
