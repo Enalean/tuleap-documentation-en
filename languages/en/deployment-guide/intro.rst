@@ -4,6 +4,17 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.13
+====
+
+HTTPS is forced by default if available
+---------------------------------------
+
+Tuleap now forces the use of the HTTPS protocol if the parameter `sys_https_host`
+is not set to an empty value in the `local.inc` configuration file. Consequently,
+the parameter `sys_force_ssl` is no more as it becomes the only possible behavior
+and could safely be removed from your configuration file.
+
 9.12
 ====
 
