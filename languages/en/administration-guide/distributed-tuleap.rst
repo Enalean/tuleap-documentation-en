@@ -50,6 +50,23 @@ This section will describe how to install this setup. It can be summarized by th
      as well (explained bellow) and that means that your administration access (ssh) to the server must be updated to
      run on another port (eg. 2222) otherwise you won't be able to ssh the server (you will be redirected to el6 server).
 
+Requirements
+''''''''''''
+Here are the requirements to install Distributed Tuleap.
+
+Distributions
+~~~~~~~~~~~~~
+  * RHEL6: **RedHat 6.x/CentOS 6.x** for Tuleap regular
+  * RHEL7: **RedHat 7.x/CentOS 7.x** for Tuleap SVN
+
+Services
+~~~~~~~~
+  * The Reverse Proxy needs to be **Nginx 1.10** or newer
+  * The database needs to be **MySQL 5.6**
+  * The SVN repository needs to be **svn/wandisco 1.8** or newer
+  * You need **Redis 3.2** or newer
+  * You need **RabbitMQ 3.3** or newer 
+
 On the MySQL server
 '''''''''''''''''''
 
