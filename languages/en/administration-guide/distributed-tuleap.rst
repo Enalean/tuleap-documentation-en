@@ -1,7 +1,7 @@
 Distributed Tuleap Configuration
 ================================
 
-**This require Tuleap >= 9.6.99.77**
+**This require Tuleap >= 9.7**
 
 Distributed Tuleap is a configuration of Tuleap to allow distribution of the workload across several servers
 without any change for end users. As of today its possible to have offload SVN plugin traffic on a dedicated server.
