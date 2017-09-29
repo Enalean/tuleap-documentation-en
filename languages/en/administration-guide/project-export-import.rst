@@ -958,6 +958,10 @@ The released files (FRS) can be imported, the XML syntax is:
             <user format="username">alice</user>
 
           </file>
+          
+          <link name="test" url="http://example.com" release-time="2016-07-19T10:38:19+01:00"> 
+             <user format="username">alice</user> 
+          </link> 
           ...
 
         </release>
