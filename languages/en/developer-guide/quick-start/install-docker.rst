@@ -17,29 +17,6 @@ Installing Docker on Ubuntu
 
 Follow the official Docker documentation: `Installation on Ubuntu <http://docs.docker.com/installation/ubuntulinux/>`_.
 
-
-You should edit ``/etc/default/docker`` and add:
-
-  .. code-block:: bash
-
-    # We add 8.8.8.8 as default dns server so that
-    # we can access the Internet even if dnsdock image is not up
-    DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8"
-
-You may need to also add ``nameserver 172.17.42.1`` to your ``resolv.conf`` file:
-
-Edit /etc/resolvconf/resolv.conf.d/head and add:
-
- .. code-block:: bash
-
-    nameserver 172.17.42.1
-
-Then force update of ``resolv.conf``:
-
- .. code-block:: bash
-
-    $ sudo resolvconf -u
-
 Installing Docker on Fedora
 """""""""""""""""""""""""""
 
@@ -115,7 +92,7 @@ Install Docker Compose
 ----------------------
 
 Once ``docker`` is installed, you must install ``docker-compose``. Follow steps
-3, 4 and 5 on `Docker Compose documentation <https://docs.docker.com/compose/install/>`_.
+on `Docker Compose documentation <https://docs.docker.com/compose/install/>`_.
 
 .. NOTE:: There is no need to manually install ``docker-compose`` on Mac OS X since
     it has already been installed via Docker Toolbox.

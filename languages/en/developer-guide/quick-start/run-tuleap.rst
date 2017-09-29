@@ -10,9 +10,17 @@ Mandatory development dependencies
 You will need the following tools to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
+- make
+- `phpcs <https://github.com/squizlabs/PHP_CodeSniffer#installation>`_
 - `npm <https://docs.npmjs.com/>`_ >= 5.4.0
 - `composer <https://getcomposer.org/>`_
-- make
+
+   .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
+
+        However we require that ``composer`` command is available in your executable path.
+        This can be done by executing the following command during the installation steps:
+
+        ``sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin``
 
 
 First start of Tuleap
@@ -23,20 +31,23 @@ First start of Tuleap
     $ cd /path/to/tuleap
     $ make composer
     $ make dev-setup
-    $ make start-dns # if you're using OS X, do not execute this command
     $ make start
-    $ npm install
-    $ npm run build
+    $ make post-checkout
 
-And voila, your server is up and running! You can access it at
-https://tuleap-web.tuleap-aio-dev.docker. You can connect with ``admin``
-account, the password will be given by ``make show-passwords``.
+.. NOTE:: docker will download base images for mysql, tuleap, … Please be patient!
+
+Then you need to know the IP address of the web container, with ``docker inspect tuleap-web | grep '"IPAddress"'`` and
+edit (as root) the ``/etc/hosts`` file: ``172.17.0.4    tuleap-web.tuleap-aio-dev.docker``.
+
+Now open your browser and go to https://tuleap-web.tuleap-aio-dev.docker. You should see the homepage of your Tuleap
+instance. You can connect with ``admin`` account, the password will be given by ``make show-passwords``.
+
+And voila, your server is up and running!
 
 .. image:: ../../images/its-Magic.gif
    :alt: It's Magic!
    :align: center
 
-.. NOTE:: docker will download base images for mysql, tuleap, … Please be patient!
 
 Descriptions of commands
 ------------------------
@@ -44,27 +55,21 @@ Descriptions of commands
 * ``make dev-setup``: This command generates some needed passwords (mysql, ldap,
   …) and creates data containers. Those data containers are used as volumes to
   persist data (files, db, …). This command needs to be run only once.
-* ``make start-dns``: This command starts dnsdock that will resolve names for
-  our docker containers. This command needs to be run before you run ``make start``.
 * ``make start``: This command is a wrapper around ``docker-compose up``. It
   starts 3 containers: ``web`` for the front end, ``ldap`` to manage users in an
   OpenLDAP server, and ``db`` for the mysql server.
 
-  You can issue the following command in order to check that all four containers are started:
+  You can issue the following command in order to check that all containers are started:
 
   .. code-block:: bash
 
     $ docker ps --format "{{.ID}}: {{.Names}} — {{.Image}} {{.Ports}}"
-    7ac93f72dbb6: dnsdock — tonistiigi/dnsdock 172.17.42.1:53->53/udp
     149428f796ea: tuleap-web — enalean/tuleap-aio-dev:nodb 22/tcp, 80/tcp, 443/tcp
     7cd1e645b3a9: tuleap_ldap_1 — enalean/ldap:latest 389/tcp, 636/tcp
     9d026f381fbf: tuleap_db_1 — mysql:5.5 3306/tcp
 
-* ``npm install``: Install the packages needed to build javascript/CSS code.
-
-* ``npm run build``: Generate the javascript and CSS files to be used by the browser. you
-  need to run this command everytime a javascript file or a SCSS file is updated (either by you
-  or if you switch to a branch).
+* ``make post-checkout``: Install npm dependencies, generate the javascript and CSS files to be used by the browser,
+  deploy gettext translation... You need to run this command everytime you switch a branch.
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
     lost at reboot. If you need to add/change anything and make it persistant, fork
