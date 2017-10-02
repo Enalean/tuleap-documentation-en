@@ -1080,9 +1080,15 @@ Insecure email gateway
 Insecure email gateway is the most flexible solution. You can create or update artifacts with a simple
 email address (forge__artifact+id@... to update an artifact and forge__tracker+id@... to create).
 
-However this option should only be enabled in environment were mail sender are carefuly controled (intranet)
-and should **NEVER** be activated on internet / extranet. This feature only rely on "From:" header of
-incoming mail and this information can be spoofed by a 6 years old child.
+.. warning:: This option should only be enabled in environment were mail sender are carefuly controled (intranet)
+    and should **NEVER** be activated on internet / extranet. This feature only rely on "From:" header of
+    incoming mail and this information can be spoofed by a 6 years old child. This option, might also
+    allow to take over services relying on the domain name to restrict accesses, see this `blogpost for
+    a demonstration of what it is possible to do
+    <https://medium.freecodecamp.org/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c>`_.
+    If you still want to enable this option, it is highly recommended to use a
+    dedicated domain name (see ``sys_default_mail_domain`` in your ``local.inc`` file).
+
 
 Once activated by site admin, each tracker admin that wants this feature to be enabled needs to manually
 activate the feature in tracker "General Settings" screen. The tracker must respect some constraints:
