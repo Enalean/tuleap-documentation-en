@@ -7,6 +7,13 @@ file, the default is automatically set for you.
 9.13
 ====
 
+API keys used to access to a Bugzilla server in the Bugzilla reference plugin are now encrypted
+-----------------------------------------------------------------------------------------------
+
+If you use the Bugzilla reference plugin, it is recommended you change the API keys
+used until now. These keys are now stored encrypted instead of in cleartext in
+the database. You can do that as a site administrator in the plugin configuration.
+
 HTTPS is forced by default if available
 ---------------------------------------
 
