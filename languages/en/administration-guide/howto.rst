@@ -1,6 +1,11 @@
 Administration HowTo
 ====================
 
+.. toctree::
+    :maxdepth: 1
+
+    services/mediawiki.rst
+
 Importing an existing CVS repository in Tuleap
 ----------------------------------------------
 
@@ -602,23 +607,7 @@ The message should be defined, according to the language, either in:
 Renamed project, mediawiki lost (Previous 7.3)
 ----------------------------------------------
 
-Corresponds and fixed by `request #6630 Mediawiki db not renamed when project unixname is renamed <https://tuleap.net/plugins/tracker/?aid=6630>`_
-
-Prior to 7.3, when a project got renamed (change of short name as site admin) mediawiki
-was no longer available. The new version fix it but cannot recover automatically the
-previous status.
-
-To do it, you need:
-
-* the project id ``<projectid>``
-* the old shortname ``<oldname>``
-* the new shortname ``<newname>``
-
-You can do it by hand, as site admin by:
-
-* Adding the reference in the DB: ``INSERT INTO plugin_mediawiki_database VALUES (<projectid>, 'plugin_mediawiki_<oldname>');``
-* Updating the link in the DB: ``UPDATE service SET link = '/plugins/mediawiki/wiki/<newname>' WHERE group_id = <projectid> and shortname = 'plugin_mediawiki';``
-* Rename the directory on filesystem ``mv /var/lib/tuleap/mediawiki/projects/<oldname>  /var/lib/tuleap/mediawiki/projects/<newname>``
+:ref:`Section moved to Mediawiki <admin_service_mediawiki>`
 
 Enable gitweb + tuleap
 ----------------------
@@ -1202,27 +1191,11 @@ is not an issue, you can safely finish the migration.
 
 Adapt ``/etc/httpd/conf.d/tuleap-plugins/git-http.conf`` with ``ScriptAlias /git/ /usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh/``.
 
-.. _admin_howto_mediawiki_123:
-
-
 Upgrade to Mediawiki 1.23
 -------------------------
 
-This requires Centos 6.
+:ref:`Section moved to Mediawiki <admin_service_mediawiki>`
 
-As of Tuleap 8.1, upgrade to Mediawiki 1.23 is delegated project by project because
-we (Tuleap development team) don't have a good view of the possible impacts of this update.
-
-Both versions are running in parallel. The objective is to allow a progressive deployment.
-
-Install new package:
-
-  .. sourcecode:: console
-
-      $> yum install php-mediawiki-tuleap-123
-
-Then, as site admin, on Admin page you will find a link to Mediawiki and control the list
-of projects that are migrated to 1.23
 
 Limit maximum number of subscribers (mailman)
 ---------------------------------------------

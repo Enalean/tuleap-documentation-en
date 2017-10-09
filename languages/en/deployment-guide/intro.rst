@@ -22,6 +22,12 @@ is not set to an empty value in the `local.inc` configuration file. Consequently
 the parameter `sys_force_ssl` is no more as it becomes the only possible behavior
 and could safely be removed from your configuration file.
 
+Move to Mediawiki 1.23
+----------------------
+
+It's strongly recommended to migrate all your mediawiki databases to 1.23 (LTS) in order to
+prepare PHP 5.6 compatibility.
+
 9.12
 ====
 
@@ -722,7 +728,7 @@ Execute this script if you have the Proftpd plugin installed:
 Mediawiki
 ---------
 
-* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_howto_mediawiki_123>`
+* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_service_mediawiki>`
 
 REST API
 --------
