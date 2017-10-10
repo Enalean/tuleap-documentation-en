@@ -19,8 +19,8 @@ HTTPS is forced by default if available
 
 Tuleap now forces the use of the HTTPS protocol if the parameter `sys_https_host`
 is not set to an empty value in the `local.inc` configuration file. Consequently,
-the parameter `sys_force_ssl` is no more as it becomes the only possible behavior
-and could safely be removed from your configuration file.
+the parameter `sys_force_ssl` is no more needed as it becomes the only possible
+behavior and could safely be removed from your configuration file.
 
 Move to Mediawiki 1.23
 ----------------------
