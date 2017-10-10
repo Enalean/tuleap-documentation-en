@@ -20,13 +20,15 @@ un-used mediawiki and eventually purge them.
 Clean-up tables and databases
 -----------------------------
 
-This tool is inspect the database to:
+This tool inspects the database to:
 
 * Delete all databases that are left after a project deletion (before 9.13, mediawiki databases were not deleted on project deletion).
 * Delete all databases that are empty in projects that don't use mediawiki service.
-  * If the service is unused mediawiki has some content, a warning is issued. It's possible to force removal by explicitly adding the corresponding project number on command line.
-  * In both cases, there is problem to re-activate an (empty) mediawiki in those projects in the future.
+
+  * If the service is unused and mediawiki has some content, a warning is issued. It's possible to force removal by explicitly adding the corresponding project number on command line.
+  * In both cases, there is no problems to re-activate an (empty) mediawiki in those projects in the future.
 * Identify all projects with mediawiki service activated but without content
+
   * It's possible to force delete of those empty mediawiki by explicitly adding the corresponding project number on command line.
   * Projects can re-activate mediawiki service in the future.
 
@@ -51,7 +53,7 @@ Use one central database
 
 .. attention::
 
-    As soon as the central database is setup, all new projects will be created in the central DB. **There is not way back**.
+    As soon as the central database is setup, all new projects will be created in the central DB. **There is no way back**.
     It's technically possible to move out the central DB but no tools helps to do that ATM.
 
 In some cases, you are not allowed to have one database per project (or the database user you got for running tuleap doesn't
