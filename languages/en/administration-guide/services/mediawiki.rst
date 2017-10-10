@@ -97,19 +97,16 @@ It's recommended to purge the databases (see previous section) prior to migrate 
 Upgrade to Mediawiki 1.23
 -------------------------
 
-As of Tuleap 8.1, upgrade to Mediawiki 1.23 is delegated project by project because
-we (Tuleap development team) don't have a good view of the possible impacts of this update.
+Since Tuleap 9.13, mediawiki 1.23 is installed by default and it's strongly recommended to upgrade all projects to
+this version.
 
-Both versions are running in parallel. The objective is to allow a progressive deployment.
+In Site Admin "Mediawiki" section, there is a panel to select the projects you want to migrate. You can also migrate
+all projects at once with the dedicated toggle.
 
-Install new package:
-
-  .. sourcecode:: console
-
-      $> yum install php-mediawiki-tuleap-123
-
-Then, as site admin, on Admin page you will find a link to Mediawiki and control the list
-of projects that are migrated to 1.23
+If you have a very long list of projects to migrate and the event it taking too long (it will block the execution of
+main SystemEvents queue), you can stop the execution by creating a file ``/var/tmp/tuleap_cache/STOP_SYSTEM_EVENT``.
+This will gracefully stop the SystemEvent execution after the current migration. You will be able to re-trigger the global
+migration later on.
 
 Renamed project, mediawiki lost (Previous 7.3)
 ----------------------------------------------
