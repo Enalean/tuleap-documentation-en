@@ -47,31 +47,22 @@ If there is only one file or directory you are interested in:
 REST tests
 """"""""""
 
-There is also a docker image for REST tests:
+There is also a docker image for REST tests, just run the following command:
 
 .. code-block:: bash
 
-    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51
-    # Also exists for php 5.6:
-    $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php56-httpd24-mysql56
+   $> make tests_rest
 
-
-How to debug tests
-""""""""""""""""""
-
-Docker containers are stopped and removed once the tests are finished. In case of failure,
-if you want to debug things, you may need to start manually the container in order to parse logs for example.
+It will execute all REST tests in a docker container. This container is stopped and removed once the tests are finished. If you need to run tests manually, do the following instead:
 
 .. code-block:: bash
 
-   $> docker run --rm -ti -v $PWD:/usr/share/tuleap enalean/tuleap-test-rest:c6-php53-httpd22-mysql51 bash
-   $root@d4601e92ca3f> /usr/share/tuleap/tests/rest/bin/setup.sh
-   $root@d4601e92ca3f> /usr/share/tuleap/vendor/bin/phpunit \
-       --include-path '/usr/share/tuleap/src/www/include:/usr/share/tuleap/src' \
-       -d date.timezone=Europe/Paris \
-       /usr/share/tuleap/tests/rest/ArtifactFilesTest.php
+   $> make tests_rest_setup
+   $root@d4601e92ca3f> ./tests/rest/bin/run.sh setup
+   $root@d4601e92ca3f> scl enable rh-php70 bash
+   $root@d4601e92ca3f> ./tests/rest/vendor/bin/phpunit tests/rest/tests/ArtifactFilesTest.php
 
-In another terminal, you can attach to this running container:
+In case of failure, you may need to attach to this running container in order to parse logs for example:
 
 .. code-block:: bash
 
