@@ -10,9 +10,9 @@ file, the default is automatically set for you.
 CLI is gone
 -----------
 
-In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool. 
-This tool was here to help Tuleap SOAP API adoption in the early days. Users that downloaded 
-the CLI in the past can still use it, the SOAP API has not been changed yet.
+In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool, 
+nor its documentation. This tool was here to help Tuleap SOAP API adoption in the early days. 
+Users that downloaded the CLI in the past can still use it, the SOAP API has not been changed yet.
 
 Users should **consider using REST API instead**.
 
