@@ -16,6 +16,25 @@ the CLI in the past can still use it, the SOAP API has not been changed yet.
 
 Users should **consider using REST API instead**.
 
+Indexation of follow-up comments
+--------------------------------
+
+Since Tuleap 9.14 we can search in artifacts follow-up comments in TQL. In order to achieve this, 
+the existing comments must be indexed. Since we don't know how much it can take on your instance 
+(there is high chance that indexing all comments of 1M+ artifcats will take some time), we prefer
+to delegate the migration to site administrator instead of relying on our standard database upgrade
+process (forgeupgrade).
+
+When the usage of your server is low, you can launch the following script:
+
+.. sourcecode:: shell
+
+  cd /usr/share/tuleap
+  src/utils/php-launcher.sh plugins/tracker/bin/store_stripped_body_of_comments.php
+  
+The script will display how much comments it will have to store. You can safely cancel the execution 
+of the script at any moment with ``ctrl-c`` and relaunch it later.
+
 9.13
 ====
 
