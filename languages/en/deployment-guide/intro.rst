@@ -4,6 +4,18 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+9.14
+====
+
+CLI is gone
+-----------
+
+In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool. 
+This tool was here to help Tuleap SOAP API adoption in the early days. Users that downloaded 
+the CLI in the past can still use it, the SOAP API has not been changed yet.
+
+Users should **consider using REST API instead**.
+
 9.13
 ====
 
