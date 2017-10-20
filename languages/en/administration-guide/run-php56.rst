@@ -52,6 +52,7 @@ Then, install all php dependencies:
         rh-php56-php-pdo \
         rh-php56-php-fpm \
         rh-php56-php-ldap \
+        rh-php56-php-intl \
         rh-php56-php-bcmath
      # If you run mediawiki, you will have to install MW 1.23 minimum:
      $> yum install php-mediawiki-tuleap-123
