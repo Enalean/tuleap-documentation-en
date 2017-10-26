@@ -26,7 +26,7 @@ Currently, the language supports:
 - Parenthesis to force precedence
 - Comparison operators:
 
-  * For string and text fields: ``=``, ``!=``
+  * For string, text and @comment: ``=``, ``!=``
   * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
   * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
@@ -39,6 +39,7 @@ Currently, the language supports:
   * For list fields: ``all`` matching list bind values
   * For list fields bound to users: ``string`` using user names, ``MYSELF()``
   * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
+  * For @comment: ``string``
 
 - Dynamic value for date fields: ``NOW()``.
 
@@ -112,3 +113,16 @@ When searching on date fields using TQL, you should be aware of the sometimes su
    :name: Explanation of date operators
 
    Explanation of date operators
+   
+@Comment operator
+-----------------
+
+When searching in comments, you should be aware of some limitations due to MySql fulltext search:
+   * by default search are done for words longer than 3 characters
+     you can configure it with the MySql property ``ft_min_word_len``
+   * some word are not taken in account because they are too common
+     please see MySql documentation: https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
+     
+Please note that @comment has its own behaviour when searching with ''
+   * @comment = '' returns the list of artifacts without any comment
+   * @comment != '' returns the list of artifacts with at least one comment
