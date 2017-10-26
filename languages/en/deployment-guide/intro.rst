@@ -7,6 +7,15 @@ file, the default is automatically set for you.
 9.14
 ====
 
+TQL search in comment
+---------------------
+Default configuration of MySql for fulltext searches only allows search for words longer than 3 characters. 
+This limit can be by passed by updating the property:
+
+.. sourcecode:: shell 
+
+  'ft_min_word_len'
+
 CLI is gone
 -----------
 
