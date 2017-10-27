@@ -16,8 +16,8 @@ Crosstracker plugin
   not be available on your installation of Tuleap.
 
 The crosstracker plugin is now part of :ref:`Tuleap Entreprise <tuleap-enterprise>` only.
-You will have to install the new plugin name tuleap-plugin-crosstracker.
-Once done, you can migrate your old widget to the new format, please do:
+You will have to install the new plugin called tuleap-plugin-crosstracker.
+Once done, you can migrate your old widget to the new format, please run:
 
 .. sourcecode:: shell
 
