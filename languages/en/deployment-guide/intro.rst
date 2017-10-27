@@ -7,6 +7,24 @@ file, the default is automatically set for you.
 9.14
 ====
 
+Crosstracker plugin
+-------------------
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+The crosstracker plugin is now part of :ref:`Tuleap Entreprise <tuleap-enterprise>` only.
+You will have to install the new plugin called tuleap-plugin-crosstracker.
+Once done, you can migrate your old widget to the new format, please run:
+
+.. sourcecode:: shell
+
+    cd /usr/share/tuleap
+    src/utils/php-launcher.sh plugins/crosstracker/bin/migrate_old_crosstracker_widgets.php
+
+
 TQL search in comment
 ---------------------
 Default configuration of MySql for fulltext searches only allows search for words longer than 3 characters. 
