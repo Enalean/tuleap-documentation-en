@@ -49,25 +49,34 @@ Starting 9.14 a tool is available to automatically:
 * deploy Nginx configuration in ``/etc/nginx`` (listen on ~*:80 + all front configuration)
 * update apache configuration (listen on 127.0.0.1:8080 + disable SSL)
 
-First, stop all services (``service tuleap stop`` and ``service httpd stop``)
+First, run:
 
-Run ``/usr/share/tuleap/tools/utils/php56/run.php``
+::
+
+    service tuleap stop
+    service httpd stop
+    /usr/share/tuleap/tools/utils/php56/run.php
 
 Then:
+
 * Update ``/etc/nginx/conf.d/tuleap.conf`` to finish the SSL configuration (point toward the right files).
 * Update ``/etc/tuleap/conf/local.inc`` and set (or add): ``$sys_trusted_proxies = '127.0.0.1';``
 
 Finally you can restart all services:
 
-#. ``service tuleap start``
-#. ``service httpd start``
-#. ``service rh-php56-php-fpm start``
-#. ``service nginx start``
+::
+
+     service tuleap start
+     service httpd start
+     service rh-php56-php-fpm start
+     service nginx start
 
 You should also ensure that fpm and nginx will be started at machine boot:
 
-#. ``chkconfig rh-php56-php-fpm on``
-#. ``chkconfig nginx on``
+::
+
+     chkconfig rh-php56-php-fpm on
+     chkconfig nginx on
 
 If configuration failed or if you don't want to use the automated deployment, the next sections describe the manual process.
 
@@ -82,20 +91,31 @@ it will be handled by nginx.
 
 Edit ``/etc/httpd/conf/httpd.conf`` and change the values for:
 
-* ``Listen 127.0.0.1:8080``
-* ``NameVirtualHost *:8080``
-* ``<VirtualHost *:8080>``
-* ``#Include conf/ssl.conf``
 
-Restart apache (``service httpd restart``). Tuleap web interface is no longer accessible.
+.. code:: apache
+
+      Listen 127.0.0.1:8080
+      NameVirtualHost *:8080
+      <VirtualHost *:8080>
+      #Include conf/ssl.conf
+
+Restart apache:
+
+::
+
+      service httpd restart
+
+Tuleap web interface is no longer accessible.
 
 FPM
 ###
 
 Prepare the environment:
 
-* ``mkdir -p /var/tmp/tuleap_cache/php/wsdlcache``
-* ``chown -R codendiadm:codendiadm /var/tmp/tuleap_cache/php``
+::
+
+      mkdir -p /var/tmp/tuleap_cache/php/wsdlcache
+      chown -R codendiadm:codendiadm /var/tmp/tuleap_cache/php
 
 Then, in ``/etc/opt/rh/rh-php56/php-fpm.d/www.conf``:
 
@@ -126,7 +146,11 @@ Then, in ``/etc/opt/rh/rh-php56/php-fpm.d/www.conf``:
     php_value[post_max_size] = 128M
     php_value[upload_max_filesize] = 128M
 
-Then start fpm: ``service rh-php56-php-fpm restart``
+Then start fpm:
+
+::
+
+      service rh-php56-php-fpm restart
 
 Nginx
 #####
@@ -137,7 +161,12 @@ do your own tweaks.
 Configuration:
 
 #. Remove all files in ``/etc/nginx/conf.d/``
-#. Deploy tuleap conf ``/usr/share/tuleap/tools/utils/php56/run.php --module=nginx``
+#. Deploy tuleap conf
+
+   ::
+
+        /usr/share/tuleap/tools/utils/php56/run.php --module=nginx
+
 #. Edit, hack, customize ``/etc/nginx/conf.d/tuleap.conf``
 
 Keep in mind that ``/etc/nginx/conf.d/tuleap.d`` and ``/etc/nginx/conf.d/tuleap-plugins`` are meant to be controlled
@@ -145,7 +174,11 @@ by tuleap tools, you should not deploy/modify configuration there.
 
 ``/etc/nginx/conf.d/tuleap.conf`` is deployed only if it doesn't exist so any modifications here are safe.
 
-Then start nginx: ``service nginx restart``
+Then start nginx:
+
+::
+
+      service nginx restart
 
 Administration
 ~~~~~~~~~~~~~~
@@ -156,10 +189,26 @@ With this new setup a few things changed in the way Tuleap works:
   The configuration base dir is ``/etc/nginx`` and the logs are located in ``/var/log/nginx`` and you will find an access log as well as an error_log.
   PHP errors (like blank pages & all) will be found in nginx error_log.
   On the very plus size of nginx, configuration can be updated without server shutdown. After a configuration update,
-  issue a ``service nginx configtest`` and if ok ``service nginx reload``
+  issue:
+
+  ::
+
+    service nginx configtest
+
+  and if ok:
+
+  ::
+
+    service nginx reload
+
 * Apache is still there to serve subversion traffic (mod_dav_svn only exists for apache) and mailman (cgi). Expect a low
   traffic there.
-* PHP is served by php-fpm (no longer mod_php). It's a standalone daemon that you can manipulate with ``service rh-php56-php-fpm COMMAND``.
+* PHP is served by php-fpm (no longer mod_php). It's a standalone daemon that you can manipulate with:
+
+  ::
+
+    service rh-php56-php-fpm COMMAND
+
   The configuration base file is ``/etc/opt/rh/rh-php56/php-fpm.conf`` and the bits in ``/etc/opt/rh/rh-php56/php-fpm.d``.
   The logs can be found in ``/var/opt/rh/rh-php56/log/php-fpm``
   Please keep in mind that all modifications you might have done in ``/etc/php.ini`` or ``/etc/httpd/conf.d/php.conf`` will not be taken into
