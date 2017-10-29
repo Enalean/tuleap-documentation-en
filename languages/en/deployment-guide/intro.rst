@@ -41,11 +41,15 @@ PHP 5.6 / nginx
 Tuleap now comes with ``php 5.6`` (from Software Collections) and ``nginx`` packages by default. All new installations
 defaults to this setup.
 
-You can switch to php 5.6 by using ``/usr/share/tuleap/tools/utils/php56/run.php``. This will configure nginx as the new
-entry point for all HTTP (port 80) and HTTPS (port 443). Your exiting apache will be updated to listen to :8080 and only
-locally (loopback, 127.0.0.1) for subversion and mailman.
+You can switch to php 5.6 by using::
 
-Everything is described in :ref`PHP 5.6 on Centos 6<admin_howto_php56-nginx-centos6>`
+    /usr/share/tuleap/tools/utils/php56/run.php
+
+This will configure nginx as the new entry point for all HTTP (port 80) and HTTPS (port 443).
+Your exiting apache will be updated to listen to :8080 and only locally (loopback, 127.0.0.1)
+for subversion and mailman.
+
+Everything is described in :ref:`PHP 5.6 on Centos 6<admin_howto_php56-nginx-centos6>`
 
 9.13
 ====
