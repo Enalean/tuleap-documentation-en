@@ -886,6 +886,79 @@ e-mail notification is sent in response to the import.
     your original regional settings. Import the "fixed" .csv file into
     Tuleap.
 
+Complex field
+-------------
+
+Computed field
+``````````````
+In Tuleap, computed fields are special fields that allows you to do the sum of
+all your child field in a tracker hierarchy.
+
+A common use case for this field is calculation of remaining effort in release.
+Release remaining effort is the sum of sprint remaining effort
+and sprint remaining effort is the sum of user stories
+
+Computation rules:
+ - we never compute twice the same node,
+   if a user story is linked to two sprints, the release remaining effort add only one time the user story remaining effort
+ - manual value break the calculation,
+   when calculation encounter a manual value we never computed children of node, we keep manual value for computation.
+ - permissions are not taken in account during calculation process,
+   user will see the remaining effort global, even he/she can't see some artifacts.
+
+Example of computation work:
+
+.. figure:: ../images/screenshots/computed.png
+   :align: center
+   :alt: Example of computed field calculation
+
+- User story #6 remaining effort is count just once for release, but sprint #2 and #3 reflect correct remaining effort
+- If I manually set remaining effort for Sprint #2 to 10, release remaining effort will be 60 (10+30+20)
+- I am connected as a member who only can see release, I will see 60 as remaining effort
+
+
+Burndown field
+``````````````
+Burndown is a graphical representation of remaining effort,
+and is used to track team progress.
+In burndown every dot represents a remaining effort for a given day.
+
+Burndown display is based on a cache table:
+ - every night yesterday value is computed and cached
+ - the value for the day "today" is never cached and calculated at every display
+ - if burndown has missing day, we generate the full burndown
+ - if start date or duration is updated, the full burndown is calculated again
+ - project admin can force cache generation
+ - data are not displayed until the cache is complete
+
+It's possible to use burndown over different timezones:
+
+Let's imagine you team is split in Montreal and in Tokyo:
+
+========================== =======================
+Team A                     Team B
+Montreal                   Tokyo
+31th July 2017 1:00 AM     1th August 2017 3:00 PM
+========================== =======================
+
+With a server located in Paris
+
+========================== =====================
+Server time                31th July 2017 8:00AM
+Today remaining effort     10
+========================== =====================
+
+My team B, update the remaining effort to 9 at 3:00PM,
+burndown will reflects following values:
+
+========================== ===============================
+in Montreal                value for 31th July will be 9.
+in Montreal                value for 1th August will be 9.
+in Tokyo                   value for 31th July will be 10.
+in Tokyo                   value for 1th August will be 9.
+========================== ===============================
+
+
 Default Tracker Access Permissions
 ----------------------------------
 
