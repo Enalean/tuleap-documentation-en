@@ -704,8 +704,37 @@ Linked or "to be linked" artifacts can be managed in the artifact link
 tabs view. Not yet linked artifacts are highlighted. All artifacts can
 be unckeck (by clicking the red cross).
 
+Using typed artifact links
+``````````````````````````
+
+Since Tuleap 9.14, trackers use by default the typed artifact links.
+This feature gives to the user the ability to add a type to a link between two artifacts.
+
+Trackers and project administrators are able to deactivate the whole feature or some types for the project.
+This can be done in the new tracker global administration section
+
+.. figure:: ../images/screenshots/global_admin_tracker.png
+   :align: center
+   :alt: Tracker global administration
+   :name: Tracker global administration
+
+Regarding the ``_is_child`` type, it cannot be disabled if a hierarchy exists in the project.
+If ``_is_child`` is disabled, a hierarchy cannot be set.
+
+.. attention::
+
+  Some types cannot be disabled because they are used by an active plugin in the project.
+
+Once deactivated:
+
+- A type cannot be used in new links
+
+- Old links using this type still exist
+
+- The type of these links will be cleared after the next artifact update (the link will continue to exist without any type)
+
 E-mail Notification
-```````````````````
+-------------------
 
 The Tuleap Tracker is equipped with a powerful and flexible
 e-mail notification system. Unless otherwise instructed by the project
@@ -740,7 +769,7 @@ access the artifact form on Tuleap.
 .. _tracker-artifact-import:
 
 Tracker Artifact Import
-```````````````````````
+-----------------------
 
 Project Administrators have the means to import artifacts into
 Tuleap trackers using the well known CSV (Comma Separated
