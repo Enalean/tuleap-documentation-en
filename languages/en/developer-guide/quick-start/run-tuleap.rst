@@ -12,6 +12,7 @@ respective documentation for installation instructions:
 
 - make
 - `phpcs <https://github.com/squizlabs/PHP_CodeSniffer#installation>`_
+- `scss-lint <https://github.com/brigade/scss-lint/>`_
 - `npm <https://docs.npmjs.com/>`_ >= 5.4.0
 - `composer <https://getcomposer.org/>`_
 
