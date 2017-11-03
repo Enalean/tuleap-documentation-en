@@ -1,5 +1,3 @@
-
-
 .. _project-administration:
 
 Project Administration
@@ -9,127 +7,78 @@ Whenever you enter the Project Dashboard of a given project or any of
 its service you'll see a menu item called Admin appears in the project
 menu.
 
-Only project members can access the Project Administration page. All
-other Tuleap users are denied access to this part of a
-project.
+Only site or project administrators can access the Project Administration page.
+All other Tuleap users are denied access to this part of a project.
 
-Project Administration Menu
----------------------------
+Project Members
+---------------
 
-In addition to the project main menu that was introduced in the
-description of the Project Dashboard, the Project Administration page
-has its own menu. This menu is not redundant with the page content right
-below. Except for 1 or 2 items the menu and the page content give access
-to distinct parts of the administration space. So pay attention to both
-the Page Admin menu and the Page Admin content. In the following
-sections the Location label indicates where to find the corresponding
-administrative function.
-
-Adding/Removing Users
----------------------
-
-*Location: Page Admin Content*
-
-User administration in Tuleap is easy. Regarding the number
-of users to need to add, you can use one the two following ways:
+Members administration in Tuleap project is done in the "Members" tab.
 
 Add a user
 ``````````
 
-To add a new member to a project team one of the project administrator
-just has to type the login name of the invited member and click on the
-"Add User" button. If you don't know the login name of the new project
-member you want to add, open a new browser window on Tuleap
-and use the search box in the Tuleap Main Menu to search for
-the person's real name (first or last name or both) and don't forget to
-select "People" in the Search pull-down menu. The result list will show
-you the user real name and login name.
+To add a new member to a project, type the login name of the invited member
+and click on the "Add User" button.
 
 Import a list of users
 ``````````````````````
-If the number of users to add is important, one of the project team
-member can import a list of users from a simple text file. In order to
-do it, just click the link "Import List Of Users". Then, you can browse
-your local directory to select a file containing the list of users you
-want to import. The file will host one user per line, by specifying her
-email address, or her Tuleap username (login name).
+If the number of users to add is important, you can import a list of users
+from a simple text file. In order to do it, click the link "Import List Of Users".
+Then, select a file containing the list of users you want to import. The file will
+host one user per line, by specifying her email address, or her username (login name).
 
 ::
 
     johnd
-    steve.robinson@company.com
+    steve.robinson@example.com
 
-    bob.johnson@company.com
+    bob.johnson@example.com
     smith3
-    john.smith@company.com
+    john.smith@example.com
 
 The import process has two steps. First, it checks if the file is well
 formed, and it displays the users detected to be imported. After a
 confirmation, the import is done and the users are added to the project.
 The system doesn't perform the import in case of error (unknown user,
-user not recorded in Tuleap, user not active, unknown email
-address, etc.) If a user is two times in the file, only one user is
-added and there is no error.
+user not active, unknown email address, etc.) If a user is two times
+in the file, only one user is added and there is no error.
 
 Removing a user
 ```````````````
 
-Removing a project member is even easier. Just click on the trash icon
-(|image1|) next to the person's name to revoke his/her membership.
+To remove a project member, click on the trash icon next to the person's name
+to revoke his/her membership.
+
 Revoking membership has absolutely no effect on the history and the data
 integrity of the project. In other words all tracker artifacts assigned
 or submitted by this person will continue to show up as before in the
 project database. Only the ability of this person to perform project
-management tasks is affected. Also notice that in order to remove a
-project administrator from the project member list, another project
-administrator must first change the "Project Admin" flag of this user to
-"No" in the User Permission table. In other words, a Project
-Administrator cannot be removed from the project members as long as she
-has administrator privilege.
+management tasks is affected.
 
-    **Note**
+.. IMPORTANT::
 
-    You have probably noticed that project member's name on the Project
-    Administration page are actually hyperlinks. On this page as well as
-    in many other pages throughout Tuleap a click on a login
-    name leads you to the user page where you can know more about the
-    user (including its location, phone/fax number, etc. extracted from
-    the LDAP Directory in real time) and send an e-mail message to this
-    person directly via a Web form.
-
-.. figure:: ../images/screenshots/sc_projectadminpage.png
-   :align: center
-   :alt: A Sample Project Administration Page
-   :name: A Sample Project Administration Page
-
-   A Sample Project Administration Page
-
-
-Project Public Information
---------------------------
-
-*Location: Project Administration Menu*
-
-The "Edit Public Info" item of the Project Administration menu allows a
-project administrator to update the Project Description Elements: these
-are elements provided during the registration process.
+    In order to remove a project administrator from the project member list,
+    another project administrator must first change the "Project Admin" flag
+    of this user in the User Permission table. In other words, a user cannot
+    be removed from the project members as long as she has administrator
+    privilege.
 
 Project Categorization
 ----------------------
 
-*Location: Page Admin Content*
-
-This is where you can categorize your project. You can define up to 3
-values for each of the 7 criteria used in the Software Map. If you
+In "Categories" tab, you can categorize your project. You can define up to 3
+values for each of the criteria used in the Software Map. If you
 cannot find any matching value in the predefined list do not hesitate to
 contact the Tuleap Team.
+
+Project Details
+---------------
 
 .. _project-type:
 
 Project Type
--------------
-
-*Location: Page Admin Content*
+````````````
 
 Tuleap proposes three types of projects:
 
@@ -139,54 +88,21 @@ Tuleap proposes three types of projects:
 -  **Template Project**: If you choose this project type new projects
    can reuse this projects service configuration. When registering a new
    project (see :ref:`project-registration`) your template project is listed as available
-   template. When choosing your template project then the new project
-   will use exactly the same configuration. This includes that
-
-   -  the new project is classified into the same trove categories as
-      the template project (see :ref:`software-map-(or Project Tree)`).
-
-   -  the same services are enabled (see `Service Configuration`_). Unavailable services won't
-      be present. Disabled services will be disabled by default.
-
-   -  the same reference patterns are defined (see `Reference Pattern Configuration`_).
-
-   -  the same project specific user groups exist (see `User Groups`_).
-
-   -  all trackers with the option "instantiate for new projects" are
-      copied with their associated fields, field values, field
-      dependencies, reports, and permissions (see ?).
-
-   -  the same forums are created (but the messages are not copied).
-
-   -  the documents, as well as the document tree will be present.
-
-   -  the CVS admin settings are copied (preamble, tracking mode, CVS
-      Watch Mode), but the emails and the CVS permissions are not
-      copied.
-
-   -  the SVN admin settings are copied (preamble, tracking mode), but
-      the emails and the SVN access permissions are not copied.
-
-   -  the file packages and their permissions are copied
+   template.
 
 -  **Test Project**: If you just need to test what is feasible with
    Tuleap projects use the Test Project type for your
    project. Having defined that type, your project will not appear any
-   more in the Tuleap Software Map nor on the
-   Tuleap Dashboard.
+   more in the Tuleap Software Map.
 
 .. _service-configuration:
 
 Service Configuration
 ---------------------
 
-*Location: Project Administration Menu*
-
-The "Service Configuration" item of the Project Administration menu
-lists all services available to the project. Services are items listed
-in the "Service Bar " on top of each page: trackers, CVS, homepage,
-documentation, etc. The Service Configuration page allows a project
-administrator to update, enable, disable or even create services.
+Services are items listed in the sidebar on each page in the project:
+trackers, CVS, homepage, documentation, etc. A project administrator can
+update, enable, disable or even create services.
 
 There are two kinds of services:
 
@@ -198,17 +114,19 @@ There are two kinds of services:
 -  **Project services**: these services can be fully customized or
    deleted by the project administrator.
 
-There is one exception, the **Home Page** service is a system service
-but it can be customized with any URL. Each project hosted on
-Tuleap has its own virtual Web server available on the
-Tuleap site. By default the "Home Page" in the Project
-Service Bar links to this location (see :ref:`project-web-site` for more details). If you want
-the Home Page of your project to link to some other locations on the
-Intranet or on the Web, simply replace the default value with your own
-Web location. Do not confuse your Project Home Page with your Project
-Dashboard. The Project Home Page actually points to real Web Site
-whereas the Project Dashboard page is just an entry point to monitor a
-project progress.
+.. NOTE::
+
+   There is one exception, the **Home Page** service is a system service
+   but it can be customized with any URL. Each project hosted on
+   Tuleap has its own virtual Web server available on the
+   Tuleap site. By default the "Home Page" in the Project
+   Service Bar links to this location (see :ref:`project-web-site` for more details). If you want
+   the Home Page of your project to link to some other locations on the
+   Intranet or on the Web, simply replace the default value with your own
+   Web location. Do not confuse your Project Home Page with your Project
+   Dashboard. The Project Home Page actually points to real Web Site
+   whereas the Project Dashboard page is just an entry point to monitor a
+   project progress.
 
 Creating or Updating a Service
 ``````````````````````````````
@@ -217,11 +135,10 @@ When creating or updating a service, one has to fill the following
 fields:
 
 **Service Label**: This is the label that will be displayed in the
-Service Bar. It should be as concise as possible.
+sidebar. It should be as concise as possible.
 
 **Service Link**: This is the URL of the service, i.e. the address the
-user will be redirected to when clicking on the service label in the
-Service Bar. It will be loaded in the current window.
+user will be redirected to when clicking on the service label.
 
 A few keywords can be inserted into the link: they will be automatically
 replaced by their value:
@@ -241,13 +158,13 @@ displayed as a tooltip when the mouse cursor is over the service label.
 
 **Enabled**: Toggling this check box will simply disable (or enable) the
 service. Disabling a service just means that it no longer appears in the
-Service Bar and in the Project Dashboard of your project but all
-existing data related to this service remains untouched. In other words,
-re-enabling the service will restore the service in the exact same state
-it was when you first disabled it. See also "Deleting a Service" below.
+sidebar but all existing data related to this service remains untouched.
+In other words, re-enabling the service will restore the service in the
+exact same state it was when you first disabled it. See also "Deleting
+a Service" below.
 
 **Rank on Screen**: this arbitrary number allows you to define the
-position of this service in the Service Bar relative to other services.
+position of this service in the sidebar relative to other services.
 The services with smaller values will appear first. The rank values
 don't have to be consecutive values. It is a good idea to use values
 like 10, 20, 30,... so that it is easy for you to insert new services in
@@ -261,29 +178,12 @@ the service list. Just click on this icon to suppress the service from
 the database. The service data are however preserved.
 
 System services cannot be deleted. However, you can disable them and
-they will not appear in the Service Bar.
-
-Services Administration
------------------------
-
-*Location: Project Admin page*
-
-The project administration page gives direct access to the
-administration of all services that have been activated for a given
-project. This is available in the form of a series of pointers located
-on the lower left part of the project administration page. Only project
-members with appropriate permission are allowed to access the
-Tuleap services administration pages (see `User Permissions`_).
+they will not appear in the sidebar.
 
 Reference Pattern Configuration
 -------------------------------
 
-*Location: Project Administration Menu*
-
-The "Reference Configuration" item of the Project Administration menu
-lists all reference patterns available to the project. The "Reference
-Configuration" page allows a project administrator to update, enable,
-disable or even create reference patterns.
+A project administrator can update, enable, disable or even create reference patterns.
 
 .. _reference-overview:
 
@@ -418,15 +318,15 @@ stored in Tuleap. So you may now create your own reference
 pattern to link to an external document manager like DocuShare, or
 source code management tool like ClearCase
 
-    **Tip**
+    .. NOTE::
 
-    It is considered a best practice to always reference a bug, a task
-    or a support request in any of the log message attached to a
-    Subversion or CVS commit. Similarly when closing the related
-    artifact (task, bug,etc.) make sure you mention the revision or
-    commit number in the follow-up comment. You will find this extremely
-    convenient while trying to keep track of the changes and why they
-    were made.
+       It is considered a best practice to always reference a bug, a task
+       or a support request in any of the log message attached to a
+       Subversion or CVS commit. Similarly when closing the related
+       artifact (task, bug,etc.) make sure you mention the revision or
+       commit number in the follow-up comment. You will find this extremely
+       convenient while trying to keep track of the changes and why they
+       were made.
 
 Creating or Updating a Reference Pattern
 ````````````````````````````````````````
@@ -517,23 +417,10 @@ them so that they will not be extracted.
 User Permissions
 ----------------
 
-*Location: Page Admin Content*
-
 Project Administrators have the ability to grant different permissions
 to different users. As an example, a project member can be granted full
 administration rights on the bug tracker and no rights at all on the
 Documentation Manager of the project.
-
-.. figure:: ../images/screenshots/sc_userpermissions.png
-   :align: center
-   :alt: A sample project members permission table
-   :name: A sample project members permission table
-
-   A sample project members permission table
-
-`A sample project members permission table`_ shows a sample project members permission table. Each column
-represents a service or a user capability and there is one line per
-project member. Let's review the column one by one:
 
 -  **Project Admin**: A Yes/No flag stating whether a given project
    member is a project administrator, that is to say a project member
@@ -542,7 +429,7 @@ project member. Let's review the column one by one:
    project members permission page.
 
 -  **CVS Write**: Right now this is always set to Yes. All project
-   members have write permission over the CVS [#f1]_ repository and this
+   members have write permission over the CVS repository and this
    cannot be changed from the current version of the Web interface.
    However we'll see how to deny CVS write permission to project members
    in the CVS chapter (:ref:`version-control-with-CVS`).
@@ -576,17 +463,15 @@ project member. Let's review the column one by one:
    lists all the project user groups s/he belongs to. See `User Groups`_ for more
    information on user groups.
 
-    **Important**
+    .. IMPORTANT::
 
-    Don't forget to click on the "Update User Permissions" button after
-    making any changes in the permission table.
+      Don't forget to click on the "Update User Permissions" button after
+      making any changes in the permission table.
 
 .. _user-groups:
 
 User Groups
 -----------
-
-*Location: Project Administration Menu*
 
 A user group, sometimes called a "ugroup ", is simply a group of
 Tuleap users. User groups are used to set specific
@@ -597,18 +482,7 @@ comprising the group do not necessarily belong to that project.
 User Groups Management
 ``````````````````````
 
-The "User Groups Admin" function of the Project Administration menu
-lists all available user groups, and provides a way to create new ones.
-
-.. figure:: ../images/screenshots/sc_usergrouplist.png
-   :align: center
-   :alt: User Group Management Page
-   :name: User Group Management Page
-
-   User Group Management Page
-
-In the list, (see for example `User Group Management Page`_) there are two different kinds of user
-groups:
+There are two different kinds of user groups:
 
 **Pre-defined User Groups**: These groups are defined for every project.
 Examples of pre-defined groups are: **project\_members, project\_admins,
@@ -639,23 +513,9 @@ displayed in the User Group Admin page.
 may create a user group from scratch (Empty Group), from all Project
 Members or Project Admins, or from an existing user group attached to
 this project. The members of the selected group will automatically be
-added to the new group. You will be able to add or remove members on the
-next screen.
+added to the new group.
 
-.. figure:: ../images/screenshots/sc_usergroupedit.png
-   :align: center
-   :alt: User Group Edit
-   :name: User Group Edit
-
-   User Group Edit
-
-In the next page (see `User Group Edit`_), the project administrator may select
-individually the members of the new group.
-
-Two columns are displayed: the one on the left contains the list of all
-Tuleap registered users, while the one on the right contains
-the list of users already admitted to the group. Use the two arrows
-between the columns to move users from one column to the other.
+The project administrator may select individually the members of the new group.
 
 The user interface also provides convenient ways of selecting users when
 the registered list is very large: you can choose to display only those
@@ -667,40 +527,32 @@ displayed.
 Once you are done, you may click on the Submit button. The user group is
 created.
 
-    **Tip**
+    .. NOTE::
 
-    Sometimes, you might want to grant some permissions to all project
-    members and some other Tuleap users. In this case, you
-    might be tempted to build a user group from the list of project
-    members and to add the other users to the group. The issue with this
-    solution is that if new members join the project, they will have to
-    be manually added to the group. So it is more convenient to create a
-    group containing only the users that are not member of the project.
-    And then, permissions should be granted to this group and to the
-    pre-defined "project members" group.
-
-Updating a User Group
-`````````````````````
-
-In order to update an existing user group, simply select it in the user
-group list. You will be presented with the same screen as with Group
-Creation, where you can update the name, description and composition of
-the user group.
+       Sometimes, you might want to grant some permissions to all project
+       members and some other Tuleap users. In this case, you
+       might be tempted to build a user group from the list of project
+       members and to add the other users to the group. The issue with this
+       solution is that if new members join the project, they will have to
+       be manually added to the group. So it is more convenient to create a
+       group containing only the users that are not member of the project.
+       And then, permissions should be granted to this group and to the
+       pre-defined "project members" group.
 
 Deleting a User Group
 `````````````````````
 
-User groups can be deleted. Just click on the trash icon next to the
-group name in the group management page (`User Group Management Page`_) to suppress the user group
+User groups can be deleted. Click on the trash icon next to the
+group name in the group management page to suppress the user group
 from the database. Only custom user groups can be deleted.
 
-    **Important**
+    .. IMPORTANT::
 
-    Please note that if a user group was specifically granted some
-    permission, deleting the user group might be dangerous. Indeed, if a
-    group is the only one allowed to access a package and this group is
-    deleted, the permission is also deleted and reset to default, so any
-    registered user can access the package.
+       Please note that if a user group was specifically granted some
+       permission, deleting the user group might be dangerous. Indeed, if a
+       group is the only one allowed to access a package and this group is
+       deleted, the permission is also deleted and reset to default, so any
+       registered user can access the package.
 
 
 User Group Binding
@@ -716,39 +568,18 @@ In the project 'my software', go to the project admin area and click-on
 **User Groups Admin** then **Create a New User Group**. Call this group
 'my_project_users', for example, then click on **Create user Group**.
 
-.. figure:: ../images/screenshots/user_group_binding2.png
-   :align: center
-   :alt: User Group Creation
-   :name: User Group Creation
-
-   User Group Creation
-
-
-Once created, there will be a new screen with tabs to the left. Click on **Binding**
+Once created, there will be a new screen with tabs. Click on **Binding**
 then **Edit User group binding**. You will be asked to choose a source project.
 Choose 'my_project' and the user group 'some people'. Save by clicking on **Edit binding**.
 
-.. figure:: ../images/screenshots/user_group_binding3.png
-   :align: center
-   :alt: User Group Binding
-   :name: User Group Binding
-
-   User Group Binding
-
-This will create the binded user group that you can use anywhere in your project
+This will create the bound user group that you can use anywhere in your project
 as you would any normal user group.
 
 
 Additional Information on User Groups
 `````````````````````````````````````
 
-It is possible to know all user groups one individual project member
-belongs to. Simply display the User Permissions page (`User Permissions`_). However,
-please note that only user groups belonging to the current project are
-displayed. The user might also be a member of additional user groups in
-other projects.
-
-The bottom of the User Group Edit page (`User Group Edit`_) also lists all the
+The "permissions" tab lists all the
 permissions granted to this group, e.g. packages and releases this user
 group is granted access to.
 
@@ -763,8 +594,6 @@ administrator, they are removed from all user groups in all projects.
 
 Project Data Export
 -------------------
-
-*Location: Project Administration Menu*
 
 Tuleap is very appealing to many project development teams
 because it provides full-featured project development and management
@@ -783,15 +612,6 @@ allows the project team to export the project data outside of
 Tuleap for re-use in other tools like MS Access, Excel,
 Crystal Report, Open Office, or any other ad-hoc tools.
 
-Exported Data
-`````````````
-
-Tuleap gives access to the following data (details on
-exported fields are listed on the Tuleap page):
-
--  **Tracker**: the artifacts data, the changes history and the
-   artifacts dependencies can be exported for each tracker.
-
 Text File Export
 ````````````````
 
@@ -799,71 +619,10 @@ Text File Export follow the well known CSV (Comma Separated Values)
 format, recognized by almost every Office Suite on the market. It can
 easily be imported in MS-Access, MS Excel, OpenCalc…
 
-Importing CSV Files in Excel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Clicking on any of the table export link (Bug Export, Task Export,..) on
-the Project Data Export page generates and downloads a CSV file that you
-can save on your local disk or directly open in Excel or any other
-spreadsheet of your choice. No particular setting is required in most
-cases. Nevertheless, you can change the CSV separator and the date
-format (see :ref:`account-maintenance`) if the default one doesn't correspond with your Excel
-version  [#f2]_.
-
-Importing CSV Files in MS-Access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before you import external data you must first create a new database.
-Then go through the following steps:
-
--  Select ``File Menu -> Get External Data -> Import``
-
--  Choose the appropriate CSV file that you have just generated and then
-   click on the ``Import...`` button. A preview of the imported table
-   shows up on the screen
-
--  Click on the ``Advanced...`` button
-
--  Set Text Delimiter to " (double quote)
-
--  Set Date Format to ``YMD``
-
--  Set Date delimiter to - (dash)
-
--  Then enter the name and the type of each field in the lower part of
-   the dialog box. Remember that this information is available on the
-   Project Data Export page.
-
-       **Note**
-
-       **Important Remark**: you can leave the default field name
-       (Field1,....FieldN) as well as the default Text type in most
-       cases. However long text fields like bug/tasks follow-up comments
-       (details field) and original comment must be declared as type
-       Memo. Failing to do so will cause MS-Access to corrupt the
-       imported data.
-
-       In case you encounter difficulties opening your exported CSV file
-       please consult our ?
-
-Once you are done with the specification of the Import, save it by
-clicking on the ``Save As...`` button. For future import of the same
-table simply click on the Specs... button and reload your Import
-specification.
-
-Tracker Artifact Import
------------------------
-
-*Location: Project Administration Menu*
-
-Please see :ref:`tracker-artifact-import`
-
 .. _project-history:
 
 Project History
 ---------------
-
-*Location: Project Administration Menu*
 
 The Project History provides project members with Audit capabilities.
 Clicking on this menu item shows a list of all the changes that have
@@ -876,8 +635,6 @@ was before it changed (if applicable), who changed it and when.
 
 Access Logs
 -----------
-
-*Location: Project Administration Menu*
 
 Depending on the configuration of the Tuleap site and on the
 configuration of each project, source code access, documents and file
@@ -913,15 +670,3 @@ can also be adjusted to show more or less access log history.
    :name: Sample Access Log
 
    Sample Access Log
-
-.. [#f1]
-   CVS stands for Concurrent Versions System. It is one of the source
-   code version control system offered on the Tuleap site.
-   CVS is used by hundreds of thousands of software projects all over
-   the world. See http://cvs.nongnu.org/ for more information.
-
-.. [#f2]
-   For example, by default, the separator for the french version of
-   Excel is the semicolon instead of the comma.
-
-.. |image1| image:: ../images/icons/trash.png

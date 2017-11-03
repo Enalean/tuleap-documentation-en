@@ -61,6 +61,36 @@ The project registration is an easy process:
    specific template just keep the Default Tuleap Template
    checked and go on.
 
+   The new project will use exactly the same configuration as the template.
+   This includes that:
+
+   -  the new project is classified into the same trove categories as
+      the template project (see :ref:`software-map-(or Project Tree)`).
+
+   -  the same services are enabled (see :ref:`service-configuration`). Unavailable services won't
+      be present. Disabled services will be disabled by default.
+
+   -  the same reference patterns are defined (see :ref:`reference-overview`).
+
+   -  the same project specific user groups exist (see :ref:`user-groups`).
+
+   -  all trackers with the option "instantiate for new projects" are
+      copied with their associated fields, field values, field
+      dependencies, reports, and permissions (see ?).
+
+   -  the same forums are created (but the messages are not copied).
+
+   -  the documents, as well as the document tree will be present.
+
+   -  the CVS admin settings are copied (preamble, tracking mode, CVS
+      Watch Mode), but the emails and the CVS permissions are not
+      copied.
+
+   -  the SVN admin settings are copied (preamble, tracking mode), but
+      the emails and the SVN access permissions are not copied.
+
+   -  the file packages and their permissions are copied
+
 -  **Project Description**
 
    This is where the rubber hits the road! Tell us about your project.
