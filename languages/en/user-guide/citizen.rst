@@ -58,7 +58,7 @@ Registering on Tuleap is quick and easy:
        again. If they match then your account is validated and you are now
        logged into the Tuleap site.
 
-    **Tip**
+.. NOTE::
 
     Your Tuleap server might be set up to use an external
     LDAP directory for authentication. In this case, the registration
@@ -73,7 +73,7 @@ validate their account from the outside because the Tuleap
 machine is behind the firewall. Therefore, an account cannot be
 validated from the outside.
 
-    **Tip**
+.. NOTE::
 
     Don't panic and, above all, do not create a new account! Go to the
     Tuleap Login Page and click on the [Lost your password?]
@@ -96,59 +96,43 @@ To log into the Tuleap site, go to the Tuleap
 Site at `http://tuleap.example.com <http://tuleap.example.com/>`__
 and click on the "Login" link. If you typed your login and password correctly,
 Tuleap displays your Personal Page (or Personal
-Dashboard) (see `The Personal Page of a Tuleap user`_). At any point in time you can return to your
-Tuleap Personal Page by selecting the "My Personal Page" in
-the upper part of the Tuleap Main Menu.
+Dashboard). At any point in time you can return to your
+Tuleap Personal Page by clicking on your avatar or user name.
 
-Your Personal Page is a dashboard from where you can quickly go to
-Tuleap workplaces and information spaces. You'll see bugs
-and tasks assigned to you in the various projects you belong to. In
-addition the bug section also shows those bugs that you have submitted
-including to foreign projects. By doing so, Tuleap allows
-you to follow the evolution of bugs that you have reported and you might
-be impatient to see fixed.
+User Dashboard Content
+-----------------------
 
-.. figure:: ../images/screenshots/sc_mypersonalpage.png
+A sample user dashboard is available below. The page is split in several areas:
+
+-  The header with your user name and avatar
+-  A navigation bar to access to each dashboard. This is where you can add a new dashboard, and edit or delete a dashboard.
+   You can also add widgets to the current dashboard.
+-  The various information presented by widgets.
+
+.. figure:: ../images/screenshots/user-dashboards.png
    :align: center
-   :alt: The Personal Page of a Tuleap user
-   :name: The Personal Page of a Tuleap user
+   :alt: An example of user dashboard
+   :name: An example of user dashboard
 
-   The Personal Page of a Tuleap user
 
-Tuleap allows you to customize your page to fit your
-needs. The content of your page is made of *widgets*. All widgets can be
-moved, collapsed or closed. Some of them can provide an RSS feed or
-preferences can be set.
+Tuleap allows you to personalize your dashboards. Your dashboard is personal, nobody except you can access it.
+The content of the page is made of *widgets*. All widgets can be moved, collapsed or removed.
+Some of them can provide an rss feed or be edited.
 
-New widgets can be added through the "Add widgets" link. Here is an
-incomplete list of available widgets for the personal page:
-
--  **Monitored File Packages** lists packages that you are currently
-   monitoring, by project. To cancel any of the monitored items just
-   click on the trash icon (|trash_icon|) next to the item label.
-
--  **Monitored Forums** lists forums that you are currently monitoring,
-   by project. To cancel any of the monitored items just click on the
-   trash icon (|trash_icon|) next to the item label.
+New widgets can be added through the dropdown entry “Add widget”. Here is an example of available widgets for the user dashboard:
 
 -  **My Artifacts** lists artifacts you have submitted or assigned to
    you, by project.
 
--  **My Bookmarks** lists your favorite bookmarks (your favorite pages
-   in Tuleap or external). Note that in many cases
-   Tuleap uses URL with enough embedded information to
-   bookmark sophisticated items like Software Map browsing, typical
-   search in your project Bug or Task database, etc ... Bookmarked items
-   can be edited which means that both the title of the bookmark and its
-   destination URL can be modified.
-
 -  **My Projects** lists the projects you belong to. Selecting any of
    these projects brings you to the corresponding Project Dashboard.
 
+-  **Monitored File Packages** lists packages that you are currently
+   monitoring, by project. To cancel any of the monitored items just
+   click on the trash icon next to the item label.
+
 -  **RSS Reader** allows you to include public rss (or atom) feeds into
    your personal page.
-
-.. |trash_icon| image:: ../images/icons/trash.png
 
 .. _account-maintenance:
 
@@ -158,8 +142,7 @@ Account Maintenance
 You provided a certain amount of demographic information to
 Tuleap when you first registered on the Tuleap
 site. This and other information can be modified at any time by
-selecting the "My Account" item in the menu under your name (at the top right of
-the platform)
+clicking on the "cog" image near your user name.
 
 Most of the items on the "My Account" page will look obvious to
 you. However, we would like to draw your attention on some of them:

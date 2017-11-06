@@ -11,7 +11,7 @@ Guidelines
 
 There are 2 ways by which project administrators can provide access to
 their project source code on Tuleap: the software
-configuration management repository (CVS or Subversion) and the Delivery
+configuration management repository (Subversion or Git) and the Delivery
 Manager. At first glance, having two distinct Tuleap
 services seems redundant. However both have been developed with
 different objectives and target audience in mind and they are very much
@@ -90,7 +90,7 @@ administrators (see `Delivery Manager Structure`_).
    haven't said a word about the DB-docs package. May be it is still
    empty for the moment ;-)
 
-    **Note**
+.. NOTE::
 
     This is really the kind of structure a project team should aim at to
     make their deliverables easy to understand and easy to access for
@@ -115,20 +115,13 @@ link.
 
    Example of a Delivery Manager screen
 
-The first example given on `Example of a Delivery Manager screen`_ shows the Delivery Manager screen of the
-Playground project.
-
 Browsing packages
 `````````````````
 
-As explained in the `Delivery Manager Jargon`_, projects can contain several packages. In the
-example, the Playground project has four packages.
+As explained in the `Delivery Manager Jargon`_, projects can contain several packages.
+In order to have a better visibility on the service, all packages are collapsed by default.
 
-The content of each package can be hidden by clicking the *minus* icon
-located just before the package name. This can help for visibility
-reasons if your project has lots of packages and releases. To expand a
-collapsed package, simply click the *plus* icon before the package name.
-By default, all the packages are expanded.
+You can see the full content of a package by clicking on the "plus" icon located just before the package name.
 
 Tuleap gives you the opportunity to monitor the packages.
 Like this, you will be notified when a new release is available, or if a
@@ -181,14 +174,8 @@ update an existing one in them at any time.
 update) releases to it
 
 When you are Files Administrator, you are able to perform the
-admin actions on the Delivery Manager home page. (See `The Delivery Manager screen of the Playground project, when you are an admin`_ )
+admin actions on the Delivery Manager home page.
 
-.. figure:: ../images/screenshots/sc_filereleasedownloadsadmin.png
-   :align: center
-   :alt: The Delivery Manager screen of the Playground project, when you are an admin
-   :name: The Delivery Manager screen of the Playground project, when you are an admin
-
-   The Delivery Manager screen of the Playground project, when you are an admin
 
 Files Permissions
 `````````````````
@@ -242,14 +229,7 @@ Package Modification
 
 To update a package, just click the [edit] icon located after each
 package name. Then, the modification form is the same than the creation
-one, except that you can set read permissions on the package (see `Package editing of the Camellia package`_).
-
-.. figure:: ../images/screenshots/sc_filereleasepackageadmin.png
-          :align: center
-          :alt: Package editing of the Camellia package
-          :name: Package editing of the Camellia package
-
-          Package editing of the Camellia package
+one, except that you can set read permissions on the package.
 
 Files writers (see `Global files permissions`) can attach
 access permissions to any existing package.
@@ -271,18 +251,11 @@ Release Creation and modification
 
 Once a package has been created you can immediately start adding
 releases to it. Click on the [Add a Release] link of the appropriate
-package (see `The Delivery Manager screen of the Playground project, when you are an admin`_).
+package.
 
 The release creation and modification process is really easy to perform.
-It can be divided into 6 steps, but some are optional. (see `The release update screen`_). In every
+It can be divided into 6 steps, but some are optional. In every
 case, you can update the release at any time
-
-.. figure:: ../images/screenshots/sc_frsreleases.png
-   :align: center
-   :alt: The release update screen
-   :name: The release update screen
-
-   The release update screen
 
 -  **Step 1 - Give Release properties**
 
@@ -308,9 +281,9 @@ case, you can update the release at any time
       appropriate file name from the "FTP/SCP Files list " in the pull
       down menu.
 
-      **Tip**
+.. NOTE::
 
-      Tuleap server offers an upload mechanism via FTP (ou SCP). To 
+      Tuleap server offers an upload mechanism via FTP (ou SCP). To
       upload your files, follow the instructions given
       when you click the *?* next to the [add file] link. Then click
       the [Refresh File list] link to see your files.
@@ -341,15 +314,15 @@ case, you can update the release at any time
    the normal end-user but it is absolutely pivotal for those who use
    your software in other development or integration activities.
 
-       **Tip**
+.. NOTE::
 
-       If you use CVS as you version control system you can very easily
-       generate a well formatted and informative Changelog file. The
-       cvs2cl utility available at `http://www.red-
-       bean.com/cvs2cl <http://www.red-     bean.com/cvs2cl>`__
-       automatically extract all the CVS commit messages, aggregate them
-       with modification dates and author name and format them in a nice
-       way. This is a very good basis for a Changelog document.
+      To build Tuleap changelog for issues, we use a custom artifact link nature "Fixed In".
+      Every time integrators merge a patch and add it to the public request on Tuleap.net,
+      we add a link "Fixed In" on the release. All issues are in reverse link or release
+
+      example: reverse link of a Tuleap `release link`_ use to build changelog.
+
+.. _release link: https://tuleap.net/plugins/tracker/?aid=10587
 
 -  **Step 4 - Set permissions to the Release (optional)**
 
@@ -402,7 +375,7 @@ case, you can update the release at any time
    users who expressed interest in your packages. Do not bypass this
    step, always inform your community of users and developers.
 
-       **Tip**
+.. NOTE::
 
        When you prepare your files for release make sure that you
        include a README file in the top directory of each file that a

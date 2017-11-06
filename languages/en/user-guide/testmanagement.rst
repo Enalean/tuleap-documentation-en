@@ -33,9 +33,7 @@ Test Case, Test Campaign and Test Execution are 3 different trackers. Environmen
 .. note::
 
     Test Management is stable and used since 1.5 year at Enalean for all Tuleap
-    releases without any issues. However some parts can be better integrated
-    inside Test Management and you might need to go into trackers to configure
-    things.
+    releases without any issues.
 
 Run a Test Campaign
 -------------------
@@ -117,23 +115,21 @@ the Campaign creation screen.
    :alt: Test Management test creation
    :name: Test Management test creation
 
-You need to give a name to your campaign and select which environment you want to
-test. You need to select at least one environment and this will make a new tab
-appear. When you click on the tab, you get the list of tests and select them.
+You need to give a name to your campaign and select which tests you want to execute
+during your validation campaign.
 
-.. figure:: ../images/screenshots/testmanagement/create-2.png
+
+Adding Tests to a Campaign
+--------------------------
+
+Once the validation has started you might want add some new tests to your campaign.
+Open your campaign by clicking on "Details button".
+
+Then click on the "Edit" button.
+
+A new modal will enable you to look for existing artifacts or to create directly a new one.
+
+.. figure:: ../images/screenshots/testmanagement/link-new-tests.png
    :align: center
-   :alt: Test Management test selection
-   :name: Test Management test selection
-
-A given Test Case can be selected for several environments. Once you have selected
-all the Test Cases you want to run for a campaign, you can click on "Create campaign".
-
-.. attention::
-
-    As of today the campaing creation is a bit rustic, you need to select all the
-    tests in all environments before hiting "Create campaign".
-
-    Once the campaign is created it's possible to add test that were forgotten but
-    it's a bit teadious. You will need to create artifacts by hand in trackers
-    and link them properly.
+   :alt: Add tests to existing campaign
+   :name: Add tests to existing campaign

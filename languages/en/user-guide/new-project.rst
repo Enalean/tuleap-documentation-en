@@ -1,6 +1,3 @@
-
-
-
 Creating a New Project
 ======================
 
@@ -31,16 +28,10 @@ Project Registration
 --------------------
 
 Before you create a new project you must be a registered user (see :ref:`classes-of-citizens`).
-You then login and select the item "Register New Project" in the upper
-part of the Tuleap Main Menu.
+You then login and select the item "+ New Project" in the "Projects" dropdown of Tuleap Main Menu.
 
 The project registration is an easy process:
 
--  **Project Registration**
-
-   Some information about Tuleap Services. Just read it.
-
-   Do not forget to read and agree the Terms of Services Agreement.
 
 -  **Project Name**
 
@@ -64,6 +55,8 @@ The project registration is an easy process:
    The new project will use exactly the same configuration as the template.
    This includes that:
 
+   -  the new project inherit the same dashboards and widget for project home page
+
    -  the new project is classified into the same trove categories as
       the template project (see :ref:`software-map-(or Project Tree)`).
 
@@ -82,14 +75,17 @@ The project registration is an easy process:
 
    -  the documents, as well as the document tree will be present.
 
+   -  the SVN admin settings are copied but
+      the emails and the SVN access permissions are not copied.
+
+   -  the Git admin settings and global permissions are copied, but
+      the emails and the Git access permissions are not copied.
+
+   -  the file packages and their permissions are copied
+
    -  the CVS admin settings are copied (preamble, tracking mode, CVS
       Watch Mode), but the emails and the CVS permissions are not
       copied.
-
-   -  the SVN admin settings are copied (preamble, tracking mode), but
-      the emails and the SVN access permissions are not copied.
-
-   -  the file packages and their permissions are copied
 
 -  **Project Description**
 
@@ -103,22 +99,12 @@ The project registration is an easy process:
    Write down all the things that you consider as crucial for your
    project or for the community of users.
 
--  **Project Services**
-
-   You can choose which services will be activated for your project.
-   Please note that you will be able to change those preferences after
-   project creation.
 
 -  **Project Categorization**
 
-   Please select up to three classifications for this project in each of
-   the Trove root categories. This will help potential developers and
-   users to find your project and engage. If the project does not
-   require any or all of these classification, simply select "None
-   Selected". If you used a project template that had already been
-   classified you will find its categories already selected here. You
-   can change the trove categories for this project at any time. You can
-   categorize your project according to the seven criteria listed in :ref:`software-map-(or Project Tree)`.
+   Some categories can be mandatory for project creation.
+   These categories are managed by your system administrator.
+   More information about categorization in :ref:`software-map-(or Project Tree)`.
 
 -  **Software Policy**
 
@@ -172,17 +158,6 @@ after a project is registered:
    This can be done by accessing the "Project Admin" page, typing the
    names of all the registered users promote as team members and then
    define their permissions.
-
-    **Tip**
-
-    Rather than putting in place a heavy hierarchy of project topics and
-    sub-topics, the Tuleap Team has decided to start small
-    and create only a handful of top-level topics in the hierarchy. As
-    time goes and as more and more projects register on
-    Tuleap we'll refine the hierarchy. If you cannot find
-    the appropriate topic for your project, please contact us through
-    the "Contact Us" link in the Tuleap Main Menu or submit
-    a request in the appropriate Discussion Forum.
 
 .. [#f1]
    Actually it can but you have to ask the Tuleap Team to do
