@@ -63,6 +63,8 @@ Pluralization
 In PHP .mustache files
 ''''''''''''''''''''''
 
+In order to not pollute your presenters, you should use gettext directly in the ``.mustache`` files:
+
   .. code-block:: html
   
     <!-- In core -->
