@@ -26,8 +26,6 @@ Currently, **Tuleap does not play well with SELinux**, you probably want to set 
 
 The server will need an Internet connection as it will download external packages.
 
-You can have a look at the Installation checklist here: https://tuleap.net/wiki/index.php?pagename=TuleapInstallationChecklist&group_id=101
-
 .. _tuleap_installation:
 
 Installation
@@ -120,3 +118,5 @@ First connection
 Once these steps are completed, you can access the Tuleap server with the web interface. Go to your Tuleap domain name (e.g. http://tuleap.example.com)
 
 Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Change it as soon as possible.
+
+Backups are under your responsibility so you probably want to take a look at the :ref:`Backup/Restore guide <backup>`.

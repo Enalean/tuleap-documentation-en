@@ -1,3 +1,5 @@
+..  _backup:
+
 Backup/Restore
 ==============
 
@@ -30,14 +32,14 @@ Database backup
 Tuleap main database is "tuleap", but additionnal databases can be used for plugins. To show them use:
 
 .. code-block:: bash
-   
+
     $ mysql -u codendiadm -p -e "show databases;"
 
 Use mysqldump to backup all databases. You can also write a script to backup each database independently:
 
 .. code-block:: bash
-     
-    $ mysqldump -u codendiadm -p --all-databases > mybackup.sql    
+
+    $ mysqldump -u codendiadm -p --all-databases > mybackup.sql
 
 Files backup
 ````````````
@@ -51,7 +53,7 @@ You need to save the following directories (be careful, you need to preserve the
     - /var/lib/tuleap
     - /var/lib/gitolite
     - /var/lib/mailman
-    
+
 
 Restore Tuleap
 --------------
@@ -62,4 +64,3 @@ As only data were backed up, you first need a Tuleap server to restore them. It 
     - restore databases
     - restore directories
     - run a forge upgrade ('/usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update')
-
