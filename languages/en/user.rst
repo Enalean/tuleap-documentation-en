@@ -10,6 +10,7 @@ User-guide
    user-guide/new-project
    user-guide/project-summary
    user-guide/project-admin
+   user-guide/portfolio
    user-guide/site-access
    user-guide/tracker
    user-guide/tql
@@ -22,6 +23,7 @@ User-guide
    user-guide/git
    user-guide/gerrit
    user-guide/pullrequest
+   user-guide/project-labels
    user-guide/mediawiki
    user-guide/doc
    user-guide/ci
