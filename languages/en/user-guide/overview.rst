@@ -87,3 +87,4 @@ in the following resources:
 -  **This tracker**: If you enter any tracker in any Tuleap
    project, the "This Tracker" item will show up in the search box,
    allowing you to actually search this tracker database.
+
