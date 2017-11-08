@@ -25,15 +25,6 @@ Once done, you can migrate your old widget to the new format, please run:
     src/utils/php-launcher.sh plugins/crosstracker/bin/migrate_old_crosstracker_widgets.php
 
 
-TQL search in comment
----------------------
-Default configuration of MySql for fulltext searches only allows search for words longer than 3 characters. 
-This limit can be by passed by updating the property:
-
-.. sourcecode:: shell 
-
-  'ft_min_word_len'
-
 CLI is gone
 -----------
 
