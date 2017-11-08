@@ -26,7 +26,7 @@ Currently, the language supports:
 - Parenthesis to force precedence
 - Comparison operators:
 
-  * For string, text and @comment: ``=``, ``!=``
+  * For string, text and @comments: ``=``, ``!=``
   * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
   * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
