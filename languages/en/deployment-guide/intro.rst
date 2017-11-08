@@ -7,10 +7,22 @@ file, the default is automatically set for you.
 9.14
 ====
 
+.. attention::
+
+  You can (and should) do this prior to upgrade so the upgrade will be straightforward.
+
+  If your ``my.cnf`` on your mysql server contains ``old_passwords=1`` you will have to desactivate it (comment the line)
+  and restart mysql.
+
+  Then update your password, as ``codendiadm`` and ``dbauthuser`` DB user:
+
+  * ``SET SESSION old_passwords=0;``
+  * ``SET PASSWORD = PASSWORD('your_existing_password')``
+
 Crosstracker plugin
 -------------------
 
-.. attention::
+.. note::
 
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
