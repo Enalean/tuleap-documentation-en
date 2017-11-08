@@ -55,12 +55,12 @@ Currently, the language supports:
    
 - Search in comments:
 
-   * ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
-   * ``@comments = ''`` returns the list of artifacts without any comments
-   * ``@comments != ''`` returns the list of artifacts with at least one comment
-   * When searching in comments, you should be aware of some limitations:
-      * Searches are done for words longer than 3 characters
-      * Some words are not taken in account because they are too common (like ``the``, ``a``, …) 
+  * ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
+  * ``@comments = ''`` returns the list of artifacts without any comments
+  * ``@comments != ''`` returns the list of artifacts with at least one comment
+  * When searching in comments, you should be aware of some limitations:
+     * Searches are done for words longer than 3 characters
+     * Some words are not taken in account because they are too common (like ``the``, ``a``, …) 
      
 
 Therefore to construct a query you can combine these elements.
