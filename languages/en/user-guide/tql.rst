@@ -39,7 +39,7 @@ Currently, the language supports:
   * For list fields: ``all`` matching list bind values
   * For list fields bound to users: ``string`` using user names, ``MYSELF()``
   * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
-  * For @comment: ``string``
+  * For @comments: ``string``
 
 - Dynamic value for date fields: ``NOW()``.
 
@@ -52,6 +52,16 @@ Currently, the language supports:
 - Dynamic value for list fields bound to users: ``MYSELF()``.
 
   * ``assigned_to = MYSELF()`` matches all artifacts where assigned_to is equal to the current user.
+   
+- Search in comments:
+
+   * ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
+   * ``@comments = ''`` returns the list of artifacts without any comments
+   * ``@comments != ''`` returns the list of artifacts with at least one comment
+   * When searching in comments, you should be aware of some limitations:
+      * Searches are done for words longer than 3 characters
+      * Some words are not taken in account because they are too common (like ``the``, ``a``, …) 
+     
 
 Therefore to construct a query you can combine these elements.
 
@@ -113,16 +123,3 @@ When searching on date fields using TQL, you should be aware of the sometimes su
    :name: Explanation of date operators
 
    Explanation of date operators
-   
-@Comment operator
------------------
-
-When searching in comments, you should be aware of some limitations due to MySql fulltext search:
-   * by default search are done for words longer than 3 characters
-     you can configure it with the MySql property ``ft_min_word_len``
-   * some word are not taken in account because they are too common
-     please see MySql documentation: https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
-     
-Please note that @comment has its own behaviour when searching with ''
-   * @comment = '' returns the list of artifacts without any comment
-   * @comment != '' returns the list of artifacts with at least one comment
