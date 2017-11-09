@@ -4,8 +4,8 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-9.14
-====
+Tuleap 9.14
+===========
 
 .. attention::
 
@@ -86,8 +86,8 @@ When the usage of your server is low, you can launch the following script:
 The script will display how much comments it will have to store. You can safely cancel the execution 
 of the script at any moment with ``ctrl-c`` and relaunch it later.
 
-9.13
-====
+Tuleap 9.13
+===========
 
 API keys used to access to a Bugzilla server in the Bugzilla reference plugin are now encrypted
 -----------------------------------------------------------------------------------------------
@@ -110,8 +110,8 @@ Move to Mediawiki 1.23
 It's strongly recommended to migrate all your mediawiki databases to 1.23 (LTS) in order to
 prepare PHP 5.6 compatibility.
 
-9.12
-====
+Tuleap 9.12
+===========
 
 Update to the Test Management plugin
 ------------------------------------
@@ -171,8 +171,8 @@ Deprecated feature
   ``$sys_enable_deprecated_feature_database_export = 1;`` into ``/etc/tuleap/conf/local.inc`` file.
   Please contact us if it is the case, else we will remove completely the feature.
 
-9.10
-====
+Tuleap 9.10
+===========
 
 Custom plugins impacted by _addHook removal
 -------------------------------------------
@@ -185,8 +185,8 @@ using the former version.
 In order to fix the issue (if any), please replace all occurrences of ``_addHook`` by ``addHook``
 in your custom plugins.
 
-9.9
-===
+Tuleap 9.9
+==========
 
 Migration to the new dashboards can be slow
 -------------------------------------------
@@ -226,8 +226,8 @@ packages is trusted.
 
 The key has the short ID `ADB0D167` and the fingerprint `3D03 B41A 172A 7FB9 4F1E  9E9E C0B5 E775 ADB0 D167`.
 
-9.8
-===
+Tuleap 9.8
+==========
 
 Disable web editing of plugin properties available in the site administration
 -----------------------------------------------------------------------------
@@ -254,8 +254,8 @@ This also applies to the following pages:
 
 If you customized them, you will have to apply the new look and feel or they will appear broken.
 
-9.7
-===
+Tuleap 9.7
+==========
 
 Pull requests in a Git repository using fine grained permissions with `tuleap-plugin-git`
 -----------------------------------------------------------------------------------------
@@ -286,8 +286,8 @@ it is recommend to change the unsafe pattern:
 
     #> sed -i "s/$UNSAFE_PATT = qr();/$UNSAFE_PATT = qr([\\\n]);/" /var/lib/gitolite/.gitolite.rc
 
-9.5
-===
+Tuleap 9.5
+==========
 
 Purge data from the userlog plugin
 ----------------------------------
@@ -299,8 +299,8 @@ We have introduced a new utility to help you clean it. You can call it this way:
 
     #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/userlog/bin/clean_userlog_request.php
 
-9.4
-===
+Tuleap 9.4
+==========
 
 End of life for the Subversion authentication mod ``modmysql`` and ``modldap``
 ------------------------------------------------------------------------------
@@ -387,8 +387,8 @@ you to do it for security reasons. The swap of the packages can be done this way
     quit
     EOF
 
-9.3
-===
+Tuleap 9.3
+==========
 
 Snippets are disabled
 ---------------------
@@ -400,8 +400,8 @@ think this feature should be kept, please manifest yourself on the
 mailing list. In the meantime, if you really need it, the feature can be force activated by setting
 ``$sys_use_snippet`` to ``'force'``.
 
-9.2
-===
+Tuleap 9.2
+==========
 
 HTTP persistent connection is now enabled by default on new installations
 -------------------------------------------------------------------------
@@ -409,15 +409,15 @@ The default Apache configuration that is deployed during Tuleap installation now
 We encourage existing instances to do the same as it can improve performance by setting the option ``KeepAlive``
 to ``On`` in the configuration file ``/etc/httpd/conf/httpd.conf``.
 
-9.1
-===
+Tuleap 9.1
+==========
 
 We put some gloss, makeup and rhinestones on site administration. This is the introduction of a new theme named BurningParrot. It is transparent for the users – no need to change the user preferences, however it comes as a dependency of ``tuleap-all`` package. When you upgrade to 9.1, if you don't have/upgrade ``tuleap-all`` package then you should manually install ``tuleap-theme-burningparrot`` package. Enjoy <3
 
 In the same vein, we removed the old and nasty theme named 'Tuleap'. You must issue the following command if you have installed it: ``yum remove tuleap-theme-tuleap``.
 
-9.0
-===
+Tuleap 9.0
+==========
 
 Definitive removal of the deprecated password storage
 -----------------------------------------------------
@@ -449,8 +449,8 @@ logs previsously parsed won't be taken in account.
         $> cd /usr/share/tuleap/
         $> ./src/utils/php-launcher.sh plugins/git/bin/import_all_giotlite3_logs.php
 
-8.19
-====
+Tuleap 8.19
+===========
 
 New integration of ViewVC for SVN single and multi repositories and CVS
 -----------------------------------------------------------------------
@@ -516,8 +516,8 @@ And then replace these 2 sections by:
     CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
 
 
-8.17
-====
+Tuleap 8.17
+===========
 
 Dependency to PHP Guzzle
 ------------------------
@@ -526,8 +526,8 @@ Tuleap starts using Guzzle package from the EPEL repository (``php-guzzle-Guzzle
 the package provided until now by the Tuleap repository (``php-guzzle``). You should check if this
 package is not ignored by your yum configuration.
 
-8.15
-====
+Tuleap 8.15
+===========
 
 A new option for setup.sh
 -------------------------
@@ -539,8 +539,8 @@ Now setup.sh is checking if your domain name is valid. And for your automation o
         #> setup.sh --disable-domain-name-check
 
 
-8.14
-====
+Tuleap 8.14
+===========
 
 Changes in git plugin configuration
 -----------------------------------
@@ -553,8 +553,8 @@ Changes in SVN multirepositories plugin
 The public URL for repositories changes. All users will have to update their checkout/checkin links.
 
 
-8.13
-====
+Tuleap 8.13
+===========
 
 New dependency required for Tuleap
 ----------------------------------
@@ -567,8 +567,8 @@ CentOS 5.
 If you have not followed the installation guide and the dependency can not be found
 you must install it by hand.
 
-8.12
-====
+Tuleap 8.12
+===========
 
 Planning v1 removal
 -------------------
@@ -581,8 +581,8 @@ Agile Dashboard Planning v1 (deprecated since 2 releases) is not anymore availab
         $sys_showdeprecatedplanningv1 = 0;
 
 
-8.11
-====
+Tuleap 8.11
+===========
 
 Legacy themes removal
 ---------------------
@@ -613,8 +613,8 @@ Legacy packages removed
 OpenId (tuleap-plugin-openid) is gone. You can try OpenID connect instead (require
 manual setup as of 8.11).
 
-8.10
-====
+Tuleap 8.10
+===========
 
 Subversion packaging issue
 --------------------------
@@ -684,14 +684,14 @@ Now that it is possible to import a git repository alongside a project archive, 
 
         codendiadm ALL= (gitolite) SETENV: NOPASSWD: RESTORE_TAR_REPO_CMD, BUNDLE_CMD
 
-8.9
-===
+Tuleap 8.9
+==========
 
 New configuration parameter in ``local.inc`` when Tuleap is behind a reverse proxy, check
 :ref:`Deploy Tuleap behind a reverse proxy <admin_howto_reverseproxy>` in Administration guide.
 
-8.8
-===
+Tuleap 8.8
+==========
 
 Create artifact by mail
 -----------------------
@@ -700,8 +700,8 @@ A new feature adding the possibility of creating an artifact by email has been a
 check :ref:`Activate reply to artifacts by email <admin_tracker_reply_by_email>` in Administration guide.
 
 
-8.7
-===
+Tuleap 8.7
+==========
 
 Git evolution on CentOS 5
 -------------------------
@@ -718,8 +718,8 @@ file which is generally located at /etc/sudoers:
 
 Note that only Tuleap instances running on CentOS 5 are concerned.
 
-8.5
-===
+Tuleap 8.5
+==========
 
 User management via Active Directory
 ------------------------------------
@@ -738,8 +738,8 @@ the file ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` with these extra properties
         // The identifier of a user group
         $sys_ldap_grp_uid = 'sAMAccountName';
 
-8.4
-===
+Tuleap 8.4
+==========
 
 API Explorer update
 -------------------
@@ -775,8 +775,8 @@ If you want to update your configuration, replace the line SSLProtocol and SSLCi
     SSLCipherSuite ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
     SSLHonorCipherOrder on
 
-8.3
-===
+Tuleap 8.3
+==========
 
 Password storage
 ----------------
@@ -804,8 +804,8 @@ Execute this script if you have the Proftpd plugin installed:
 
     #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
 
-8.1
-===
+Tuleap 8.1
+==========
 
 Mediawiki
 ---------
@@ -824,8 +824,8 @@ A new parameter in ``local.inc`` allow users to query api in HTTP without SSL. B
     //      providing the SSL Layer between you and the server /!\
     $sys_rest_api_over_http = 0;
 
-7.11
-====
+Tuleap 7.11
+===========
 
 Logrotate
 ---------
@@ -836,8 +836,8 @@ to ``/etc/logrotate.d/httpd``.
 
 See ``/usr/share/tuleap/src/etc/logrotate.httpd.conf`` for reference.
 
-7.11
-====
+Tuleap 7.11
+===========
 
 CVS
 ---
@@ -877,8 +877,8 @@ In order for this to work you need to add the following lines to ``/etc/tuleap/p
 This value can then be managed via the Tuleap ``Admin`` area -> ``plugin adminstration`` -> ``FullText Search``.
 
 
-7.10
-====
+Tuleap 7.10
+===========
 
 Git
 ---
@@ -910,8 +910,8 @@ Core
 
 The default backup path for deleted projects is ``/var/tmp``. See ``$sys_project_backup_path`` in ``/etc/tuleap/conf/local.inc``.
 
-7.8
-===
+Tuleap 7.8
+==========
 
 Full text search
 ----------------
@@ -928,8 +928,8 @@ to ``/etc/tuleap/plugins/fulltextsearch/etc/fulltextsearch.inc``
     $max_seconds_for_request = 10;
 
 
-7.7
-===
+Tuleap 7.7
+==========
 
 General
 -------
@@ -994,8 +994,8 @@ You can configure git and http urls in ``git/etc/config.inc``:
 The ``$grokmanifest_path`` is no longer needed on server (you can remove grokmirror too).
 
 
-7.6
-===
+Tuleap 7.6
+==========
 
 Old Docman migration
 --------------------
@@ -1013,8 +1013,8 @@ If in doubt, then you should upgrade to the latest version.
 
     $> yum update git
 
-7.5
-===
+Tuleap 7.5
+==========
 
 Full text search
 ----------------
@@ -1031,8 +1031,8 @@ The index mapping for artifact'ss follow-up comments changed, you need to delete
     }'
 
 
-7.4
-===
+Tuleap 7.4
+==========
 
 Mediawiki extra plugins compatibility mode
 ------------------------------------------
@@ -1051,8 +1051,8 @@ This option can then be toggled by site administrators in the "plugins administr
 Activating the compatibility view for a project is then done in the "Administration" section of a given mediawiki in the UI.
 
 
-7.3
-===
+Tuleap 7.3
+==========
 
 CentOs packages dependency
 --------------------------
@@ -1097,8 +1097,8 @@ In addition, you can choose your default color for the whole platforme by adding
         // Default theme variant in forge
         $sys_default_theme_variant = 'FlamingParrot_Orange';
 
-7.2
-===
+Tuleap 7.2
+==========
 
 Tracker
 -------
