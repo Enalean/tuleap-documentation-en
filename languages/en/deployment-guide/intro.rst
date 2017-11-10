@@ -4,6 +4,24 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+Tuleap 9.15
+===========
+
+.. NOTE::
+
+  Tuleap 9.15 is currently under development.
+
+SOAP API
+--------
+
+The documentation of the deprecated SOAP API is not anymore displayed. If your users still need it, you can force the display by adding the following statement in the ``/etc/tuleap/conf/local.inc``:
+
+.. code-block:: php
+
+  $should_display_documentation_about_deprecated_soap_api = 1;
+  
+Users should **consider using REST API instead**.
+
 Tuleap 9.14
 ===========
 
