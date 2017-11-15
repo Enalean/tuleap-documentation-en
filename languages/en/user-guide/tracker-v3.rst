@@ -1,3 +1,5 @@
+.. _tracker_v3:
+
 Tracker (Legacy)
 ================
 
