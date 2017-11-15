@@ -5,7 +5,7 @@ Trackers and real-time Reports
 
 **Disclaimer:** this chapter covers the new generation (aka v5) of
 Tracker system. For documentation on the legacy tracker system (v3) see
-user-guide/tracker-v3.
+:ref:`tracker_v3`.
 
 The Tuleap Tracker is one of the most powerful and flexible
 service provided by Tuleap. It allows tracking change
@@ -60,7 +60,7 @@ appropriate tracker of that project as indicated in the section above
 `Entering the Tracker Service`_.
 
 When entering a given tracker you are presented with the artifact
-selection and browsing screen (more about this facility in `Artifact Browsing`_). For now
+selection and browsing screen (more about this facility in `Search for existing artifacts`_). For now
 let's click on the "Submit new artifact" item (or whatever the artifact
 name is) from the Tracker Menu Bar in the upper part of the welcome
 screen (see `A Tracker browsing screen`_).
@@ -108,12 +108,8 @@ finished !
 
 .. NOTE::
 
-    About to submit a bug or a support request to a Tuleap
-    Project? Before you do that, make sure that others haven't yet
-    submitted a similar artifact. The easiest way to do that is to use TQL
-    and search keywords in summary in description
-
-   *example: summary = 'git commit' OR details = 'git commit'*
+    About to sumit a bug or a support request? Before you do that,
+    make sure that others haven't yet submitted a similar artifact.
 
 Search for existing artifacts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,16 +346,6 @@ The parsing method checks several potential errors in the CSV file:
 
 All other potential errors have to be checked manually by looking at the
 parse report table.
-
-Printer Friendly Version
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-At any point in the process of browsing the tracker database you can
-click on the "Printer Version" link (in the report "options" menu) to
-display a simplified and non-decorated artifact list that prints nicely
-or can be copy-pasted in a document of your choice. For better
-readability we strongly advise you to print the list of results in
-landscape format.
 
 Graphical visualization
 ```````````````````````
@@ -1268,7 +1254,7 @@ the table below:
 ============================================================================================= ===========================================
         Tracker Feature                                                                           Access Permission
 ============================================================================================= ===========================================
-`New Artifact Submission <#TrackerV5ArtifactSubmission>`_                                     By default any Tuleap visitor,
+New Artifact Submission                                                                       By default any Tuleap visitor,
                                                                                               whether logged in or not, has the ability
                                                                                               to submit a new artifact to a tracker. The
                                                                                               tracker administrator has the ability to
@@ -1277,46 +1263,46 @@ the table below:
                                                                                               (anonymous users are requested to login
                                                                                               first) or to the project members if the
                                                                                               tracker is made private.
-`Artifact Browsing <#TrackerV5ArtifactBrow sing>`_                                            Searching the Artifact database and
+Artifact Browsing                                                                             Searching the Artifact database and
                                                                                               browsing the results is available to all
                                                                                               Tuleap visitors (whether
                                                                                               registered or not) unless the tracker has
                                                                                               been made private by the project
                                                                                               administrator. If so the tracker is only
                                                                                               visible to project members.
-`Artifact Update <#TrackerV5ArtifactUpdate>`_                                                 By default only project members can
+Artifact Update                                                                               By default only project members can
                                                                                               update an artifact. Non members have only
                                                                                               limited access and can only add a comment
                                                                                               or attach a file.
-`Tracker Administration - Artifact Import <#TrackerV5ArtifactImport>`_                        Only Project administrators and project
+Tracker Administration - Artifact Import                                                      Only Project administrators and project
                                                                                               members with Admin. permission can
                                                                                               import data into trackers.
-`Tracker Creation <#TrackerV5Creation>`_                                                      Only available to project administrators.
-`Tracker Administration - General Settings <#TrackerV5GeneralSettings>`_                      Only available to project administrators
+Tracker Creation                                                                              Only available to project administrators.
+Tracker Administration - General Settings                                                     Only available to project administrators
                                                                                               and project members with Admin.
                                                                                               permission on this tracker.
-`Tracker Administration - Field Usage Management <#TrackerV5FieldUsage Management>`_          Only available to project administrators
+Tracker Administration - Field Usage Management                                               Only available to project administrators
                                                                                               and project members with Admin.
                                                                                               permission on this tracker.
-`Tracker Administration - Semantic Management <#TrackerV5SemanticManagement>`_                Only available to project administrators
+Tracker Administration - Semantic Management                                                  Only available to project administrators
                                                                                               and project members with Admin. permission
                                                                                               on this tracker.
-`Tracker Administration - Workflow Management <#TrackerV5Workflow>`_                          Only Project administrators and project
+Tracker Administration - Workflow Management                                                  Only Project administrators and project
                                                                                               members with Admin. permission can define
                                                                                               and configure workflow.
-`Tracker Administration - Permissions Management <#TrackerV5PermissionsManagement>`_          Only Project administrators and project
+Tracker Administration - Permissions Management                                               Only Project administrators and project
                                                                                               members with Admin. permission can define
                                                                                               tracker permissions.
-`Tracker Administration - Canned Responses Management <#TrackerV5CannedResponses>`_           Only Project administrators and project
+Tracker Administration - Canned Responses Management                                          Only Project administrators and project
                                                                                               members with Admin. permission can define
                                                                                               canned responses.
-`Tracker Administration - Email Notification Settings <#TrackerV5EmailNotificationSettings>`_ Only Project administrators can add email
+Tracker Administration - Email Notification Settings                                          Only Project administrators can add email
                                                                                               addresses in the global email notification
                                                                                               field. Project members can watch artifacts
                                                                                               of other team members. Any registered
                                                                                               Tuleap user can customize her
                                                                                               notification preferences.
-`Tracker Administration - Structure Export <#TrackerV5AdminStructureExport>`_                 Only Project administrators and project
+Tracker Administration - Structure Export                                                     Only Project administrators and project
                                                                                               members with Admin. permission can export
                                                                                               tracker structure.
 ============================================================================================= ===========================================
@@ -1565,13 +1551,6 @@ his tracker. The field usage manager palette consists of 4 groups:
 Creation and Modification of a Tracker Field
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Unused Elements
-```````````````
-
-Unused fields is not a kind of fields, but all the fields that are not
-used in the tracker definition. Select one of these fields to use it
-again.
-
 Add a field to a tracker
 ````````````````````````
 
@@ -1680,10 +1659,10 @@ properties that can be tuned :
 
    Select box bound to a list of users
 
--  **Binding a field to a list of user groups**: It's an extension of
-   "binding to a list of user" but with user groups. It behaves the same
-   way but instead of selecting a user, you will choose a user group among
-   a list.
+   -  **Binding a field to a list of user groups**: It's an extension of
+      "binding to a list of user" but with user groups. It behaves the same
+      way but instead of selecting a user, you will choose a user group among
+      a list.
 
 It's useful when you have complex setup and want to have several
 people notified at once for an action.
@@ -1998,8 +1977,8 @@ Define rules on transitions
 
    Define workflow transitions
 
-    For a given transition, you can select the people allowed to perform it
-    and actions exectued after the transition happens (if allowed).
+For a given transition, you can select the people allowed to perform it
+and actions exectued after the transition happens (if allowed).
 
 Groups that may make the transition
 ```````````````````````````````````
@@ -2210,4 +2189,3 @@ To do so, go to the tracker administration and select "Delete artifacts".
 .. NOTE::
 
     if you are not project or tracker administrator, please contact one administrator.
-
