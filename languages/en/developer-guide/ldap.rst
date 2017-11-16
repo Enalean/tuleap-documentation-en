@@ -1,5 +1,35 @@
 LDAP
-----
+====
+
+Create a group in LDAP
+----------------------
+
+This examples illustrates how to create a group "developers" in the LDAP.
+
+In your ``tuleap-web`` container, create a file ``developers.ldif`` with the following content:
+
+.. code-block:: yaml
+
+    dn: cn=developers,ou=groups,dc=tuleap,dc=local
+    objectClass: groupOfNames
+    cn: developers
+    member: uid=pat_le_chef
+    member: uid=vaceletm
+    
+Then execute the following command:
+
+.. code-block:: shell
+
+  ldapadd -h ldap -D 'cn=Manager,dc=tuleap,dc=local' -W -f developers.ldif
+  
+The password can be found in the ``.env`` file in your sources (where you run ``make start``):
+
+.. code-block:: ini
+
+    LDAP_MANAGER_PASSWORD=8lHoMsOBU…
+
+PHPLDAPAdmin
+------------
 
 You can set-up a local ldap with a UI managment front in a few steps.
 
@@ -40,7 +70,7 @@ Example config.php:
 
 
 Using your local LDAP with a local gerrit
-`````````````````````````````````````````
+-----------------------------------------
 
 Use this config in ``etc/gerrit.conf``:
 
