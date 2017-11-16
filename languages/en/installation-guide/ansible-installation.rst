@@ -67,3 +67,9 @@ Execute your playbook to deploy your servers:
 
     $ ansible-playbook -i my_inventory my_playbook.yml
 
+Next steps
+----------
+
+Once you have a fully running Tuleap you can start using it: issue tracking, source code management, agile planning and more.
+
+Checkout our tutorials and videos on `Getting started <https://www.tuleap.org/get-started/videos-tutorials>`_ page.

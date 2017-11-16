@@ -120,3 +120,10 @@ Once these steps are completed, you can access the Tuleap server with the web in
 Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Change it as soon as possible.
 
 Backups are under your responsibility so you probably want to take a look at the :ref:`Backup/Restore guide <backup>`.
+
+Next steps
+----------
+
+Once you have a fully running Tuleap you can start using it: issue tracking, source code management, agile planning and more.
+
+Checkout our tutorials and videos on `Getting started <https://www.tuleap.org/get-started/videos-tutorials>`_ page.

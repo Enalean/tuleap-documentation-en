@@ -20,3 +20,9 @@ Installation
 
 Go to the `Tuleap image <https://hub.docker.com/r/enalean/tuleap-aio/>`_ page in the Docker hub and follow the instructions.
 
+Next steps
+----------
+
+Once you have a fully running Tuleap you can start using it: issue tracking, source code management, agile planning and more.
+
+Checkout our tutorials and videos on `Getting started <https://www.tuleap.org/get-started/videos-tutorials>`_ page.
