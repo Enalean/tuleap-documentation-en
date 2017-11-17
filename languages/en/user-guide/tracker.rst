@@ -261,8 +261,7 @@ If more than N artifacts are retrieved from the tracker database you are
 invited to click on the navigation bar to display the next or previous
 chunk of artifacts.
 
-To access a given artifact from the list of results, simply click on the pagination
-icon.
+To access a given artifact from the list of results, simply click on the icon or on the id.
 
 Artifact List Sorting
 ~~~~~~~~~~~~~~~~~~~~~
@@ -402,15 +401,15 @@ Renderer management
 Adding a renderer
 ~~~~~~~~~~~~~~~~~
 
-You can add as many renderer you want in any tracker report. Renderer
-are ordered in tabs. Adding a renderer is easy: simply click on "Save" or "Save as".
+You can add as many renderers you want in any tracker report. Renderers
+are ordered in tabs. Adding a renderer is easy: click on "Save" or "Save as".
 Select the kind of
 renderer you want to add (either table, charts or cardwall), give the
 renderer a name and a description, and select the submit button.
 
 .. NOTE::
 
-    Save button for renderer are displayed only when you have update your current report.
+    Save button for renderer is displayed only when you have changed your current report.
 
 Table renderer
 ~~~~~~~~~~~~~~
@@ -496,7 +495,7 @@ deletion.
 
     Every renderer (either table or charts) can be displayed in your
     dashboard. To do it, select the link "add to my dashboard" or "add
-    to project dashboard" in the "Options" menu (represented by a cog icon).
+    to project dashboard".
 
 Artifact Update
 ---------------
@@ -829,7 +828,7 @@ Burndown display is based on a cache table:
 It's possible to use burndown over different timezones:
 
 
-Let's imagine you team is split in Montreal and in Tokyo:
+Let's imagine your team is split in Montreal and in Tokyo:
 
 ========================== =======================
 Team A                     Team B
