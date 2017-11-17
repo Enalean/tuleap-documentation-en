@@ -1,3 +1,5 @@
+.. _tracker_v3:
+
 Tracker (Legacy)
 ================
 
@@ -1921,7 +1923,7 @@ the tracker administration interface:
 
 Here are the dependencies for Linux:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_02.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_02.png
    :align: center
    :alt: Linux Dependencies
    :name: Linux Dependencies
@@ -1930,7 +1932,7 @@ Here are the dependencies for Linux:
 
 Now you can continue with the next source value MacOS X:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_03.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_03.png
    :align: center
    :alt: MacOS X Dependencies
    :name: MacOS X Dependencies
@@ -1939,7 +1941,7 @@ Now you can continue with the next source value MacOS X:
 
 Thus, with the next source value MS Windows:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_04.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_04.png
    :align: center
    :alt: MS Windows Dependencies
    :name: MS Windows Dependencies
@@ -1948,7 +1950,7 @@ Thus, with the next source value MS Windows:
 
 And, with the last source value NetBSD:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_05.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_05.png
    :align: center
    :alt: NetBSD Dependencies
    :name: NetBSD Dependencies
@@ -1958,7 +1960,7 @@ And, with the last source value NetBSD:
 We>You can also "navigate" through dependencies in the opposite
 direction: to define the source values which influence one target value:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_06.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_06.png
    :align: center
    :alt: Version 2.0 depends upon Linux and NetBSD systems
    :name: Version 2.0 depends upon Linux and NetBSD systems
@@ -1969,28 +1971,28 @@ Once dependencies are defined, the final user (when submitting/updating
 an artifact) will see the Version options filtered according to the
 selection of the Operating System:
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_07.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_07.png
    :align: center
    :alt: Proposed versions for Linux
    :name: Proposed versions for Linux
 
    Proposed versions for Linux
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_08.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_08.png
    :align: center
    :alt: Proposed versions for MacOS X
    :name: Proposed versions for MacOS X
 
    Proposed versions for MacOS X
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_09.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_09.png
    :align: center
    :alt: Proposed versions for MS Windows
    :name: Proposed versions for MS Windows
 
    Proposed versions for MS Windows
 
-.. figure:: ../images/screenshots/sc_trackerfielddependencies_10.png
+.. figure:: ../images/screenshots/tracker/sc_trackerfielddependencies_10.png
    :align: center
    :alt: Proposed versions for NetBSD
    :name: Proposed versions for NetBSD
