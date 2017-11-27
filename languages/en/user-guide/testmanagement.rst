@@ -133,3 +133,22 @@ A new modal will enable you to look for existing artifacts or to create directly
    :align: center
    :alt: Add tests to existing campaign
    :name: Add tests to existing campaign
+
+Link with Agile Dashboard
+-------------------------
+
+If your project also uses the Agile Dashboard service, a "Test campaigns" tab will be added to milestones.
+
+.. figure:: ../images/screenshots/testmanagement/agiledashboard-link.png
+   :align: center
+   :alt: Go to test campaigns from an agile dashboard milestone
+   :name: Go to test campaigns from an agile dashboard milestone
+
+After clicking on this tab, you will be able to create a new test campaign from Test definitions linked to the Milestone's items. For example, you have a user story in a Release "Version 1.0". You can link a Test definition to this user story.
+
+Navigate to the "Version 1.0 milestone, click on the "Test campaigns" tab and then create a new campaign. In the modal, you can choose "Milestone tests" which will select all the test definitions linked to "Version 1.0" milestone's user stories.
+
+.. figure:: ../images/screenshots/testmanagement/create-campaign-from-milestone.png
+   :align: center
+   :alt: Create a test campaign from the milestone
+   :name: Create a test campaign from the milestone
