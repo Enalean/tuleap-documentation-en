@@ -609,39 +609,6 @@ Renamed project, mediawiki lost (Previous 7.3)
 
 :ref:`Section moved to Mediawiki <admin_service_mediawiki>`
 
-Enable gitweb + tuleap
-----------------------
-
-This allows to browse git repositories using gitweb along standard Tuleap Gitphp.
-
-* yum install gitweb-tuleap
-
-* Verify these variables values (it depends on your gitolite and OS version) at /etc/gitweb.conf:
-
-  .. sourcecode:: perl
-
-    our $projectroot="/var/lib/codendi/gitolite/repositories";
-    our $projects_list="/usr/com/gitolite/projects.list";
-
-* By default Gitweb is available for all repositories, if you want it to be available for a subset of repositories  you should enable this variable in /etc/gitweb.conf:
-
-  .. sourcecode:: perl
-
-    $export_ok = "export_repo_ok";
-
-  and add a "export_epo_ok" file under the git repository to be displayed via gitweb
-
-* Update /etc/httpd/conf.d/gitweb-tuleap.conf regarding your auth config
-
-* Add in /etc/gitweb.conf if you are using ldap
-
-  .. sourcecode:: perl
-
-      $feature{'auth_ldap'}{'default'} = [1];
-
-* Restart service httpd
-
-* Make sure that gitweb is working from the web at http://your_tuleap_url/gitweb/
 
 Deploy git mirroring
 --------------------
