@@ -7,7 +7,7 @@ We will install ``docker`` and ``docker-compose``. If you already have docker
 installed, you should still read this part as it contains important information
 about DNS configuration.
 
-.. IMPORTANT::  Minimal versions: docker 1.13, docker-compose 1.10
+.. IMPORTANT::  Minimal versions: docker 1.17, docker-compose 1.10
 
 Install Docker Engine
 ---------------------

@@ -70,6 +70,15 @@ In case of failure, you may need to attach to this running container in order to
    $root@d4601e92ca3f> tail -f /var/log/httpd/error_log
 
 
+.. note::
+
+  If you're using an old version of docker, you might encounter error `unknown flag: --mount`
+
+  You can run your test container with:
+
+  docker run -ti --rm -v /home/mgarnier/tuleap:/usr/share/tuleap --mount type=tmpfs,destination=/tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-httpd24-mysql56 bash
+
+
 Organize your tests
 ```````````````````
 
