@@ -22,6 +22,13 @@ The documentation of the deprecated SOAP API is not anymore displayed. If your u
   
 Users should **consider using REST API instead**.
 
+PHP-FPM configuration
+---------------------
+
+In ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf`` please add the following::
+
+  php_value[max_input_vars] = 15000
+
 Tuleap 9.14
 ===========
 
