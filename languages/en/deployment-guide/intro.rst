@@ -35,6 +35,13 @@ In ``/etc/nginx/conf.d/tuleap.conf`` please update the ``client_max_body_size``:
 
   client_max_body_size 256M;
 
+ForumML
+-------
+
+You should upgrade the way mailman and Tuleap communicates, in ``/etc/mailman/mm_cfg.py``::
+
+  PUBLIC_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
+  PRIVATE_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
 
 
 Tuleap 9.14
