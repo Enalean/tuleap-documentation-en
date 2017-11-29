@@ -22,12 +22,20 @@ The documentation of the deprecated SOAP API is not anymore displayed. If your u
   
 Users should **consider using REST API instead**.
 
-PHP-FPM configuration
----------------------
+PHP 5.6 / nginx
+---------------
 
-In ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf`` please add the following::
+In ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf`` please add/uncomment the following::
 
+  php_value[post_max_size] = 256M
+  php_value[upload_max_filesize] = 256M
   php_value[max_input_vars] = 15000
+  
+In ``/etc/nginx/conf.d/tuleap.conf`` please update the ``client_max_body_size``::
+
+  client_max_body_size 256M;
+
+
 
 Tuleap 9.14
 ===========
