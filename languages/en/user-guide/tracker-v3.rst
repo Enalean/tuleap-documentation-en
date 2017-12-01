@@ -543,7 +543,7 @@ rules:
    list will clearly show who added this entry and when.
 
 -  Deleting a CC name: users with Tracker Administrator permissions on a
-   given tracker (see :ref:`user-permissions`) can delete any entry in the CC list for any
+   given tracker can delete any entry in the CC list for any
    artifact of this tracker. All other users can delete CC entries that
    were either added by themselves or entries where the CC name matches
    their own name or email address in any Tuleap projects.

@@ -15,6 +15,11 @@ Project Details
 
 This section presents the general information about your project such as its name, its description, its visibility...
 
+.. figure:: ../images/screenshots/project-admin/project-details.png
+    :align: center
+    :alt: Project administration homepage
+    :name: Project administration homepage
+
 .. _project-type:
 
 Project Type
@@ -45,21 +50,25 @@ If you have the change visibility permission, you can change your project visibi
 Each time you update it, you must accept the Term Of Service of platform.
 
 
-Project Members
----------------
+Members
+-------
 
-Members administration in Tuleap project is done in the "Members" tab.
+Deals with project members administration.
+
+.. figure:: ../images/screenshots/project-admin/members.png
+    :align: center
+    :alt: Members home page
+    :name: Members home page
 
 Add a user
 ``````````
 
-To add a new member to a project, type the login name of the invited member
-and click on the "Add User" button.
+Use the select box to add a user to the project members list.
 
 Import a list of users
 ``````````````````````
 If the number of users to add is important, you can import a list of users
-from a simple text file. In order to do it, click the link "Import List Of Users".
+from a simple text file. In order to do it, click on "Import Members".
 Then, select a file containing the list of users you want to import. The file will
 host one user per line, by specifying her email address, or her username (login name).
 
@@ -72,32 +81,29 @@ host one user per line, by specifying her email address, or her username (login 
     smith3
     john.smith@example.com
 
-The import process has two steps. First, it checks if the file is well
-formed, and it displays the users detected to be imported. After a
-confirmation, the import is done and the users are added to the project.
-The system doesn't perform the import in case of error (unknown user,
-user not active, unknown email address, etc.) If a user is two times
-in the file, only one user is added and there is no error.
+
+.. NOTE::
+    The import process has two steps. First, it checks if the file is well
+    formatted, and it displays the users detected to be imported.
+    After a confirmation, the import is done and users are added to the project.
+    Users displayed in warning list are not imported.
+
+Set binding directory
+`````````````````````
+You can bind your members to your enterprise directory group (LDAP, Active directory...).
+Once your members are bound to an enterprise directory group, you are
+still able to add non lined users to your project with the "Add members" button.
 
 Removing a user
 ```````````````
 
-To remove a project member, click on the trash icon next to the person's name
-to revoke his/her membership.
+To remove a project member, use "Remove from project button".
 
 Revoking membership has absolutely no effect on the history and the data
 integrity of the project. In other words all tracker artifacts assigned
 or submitted by this person will continue to show up as before in the
 project database. Only the ability of this person to perform project
 management tasks is affected.
-
-.. IMPORTANT::
-
-    In order to remove a project administrator from the project member list,
-    another project administrator must first change the "Project Admin" flag
-    of this user in the User Permission table. In other words, a user cannot
-    be removed from the project members as long as she has administrator
-    privilege.
 
 .. _user-groups:
 
@@ -110,17 +116,24 @@ permissions to some project data (e.g. software releases and packages -
 see :ref:`package-modification`). A user group is always attached to a project, but the users
 comprising the group do not necessarily belong to that project.
 
-User Groups Management
-``````````````````````
-
 There are two different kinds of user groups:
 
-**Pre-defined User Groups**: These groups are defined for every project.
-Examples of pre-defined groups are: **project\_members, project\_admins,
-registered\_users, nobody, file\_manager\_admin**, etc. These groups are
-dynamic: if you assign some permission to 'project\_admins', and a new
+Predefined Users groups
+```````````````````````
+These groups are defined for every project.
+-  **Project Admin**: is a project member with absolutely all rights over the project services, project
+deliverable and project members. Only Project Admin can access the project members permission page.
+-  **Project Admin**: is a project member. He has read/write permissions
+(depending on service configuration).
+- **Wiki administrators**: has administration privilege over Wiki service
+- **News administrators**: has administration privilege over News service
+- **News writer**: can write news.
+
+Examples of pre-defined groups: project\_admins, news administrators ...
+Those groups are dynamic: if you assign some permission to 'project\_admins', and a new
 project administrator is defined, then this new user will automatically
 be granted the corresponding permission.
+Those groups are not editable or removable, you can only manage their members.
 
 **Custom User Groups** are defined by project administrators. They are
 composed of a static list of users. The only requirement is that any
@@ -128,50 +141,38 @@ member must be a registered Tuleap user. This list can be
 modified at any time, but will not automatically be updated, except if a
 member is removed from the project or deleted from the system.
 
+.. figure:: ../images/screenshots/project-admin/ugroup-list.png
+    :align: center
+    :alt: User group list
+    :name: User group list
+
+
 Creating a User Group
-`````````````````````
+~~~~~~~~~~~~~~~~~~~~~
 
-When creating a user group, one has to provide the following fields:
+User the "+ Add users group" button to add new custom ugroup.
 
-**Name**: This is the label that will be displayed when selecting user
-groups in a permission screen. The group name may not contain space and
-punctuation.
+.. NOTE::
+    The crete from dropdown is a quick way to pre-selecting group members.
+    For instance if you choose Project members, your group will contains
+    all your project members by default.
+    If you update your project members, it won't have any incidence
+    on the user group you just created.
 
-**Description**: Short description of the user group. It is only
-displayed in the User Group Admin page.
+    Sometimes, you might want to grant some permissions to all project
+    members and some other Tuleap users.
+    In this case, you might be tempted to build a user group from project
+    members and to add the other users to the group.
+    It's a bad way to do this: we advise you to use project members ugroup
+    and a second ugroup with the non project members you want to grant permission.
+    Indeed if you just create a ugroup with all members, it will be painful
+    to maintain : new project members won't be automatically add to your
+    custom ugroup, each time new member is add to project you will have
+    to update your custom ugroup.
 
-**Create From**: This is a quick way of pre-selecting group members: you
-may create a user group from scratch (Empty Group), from all Project
-Members or Project Admins, or from an existing user group attached to
-this project. The members of the selected group will automatically be
-added to the new group.
-
-The project administrator may select individually the members of the new group.
-
-The user interface also provides convenient ways of selecting users when
-the registered list is very large: you can choose to display only those
-users whose login starts with a specific letter, or you may also filter
-the list by typing letters in the 'Filter' text box. For instance, if
-you type 'john', only users whose name or login contains 'john' will be
-displayed.
-
-Once you are done, you may click on the Submit button. The user group is
-created.
-
-    .. NOTE::
-
-       Sometimes, you might want to grant some permissions to all project
-       members and some other Tuleap users. In this case, you
-       might be tempted to build a user group from the list of project
-       members and to add the other users to the group. The issue with this
-       solution is that if new members join the project, they will have to
-       be manually added to the group. So it is more convenient to create a
-       group containing only the users that are not member of the project.
-       And then, permissions should be granted to this group and to the
-       pre-defined "project members" group.
 
 Deleting a User Group
-`````````````````````
+~~~~~~~~~~~~~~~~~~~~~
 
 User groups can be deleted. Click on the trash icon next to the
 group name in the group management page to suppress the user group
@@ -186,29 +187,54 @@ from the database. Only custom user groups can be deleted.
        registered user can access the package.
 
 
-User Group Binding
+User Groups Management
+``````````````````````
+.. figure:: ../images/screenshots/project-admin/ugroup-management.png
+    :align: center
+    :alt: User group management
+    :name: User group management
+
+Details
+~~~~~~~
+It allows you to update ugroups information.
+
+
+Members management
 ``````````````````
+
+Add member
+~~~~~~~~~~
+Use the select box to add a user to the user group members list.
+
+Remove member
+~~~~~~~~~~~~~
+Click on "Remove member" to remove your user from member list.
+
+Binding users group between two project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 User Group Binding allows non project members who belong to a user group in
 another in project to be allocated rights without becoming project members
-themselves. To do this, you need to be project admin of both projects.
+themselves.
+To do this, you need to be project admin of both projects.
 
 Let's do this with an example. Say there is the user group 'some_people' in the project called
 'my project' and that you wish to give some rights to them in a project called 'my software'.
 
-In the project 'my software', go to the project admin area and click-on
-**User Groups Admin** then **Create a New User Group**. Call this group
-'my_project_users', for example, then click on **Create user Group**.
-
-Once created, there will be a new screen with tabs. Click on **Binding**
-then **Edit User group binding**. You will be asked to choose a source project.
-Choose 'my_project' and the user group 'some people'. Save by clicking on **Edit binding**.
-
-This will create the bound user group that you can use anywhere in your project
-as you would any normal user group.
+CLick on "+ Add users group binding", choose your project "my_project", select the users group
+you want to be bound and add binding.
+You won't be able to manage from 'my software' project, you will have to go in 'py_project' users
+group to manage your users
 
 
-Additional Information on User Groups
-`````````````````````````````````````
+Binding users group to a directory group binding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can bind your members to your enterprise directory group (LDAP, Active directory...).
+Once your members are bound to an enterprise directory group, you are
+still able to add non lined users to your project with the "Add members" button.
+
+
+Permissions
+-----------
 
 The "permissions" tab lists all the
 permissions granted to this group, e.g. packages and releases this user
@@ -221,30 +247,11 @@ safety reasons.
 Similarly, when a user is deleted (not just suspended) by the site
 administrator, they are removed from all user groups in all projects.
 
+Permissions for deprecated services
+```````````````````````````````````
+Those permissions concerns service who are in end of life:
 
-.. _user-permissions:
-
-User Permissions
-----------------
-
-Project Administrators have the ability to grant different permissions
-to different users. As an example, a project member can be granted full
-administration rights on the bug tracker and no rights at all on the
-Documentation Manager of the project.
-
--  **Project Admin**: A Yes/No flag stating whether a given project
-   member is a project administrator, that is to say a project member
-   with absolutely all rights over the project services, project
-   deliverables and project members. Only Project Admin can access the
-   project members permission page.
-
--  **CVS Write**: Right now this is always set to Yes. All project
-   members have write permission over the CVS repository and this
-   cannot be changed from the current version of the Web interface.
-   However we'll see how to deny CVS write permission to project members
-   in the CVS chapter (:ref:`version-control-with-CVS`).
-
--  **Trackers**:
+-  **Trackers V3**:
 
    -  *None*: the user has the same permissions on this tool as a non
       project member.
@@ -254,29 +261,9 @@ Documentation Manager of the project.
       new artifact categories, new predefined values for artifact
       fields, etc.
 
--  **Forums, Documentation Manager**:
+-  **SVN**:
 
-   -  *None*: the user has the same permissions on this tool as a non
-      project member.
-
-   -  *Moderator*: (Forums only): A moderator has the ability to
-      moderate the Web Discussion forum that is to say create/delete
-      discussion forums for the project, delete posted messages and
-      update the Forum status (public/private) as well as the Forum
-      description
-
-   -  *Editor*: (Doc Mgr only): An editor has the ability to review and
-      validate a document prior to its publication. S/he can also update
-      and delete a document.
-
--  **Member of user groups**: For each individual members, the column
-   lists all the project user groups s/he belongs to. See `User Groups`_ for more
-   information on user groups.
-
-    .. IMPORTANT::
-
-      Don't forget to click on the "Update User Permissions" button after
-      making any changes in the permission table.
+   -  *Admin*: administrator of core SVN (single repository)
 
 
 .. _service-configuration:
