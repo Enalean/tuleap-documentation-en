@@ -22,24 +22,29 @@ Ensure forgeupgrade is properly (as Site Admin go in Admin > Plugin Administrati
 Upgrade
 -------
 
+You should always read the deployment guide instructions before upgrading.
+
 On RHEL6, run as root:
 
 ::
 
     # Stop service
-    /etc/init.d/tuleap stop
+    service tuleap stop
+    service nginx stop
     service httpd stop
 
     # Upgrade packages
-    yum update tuleap\*
-    # or to uprade the whole platform: yum update
+    yum update
+    # or to upgrade only Tuleap packages (/!\ you might miss security fixes in Tuleap dependencies):
+    # yum update tuleap\*
 
     # Apply data upgrades
     /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
 
     # Restart service
     service httpd restart
+    service nginx start
     service tuleap start
 
 
-Enjoy all you new features!
+Enjoy all your new features!
