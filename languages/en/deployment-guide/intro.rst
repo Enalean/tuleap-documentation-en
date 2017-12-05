@@ -19,7 +19,7 @@ The documentation of the deprecated SOAP API is not anymore displayed. If your u
 .. code-block:: php
 
   $should_display_documentation_about_deprecated_soap_api = 1;
-  
+
 Users should **consider using REST API instead**.
 
 PHP 5.6 / nginx
@@ -30,7 +30,7 @@ In ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf`` please add/uncomment the follo
   php_value[post_max_size] = 256M
   php_value[upload_max_filesize] = 256M
   php_value[max_input_vars] = 15000
-  
+
 In ``/etc/nginx/conf.d/tuleap.conf`` please update the ``client_max_body_size``::
 
   client_max_body_size 256M;
@@ -58,6 +58,24 @@ Tuleap 9.14
 
   * ``SET SESSION old_passwords=0;``
   * ``SET PASSWORD = PASSWORD('your_existing_password')``
+
+Software Collections are now mandatory
+--------------------------------------
+
+Starting Tuleap 9.14 Software Collections must be enabled on your system if you have not done it yet.
+
+In a CentOS environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum install centos-release-scl
+
+In a RHEL environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum-config-manager --enable rhel-server-rhscl-6-rpms
+
 
 PHP 5.6 / nginx
 ---------------
@@ -101,8 +119,8 @@ Once done, you can migrate your old widget to the new format, please run:
 CLI is gone
 -----------
 
-In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool, 
-nor its documentation. This tool was here to help Tuleap SOAP API adoption in the early days. 
+In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool,
+nor its documentation. This tool was here to help Tuleap SOAP API adoption in the early days.
 Users that downloaded the CLI in the past can still use it, the SOAP API has not been changed yet.
 
 Users should **consider using REST API instead**.
@@ -110,8 +128,8 @@ Users should **consider using REST API instead**.
 Indexation of follow-up comments
 --------------------------------
 
-Since Tuleap 9.14 we can search in artifacts follow-up comments in TQL. In order to achieve this, 
-the existing comments must be indexed. Since we don't know how much it can take on your instance 
+Since Tuleap 9.14 we can search in artifacts follow-up comments in TQL. In order to achieve this,
+the existing comments must be indexed. Since we don't know how much it can take on your instance
 (there is high chance that indexing all comments of 1M+ artifcats will take some time), we prefer
 to delegate the migration to site administrator instead of relying on our standard database upgrade
 process (forgeupgrade).
@@ -122,8 +140,8 @@ When the usage of your server is low, you can launch the following script:
 
   cd /usr/share/tuleap
   src/utils/php-launcher.sh plugins/tracker/bin/store_stripped_body_of_comments.php
-  
-The script will display how much comments it will have to store. You can safely cancel the execution 
+
+The script will display how much comments it will have to store. You can safely cancel the execution
 of the script at any moment with ``ctrl-c`` and relaunch it later.
 
 Tuleap 9.13
