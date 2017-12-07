@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 9.15
 ===========
 
-.. NOTE::
-
-  Tuleap 9.15 is currently under development.
-
 SOAP API
 --------
 
