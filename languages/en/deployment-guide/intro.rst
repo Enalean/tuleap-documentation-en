@@ -54,7 +54,7 @@ Tuleap 9.14
   If your ``my.cnf`` on your mysql server contains ``old_passwords=1`` you will have to desactivate it (comment the line)
   and restart mysql.
 
-  Then update your password, as ``codendiadm`` and ``dbauthuser`` DB user:
+  Then update your password, as ``codendiadm`` and ``dbauthuser`` (and ``openfireadm`` if you use the IM plugin) DB user:
 
   * ``SET SESSION old_passwords=0;``
   * ``SET PASSWORD = PASSWORD('your_existing_password')``
