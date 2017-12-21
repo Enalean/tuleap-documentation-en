@@ -11,6 +11,13 @@ Tuleap 9.16
 
   Tuleap 9.16 is currently under development.
 
+Purge old log file
+-------------------
+
+If your Tuleap instance is quite old, a useless (and heavy) log file could be created under ``/var/log/tuleap/debug.log``
+This file is no more written since Tuleap 9.15 and could be safely deleted.
+
+All the information about this file could be found in the `Tuleap public request <https://tuleap.net/plugins/tracker/?aid=10815>`_
 
 Tuleap 9.15
 ===========
