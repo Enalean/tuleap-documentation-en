@@ -17,6 +17,7 @@ Administration guide
    administration-guide/project-export-import
    administration-guide/advanced-deployments
    administration-guide/distributed-tuleap
+   administration-guide/backend-worker
    administration-guide/run-php56
    administration-guide/realtime
    administration-guide/bot-mattermost-plugins
