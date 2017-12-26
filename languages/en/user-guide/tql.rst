@@ -123,3 +123,31 @@ When searching on date fields using TQL, you should be aware of the sometimes su
    :name: Explanation of date operators
 
    Explanation of date operators
+
+TQL on cross-tracker search
+----------------------------
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+TQL can also be used in the cross-tracker widget, in the search area.
+
+.. figure:: ../images/screenshots/tql/expert_query_xtracker_widget.png
+   :align: center
+   :alt: TQL on cross-tracker search
+   :name: TQL on cross-tracker search
+
+   TQL on cross-tracker search
+
+Starting Tuleap 9.16, it's possible to do a cross-tracker search based on two semantics:
+
+ * Title
+ * Description
+
+Currently, the query supports:
+
+  - Logical operators: ``AND``, ``OR``
+  - Parenthesis to force precedence
+  - Comparison operators for ``@title`` and ``@description``: ``=``, ``!=``
