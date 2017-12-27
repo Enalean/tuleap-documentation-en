@@ -35,14 +35,14 @@ Then start the server and make it on at reboot time
 
 .. code-block:: bash
 
-    $ service rabbitmq-server start
-    $ chkconfig rabbitmq-server on
+    $ sudo service rabbitmq-server start
+    $ sudo chkconfig rabbitmq-server on
 
 It is advisable to delete the **guest** user
 
 .. code-block:: bash
 
-   $ rabbitmqctl delete_user guest
+   $ sudo rabbitmqctl delete_user guest
 
 Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
 
@@ -68,8 +68,8 @@ Configure Tuleap
 In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take following values:
 
 * ``false``: equivalent to not defining the variable at all: disable backend worker, the notification will be done inline. Useful to disable the feature if it doesn't work.
-* ``all``: activate the feature for all projects.
-* ``X,Y,Z``: activate the feature for projects X, Y and Z (project ids, integers)
+* ``'all'``: activate the feature for all projects.
+* ``'X,Y,Z'``: activate the feature for projects X, Y and Z (project ids, integers)
 
 After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/plugins/tracker/bin/notify.php``) will automatically be started by Tuleap
 and will process jobs and send emails.
