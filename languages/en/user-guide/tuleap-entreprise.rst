@@ -13,6 +13,6 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Test Management <testmgmt>`.
 * :ref:`Portfolio <portfolio>`.
 
-More information on `Enalean web site`_.
+More information on `Tuleap.org website`_.
 
-.. _Enalean web site: https://www.enalean.com/enterprise-solutions
+.. _Tuleap.org website: https://www.tuleap.org/solutions/tuleap-enterprise
