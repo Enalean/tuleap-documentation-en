@@ -1,3 +1,5 @@
+.. _tql:
+
 Tuleap Query Language (TQL)
 ===========================
 
