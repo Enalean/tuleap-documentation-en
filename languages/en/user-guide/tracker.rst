@@ -2171,9 +2171,12 @@ To export the structure of your tracker, please go to the admin part of
 your tracker, and select the Export link. This will open a browser
 window to choose the location of the exported file.
 
+The exported structure file can be used when you create a new tracker,
+see `Tracker Creation`_.
+
 .. NOTE::
 
-    this does not copy the artifacts of the tracker but only the
+    This does not copy the artifacts of the tracker but only the
     structure (general settings, fields, values, workflow, semantic, canned responses and permissions).
 
 .. |image0| image:: ../images/icons/artifact-arrow.png
