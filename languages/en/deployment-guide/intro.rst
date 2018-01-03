@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 9.16
 ===========
 
-.. NOTE::
-
-  Tuleap 9.16 is currently under development.
-
 Purge old log file
 -------------------
 
