@@ -13,7 +13,7 @@ respective documentation for installation instructions:
 - make
 - `phpcs <https://github.com/squizlabs/PHP_CodeSniffer#installation>`_
 - `scss-lint <https://github.com/brigade/scss-lint/>`_
-- `npm <https://docs.npmjs.com/>`_ >= 5.4.0
+- `npm <https://docs.npmjs.com/>`_ >= 5.6.0
 - `composer <https://getcomposer.org/>`_
 
    .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
