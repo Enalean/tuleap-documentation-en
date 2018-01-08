@@ -25,7 +25,7 @@ This section presents the general information about your project such as its nam
 Project Type
 ````````````
 
-Tuleap proposes three types of projects:
+Tuleap proposes three types of projects, that can be modified only by a site administrator:
 
 -  **Project**: This is the type of standard projects hosted on
    Tuleap.
@@ -39,8 +39,7 @@ Tuleap proposes three types of projects:
    Tuleap projects use the Test Project type for your
    project. Having defined that type, your project will not appear any
    more in the Tuleap Software Map.
-
-
+   
 Project Visibility
 ``````````````````
 
