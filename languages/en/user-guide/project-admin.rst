@@ -149,11 +149,11 @@ member is removed from the project or deleted from the system.
 Creating a User Group
 ~~~~~~~~~~~~~~~~~~~~~
 
-User the "+ Add users group" button to add new custom ugroup.
+Click the "+ Add users group" button to add new custom ugroup.
 
 .. NOTE::
-    The crete from dropdown is a quick way to pre-selecting group members.
-    For instance if you choose Project members, your group will contains
+    The create from dropdown is a quick way to pre-select group members.
+    For instance if you choose Project members, your group will be created with
     all your project members by default.
     If you update your project members, it won't have any incidence
     on the user group you just created.
@@ -162,18 +162,18 @@ User the "+ Add users group" button to add new custom ugroup.
     members and some other Tuleap users.
     In this case, you might be tempted to build a user group from project
     members and to add the other users to the group.
-    It's a bad way to do this: we advise you to use project members ugroup
-    and a second ugroup with the non project members you want to grant permission.
-    Indeed if you just create a ugroup with all members, it will be painful
-    to maintain : new project members won't be automatically add to your
-    custom ugroup, each time new member is add to project you will have
-    to update your custom ugroup.
+    It's a bad way to do this: we advise you to use project members group
+    and a second group with the non project members you want to grant permission.
+    Indeed if you just create a group with all members, it will be painful
+    to maintain: new project members won't be automatically added to your
+    custom group, each time new member is added to project you will have
+    to update your custom group.
 
 
 Deleting a User Group
 ~~~~~~~~~~~~~~~~~~~~~
 
-User groups can be deleted. Click on the trash icon next to the
+User groups can be deleted. Click on the delete button next to the
 group name in the group management page to suppress the user group
 from the database. Only custom user groups can be deleted.
 
@@ -188,31 +188,31 @@ from the database. Only custom user groups can be deleted.
 
 User Groups Management
 ``````````````````````
-.. figure:: ../images/screenshots/project-admin/ugroup-management.png
-    :align: center
-    :alt: User group management
-    :name: User group management
 
-Details
-~~~~~~~
-It allows you to update ugroups information.
+From the users groups list, you can access to details of each group and
+can change settings or add/remove members.
 
+- Group details: update group's name and description.
+- Permissions delegation: delegate some specific permissions to users.
+- Group binding: link the group to another one for easier membership management.
+- Group members: add/remove members to this group.
+- See permissions: list permissions granted to this group.
 
-Members management
-``````````````````
+.. NOTE:: Only add/remove members is available for predefined users groups.
 
-Add member
-~~~~~~~~~~
-Use the select box to add a user to the user group members list.
+Permissions delegation
+~~~~~~~~~~~~~~~~~~~~~~
 
-Remove member
-~~~~~~~~~~~~~
-Click on "Remove member" to remove your user from member list.
+You can delegate to a users group several permissions. All the members of this group will
+take advantage of these permissions. Only the following permission is currently available:
 
-Binding users group between two project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Membership management**: allows members of the current group to add/remove project
+  members without having them project admin.
+
+Binding users group between two projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 User Group Binding allows non project members who belong to a user group in
-another in project to be allocated rights without becoming project members
+another project to be allocated rights without becoming project members
 themselves.
 To do this, you need to be project admin of both projects.
 
@@ -234,10 +234,6 @@ still able to add non lined users to your project with the "Add members" button.
 
 Permissions
 -----------
-
-The "permissions" tab lists all the
-permissions granted to this group, e.g. packages and releases this user
-group is granted access to.
 
 When a project member is removed from a project, or quits a project,
 they are also automatically removed from all project user groups for
