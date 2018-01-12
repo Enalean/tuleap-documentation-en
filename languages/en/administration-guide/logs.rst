@@ -36,7 +36,6 @@ Tuleap
  - ``/var/log/tuleap/statistics_syslog``: contains information on operations executed for the statistic generation.
  - ``/var/log/tuleap/tv3_tv5_migration_syslog``: contains information related to tracker v3 to tracker v5 migration.
  - ``/var/log/tuleap/archive_deleted_item.log``: contains information about what is executed by the archivedeleteditems plugin while archiving deleted items.
- - ``/var/log/tuleap/debug.log``: contains debug information. Should not be useful outside a development environment.
  - ``/var/log/tuleap/botMattermost_syslog``: contains information on the BotMattermost plugins behavior.
  - ``/var/log/tuleap/worker_log``: contains information about backend workers activity (e.g. asynchronous notifications).
 
