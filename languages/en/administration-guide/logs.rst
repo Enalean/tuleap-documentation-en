@@ -38,7 +38,7 @@ Tuleap
  - ``/var/log/tuleap/archive_deleted_item.log``: contains information about what is executed by the archivedeleteditems plugin while archiving deleted items.
  - ``/var/log/tuleap/debug.log``: contains debug information. Should not be useful outside a development environment.
  - ``/var/log/tuleap/botMattermost_syslog``: contains information on the BotMattermost plugins behavior.
- - ``/var/log/tuleap/tuleap_tracker_notify_log``: contains information on the tracker notifications sent by the backend workers.
+ - ``/var/log/tuleap/worker_log``: contains information about backend workers activity (e.g. asynchronous notifications).
 
 Tuleap Realtime
 ---------------

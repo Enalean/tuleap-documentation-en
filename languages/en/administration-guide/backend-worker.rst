@@ -71,13 +71,13 @@ In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take foll
 * ``'all'``: activate the feature for all projects.
 * ``'X,Y,Z'``: activate the feature for projects X, Y and Z (project ids, integers)
 
-After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/plugins/tracker/bin/notify.php``) will automatically be started by Tuleap
+After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/src/utils/worker.php``) will automatically be started by Tuleap
 and will process jobs and send emails.
 
 Troubleshooting
 ---------------
 
-You can track worker activity in ``/var/log/tuleap/tuleap_tracker_notify_log`` log file (you might need to change the
+You can track worker activity in ``/var/log/tuleap/worker_log`` log file (you might need to change the
 ``$sys_logger_level`` value to make if more verbose).
 
 The front end will also log useful information in ``codendi_syslog`` with the key ``Notification``.
