@@ -22,5 +22,5 @@ might need to run:
 
 ::
 
-    /usr/share/utils/tools/utils/php56/run.php --module=nginx
+    /usr/share/tuleap/tools/utils/php56/run.php --module=nginx
     service nginx reload
