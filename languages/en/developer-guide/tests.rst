@@ -21,7 +21,6 @@ Run tests with docker
 
 We have docker images to run unit tests on all environments:
 
-* centos6 + php 5.3: enalean/tuleap-simpletest:c6-php53
 * centos6 + php 5.6: enalean/tuleap-simpletest:c6-php56
 
 Basically, executing tests is as simple as, from root of Tuleap sources:
