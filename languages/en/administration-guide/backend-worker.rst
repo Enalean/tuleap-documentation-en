@@ -19,7 +19,10 @@ Install and configure Redis
 
 .. note::
 
-    if redis is already configured, you just need to configure the connection with the server
+    If redis is already configured, you just need to configure the connection with the server.
+
+    If redis is installed for several servers, you must setup firewall rules to ensure only granted front-end servers
+    can access it.
 
 You must install redis epel from and the php lib from SCLO
 
@@ -28,11 +31,14 @@ You must install redis epel from and the php lib from SCLO
     $ yum install -y redis sclo-php56-php-pecl-redis
     $ service rh-php56-php-frpm restart
 
-Defaults should be safe however we recommend to enable the 'appendonly' feature for safer persistence. You might
-also want to set a password.
+You will need to adapt 2 things in the configuration file ``/etc/redis.conf``
 
-In both cases the configuration file is at ``/etc/redis.conf`` and we highly recommand that you read  `Redis Persistance Guide <https://redis.io/topics/persistence>`_
-as well as `Redis Security Guide <https://redis.io/topics/security>`_.
+#. You should set a password (at least 30 chars) with ``requirepass`` key
+#. You should enable ``appendonly`` persistence.
+
+We highly recommend that you read  `Redis Persistance Guide <https://redis.io/topics/persistence>`_
+as well as `Redis Security Guide <https://redis.io/topics/security>`_ to understand how data are stored and security
+practices.
 
 Then start the server and make it on at reboot time
 
@@ -41,7 +47,7 @@ Then start the server and make it on at reboot time
     $ sudo service redis start
     $ sudo chkconfig redis on
 
-And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/redis.inc``
+And finally set server parameters for Tuleap in your config file ``/etc/tuleap/conf/redis.inc``
 
 .. code-block:: php
 
@@ -49,7 +55,7 @@ And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap
 
    $redis_server   = '127.0.0.1';
    $redis_port     = 6379;
-   // $redis_password = '${REDIS_PASSWORD}'; // Un-comment if you set one
+   $redis_password = '${REDIS_PASSWORD}';
 
 Configure Tuleap
 ----------------
@@ -63,7 +69,7 @@ In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take foll
 After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/src/utils/worker.php``) will automatically be started by Tuleap
 and will process jobs and send emails.
 
-You can control the number of workers by setting the variable ``$sys_nb_backend_workers``
+You can control the number of workers by setting the variable ``$sys_nb_backend_workers``.
 
 Troubleshooting
 ---------------
