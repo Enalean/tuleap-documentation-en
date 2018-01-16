@@ -24,12 +24,33 @@ Install and configure Redis
     If redis is installed for several servers, you must setup firewall rules to ensure only granted front-end servers
     can access it.
 
-You must install redis epel from and the php lib from SCLO
+You must install redis from EPEL from and the php lib from SCLO
+
+If you are running RHEL you should first add centos SCLos to your system
+
+.. code-block:: bash
+
+    # 1. Add the gpg key:
+
+    $ sudo curl -L https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo -o /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+
+     # 2. Add SCLo repository
+
+     $ sudo cat << EOF >> /etc/yum.repos.d/sclo-sclo.repo
+     [centos-sclo-sclo]
+     name=CentOS-6 - SCLo sclo
+     baseurl=http://mirror.centos.org/centos/6/sclo/$basearch/sclo/
+     gpgcheck=1
+     enabled=1
+     gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+     EOF
+
+Then install the dependencies:
 
 .. code-block:: bash
 
     $ yum install -y redis sclo-php56-php-pecl-redis
-    $ service rh-php56-php-frpm restart
+    $ service rh-php56-php-fpm restart
 
 You will need to adapt 2 things in the configuration file ``/etc/redis.conf``
 
