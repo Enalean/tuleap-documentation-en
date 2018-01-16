@@ -6,61 +6,77 @@ at artifact creation with very long creation/update timing.
 
 By profiling your page or by enabling 'debug' (``$sys_logger_level = 'debug';``) you can identify how long the notification is taking.
 
-Look at ``[Tuleap\Tracker\Artifact\Changeset\Notification\Notifier]`` string in ``codendi_syslog`` and mesure how long it takes
+Look at ``[Tuleap\Tracker\Artifact\Changeset\Notification\Notifier]`` string in ``codendi_syslog`` and measure how long it takes
 between ``Start notification`` and ``End notification`` marker. You can save this amount of time to your end users by
 switching to backend based notifications.
 
-It's based on a notification queue managed by RabbitMQ and a worker that will process the the queue as soon as it's pushed.
+It's based on a notification queue managed by Redis and a worker that will process the the queue as soon as it's pushed.
 Unlike "SystemEvents" there is no delay between the queue and the processing of the email so in most cases there should be
 no difference for end users in term of wait time to get the notification email.
 
-Install and configure RabbitMQ
+Install and configure Redis
 ------------------------------
 
 .. note::
 
-    if rabbitmq is already configured, you will only need to execute the "set_permission" command to ensure tuleap user
-    can access the new queues.
+    If redis is already configured, you just need to configure the connection with the server.
 
-You should install rabbitmq 3.6 or newer from `official rabbitmq builds <https://www.rabbitmq.com/install-rpm.html>`_
+    If redis is installed for several servers, you must setup firewall rules to ensure only granted front-end servers
+    can access it.
 
-If you are running rabbitmq on the same server than front-end, we recommend to make it listen on localhost only:
+You must install redis from EPEL from and the php lib from SCLO
+
+If you are running RHEL you should first add centos SCLos to your system
 
 .. code-block:: bash
 
-    $ cat /etc/rabbitmq/rabbitmq.conf
-    listeners.tcp.local = 127.0.0.1:5672
+    # 1. Add the gpg key:
+
+    $ sudo curl -L https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo -o /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+
+     # 2. Add SCLo repository
+
+     $ sudo cat << EOF >> /etc/yum.repos.d/sclo-sclo.repo
+     [centos-sclo-sclo]
+     name=CentOS-6 - SCLo sclo
+     baseurl=http://mirror.centos.org/centos/6/sclo/$basearch/sclo/
+     gpgcheck=1
+     enabled=1
+     gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+     EOF
+
+Then install the dependencies:
+
+.. code-block:: bash
+
+    $ yum install -y redis sclo-php56-php-pecl-redis
+    $ service rh-php56-php-fpm restart
+
+You will need to adapt 2 things in the configuration file ``/etc/redis.conf``
+
+#. You should set a password (at least 30 chars) with ``requirepass`` key
+#. You should enable ``appendonly`` persistence.
+
+We highly recommend that you read  `Redis Persistance Guide <https://redis.io/topics/persistence>`_
+as well as `Redis Security Guide <https://redis.io/topics/security>`_ to understand how data are stored and security
+practices.
 
 Then start the server and make it on at reboot time
 
 .. code-block:: bash
 
-    $ sudo service rabbitmq-server start
-    $ sudo chkconfig rabbitmq-server on
+    $ sudo service redis start
+    $ sudo chkconfig redis on
 
-It is advisable to delete the **guest** user
-
-.. code-block:: bash
-
-   $ sudo rabbitmqctl delete_user guest
-
-Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
-
-.. code-block:: bash
-
-   $ sudo rabbitmqctl add_user tuleap ${RABBIT_PASSWORD}
-   $ sudo rabbitmqctl set_permissions tuleap "^tuleap_svnroot_update.*|^httpd_postrotate_.*|^update.*" ".*" ".*"
-
-And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/rabbitmq.inc``
+And finally set server parameters for Tuleap in your config file ``/etc/tuleap/conf/redis.inc``
 
 .. code-block:: php
 
    <?php
 
-   $rabbitmq_server   = '127.0.0.1';
-   $rabbitmq_port     = 5672;
-   $rabbitmq_user     = 'tuleap';
-   $rabbitmq_password = '${RABBIT_PASSWORD}';
+   $redis_server   = '127.0.0.1';
+   $redis_port     = 6379;
+   $redis_password = '${REDIS_PASSWORD}';
 
 Configure Tuleap
 ----------------
@@ -73,6 +89,8 @@ In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take foll
 
 After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/src/utils/worker.php``) will automatically be started by Tuleap
 and will process jobs and send emails.
+
+You can control the number of workers by setting the variable ``$sys_nb_backend_workers``.
 
 Troubleshooting
 ---------------
