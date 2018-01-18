@@ -107,6 +107,16 @@ Restart apache:
 
 Tuleap web interface is no longer accessible.
 
+On quite old Tuleap installations, Apache might not restart after the configuration
+update. You will get the following error:
+
+::
+
+    Invalid command 'PerlLoadModule', perhaps misspelled or defined by a module not included in the server configuration
+
+If you encounter this error you must at the end of ``/etc/httpd/conf/httpd.conf``
+add ``Include conf.d/*.conf``.
+
 FPM
 ###
 
