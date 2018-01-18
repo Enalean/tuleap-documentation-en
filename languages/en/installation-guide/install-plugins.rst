@@ -47,7 +47,7 @@ File deliveries and documentation:
 
 * **docman**: Document management
 * **frs**: Enhance File Release System with better release view and REST API
-* **mediawiki**: Intregation of "Wikipedia" wiki technology
+* **mediawiki**: Integration of "Wikipedia" wiki technology
 
 Source control and continuous integration:
 
@@ -82,7 +82,7 @@ Integrations:
     You might see some other plugins not listed here. It's on purpose, those plugins are no longer actively maintained
     so we don't encourage people to use them.
 
-Deprectated plugins
+Deprecated plugins
 -------------------
 
 Those plugins should not be installed and only kept for legacy reasons. They will be removed
