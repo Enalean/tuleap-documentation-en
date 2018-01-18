@@ -815,17 +815,37 @@ Burndown
 ````````
 Burndown is a graphical representation of remaining effort,
 and is used to track team progress.
-In burndown every dot represents a remaining effort for a given day.
+In burndown every dot represent the sum of all linked artifact remaining effort for a given day.
 
-Burndown display is based on a cache table:
+Burnup
+``````
+
+Burnup chart represent team progress overtime for a release or a sprint.
+It's a new field for Agiledashboard plugin.
+
+.. figure:: ../images/screenshots/tracker/burnup.png
+   :align: center
+   :alt: A burnup field
+
+   A burnup field
+
+This graph allows you to visualise:
+   * Total effort: sum of initial effort to do to complete release
+   * Team effort: sum of initial effort already done for the release
+
+Burnup and Burndown mechanisms
+``````````````````````````````
+Cache for burnup and burndown works the same way.
+
+They are both based on a cache tables:
 * every night yesterday value is computed and cached
 * the value for the day "today" is never cached and calculated at every display
-* if burndown has missing day, we generate the full burndown
-* if start date or duration is updated, the full burndown is calculated again
+* if chart has missing day, a system event is triggered to generate the full cache for chart
+* if start date or duration is updated, the full chart cache generation is computed again
 * project admin can force cache generation
 * data are not displayed until the cache is complete
 
-It's possible to use burndown over different timezones:
+It's possible to use burnup and burndown over different timezones:
 
 
 Let's imagine your team is split in Montreal and in Tokyo:
@@ -852,6 +872,7 @@ in Montreal                value for 1th August will be 9.
 in Tokyo                   value for 31th July will be 10.
 in Tokyo                   value for 1th August will be 9.
 ========================== ===============================
+
 
 Dynamic fields
 ~~~~~~~~~~~~~~
