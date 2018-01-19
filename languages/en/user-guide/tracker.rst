@@ -838,12 +838,12 @@ Burnup and Burndown mechanisms
 Cache for burnup and burndown works the same way.
 
 They are both based on a cache tables:
-* every night yesterday value is computed and cached
-* the value for the day "today" is never cached and calculated at every display
-* if chart has missing day, a system event is triggered to generate the full cache for chart
-* if start date or duration is updated, the full chart cache generation is computed again
-* project admin can force cache generation
-* data are not displayed until the cache is complete
+ * every night yesterday value is computed and cached
+ * the value for the day "today" is never cached and calculated at every display
+ * if chart has missing day, a system event is triggered to generate the full cache for chart
+ * if start date or duration is updated, the full chart cache generation is computed again
+ * project admin can force cache generation
+ * data are not displayed until the cache is complete
 
 It's possible to use burnup and burndown over different timezones:
 
