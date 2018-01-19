@@ -61,26 +61,26 @@ Webdav over nginx
 Default configuration
 +++++++++++++++++++++
 
-Starting Tuleap 9.16, some webdav configuration must be deployed with nginx.
-By default, webdav is accessible with an URL like ``https://domain.tld/plugins/webdav/``.
+Starting Tuleap 9.16, some webdav configuration should be deployed with nginx.
+By default, webdav is accessible with an URL like ``https://example.com/plugins/webdav/``.
 All is done by the default nginx plugins configuration.
 
 Then, in Tuleap plugin configuration ``/etc/tuleap/plugins/webdav/etc/webdav.inc``::
 
     $webdav_base_uri = "/plugins/webdav";
-    $webdav_host     = "domain.tld";
+    $webdav_host     = "example.com";
 
 Custom configuration
 ++++++++++++++++++++
 
-However, if you want to access webdav via ``https://webdav.domain.tld``,
+However, if you want to access webdav via ``https://webdav.example.com``,
 you have to add add a new server entry (not in another server block) in ``/etc/nginx/conf.d/tuleap.conf`` like:
 
 ::
 
     server {
         listen       443 ssl;
-        server_name  webdav.domain.tld;
+        server_name  webdav.example.com;
 
         ssl_certificate %PATH_TO_CRT_FILE%;
         ssl_certificate_key %PATH_TO_KEY_FILE%;
@@ -108,4 +108,4 @@ you have to add add a new server entry (not in another server block) in ``/etc/n
 Then, in Tuleap plugin configuration ``/etc/tuleap/plugins/webdav/etc/webdav.inc``::
 
     $webdav_base_uri = "/";
-    $webdav_host     = "webdav.domain.tld";
+    $webdav_host     = "webdav.example.com";
