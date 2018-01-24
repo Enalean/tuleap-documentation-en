@@ -39,7 +39,12 @@ you need to do it now, in ``/etc/mailman/mm_cfg.py`` change the following parame
   PRIVATE_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
 
 
+New cookies protections
+-----------------------
 
+To protect users, new cookies protection have been implemented. To make these
+protections as effective as possible you should make sure the setting ``sys_https_host``
+is not left empty in your ``local.inc`` if your Tuleap instance is reachable over HTTPS.
 
 Tuleap 9.16
 ===========
