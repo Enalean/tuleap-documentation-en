@@ -46,6 +46,26 @@ To protect users, new cookies protection have been implemented. To make these
 protections as effective as possible you should make sure the setting ``sys_https_host``
 is not left empty in your ``local.inc`` if your Tuleap instance is reachable over HTTPS.
 
+
+Update default TLS configuration
+--------------------------------
+
+With this release we have updated the default TLS nginx configuration we provide
+by default with Tuleap.
+This change ensure the safest encryption settings will be used between browsers
+and your Tuleap instance.
+
+All new instances of Tuleap will use this configuration by default but if you already
+have an installation, your configuration will be left untouched.
+
+We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
+``ssl_ciphers`` in ``/etc/nginx/conf.d/tuleap.conf``::
+
+  # modern configuration. tweak to your needs.
+  ssl_protocols TLSv1.2;
+  ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+  ssl_prefer_server_ciphers on;
+
 Tuleap 9.16
 ===========
 
