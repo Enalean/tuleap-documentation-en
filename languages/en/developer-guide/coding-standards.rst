@@ -27,9 +27,17 @@ Internal conventions
 * No trailing whitespaces
 * In DataAccessObject, convention is to name ``searchXxx()`` the methods that returns a DataAccessResult (eg. ``searchProjectsUserIsAdmin(…)``, and ``getXxx``, ``isXxx``, ``hasXxx`` for other cases (eg. ``doesUserHavePermission(…)``).
 
-  **Note:** Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
+.. NOTE::
+  Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
   The code WONT be accepted. If your eyes are bleeding, conform to coding standard in a dedicated review, then
   contribute your change.
+  
+  This is especially true for refactoring, where the goal is to improve a part of the code. Extracted crappy code 
+  to a dedicated file does not need to be refactored, in order to ease the review (You may need to use one of 
+  `ignore capabilities of phpcs <https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders>`_
+  in order to pass coding standards check). Contributor has to focus his mind on one task at a time.
+  
+  Remember: refactoring is here to improve the existing code without breaking functionality.
 
 Copyright & license
 ~~~~~~~~~~~~~~~~~~~
