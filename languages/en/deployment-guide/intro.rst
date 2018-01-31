@@ -66,6 +66,16 @@ We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
   ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
   ssl_prefer_server_ciphers on;
 
+.. WARNING::
+  If you use the webdav plugin with Windows 7 clients, you need to check if the
+  `support of the TLSv1.2 protocol is enabled on your clients
+  <https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-a-default-secure-protocols-in>`_
+  before updating the configuration. If you update the TLS configuration and your
+  Windows clients does not support TLSv1.2 they won't able to connect anymore.
+  If you have the possibility you should enable the support of TLSv1.2 on your clients,
+  else if that is not something possible in your infrstructure you should not
+  update the TLS configuration.
+
 Tuleap 9.16
 ===========
 
