@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 9.17
 ===========
 
-.. NOTE::
-
-  Tuleap 9.17 is currently under development.
-
 End of support of PHP 5.3
 -------------------------
 
