@@ -1,3 +1,5 @@
+.. _admin_howto_backend_worker:
+
 Configure backend notifications
 ===============================
 

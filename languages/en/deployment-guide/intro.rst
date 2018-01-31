@@ -76,6 +76,58 @@ We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
   you should enable the support of TLSv1.2 on your clients,
   else if that is not something possible you should not update the TLS configuration.
 
+Backend email notifications
+---------------------------
+
+In order to simplify Tuleap stack, the queue management for email notification that was based in 9.17 on Rabbitmq as been
+changed to rely on redis instead. If you already have a redis server installed and configured the change will be transparent.
+
+Otherwise you will need to setup a redis server, checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+
+New LDAP parameters
+-------------------
+
+Those new parameters are optional, if you don't need them, no need to define the variables.
+
+Better nested groups
+`````````````````````
+
+LDAP group configuration was made more comprehensive. You can now used nested groups that are defined outside the global
+configured group branch.
+
+Let's assume you have a structure like this:
+
+* Base       DC=company,DC=com"
+* Groups     OU=groups,DC=company,DC=com"
+* ExtGroups  OU=groups_ext,DC=company,DC=com"
+
+And you have a group "allUsers" which itself includes only two other groups "internalUsers" and "externalUsers" and "internalUsers" and "externalUsers" each have some users in them - like this:
+
+.. code-block:: bash
+
+    - allUsers (group)        CN=allUsers,OU=groups,DC=company,DC=com
+      - internalUsers (group) CN=internalUsers,OU=groups,DC=company,DC=com
+          - user A..E (users)
+      - externalUsers (group) CN=externalUsers,OU=groups_ext,DC=company,DC=com"
+          - user F..H (users)
+
+Then you can now link a Tuleap Project to "allUsers" and it will include all users from "internalUsers" and "externalUsers"
+
+In order to benefit of this you will need to define two variables in ``/etc/tuleap/plugins/ldap/etc/ldap.inc``:
+
+* ``$sys_ldap_grp_oc``: The object class that identify groups (usually ``group`` for Active Directroy and ``groupOfNames`` for OpenLDAP)
+* ``$sys_ldap_user_oc``: The object class that identify users (usually ``person`` for Active Directroy and ``person`` or ``posixAccount`` for OpenLDAP)
+
+Control group look-up
+`````````````````````
+
+By default, for performances reasons, Tuleap only look at the root of defined group dn when it needs to search for group names (autocompletion).
+
+You can now change it to a subtree look-up if your LDAP is properly indexed or if the dataset is small enough (be careful about performances).
+
+* ``$sys_ldap_grp_search_scope`` can be either ``onelevel`` (default & recommended) or ``subtree``
+
+
 Tuleap 9.16
 ===========
 
