@@ -72,9 +72,9 @@ We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
   <https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-a-default-secure-protocols-in>`_
   before updating the configuration. If you update the TLS configuration and your
   Windows clients does not support TLSv1.2 they won't able to connect anymore.
-  If you have the possibility you should enable the support of TLSv1.2 on your clients,
-  else if that is not something possible in your infrstructure you should not
-  update the TLS configuration.
+  If you have the possibility on your infrastructure
+  you should enable the support of TLSv1.2 on your clients,
+  else if that is not something possible you should not update the TLS configuration.
 
 Tuleap 9.16
 ===========
