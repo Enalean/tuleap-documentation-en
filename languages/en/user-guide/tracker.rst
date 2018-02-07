@@ -248,6 +248,19 @@ the values you can specify in such a field:
    values starting with a "4", ending with an "8" with any number of
    characters in between including the decimal point.
 
+Comments
+`````````
+
+Starting Tuleap 9.18, it's possible to filter artifatcs with comments.
+A new search option called `comment` is now always displayed.
+It allows users to search artifacts that have at leat one comment that contains the provided content.
+
+.. attention::
+
+ When searching in comments, you should be aware of some limitations:
+  * Searches are done for words longer than 3 characters
+  * Some words are not taken in account because they are too common (like ``the``, ``a``, ``please`` …)
+
 Tracker Search Results
 ----------------------
 
