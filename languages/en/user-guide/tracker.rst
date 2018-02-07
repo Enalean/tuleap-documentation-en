@@ -248,12 +248,12 @@ the values you can specify in such a field:
    values starting with a "4", ending with an "8" with any number of
    characters in between including the decimal point.
 
-Comments
-`````````
+Comment Criterion
+``````````````````
 
-Starting Tuleap 9.18, it's possible to filter artifatcs with comments.
-A new search option called `comment` is now always displayed.
-It allows users to search artifacts that have at leat one comment that contains the provided content.
+Starting Tuleap 9.18, it's possible to filter artifatcs by follow-up comments.
+A new search option called ``comment`` is now always displayed.
+It allows users to search artifacts that have at least one comment that contains the provided content.
 
 .. attention::
 
