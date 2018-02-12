@@ -70,7 +70,7 @@ Tuleap will record the time taken for each test. It works this way:
 * It starts as soon as you load the test definition.
 * It ends when you hit one of the action buttons.
 
-Time is not yet used in the interface, it's only recorded for a futur usage. You
+Time is not yet used in the interface, it's only recorded for a future usage. You
 can see the value and make your own computation from the "Test Execution" tracker.
 
 Example of test failure:
@@ -152,3 +152,131 @@ Navigate to the "Version 1.0 milestone, click on the "Test campaigns" tab and th
    :align: center
    :alt: Create a test campaign from the milestone
    :name: Create a test campaign from the milestone
+
+Test automation
+---------------
+
+.. note::
+
+  This section is experimental and you will need to have access to ``ttm`` CLI tool to make it works. Ask your Enalean
+  representative if you want to go further.
+
+TTM is able to consolidate automated test results inside its campaign. This way you can have a mixed campaing with both
+manual and automated tests. The key principles are:
+
+* TTM relies on an external tool to execute tests like Jenkins. Any CI tool can be used.
+* Test automation itself is not TTM business, you can use whatever tool you want (robot framework, cypress, selenium, etc) as long as it produces a junit XML output with results.
+* Automated tests are stored in a SCM (git or subversion)
+* The link between TTM and test results is done by associating TTM Test Definitions and Junit Test Suite
+* One Test Definition can be linked to one Test Suite at max
+* One Test Suite can be linked to one Test Definition at max
+
+In the next sections we will describe how to setup TTM with Jenkins.
+
+This assume a couple of things:
+
+* The server where Tuleap is installed is located at https://my.tuleap.tld
+* The project where TTM is enabled is called 'test-automation-demo' (it's shortname)
+
+Users and credentials
+~~~~~~~~~~~~~~~~~~~~~
+
+First you need to create a new Tuleap user that will be used by Jenkins to report test results. This user must be configured
+Tuleap side with the appropriate permissions to update "Test Executions" and read "Test Definitions". We recommend to use
+a dedicated user with limited permissions to reduce risks of credentials leaking.
+
+At Jenkins side, you need register this Tuleap user in "Credentials" section. Create a new entry for "username and password"
+and give it a descriptive id like ``jenkins-tuleap-bot``.
+
+You also need to upload ``ttm`` binary on Jenkins server.
+
+Configure TTM
+~~~~~~~~~~~~~
+
+The "Test Definitions" tracker must have one string or text field with name ``automated_tests``. We recommend to add it
+close to "Description". You can set whatever label you want, only the name is meaningful.
+
+Jenkinsfile scaffolding
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In your local working copy of your automated tests we assume that you are able to run them locally and get a junit XML
+result. The following commands will create two files in your repository to allow test execution and reporting:
+
+* ``Jenkinsfile`` for jenkins job configuration
+* ``.ttm.yml`` for TTM configuration
+
+Execute it like
+
+.. sourcecode:: bash
+
+    $> ttm scaffold --use-campaign-name \
+         --credentials-id jenkins-tuleap-bot \
+         --server https://my.tuleap.tld \
+         --project-name test-automation-demo \
+         --junit-file tests_results.xml
+
+In the previous command:
+
+* ``--credentials-id`` refers to the ID of the username + password credential you configured in the previous section
+* ``--server`` corresponds to the Tuleap server where TTM is running
+* ``--project-name`` corresponds to the Tuleap project where your campaign is
+* ``--junit-file`` locates where the automated test results are generated within you working copy
+
+Then you should edit generated ``Jenkinsfile`` to adjust Build and Test phases to your process. You can create as many
+steps and stage as needed, the only constraint is to keep the ``def ttm_credentials`` and the ``stage('Reporting')``.
+
+Once your done, add ``Jenkinsfile`` and ``.ttm.yml`` files, commit and push.
+
+Associate automated tests results and test definitions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You need to associate ``testsuite`` from your junit test results and Test Definitions artifacts. ``ttm`` cli tool has
+an helper to assist you for that: ``ttm verify``.
+
+.. sourcecode:: bash
+
+    $> ttm verify --username jenkinsbot
+       Enter Password: xxxxx
+       Test suites with a match in TTM
+       Test suites without a test definition
+           'AccountingBalanceTest' with 5 test cases
+           'LoginWithUsernameTest' with 12 test cases
+           'SendInvoiceTest' with 1 test cases
+
+At first run it indicates that no test suites have been linked to a test definition.
+
+You need to go in your test definitions artifacts and set in "automated_tests" field the test suite name (eg. 'AccountingBalanceTest').
+
+Once done, you can run again the verify command:
+
+.. sourcecode:: bash
+
+    $> ttm verify --username jenkinsbot
+       Enter Password: xxxxx
+       Test suites with a match in TTM
+           'AccountingBalanceTest' (test #2446)
+           'LoginWithUsernameTest' (test #2512)
+       Test suites without a test definition
+           'SendInvoiceTest' with 1 test cases
+
+At this point you've got everything you need to report test results. You can test it by yourself by creating a new test
+campaign "Test automated ttm" with the selected test definitions and run the ``send-results`` by hand:
+
+.. sourcecode:: bash
+
+    $> make tests
+    $> ttm send-results --username jenkinsbot --campaign-name "Test automated ttm"
+
+Then check the status of your campaign in TTM.
+
+Configure Jenkins job
+~~~~~~~~~~~~~~~~~~~~~
+
+Create a new Jenkins job "Pipeline" and point it to your SCM repository (you might want to use ``jenkins-tuleap-bot``
+credentials to access the repo).
+
+Run a first build to configure the job. This job will fail.
+
+At second run it should prompt for a campaign name, create a new campaign "Test automated ttm from jenkins" with the same
+test definitions than in previous steps. After a few moment, the pipeline should succeed and your test campaign in TTM
+is updated.
