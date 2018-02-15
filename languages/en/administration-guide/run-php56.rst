@@ -207,7 +207,7 @@ If you need to enable the project websites:
     location ~ ^/www/(?<project>[a-zA-Z0-9\-_.]+)/(?<path>.*)$ {
         error_log /var/log/nginx/vhosts_error.log;
         alias /home/groups/$project/htdocs/$path;
-        index index.html index.htm index.php;
+        index index.html index.htm;
     }
 
 
