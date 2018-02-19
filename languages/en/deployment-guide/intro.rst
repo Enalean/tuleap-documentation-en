@@ -75,10 +75,13 @@ We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
 Backend email notifications
 ---------------------------
 
-In order to simplify Tuleap stack, the queue management for email notification that was based in 9.17 on Rabbitmq as been
-changed to rely on redis instead. If you already have a redis server installed and configured the change will be transparent.
+In order to simplify Tuleap stack, the queue management for email notification that was based in 9.17 on RabbitMQ as been
+changed to rely on Redis instead. If you already have a Redis server installed and configured the change will be transparent.
 
-Otherwise you will need to setup a redis server, checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+Otherwise you will need to setup a Redis server, checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+
+If do not use the backend email notifications, you can safely ignore this step while
+upgrading.
 
 New LDAP parameters
 -------------------
