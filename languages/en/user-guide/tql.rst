@@ -143,13 +143,20 @@ TQL can also be used in the cross-tracker widget, in the search area.
 
    TQL on cross-tracker search
 
-Starting Tuleap 9.16, it's possible to do a cross-tracker search based on two semantics:
+It's possible to do a cross-tracker search based on following semantics:
 
  * Title
  * Description
+ * Status
 
 Currently, the query supports:
 
   - Logical operators: ``AND``, ``OR``
   - Parenthesis to force precedence
-  - Comparison operators for ``@title`` and ``@description``: ``=``, ``!=``
+  - Comparison operators for ``@title``, ``@description``, and ``@status``: ``=``, ``!=``
+  - ``@status`` can only be compared to ``OPEN()``
+  
+  Example::
+  
+    @title = 'documentation' AND @status = OPEN()
+    //Returns all open artifacts with 'documentation' in the title
