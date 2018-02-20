@@ -37,11 +37,14 @@ for subversion and mailman.
 Everything is described in :ref:`PHP 5.6 on Centos 6<admin_howto_php56-nginx-centos6>`
 
 Also, if you use ForumML and have not yet updated the mailman configuration,
-you need to do it now, in ``/etc/mailman/mm_cfg.py`` change the following parameters::
+you need to do it now, in ``/etc/mailman/mm_cfg.py`` add the following parameters at the end::
 
   PUBLIC_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
   PRIVATE_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
 
+Then restart mailman::
+
+  $> service mailman restart
 
 New cookies protections
 -----------------------
