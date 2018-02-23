@@ -230,6 +230,21 @@ Core information imported as of today:
   group name can be dynamic group names where applicable)
 - Services to be enabled. If a service is not specified, the enabled status is
   taken from the template project.
+- Dashboards: create dashboards with widgets. No dashboards are inherited from template starting 9.18 when import of
+  dashboards where introduced. Following widgets can be imported:
+  - projectdescription
+  - projectmembers
+  - projectheartbeat
+  - projectlatestfilereleases
+  - projectlatestnews
+  - projectpublicareas
+  - projectlatestsvncommits
+  - projectlatestcvscommits
+  - projectsvnstats
+  - projectrss (with 'rss' preference: 2 values 'title' and 'url')
+  - projectimageviewer (with 'image' preference: 2 values 'title' and 'url')
+  - projectcontact
+  - plugin_agiledashboard_projects_kanban (with 'kanban' preference: 1 value 'title' and 1 reference 'id' that must refer to a kanban 'id')
 
 .. sourcecode:: xml
 
@@ -271,6 +286,27 @@ Core information imported as of today:
         <service shortname="plugin_git" enabled="true" />
         <service shortname="plugin_tracker" enabled="true" />
       </services>
+
+       <dashboards>
+         <dashboard name="Dashboard">
+           <line layout="two-columns-small-big">
+             <column>
+               <widget name="projectdescription" />
+               <widget name="projectmembers" />
+               <widget name="projectheartbeat" />
+             </column>
+             <column>
+               <widget name="plugin_agiledashboard_projects_kanban">
+                 <preference name="kanban">
+                   <reference name="id" REF="K01"></reference>
+                   <value name="title">Todo</value>
+                 </preference>
+               </widget>
+             </column>
+           </line>
+         </dashboard>
+         ...
+       </dashboards>
 
       <!-- ... services ... -->
 
@@ -730,10 +766,40 @@ Supported `type` for `field` scope:
 * `PLUGIN_TRACKER_FIELD_SUBMIT` ugroup can set value for the field at artifact creation
 * `PLUGIN_TRACKER_FIELD_UPDATE` ugroup can upgrade the field value after creation
 
-Subversion repository
-*********************
+Agile Dashboard
+***************
 
-A single subversion repository can be imported. The XML syntax is:
+You can import agiledashboard configuration. There are no data related to agiledashboard itself. The data are in the trackers.
+
+.. sourcecode:: xml
+
+    <agiledashboard>
+      <plannings>
+        <planning name="Release Planning" plan_title="Release Plan" planning_tracker_id="T1017" backlog_title="Product Backlog">
+          <backlogs>
+            <backlog>T1015</backlog>
+            <backlog>T1020</backlog>
+          </backlogs>
+        </planning>
+        <planning name="Sprint Planning" plan_title="Sprint Plan" planning_tracker_id="T1018" backlog_title="Epic Backlog">
+          <backlogs>
+            <backlog>T1015</backlog>
+            <backlog>T1020</backlog>
+          </backlogs>
+        </planning>
+      </plannings>
+      <kanban_list title="Kanban">
+        <kanban tracker_id="T778" name="My personal kanban" ID="K01">
+          <column wip="1" REF="V9297"/>
+          ...
+        </kanban>
+      </kanban_list>
+    </agiledashboard>
+
+Subversion repositories
+***********************
+
+You can import as many SVN repositories as you want. The XML syntax is:
 
 .. sourcecode:: xml
 
