@@ -232,6 +232,7 @@ Core information imported as of today:
   taken from the template project.
 - Dashboards: create dashboards with widgets. No dashboards are inherited from template starting 9.18 when import of
   dashboards where introduced. Following widgets can be imported:
+
   - projectdescription
   - projectmembers
   - projectheartbeat
@@ -244,7 +245,7 @@ Core information imported as of today:
   - projectrss (with 'rss' preference: 2 values 'title' and 'url')
   - projectimageviewer (with 'image' preference: 2 values 'title' and 'url')
   - projectcontact
-  - plugin_agiledashboard_projects_kanban (with 'kanban' preference: 1 value 'title' and 1 reference 'id' that must refer to a kanban 'id')
+  - plugin_agiledashboard_projects_kanban (with 'kanban' preference: 1 reference 'id' that must refer to a kanban 'id')
 
 .. sourcecode:: xml
 
