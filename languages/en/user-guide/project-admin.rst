@@ -262,12 +262,12 @@ Those permissions concerns service who are in end of life:
 
 Permissions per group
 `````````````````````
-This service enable you to check what can a user group do on your project.
-By default this service show you the global permissions defined for your project,
+This section enables you to check what can a users group do on your project.
+By default it displays the global permissions defined for each service in the project,
 if you want to check items permissions (like Git repositories, Packages, Releases ...)
-you will have to load all permissions.
+you will have to load them individually.
 
-You can use the filter to verify permissions for a specific user group.
+You can use the filter to verify permissions for a specific users group.
 
 .. figure:: ../images/screenshots/project-admin/permissions-per-group.png
    :align: center
