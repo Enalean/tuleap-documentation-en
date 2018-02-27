@@ -260,6 +260,19 @@ Those permissions concerns service who are in end of life:
 
    -  *Admin*: administrator of core SVN (single repository)
 
+Permissions per group
+`````````````````````
+This section enables you to check what can a users group do on your project.
+By default it displays the global permissions defined for each service in the project,
+if you want to check items permissions (like Git repositories, Packages, Releases ...)
+you will have to load them individually.
+
+You can use the filter to verify permissions for a specific users group.
+
+.. figure:: ../images/screenshots/project-admin/permissions-per-group.png
+   :align: center
+   :alt: Permissions per group screen
+   :name: Permissions per group screen
 
 .. _service-configuration:
 
