@@ -271,8 +271,8 @@ You can use the filter to verify permissions for a specific user group.
 
 .. figure:: ../images/screenshots/project-admin/permissions-per-group.png
    :align: center
-   :alt: An example of project label usage
-   :name: An example of project label usage
+   :alt: Permissions per group screen
+   :name: Permissions per group screen
 
 .. _service-configuration:
 
