@@ -143,11 +143,13 @@ TQL can also be used in the cross-tracker widget, in the search area.
 
    TQL on cross-tracker search
 
-It's possible to do a cross-tracker search based on following semantics:
+It's possible to do a cross-tracker search based on following semantics or always-there fields:
 
  * Title
  * Description
  * Status
+ * Submitted on
+ * Last update date
 
 Currently, the query supports:
 
@@ -155,8 +157,10 @@ Currently, the query supports:
   - Parenthesis to force precedence
   - Comparison operators for ``@title``, ``@description``, and ``@status``: ``=``, ``!=``
   - ``@status`` can only be compared to ``OPEN()``
+  - ``@submitted_on`` and ``@last_update_date`` behave like date fields (see above). However, empty strings cannot be used as comparison value.
   
   Example::
   
-    @title = 'documentation' AND @status = OPEN()
-    //Returns all open artifacts with 'documentation' in the title
+    @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
+    //Returns all open artifacts with 'documentation' in the title that have been
+    //updated during the last week
