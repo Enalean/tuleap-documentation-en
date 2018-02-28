@@ -17,6 +17,7 @@ Depending on services you use, you will want to stop them before the backup (It 
 
 .. code-block:: bash
 
+    $ service nginx stop
     $ service http stop
     $ service tuleap stop
     $ su - gitolite -c "gitolite writable off"
