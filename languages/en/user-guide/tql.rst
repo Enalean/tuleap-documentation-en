@@ -28,13 +28,13 @@ Currently, the language supports:
 - Parenthesis to force precedence
 - Comparison operators:
 
-  * For string, text and @comments: ``=``, ``!=``
+  * For string, text, files, and @comments: ``=``, ``!=``
   * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
   * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
 - Comparison values:
 
-  * For string and text fields: ``all``
+  * For string, text, and files fields: ``string``
   * For integer fields: ``string`` convertible to integer, ``integer``
   * For float fields: ``string`` convertible to float,  ``integer``, ``float``
   * For date fields: ``string`` convertible to date, ``NOW()``
@@ -64,8 +64,14 @@ Currently, the language supports:
      * Searches are done for words longer than 3 characters
      * Some words are not taken in account because they are too common (like ``the``, ``a``, …) 
      
+- Search in files:
 
-Therefore to construct a query you can combine these elements.
+  * ``attachment = 'minutes'`` matches all artifacts where there is at least one attached file with the filename "Minutes-20180101.docx" or the description "Minutes of last meeting" contains the string ``minutes``
+  * ``attachment != 'minutes'`` matches all artifacts where there isn't any attached files with filename or description containing ``minutes``.
+  * ``attachment = ''`` matches all artifacts without any attached files
+  * ``attachment != ''`` matches all artifacts that have at least one attached file
+
+To construct a query you can combine all these elements.
 
 Query example:
 
