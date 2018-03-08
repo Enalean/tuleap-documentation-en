@@ -25,18 +25,18 @@ Internal conventions
 * All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in
   order to not clutter the review of your functional change.
 * No trailing whitespaces
-* In DataAccessObject, convention is to name ``searchXxx()`` the methods that returns a DataAccessResult (eg. ``searchProjectsUserIsAdmin(…)``, and ``getXxx``, ``isXxx``, ``hasXxx`` for other cases (eg. ``doesUserHavePermission(…)``).
+* In DataAccessObject, convention is to name ``searchXxx()`` the methods that returns a set of rows (eg. ``searchProjectsUserIsAdmin(…)``, and ``getXxx``, ``isXxx``, ``hasXxx`` for other cases (eg. ``doesUserHavePermission(…)``).
 
 .. NOTE::
   Contributions SHOULD NOT add/fix features AND fix coding standard of a legacy file in the same review.
   The code WONT be accepted. If your eyes are bleeding, conform to coding standard in a dedicated review, then
   contribute your change.
-  
-  This is especially true for refactoring, where the goal is to improve a part of the code. Extracted crappy code 
-  to a dedicated file does not need to be refactored, in order to ease the review (You may need to use one of 
+
+  This is especially true for refactoring, where the goal is to improve a part of the code. Extracted crappy code
+  to a dedicated file does not need to be refactored, in order to ease the review (You may need to use one of
   `ignore capabilities of phpcs <https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders>`_
   in order to pass coding standards check). Contributor has to focus his mind on one task at a time.
-  
+
   Remember: refactoring is here to improve the existing code without breaking functionality.
 
 Copyright & license
@@ -159,11 +159,11 @@ You should rely on Mustache ``{{ }}`` notation to benefit from automatic escapin
 If you need to put light formatting in you localised string, then you should escape beforehand and use ``{{{ }}}`` notation. As it produces a code that is less auditable (reviewer has to manually check if injections are not possible), the convention is to prefix the variable with ``purified_`` and manually purify the variable in the presenter.
 
   .. code-block:: php
-  
+
     class Presenter
     {
         public $purified_description;
-        
+
         public function __construct()
         {
             $this->purified_description = Codendi_HTMLPurifier::instance()->purify(
@@ -172,10 +172,10 @@ If you need to put light formatting in you localised string, then you should esc
             );
         }
     }
-    
+
     // .tab file:
     // key1    key2    This is the <b>description</b> you can put <a href="$1">light formatting</a>
-    
+
     // .mustache file:
     // <p>{{{ purified_description }}}</p>
 
@@ -259,31 +259,43 @@ csrf-example.mustache:
 Secure DB against SQL injections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All code related to database MUST deal with data types and do the proper escaping
-of values before executing the query.
+All code related to database MUST rely on prepared statements to pass parameters
+to a SQL query.
 
 Example of DataAccessObject:
 
   .. code-block:: php
 
-    namespace Tuleap/Git;
+    namespace Tuleap\Git;
 
-    use DataAccessObject;
+    use Tuleap\DB\DataAccessObject;
+    use ParagonIE\EasyDB\EasyStatement;
 
     class RepositoryDao extends DataAccessObject
     {
         public function searchByName($project_id, $name)
         {
-            // project_id is supposed to be an int
-            $project_id = $this->da->escapeInt($project_id);
-
-            // name is supposed to be a string
-            $name = $this->da->quoteSmart($name);
-
-            $sql = "SELECT *
+            $sql = 'SELECT *
                     FROM plugin_git_repositories
-                    WHERE project_id = $project_id
-                      AND name = $name";
-            return $this->retrieve($sql);
+                    WHERE project_id = ? AND name = ?';
+
+            return $this->getDB()->run($sql, $project_id, $name);
+        }
+
+        public function searchByProjectIDs(array $project_ids)
+        {
+            $project_ids_in_condition = EasyStatement::open()->in('?*', $project_ids);
+
+            $sql = 'SELECT *
+                    FROM plugin_git_repositories
+                    WHERE project_id IN ($project_ids_in_condition)';
+
+            return $this->getDB()->safeQuery($sql, $project_ids_in_condition->values());
         }
     }
+
+.. note::
+    You might find existing code using the ``\DataAccessObject`` class or ``db_*()`` functions,
+    in that case you will need to use the dedicated escaping methods (``\DataAccessObject::quoteSmart``,
+    ``\DataAccessObject::escapeInt``, ``db_es`` and ``db_ei``). The usage of these deprecated
+    interfaces should be avoided.
