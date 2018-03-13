@@ -96,7 +96,7 @@ Custom configuration
 ++++++++++++++++++++
 
 If you want to access webdav via ``https://webdav.example.com``,
-you have to add add a new server entry (not in another server block) in ``/etc/nginx/conf.d/tuleap.conf`` like:
+you have to add add a new server entry at the end of the file (not in another server block) in ``/etc/nginx/conf.d/tuleap.conf`` like:
 
 ::
 
