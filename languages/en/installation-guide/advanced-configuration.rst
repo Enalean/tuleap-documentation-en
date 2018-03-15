@@ -131,3 +131,14 @@ Then, in Tuleap plugin configuration ``/etc/tuleap/plugins/webdav/etc/webdav.inc
 
     $webdav_base_uri = "/";
     $webdav_host     = "webdav.example.com";
+
+
+Custom headers over Nginx
+--------------------------
+
+If you browse Tuleap with an Internet Explorer in compatibility mode, you might want to force Tuleap to use the last IE display mode.
+To do this, you can add this nginx instruction in the ``/etc/nginx/conf.d/tuleap.conf`` file:
+
+::
+
+    add_header X-UA-Compatible IE=Edge;
