@@ -12,6 +12,16 @@ Tuleap 9.19
   Tuleap 9.19 is currently under development.
 
 
+Custom headers in Nginx
+-----------------------
+
+If you have set some custom headers in nginx configuration for the Internet Explorer in compatibility mode,
+you have to delete them from these configuration files.
+This header is now `provided by default server side by Tuleap <https://tuleap.net/plugins/tracker/?aid=9007>`_.
+
+You have to remove the instruction ``add_header X-UA-Compatible IE=Edge;`` located in ``/etc/nginx/conf.d/*.conf`` files.
+
+
 Tuleap 9.17
 ===========
 
