@@ -196,6 +196,10 @@ Configure TTM
 The "Test Definitions" tracker must have one string or text field with name ``automated_tests``. We recommend to add it
 close to "Description". You can set whatever label you want, only the name is meaningful.
 
+.. note::
+
+  Starting from Tuleap 9.19 the ``automated_tests`` field is part of the default Test Management tracker templates.
+
 Jenkinsfile scaffolding
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -273,9 +277,28 @@ Configure Jenkins job
 ~~~~~~~~~~~~~~~~~~~~~
 
 Create a new Jenkins job "Pipeline" and point it to your SCM repository (you might want to use ``jenkins-tuleap-bot``
-credentials to access the repo).
+credentials to access the repo). You should also allow it to be triggered remotely. Check the "Trigger builds remotely" checkbox in the "Build Triggers" section and provide a secret Authentication token.
 
 Run a first build to configure the job. This job will fail.
 
 At second run it should prompt for a campaign name. Create a new campaign "Test automated ttm from jenkins" with the same
 test definitions than in previous steps. After a few moment, the pipeline should succeed and your test campaign in Test Management is updated.
+
+Launch automated tests from the Test Management campaign
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Edit your Campaign in Test Management and fill in the Jenkins job URL for the job you have just configured. Also fill 
+in the Authentication token defined in the step before.
+
+.. figure:: ../images/screenshots/testmanagement/automated-tests-campaign-configure.png
+   :align: center
+   :alt: Configure the Test campaign and enter the Jenkins job URL and token
+   :name: Configure the Test campaign and setup the Jenkins job URL and token
+
+Once the campaign is configured, a button will appear in the Campaign details next to the Edit button: "Launch automated tests"
+The button lets you trigger the Jenkins job which will run the automated tests and set the corresponding Test executions to "Passed"!
+
+.. figure:: ../images/screenshots/testmanagement/automated-tests-launch.png
+   :align: center
+   :alt: Launch the Jenkins job from the Test campaign
+   :name: Launch the Jenkins job from the Test campaign
