@@ -5,7 +5,7 @@ Timetracking
 
 .. attention::
 
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
 The Timetracking plugin of Tuleap aims at providing a simple and easy way to deal with
@@ -20,8 +20,7 @@ Activate the time tracking
 ---------------------------
 
 The time tracking feature must be enabled per tracker. Once activated, ``writers`` users will be able to add times per artifact.
-By default, a writer will only see its own times. The ``readers`` are users that will be able to see an aggregated view of times
-(all times saved per artifacts)
+By default, a writer will only see their own times. Members of the ``readers`` user group can see an aggregated view of submitted times.
 
 .. figure:: ../images/screenshots/timetracking/timetracking-admin-tracker.png
    :align: center
@@ -41,7 +40,7 @@ This table will contain all the times added and be displayed according to the pe
 
 .. attention::
 
-   There a some limitations for now:
+   There are some limitations for now:
 
    * Only one time per day
    * The format to add a time is hh:mm
@@ -50,10 +49,10 @@ User widget
 ------------
 
 Timetracking plugin also provides a user widget. This widget allows users to filter and display times added in the whole
-platform during the time periode provided. By default, the search is done for the last week.
+platform during the time period provided. By default, the search is done for the last week.
 
 If multiple times are added in the same artifact in this time period, the widget will only show one entry per artifact
-displaying the total time for this period.
+summing the total time for this period.
 
 .. figure:: ../images/screenshots/timetracking/timetracking-user-widget.png
    :align: center
