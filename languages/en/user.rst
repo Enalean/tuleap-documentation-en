@@ -16,6 +16,7 @@ User-guide
    user-guide/tql
    user-guide/agile-dashboard
    user-guide/testmanagement
+   user-guide/timetracking
    user-guide/frs
    user-guide/cvs
    user-guide/svn
