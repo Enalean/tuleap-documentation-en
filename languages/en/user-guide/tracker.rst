@@ -824,6 +824,8 @@ Example of computation work:
    * If I manually set remaining effort for Sprint #2 to 10, release remaining effort will be 60 (10+30+20)
    * I am connected as a member who only can see release, I will see 60 as remaining effort
 
+.. _burnup_administration:
+
 Burndown
 ````````
 Burndown is a graphical representation of remaining effort,
@@ -1911,6 +1913,51 @@ But you may want to define any other semantic. You can choose any
 
 This semantic information is used in **My artifacts** widget (this
 widget displays only *open* artifacts that belongs to you).
+
+Done (Agiledashboard)
+`````````````````````
+
+The done semantic is used for burnup and velocity chart
+computation.
+
+.. _velocity_administration:
+
+Velocity (Agiledashbaord)
+`````````````````````````
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+How to add velocity chart in a release:
+ 1 - You should have a tracker hierarchy between Release and Sprint
+
+.. figure:: ../images/screenshots/tracker/hierarchy.png
+   :align: center
+   :alt: Example of release hierarchy
+
+Example of release hierarchy
+
+
+ 2 - You should have a velocity semantic at release and child level
+
+.. figure:: ../images/screenshots/tracker/missing_velocity_semantic.png
+   :align: center
+   :alt: An error is displayed when children tracker does not have the velocity semantic
+
+An error is displayed when children tracker does not have the velocity semantic
+
+
+ 3 - You should have at least one backlog tracker with done and initial effort semantic.
+     I some tracker don't have both semantic, its value won't be taken in account during computation.
+
+.. figure:: ../images/screenshots/tracker/missing_backlog_semantic.png
+   :align: center
+   :alt: A warning is displayed if tracker does not have all needed semantic
+
+A warning is displayed if tracker does not have all needed semantic
+
+Once computation is done, you can manually override the computed value by entering a new one.
 
 Contributor / Assignee
 ``````````````````````

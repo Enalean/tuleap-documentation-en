@@ -139,10 +139,37 @@ The agile dashboard also provides the possibility to prioritize the backlog, by 
 
 Monitor project progress
 ````````````````````````
-By any moment of the sprint, the development team can monitor and update the progress of the sprint by going to the cardwall and the burndown.
+By any moment of the sprint, the development team can monitor the sprint or release progress with overview tab.
 
-The cardwalls and burndowns are directly from the agile dashboard homepage.
+With the burnup and burndown view, you can see how your on going work is progressing.
 
+.. figure:: ../images/screenshots/agiledashboard/burnup.png
+   :align: center
+   :alt: Burnup and burndown view
+   :name: Burnup and burndown view
+
+   Agile Dashboard: Burnup and burndown view
+
+To configure a burnup and burndown charts please refer to (:ref:`burnup_administration`) part of documentation.
+
+When the release end, and during the sprint planning you can use the velocity chart to determine your new team capacity.
+The velocity chart display the sum of done effort of linked artifacts.
+Only backlog artifacts are taken in account during computation (artifact linked in planning configuration of Agiledashboard).
+
+.. figure:: ../images/screenshots/agiledashboard/velocity.png
+   :align: center
+   :alt: Velocity chart
+   :name: Velocity chart
+
+   Agile Dashboard: Velocity chart
+
+Known limitation: if an artifact is created directly at a "done" status, velocity won't be computed.
+
+To configure a velocity chart please refer to (:ref:`velocity_administration`) part of documentation.
+
+
+Daily project update
+````````````````````
 The cardwall (see `Cardwall`_) lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
 and change the remaining effort on the fly, that is to say staying on the same page.
 
