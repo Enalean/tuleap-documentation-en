@@ -41,8 +41,11 @@ On RHEL6, run as root:
     # Apply data upgrades
     /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
 
+    # Re-generate nginx configuration
+    /usr/share/tuleap/tools/utils/php56/run.php --module=nginx
+
     # Restart service
-    service httpd restart
+    service httpd start
     service nginx start
     service tuleap start
 
