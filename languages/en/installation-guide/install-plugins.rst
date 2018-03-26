@@ -45,6 +45,10 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **timetracking**: Provide an easy way to track your time 
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 File deliveries and documentation:
 
 * **docman**: Document management
