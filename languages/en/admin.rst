@@ -3,11 +3,12 @@ Administration guide
 
 .. toctree::
    :maxdepth: 1
+   :glob:
 
    administration-guide/admin-tasks
    administration-guide/files-permissions
    administration-guide/files-structure
-   administration-guide/authentication
+   administration-guide/authentication/*
    administration-guide/daemons
    administration-guide/backup
    administration-guide/services
