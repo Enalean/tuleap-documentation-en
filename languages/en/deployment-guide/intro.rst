@@ -12,7 +12,13 @@ Tuleap 9.19
   Tuleap 9.19 is currently under development.
 
 
-Custom headers in Nginx
+Redeployment of the NGINX configuration
+---------------------------------------
+
+This version comes with some changes in the NGINX configuration, so the configuration
+files needs to be deployed again. Be sure to follow the update guide: :ref:`update`.
+
+Custom headers in NGINX
 -----------------------
 
 If you have set some custom headers in nginx configuration for the Internet Explorer in compatibility mode,

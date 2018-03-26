@@ -1,3 +1,5 @@
+..  _update:
+
 Upgrade to a newer version
 ==========================
 
