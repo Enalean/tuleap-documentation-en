@@ -7,11 +7,6 @@ file, the default is automatically set for you.
 Tuleap 9.19
 ===========
 
-.. NOTE::
-
-  Tuleap 9.19 is currently under development.
-
-
 Redeployment of the NGINX configuration
 ---------------------------------------
 
