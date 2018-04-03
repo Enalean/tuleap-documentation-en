@@ -4,13 +4,16 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 9.19
+Tuleap 10.0
 ===========
 
 .. NOTE::
 
-  Tuleap 9.19 is currently under development.
+  Tuleap 10.0 is currently under development.
 
+
+Tuleap 9.19
+===========
 
 Redeployment of the NGINX configuration
 ---------------------------------------
