@@ -12,6 +12,58 @@ Tuleap 10.0
   Tuleap 10.0 is currently under development.
 
 
+Apache configuration update to deal with an issue affecting Subversion copy and move operations
+-----------------------------------------------------------------------------------------------
+
+An issue affecting the Subversion copy and move operations has been discovered
+and fixed. Unfortunately, the fix requires from the administrators a manual
+update of the Apache configuration.
+
+The following line needs to be added in the Apache virtualhost processing the
+Subversion requests:
+
+  .. sourcecode:: ApacheConf
+
+    RequestHeader edit Destination ^https http early
+
+
+The corresponding configuration block can either be found in ``/etc/httpd/conf.d/tuleap-vhost.conf``
+or if the file does not exist in ``/etc/httpd/conf/httpd.conf``.
+
+In ``/etc/httpd/conf.d/tuleap-vhost.conf``, once updated the virtualhost block will
+look like this:
+
+  .. sourcecode:: ApacheConf
+
+    <VirtualHost 127.0.0.1:8080>
+        ServerName tuleap.example.com
+        ServerAlias www.tuleap.example.com
+        ServerAlias lists.tuleap.example.com
+
+        RequestHeader edit Destination ^https http early
+
+        # Include all configuration files from conf.d (php, subversion, etc.)
+        # (also included from conf/ssl.conf)
+        Include conf.d/tuleap-aliases/*.conf
+
+       LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+       CustomLog logs/access_log commonvhost
+       CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
+    </VirtualHost>
+
+In ``/etc/httpd/conf/httpd.conf``, once updated the virtualhost block will look
+like this:
+
+  .. sourcecode:: ApacheConf
+
+    <VirtualHost *:8080>
+        ServerName tuleap.example.com
+        ServerAlias svn.*.tuleap.example.com
+        RequestHeader edit Destination ^https http early
+        Include conf.d/codendi_svnroot.conf
+    </VirtualHost>
+
+
 Tuleap 9.19
 ===========
 
