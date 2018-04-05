@@ -33,6 +33,10 @@ Project management:
 * **graphontrackersv5**: Display graphs on top of trackers
 * **agiledashboard**: Do Scrum and Kanban
 * **cardwall**: Build a board of cards on top of trackers or Agile Dashboard
+* **velocity**: Display velocity chart in the Agile Dashboard
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 * **testmanagement**: Test campaigns and traceability (aka TTM).
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
@@ -45,7 +49,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **timetracking**: Provide an easy way to track your time 
+* **timetracking**: Provide an easy way to track your time
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
