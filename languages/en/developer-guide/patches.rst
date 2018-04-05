@@ -4,7 +4,7 @@ Push your code
 .. IMPORTANT::
 
   As a prerequisite, please read `Don't "Push" Your Pull Requests`_.
-  
+
 .. _Don't "Push" Your Pull Requests: https://www.igvita.com/2011/12/19/dont-push-your-pull-requests/
 
 The Tuleap project uses Gerrit to ensure a proper review and integration of contributed code. It means that:
@@ -187,7 +187,7 @@ You are ready to publish !
 
   .. code-block:: bash
 
-    $> git push origin HEAD:refs/drafts/master
+    $> git push origin HEAD:refs/for/master%wip
 
 5. Check result on gerrit
 
@@ -196,7 +196,7 @@ is fine.
 
 6. Publish
 
-When everything is allright, publish the patch ("Publish" button) and set
+When everything is allright, start the review ("Start review" button) and set
 "tuleap-integrators" as reviewers
 
 Update a contribution
@@ -299,7 +299,7 @@ Then you should `amend` the commit with your changes:
 
     $ git commit -a --amend
 
-And finally you can push your changes (git push origin HEAD:refs/drafts/master & publish)
+And finally you can push your changes (git push origin HEAD:refs/for/master%wip & publish)
 
 .. NOTE::
 
