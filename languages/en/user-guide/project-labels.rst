@@ -30,8 +30,8 @@ You can remove a label by clicking on the cross in label badge.
 Administration of labels
 -------------------------
 
-If your project can uses the Git pullrequest feature, the administration of labels is available for project administrators.
-This administration pannel allows project administrators to:
+If your project can use the Git pullrequest feature, the administration of labels is available for project administrators.
+This administration panel allows project administrators to:
 
 * Update label
 * Add color for a label
