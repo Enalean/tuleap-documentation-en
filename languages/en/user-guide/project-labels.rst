@@ -27,8 +27,32 @@ Remove a label
 --------------
 You can remove a label by clicking on the cross in label badge.
 
+Administration of labels
+-------------------------
+
+If your project can uses the Git pullrequest feature, the administration of labels is available for project administrators.
+This administration pannel allows project administrators to:
+
+* Update label
+* Add color for a label
+* Remove a label
+* Create a new label
+
+.. figure:: ../images/screenshots/label/label-administration.png
+    :align: center
+    :alt: Administration of labels
+    :name: Administration of labels
+
+.. _label_widget:
+
 Label widget
 ------------
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
 In your project dashboard, you can add several widgets to track your items:
 
 
@@ -36,7 +60,3 @@ In your project dashboard, you can add several widgets to track your items:
     :align: center
     :alt: Example of dashboard with labels widgets
     :name: Example of dashboard with labels widgets
-
-.. IMPORTANT::
-
-    Label widget is a feature only available in Tuleap Enterprise
