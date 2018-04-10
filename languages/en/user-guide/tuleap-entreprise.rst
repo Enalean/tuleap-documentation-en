@@ -14,6 +14,8 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Portfolio <portfolio>`.
 * :ref:`Timetracking <timetracking>`.
 * :ref:`Dynamic credentials <dynamic-credentials>`.
+* :ref:`Label widget <label_widget>`.
+
 
 More information on `Tuleap.org website`_.
 
