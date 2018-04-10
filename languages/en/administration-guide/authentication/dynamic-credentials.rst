@@ -80,8 +80,12 @@ How does it work?
 The following diagram summarizes the communication the user requesting the
 credentials, the HashiCorp Vault instance and the Tuleap instance:
 
-.. mermaid::
+.. image:: ../../images/diagrams/dynamic-credentials/create_dynamic_creds_sequence.png
+  :alt: Tuleap dynamic credentials creation sequence
+  :align: center
 
+..
+    mermaidjs diagram
     sequenceDiagram
         participant User
         participant HashiCorp Vault
@@ -97,8 +101,12 @@ credentials, the HashiCorp Vault instance and the Tuleap instance:
 The following diagram summarizes the communication the user requesting the
 credentials, the HashiCorp Vault instance and the Tuleap instance:
 
-.. mermaid::
+.. image:: ../../images/diagrams/dynamic-credentials/revoke_dynamic_creds_sequence.png
+  :alt: Tuleap dynamic credentials revocation sequence
+  :align: center
 
+..
+    mermaidjs diagram
     sequenceDiagram
         participant Operator
         participant HashiCorp Vault
