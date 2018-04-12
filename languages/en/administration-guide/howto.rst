@@ -1276,7 +1276,7 @@ Tuleap server:
 
 .. sourcecode:: bash
 
-    $> yum install php-domnikl-statsd statds
+    $> yum install php-domnikl-statsd statsd
 
     $> edit /etc/tuleap/conf/local.inc and add (or uncomment):
     // Configure connection to statsd server
