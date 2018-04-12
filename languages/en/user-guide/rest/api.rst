@@ -137,6 +137,5 @@ Some rule are specific to this route:
  - only trackers administrators can delete artifacts
  - there is a limitation of how many artifacts you can delete by day (sliding windows of 24h)
  - limit is set by platform administrators and is common for all projects
- - delete artifacts are exported in XML and store in Tuleap tmp dir
  - if plugin archive deleted items is enabled, XML is archived
  
