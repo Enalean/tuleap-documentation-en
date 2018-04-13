@@ -540,19 +540,6 @@ Tuleap project repository, then issue the following command:
 .. _svn-merge-repos.pl: http://www.coelho.net/svn-merge-repos.html
 
 
-Validators for users' password
-------------------------------
-
-You can define rules to validate users' passwords. Here is an example of
-rules :
-
--  Password must contain at least 8 characters
--  Password must contain at least 2 capital letter
--  Password must contain at least 3 non-digit characters
--  ...
-
-See site-content/\*/account/password\_strategy.txt for details.
-
 Add an expiration date on a user account
 ----------------------------------------
 

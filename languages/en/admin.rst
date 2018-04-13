@@ -13,6 +13,7 @@ Administration guide
    administration-guide/backup
    administration-guide/services
    administration-guide/logs
+   administration-guide/security
    administration-guide/customisations
    administration-guide/howto
    administration-guide/project-export-import
