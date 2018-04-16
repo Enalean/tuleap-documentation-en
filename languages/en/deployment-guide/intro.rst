@@ -12,6 +12,22 @@ Tuleap 10.0
   Tuleap 10.0 is currently under development.
 
 
+Improper certificate validation when communicating with Mattermost servers
+--------------------------------------------------------------------------
+
+This change only impacts users of the bot Mattermost plugins. Until Tuleap 10.0,
+certificates to communicate with Mattermost servers over HTTPS were not properly
+verified. The certificates are now properly verified as anywhere else in Tuleap,
+that means that connections to Mattermost might stop working if you use a
+certificate that is not signed by one of the certificate authorities recognized
+by your operating system. To solve it, you might want to use on your Mattermost
+server a certificate signed by a recognized certificate authority such as
+`Let's Encrypt <https://letsencrypt.org/>`_ or if you use your own internal
+certificate authority you will need to add it to the store of your OS as
+described here: :ref:`admin_howto_add_certicate`.
+
+
+
 Apache configuration update to deal with an issue affecting Subversion copy and move operations
 -----------------------------------------------------------------------------------------------
 
