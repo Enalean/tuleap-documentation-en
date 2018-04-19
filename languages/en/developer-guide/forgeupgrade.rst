@@ -33,34 +33,37 @@ sample script
 
         <?php
         /**
-         * Copyright (c) Enalean, 2012. All Rights Reserved.
+         * Copyright (c) Enalean, 2018. All Rights Reserved.
          * ....
          */
-        class b201206051455_add_cardwall_on_top_table extends ForgeUpgrade_Bucket {
-
-            public function description() {
+        class b201806051455_add_cardwall_on_top_table extends ForgeUpgrade_Bucket // @codingStandardsIgnoreLine
+        {
+            public function description()
+            {
                 return <<<EOT
                 Add table to store trackers that enable cardwall on top of them
                 EOT;
             }
 
-            public function preUp() {
+            public function preUp()
+            {
                 $this->db = $this->getApi('ForgeUpgrade_Bucket_Db');
             }
 
-            public function up() {
+            public function up()
+            {
                 $sql = "CREATE TABLE IF NOT EXISTS plugin_cardwall_on_top(
                           tracker_id int(11) NOT NULL PRIMARY KEY
                         )";
                 $this->db->createTable('plugin_cardwall_on_top', $sql);
             }
 
-            public function postUp() {
-                if (!$this->db->tableNameExists('plugin_cardwall_on_top')) {
+            public function postUp()
+            {
+                if (! $this->db->tableNameExists('plugin_cardwall_on_top')) {
                     throw new ForgeUpgrade_Bucket_Exception_UpgradeNotCompleteException('plugin_cardwall_on_top table is missing');
                 }
             }
         }
-        ?>
 
 When creating a new script, the only methods you generally need to change are description() and up().
