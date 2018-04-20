@@ -29,7 +29,7 @@ Currently, the language supports:
 - Comparison operators:
 
   * For string, text, files, and @comments: ``=``, ``!=``
-  * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``=>``, ``>``, ``BETWEEN()``
+  * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
   * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
 - Comparison values:
@@ -149,24 +149,72 @@ TQL can also be used in the cross-tracker widget, in the search area.
 
    TQL on cross-tracker search
 
-It's possible to do a cross-tracker search based on following semantics or always-there fields:
+Fields that are always present "behind the scenes" in artifacts such as the Submission date ("Submitted On") and semantics can be used to search on multiple trackers. The following keywords are supported:
 
- * Title
- * Description
- * Status
- * Submitted on
- * Last update date
+String/Text semantics:
+ * ``@title``: the "Title" semantic. It behaves like a string field.
+ * ``@description``: the "Description" semantic. It behaves like a text field.
+
+Dates:
+ * ``@submitted_on``: the "Submitted On" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
+ * ``@last_update_date``: the "Last Update Date" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
+
+Lists:
+ * ``@status``: the "Status" semantic. It behaves like a list, but can only be compared to ``OPEN()``
+
+Lists bound to users:
+ * ``@submitted_by``: the "Submitted By" dynamic field. It behaves like a list and can have only a single value at a time.
+ * ``@last_update_by``: the "Last Updated by" dynamic field. It behaves like a list and can have only a single value at a time.
+ * ``@assigned_to``: the "Contributor/assignee"`` semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
+
+Preconditions for multi-tracker search
+--------------------------------------
+
+When you use a semantic, all selected trackers must have it configured and all fields linked to the semantic must be readable by the current user.
+
+For example, if you run an expert query containing ``@status``, all selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
+If **one** of the trackers does not define the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **one** of the "Status" fields is not readable by the current user, an error will be displayed.
+
+When you use a dynamic field that is "always present", for all selected trackers it must be added in the tracker and it must be readable by the current user.
+
+Fields that are always present are:
+  * "Submitted On": The creation date of the artifact.
+  * "Submitted By": The user who first created the artifact.
+  * "Last Updated Date": The date of the last change to the artifact.
+  * "Last Updated By": The user who made the last change to the artifact.
+
+For example, if you run an expert query containing ``@last_update_date``, all selected trackers **must** have a "Last update date" field and that field **must** be readable by the user viewing the widget.
+If **one** of the trackers does not have a "Last update date" field, it will cause an error to be shown. The same is true for permissions: if **one** of the "Last update date" fields is not readable by the current user, an error will be displayed.
+
+Queries
+-------
 
 Currently, the query supports:
 
-  - Logical operators: ``AND``, ``OR``
-  - Parenthesis to force precedence
-  - Comparison operators for ``@title``, ``@description``, and ``@status``: ``=``, ``!=``
-  - ``@status`` can only be compared to ``OPEN()``
-  - ``@submitted_on`` and ``@last_update_date`` behave like date fields (see above). However, empty strings cannot be used as comparison value.
-  
+- Logical operators: ``AND``, ``OR``
+- Parenthesis to force precedence
+- Supported comparisons:
+
+  * For @title and @description: ``=``, ``!=``
+  * For @status: ``= OPEN()``, ``!= OPEN()``. ``OPEN()`` is the only supported value.
+  * For @submitted_on and @last_update_date: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``.
+  * For @submitted_by and @last_update_by: ``=``, ``!=``, ``IN()``, ``NOT IN()``.
+
+- Comparison values:
+
+  * For @title and @description: ``string``
+  * For @status: ``OPEN()`` is the only supported value
+  * For @submitted_on and @last_update_date: ``string`` convertible to date, ``NOW()`` and dynamic values based on ``NOW()``. For example: ``NOW() -1m``, ``NOW() -6w``, ...
+  * For @submitted_on and @last_update_date: the empty string ``''`` cannot be used. Those "always there fields" always have a value, therefore the comparison to "empty" is not useful.
+  * For @submitted_by, @last_update_by and @assigned_to: ``string`` matching a user, ``MYSELF()``
+
   Example::
-  
+
     @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
     //Returns all open artifacts with 'documentation' in the title that have been
-    //updated during the last week
+    //updated during the last week.
+
+    @title = 'documentation' AND @submitted_by = 'alice' AND @assigned_to IN (MYSELF(), 'charles')
+    //Returns all artifacts with 'documentation' in the title that have been submitted
+    //by user 'alice' and are assigned to the viewing user (for example 'bob')
+    //or user 'charles'.
