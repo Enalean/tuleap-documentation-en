@@ -37,10 +37,10 @@ When a Tuleap hosted project is created the project administrator gives
 it a project short name. This project short name can be used in a number
 of places:
 
-http://example.com/projects/*ProjectShortName* is a shortcut to
+``https://example.com/projects/*ProjectShortName*`` is a shortcut to
 access a project summary page on the Tuleap Web site (not to be
 confused with the Project Web site at
-http://*ProjectShortName*.example.com/
+``https://*ProjectShortName*.example.com/``
 
 A Unix group with the same name (all lowercase) is created
 

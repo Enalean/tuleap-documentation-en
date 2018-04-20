@@ -21,7 +21,7 @@ Setup gerrit admin account
 
     you@workstation $> make start-gerrit
 
-* Go on gerrit web interface http://tuleap-gerrit.gerrit-tuleap.docker:8080
+* Go on gerrit web interface ``http://tuleap-gerrit.gerrit-tuleap.docker:8080``
 * Sign-in with  gerrit-admin
 * Generate an HTTP password (Settings > HTTP password)
 

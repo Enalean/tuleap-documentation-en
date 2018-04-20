@@ -216,7 +216,7 @@ website:
      $ password mailman
 
 - To test the mailman account:
-- Go to http://lists.example.com/mailman/admin
+- Go to ``https://lists.example.com/mailman/admin``
 - Click on any mailing list
 - Type new global admin password
 
@@ -537,7 +537,7 @@ Tuleap project repository, then issue the following command:
        /local/path/to/repo2/:trunk/target_path_for_src2
 
 
-.. _svn-merge-repos.pl: http://www.coelho.net/svn-merge-repos.html
+.. _svn-merge-repos.pl: https://www.cri.ensmp.fr/people/coelho/svn-merge-repos.html
 
 
 Add an expiration date on a user account
@@ -1023,7 +1023,7 @@ email address (forge__artifact+id@... to update an artifact and forge__tracker+i
     incoming mail and this information can be spoofed by a 6 years old child. This option, might also
     allow to take over services relying on the domain name to restrict accesses, see this `blogpost for
     a demonstration of what it is possible to do
-    <https://medium.freecodecamp.org/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c>`_.
+    <https://medium.com/intigriti/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c>`_.
     If you still want to enable this option, it is highly recommended to use a
     dedicated domain name (see ``sys_default_mail_domain`` in your ``local.inc`` file).
 

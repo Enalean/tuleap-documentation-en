@@ -81,7 +81,7 @@ pointing to them) are rarely created.
     the direct link, instead of the usual syntax.
 
     Example : Use
-    "[http://yourserver/wiki/index.php?group\_id=N&pagename=WiKiPageName]"
+    "[https://tuleap.example.com/wiki/index.php?group\_id=N&pagename=WiKiPageName]"
     instead of "wiki #N:WikiPageName"
 
 Searching

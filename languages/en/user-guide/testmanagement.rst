@@ -175,7 +175,7 @@ In the next sections we will describe how to setup TTM with Jenkins.
 
 This assumes a couple of things:
 
-* The server where Tuleap is installed is located at https://my.tuleap.tld
+* The server where Tuleap is installed is located at ``https://tuleap.example.com``
 * The project where TTM is enabled is called 'test-automation-demo' (its shortname)
 
 Users and credentials
@@ -215,7 +215,7 @@ Execute it like
 
     $> ttm scaffold --use-campaign-name \
          --credentials-id jenkins-tuleap-bot \
-         --server https://my.tuleap.tld \
+         --server https://tuleap.example.com \
          --project-name test-automation-demo \
          --junit-file tests_results.xml
 
@@ -287,7 +287,7 @@ test definitions than in previous steps. After a few moment, the pipeline should
 Launch automated tests from the Test Management campaign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Edit your Campaign in Test Management and fill in the Jenkins job URL for the job you have just configured. Also fill 
+Edit your Campaign in Test Management and fill in the Jenkins job URL for the job you have just configured. Also fill
 in the Authentication token defined in the step before.
 
 .. figure:: ../images/screenshots/testmanagement/automated-tests-campaign-configure.png

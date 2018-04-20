@@ -15,7 +15,7 @@ Requirements
 
 First you will need all the stuff required for a full installation (see previous chapter).
 
-Then you will need on your own computer or on a server an ansible client. See installation documentation here: https://www.ansible.com/get-started
+Then you will need on your own computer or on a server an ansible client. See installation documentation here: https://www.ansible.com/resources/get-started
 
 
 Ansible Role

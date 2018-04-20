@@ -70,7 +70,7 @@ Trigerred when content is pushed to the repository.
             "display_name":"John Doe (jdoe)",
             "username":"jdoe",
             "ldap_id":"102",
-            "avatar_url":"http://tuleap.example.com/users/jdoe/avatar.png",
+            "avatar_url":"https://tuleap.example.com/users/jdoe/avatar.png",
             "is_anonymous":false
         }
     }

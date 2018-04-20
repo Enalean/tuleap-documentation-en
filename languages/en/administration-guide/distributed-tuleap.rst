@@ -134,7 +134,7 @@ Add the EPEL and the SCL repository
    # For Centos
    $ sudo yum install -y centos-release-scl
 
-For RHEL checkout `documentation about RHSCL <https://access.redhat.com/documentation/en-US/Red_Hat_Software_Collections/2/html-single/2.3_Release_Notes/index.html#sect-Installation-Subscribe>`_.
+For RHEL checkout `documentation about RHSCL <https://access.redhat.com/documentation/en-us/red_hat_software_collections/2/html-single/2.3_release_notes/index#sect-Installation-Subscribe>`_.
 
 Create ``codendiadm`` user with the same ids than on el6 (UID & GID corresponds to the value you got on el6):
 

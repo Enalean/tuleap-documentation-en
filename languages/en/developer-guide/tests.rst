@@ -13,7 +13,7 @@ Tuleap comes with a handy test environment, based on SimpleTest. File organizati
 
 To run tests you can either use:
 
-- the web interface available at http://localhost/plugins/tests/ (given localhost is your development server)
+- the web interface available at ``https://tuleap-web.tuleap-aio-dev.docker/plugins/tests/``
 - the CLI interface: make tests (at the root of the sources). You can run a file or a directory: php tests/bin/simpletest plugins/docman
 
 Run tests with docker

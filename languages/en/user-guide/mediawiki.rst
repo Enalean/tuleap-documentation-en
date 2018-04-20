@@ -62,7 +62,7 @@ Please note that it's not possible to assign Tuleap special **all_users** and **
 
 .. seealso::
    For more details on Mediawiki groups and permissions, see:
-   http://www.mediawiki.org/wiki/Manual:User_rights
+   https://www.mediawiki.org/wiki/Manual:User_rights
 
 Synchronisation for Mediawiki users and groups
 ``````````````````````````````````````````````
@@ -85,7 +85,7 @@ Tuleap currently integrates the following Mediawiki extensions:
 * `CategoryTree <https://www.mediawiki.org/wiki/Extension:CategoryTree>`_ : dynamically browses the
   structure of categories. For more information about this, please visit the project's mediawiki,
   click on **Special Pages**, then on **Version** to access the list of installed extensions.
- 
+
 * `Cite <https://www.mediawiki.org/wiki/Extension:Cite/Cite.php>`_ : adds ``<ref[name="id"]>`` and ``<references/>`` tags for references and footnotes.
 
 * `ImageMap <https://www.mediawiki.org/wiki/Extension:ImageMap>`_ : allows for client-side clickable images, thanks to the ``<imagemap>`` tag.
@@ -98,18 +98,18 @@ Tuleap currently integrates the following Mediawiki extensions:
 * `ParserFunctions <https://www.mediawiki.org/wiki/Extension:ParserFunctions>`_ : enhances the wikitext parser throught the addition of logical and strings manipulation
   functions.
 
-* `PdfBook <http://www.mediawiki.org/wiki/Extension:PdfBook>`_ : lets you compose a book from articles in a category and export it as PDF.
+* `PdfBook <https://www.mediawiki.org/wiki/Extension:PdfBook>`_ : lets you compose a book from articles in a category and export it as PDF.
 
 * `SyntaxHighlight_GeSHi <https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi>`_ : allows for source code syntax highlighting throught the ``<syntaxhighlight>`` tag
   and the `GeSHi syntax highlighting <http://qbnz.com/highlighter/>`_.
 
 
-* `WikiEditor <http://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
+* `WikiEditor <https://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
 
 Tuleap Specific extension
 `````````````````````````
 
-* **TuleapArtLinks**: provides artifact links integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact. 
+* **TuleapArtLinks**: provides artifact links integration with Tuleap. Since Tuleap 7.10, MediaWiki recognizes Tuleap cross-references such as **art #12345** and turns them automatically into hypertext links pointing to the corresponding Tuleap artifact.
 
 Compatibility view
 ------------------
@@ -129,7 +129,7 @@ The following conditions have to be met for your logo to be displayed in Mediawi
 Mediawiki References
 --------------------
 
--  The official Mediawiki documentation: See http://www.mediawiki.org/wiki/Documentation
+-  The official Mediawiki documentation: See https://www.mediawiki.org/wiki/Documentation
 
 Contributions
 -------------
@@ -140,6 +140,6 @@ Contributions
 - **InputBox** contributed by Erik Moeller, Leonardo Pimenta, Rob Church, Trevor Parscal and DaSch.
 - **LabeledSectionTransclusion** contributed by Steve Sanbeg.
 - **ParserFunctions** contributed by Tim Starling, Robert Rohde, Ross McClure and Juraj Simlovic.
-- **PdfBook** contributed by `Aran Dunkley <http://www.organicdesign.co.nz/nad>`_.
+- **PdfBook** contributed by `Aran Dunkley <https://organicdesign.nz/Nad>`_.
 - **SyntaxHighlight_GeSHi** contributed by Brion Vibber, Tim Starling, Rob Church and Niklas Laxström.
 - **TuleapArtLinks** contributed by `Enalean SAS <https://www.enalean.com/>`_.

@@ -57,7 +57,7 @@ Now we are able to:
 * Update a resource with a PATCH or PUT
 
 That's it! You have most of the resources needed to use the various REST routes provided by Tuleap. We strongly suggest
-that you use the API explorer (https://tuleap.example.com/api/explorer/) which documents all the routes and let you try
+that you use the API explorer (``https://tuleap.example.com/api/explorer/``) which documents all the routes and let you try
 them on the fly without having to manage an authentication token or type a curl command.
 
 It's the end of this REST API Quick Start, you can now use your favorite programming language to enhance Tuleap capabilities.

@@ -228,7 +228,7 @@ into the web interface of your project. This client lets you chat into
 the project MUC Room (see `Multi-User Chat Room (MUC)`_). Of course, each user can choose the client
 that best fits his or her needs. Several open source (and/or free)
 clients are available for the most common platforms, and you can find a
-list (non-exhaustive) of them at http://www.jabber.org/clients. Note
+list (non-exhaustive) of them at https://xmpp.org/software/clients.html. Note
 that some clients, like Coccinella for instance, allow you to do shared
 whiteboard.
 
@@ -403,9 +403,9 @@ The web interface of the chat room is composed of several areas:
        Example: I will call you \_tomorrow at 2 o'clock\_
 
     -  **Write a hyperlink:** the system will detect hyperlinks if they
-       are starting with http://
+       are starting with ``https://`` or ``http://``
 
-       Example : You can read http://tuleap.net and see what I mean
+       Example : You can read https://tuleap.net and see what I mean
 
     -  **Make a cross-reference to a item of your project:** You can
        make a reference to any item of your project (artifact, bug,

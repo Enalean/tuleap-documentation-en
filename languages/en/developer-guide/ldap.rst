@@ -15,13 +15,13 @@ In your ``tuleap-web`` container, create a file ``developers.ldif`` with the fol
     cn: developers
     member: uid=pat_le_chef
     member: uid=vaceletm
-    
+
 Then execute the following command:
 
 .. code-block:: shell
 
   ldapadd -h ldap -D 'cn=Manager,dc=tuleap,dc=local' -W -f developers.ldif
-  
+
 The password can be found in the ``.env`` file in your sources (where you run ``make start``):
 
 .. code-block:: ini
@@ -33,11 +33,11 @@ PHPLDAPAdmin
 
 You can set-up a local ldap with a UI managment front in a few steps.
 
- * Install docker then follow the instructions here for creating an ldap instance https://github.com/Enalean/docker-ldap-dev
+ * Install docker then follow the instructions here for creating an ldap instance https://github.com/Enalean/docker-ldap
  * Download and install http://phpldapadmin.sourceforge.net/wiki/index.php/Installation
  * Modify config.php to your liking
  * Restart apache and go to [name of your localhost]/phpldapadmin
- * Hack one of files in phpldapadmin (known bug) http://stackoverflow.com/questions/20673186/getting-error-for-setting-password-feild-when-creating-generic-user-account-phpl
+ * Hack one of files in phpldapadmin (known bug) https://stackoverflow.com/questions/20673186/getting-error-for-setting-password-field-when-creating-generic-user-account-phpl
  * Log-in with the crediantials from the docker README: (currently) cn=Manager,dc=tuleap,dc=local / welcome0
 
 Example config.php:
@@ -84,5 +84,3 @@ Use this config in ``etc/gerrit.conf``:
             groupBase = ou=groups,dc=tuleap,dc=local
             accountFullName = cn
             sslVerify = false
-
-

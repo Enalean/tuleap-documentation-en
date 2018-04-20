@@ -32,7 +32,7 @@ Tuleap configuration
 ++++++++++++++++++++
 
 Update the Tuleap's configuration of the git plugins. This configuration can be found in the /etc/tuleap/plugins/git/etc/config.inc,
-you have to modify the 'git_http_url' url line to uncomment it and put the desired suffix to the url (eg: https://yourforge.com/asuffix/).
+you have to modify the 'git_http_url' url line to uncomment it and put the desired suffix to the url (eg: ``https://tuleap.example.com/asuffix/``).
 
 Apache configuration
 ++++++++++++++++++++

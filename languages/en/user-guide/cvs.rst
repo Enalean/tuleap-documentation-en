@@ -115,7 +115,7 @@ Windows. Below are all the instructions needed to get WinCVS running on
 a Tuleap project. In the examples, "username" is the user
 login name, and "projectname" is the short project name.
 
--  Download WinCVS from http://www.wincvs.org and install it on your PC.
+-  Download WinCVS from http://cvsgui.sourceforge.net/download.html#wincvs_recommended and install it on your PC.
 
 -  Run WinCVS: ``Start->Programs->WinCvs``
 

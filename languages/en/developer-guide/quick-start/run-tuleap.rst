@@ -31,6 +31,7 @@ First start of Tuleap
 
     $ cd /path/to/tuleap
     $ make composer
+    $ npm run build
     $ make dev-setup
     $ make start
     $ make post-checkout
@@ -40,7 +41,7 @@ First start of Tuleap
 Then you need to know the IP address of the web container, with ``docker inspect tuleap-web | grep '"IPAddress"'`` and
 edit (as root) the ``/etc/hosts`` file: ``172.17.0.4    tuleap-web.tuleap-aio-dev.docker``.
 
-Now open your browser and go to https://tuleap-web.tuleap-aio-dev.docker. You should see the homepage of your Tuleap
+Now open your browser and go to https://tuleap-web.tuleap-aio-dev.docker/. You should see the homepage of your Tuleap
 instance. You can connect with ``admin`` account, the password will be given by ``make show-passwords``.
 
 And voila, your server is up and running!
@@ -74,7 +75,7 @@ Descriptions of commands
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
     lost at reboot. If you need to add/change anything and make it persistant, fork
-    and amend the `Dockerfile <https://registry.hub.docker.com/u/enalean/tuleap-aio-dev/>`_.
+    and amend the `Dockerfile <https://hub.docker.com/r/enalean/tuleap-aio-dev/>`_.
     Everything but the OS (tuleap config, database, user home) is saved in docker volumes held by ``tuleap_data``.
 
 .. _protips:

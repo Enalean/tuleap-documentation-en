@@ -1433,7 +1433,7 @@ The requirement for elasticsearch is a RHEL/CentOs 6.5 or newer server.
 
 Update of elasticsearch:
 
-* Setup yum repsitory as described on `Elasticsearch repositories page <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html#_yum>`_
+* Setup yum repsitory as described on `Elasticsearch repositories page <https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html>`_
 * Then install elasticsearch:
 
   .. sourcecode:: shell
@@ -1450,7 +1450,7 @@ Note, ensure your elasticsearch cluster uniqueness, in ``/etc/elasticsearch/elas
 
 Then you shall setup nginx for security.
 
-We use nginx for its reverse proxy capabilities, the installation package comes from `RedHat controlled Software Collections <https://www.softwarecollections.org>`_
+We use nginx for its reverse proxy capabilities, the installation package comes from `RedHat controlled Software Collections <https://www.softwarecollections.org/en/>`_
 
   .. sourcecode:: shell
 

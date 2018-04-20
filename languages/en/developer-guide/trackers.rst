@@ -12,7 +12,6 @@ a bird's-eye view of objects relationship and underlying database structure.
     :align: center
     :alt: Overview of tracker structure
     :name: Overview of tracker structure
-    :target: ../_images/tracker-structure.png
 
 
 Creating a new field

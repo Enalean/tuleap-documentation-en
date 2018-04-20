@@ -101,7 +101,7 @@ The procedure to follow is similar for each one of the concerned plugins and too
  2. Verify if changes has been made since the last Tuleap stable milestone release. If the top of the master
  branch is the tag created for the last release you can stop, else you need to continue the procedure.
 
- 3. Edit `/VERSION` file with the new version number. These repositories follow `SemVer <http://semver.org/>`_,
+ 3. Edit `/VERSION` file with the new version number. These repositories follow `SemVer <https://semver.org/>`_,
  so you need to either increment MAJOR or MINOR version and reset the PATCH version to 0.
  The rest of this procedure assumes that you are releasing the version T.U.0 of the plugin or tool::
 

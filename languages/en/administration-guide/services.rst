@@ -296,7 +296,7 @@ Wildcard DNS record
 ```````````````````
 
 As explained above each project on Tuleap has its own Web server that
-can be accessed at the URL http://projectname.your.example.com, as
+can be accessed at the URL ``https://projectname.your.example.com``, as
 well as dedicated cvs.projectname and svn.projectname domains. For this
 to work, Tuleap now provides a wildcard DNS record that accepts all
 subdomains. It it defined in tuleap.zone with these lines: (Xerox
@@ -486,5 +486,5 @@ Below we define what each of these parameters stands for.
   will cause JabbeX not to perform any operation related to shared
   groups management. 
 
-.. _`official website`: http://www.igniterealtime.org/projects/openfire/index.jsp
-.. _`official plug-in documentation`: http://www.igniterealtime.org/community/docs/DOC-1080
+.. _`official website`: https://www.igniterealtime.org/projects/openfire/index.jsp
+.. _`official plug-in documentation`: https://discourse.igniterealtime.org/t/helga-a-server-bot-plugin/77500

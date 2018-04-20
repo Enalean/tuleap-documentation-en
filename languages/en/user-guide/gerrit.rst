@@ -5,7 +5,7 @@ Code review with Gerrit
 
 Gerrit is a code review tool built on top of git. It also manage permissions for repository access.
 
-More informations about gerrit on http://code.google.com/p/gerrit/
+More informations about gerrit on https://www.gerritcodereview.com/
 
 Please note that this feature depends on LDAP authentication.
 
@@ -92,7 +92,7 @@ Default permissions
    Issue migration with default permissions
 
 Default Gerrit access rights are based permissions set on corresponding Tuleap git repository at migration.
-For details on on gerrit access rights please have a look to http://gerrit-documentation.googlecode.com/svn/Documentation/2.5.2/access-control.html
+For details on on gerrit access rights please have a look to https://gerrit-documentation.storage.googleapis.com/Documentation/2.14.5.1/access-control.html
 
 * Read:
 
@@ -460,7 +460,7 @@ On Gerrit server, as Administrator, go to Projects > List > All-projects > Acces
 * Add a new reference refs/meta/*
 
   * Grant ``Read`` and ``Push`` permission to ``Administrators``
-    `This is necessary <https://groups.google.com/d/topic/repo-discuss/yJDNZJmmAUI/discussion>`_ to allow Tuleap to update the ``project.config`` of any project
+    `This is necessary <https://groups.google.com/forum/#!topic/repo-discuss/yJDNZJmmAUI/discussion>`_ to allow Tuleap to update the ``project.config`` of any project
 
 * Look for the reference /refs/*
 

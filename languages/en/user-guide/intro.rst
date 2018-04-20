@@ -27,7 +27,7 @@ With Tuleap, you will be able to:
 
 Tuleap's high customization capability enables you to
 tailor each tool to your processes and business requirements. `More info
-on Tuleap features . <http://www.tuleap.org/>`__
+on Tuleap features . <https://www.tuleap.org/>`__
 
 We want you to experience the full power of Tuleap
 technology. So we do not distinguish between an Enterprise version and a
@@ -37,7 +37,7 @@ useful information and good practices to get the most of the Tuleap suite.
 The Tuleap team makes great work to make this guide updated to
 every new release. Do not hesitate to help us improve it, share your
 experience and tips: write to the mailing list `tuleap-devel <mailto:tuleap-devel@tuleap.net>`_ or
-leave us a message on our `chat <https://tuleap.slack.com>`_.
+leave us a message on our `chat <https://chat.tuleap.org>`_.
 
 Enjoy Tuleap capabilities and let us know how you use it!
 

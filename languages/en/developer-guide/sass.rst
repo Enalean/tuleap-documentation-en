@@ -6,7 +6,7 @@ What's Sass ?
 
 SCSS files are just extended CSS files. It means you can use variables, functions, operations and more in CSS files very easily. It's fully backward compatible with exiting CSS files (you can rename file.css to file.scss, compile file.scss and it'll just work).
 
-Please refer to the `Sass documentation <http://sass-lang.com/documentation/file.SASS_REFERENCE.html>`_ for more information.
+Please refer to the `Sass documentation <https://sass-lang.com/documentation/file.SASS_REFERENCE.html>`_ for more information.
 
 Compile SCSS files
 ``````````````````

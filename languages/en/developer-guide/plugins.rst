@@ -115,6 +115,6 @@ Bring a new service to life
 ---------------------------
 
 At this stage the plugin doesn't do anything useful but it will display "Hello World" when
-the plugin is activated and someone reach the URL https://tuleap.example.com/plugins/mercurial
+the plugin is activated and someone reach the URL ``https://tuleap.example.com/plugins/mercurial``
 
 *TBC...*

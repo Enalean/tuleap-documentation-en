@@ -57,7 +57,7 @@ You can ensure docker is working properly by using :code:`$ docker run hello-wor
 Installing Docker on Mac OS X
 """""""""""""""""""""""""""""
 
-Go to https://www.docker.com/docker-toolbox and download Docker Toolbox for Mac
+Go to https://docs.docker.com/toolbox/ and download Docker Toolbox for Mac
 OS X. It will install Docker, Docker Machine, Docker Compose, Docker Kitematic
 and VirtualBox. Once the install is done, launch "Docker Quickstart Terminal",
 then follow this documentation.

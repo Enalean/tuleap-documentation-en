@@ -426,7 +426,7 @@ Where:
     If your Subversion server is configured in secure mode, note that
     you should use ``https://tuleap.example.com/svnplugin/projectname/reponame``
     instead of
-    ``http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame`` in
+    ``https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame`` in
     all the examples given on these pages.
 
    **Tip**
@@ -483,7 +483,7 @@ command:
 
 ::
 
-    svn checkout http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame
+    svn checkout https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame
 
 Where:
 
@@ -521,8 +521,8 @@ follows:
 ::
 
     svn copy
-    http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/trunk
-    http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/tags/myproject-1.4
+    https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/trunk
+    https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/tags/myproject-1.4
     -m "Tagging the 1.4 release"
 
 Your software release is now ready. Export a clean image of the release
@@ -532,7 +532,7 @@ by typing:
 ::
 
     svn export
-    http://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/tags/myproject-1.4
+    https://svn.projectname.tuleap.example.com/svnplugin/projectname/reponame/tags/myproject-1.4
 
 Create a ZIP or tar archive with the entire ``myproject-1.4/`` directory
 

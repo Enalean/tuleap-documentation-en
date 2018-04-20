@@ -17,9 +17,7 @@ and to install the plugin you want.
 They are three plugins available in Tuleap RPM: ``tuleap-plugin-botmattermost`` ``tuleap-plugin-botmattermost-agiledashboard`` ``tuleap-plugin-botmattermost-git``.
 The **botmattermost** plugin is mandatory to use the others.
 
-You can install **botmattermost-git** for tuleap `Git`_ notification plugin and stand-up summary in :ref:`agile-dashboard` plugin.
-
-.. _Git: ../user-guide/git.html
+You can install **botmattermost-git** for Tuleap Git notification plugin and stand-up summary in :ref:`agile-dashboard` plugin.
 
 Configuration
 -------------
@@ -32,7 +30,7 @@ Click on **Add Bot** to create a new bot which can be used later by others :ref:
 
 .. NOTE:: You need a Webhook URL from Mattermost to create a new Bot. You can visit the `Mattermost documentation`_ concerning Incoming Webhook to help you.
 
-.. _Mattermost documentation: https://docs.mattermost.com/developer/webhooks-incoming.html#creating-integrations-using-incoming-webhooks
+.. _Mattermost documentation: https://docs.mattermost.com/developer/webhooks-incoming.html#simple-incoming-webhook
 
 .. image:: ../images/screenshots/bot-mattermost-plugins/createBots.png
     :alt: Bot creation

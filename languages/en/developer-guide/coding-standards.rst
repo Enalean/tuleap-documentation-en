@@ -86,15 +86,15 @@ Resources
 
 A couple of documents worth to read when you consider contributing to Tuleap:
 
-- http://www.phptherightway.com/
+- https://www.phptherightway.com/
 
 .. _+600k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
 .. _STUPID: https://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
 .. _Code Smells: https://blog.codinghorror.com/code-smells/
-.. _PSR-0: http://www.php-fig.org/psr/psr-0/
-.. _PSR-1: http://www.php-fig.org/psr/psr-1/
-.. _PSR-2: http://www.php-fig.org/psr/psr-2/
+.. _PSR-0: https://www.php-fig.org/psr/psr-0/
+.. _PSR-1: https://www.php-fig.org/psr/psr-1/
+.. _PSR-2: https://www.php-fig.org/psr/psr-2/
 
 Tuleap principles
 -----------------

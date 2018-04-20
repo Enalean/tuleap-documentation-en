@@ -8,7 +8,7 @@ The Tracker v3 SOAP API has similarities with the tracker API but is nonethelss 
 All the examples below a provided in PHP but you can use any language with a SOAP
 library.
 
-This documentation goes hand-in-hand with the WSDL specifications https://tuleap.net/soap/wsdl#op.id1167451753957
+This documentation goes hand-in-hand with the WSDL specifications
 
 Update an artifact
 ------------------
@@ -20,7 +20,7 @@ Basic usage of API
    :emphasize-lines: 13,31
 
    <?php
-    $host         = 'http://tuleap.example.com';
+    $host         = 'https://tuleap.example.com';
     $host_login   = $host .'/soap/index.php?wsdl';
 
     // SOAP options for debug

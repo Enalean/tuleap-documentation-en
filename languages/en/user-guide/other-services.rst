@@ -84,13 +84,13 @@ through web-services. At this time, only session (login/logout) and
 tracker services are available.
 
 A human-friendly description of the services is available at
-`https://tuleap.net/soap/ <http://tuleap.net/soap/>`__.
+`https://tuleap.net/soap/ <https://tuleap.net/soap/>`__.
 It is a list of services, with a description of each function, its
 input, output and documentation
 
 A more detailed description of the services is also available with the
 more formal WSDL language at
-`https://tuleap.net/soap/?wsdl <http://tuleap.net/soap/?wsdl>`__.
+`https://tuleap.net/soap/?wsdl <https://tuleap.net/soap/codendi.wsdl.php?wsdl>`__.
 The WSDL also includes the types definition.
 
 You can find some examples of SOAP usage in these two sections: :ref:`Tracker SOAP <tracker_soap>` and :ref:`Legacy tracker SOAP <tracker_v3_soap>`
@@ -106,6 +106,3 @@ interact with the Tuleap server. At this time, only session
 missing a few features of the SOAP API (e.g. it is not possible to
 attach a file, a CC address or a dependency to an artifact), and the
 mail notification is not active with the CLI.
-
-The full CLI documentation is available at
-`http://tuleap.net/documentation/cli/html/en\_US/ <http://tuleap.net/documentation/cli/html/en_US/>`__

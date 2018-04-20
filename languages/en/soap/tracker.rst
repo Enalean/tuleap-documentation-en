@@ -25,7 +25,7 @@ Basic usage of API
    <?php
 
    $artifact_id  = 42;
-   $host         = 'http://tuleap.example.com';
+   $host         = 'https://tuleap.example.com';
    $host_login   = $host .'/soap/?wsdl';
    $host_tracker = $host .'/plugins/tracker/soap/?wsdl';
    // SOAP options for debug

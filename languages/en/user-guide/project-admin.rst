@@ -39,7 +39,7 @@ Tuleap proposes three types of projects, that can be modified only by a site adm
    Tuleap projects use the Test Project type for your
    project. Having defined that type, your project will not appear any
    more in the Tuleap Software Map.
-   
+
 Project Visibility
 ``````````````````
 
@@ -569,13 +569,13 @@ Examples:
 
 -  **google #tuleap/enalean**: '$0' is 'google', '$1' is 'tuleap', '$2'
    is 'enalean'. If you define the reference pattern 'google', with its
-   link pointing at **http://www.google.com/search?hl=en&q=$1+$2**,
+   link pointing at **https://www.google.com/search?hl=en&q=$1+$2**,
    clicking on the reference 'google #tuleap/enalean' will create a
    google search for 'tuleap enalean'.
 
 -  **ds #123**: '$0' is 'ds', '$1' is '123'. If you define the reference
    pattern 'ds', with its link pointing at
-   **http://docushare/dsweb/Get/Document-$1**, clicking on the reference
+   **https://docushare/dsweb/Get/Document-$1**, clicking on the reference
    'ds #123' will download document '123' from your local DocuShare
    server.
 

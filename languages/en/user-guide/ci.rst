@@ -62,43 +62,32 @@ Let's then give a definition:
 =================================   ============================================================================================
         Word                                                    Definition
 =================================   ============================================================================================
-        **Job**                     The concept of Job can be associated with the concept of project. 
-                                    The job will trigger the build, but it's also in charge of setting the building 
-                                    environment required for executing the build (updating the source code for instance). 
-                                    It will also be able to execute the build, and then perform some tasks such as 
+        **Job**                     The concept of Job can be associated with the concept of project.
+                                    The job will trigger the build, but it's also in charge of setting the building
+                                    environment required for executing the build (updating the source code for instance).
+                                    It will also be able to execute the build, and then perform some tasks such as
                                     publishing generated documentation, publishing test results, sending notifications, etc.)
         **Build**                   Process is made of several steps executed periodically on a continuous integration server.
-        **Artifact**                Item are generated during the build, and are published  by the continuous integration tool. 
-                                    The continuous integration notion of artifact is obviously different than the notion of a 
+        **Artifact**                Item are generated during the build, and are published  by the continuous integration tool.
+                                    The continuous integration notion of artifact is obviously different than the notion of a
                                     Tuleap artifact (which is an item tracked in a tracker).
-        **Workspace**               Directory where the project will be deployed in order to perform the build, and 
+        **Workspace**               Directory where the project will be deployed in order to perform the build, and
                                     enventually publish artifacts.
-        **Status (of the build)**   Build status can take several values regarding the tool. 
-                                    Hudson has 4 status:     
-  
+        **Status (of the build)**   Build status can take several values regarding the tool.
+                                    Hudson has 4 status:
+
                                         -  Successfull : everything went fine, all tests were successfull,
-  
-                                        -  Unstable : the build was successfull but unstable (failed tests for instance),    
-  
-                                        -  Failed : the build fatally failed         
-  
+
+                                        -  Unstable : the build was successfull but unstable (failed tests for instance),
+
+                                        -  Failed : the build fatally failed
+
                                         -  Disabled : the project has never been built before, or the project is disabled.
-        **Trend (of the builds)**   Trend based on the latest 5 builds. This trend is represented by a weather report 
+        **Trend (of the builds)**   Trend based on the latest 5 builds. This trend is represented by a weather report
                                     (sun, thunder, etc.) meaning that the trend is good or not.
 =================================   ============================================================================================
 
                     Glossary of Hudson and continuous integration specific words
-
-Hudson Installation
--------------------
-
-A JVM (1.5 or higher) is required for Hudson installation. Hudson can be
-run standalone, but we will describe the installation in a container,
-such as Tomcat. Install Tomcat Download the Hudson war file (hudson.war)
-at https://hudson.dev.java.net/ Set the environment variable
-HOME\_HUDSON if you want to define the install folder of Hudson Deploy
-the war file in Tomcat manager. You're done! Hudson is installed. By
-default, you can access the interface at http://localhost:8080/hudson
 
 Hudson Configuration
 --------------------
@@ -204,8 +193,7 @@ Hudson Plug-ins
 
 Lots of plug-ins are available to extend Hudson. Among them, we can
 quote: checkstyle, CI game, Crap4J, LDAP Email, MSBuild, NAnt, NUnit,
-Selenium, etc. You will find a detailed list of all these plug-ins at
-http://hudson.gotdns.com/wiki/display/HUDSON/Plugins
+Selenium, etc.
 
 The list of available plug-ins is also available in the menu "Manage
 Hudson" -> "Manage plugins". The list is dynamicaly updated. If your
@@ -257,7 +245,7 @@ Subversion
 To configure Subversion, you need to provide the URL of the repository.
 This piece of information is available on the Tuleap
 interface, by selecting the SVN tab of your project. It looks like
-**http://tuleap.example.com/svnroot/[projectname]**
+**https://tuleap.example.com/svnroot/[projectname]**
 
 Hudson will then ask you to give credentials for Subversion, to be able
 to access the repository. You can then choose several options for
@@ -272,7 +260,7 @@ Finally, if you want to give the ability to the users to navigate in the
 source code repository through Hudson interface, you can select
 "ViewSVN" in the field "Repository browser", and then enter the folowing
 string:
-**http://tuleap.example.com/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
+**https://tuleap.example.com/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
 
 Builds Schedule
 ```````````````
@@ -383,8 +371,8 @@ Integration in Tuleap
 ---------------------
 
 As continuous integration is a good practice in software engineering,
-Tuleap integrates Hudson tool. We know how to install (see
-`Hudson Installation`_) and configure (see `Hudson Configuration`_) Hudson, and how to create and configure Hudson
+Tuleap integrates Hudson tool. We know how to install (see the official installation guide)
+and configure (see `Hudson Configuration`_) Hudson, and how to create and configure Hudson
 jobs (see `Hudson Jobs Creation and Configuration`_). Let's see now how Hudson is integrated to
 Tuleap.
 
@@ -406,7 +394,7 @@ Link Hudson job with your Tuleap project
 In order to link Hudson job with your project, select the Build tab of
 your project, and then select the 'Add a job' link. You need then to
 give the URL of the Hudson job you want to associate with your project
-(for instance: http://[my\_ci\_server]:8080/hudson/job/[my\_job]).
+(for instance: ``https://[my\_ci\_server]:8080/hudson/job/[my\_job]``).
 
 .. figure:: ../images/screenshots/sc_hudsonaddjob.png
    :align: center
