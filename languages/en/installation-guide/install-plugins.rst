@@ -13,7 +13,8 @@ Installation is done in 2 steps
 * First, you need to install the corresponding RPM package
 * Then you need to install and activate from the site admin interface
 
-When you want to install a new plugin, run:
+When you want to install a new plugin, run (where ``tuleap-plugin-awesomestuff``
+is the name of the package of the plugin you want to install):
 
 ::
 
