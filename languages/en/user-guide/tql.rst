@@ -149,7 +149,7 @@ TQL can also be used in the cross-tracker widget, in the search area.
 
    TQL on cross-tracker search
 
-Fields that are always present "behind the scenes" in artifacts such as the Submission date ("Submitted On") and semantics can be used to search on multiple trackers. The following keywords are supported:
+Semantics and some dynamic fields such as the Submission date ("Submitted On") can be used to search on multiple trackers. The following keywords are supported:
 
 String/Text semantics:
  * ``@title``: the "Title" semantic. It behaves like a string field.
@@ -175,9 +175,9 @@ When you use a semantic, all selected trackers must have it configured and all f
 For example, if you run an expert query containing ``@status``, all selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
 If **one** of the trackers does not define the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **one** of the "Status" fields is not readable by the current user, an error will be displayed.
 
-When you use a dynamic field that is "always present", for all selected trackers it must be added in the tracker and it must be readable by the current user.
+When you use a dynamic field, for all selected trackers it must be added in the tracker and it must be readable by the current user.
 
-Fields that are always present are:
+Supported dynamic fields are the following:
   * "Submitted On": The creation date of the artifact.
   * "Submitted By": The user who first created the artifact.
   * "Last Updated Date": The date of the last change to the artifact.
@@ -205,7 +205,7 @@ Currently, the query supports:
   * For @title and @description: ``string``
   * For @status: ``OPEN()`` is the only supported value
   * For @submitted_on and @last_update_date: ``string`` convertible to date, ``NOW()`` and dynamic values based on ``NOW()``. For example: ``NOW() -1m``, ``NOW() -6w``, ...
-  * For @submitted_on and @last_update_date: the empty string ``''`` cannot be used. Those "always there fields" always have a value, therefore the comparison to "empty" is not useful.
+  * For @submitted_on and @last_update_date: the empty string ``''`` cannot be used. Those fields always have a value, therefore the comparison to "empty" is not useful.
   * For @submitted_by, @last_update_by and @assigned_to: ``string`` matching a user, ``MYSELF()``
 
   Example::
