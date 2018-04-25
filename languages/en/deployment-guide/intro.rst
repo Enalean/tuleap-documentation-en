@@ -12,6 +12,31 @@ Tuleap 10.0
   Tuleap 10.0 is currently under development.
 
 
+Git mirroring: necessary update of the gitolite admin update script
+-------------------------------------------------------------------
+
+If you use the Git mirroring feature, you will need to update the gitolite admin
+update script on the mirrors so it can work with recent of gitolite.
+
+You need to replace on the mirrors the content of the file
+``/usr/local/bin/update_gladmin.sh`` by:
+
+.. sourcecode:: bash
+
+  #!/bin/sh
+
+  git=$1
+  gitname="`basename $git`"
+
+  if [ $gitname = gitolite-admin.git ]
+  then
+    cd $git
+    export GL_BINDIR=/usr/share/gitolite3
+    export GL_LIBDIR=/usr/share/gitolite3/lib
+    $HOME/.gitolite/hooks/gitolite-admin/post-update refs/heads/master
+  fi
+
+
 Improper certificate validation when communicating with Mattermost servers
 --------------------------------------------------------------------------
 
