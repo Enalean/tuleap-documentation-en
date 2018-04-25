@@ -361,7 +361,7 @@ to your context:
 .. sourcecode:: bash
 
     # Configure: Tuleap server URL
-    mytuleap="https://my.tuleap.tld"
+    mytuleap="https://tuleap.example.com"
     # Configure: id of your repository
     repo_id=1
     # Configure: paste the token generated in repository admin
@@ -379,7 +379,8 @@ to your context:
     # REST call, you shouldn't need to modify this
     rev=$(git rev-parse HEAD)
     branch="${GIT_BRANCH#*/}"
-    curl "https://$mytuleap/api/git/$repo_id/build_status" \
+    curl "$mytuleap/api/git/$repo_id/build_status" \
+        -X POST \
         -H 'Content-Type: application/json' \
         -H 'Accept: application/json' \
          --data-binary "{ \"status\": \"$status\", \"branch\": \"$branch\", \"commit_reference\": \"$rev\", \"token\": \"$token\"}"
