@@ -27,6 +27,18 @@ Build the documentation
 
 The documentation is generated in `tuleap-documentation-en/_build/html/` You can check the modifications by opening `index.html` with your web browser. You need to build the documentation in order to see your modifications.
 
+To build documentation for tuleap.org:
+
+    source venv/bin/activate
+    make SPHINXOPTS="-D html_theme=tuleap_org" html
+    deactivate
+
+To add google analytics snippet, use the `GAID` environment variable:
+
+    source venv/bin/activate
+    GAID=UA-XXXXXXXX-Y make SPHINXOPTS="-D html_theme=tuleap_org" html
+    deactivate
+
 Modify/ add to the documentation
 ------------------------
 
