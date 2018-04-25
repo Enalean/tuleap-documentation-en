@@ -679,9 +679,9 @@ Step 4: still on the mirror, you need to setup grokmirror:
     if [ $gitname = gitolite-admin.git ]
     then
       cd $git
-      export GL_BINDIR=/usr/bin
-      export GL_LIBDIR=/usr/share/gitolite3
-      $HOME/.gitolite/hooks/gitolite-admin/post-update
+      export GL_BINDIR=/usr/share/gitolite3
+      export GL_LIBDIR=/usr/share/gitolite3/lib
+      $HOME/.gitolite/hooks/gitolite-admin/post-update refs/heads/master
     fi
 
 - set it executable ``chmod +x /usr/local/bin/update_gladmin.sh``
