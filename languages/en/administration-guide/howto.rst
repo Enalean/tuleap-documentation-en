@@ -680,7 +680,7 @@ Step 4: still on the mirror, you need to setup grokmirror:
     then
       cd $git
       export GL_BINDIR=/usr/share/gitolite3
-      export GL_LIBDIR=/usr/share/gitolite3/lib
+      export GL_LIBDIR=$GL_BINDIR/lib
       $HOME/.gitolite/hooks/gitolite-admin/post-update refs/heads/master
     fi
 
