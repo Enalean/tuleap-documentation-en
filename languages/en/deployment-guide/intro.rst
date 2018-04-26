@@ -7,11 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.0
 ===========
 
-.. NOTE::
-
-  Tuleap 10.0 is currently under development.
-
-
 Git mirroring: necessary update of the gitolite admin update script
 -------------------------------------------------------------------
 
