@@ -263,3 +263,7 @@ from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
 primary_domain = 'php'
+
+def setup(app):
+    if 'GAID' in os.environ:
+        app.add_javascript("https://www.googletagmanager.com/gtag/js?id=" + os.environ.get('GAID'))
