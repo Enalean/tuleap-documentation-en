@@ -448,11 +448,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_set_header Host              $host;
             # Write Destination header for Subversion COPY and MOVE operations
-            set $fixed_destination $http_destination;
-            if ( $http_destination ~* ^https(.*)$ ) {
-                set $fixed_destination http$1;
-            }
-            proxy_set_header Destination $fixed_destination;
+            proxy_set_header Destination $http_destination;
         }
 
         location /viewvc-theme-tuleap {

@@ -108,6 +108,22 @@ like this:
     </VirtualHost>
 
 
+If you use a Distributed Tuleap setup, you will need to replace the following
+section in your nginx configuration
+
+  .. sourcecode:: nginx
+
+    set $fixed_destination $http_destination;
+    if ( $http_destination ~* ^https(.*)$ ) {
+        set $fixed_destination http$1;
+    }
+
+with
+
+  .. sourcecode:: nginx
+
+    proxy_set_header Destination $http_destination;
+
 Tuleap 9.19
 ===========
 
