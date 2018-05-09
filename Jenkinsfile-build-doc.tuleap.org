@@ -1,0 +1,23 @@
+pipeline {
+    agent {
+        label 'docker'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build and publish image') {
+            steps {
+                script {
+                    def image = docker.build('tuleap-documentation.doc.tuleap.org', '-f Dockerfile-doc.tuleap.org .')
+                    docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {
+                        image.push()
+                    }
+                }
+            }
+        }
+    }
+}
