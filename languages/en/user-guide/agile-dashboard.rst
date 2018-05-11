@@ -192,7 +192,7 @@ assignee for instance, or by the type of tracker (display only the tasks or only
 Using a Kanban
 --------------
 
-To enter a Kanban, go the Agile Dashboard service of your project. All your Kanbans are displayed on the right hand side of the screen.
+To enter a Kanban, go to the Agile Dashboard service of your project. All your Kanbans are displayed on the right hand side of the screen.
 
 .. figure:: ../images/screenshots/agiledashboard/kanban/kanban-list.png
    :align: center
@@ -210,7 +210,7 @@ If you do not have any Kanban yet, you have two choices:
 Creating your Kanban from scratch
 `````````````````````````````````
 
-To create your own Kanban, you will need create a tracker.
+To create your own Kanban, you will need to create a tracker.
 Once your tracker has been created, go to the Agile Dashboard service of your project.
 Click on the ``Add a Kanban`` button located in the header of the right hand side section.
 In the modal, enter a name for your Kanban, select your newly created tracker and validate.
@@ -244,8 +244,8 @@ To do so, you have to configure the ``card fields`` semantic in the tracker admi
 Filtered Kanban
 ```````````````
 
-Your Kanban can be filtered using the public reports of its tracker. For instance, let's imagine you want to setup a filter showing the current user
-which are the tasks he has to realize. To do so, you have to:
+Your Kanban can be filtered using the public reports of its tracker.
+For instance, let's imagine you want to setup a filter showing the tasks assigned to the current user accessing the Kanban. To do so, you have to:
 
 1. Define a public report (ex: ``assigned_to = MYSELF()``)
 2. Go back to your Kanban
