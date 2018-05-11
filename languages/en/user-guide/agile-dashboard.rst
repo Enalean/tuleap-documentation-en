@@ -188,3 +188,101 @@ assignee for instance, or by the type of tracker (display only the tasks or only
    :width: 800px
 
    Agile Dashboard: Cardwall
+
+Using a Kanban
+--------------
+
+To enter a Kanban, go the Agile Dashboard service of your project. All your Kanbans are displayed on the right hand side of the screen.
+
+.. figure:: ../images/screenshots/agiledashboard/kanban/kanban-list.png
+   :align: center
+   :alt: Kanban list
+   :name: Kanban list
+   :width: 800px
+
+   Agile Dashboard: Kanban List
+
+If you do not have any Kanban yet, you have two choices:
+
+1. Create a Kanban on your own
+2. Let Tuleap take care of it for you (``Start scrum`` button or ``Agile Dashboard Administration > Kanban > Activate Kanban``)
+
+Creating your Kanban from scratch
+`````````````````````````````````
+
+To create your own Kanban, you will need create a tracker.
+Once your tracker has been created, go to the Agile Dashboard service of your project.
+Click on the ``Add a Kanban`` button located in the header of the right hand side section.
+In the modal, enter a name for your Kanban, select your newly created tracker and validate.
+
+.. figure:: ../images/screenshots/agiledashboard/kanban/create-new-kanban.png
+   :align: center
+   :alt: Create a new kanban
+   :name: Create a new kanban
+   :width: 800px
+
+   Agile Dashboard: Kanban creation
+
+A new Kanban appears in the Kanban section. Click on ``Cardwall`` to open it.
+
+Configure the card fields
+`````````````````````````
+
+Card fields are tracker fields to be displayed in the Kanban cards (only in expanded view).
+For instance you can easily display who is the creator of the card, who are the assignees, what is the priority etc.
+
+.. figure:: ../images/screenshots/agiledashboard/kanban/kanban-card-fields.png
+   :align: center
+   :alt: Cards fields
+   :name: Cards fields
+   :width: 500px
+
+   Agile Dashboard: Card fields in Kanban
+
+To do so, you have to configure the ``card fields`` semantic in the tracker administration (``my_tracker > Administration > Manage Semantic > Card Fields``).
+
+Filtered Kanban
+```````````````
+
+Your Kanban can be filtered using the public reports of its tracker. For instance, let's imagine you want to setup a filter showing the current user
+which are the tasks he has to realize. To do so, you have to:
+
+1. Define a public report (ex: ``assigned_to = MYSELF()``)
+2. Go back to your Kanban
+3. Click on ``Edit this Kanban``
+4. Choose your report in the ``Tracker report filters`` section
+5. Save
+
+Once it is done, a filter selectbox appears in the header of the Kanban.
+
+.. figure:: ../images/screenshots/agiledashboard/kanban/filtered-kanban.png
+   :align: center
+   :alt: Filtered kanban
+   :name: Filtered kanban
+   :width: 800px
+
+   Agile Dashboard: Filtered Kanban
+
+Your Kanban will be reloaded with cards matching the query defined in the report, each time you change the filter.
+
+.. NOTE:: Filtered Kanbans are not working with the realtime feature of Tuleap.
+
+Add a Kanban to a dashboard
+```````````````````````````
+
+You can add your Kanban to one of your dashboards as a widget.
+To do it, click on the ``Add to dashboard`` button and select the target dashboard in the dropdown.
+
+.. figure:: ../images/screenshots/agiledashboard/kanban/filtered-kanban-widget.png
+   :align: center
+   :alt: Filtered kanban widget
+   :name: Filtered kanban widget
+   :width: 800px
+
+   Agile Dashboard: Kanban widget
+
+If a filter is selected when adding the widget to the dashboard, then the Kanban widget will be filtered too.
+It is particularly interesting when you want to have several views for a same Kanban.
+To edit the current filter, all you have to do is to click on he cog icon in the widget header and choose another filter.
+
+.. NOTE:: You can't add more than one Kanban widget per dashboard.
