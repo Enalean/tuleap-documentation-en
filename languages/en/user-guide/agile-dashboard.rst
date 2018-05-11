@@ -283,6 +283,6 @@ To do it, click on the ``Add to dashboard`` button and select the target dashboa
 
 If a filter is selected when adding the widget to the dashboard, then the Kanban widget will be filtered too.
 It is particularly interesting when you want to have several views for a same Kanban.
-To edit the current filter, all you have to do is to click on he cog icon in the widget header and choose another filter.
+To edit the current filter, all you have to do is to click on the cog icon in the widget header and choose another filter.
 
 .. NOTE:: You can't add more than one Kanban widget per dashboard.
