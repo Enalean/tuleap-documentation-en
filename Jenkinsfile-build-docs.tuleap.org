@@ -12,7 +12,7 @@ pipeline {
         stage('Build and publish image') {
             steps {
                 script {
-                    def image = docker.build('tuleap-documentation.doc.tuleap.org', '-f Dockerfile-doc.tuleap.org .')
+                    def image = docker.build('tuleap-documentation.docs.tuleap.org', '-f Dockerfile-docs.tuleap.org .')
                     docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {
                         image.push()
                     }
