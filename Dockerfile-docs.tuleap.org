@@ -2,6 +2,8 @@ FROM alpine:3.7 AS builder
 
 RUN apk add --no-cache git make python3 py-virtualenv
 
+ARG GAID
+
 RUN addgroup -S builder && adduser -S -G builder builder
 
 USER builder

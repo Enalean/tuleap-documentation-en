@@ -12,7 +12,10 @@ pipeline {
         stage('Build and publish image') {
             steps {
                 script {
-                    def image = docker.build('tuleap-documentation.docs.tuleap.org', '-f Dockerfile-docs.tuleap.org .')
+                    def image
+                    withCredentials([string(credentialsId: 'google-analytics-uid', variable: 'GAID')]) {
+                        image = docker.build('tuleap-documentation.docs.tuleap.org', "-f Dockerfile-docs.tuleap.org --build-arg GAID='${env.GAID}' .")
+                    }
                     docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {
                         image.push()
                     }
