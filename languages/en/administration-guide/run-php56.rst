@@ -1,7 +1,12 @@
 .. _admin_howto_php56-nginx-centos6:
 
-PHP 5.6 on Centos 6
+PHP 5.6 on CentOS 6
 -------------------
+
+.. note::
+
+    These steps are not needed if you have installed Tuleap after the version 9.14,
+    PHP 5.6 is already used.
 
 You need to have Tuleap 9.14 minimum.
 
