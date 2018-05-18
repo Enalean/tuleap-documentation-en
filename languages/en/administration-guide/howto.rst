@@ -1215,6 +1215,13 @@ Tuleap provides a way to have a permissions overrider to support very particular
 
 Once you've done this, your PermissionsOverrider object will be called for each access of a user to the platform or to a particular project.
 
+Use Subversion 1.9 from WANdisco repository
+-------------------------------------------
+
+ 1. Install WANdisco repository on your server
+ 2. Upgrade Subversion with ``yum upgrade subversion``
+ 3. Install Python 2.7 with the required dependency: ``yum install python27-python python27-MySQL-python``
+
 .. _admin_howto_add_certicate:
 
 Add a new certification authority to the CA bundle

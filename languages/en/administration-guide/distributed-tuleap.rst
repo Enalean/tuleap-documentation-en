@@ -63,7 +63,7 @@ Services
 ~~~~~~~~
   * The Reverse Proxy needs to be **Nginx 1.10** or newer
   * The database needs to be **MySQL 5.6**
-  * The SVN repository needs to be **svn/wandisco 1.8** or newer
+  * The SVN repository needs to be **svn/wandisco 1.9** or newer
   * You need **Redis 3.2** or newer
   * You need **RabbitMQ 3.3** or newer
 
