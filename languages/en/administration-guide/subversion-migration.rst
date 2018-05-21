@@ -4,9 +4,7 @@ Subversion core repositories migration
 ======================================
 
 Starting Tuleap 10, a CLI tool is available to migrate a SVN core repository into SVN multi-repository plugin within the
-same project.
-
-To do this migration, as ``root`` on your Tuleap server, you have to run the following command:
+same project. To do this migration, you have to run the following command as ``root`` on your Tuleap server:
 
 .. code-block:: bash
 
