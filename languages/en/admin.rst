@@ -23,3 +23,4 @@ Administration guide
    administration-guide/run-php56
    administration-guide/realtime
    administration-guide/bot-mattermost-plugins
+   administration-guide/subversion-migration
