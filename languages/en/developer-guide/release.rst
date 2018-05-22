@@ -78,7 +78,9 @@ must be updated, so you need to clone both repositories.
         # In French documentation repository
         $ vim languages/fr/conf.py
 
- 4. Commit your changes and publish them::
+ 4. Edit, if needed, the deployment guide to remove the mention "Under development"
+
+ 5. Commit your changes and publish them::
 
         # In English documentation repository
         $ git commit -S -a -m 'Initialize documentation for Tuleap X.Y'
@@ -138,29 +140,6 @@ Building and publishing the packages is fully automated through a Jenkins pipeli
 The only thing you need to do is to `start it <https://ci.tuleap.org/jenkins/job/RPMs/job/TuleapStable/>`_ once you're ready.
 
 You should wait for the pipeline to complete before finishing the release process.
-
-Publish the Docker image
-------------------------
-
-The `enalean/tuleap-aio image <https://hub.docker.com/r/enalean/tuleap-aio/>`_ must be updated to the newly released
-version of Tuleap.
-
-To do so:
- 1. Clone or update your local copy of the repository `docker-tuleap-aio <https://github.com/Enalean/docker-tuleap-aio>`_
- 2. Edit the Dockerfile so that the `tuleap-install` package version match the current Tuleap stable milestone version
- 3. Commit::
-
-    $ git commit -S -a -m 'Bump to Tuleap X.Y'
-
- 4. Tag::
-
-    $ git tag -s -m 'Tuleap X.Y' X.Y
-
- 5. Publish your commit and tag::
-
-    $ git push --follow-tags
-
- 6. Verify that the `Docker Hub successfully builds <https://hub.docker.com/r/enalean/tuleap-aio/builds/>`_ the new images
 
 Update Tuleap.net
 -----------------
