@@ -143,3 +143,7 @@ Once these steps are completed, you can access the Tuleap server with the web in
 
 Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Change it as soon as possible.
 
+Report issues
+-------------
+
+Install on RHEL7/CentOs7 is in beta, please report issues you might find on `request tracker <https://tuleap.net/plugins/tracker/?tracker=140>`_.
