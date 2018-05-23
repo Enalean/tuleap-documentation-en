@@ -7,6 +7,7 @@ Installation-guide
    installation-guide/intro.rst
    installation-guide/docker-image.rst
    installation-guide/full-installation.rst
+   installation-guide/install-el7.rst
    installation-guide/ansible-installation.rst
    installation-guide/install-plugins.rst
    installation-guide/update.rst
