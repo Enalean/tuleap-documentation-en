@@ -14,7 +14,7 @@ respective documentation for installation instructions:
 - `phpcs <https://github.com/squizlabs/PHP_CodeSniffer#installation>`_
 - `scss-lint <https://github.com/brigade/scss-lint/>`_
 - `nodejs <https://nodejs.org/>`_ >= v6.x
-- `npm <https://docs.npmjs.com/>`_ >= v5.8.0
+- `npm <https://docs.npmjs.com/>`_ >= v6.0
 - `composer <https://getcomposer.org/>`_
 
    .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
