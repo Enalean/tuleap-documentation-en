@@ -77,7 +77,7 @@ On RedHat this is done by:
 .. attention::
 
   Despite almost all plugins are listed when you run a yum list ``tuleap-plugin-\*`` only a limited subset is currently
-  usable. **DO NOT INSTALL OR ACTIVATE OTHER PACKAGES** or you are almost likely to shoot yourself in the feets now or
+  usable. **DO NOT INSTALL OR ACTIVATE OTHER PACKAGES** or you are almost likely to shoot yourself in the foot now or
   later when they are made available.
 
   Plugins that should work:
