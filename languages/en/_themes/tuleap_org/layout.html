@@ -22,7 +22,11 @@
   <link rel="stylesheet" href="https://www.tuleap.org/assets/css/main.css" type="text/css">
   <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46520688-1"></script>
+  {% if ga_id != '' %}
+    a{{ ga_id }}a
+    b{{ theme_ga_id }}b
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_id }}"></script>
+  {% endif %}
 
   {% if not embedded %}
     {% if use_opensearch %}
@@ -154,7 +158,29 @@
   <script src="{{ pathto('_static/js/scroll.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/js/nav.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/js/theme.js', 1) }}" charset="utf-8"></script>
-  <script src="{{ pathto('_static/js/google-analytics.js', 1) }}" charset="utf-8"></script>
+  {% if ga_id != '' %}
+    <script type="text/javascript">
+      function loadGoogleAnalytics() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{ ga_id }}');
+
+          {% if ga_content_group_index != '' and ga_content_group_name != '' %}
+              gtag('set', {'content_group{{ ga_content_group_index }}': '{{ ga_content_group_name }}'});
+          {% endif %}
+      }
+
+      (function() {
+          var accept_cookie = getCookie('accept_cookies');
+
+          if (accept_cookie === 'true') {
+              loadGoogleAnalytics();
+          }
+      })();
+      </script>
+  {% endif %}
 
   {%- block footer %} {% endblock %}
 </body>

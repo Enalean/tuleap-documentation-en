@@ -33,6 +33,12 @@ To build documentation for tuleap.org:
     make SPHINXOPTS="-D html_theme=tuleap_org" html
     deactivate
 
+To add google analytics snippet, use the `GAID` environment variable:
+
+    source venv/bin/activate
+    make SPHINXOPTS="-D html_theme=tuleap_org -D ga_id=XXXXXXXX -D ga_content_group_index=X -D ga_content_group_name=XXXX" html	
+    deactivate
+
 Modify/ add to the documentation
 ------------------------
 
@@ -46,3 +52,10 @@ License
 -------
 
 Tuleap and its documentation are licensed under GPLv2 or above.
+
+
+
+
+ga_id: UA-46520688-1
+ga_content_group_index: 4
+ga_content_group_name: docPages
