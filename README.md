@@ -33,12 +33,6 @@ To build documentation for tuleap.org:
     make SPHINXOPTS="-D html_theme=tuleap_org" html
     deactivate
 
-To add google analytics snippet, use the `GAID` environment variable:
-
-    source venv/bin/activate
-    GAID=UA-XXXXXXXX-Y make SPHINXOPTS="-D html_theme=tuleap_org" html
-    deactivate
-
 Modify/ add to the documentation
 ------------------------
 
