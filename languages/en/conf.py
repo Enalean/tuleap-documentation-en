@@ -263,13 +263,3 @@ from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
 primary_domain = 'php'
-
-ga_id = ''
-ga_content_group_index = ''
-ga_content_group_name = ''
-
-html_context = {
-    'ga_id': ga_id,
-    'ga_content_group_index': ga_content_group_index,
-    'ga_content_group_name': ga_content_group_name
-}

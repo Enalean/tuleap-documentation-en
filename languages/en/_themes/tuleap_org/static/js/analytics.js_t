@@ -1,0 +1,21 @@
+{% if theme_ga_id != '' %}
+function loadGoogleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ theme_ga_id }}');
+
+    {% if theme_ga_content_group_index != '' and theme_ga_content_group_name != '' %}
+        gtag('set', {'content_group{{ theme_ga_content_group_index }}': '{{ theme_ga_content_group_name }}'});
+    {% endif %}
+}
+
+(function() {
+    var accept_cookie = getCookie('accept_cookies');
+
+    if (accept_cookie === 'true') {
+        loadGoogleAnalytics();
+    }
+})();
+{% endif %}
