@@ -13,8 +13,13 @@ pipeline {
             steps {
                 script {
                     def image
-                    withCredentials([string(credentialsId: 'google-analytics-uid', variable: 'GAID')]) {
-                        image = docker.build('tuleap-documentation.docs.tuleap.org', "-f Dockerfile-docs.tuleap.org --build-arg GAID='${env.GAID}' .")
+                    withCredentials([string(credentialsId: 'google-analytics-uid', variable: 'GA_ID'),
+                                    string(credentialsId: 'google-analytics-content-group-index', variable: 'GA_CONTENT_GROUP_INDEX'),
+                                    string(credentialsId: 'google-analytics-content-group-name', variable: 'GA_CONTENT_GROUP_NAME')]) {
+                        image = docker.build(
+                            'tuleap-documentation.docs.tuleap.org',
+                            "-f Dockerfile-docs.tuleap.org --build-arg GA_ID='${env.GA_ID}' -D html_theme_options.ga_content_group_index='${env.GA_CONTENT_GROUP_INDEX}' -D html_theme_options.ga_content_group_name='${env.GA_CONTENT_GROUP_NAME}' ."
+                        )
                     }
                     docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {
                         image.push()

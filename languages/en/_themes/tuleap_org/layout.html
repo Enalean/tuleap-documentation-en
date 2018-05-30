@@ -147,8 +147,15 @@
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
   {%- endfor %}
 
-  <script src="https://www.tuleap.org/assets/js/main.js" charset="utf-8"></script>
+  <script src="{{ pathto('_static/js/cookie-manager.js', 1) }}" charset="utf-8"></script>
+  <script src="{{ pathto('_static/js/accept-cookies.js', 1) }}" charset="utf-8"></script>
+  <script src="{{ pathto('_static/js/scroll.js', 1) }}" charset="utf-8"></script>
+  <script src="{{ pathto('_static/js/nav.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/js/theme.js', 1) }}" charset="utf-8"></script>
+  {% if theme_ga_id != '' %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_ga_id }}"></script>
+  <script src="{{ pathto('_static/js/analytics.js', 1) }}" charset="utf-8"></script>
+  {% endif %}
 
   {%- block footer %} {% endblock %}
 </body>
