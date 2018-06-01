@@ -18,7 +18,7 @@ pipeline {
                                     string(credentialsId: 'google-analytics-content-group-name', variable: 'GA_CONTENT_GROUP_NAME')]) {
                         image = docker.build(
                             'tuleap-documentation.docs.tuleap.org',
-                            "-f Dockerfile-docs.tuleap.org --build-arg GA_ID='${env.GA_ID}' --build-arg GA_CONTENT_GROUP_INDEX='${env.GA_CONTENT_GROUP_INDEX}' --build-arg GA_CONTENT_GROUP_NAME='${env.GA_CONTENT_GROUP_NAME}' ."
+                            "-f docs.tuleap.org/Dockerfile --build-arg GA_ID='${env.GA_ID}' --build-arg GA_CONTENT_GROUP_INDEX='${env.GA_CONTENT_GROUP_INDEX}' --build-arg GA_CONTENT_GROUP_NAME='${env.GA_CONTENT_GROUP_NAME}' ."
                         )
                     }
                     docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {

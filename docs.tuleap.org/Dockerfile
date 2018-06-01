@@ -21,4 +21,5 @@ RUN tmp_venv="$(mktemp -d)" && virtualenv "$tmp_venv" && \
 
 FROM nginx:alpine
 
+COPY docs.tuleap.org/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /home/builder/tuleap-documentation/_build/html/en/ /usr/share/nginx/html
