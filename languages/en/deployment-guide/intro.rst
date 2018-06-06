@@ -12,6 +12,22 @@ Tuleap 10.2
   Tuleap 10.2 is currently under development.
 
 
+Changes in Tuleap internal API to communicate with the database impacting external plugins
+------------------------------------------------------------------------------------------
+
+These changes only impacts users maintaining plugins outside the Tuleap codebase.
+If you are only using plugins from the official Tuleap repository you are not
+concerned and you can safely ignore this.
+
+If you maintain a plugin, it is highly recommended to do the following changes:
+ * any direct usage of ``\DataAccess`` must be replaced by ``\Tuleap\DB\Compat\Legacy2018\LegacyDataAccessInterface``
+ * any direct usage of ``\DataAccessResult`` must be replaced by ``\Tuleap\DB\Compat\Legacy2018\LegacyDataAccessResultInterface``
+
+If possible, your code should be updated to work directly the API proposed under
+the ``\Tuleap\DB\`` namespace.
+
+Theses changes will become mandatory in upcoming versions of Tuleap.
+
 Tuleap 10.0
 ===========
 
