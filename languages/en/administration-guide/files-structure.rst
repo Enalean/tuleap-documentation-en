@@ -152,17 +152,6 @@ text files to exploit them in the next stages.
 
 Files found in this directory are
 
--  **aliases:** all Tuleap users have an email alias in the form of
-   login login\_name@users.your.tuleap.domain. By creating such aliases
-   one can send an email to a Tuleap user simply by using it's login
-   name. This is very convenient if the project admin wants to send
-   e-mail to certain developers of the team through CVS notification for
-   instance. By using the login name Tuleap users also make sure that
-   if the email address of a user changes it will be automatically
-   updated.
--  **subversion\_dir\_dump** ready to use Apache config files with a
-   list of all the per project subversion repositories. This will be
-   copied as is in the ``/etc/httpd/conf.d/codendi_svnroot.conf`` file.
 -  **db\_top\_groups\_calc\_output:** contains different sorts of statistics
    about the Tuleap hosted projects (project name, old project rank in
    terms of total number of downloads, old project rank in terms of
@@ -176,13 +165,6 @@ Files found in this directory are
 -  **list\_dump**: dump of all the mailing lists created by the Tuleap
    projects along with the email of the administrator and the default
    admin password for the list.
--  **ssh\_dump:** dump of the SSH shared keys entered by the users.
-   Shared keys will be automatically installed in the user home
-   directory to let her login through ssh without having to type her
-   password.
--  **user\_dump:** a user info dump with user id, status (Active,
-   Suspended,...), default shell, MD5 encrypted password, and the real
-   name.
 
 User directories
 ----------------
