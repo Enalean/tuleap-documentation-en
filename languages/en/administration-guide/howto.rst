@@ -1220,7 +1220,7 @@ Use Subversion 1.9 from WANdisco repository
 
  1. Install WANdisco repository on your server
  2. Upgrade Subversion with ``yum upgrade subversion``
- 3. Install Python 2.7 with the required dependency: ``yum install python27-python python27-MySQL-python``
+ 3. Install Python 2.7 with the required dependency: ``yum install python27-python python27-subversion-python python27-MySQL-python``
 
 .. _admin_howto_add_certicate:
 
