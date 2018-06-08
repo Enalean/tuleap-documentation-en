@@ -71,7 +71,7 @@ On RedHat this is done by:
       tuleap-theme-flamingparrot \
       tuleap-plugin-git \
       tuleap-plugin-svn \
-      tuleap-plugin-hudson\* \
+      tuleap-plugin-hudson\*
 
 
 .. attention::
@@ -100,6 +100,7 @@ Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` cont
 for mysqld server
 
 ::
+
     # Activate mysql on boot
     systemctl enable rh-mysql57-mysqld
 
