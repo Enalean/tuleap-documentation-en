@@ -66,7 +66,7 @@ On RedHat this is done by:
     yum install -y \
       rh-mysql57-mysql-server \
       tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackersv5 \
+      tuleap-plugin-graphontrackers \
       tuleap-theme-burningparrot \
       tuleap-theme-flamingparrot \
       tuleap-plugin-git \
@@ -85,7 +85,7 @@ On RedHat this is done by:
   * tuleap-plugin-tracker
   * tuleap-plugin-agiledashboard
   * tuleap-plugin-cardwall
-  * tuleap-plugin-graphontrackersv5
+  * tuleap-plugin-graphontrackers
   * tuleap-plugin-testmanagement
   * tuleap-plugin-git
   * tuleap-plugin-svn
