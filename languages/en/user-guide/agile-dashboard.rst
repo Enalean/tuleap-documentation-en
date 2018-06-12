@@ -106,7 +106,7 @@ Plan releases and sprints
 
 Tuleap Agile Dashboard lets you plan easily your releases.
 
-.. figure:: ../images/screenshots/sc_plan_releases.png
+.. figure:: ../images/screenshots/agiledashboard/sc_plan_releases.png
    :align: center
    :alt: Plan a release
    :name: Plan a release
@@ -118,22 +118,15 @@ From this view, you can drag'n'drop elements from top backlog to one of the plan
 
 Plan a sprint is as simple as the release plan. Simply go to a release planning to fill your sprint or create a new sprint.
 
-Moreover, a red indicator is automatically displayed when the capacity exceeds of the team capacity for the sprint, or release (if you have one).
+Moreover, the badge color will reflects the initial effort compared to the team capacity for the sprint, or release (if you have one).
+
+You also can notice that some card can have background colors to provide a quick information to the team.
+Background colors are defined by the tracker administrator (:ref:`semantic_color`)
 
 
 Populate backlog
 ````````````````
 A product owner can populate a backlog either going directly to the "Top Backlog planning" or to the release or sprint content.
-
-
-.. figure:: ../images/screenshots/sc_ad_backlog.png
-   :align: center
-   :alt: Populate the Backlog
-   :name: Populate the Backlog
-   :width: 800px
-
-   Agile Dashboard: Populate the backlog
-
 
 The agile dashboard also provides the possibility to prioritize the backlog, by drag'n'dropping elements from top to bottom.
 
@@ -181,7 +174,7 @@ select box on the right.
 Finally, it offers the possibility to filter the cards thanks to the search at the top right of the cardwall. You will be able to filter by
 assignee for instance, or by the type of tracker (display only the tasks or only the user stories).
 
-.. figure:: ../images/screenshots/sc_ad_cardwall.png
+.. figure:: ../images/screenshots/agiledashboard/sc_ad_cardwall.png
    :align: center
    :alt: Cardwall
    :name: Cardwall
@@ -230,6 +223,7 @@ Configure the card fields
 
 Card fields are tracker fields to be displayed in the Kanban cards (only in expanded view).
 For instance you can easily display who is the creator of the card, who are the assignees, what is the priority etc.
+You can also define the background color of card.
 
 .. figure:: ../images/screenshots/agiledashboard/kanban/kanban-card-fields.png
    :align: center
@@ -239,7 +233,7 @@ For instance you can easily display who is the creator of the card, who are the 
 
    Agile Dashboard: Card fields in Kanban
 
-To do so, you have to configure the ``card fields`` semantic in the tracker administration (``my_tracker > Administration > Manage Semantic > Card Fields``).
+To do so, you have to configure the :ref:`semantic_color` in the tracker administration (``my_tracker > Administration > Manage Semantic > Card Semantic``).
 
 Filtered Kanban
 ```````````````

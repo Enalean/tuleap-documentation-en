@@ -1983,6 +1983,18 @@ when you hover an artifact reference with your mouse.
 
 You can select all the fields you want to compose the artifact tooltip.
 
+.. _semantic_color:
+
+Cards semantic
+``````````````
+The fields semantic allows you to add the fields who will be visible in cardwall.
+
+The background color semantic allows you to choose the field who will be used to determine the
+background color of a card. Only selectbox and radiobutton bound to static values can be used to determine background color.
+The color must come from the new color picker.
+
+The preview of card will display you examples of what your cards will be displayed in cardwall.
+
 Initial Effort (Agile Dashboard)
 ````````````````````````````````
 
