@@ -326,7 +326,7 @@ The integration is a two step process:
 
 * first you need to configure your repository to trigger builds on Jenkins whenever
   there is a commit in your repository
-* then, in the jenkins job definition, you must add an extra step to feed tuleap
+* then, in the Jenkins job definition, you must add an extra step to feed tuleap
   back with job status (success or failure).
 
 Configure Tuleap to Jenkins trigger
@@ -336,9 +336,11 @@ You need to configure Jenkins webhook as described in the  :ref:`git documentati
 
 .. note::
 
-    The continuous integration status is associated with the branch at the origin
-    of the pull request so if you are using PR across repositories, you must
-    ensure that the CI job is properly configured in source repo.
+    If you are using pullrequests across repositories, you must
+    ensure that the CI job is properly configured to use the target repository.
+
+
+.. _pullrequest-with-jenkins-feedback:
 
 Configure Jenkins to Tuleap feedback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -360,27 +362,27 @@ to your context:
 
 .. sourcecode:: bash
 
+    #!/bin/bash
     # Configure: Tuleap server URL
     mytuleap="https://tuleap.example.com"
-    # Configure: id of your repository
-    repo_id=1
+    # Configure: ID of your target repository
+    target_repo_id=1
     # Configure: paste the token generated in repository admin
     token="356c8877fee88a6951a6081026702e2b3420c5cbccfa85195246873861023f68"
 
     # Configure: add your own tests instead of 'make all'
-    # following is the test to send either "Success" (S) or "Failure" (F) to
+    # following is the test to send either "success" or "failure" to
     # Tuleap server
     if make all; then
-        status="S"
+        status="success"
     else
-        status="F"
+        status="failure"
     fi
 
     # REST call, you shouldn't need to modify this
     rev=$(git rev-parse HEAD)
-    branch="${GIT_BRANCH#*/}"
-    curl "$mytuleap/api/git/$repo_id/build_status" \
+    curl "$mytuleap/api/git/$target_repo_id/statuses/$rev" \
         -X POST \
         -H 'Content-Type: application/json' \
         -H 'Accept: application/json' \
-         --data-binary "{ \"status\": \"$status\", \"branch\": \"$branch\", \"commit_reference\": \"$rev\", \"token\": \"$token\"}"
+         --data-binary "{ \"state\": \"$status\", \"token\": \"$token\"}"

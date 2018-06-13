@@ -12,6 +12,19 @@ Tuleap 10.2
   Tuleap 10.2 is currently under development.
 
 
+Continuous integration jobs should use pullrequest target repository
+--------------------------------------------------------------------
+
+Until now it was necessary to use the source repository when using continuous
+integration with pull requests. It is now recommended to update your jobs to use
+the target repository to retrieve data.
+The existing REST route to publish the build status has also been deprecated,
+in favor of a new route.
+
+More information on how to configure your CI jobs and updated script to publish
+the feedback of your jobs to Tuleap can be found here: :ref:`pullrequest-with-jenkins-feedback`.
+
+
 Changes in Tuleap internal API to communicate with the database impacting external plugins
 ------------------------------------------------------------------------------------------
 
