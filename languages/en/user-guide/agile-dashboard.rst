@@ -182,6 +182,8 @@ assignee for instance, or by the type of tracker (display only the tasks or only
 
    Agile Dashboard: Cardwall
 
+.. _kanban:
+
 Using a Kanban
 --------------
 

@@ -1911,6 +1911,8 @@ This semantic information is used in the edition page of an existing
 artifact, next to the ID. It is also displayed in **My artifacts**
 widget.
 
+.. _status-semantic:
+
 Status
 ``````
 
@@ -2023,6 +2025,16 @@ in cardwall.
    :name: Card preview
 
    Card preview
+
+.. attention::
+
+  While you can select the same field as :ref:`Status semantic <status-semantic>`
+  for the background color, you should know that this case has a limitation in
+  :ref:`Kanban <kanban>`. When drag and dropping cards between columns in Kanban
+  (which affects the Status field's value), the Background color will not be
+  updated on-the-fly.
+  To see the updated background color for the card, you should either change
+  status via the artifact modal or refresh the page.
 
 Initial Effort (Agile Dashboard)
 ````````````````````````````````
