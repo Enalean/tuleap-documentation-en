@@ -1728,12 +1728,16 @@ creation :
    SOAP API for instance. It must not contain any special characters.
    Only lower case letters and "\_" are authorized.
 
--  **Add a decorator**: List values can be embellished with a decorator.
-   A decorator is a colored square. You can choose the color for each
-   value in a large palette of colors. (see `Tracker Admin Field Edition`_). Decorators can be used
-   to get a quick visual indicator feedback for the user. For instance,
-   the values for the priority of a bug can be given a color with the
-   meaning "the darker the more important".
+-  **Add a decorator**: List values can be embellished with a decorator. A
+   decorator is a colored square. There are two available color palettes: one
+   that uses "named" colors that go well with Tuleap colors. The other lets you
+   choose from a larger palette of colors (see `Tracker Admin Field Edition`_).
+   Please note that the "old" color palette is deprecated and may be removed in
+   future releases.
+   You can choose a color for each value of the list. Decorators can be used to
+   get a quick visual indicator feedback for the user. For instance, the values
+   for the priority of a bug can be given a color with the meaning "the darker
+   the more important".
 
 -  **Add values** You can easily add new values to the list by selecting
    the "add new values" link below existing values.
@@ -1766,6 +1770,13 @@ creation :
    :name: Tracker Admin Field Edition
 
    Tracker Admin Field Edition
+
+.. figure:: ../images/screenshots/tracker/new_color_palette.png
+   :align: center
+   :alt: New color palette
+   :name: New color palette
+
+   New color palette with "named" colors
 
 Delete the field of a tracker
 `````````````````````````````
@@ -1987,13 +1998,22 @@ You can select all the fields you want to compose the artifact tooltip.
 
 Cards semantic
 ``````````````
-The fields semantic allows you to add the fields who will be visible in cardwall.
+The cards semantic allows you to add the fields which will be visible in cardwall, Agile dashboard Planning and Kanban.
 
-The background color semantic allows you to choose the field who will be used to determine the
-background color of a card. Only selectbox and radiobutton bound to static values can be used to determine background color.
-The color must come from the new color picker.
+The background color semantic allows you to choose the field which will be used to determine the
+background color of a card. Only selectbox and radio buttons bound to static values can be used to determine background color.
+It also can only be used when each value has a "named" color. In addition to the background color, a special pattern is associated to the selected color. It will be shown for users who have enabled the Accessibility mode user preference (see :ref:`accessibility_mode`).
+Patterns have been defined only for "named" colors, therefore there is a limitation for the fields that can be used as background color. All their values must have either "transparent" color or a "named" color. (see :ref:`Tracker Admin Field Edition`)
 
-The preview of card will display you examples of what your cards will be displayed in cardwall.
+The card preview will show you examples of how your cards will be displayed
+in cardwall.
+
+  .. figure:: ../images/screenshots/tracker/card_preview.png
+      :align: center
+      :alt: Card preview
+      :name: Card preview
+
+      Card preview
 
 Initial Effort (Agile Dashboard)
 ````````````````````````````````
