@@ -114,14 +114,14 @@ Tuleap Agile Dashboard lets you plan easily your releases.
 
    Agile Dashboard: Plan your releases
 
-From this view, you can drag'n'drop elements from top backlog to one of the planned releases on the right, or add a new releases.
+From this view, you can drag'n'drop elements from top backlog to one of the planned releases on the right, or add new releases.
 
-Plan a sprint is as simple as the release plan. Simply go to a release planning to fill your sprint or create a new sprint.
+Planning a sprint is as simple as planning a release. Simply go to a release planning to fill your sprint or create a new sprint.
 
-Moreover, the badge color will reflects the initial effort compared to the team capacity for the sprint, or release (if you have one).
+Moreover, the badge color will reflect the total initial effort of cards compared to the team capacity for the sprint, or release (if you have one).
 
-You also can notice that some card can have background colors to provide a quick information to the team.
-Background colors are defined by the tracker administrator (:ref:`semantic_color`)
+You also can notice that some cards can have a background colors to provide a quick information to the team.
+Background colors are defined by the tracker administrator (:ref:`semantic_color`).
 
 
 Populate backlog
@@ -132,7 +132,7 @@ The agile dashboard also provides the possibility to prioritize the backlog, by 
 
 Monitor project progress
 ````````````````````````
-By any moment of the sprint, the development team can monitor the sprint or release progress with overview tab.
+At any moment of the sprint, the development team can monitor the sprint or release progress with overview tab.
 
 With the burnup and burndown view, you can see how your on going work is progressing.
 
@@ -223,7 +223,7 @@ Configure the card fields
 
 Card fields are tracker fields to be displayed in the Kanban cards (only in expanded view).
 For instance you can easily display who is the creator of the card, who are the assignees, what is the priority etc.
-You can also define the background color of card.
+You can also define the card's background color.
 
 .. figure:: ../images/screenshots/agiledashboard/kanban/kanban-card-fields.png
    :align: center
