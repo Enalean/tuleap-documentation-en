@@ -1713,6 +1713,7 @@ responsabilities:
 
    Select box bound to a list of user groups
 
+.. _tracker-admin-field-edition:
 
 Edit the field of a tracker
 ```````````````````````````
@@ -1998,22 +1999,30 @@ You can select all the fields you want to compose the artifact tooltip.
 
 Cards semantic
 ``````````````
-The cards semantic allows you to add the fields which will be visible in cardwall, Agile dashboard Planning and Kanban.
+The cards semantic allows you to add the fields which will be visible in
+cardwall, Agile dashboard Planning and Kanban.
 
-The background color semantic allows you to choose the field which will be used to determine the
-background color of a card. Only selectbox and radio buttons bound to static values can be used to determine background color.
-It also can only be used when each value has a "named" color. In addition to the background color, a special pattern is associated to the selected color. It will be shown for users who have enabled the Accessibility mode user preference (see :ref:`accessibility_mode`).
-Patterns have been defined only for "named" colors, therefore there is a limitation for the fields that can be used as background color. All their values must have either "transparent" color or a "named" color. (see :ref:`Tracker Admin Field Edition`)
+The background color semantic allows you to choose the field which will be used
+to determine the background color of a card. Only selectbox and radio buttons
+bound to static values can be used to determine background color.
+It also can only be used when each value has a "named" color. In addition to
+the background color, a special pattern is associated to the selected color.
+It will be shown for users who have enabled the Accessibility mode user
+preference (see :ref:`account-maintenance`).
+Patterns have been defined only for "named" colors but not for all possible
+colors. Therefore there is a limitation for the fields that can be used as
+background color. All their values must have either "transparent" color or a
+"named" color. (see :ref:`tracker-admin-field-edition`)
 
 The card preview will show you examples of how your cards will be displayed
 in cardwall.
 
-  .. figure:: ../images/screenshots/tracker/card_preview.png
-      :align: center
-      :alt: Card preview
-      :name: Card preview
+.. figure:: ../images/screenshots/tracker/card_preview.png
+   :align: center
+   :alt: Card preview
+   :name: Card preview
 
-      Card preview
+   Card preview
 
 Initial Effort (Agile Dashboard)
 ````````````````````````````````

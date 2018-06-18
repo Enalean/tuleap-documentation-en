@@ -206,5 +206,24 @@ are some of the preferences you can define:
    value before importing. They should be the same format as defined in
    your preferences.
 
+-  **Accessibility**: Enabling this option will show special patterns on cards
+   that have a background color (see :ref:`semantic_color`). Cards in Agile
+   dashboard and Cardwall trackers will display the accessibility pattern.
+   This helps distinguish between colors.
+
+    .. figure:: ../images/screenshots/citizen/accessibility_mode_user_preference.png
+        :align: center
+        :alt: Accessibility mode option
+        :name: Accessibility mode option
+
+        Accessibility mode option
+
+    .. figure:: ../images/screenshots/citizen/accessibility_pattern.png
+        :align: center
+        :alt: Accessibility pattern on cards
+        :name: Accessibility pattern on cards
+
+        Accessibility pattern on cards
+
 -  **Activate the Lab mode**: give access to features in preview. This is for advanced users who
     know what they are doing.
