@@ -94,6 +94,13 @@ This will queue a System Event that will do the heavy work, check the System Eve
 
 It's recommended to purge the databases (see previous section) prior to migrate to central database.
 
+Activate the Math extension
+---------------------------
+
+The `Mediawiki Math extension <https://www.mediawiki.org/wiki/Extension:Math>`_
+can be activated on your instance by installing the package ``mediawiki-math-tuleap``.
+
+
 Upgrade to Mediawiki 1.23
 -------------------------
 
