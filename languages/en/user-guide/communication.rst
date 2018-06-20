@@ -110,10 +110,10 @@ does not support the archiving of attachments.
 
 Global Preferences
 ``````````````````
-Setting a membersip maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting a membership maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tuleap has patched Mailman so that the system forge adminstrators can set the
+Tuleap has patched Mailman so that the system forge administrators can set the
 maximum number of users per mailing list. This feature is disabled by default.
 To enable it you need console access to the Tuleap machine.
 ::
