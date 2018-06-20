@@ -96,8 +96,8 @@ On RedHat this is done by:
 
 - **Configure the database**
 
-Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
-for mysqld server
+Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
+in section [mysqld]
 
 ::
 
