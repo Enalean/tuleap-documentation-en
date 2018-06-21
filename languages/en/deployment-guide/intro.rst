@@ -41,6 +41,16 @@ the ``\Tuleap\DB\`` namespace.
 
 Theses changes will become mandatory in upcoming versions of Tuleap.
 
+
+Deprecation of statsd for the instrumentation
+---------------------------------------------
+
+Tuleap 10.2 is the last version supporting statsd to publish instrumentation
+data. Tuleap 10.3 will come with a native support of Prometheus which will be
+the only supported way of collecting and processing instrumentation data in
+Tuleap.
+
+
 Tuleap 10.0
 ===========
 
