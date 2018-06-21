@@ -7,11 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.2
 ===========
 
-.. NOTE::
-
-  Tuleap 10.2 is currently under development.
-
-
 Continuous integration jobs should use pullrequest target repository
 --------------------------------------------------------------------
 
