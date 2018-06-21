@@ -94,6 +94,8 @@ This will queue a System Event that will do the heavy work, check the System Eve
 
 It's recommended to purge the databases (see previous section) prior to migrate to central database.
 
+.. _mediawiki_math_extension_activate:
+
 Activate the Math extension
 ---------------------------
 

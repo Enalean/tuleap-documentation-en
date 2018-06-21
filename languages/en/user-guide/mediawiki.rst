@@ -103,8 +103,12 @@ Tuleap currently integrates the following Mediawiki extensions:
 * `SyntaxHighlight_GeSHi <https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi>`_ : allows for source code syntax highlighting throught the ``<syntaxhighlight>`` tag
   and the `GeSHi syntax highlighting <http://qbnz.com/highlighter/>`_.
 
-
 * `WikiEditor <https://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
+
+* `Math <https://www.mediawiki.org/wiki/Extension:Math>`_: provides support for rendering mathematical formulae.
+  You can find `usage examples on Wikipedia <https://en.wikipedia.org/wiki/Help:Displaying_a_formula>`_.
+  **This extension might not be enabled on your Tuleap instance,**
+  contact your Tuleap administrator to enable it (see :ref:`activate the Math extensio <mediawiki_math_extension_activate>`).
 
 Tuleap Specific extension
 `````````````````````````
