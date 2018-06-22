@@ -1,8 +1,53 @@
-ForgeUpgrade
-------------
+Database
+========
 
-Database upgrading
-``````````````````
+Secure DB against SQL injections
+--------------------------------
+
+All code related to database MUST rely on prepared statements to pass parameters
+to a SQL query.
+
+Example of DataAccessObject:
+
+  .. code-block:: php
+
+    namespace Tuleap\Git;
+
+    use Tuleap\DB\DataAccessObject;
+    use ParagonIE\EasyDB\EasyStatement;
+
+    class RepositoryDao extends DataAccessObject
+    {
+        public function searchByName($project_id, $name)
+        {
+            $sql = 'SELECT *
+                    FROM plugin_git_repositories
+                    WHERE project_id = ? AND name = ?';
+
+            return $this->getDB()->run($sql, $project_id, $name);
+        }
+
+        public function searchByProjectIDs(array $project_ids)
+        {
+            $project_ids_in_condition = EasyStatement::open()->in('?*', $project_ids);
+
+            $sql = 'SELECT *
+                    FROM plugin_git_repositories
+                    WHERE project_id IN ($project_ids_in_condition)';
+
+            return $this->getDB()->safeQuery($sql, $project_ids_in_condition->values());
+        }
+    }
+
+.. note::
+
+    You might find existing code using the ``\DataAccessObject`` class or ``db_*()`` functions,
+    in that case you will need to use the dedicated escaping methods (``\DataAccessObject::quoteSmart``,
+    ``\DataAccessObject::escapeInt``, ``db_es`` and ``db_ei``). The usage of these deprecated
+    interfaces should be avoided.
+
+Database structure change with ForgeUpgrade
+-------------------------------------------
 
 Each version of Tuleap is likely to differ from the next one on many levels including in it's database structure. To manage this, ForgeUpgrade? has inbuilt internal functionality akin to that of commonly used tools such as dbdeploy or MIGRATEdb. Whereas the latter use sql and xml scripts to describe each database change, ForgeUpgrade? uses php scripts.
 
@@ -26,7 +71,7 @@ Where:
 
 The "b" is not symbolic of anything and must always be the first letter in the class name.
 
-sample script
+Sample script
 """""""""""""
 
    .. code-block:: php

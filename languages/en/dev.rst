@@ -30,17 +30,9 @@ Development 101, what you need to know
 .. toctree::
    :maxdepth: 1
 
-   developer-guide/dir-structure
-   developer-guide/autoload
-   developer-guide/sass
-   developer-guide/tests
-   developer-guide/forgeupgrade
-   developer-guide/debug
-   developer-guide/i18n
+   developer-guide/front-end
+   developer-guide/back-end
    developer-guide/integrators
-   developer-guide/events
-   developer-guide/widgets
-   developer-guide/plugins
 
 Advanced topics
 
@@ -50,7 +42,6 @@ Advanced topics
    developer-guide/release
    developer-guide/trang
    developer-guide/ldap
-   developer-guide/angular
    developer-guide/realtime
    developer-guide/trackers
    developer-guide/howto

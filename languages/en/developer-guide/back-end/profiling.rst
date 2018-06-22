@@ -1,21 +1,8 @@
-Debug & profiling
------------------
+Profiling with XDebug
+---------------------
 
-You need to collect as much informations about errors and stack traces as possible:
 
-    .. code-block:: bash
-
-        $> yum install php-pecl-xdebug && service httpd restart
-
-Go at the end of the ``/etc/httpd/conf.d/php.conf`` file and modify the latest lines to match:
-
-    .. code-block:: apache
-
-        php_flag display_errors on
-        php_flag html_errors on
-        php_value error_reporting "6143"
-
-Edit ``/etc/php.d/xdebug.ini`` and add those lines:
+Edit ``/etc/opt/rh-php56/php.d/xdebug.ini`` and add those lines:
 
     .. code-block:: properties
 
@@ -26,7 +13,7 @@ Edit ``/etc/php.d/xdebug.ini`` and add those lines:
 
         xdebug.var_display_max_depth=3
         xdebug.profiler_enable_trigger=1
-        xdebug.profiler_output_dir="/mnt/manuel/workspace/cachegrind"
+        xdebug.profiler_output_dir="/tmp/workspace/cachegrind"
         xdebug.profiler_output_name="cachegrind.out.%s.%r"
 
 How to use it:

@@ -9,8 +9,9 @@ As Tuleap is mainly written in PHP, we use the PSR standards:
 * PSR-0_
 * PSR-1_
 * PSR-2_
+* PSR-4_
 
-Rule of thumb: *All new classes MUST respect PSR-2*
+Rule of thumb: *All new classes MUST respect PSR-4*
 
 Internal conventions
 ~~~~~~~~~~~~~~~~~~~~
@@ -95,207 +96,31 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _PSR-0: https://www.php-fig.org/psr/psr-0/
 .. _PSR-1: https://www.php-fig.org/psr/psr-1/
 .. _PSR-2: https://www.php-fig.org/psr/psr-2/
+.. _PSR-4: https://www.php-fig.org/psr/psr-2/
 
 Tuleap principles
 -----------------
 
-Output something / templating system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As of June 2018, the general guidelines are:
+- Autoloader must be done with composer
+- Plugins should not expose a `www` directory anymore (exception for images)
+- New end points must be exposed via `FrontRouter`
+- Mostly static pages that are rendered server side using mustache templating (with some vanilia JS for simple interactions).
+- Rich, dynamic, pages that are rendered client side using Vuejs.
+- Database code should use `EasyDB`
+- PHP tests should be use `PHPUnit`
 
-All new code must output content based on `Mustache <https://mustache.github.io/>`_ templates. The code is typically organized in 3 files:
+Internationalization
+~~~~~~~~~~~~~~~~~~~~
 
-- The template
-- The presenter
-- The calling code (in a Controller for instance)
+Because Tuleap is used by a large community of users, it is internationalized. For now, available
+languages are:
 
-Example of template:
+- English
+- French
 
-  .. code-block:: html
+Thus, there shouldn't be any untranslated words or sentences of natural language in source code. This applies to any
+strings displayed to end users (web, emails). Logs or system messages are in english.
 
-    <h1>Hello</h1>
-
-    <p>Welcome to {{ my_title }}</p>
-    <!-- For readability, please note :                  -->
-    <!--   * the spaces between {{, variable name and }} -->
-    <!--   * the use of snake_case for variables         -->
-
-Example of Presenter
-
-  .. code-block:: php
-
-    class Presenter
-    {
-        /** @var string */
-        public $my_title;
-
-        public function __construct()
-        {
-            $this->my_title = "My title";
-        }
-    }
-
-Example of calling code:
-
-  .. code-block:: php
-
-    $renderer = TemplateRendererFactory::build()->getRenderer('/path/to/template/directory');
-
-    // Output content directly (to the browser for instance)
-    $renderer->renderToPage('template_name', new Presenter());
-
-    // Return the content for futur reuse
-    $string = $renderer->renderToString('template_name', new Presenter());
-
-.. note::
-
-    For existing code, it's acceptable to output content with "echo" to keep consistency.
-
-
-Escaping
-~~~~~~~~
-
-You should rely on Mustache ``{{ }}`` notation to benefit from automatic escaping.
-
-If you need to put light formatting in you localised string, then you should escape beforehand and use ``{{{ }}}`` notation. As it produces a code that is less auditable (reviewer has to manually check if injections are not possible), the convention is to prefix the variable with ``purified_`` and manually purify the variable in the presenter.
-
-  .. code-block:: php
-
-    class Presenter
-    {
-        public $purified_description;
-
-        public function __construct()
-        {
-            $this->purified_description = Codendi_HTMLPurifier::instance()->purify(
-                $GLOBALS['Language']->getText('key1', 'key2', 'https://example.com'),
-                CODENDI_PURIFIER_LIGHT
-            );
-        }
-    }
-
-    // .tab file:
-    // key1    key2    This is the <b>description</b> you can put <a href="$1">light formatting</a>
-
-    // .mustache file:
-    // <p>{{{ purified_description }}}</p>
-
-
-Secure forms against CSRF
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-All state-changing actions MUST be protected against CSRF vulnerabilities.
-In order to do that, a specific token must be added to your forms and verified
-before the execution of the action.
-
-Example:
-
-Controller.php:
-
-  .. code-block:: php
-
-    namespace Tuleap/CsrfExample;
-
-    use CSRFSynchronizerToken;
-    use TemplateRendererFactory;
-
-    class Controller
-    {
-        public function display()
-        {
-            $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
-            $presenter  = new Presenter($csrf_token);
-            $renderer   = TemplateRendererFactory::build()->getRenderer(CSRF_EXAMPLE_TEMPLATE_DIR);
-
-            $renderer->renderToPage('csrf-example', $presenter);
-        }
-
-        public function process()
-        {
-            $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
-            $csrf_token->check();
-
-            do_things();
-        }
-    }
-
-Presenter.php:
-
-  .. code-block:: php
-
-    namespace Tuleap/CsrfExample;
-
-    use CSRFSynchronizerToken;
-
-    class Presenter
-    {
-        /**
-         * @var CSRFSynchronizerToken
-         */
-         public $csrf_token;
-
-        public function __construct(CSRFSynchronizerToken $csrf_token)
-        {
-            $this->csrf_token = $csrf_token;
-        }
-    }
-
-csrf-example.mustache:
-
-  .. code-block:: html
-
-    <form method="post">
-        {{# csrf_token }}
-            {{> csrf_token_input }}
-        {{/ csrf_token }}
-        <input type="submit">
-    </form>
-
-
-.. note::
-    For existing code rendering HTML without using templates, it can be acceptable to use
-    the fetchHTMLInput method of the CSRFSynchronizerToken class.
-
-
-Secure DB against SQL injections
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-All code related to database MUST rely on prepared statements to pass parameters
-to a SQL query.
-
-Example of DataAccessObject:
-
-  .. code-block:: php
-
-    namespace Tuleap\Git;
-
-    use Tuleap\DB\DataAccessObject;
-    use ParagonIE\EasyDB\EasyStatement;
-
-    class RepositoryDao extends DataAccessObject
-    {
-        public function searchByName($project_id, $name)
-        {
-            $sql = 'SELECT *
-                    FROM plugin_git_repositories
-                    WHERE project_id = ? AND name = ?';
-
-            return $this->getDB()->run($sql, $project_id, $name);
-        }
-
-        public function searchByProjectIDs(array $project_ids)
-        {
-            $project_ids_in_condition = EasyStatement::open()->in('?*', $project_ids);
-
-            $sql = 'SELECT *
-                    FROM plugin_git_repositories
-                    WHERE project_id IN ($project_ids_in_condition)';
-
-            return $this->getDB()->safeQuery($sql, $project_ids_in_condition->values());
-        }
-    }
-
-.. note::
-    You might find existing code using the ``\DataAccessObject`` class or ``db_*()`` functions,
-    in that case you will need to use the dedicated escaping methods (``\DataAccessObject::quoteSmart``,
-    ``\DataAccessObject::escapeInt``, ``db_es`` and ``db_ei``). The usage of these deprecated
-    interfaces should be avoided.
+Internationalization is available in two different ways. The legacy one, based on .tab files, and the new one, based on
+gettext.

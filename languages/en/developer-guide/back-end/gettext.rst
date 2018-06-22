@@ -1,32 +1,17 @@
-Internationalization
-====================
-
-Because Tuleap is used by a large community of users, it is internationalized. For now, available
-languages are:
-
-- English
-- French
-
-Thus, there shouldn't be any untranslated words or sentences of natural language in source code. This applies to any
-strings displayed to end users (web, emails). Logs or system messages are in english.
-
-Internationalization is available in two different ways. The legacy one, based on .tab files, and the new one, based on
-gettext.
-
 Gettext
--------
+=======
 
 `Gettext system documentation <https://www.gnu.org/software/gettext/>`_
 
 In core
-'''''''
+-------
 
   .. code-block:: php
 
     echo _('Homepage');
 
 In plugins
-''''''''''
+----------
 
 We use the *domain* feature provided by gettext in order to have i18n in plugins.
 
@@ -34,14 +19,13 @@ We use the *domain* feature provided by gettext in order to have i18n in plugins
 
     echo dgettext('tuleap-proftpd', 'File');
 
-.. NOTE:: The command ``xgettext`` extracts strings without being able to interpret PHP constants or variables. Don't try
-  to be too smart and don't put the domain ``tuleap-proftpd`` in a variable or a constant, we **need** to repeat ourselves.
+.. NOTE:: The command ``xgettext`` extracts strings without being able to interpret PHP constants or variables. Don't try to be too smart and don't put the domain ``tuleap-proftpd`` in a variable or a constant, we **need** to repeat ourselves.
 
 
 .. NOTE:: You can use localized strings from core or other plugins (beware of dependencies!) in a given plugin.
 
 Pluralization
-'''''''''''''
+-------------
 
   .. code-block:: php
 
@@ -60,39 +44,8 @@ Pluralization
 
 .. NOTE:: Pluralization is only available for plugins as of today.
 
-In PHP .mustache files
-''''''''''''''''''''''
-
-In order to not pollute your presenters, you should use gettext directly in the ``.mustache`` files:
-
-  .. code-block:: html
-  
-    <!-- In core -->
-    <h1>{{# gettext }}Personal page{{/ gettext }}</h1>
-    <p>
-      {{# ngettext }}
-        There is %s apple
-        | There are %s apples
-        | {{ count }}
-      {{/ ngettext }} <!-- There are 2 apples -->
-    </p>
-    <p>
-      {{# ngettext }}
-        The user with id %s has been removed from %s
-        | The users with id [%s] have been removed from %s
-        | {{ count }}
-        | {{ comma_separated_ids }}
-        | {{ project_name }}
-      {{/ ngettext }} <!-- The users with id [123, 456] have been removed from GuineaPig -->
-    </p>
-    
-    <!-- The same in plugins by giving the domain with dgettext and dngettext -->
-    <h1>{{# dgettext }} tuleap-agiledashboard | Scrum backlog {{/ dgettext }}
-
-.. NOTE:: As we are using ``|`` as separator, you cannot use it in your strings (and there is no way to escape it for now, contribution welcomed if you really need it).
-
 Workflow
-''''''''
+--------
 
 1. Add a new localizable string.
 2. Run ``make generate-po``. This will update corresponding .pot files that are templates for your localization files.
@@ -111,11 +64,10 @@ Workflow
     bindtextdomain('tuleap-tracker', __DIR__.'/../site-content');
 
 
-.. IMPORTANT::  On our dev setup (tuleap-aio-dev) you must ensure that "fr_FR" locale is installed (``locale -a``).
-  If it is not the case, run ``localedef -i fr_FR -f UTF-8 fr_FR.UTF-8``.
+.. IMPORTANT::  On our dev setup (tuleap-aio-dev) you must ensure that "fr_FR" locale is installed (``locale -a``). If it is not the case, run ``localedef -i fr_FR -f UTF-8 fr_FR.UTF-8``.
 
-.tab files
-----------
+tab files
+---------
 
 This system is based on a key/value pair. PHP code references a key (actually a primary and a secondary keys) which is
 replaced by the full sentence, according to the user preferences.
