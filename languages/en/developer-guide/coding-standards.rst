@@ -102,6 +102,7 @@ Tuleap principles
 -----------------
 
 As of June 2018, the general guidelines are:
+
 - Autoloader must be done with composer
 - Plugins should not expose a `www` directory anymore (exception for images)
 - New end points must be exposed via `FrontRouter`
