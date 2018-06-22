@@ -4,13 +4,29 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 10.2
+Tuleap 10.3
 ===========
 
 .. NOTE::
 
-  Tuleap 10.2 is currently under development.
+  Tuleap 10.3 is currently under development.
 
+Update of themes variants
+-------------------------
+
+The following theme variants does not exist anymore:
+
+* DarkOrange
+* DarkBlue
+* DarkGreen
+* DarkRed
+* DarkBlueGrey
+* DarkPurple
+
+Please make sure that they are not anymore used by ``$sys_default_theme_variant`` and ``$sys_available_theme_variants`` variables in your ``/etc/tuleap/conf/local.inc`` file.
+
+Tuleap 10.2
+===========
 
 Continuous integration jobs should use pullrequest target repository
 --------------------------------------------------------------------
