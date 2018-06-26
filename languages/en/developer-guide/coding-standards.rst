@@ -1,8 +1,8 @@
 Tuleap coding standards
 =======================
 
-Code formatting
----------------
+PHP code formatting
+-------------------
 
 As Tuleap is mainly written in PHP, we use the PSR standards:
 
@@ -12,6 +12,24 @@ As Tuleap is mainly written in PHP, we use the PSR standards:
 * PSR-4_
 
 Rule of thumb: *All new classes MUST respect PSR-4*
+
+Javascript code formatting
+--------------------------
+
+Javascript code is parsed by two tools on a pre-commit hook:
+
+* eslint_ helps to check for errors, unused variables, strange syntax and other potentially problematic code. Some errors can be automatically fixed, but others cannot.
+* prettier_ formats code to a universal, opinionated standard. It can format files automatically.
+
+Those tools are not there to annoy you. We enforce these rules to maintain
+consistency (as much as possible) in the very large and diverse Tuleap codebase.
+Automated tools also help integrators speed up the review process. Nobody wants
+to spend hours leaving comments about code style, and nobody wants to spend
+hours fixing code to satisfy those comments ;).
+
+You should configure your editor or IDE to automatically report linter errors.
+This will give you the fastest feedback. If some code does not conform to
+formatting or syntax rules, the pre-commit hook will reject it.
 
 Internal conventions
 ~~~~~~~~~~~~~~~~~~~~
@@ -97,6 +115,8 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _PSR-1: https://www.php-fig.org/psr/psr-1/
 .. _PSR-2: https://www.php-fig.org/psr/psr-2/
 .. _PSR-4: https://www.php-fig.org/psr/psr-2/
+.. _eslint: https://eslint.org/
+.. _prettier: https://prettier.io/
 
 Tuleap principles
 -----------------
