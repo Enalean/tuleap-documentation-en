@@ -899,6 +899,10 @@ Multiple Git repositories can be imported. The XML syntax is:
   different permissions of the repository to the given repository. The ``<ugroup>`` tag must contain only
   one ugroup name.
 
+.. attention::
+
+  Git service does not export forked repositories.
+
 Another synthax exists for the git XML import:
 
 .. sourcecode:: xml
