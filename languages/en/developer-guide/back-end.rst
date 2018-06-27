@@ -9,6 +9,7 @@ Generic principles, framework and libs.
     :maxdepth: 1
 
     back-end/database
+    back-end/routing
     back-end/gettext
     back-end/autoload
     back-end/profiling
