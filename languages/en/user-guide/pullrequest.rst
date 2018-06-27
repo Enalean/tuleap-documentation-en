@@ -340,6 +340,16 @@ You need to configure Jenkins webhook as described in the  :ref:`git documentati
     ensure that the CI job is properly configured to use the target repository.
 
 
+To trigger a new build each time a pull request is created or updated, set the
+refspec to ``+refs/tlpr/*/head:refs/remotes/*`` and the branch specifier to
+``$COMMIT_ID``.
+
+.. figure:: ../images/screenshots/pullrequest/jenkins-job-setup.png
+      :align: center
+      :alt: Jenkins job configuration for Tuleap Pull Request
+      :name: Jenkins job configuration for Tuleap Pull Request
+
+
 .. _pullrequest-with-jenkins-feedback:
 
 Configure Jenkins to Tuleap feedback
