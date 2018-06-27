@@ -22,3 +22,4 @@ Tuleap internals
     back-end/events
     back-end/widgets
     back-end/plugins
+    back-end/cli
