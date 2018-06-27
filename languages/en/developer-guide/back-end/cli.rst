@@ -1,12 +1,12 @@
-Cli tool
+CLI tool
 ========
 
-New cli tool shoud depends on ``Tuleap Cli (src/utils/tuleap.php)``
+New CLI tool shoud depends on ``Tuleap CLI (src/utils/tuleap.php)``
 
 How to add a new command
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Every new CLI command should be added in the Tuleap CLI.
-To access to Tuleap cli, just run ``tuleap`` in your platform.
+To access to Tuleap CLI, just run ``tuleap`` in your platform.
 
 .. code-block:: php
 
@@ -14,30 +14,5 @@ To access to Tuleap cli, just run ``tuleap`` in your platform.
         new MyNewCommandClass
     );
 
-Tuleap cli is based on `Symfony Command class <https://symfony.com/doc/current/console.html/>`_ and every
+Tuleap cli is based on `Symfony Command class <https://symfony.com/doc/3.4/console.html/>`_ and every
 new command should follow this pattern.
-A minimal class of a command:
-
-.. code-block:: php
-
-    use Symfony\Component\Console\Command\Command;
-
-    class MyNewCommandClass extends Command
-    {
-        const NAME = 'my-new-command';
-
-         public function execute(InputInterface $input, OutputInterface $output)
-         {
-            ...
-         }
-
-        protected function configure()
-        {
-            $this->setDescription('My command description')
-                 ->addArgument(
-                     'argument_name',
-                     InputArgument::REQUIRED,
-                     "description"
-                 )
-         }
-    }
