@@ -18,8 +18,6 @@ As root, run:
 
 Note: you can update only the tuleap part (tuleap*) but we highly recommend you to upgrade the whole OS on regular basis.
 
-Ensure forgeupgrade is properly (as Site Admin go in Admin > Plugin Administration) you shouldn’t get any warning.
-
 
 Upgrade
 -------
@@ -51,5 +49,8 @@ On RHEL6, run as root:
     service nginx start
     service tuleap start
 
+
+Do not forget to execute the forgeupgrade command, no warnings should be displayed
+in the site administration about it (as Site Admin go in Admin > Plugin Administration).
 
 Enjoy all your new features!
