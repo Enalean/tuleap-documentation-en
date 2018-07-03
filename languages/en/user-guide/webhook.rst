@@ -1,7 +1,7 @@
 Webhook
 =======
 
-When a webhook is trigerred, a call is made in a ``HTTP POST`` with a
+When a webhook is triggered, a call is made in a ``HTTP POST`` with a
 ``Content-Type: application/x-www-form-urlencoded``, and the JSON encoded payload
 is given as argument in the ``payload`` parameter of the request.
 The endpoint can use the information included in this payload in order to perform
@@ -19,7 +19,7 @@ Project
 Creation
 """"""""
 
-Trigerred when a newly created project is activated.
+Triggered when a newly created project is activated.
 
 .. code-block:: javascript
 
@@ -45,7 +45,7 @@ Git
 Push
 """"
 
-Trigerred when content is pushed to the repository.
+Triggered when content is pushed to the repository.
 
 .. code-block:: javascript
 
@@ -83,7 +83,7 @@ Tracker
 Artifact Creation
 """""""""""""""""
 
-Trigerred when an artifact is created.
+Triggered when an artifact is created.
 
 .. code-block:: javascript
 
@@ -154,7 +154,7 @@ Trigerred when an artifact is created.
 Artifact Update
 """""""""""""""
 
-Trigerred when an artifact is updated.
+Triggered when an artifact is updated.
 
 .. code-block:: javascript
 
