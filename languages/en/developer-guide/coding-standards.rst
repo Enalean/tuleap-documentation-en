@@ -16,7 +16,7 @@ Rule of thumb: *All new classes MUST respect PSR-4*
 Javascript code formatting
 --------------------------
 
-Javascript code is parsed by two tools on a pre-commit hook:
+Javascript files (.js) and Vue files (.vue) are parsed by two tools on a pre-commit hook:
 
 * eslint_ helps to check for errors, unused variables, strange syntax and other potentially problematic code. Some errors can be automatically fixed, but others cannot.
 * prettier_ formats code to a universal, opinionated standard. It can format files automatically.
