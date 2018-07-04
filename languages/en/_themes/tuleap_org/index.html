@@ -1,0 +1,59 @@
+<h1 class="doc-homepage-title">{{ title }}</h1>
+<p class="doc-homepage-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+<div class="doc-homepage">
+    <div class="doc-all-guides">
+        <h2 class="doc-homepage-subtitle">Use and Administrate</h2>
+        <div class="doc-guides">
+            <a href="{{ pathto('user') }}" class="doc-guide card orange">
+                <div class="card-illustration">
+                    <img src="{{ pathto('_static/img/doc-user-guide.png', 1) }}" alt="User guide" data-rjs="2">
+                </div>
+                <p class="card-title">User guide</p>
+            </a>
+            <a href="{{ pathto('admin') }}" class="doc-guide card red">
+                <div class="card-illustration">
+                    <img src="{{ pathto('_static/img/doc-administration-guide.png', 1) }}" alt="Administration guide" data-rjs="2">
+                </div>
+                <p class="card-title">Administration guide</p>
+            </a>
+        </div>
+
+        <h2 class="doc-homepage-subtitle">Install and Maintain</h2>
+        <div class="doc-guides">
+            <a href="{{ pathto('install') }}" class="doc-guide card light-blue">
+                <div class="card-illustration">
+                    <img src="{{ pathto('_static/img/doc-installation-guide.png', 1) }}" alt="Installation guide" data-rjs="2">
+                </div>
+                <p class="card-title">Installation guide</p>
+            </a>
+            <a href="{{ pathto('deploy') }}" class="doc-guide card blue">
+                <div class="card-illustration">
+                    <img src="{{ pathto('_static/img/doc-deployment-guide.png', 1) }}" alt="Deployment guide" data-rjs="2">
+                </div>
+                <p class="card-title">Deployment guide</p>
+            </a>
+        </div>
+
+        <h2 class="doc-homepage-subtitle">Contribute</h2>
+        <div class="doc-guides">
+            <a href="{{ pathto('dev') }}" class="doc-guide card purple">
+                <div class="card-illustration">
+                    <img src="{{ pathto('_static/img/doc-developer-guide.png', 1) }}" alt="Developer guide" data-rjs="2">
+                </div>
+                <p class="card-title">Developer guide</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="doc-populars">
+        <h2 class="doc-homepage-subtitle">Populars</h2>
+        <ul>
+            <li class="doc-popular"><a href="{{ pathto('developer-guide/quick-start') }}">Developer quick start</a></li>
+            <li class="doc-popular"><a href="{{ pathto('developer-guide/release') }}">Tuleap release process</a></li>
+            <li class="doc-popular"><a href="{{ pathto('installation-guide/docker-image') }}">Docker image</a></li>
+            <li class="doc-popular"><a href="{{ pathto('developer-guide/coding-standards') }}">Tuleap coding standards</a></li>
+            <li class="doc-popular"><a href="{{ pathto('user-guide/overview') }}">Tuleap Overview</a></li>
+        </ul>
+    </div>
+</div>
