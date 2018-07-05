@@ -57,7 +57,13 @@
   {%- block extrahead %} {% endblock %}
 </head>
 
-<body role="document">
+{% if pagename != 'index' %}
+  {% if parents %}
+    <body role="document" class="{{ parents[0].title|lower|replace(' ','-') }}">
+  {% else %}
+    <body role="document" class="{{ title|lower|replace(' ','-') }}">
+  {% endif %}
+{% endif %}
   {% include "header.html" %}
 
   {% block extrabody %} {% endblock %}
