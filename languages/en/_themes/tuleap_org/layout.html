@@ -85,17 +85,21 @@
       </div>
 
       <section class="doc-content">
-        {% include "breadcrumbs.html" %}
+        {% if pagename == 'index' %}
+          {% include 'index.html' %}
+        {% else %}
+          {% include "breadcrumbs.html" %}
 
-        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-          <div itemprop="articleBody">
-            {% block body %}{% endblock %}
-          </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
+              {% block body %}{% endblock %}
+            </div>
 
-          <div class="articleComments">
-            {% block comments %}{% endblock %}
-          </div>
+            <div class="articleComments">
+              {% block comments %}{% endblock %}
+            </div>
         </div>
+        {% endif %}
 
         {% if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
           <div class="doc-previous-next" role="navigation" aria-label="footer navigation">
