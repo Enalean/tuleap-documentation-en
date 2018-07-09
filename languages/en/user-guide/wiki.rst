@@ -6,6 +6,12 @@
 Wiki
 ====
 
+.. attention::
+
+  This service is deprecated and might not be available on your installation of
+  Tuleap. It is highly recommended to use the :ref:`Mediawiki plugin <mediawiki>` instead.
+
+
 Tuleap offers a Wiki service to each project. The wiki
 available in Tuleap is based on a popular wiki tool called
 `phpWiki <http://phpwiki.sourceforge.net>`__.

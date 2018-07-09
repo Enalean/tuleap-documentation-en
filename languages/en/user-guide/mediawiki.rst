@@ -12,8 +12,7 @@ This chapter is not a Mediawiki Tutorial. It focuses on the integration of Media
 with Tuleap. If you are not familiar with Mediawiki we warmly advise you to first
 read some of the documents listed in the references section (see `Mediawiki References`_).
 
-The Mediawiki version provided by Tuleap is 1.20.3. As of today, this Mediawiki has no plugin
-deployed.
+The Mediawiki version provided by Tuleap is 1.23.
 
 There is one instance of Mediawiki per project. Tuleap manages the connection to Mediawiki.
 Tuleap users have access to the Mediawiki service in any project they are allowed to access
