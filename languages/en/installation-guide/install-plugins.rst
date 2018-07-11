@@ -83,6 +83,9 @@ Administration:
 
 * **archivedeleteditems**: When something is deleted, move it into a dedicated place for archiving purpose
 * **statistics**: Compute stats about platform
+* **prometheus_metrics**: Expose metrics to Prometheus about Tuleap usage
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
 Integrations:
 
