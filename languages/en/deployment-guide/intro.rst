@@ -25,6 +25,11 @@ The following theme variants does not exist anymore:
 
 Please make sure that they are not anymore used by ``$sys_default_theme_variant`` and ``$sys_available_theme_variants`` variables in your ``/etc/tuleap/conf/local.inc`` file.
 
+Monitoring and instrumentation
+------------------------------
+
+Instrumentation based on statsd has been removed in favor of Prometheus. See :ref:`admin_monitoring_with_prometheus`.
+
 Tuleap 10.2
 ===========
 
