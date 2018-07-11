@@ -83,7 +83,7 @@ Cypress tests
 
 All end-to-end tests are written with `Cypress <https://www.cypress.io>`_.
 
-If you want to run all cypress tests locally just launch
+If you want to run all cypress tests locally just launch:
 
 .. code-block:: bash
 
@@ -96,15 +96,15 @@ If you want to add new tests, you should use the cypress dev image:
    $> make tests_cypress_dev
 
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
-Once container has started, you want to be able to launch the cypress electron app.
+Once the container has started, you must be able to launch the Cypress electron app.
 
 .. code-block:: bash
 
    $> cd tests/e2e/full/
    $> npx cypress open
 
-The electron app will launch tests on https://tuleap.
-You have to add a new entry in /etc/hosts, the IP should correspond to the IP of your container tuleap_runtests_backend-web-e2e
+The electron app will launch tests on ``https://tuleap/``.
+You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to the IP of your container ``tuleap_runtests_backend-web-e2e``.
 
 .. code-block:: bash
 
