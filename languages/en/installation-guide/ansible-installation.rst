@@ -27,7 +27,7 @@ Install the Tuleap role for ansible with ansible galaxy:
 
     $ ansible-galaxy install Enalean.Tuleap
 
-You can find the description of the role here: https://galaxy.ansible.com/Enalean/Tuleap/#readme
+You can find the description of the role here: https://galaxy.ansible.com/Enalean/Tuleap/
 
 
 Installation
@@ -72,4 +72,4 @@ Next steps
 
 Once you have a fully running Tuleap you can start using it: issue tracking, source code management, agile planning and more.
 
-Checkout our tutorials and videos on `Getting started <https://www.tuleap.org/get-started/videos-tutorials>`_ page.
+Checkout our tutorials and videos on `Getting started <https://www.tuleap.org/resources/videos-tutorials>`_ page.
