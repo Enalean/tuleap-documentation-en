@@ -78,6 +78,47 @@ In case of failure, you may need to attach to this running container in order to
 
   docker run -ti --rm -v .tuleap:/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-httpd24-mysql56 bash
 
+Cypress tests
+"""""""""""""
+
+All end-to-end tests are written with `Cypress <https://www.cypress.io>`_.
+
+If you want to run all cypress tests locally just launch:
+
+.. code-block:: bash
+
+   $> make tests_cypress
+
+You will be able to see the results of the test execution in ``tuleap/test_results_e2e_full``.
+
+If you want to add new tests, you should use the cypress dev image:
+
+.. code-block:: bash
+
+   $> make tests_cypress_dev
+
+It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
+Once the container has started, you must be able to launch the Cypress electron app.
+
+.. code-block:: bash
+
+   $> cd tests/e2e/full/
+   $> npx cypress open
+
+The electron app will launch tests on ``https://tuleap/``.
+You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to the IP of your container ``tuleap_runtests_backend-web-e2e``.
+
+.. code-block:: bash
+
+   $> sudo vi /etc/hosts
+   $> 172.19.0.3   tuleap
+
+
+.. note::
+
+  The electron app will be able to run only when container is fully monted.
+  If https://tuleap is unreachable make sure that container initialisation has finished.
+  If it does not solve your issue, verify the IP in your /etc/hosts
 
 Organize your tests
 ```````````````````
