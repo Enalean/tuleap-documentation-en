@@ -89,6 +89,8 @@ If you want to run all cypress tests locally just launch:
 
    $> make tests_cypress
 
+You will be able to see the results of the test execution in ``tuleap/test_results_e2e_full``.
+
 If you want to add new tests, you should use the cypress dev image:
 
 .. code-block:: bash
