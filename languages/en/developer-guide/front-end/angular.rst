@@ -1,6 +1,8 @@
 Angular
 -------
 
+.. attention:: Angular.js has been deprecated. All new frontend developements **must** be made using VueJS
+
 Install
 """""""
     .. code-block:: bash

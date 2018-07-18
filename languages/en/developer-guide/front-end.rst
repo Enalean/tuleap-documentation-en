@@ -21,3 +21,4 @@ Historically you will also find
     front-end/mustache
     front-end/css
     front-end/angular
+    front-end/vue
