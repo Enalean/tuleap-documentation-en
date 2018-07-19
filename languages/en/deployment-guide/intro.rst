@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.3
 ===========
 
-.. NOTE::
-
-  Tuleap 10.3 is currently under development.
-
 Update of themes variants
 -------------------------
 
