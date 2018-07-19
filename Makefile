@@ -2,13 +2,15 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-BUILDDIR      = _build
-LANG          = en
+SPHINXOPTS       =
+SPHINXBUILD      = sphinx-build
+SPHINX_AUTOBUILD = sphinx-autobuild
+BUILDDIR         = _build
+LANG             = en
 
 # Internal variables.
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) tmp/$(LANG)
+WATCHOPTS       = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) languages/$(LANG)
 
 .PHONY: help clean html singlehtml linkcheck
 
@@ -59,3 +61,6 @@ linkcheck: pre-build
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
+
+watch-html: pre-build
+	$(SPHINX_AUTOBUILD) -b html $(WATCHOPTS) $(BUILDDIR)/html --port 5000 --open-browser
