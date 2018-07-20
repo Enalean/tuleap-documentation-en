@@ -15,7 +15,7 @@ Set-up your environment
 
     virtualenv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install -r requirements.txt -r requirements-dev.txt
     deactivate
 
 Build the documentation
@@ -38,6 +38,14 @@ To add a Google Analytics snippet, use the following theme options:
     source venv/bin/activate
     make SPHINXOPTS="-D html_theme=tuleap_org -D html_theme_options.ga_id=UA-XXXXXXXX-Y -D html_theme_options.ga_content_group_index=YYYYYYYYYYY -D html_theme_options.ga_content_group_name=WWWWWWWW" html
     deactivate
+    
+To build the documentation in watch mode:
+
+    source venv/bin/activate
+    make SPHINXOPTS="-D html_theme=tuleap_org" watch-html
+    deactivate
+    
+> A web-server will start, the modifies pages will be rebuilt and reloaded automatically each time you save your work.
 
 Modify/ add to the documentation
 ------------------------
