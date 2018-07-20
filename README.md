@@ -15,7 +15,7 @@ Set-up your environment
 
     virtualenv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install -r requirements.txt -r requirements-dev.txt
     deactivate
 
 Build the documentation
