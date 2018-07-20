@@ -95,6 +95,8 @@ This file should be located in ``<your_plugin>/scripts/``.
 
     module.exports = webpack_config_for_my_awesome_vue_app;
 
+.. _npm_scripts:
+
 Once you have a webpack config, ensure that the npm scripts are set up in the ``package.json``
 
 .. code-block:: JavaScript
@@ -177,3 +179,5 @@ Once your mount point is ready, head to your ``index.js`` file.
             }
         }).$mount(vue_mount_point);                                 // Mount the app on the moint point
     });
+
+Now you know how to create your Vue.js application, let's move on with the unit-tests in the next section.
