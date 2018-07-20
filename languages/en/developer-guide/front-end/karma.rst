@@ -1,7 +1,7 @@
 Karma unit tests
 ================
 
-`Karma <https://karma-runner.github.io/>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io/2.0/introduction.html>`_ to write down our JavaScript unit tests.
+`Karma <https://karma-runner.github.io/2.0/index.html/>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io>`_ to write down our JavaScript unit tests.
 
 You must provide some unit tests for any front-end development.
 
