@@ -1,7 +1,7 @@
 Karma unit tests
 ================
 
-`Karma <https://karma-runner.github.io/2.0/index.html>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io/2.0/introduction.html>`_ to write down our JavaScript unit tests.
+`Karma <https://karma-runner.github.io/>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io/2.0/introduction.html>`_ to write down our JavaScript unit tests.
 
 You must provide some unit tests for any front-end development.
 
@@ -10,7 +10,7 @@ In this section you will find guidelines on how to setup your own karma tests.
 How to bootstrap your unit tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a first place, it is necessary to have a karma configuration file named ``karma.conf.js``.
+First, it is necessary to have a karma configuration file named ``karma.conf.js``.
 This config file is pretty easy to set up.
 
 .. code-block:: JavaScript
@@ -19,7 +19,7 @@ This config file is pretty easy to set up.
 
     const path = require("path");
     const webpack_config = require("./webpack.config.js");
-    const karma_configurator = require("../../../../tools/utils/scripts/karma-configurator.js");
+    const karma_configurator = require("../../../tools/utils/scripts/karma-configurator.js");
 
     webpack_config.mode = "development"; // Don't forget to set webpack in development mode, so it will not minify the code.
 
@@ -34,7 +34,7 @@ This config file is pretty easy to set up.
         Object.assign(base_config, {
             files: ["repositories/src/index.spec.js"],      // Here put the relative path to your index.spec.js file.
             preprocessors: {
-                "repositories/src/app.spec.js": ["webpack"] // Same.
+                "repositories/src/index.spec.js": ["webpack"] // Same.
             }
         });
 
@@ -78,9 +78,14 @@ The goal of this file is to import every ``*.spec.js`` file.
     import "./store/getters.spec.js";
     import "./api/reqt-querier.spec.js";
 
-.. note:: All your tests **must** be located in the same folder than the tested files and to be prefixed with ``.spec.js``.
+.. note:: All your tests **must** be located in the same folder than the tested files and to be suffixed with ``.spec.js``.
 
 To run your tests locally, use the :ref:`npm scripts <npm_scripts>`.
+
+.. note:: The Karma server might be unable to launch the unit tests if no browser is available. Please ensure that:
+
+    - Chromium is installed on your machine if it runs under Linux.
+    - Chrome is installed otherwise.
 
 Run your unit tests during the CI validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
