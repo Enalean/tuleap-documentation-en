@@ -1,7 +1,7 @@
 Karma unit tests
 ================
 
-`Karma <https://karma-runner.github.io/2.0/index.html/>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io>`_ to write down our JavaScript unit tests.
+`Karma <https://karma-runner.github.io/2.0/index.html>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io>`_ to write down our JavaScript unit tests.
 
 You must provide some unit tests for any front-end development.
 
@@ -76,7 +76,7 @@ The goal of this file is to import every ``*.spec.js`` file.
     import "./store/mutations.spec.js";
     import "./store/actions.spec.js";
     import "./store/getters.spec.js";
-    import "./api/reqt-querier.spec.js";
+    import "./api/rest-querier.spec.js";
 
 .. note:: All your tests **must** be located in the same folder than the tested files and to be suffixed with ``.spec.js``.
 
