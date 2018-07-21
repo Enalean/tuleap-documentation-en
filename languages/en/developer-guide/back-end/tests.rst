@@ -6,22 +6,25 @@ We strongly encourage developers to apply TDD. Not only as a test tool but as a 
 Run tests
 `````````
 
-Tuleap comes with a handy test environment, based on SimpleTest. File organization:
+Tuleap comes with a handy test environment, based on SimpleTest and PHPUnit.
+Core tests (for things in src directory) can be found in tests/simpletest directory with same subdirectory organization (eg. src/common/frs/FRSPackage.class.php tests are in tests/simpletest/common/frs/FRSPackageTest.php).
+Plugins tests are in each plugin tests directory:
 
-- Core tests (for things in src directory) can be found in tests/simpletest directory with same subdirectory organization (eg. src/common/frs/FRSPackage.class.php tests are in tests/simpletest/common/frs/FRSPackageTest.php).
-- Plugins tests are in each plugin tests directory (eg. plugins/tracker/include/Tracker.class.php tests are in plugins/tracker/tests/TrackerTest.php).
+* Old plugins have their tests written with SimpleTest (eg. plugins/tracker/include/Tracker.class.php tests are in plugins/tracker/tests/TrackerTest.php).
+* Recent plugins have their tests written with PHPUnit (eg. plugins/timetracking/include/Time/DateFormatter.php tests are in plugins/timetracking/phpunit/Time/DateFormatterTest.php).
 
-To run tests you can either use:
+To run tests you can either use multiple CLI commands (at the root of Tuleap sources):
 
-- the web interface available at ``https://tuleap-web.tuleap-aio-dev.docker/plugins/tests/``
-- the CLI interface: make tests (at the root of the sources). You can run a file or a directory: php tests/bin/simpletest plugins/docman
+- make simpletest11x-56
+- make phpunit-docker-56
 
 Run tests with docker
 `````````````````````
 
 We have docker images to run unit tests on all environments:
 
-* centos6 + php 5.6: enalean/tuleap-simpletest:c6-php56
+* centos6 + php 5.6 with simpletest: enalean/tuleap-simpletest:c6-php56
+* centos6 + php 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php56
 
 Basically, executing tests is as simple as, from root of Tuleap sources:
 
