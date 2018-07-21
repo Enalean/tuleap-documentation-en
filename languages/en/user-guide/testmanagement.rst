@@ -104,6 +104,41 @@ You can also edit the test directly from the interface.
 The test you create or you edit are automatically updated in the test campaign
 and will be re-usable in a following campaign.
 
+Test steps
+----------
+
+Starting Tuleap 10.3, a test case can be divided into steps. Each step have to be run in the campaign.
+
+.. figure:: ../images/screenshots/testmanagement/steps.png
+   :align: center
+   :alt: Test Management test step
+   :name: Test Management test step
+
+These steps provide a global result for the tests:
+
+* All steps are done -> test done
+* At least one step failed -> test fail
+* At least one step is blocked -> test blocked
+* At lest one step is not run -> test not run
+
+Create or modify steps for your tests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are two new fields to add in your testmanagement trackers to be able to defined your steps:
+
+* Field ``step definition`` into Test definition tracker
+* Field ``step execution`` into Test execution tracker.
+
+If one of this field is missing, steps cannot be run. In addition, these fields can only be added in the Test definition tracker
+and Test exec tracker defined in your testmanagement configuration.
+
+Once these fields added, you can defined your step in your test case by editing the artifact:
+
+.. figure:: ../images/screenshots/testmanagement/steps_edit.png
+   :align: center
+   :alt: Test Management test step edit in artifact
+   :name: Test Management test step edit in artifact
+
 Create a Test Campaign
 ----------------------
 
