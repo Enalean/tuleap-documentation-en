@@ -61,7 +61,7 @@ It will execute all REST tests in a docker container. This container is stopped 
 
    $> make tests_rest_setup
    $root@d4601e92ca3f> ./tests/rest/bin/run.sh setup
-   $root@d4601e92ca3f> scl enable rh-php70 bash
+   $root@d4601e92ca3f> scl enable php72 bash
    $root@d4601e92ca3f> php /usr/share/tuleap/tests/rest/bin/generate-testsuite.php /tmp /output
    $root@d4601e92ca3f> src/vendor/bin/phpunit --configuration /tmp/suite.xml tests/rest/tests/ArtifactFilesTest.php
 
@@ -79,7 +79,7 @@ In case of failure, you may need to attach to this running container in order to
 
   You can run your test container with:
 
-  docker run -ti --rm -v .tuleap:/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-httpd24-mysql56 bash
+  docker run -ti --rm -v .tuleap:/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql56 bash
 
 Cypress tests
 """""""""""""
