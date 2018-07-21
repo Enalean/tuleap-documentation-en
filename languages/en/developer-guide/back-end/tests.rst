@@ -7,11 +7,11 @@ Run tests
 `````````
 
 Tuleap comes with a handy test environment, based on SimpleTest and PHPUnit.
-Core tests (for things in src directory) can be found in tests/simpletest directory with same subdirectory organization (eg. src/common/frs/FRSPackage.class.php tests are in tests/simpletest/common/frs/FRSPackageTest.php).
+Core tests (for things in src directory) can be found in tests/simpletest directory with same subdirectory organization (eg. ``src/common/frs/FRSPackage.class.php`` tests are in ``tests/simpletest/common/frs/FRSPackageTest.php``).
 Plugins tests are in each plugin tests directory:
 
-* Old plugins have their tests written with SimpleTest (eg. plugins/tracker/include/Tracker.class.php tests are in plugins/tracker/tests/TrackerTest.php).
-* Recent plugins have their tests written with PHPUnit (eg. plugins/timetracking/include/Time/DateFormatter.php tests are in plugins/timetracking/phpunit/Time/DateFormatterTest.php).
+* Old plugins have their tests written with SimpleTest (eg. ``plugins/tracker/include/Tracker.class.php`` tests are in ``plugins/tracker/tests/TrackerTest.php``).
+* Recent plugins have their tests written with PHPUnit (eg. ``plugins/timetracking/include/Time/DateFormatter.php`` tests are in ``plugins/timetracking/phpunit/Time/DateFormatterTest.php``).
 
 To run tests you can either use multiple CLI commands (at the root of Tuleap sources):
 
@@ -42,7 +42,7 @@ If there is only one file or directory you are interested in:
 
 .. note::
 
-  Please note the --nodb switch, it allows a faster start when there is no DB involved.
+  Please note the ``--nodb`` switch, it allows a faster start when there is no DB involved.
 
 
 
@@ -79,7 +79,7 @@ In case of failure, you may need to attach to this running container in order to
 
   You can run your test container with:
 
-  docker run -ti --rm -v .tuleap:/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql56 bash
+  ``docker run -ti --rm -v "$(pwd)":/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql56 bash``
 
 Cypress tests
 """""""""""""
