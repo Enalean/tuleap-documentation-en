@@ -120,7 +120,7 @@ You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to 
 .. note::
 
   The electron app will be able to run only when container is fully monted.
-  If https://tuleap is unreachable make sure that container initialisation has finished.
+  If https://tuleap/ is unreachable make sure that container initialisation has finished.
   If it does not solve your issue, verify the IP in your /etc/hosts
 
 Organize your tests
