@@ -219,6 +219,7 @@ linkcheck_ignore = [
     r'https://example\.com.*',
     r'https://tuleap.example\.com.*',
     'https://tuleap-web.tuleap-aio-dev.docker/',
+    'https://tuleap/',
     'https://gerrit.tuleap.net/#/admin/projects/tuleap', # Anchor is not found due to the page generation client side
     'https://gerrit.tuleap.net/#/projects/tuleap,dashboards/main:wip', # Anchor is not found due to the page generation client side
     'https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders', # Anchor is not found due to the page generation client side
