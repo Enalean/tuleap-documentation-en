@@ -132,6 +132,11 @@ There are two new fields to add in your testmanagement trackers to be able to de
 If one of this field is missing, steps cannot be run. In addition, these fields can only be added in the Test definition tracker
 and Test exec tracker defined in your testmanagement configuration.
 
+To have working steps, these 2 fields must have a specific shortname:
+
+* Field ``step definition`` must have the shortname ``steps``
+* Field ``step execution`` must have the shortname ``steps_results``
+
 Once these fields added, you can defined your step in your test case by editing the artifact:
 
 .. figure:: ../images/screenshots/testmanagement/steps_edit.png
