@@ -22,3 +22,4 @@ Historically you will also find
     front-end/css
     front-end/angular
     front-end/vue
+    front-end/karma
