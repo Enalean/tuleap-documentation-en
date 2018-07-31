@@ -11,7 +11,6 @@ You will need the following tools to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
 - make
-- `phpcs <https://github.com/squizlabs/PHP_CodeSniffer#installation>`_
 - `scss-lint <https://github.com/brigade/scss-lint/>`_
 - `nodejs <https://nodejs.org/en/>`_ >= v6.x
 - `npm <https://docs.npmjs.com/>`_ >= v6.0
