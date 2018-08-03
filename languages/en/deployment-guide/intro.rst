@@ -4,12 +4,34 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 10.3
+Tuleap 10.4
 ===========
 
 .. NOTE::
 
-  Tuleap 10.3 is currently under development.
+  Tuleap 10.4 is currently under development.
+
+New RPM repository for PHP 5.6 packages
+---------------------------------------
+
+Since the beginning of August 2018, PHP 5.6 packages are no more available wia CentOS SCL mirror
+(see `CentOS mirror mailing list archive <https://lists.centos.org/pipermail/centos-devel/2018-July/016800.html>`_).
+
+To be able to still install these packages, you will have to enable the CentOS vault RPM repository
+by creating the/etc/yum.repos.d/centos-vault-rh-php56.repo file with this content:
+
+::
+
+    [centos-vault-rh-php56]
+    name=centos-vault-rh-php56
+    baseurl=http://vault.centos.org/6.9/sclo/$basearch/rh/
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+    enabled=1
+    includepkgs=rh-php56*
+
+Tuleap 10.3
+===========
 
 Update of themes variants
 -------------------------

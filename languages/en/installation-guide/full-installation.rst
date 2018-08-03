@@ -54,6 +54,17 @@ On RedHat this is done by:
 
     yum-config-manager --enable rhel-server-rhscl-6-rpms
 
+-  **Install CentOS Vault repository for PHP 5.6 packages** Create a /etc/yum.repos.d/centos-vault-rh-php56.repo with this content:
+
+::
+
+    [centos-vault-rh-php56]
+    name=centos-vault-rh-php56
+    baseurl=http://vault.centos.org/6.9/sclo/$basearch/rh/
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+    enabled=1
+    includepkgs=rh-php56*
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
