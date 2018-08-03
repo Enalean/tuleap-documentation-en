@@ -14,7 +14,7 @@ Tuleap 10.4
 New RPM repository for PHP 5.6 packages
 ---------------------------------------
 
-Since the beginning of August 2018, PHP 5.6 packages are no more available wia CentOS SCL mirror
+Since the beginning of August 2018, PHP 5.6 packages are no longer available via CentOS SCL mirror
 (see `CentOS mirror mailing list archive <https://lists.centos.org/pipermail/centos-devel/2018-July/016800.html>`_).
 
 To be able to still install these packages, you will have to enable the CentOS vault RPM repository
