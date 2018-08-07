@@ -11,24 +11,46 @@ Tuleap 10.4
 
   Tuleap 10.4 is currently under development.
 
-New RPM repository for PHP 5.6 packages
----------------------------------------
+New RPM repository for PHP packages
+-----------------------------------
 
-Since the beginning of August 2018, PHP 5.6 packages are no longer available via CentOS SCL mirror
-(see `CentOS mirror mailing list archive <https://lists.centos.org/pipermail/centos-devel/2018-July/016800.html>`_).
+The Software Collection for PHP 5.6 is not supported anymore, therefore Tuleap
+has moved to the **remi-safe** repository. You will need to install to be able
+to upgrade.
 
-To be able to still install these packages, you will have to enable the CentOS vault RPM repository
-by creating the/etc/yum.repos.d/centos-vault-rh-php56.repo file with this content:
+To install it:
 
 ::
 
-    [centos-vault-rh-php56]
-    name=centos-vault-rh-php56
-    baseurl=http://vault.centos.org/6.9/sclo/$basearch/rh/
-    gpgcheck=1
-    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
-    enabled=1
-    includepkgs=rh-php56*
+    yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+
+You can find find more information about the installation of the remi-safe repository
+on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+
+Once the installation of this repository is done, you will need to stop the existing
+PHP-FPM service before proceeding to the update (see :ref:`update`):
+
+.. sourcecode:: bash
+
+  service rh-php56-php-fpm stop
+
+After the update, you will need to deploy the PHP-FPM configuration for the new
+service and to start it:
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php56/run.php --module=fpm
+  service php56-php-fpm start
+  chkconfig php56-php-fpm on # Useful if you want the service to be started on boot
+
+If you had the ``sclo-php56-php-pecl-redis`` package installed, you will need to
+install the ``php56-php-pecl-redis`` package (``yum install php56-php-pecl-redis``).
+
+After that your Tuleap instance should be running, you can then remove previous
+PHP56 packages coming from the RH PHP56 SCL and PHP56 SCLo with ``yum remove rh-php56\* sclo-php56\*``.
+
+If you previously had installed the CentOS Vault RPM repository you can also safely
+remove it from your system (``rm /etc/yum.repos.d/centos-vault-rh-php56.repo``).
 
 Tuleap 10.3
 ===========
@@ -379,7 +401,7 @@ Users should **consider using REST API instead**.
 PHP 5.6 / nginx
 ---------------
 
-In ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf`` please add/uncomment the following::
+In ``/etc/opt/remi/php56/php-fpm.d/tuleap.conf`` please add/uncomment the following if needed::
 
   php_value[post_max_size] = 256M
   php_value[upload_max_filesize] = 256M
