@@ -50,7 +50,7 @@ Automated configuration
 
 Starting 9.14 a tool is available to automatically:
 
-* deploy PHP FPM 5.6 configuration in ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf``
+* deploy PHP FPM 5.6 configuration in ``/etc/opt/remi/php56/php-fpm.d/tuleap.conf``
 * deploy Nginx configuration in ``/etc/nginx`` (listen on ~*:80 + all front configuration)
 * update apache configuration (listen on 127.0.0.1:8080 + disable SSL)
 
@@ -73,14 +73,14 @@ Finally you can restart all services:
 
      service tuleap start
      service httpd start
-     service rh-php56-php-fpm start
+     service php56-php-fpm start
      service nginx start
 
 You should also ensure that fpm and nginx will be started at machine boot:
 
 ::
 
-     chkconfig rh-php56-php-fpm on
+     chkconfig php56-php-fpm on
      chkconfig nginx on
 
 If configuration failed or if you don't want to use the automated deployment, the next sections describe the manual process.
@@ -132,7 +132,7 @@ Prepare the environment:
       mkdir -p /var/tmp/tuleap_cache/php/wsdlcache
       chown -R codendiadm:codendiadm /var/tmp/tuleap_cache/php
 
-Then, in ``/etc/opt/rh/rh-php56/php-fpm.d/www.conf``:
+Then, in ``/etc/opt/remi/php56/php-fpm.d/www.conf``:
 
 * Remove ``php_value[session.save_path]``
 * Remove ``php_value[soap.wsdl_cache_dir]``
@@ -165,7 +165,7 @@ Then start fpm:
 
 ::
 
-      service rh-php56-php-fpm restart
+      service php56-php-fpm restart
 
 Nginx
 #####
@@ -243,9 +243,9 @@ With this new setup a few things changed in the way Tuleap works:
 
   ::
 
-    service rh-php56-php-fpm COMMAND
+    service php56-php-fpm COMMAND
 
-  The configuration base file is ``/etc/opt/rh/rh-php56/php-fpm.conf`` and the bits in ``/etc/opt/rh/rh-php56/php-fpm.d``.
-  The logs can be found in ``/var/opt/rh/rh-php56/log/php-fpm``
+  The configuration base file is ``/etc/opt/remi/php56/php-fpm.conf`` and the bits in ``/etc/opt/remi/php56/php-fpm.d``.
+  The logs can be found in ``/var/opt/remi/php56/log/php-fpm``
   Please keep in mind that all modifications you might have done in ``/etc/php.ini`` or ``/etc/httpd/conf.d/php.conf`` will not be taken into
   account. You should adapt them to the new version (and check if they are relevant).

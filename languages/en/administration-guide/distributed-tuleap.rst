@@ -225,16 +225,11 @@ Firewall configuration:
 Install Redis
 ~~~~~~~~~~~~~
 
-.. attention::
-
-  RHEL users need to enable the **centos-sclo-sclo** repository.
-
-
 Install Redis server from epel repository
 
 .. code-block:: bash
 
-   $ sudo yum install -y redis sclo-php56-php-pecl-redis
+   $ sudo yum install -y redis php56-php-pecl-redis
 
 Generate a strong password ``${REDIS_PASSWORD}`` and set in the configuration:
 
@@ -278,8 +273,8 @@ Install the packages list
 
    $ sudo yum install $(cat rhel6_tuleap_packages.lst) \
                       nginx \
-                      rh-php56-php-fpm \
-                      rh-php56-php-bcmath \
+                      php56-php-fpm \
+                      php56-php-bcmath \
                       tuleap-plugin-svn \
                       php-amqplib-amqplib
 
@@ -491,7 +486,7 @@ You can start Nginx service
 Finalize php configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Define the name of the handler and the path session in ``/etc/opt/rh/rh-php56/php-fpm.d/tuleap.conf``
+Define the name of the handler and the path session in ``/etc/opt/remi/php56/php-fpm.d/tuleap.conf``
 
 .. code-block:: php
 
@@ -505,7 +500,7 @@ Mask RHEL php-fpm unit to avoid confusion with the tuleap-php-fpm unit
 
 .. code-block:: bash
 
-   $ sudo systemctl mask rh-php56-php-fpm
+   $ sudo systemctl mask php56-php-fpm
 
 Restart apache and make it persistent:
 
@@ -561,6 +556,6 @@ plugin and subversion operations made on svn plugin.
 The various logs on el7 server:
 
 * svn operations (svn ls, etc): ``/var/log/httpd/``
-* svn browsing (viewvc + settings): ``/var/opt/rh/rh-php56/log/php-fpm``
+* svn browsing (viewvc + settings): ``/var/opt/remi/php56/log/php-fpm``
 * tuleap svn backend: ``/var/log/tuleap/svnroot_updater.log``
 * reverse proxy logs: ``/var/log/nginx``

@@ -2,7 +2,7 @@ Profiling with XDebug
 ---------------------
 
 
-Edit ``/etc/opt/rh-php56/php.d/xdebug.ini`` and add those lines:
+Edit ``/etc/opt/remi/php56/php.d/xdebug.ini`` and add those lines:
 
     .. code-block:: properties
 
@@ -20,5 +20,3 @@ How to use it:
 
 - When you add ``XDEBUG_PROFILE=1`` as a request parameter (e.g. ￼``http://..../?stuff&XDEBUG_PROFILE=1``) it will generate a profile info into  ``profiler_output_dir``
 - With kcachegrind (on your host) you can analyse the generated trace and find hotspots
-
-

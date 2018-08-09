@@ -47,6 +47,15 @@ On RedHat this is done by:
 
     yum-config-manager --enable rhel-server-rhscl-7-rpms
 
+-  **Install remi-safe repository** (needed for PHP dependencies):
+
+::
+
+    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+You can find find more information about the installation of the remi-safe repository
+on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 

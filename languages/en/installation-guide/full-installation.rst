@@ -30,7 +30,7 @@ The server will need an Internet connection as it will download external package
 Installation
 ------------
 
-This installation guide will cover the installation on the recommended system: Redhat/CentOS 6.x.
+This installation guide will cover the installation on the recommended system: RedHat/CentOS 6.x.
 
 -  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor).
 
@@ -54,17 +54,14 @@ On RedHat this is done by:
 
     yum-config-manager --enable rhel-server-rhscl-6-rpms
 
--  **Install CentOS Vault repository for PHP 5.6 packages** Create a /etc/yum.repos.d/centos-vault-rh-php56.repo with this content:
+-  **Install remi-safe repository** (needed for PHP dependencies):
 
 ::
 
-    [centos-vault-rh-php56]
-    name=centos-vault-rh-php56
-    baseurl=http://vault.centos.org/6.9/sclo/$basearch/rh/
-    gpgcheck=1
-    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
-    enabled=1
-    includepkgs=rh-php56*
+    yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+
+You can find find more information about the installation of the remi-safe repository
+on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
