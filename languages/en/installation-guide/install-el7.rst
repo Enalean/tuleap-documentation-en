@@ -51,7 +51,7 @@ On RedHat this is done by:
 
 ::
 
-    yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 You can find find more information about the installation of the remi-safe repository
 on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
