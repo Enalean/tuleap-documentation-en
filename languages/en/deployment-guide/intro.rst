@@ -18,11 +18,17 @@ The Software Collection for PHP 5.6 is not supported anymore, therefore Tuleap
 has moved to the **remi-safe** repository. You will need to install to be able
 to upgrade.
 
-To install it:
+To install it if you are using RHEL/CentOS 6:
 
 ::
 
     yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+
+To install it if you are using RHEL/CentOS 7:
+
+::
+
+    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 You can find find more information about the installation of the remi-safe repository
 on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
