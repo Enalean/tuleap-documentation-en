@@ -11,7 +11,7 @@ We strongly recommend to setup the reverse proxy so that it terminates SSL.
 Install Nginx
 ~~~~~~~~~~~~~
 
-See documentation on scl web site: https://www.softwarecollections.org/en/scls/rhscl/rh-nginx18/
+Install nginx from EPEL.
 
 Configure Nginx
 ~~~~~~~~~~~~~~~
@@ -35,12 +35,12 @@ Configure Nginx
     # -- Cache and compress
 
     upstream tuleap {
-        server 127.0.0.1:8080;
+        server 127.0.0.1:4430;
     }
 
     server {
         listen 443 ssl;
-        server_name my.tuleap.name;
+        server_name tuleap.example.com;
         ssl_certificate /etc/nginx/ssl/server.crt;
         ssl_certificate_key /etc/nginx/ssl/server.key;
         ssl_session_timeout 1d;
@@ -65,7 +65,8 @@ Configure Nginx
             proxy_hide_header       "Set-Cookie";
             expires                 1h;
 
-            proxy_pass http://tuleap;
+            proxy_pass https://tuleap;
+            proxy_ssl_verify off;
             proxy_set_header X-Real-IP         $remote_addr;
             proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
@@ -75,7 +76,8 @@ Configure Nginx
 
         # The 4 proxy_set_header are mandatory
         location / {
-            proxy_pass http://tuleap;
+            proxy_pass https://tuleap;
+            proxy_ssl_verify off;
             proxy_set_header X-Real-IP         $remote_addr;
             # Allow to know what is the original IP address (esp. for logging purpose as well as session management)
             proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
@@ -95,7 +97,7 @@ Configure Nginx
     # Let Nginx manage "force HTTPS itself"
     server {
         listen       80;
-        server_name  my.tuleap.name;
+        server_name  tuleap.example.com;
         return       301 https://$server_name:443$request_uri;
     }
 
