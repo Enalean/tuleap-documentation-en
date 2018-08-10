@@ -202,7 +202,7 @@ Project websites
 If you need to enable the project websites:
 
 * if you access to project websites through domains like projectname.tuleap.example.com,
-  check ``/usr/share/tuleap/src/etc/nginx18/vhosts/Readme.md`` for instructions.
+  check ``/usr/share/tuleap/src/etc/nginx/vhosts/Readme.md`` for instructions.
 * if you access to project websites through an URL like https://tuleap.example.com/www/projectname/,
   edit ``/etc/nginx/conf.d/tuleap.conf`` and add before ``include conf.d/tuleap.d/*.conf;``
   the following configuration snippet:
