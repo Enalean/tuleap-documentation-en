@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.4
 ===========
 
-.. NOTE::
-
-  Tuleap 10.4 is currently under development.
-
 New RPM repository for PHP packages
 -----------------------------------
 
