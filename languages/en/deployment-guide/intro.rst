@@ -15,10 +15,6 @@ Tuleap 10.5
 Tuleap 10.4
 ===========
 
-.. NOTE::
-
-  Tuleap 10.4 is currently under development.
-
 New RPM repository for PHP packages
 -----------------------------------
 
