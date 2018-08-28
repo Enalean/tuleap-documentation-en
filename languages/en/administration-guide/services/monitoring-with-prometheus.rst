@@ -21,10 +21,17 @@ documented in their respective documentations.
 Configuration of Tuleap
 -----------------------
 
+First step is to install a Redis server and to configure Tuleap to use it, 
+checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+
 After having installed and activated ``tuleap-plugin-prometheus-metrics`` rpm, you need to setup a password to access the
 data (by default data are private and there is no ways to make them accessible anonymously). To do so, you need to write
 a 16 chars password (minimum) in ``/etc/tuleap/plugins/prometheus_metrics/etc/metrics_secret.key``. Keep this file safe by
 making it readable only by ``codendiadm`` user (``chown codendiadm:codendiadm`` && ``chmod 0400``).
+
+You also have to give it to the platform, this name will used as a label in Prometheus so you can be able to filter the
+result per platform if you are running multiple Tuleap instances. The name can be something like *staging*, *production*
+or just the FQDN of the instance: ``tuleap config-set prometheus_platform <name>``.
 
 Then your instance will output metrics under the ``/metrics`` end-point. For instance if your tuleap is setup under
 https://tuleap.example.com, you will metrics them at https://tuleap.example.com/metrics. You will get a basic auth challenge
