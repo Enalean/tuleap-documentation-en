@@ -22,7 +22,7 @@ We use the *domain* feature provided by gettext in order to have i18n in plugins
 .. NOTE:: The command ``xgettext`` extracts strings without being able to interpret PHP constants or variables. Don't try to be too smart and don't put the domain ``tuleap-proftpd`` in a variable or a constant, we **need** to repeat ourselves.
 
 
-.. IMPORTANT:: You can use localized strings from core or other plugins (beware of dependencies!) in a given plugin.
+.. NOTE:: You can use localized strings from core or other plugins (beware of dependencies!) in a given plugin.
 
 Pluralization
 -------------
@@ -42,9 +42,7 @@ Pluralization
     // or
     // The fields 'summary', 'details' don't exist
 
-.. NOTE:: Pluralization is only available for plugins as of today.
-
-.. NOTE:: Do not concatenate strings to build a sentence! For example ``nb + " pull requests"`` or ``"It is " + "suspended"`` are not allowed.
+.. IMPORTANT:: Do not concatenate strings to build a sentence! For example ``nb + " pull requests"`` or ``"It is " + "suspended"`` are not allowed.
 
 Workflow
 --------
