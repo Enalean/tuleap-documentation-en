@@ -44,6 +44,8 @@ Pluralization
 
 .. NOTE:: Pluralization is only available for plugins as of today.
 
+.. NOTE:: Do not concatenate strings to build a sentence! For example ``nb + " pull requests"`` or ``"It is " + "suspended"`` are not allowed.
+
 Workflow
 --------
 
