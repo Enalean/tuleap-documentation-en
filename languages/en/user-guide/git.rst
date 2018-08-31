@@ -30,6 +30,33 @@ Two types of repositories are available:
    order to publish it's personal work. It aims to support the
    publish/integrator development model.
 
+How to use a Git repository:
+----------------------------
+
+Use the clone bar to get the URL to clone:
+
+::
+
+        git clone ssh://gitolite@yourlocaldomain/project_name/repository_name.git your_repository_name
+
+
+Or just add this repository as a remote to an existing local repository:
+
+::
+
+        git remote add your_repository_name ssh://gitolite@yourlocaldomain/project_name/repository_name.git
+        git fetch your_repository_name
+        git checkout -b my-local-tracking-branch your_repository_name/master
+
+
+How to use a Pull requests:
+----------------------------
+For now, you can only make a pull request between two branches of a Git repository. What you can do is:
+
+    - Create a pull request using the button "Create a pull requests"
+    - See all pull requests by clicking on Pull requests tab
+    - When viewing a pull request, comment it, review its files and merge or abandon it
+
 Reference
 ---------
 
