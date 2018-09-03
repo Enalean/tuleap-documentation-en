@@ -33,11 +33,11 @@ Two types of repositories are available:
 How to use a Git repository:
 ----------------------------
 
-Use the clone bar to get the URL to clone:
+Go to the repository, and under its name, copy the clone url. Now you can paste the url after your git clone command:
 
 ::
 
-        git clone ssh://gitolite@yourlocaldomain/project_name/repository_name.git your_repository_name
+        git clone ssh://gitolite@tuleap.example.com/project_name/repository_name.git
 
 
 Or just add this repository as a remote to an existing local repository:
@@ -48,14 +48,6 @@ Or just add this repository as a remote to an existing local repository:
         git fetch your_repository_name
         git checkout -b my-local-tracking-branch your_repository_name/master
 
-
-How to use a Pull requests:
-----------------------------
-For now, you can only make a pull request between two branches of a Git repository. What you can do is:
-
-    - Create a pull request using the button "Create a pull requests"
-    - See all pull requests by clicking on Pull requests tab
-    - When viewing a pull request, comment it, review its files and merge or abandon it
 
 Reference
 ---------
