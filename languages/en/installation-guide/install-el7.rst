@@ -1,11 +1,11 @@
 ..  _install_el7:
 
-Install Tuleap on RHEL or CentOs 7.x
+Install Tuleap on RHEL or CentOS 7.x
 ====================================
 
 .. attention::
 
-  The install on RHEL or CentOS 7 is **currently in beta** and covers only a subset of Tuleap (see below).
+  The install on RHEL or CentOS 7 is **currently in beta** and some Tuleap plugins might not be available (see below).
 
   You should not install it on production server
 
@@ -85,23 +85,10 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
 .. attention::
 
-  Despite almost all plugins are listed when you run a yum list ``tuleap-plugin-\*`` only a limited subset is currently
-  usable. **DO NOT INSTALL OR ACTIVATE OTHER PACKAGES** or you are almost likely to shoot yourself in the foot now or
-  later when they are made available.
+  The following Tuleap plugins are not available/functional on RHEL/CentOS 7:
 
-  Plugins that should work:
-
-  * tuleap-plugin-tracker
-  * tuleap-plugin-agiledashboard
-  * tuleap-plugin-cardwall
-  * tuleap-plugin-graphontrackers
-  * tuleap-plugin-testmanagement
-  * tuleap-plugin-git
-  * tuleap-plugin-svn
-  * tuleap-plugin-pullrequest
-  * tuleap-plugin-hudson
-  * tuleap-plugin-hudson-svn
-  * tuleap-plugin-hudson-git
+  * tuleap-plugin-fulltextsearch
+  * tuleap-plugin-webdav
 
 - **Configure the database**
 
@@ -156,4 +143,4 @@ Default site administrator credentials can be found in ``/root/.tuleap_passwd``.
 Report issues
 -------------
 
-Install on RHEL7/CentOs7 is in beta, please report issues you might find on `request tracker <https://tuleap.net/plugins/tracker/?tracker=140>`_.
+Install on RHEL7/CentOS7 is in beta, please report issues you might find on `request tracker <https://tuleap.net/plugins/tracker/?tracker=140>`_.
