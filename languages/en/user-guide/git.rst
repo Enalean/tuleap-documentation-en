@@ -33,7 +33,7 @@ Two types of repositories are available:
 How to use a Git repository:
 ----------------------------
 
-Go to the repository, and under its name, copy the clone url. Now you can paste the url after your git clone command:
+Go to the repository, and under its name, copy the clone url. Now you can paste the url after your ``git clone`` command:
 
 ::
 
@@ -44,7 +44,7 @@ Or just add this repository as a remote to an existing local repository:
 
 ::
 
-        git remote add your_repository_name ssh://gitolite@yourlocaldomain/project_name/repository_name.git
+        git remote add your_repository_name ssh://gitolite@tuleap.example.com/project_name/repository_name.git
         git fetch your_repository_name
         git checkout -b my-local-tracking-branch your_repository_name/master
 
