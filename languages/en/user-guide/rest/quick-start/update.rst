@@ -1,6 +1,6 @@
 .. _rest-update:
 
-Udpate an artifact
+Update an artifact
 ==================
 
 As seen in the previous section :ref:`rest-query`, retrieving information is done through GET requests while update
