@@ -79,7 +79,7 @@ In case of failure, you may need to attach to this running container in order to
 
   You can run your test container with:
 
-  ``docker run -ti --rm -v "$(pwd)":/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql56 bash``
+  ``docker run -ti --rm -v "$(pwd)":/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql57 bash``
 
 Cypress tests
 """""""""""""
