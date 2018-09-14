@@ -196,3 +196,7 @@ to Add Forum, Delete Message, and Update Forum Info/Status. The Update
 Forum Info/Status page lets administrators make forums public or
 private, edit the name and description of the forum, or even delete the
 forum.
+
+.. [#f1]
+   Behind the scene, each piece of news is actually managed exactly like
+   a Tuleap Web Forum.
