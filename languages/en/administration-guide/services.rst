@@ -4,12 +4,11 @@ Services
 Network Ports
 -------------
 
-* Apache ports: 80 (HTTP) and 443 (HTTPS)
+* Web UI: 80 (HTTP) and 443 (HTTPS)
 * CVS pserver port: 2401
 * FTP: port 21
 * SSH: port 22
 * SMTP: port 25
-* JDBC: port 3306 (for SaloméTMF JDBC-mode support)
 
 
 Mysql
