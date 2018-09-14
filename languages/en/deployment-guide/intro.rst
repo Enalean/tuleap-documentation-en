@@ -4,6 +4,21 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+Tuleap 10.5
+===========
+
+PHP-FPM does not restart after PHP-FPM upgrade
+----------------------------------------------
+
+Tuleap configuration can conflict with the default configuration of the PHP-FPM package.
+We advise you to create an empty configuration file for the default configuration to
+avoid the recreation of the default configuration file.
+
+::
+
+    touch /etc/opt/remi/php56/php-fpm.d/www.conf
+
+
 Tuleap 10.4
 ===========
 
