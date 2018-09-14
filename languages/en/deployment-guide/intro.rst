@@ -20,6 +20,21 @@ If you still had the plugin enabled on your Tuleap instance, it will disappear a
 the update.
 
 
+Tuleap 10.5
+===========
+
+PHP-FPM does not restart after PHP-FPM upgrade
+----------------------------------------------
+
+Tuleap configuration can conflict with the default configuration of the PHP-FPM package.
+We advise you to create an empty configuration file for the default configuration to
+avoid the recreation of the default configuration file.
+
+::
+
+    touch /etc/opt/remi/php56/php-fpm.d/www.conf
+
+
 Tuleap 10.4
 ===========
 
