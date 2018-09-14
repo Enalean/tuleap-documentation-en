@@ -12,6 +12,14 @@ Tuleap 10.6
   Tuleap 10.6 is currently under development.
 
 
+Removal of the IM plugin
+------------------------
+
+The IM plugin has been removed and is not available anymore in the Tuleap repository.
+If you still had the plugin enabled on your Tuleap instance, it will disappear after
+the update.
+
+
 Tuleap 10.4
 ===========
 
@@ -440,7 +448,7 @@ Tuleap 9.14
   If your ``my.cnf`` on your mysql server contains ``old_passwords=1`` you will have to desactivate it (comment the line)
   and restart mysql.
 
-  Then update your password, as ``codendiadm`` and ``dbauthuser`` (and ``openfireadm`` if you use the IM plugin) DB user:
+  Then update your password, as ``codendiadm`` and ``dbauthuser`` DB user:
 
   * ``SET SESSION old_passwords=0;``
   * ``SET PASSWORD = PASSWORD('your_existing_password')``
@@ -808,12 +816,6 @@ Tuleap 9.4 introduces a change in the way the user sessions are handled. All
 existing user sessions are flushed during this upgrade, this will force your
 users to log in again.
 
-If you use the IM plugin you also must redeploy the authentication provider:
-
-.. sourcecode:: shell
-
-    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
-
 End of support of package ``viewvc-tuleap``
 -------------------------------------------
 
@@ -866,15 +868,9 @@ Tuleap 9.0
 Definitive removal of the deprecated password storage
 -----------------------------------------------------
 This release can only work with the password storage introduced in Tuleap 8.3.
-You must ensure that you have properly updated the IM and Proftpd plugin.
+You must ensure that you have properly updated the Proftpd plugin.
 
-For the IM plugin you must have executed the following script:
-
-.. sourcecode:: shell
-
-    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
-
-For the Proftpd plugin you must have executed this script:
+The following command must be executed this script:
 
 .. sourcecode:: shell
 
@@ -1235,12 +1231,6 @@ following line in your ``local.inc``:
   .. sourcecode:: php
 
     $sys_keep_md5_hashed_password = 0;
-
-Execute this script if you have the IM plugin installed:
-
-  .. sourcecode:: shell
-
-    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/IM/bin/redeploy_auth_provider.php
 
 Execute this script if you have the Proftpd plugin installed:
 

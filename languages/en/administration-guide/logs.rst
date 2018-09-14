@@ -45,9 +45,3 @@ Tuleap Realtime
 ---------------
 
  - ``/var/log/tuleap-realtime/tuleap-realtime.log``: contains information specific to the Tuleap Realtime server.
-
-Openfire
---------
-Openfire is a XMPP server used by Tuleap for the IM plugin. The logs of the Openfire
-server are located into ``/opt/openfire/logs/``, please check the Openfire
-documentation for more information.

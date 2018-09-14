@@ -105,6 +105,5 @@ Deprecated plugins
 Those plugins should not be installed and only kept for legacy reasons. They will be removed
 
 * tracker_encryption
-* IM
 * fulltextsearch
 * graphontrackers

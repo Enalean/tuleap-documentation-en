@@ -173,21 +173,6 @@ the from header.
 You finally need to state the URL of the Hudson server. URL in sent
 emails will then be correct.
 
-Jabber Notification
-~~~~~~~~~~~~~~~~~~~
-
-If you have installed the Jabber plug-in for Hudson (see `Hudson Plug-ins`_), you will
-find in the section "Manage Hudson" -> "Configure System" a part to
-configure Jabber notification. If the Jabber plugin for
-Tuleap is installed and enabled, every Tuleap
-user has a Jabber account (see :ref:`instant-messaging-plug-in`) and each project has a Chat Room.
-Jabber plug-in lets you the ability to send notification to users or
-chat rooms.
-
-To use the Jabber notification, please give the name of the server (by
-default tuleap.example.com) as well as the JabberID of the user that
-will send the notifications.
-
 Hudson Plug-ins
 ```````````````
 

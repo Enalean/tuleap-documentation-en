@@ -22,9 +22,6 @@ Depending on services you use, you will want to stop them before the backup (It 
     $ service tuleap stop
     $ su - gitolite -c "gitolite writable off"
 
-    # Only if you use the openfire Instant Messaging plugin:
-    $ service openfire stop
-
 Don't forget to restart services once the backup is done.
 
 Database backup
