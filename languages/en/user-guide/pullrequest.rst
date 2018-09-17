@@ -169,6 +169,28 @@ integrated inside master.
 Alice can also merge "by hand" in her own working copy and then push to the repository,
 the end result will be the same.
 
+See side-by-side diff
+'''''''''''''''''''''
+
+In addition to the unified diff, you can also view changes as a side-by-side diff.
+Deleted lines will show up on the left-hand side, added lines will show up on the
+right-hand side.
+
+.. figure:: ../images/screenshots/pullrequest/pullrequest-side-by-side-diff-button.png
+    :align: center
+    :alt: Button to switch to side-by-side diff
+    :name: Button to switch to side-by-side diff
+
+.. attention::
+
+  Due to a technical limitation, adding comments on the left-hand side of unchanged lines
+  is currently not possible. You'll need to add comments on the rigt-hand side.
+
+  .. figure:: ../images/screenshots/pullrequest/pullrequest-side-by-side-diff.png
+      :align: center
+      :alt: Adding comments on side-by-side-diff
+      :name: Adding comments on side-by-side-diff
+
 Advanced workflows
 ~~~~~~~~~~~~~~~~~~
 
