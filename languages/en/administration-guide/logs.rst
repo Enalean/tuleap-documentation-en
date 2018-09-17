@@ -33,6 +33,7 @@ Tuleap
  - ``/var/log/tuleap/git_http_error_log``: contains errors specific to the Git HTTP activity.
  - ``/var/log/tuleap/rest_api_log``: contains errors specific to the REST API activity.
  - ``/var/log/tuleap/burndown_syslog``: contains information on the generation of burndowns by the tracker plugin.
+ - ``/var/log/tuleap/burnup_syslog``: contains information on the generation of burnups by the agile dashboard plugin.
  - ``/var/log/tuleap/project_xml_import_syslog``: contains information specific to the XML project import process.
  - ``/var/log/tuleap/statistics_syslog``: contains information on operations executed for the statistic generation.
  - ``/var/log/tuleap/tv3_tv5_migration_syslog``: contains information related to tracker v3 to tracker v5 migration.
