@@ -12,6 +12,17 @@ Tuleap 10.6
   Tuleap 10.6 is currently under development.
 
 
+Plugin Git with Gitolite3 now requires Git 2.12
+-----------------------------------------------
+
+The configuration of Gitolite must been manually updated to take into account
+the new path to the Git binaries. The update can be done with the following command:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/rh-git29/root/usr/bin#/opt/rh/sclo-git212/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
+
+
 Removal of the IM plugin
 ------------------------
 
