@@ -1219,6 +1219,15 @@ Once you've done this, your PermissionsOverrider object will be called for each 
 Use Subversion 1.9 from WANdisco repository
 -------------------------------------------
 
+.. warning::
+
+    Starting Subversion 1.8, the way paths are handled in the access file has changed.
+    Sections of the access file that might have been previously ignored will now deny
+    accesses to the repository. For more information, consult the Subversion 1.8
+    changelog: `FS paths syntax in authz access rules <https://subversion.apache.org/docs/release-notes/1.8#authz-fspath-syntax>`_.
+
+You can use the following instructions to install Subversion 1.9:
+
  1. Install WANdisco repository on your server
  2. Upgrade Subversion with ``yum upgrade subversion``
  3. Install Python 2.7 with the required dependency: ``yum install python27-python python27-subversion-python python27-MySQL-python``
