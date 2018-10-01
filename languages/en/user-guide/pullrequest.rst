@@ -181,16 +181,6 @@ right-hand side.
     :alt: Button to switch to side-by-side diff
     :name: Button to switch to side-by-side diff
 
-.. attention::
-
-  Due to a technical limitation, adding comments on the left-hand side of unchanged lines
-  is currently not possible. You'll need to add comments on the rigt-hand side.
-
-  .. figure:: ../images/screenshots/pullrequest/pullrequest-side-by-side-diff.png
-      :align: center
-      :alt: Adding comments on side-by-side-diff
-      :name: Adding comments on side-by-side-diff
-
 Advanced workflows
 ~~~~~~~~~~~~~~~~~~
 
@@ -228,7 +218,7 @@ given branch.
 
 .. attention::
 
-      Be very careful with "rewind" permssion. People granted to rewind can completly
+      Be very careful with "rewind" permission. People granted to rewind can completely
       erase the repository if they want to.
 
       If you want to generalize the rebase pattern we strongly suggest that you either:
