@@ -22,6 +22,16 @@ the new path to the Git binaries. The update can be done with the following comm
 
     #> sed -i "s#/opt/rh/rh-git29/root/usr/bin#/opt/rh/sclo-git212/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
 
+REST route ``POST /git/{id}/build_status`` is no more available
+---------------------------------------------------------------
+
+As announced in Tuleap 10.2, this REST route has been replaced
+by the REST route ``POST /git/{id_or_path}/statuses/{commit_reference}``.
+
+Your CI jobs and scripts that are still using the last route will need to be updated.
+
+More information on how to configure your CI jobs and updated script to publish
+the feedback of your jobs to Tuleap can be found here: :ref:`pullrequest-with-jenkins-feedback`.
 
 Removal of the IM plugin
 ------------------------
