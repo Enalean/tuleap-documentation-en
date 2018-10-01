@@ -44,5 +44,4 @@ Advanced topics
    developer-guide/ldap
    developer-guide/realtime
    developer-guide/trackers
-   developer-guide/howto
    developer-guide/gerrit
