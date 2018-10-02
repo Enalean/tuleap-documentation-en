@@ -25,10 +25,9 @@ as an example) with updated values.
 .. code-block:: bash
 
     $ curl -XPUT --header 'Content-type: application/json' \
-        --header 'X-Auth-Token: abcd…' \
-        --header 'X-Auth-UserId: 115' \
+        --header 'X-Auth-AccessKey: tlp.k1.1026…'
         -d '{"values":[{"field_id": 694, "bind_value_ids": [597]}]}' \
-        https://example.com/api/artifacts/220
+        https://tuleap.example.com/api/artifacts/220
 
     HTTP/1.1 200 OK
 
@@ -52,7 +51,7 @@ Conclusions
 Now we are able to:
 
 * Do authenticated calls
-* Do a basic GET to retrieve informations (projects, trackers, artifacts, ...)
+* Do a basic GET to retrieve information (projects, trackers, artifacts, ...)
 * Handle pagination
 * Update a resource with a PATCH or PUT
 

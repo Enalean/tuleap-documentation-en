@@ -6,7 +6,7 @@ Query the artifacts
 Basic usage
 -----------
 
-We have a token to initiate authenticated calls to the API (if it is not the case,
+We have an access key to initiate authenticated calls to the API (if it is not the case,
 please go back to :ref:`rest-auth`), we can now query a tracker to retrieve some artifacts.
 
 For example to retrieve all artifacts that are in *Completed* status we will issue the following query:
@@ -14,15 +14,14 @@ For example to retrieve all artifacts that are in *Completed* status we will iss
 .. code-block:: bash
 
     $ curl -XGET --header 'Content-type: application/json' \
-        --header 'X-Auth-Token: abcd…' \
-        --header 'X-Auth-UserId: 115' \
+        --header 'X-Auth-AccessKey: tlp.k1.1026…' \
         -d '{"status_id":{"operator":"contains","value":"504"}}' \
-        https://example.com/api/trackers/101/artifacts
+        https://tuleap.example.com/api/trackers/101/artifacts
 
 This will return a bunch of artifacts. Some explanations about values used in this example:
 
-* ``abcd…`` and ``115`` are the token and the user id you get in the previous section. You should already know what
-  they are and how to get them.
+* ``tlp.k1.1026…`` and ``115`` is the access key you get in the previous section. You should already know what
+  it is and how to get it.
 * ``status_id`` is the shortname of the field *Status* of my tracker.
 * ``504`` is the id of the value *Completed*. This value is one of the possible values for the field *Status*.
 * ``101`` in the URI is the id of the tracker.
@@ -86,13 +85,12 @@ Routes that return paginated collection accept two parameters that we will adjus
 
 .. code-block:: bash
   :linenos:
-  :emphasize-lines: 5
+  :emphasize-lines: 4
 
     $ curl -XGET --header 'Content-type: application/json' \
-        --header 'X-Auth-Token: abcd…' \
-        --header 'X-Auth-UserId: 115' \
+        --header 'X-Auth-AccessKey: tlp.k1.1026…' \
         -d '{"status_id":{"operator":"contains","value":"504"}}' \
-        https://example.com/api/trackers/101/artifacts?offset=100&limit=50
+        https://tuleap.example.com/api/trackers/101/artifacts?offset=100&limit=50
 
 .. NOTE::
 
@@ -106,7 +104,7 @@ Conclusions
 Now we are able to:
 
 * Do authenticated calls
-* Do a basic GET to retrieve informations (projects, trackers, artifacts, ...)
+* Do a basic GET to retrieve information (projects, trackers, artifacts, ...)
 * Handle pagination
 
 This only covered artifacts, but you can apply what you've just learned to every routes provided by your Tuleap instance.

@@ -1,7 +1,7 @@
 Various examples
 ================
 
-In this section you will find utilisation example of REST routes.
+In this section you will find utilization example of REST routes.
 
 POST /artifacts
 ---------------
@@ -43,9 +43,9 @@ like Chrome or Firefox (don't forget to update the base url, file id, and creden
 .. code-block:: javascript
 
     (async () => {
-      const base_url    = 'https://tuleap-web.tuleap-aio-dev.docker/api/v1';
+      const base_url    = 'https://tuleap.example.com/api/v1';
       const file_id     = 1;
-      const credentials = { token: '50f5299d747566862811c92ba6ff6f14', user_id: 103 };
+      const access_key = 'tlp-k1-22.3329b8ac4401eaf03cf7776d6bab1809883624eef7a2e2dd2dc4d07696d32504';
   
       const file_content = await getFileContentRecursively(file_id);
       saveTheFileSomewhere(file_content);
@@ -56,8 +56,7 @@ like Chrome or Firefox (don't forget to update the base url, file id, and creden
           method: 'GET',
           headers: new Headers({
             'Content-type': 'application/json',
-            'X-Auth-Token': credentials.token,
-            'X-Auth-UserId': credentials.user_id
+            'X-Auth-AccessKey': access_key
           }),
           mode: 'cors'
         };
@@ -129,7 +128,7 @@ allow commit message change you should provide following information to the rout
       }
      }
      
-DELETE /artifatcs/{id}
+DELETE /artifacts/{id}
 ----------------------
 Delete the corresponding artifact.
 
