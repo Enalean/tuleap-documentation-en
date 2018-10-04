@@ -1,3 +1,5 @@
+..  _install_el7:
+
 Full Installation
 =================
 
@@ -8,7 +10,6 @@ The full installation is the common way to install tuleap.
 It uses your distribution package system and will provide a fully configurable and adjustable
 environment. It is robust so you can deploy production environment this way.
 
-
 Requirements
 ------------
 
@@ -18,10 +19,10 @@ a full suite of software and is deeply integrated with its host system. Installi
 will certainly cause probleme in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - **CentOS or RedHat 6.x** is the recommended platform
- - **CentOS or RedHat 7.x** is :ref:`available in beta <install_el7>`.
+ - **CentOS or RedHat 7.x is the recommended platform**.
+ - CentOS or RedHat 6.x is still available but not advised for production installation. See :ref:`dedicated guide <install_el6>`.
 
-Currently, **Tuleap does not play well with SELinux**, you probably want to set SELinux's behavior to permissive mode to avoid issues.
+**You must disable SELinux** prior to the install.
 
 The server will need an Internet connection as it will download external packages.
 
@@ -30,9 +31,9 @@ The server will need an Internet connection as it will download external package
 Installation
 ------------
 
-This installation guide will cover the installation on the recommended system: RedHat/CentOS 6.x.
+This configure the dependencies and download RPM packages
 
--  **Install EPEL** You will need EPEL for some dependencies (e.g. ckeditor).
+-  **Install EPEL** You will need EPEL for some dependencies.
 
 ::
 
@@ -52,16 +53,17 @@ On RedHat this is done by:
 
 ::
 
-    yum-config-manager --enable rhel-server-rhscl-6-rpms
+    yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 -  **Install remi-safe repository** (needed for PHP dependencies):
 
 ::
 
-    yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 You can find find more information about the installation of the remi-safe repository
 on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+
 
 -  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
@@ -69,7 +71,7 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
     [Tuleap]
     name=Tuleap
-    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/6/dev/$basearch
+    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/dev/$basearch
     enabled=1
     gpgcheck=1
     gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
@@ -78,8 +80,40 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
 ::
 
+    yum install -y \
+      rh-mysql57-mysql-server \
+      tuleap-plugin-agiledashboard \
+      tuleap-plugin-graphontrackers \
+      tuleap-theme-burningparrot \
+      tuleap-theme-flamingparrot \
+      tuleap-plugin-git \
+      tuleap-plugin-pullrequest \
 
-    yum install -y tuleap-all tuleap-plugin-git-gitolite3
+You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
+to install all of them now. Start small and add them on the go.
+
+.. attention::
+
+  The following Tuleap plugins are not available/functional on RHEL/CentOS 7:
+
+  * tuleap-plugin-fulltextsearch
+  * tuleap-plugin-webdav
+
+- **Configure the database**
+
+Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
+in section [mysqld]
+
+::
+
+    # Activate mysql on boot
+    systemctl enable rh-mysql57-mysqld
+
+    # Start it
+    systemctl start rh-mysql57-mysqld
+
+    # Set a password
+    scl enable rh-mysql57 "mysqladmin -u root password"
 
 
 Setup
@@ -91,21 +125,21 @@ As root, run:
 
 ::
 
-     /usr/share/tuleap-install/setup.sh
+     /usr/share/tuleap/tools/setup.el7.sh \
+       -y \
+       -c \
+       --server-name=FQDN \
+       --mysql-server=localhost \
+       --mysql-password=XXXXX
 
-It will ask you for:
+With:
 
--  **Tuleap Domain name**. This is the public name of the server.
-
--  **Your Company name**. Who need more informations about this?
-
--  On redhat systems, the firewall is activated by default. Open needed ports:
-
+- FQND being the name of the server as you access it on your network (localhost for a local test, tuleap.example.com with a DNS entry 192.168.1.123 if you only have an IP address)
+- XXXXX being the password of root password of the db configured earlier.
+-  Ensure the firewall is properly configured. Open needed ports:
     -  Web (TCP/80 & TCP/443)
-
     -  SSH (git, admin): TCP/22
 
-    -  More if you need more (FTP, SMTP, ...).
 
 Mail configuration
 ------------------
@@ -124,7 +158,7 @@ First connection
 
 Once these steps are completed, you can access the Tuleap server with the web interface. Go to your Tuleap domain name (e.g. ``https://tuleap.example.com``)
 
-Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Change it as soon as possible.
+Default site administrator credentials can be found in ``/root/.tuleap_passwd``. Store it securely and delete the file as soon as possible.
 
 Backups are under your responsibility so you probably want to take a look at the :ref:`Backup/Restore guide <backup>`.
 
