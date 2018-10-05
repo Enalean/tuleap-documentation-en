@@ -92,13 +92,6 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
 
-.. attention::
-
-  The following Tuleap plugins are not available/functional on RHEL/CentOS 7:
-
-  * tuleap-plugin-fulltextsearch
-  * tuleap-plugin-webdav
-
 - **Configure the database**
 
 Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
@@ -126,8 +119,7 @@ As root, run:
 ::
 
      /usr/share/tuleap/tools/setup.el7.sh \
-       -y \
-       -c \
+       --configure \
        --server-name=FQDN \
        --mysql-server=localhost \
        --mysql-password=XXXXX
