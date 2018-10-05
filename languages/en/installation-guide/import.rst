@@ -23,17 +23,17 @@ but corresponding user accounts will be created automatically during import.
 
     Check `source code <https://github.com/Enalean/bz2tuleap>`_ for more details.
 
+Jira
+''''
 
-Generic import tooling
-----------------------
+`bz2tuleap, jira version <https://github.com/Enalean/bz2tuleap#jira-to-tuleap>`_ can also take Jira XML export and convert it to a valid
+Tuleap import archive.
 
-TBC
+Once done, you will need to :ref:`import the archive<project-export-import>` as root on Tuleap server.
 
-Subversion
-''''''''''
+Redmine
+'''''''
 
-Git
-'''
-
-Trackers
-''''''''
+`TrackerIO <https://github.com/jpo38/TrackerIO>`_ is a tool that takes a Redmine database as input and leverages Tuleap
+APIs to replicate the tickets as Tuleap artifacts. It doesn't require an admin access to Tuleap but you will need to have
+full access to the redmine DB.
