@@ -82,6 +82,10 @@ Authentication and permissions:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **project_certification**: Add additional information to a project such as the notion of project ownership
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 Administration:
 
 * **archivedeleteditems**: When something is deleted, move it into a dedicated place for archiving purpose
