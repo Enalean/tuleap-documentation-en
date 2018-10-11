@@ -7,11 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.6
 ===========
 
-.. NOTE::
-
-  Tuleap 10.6 is currently under development.
-
-
 Plugin Git with Gitolite3 now requires Git 2.12
 -----------------------------------------------
 
