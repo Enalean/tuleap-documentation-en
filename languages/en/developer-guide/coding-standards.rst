@@ -14,7 +14,7 @@ As Tuleap is mainly written in PHP, we use the PSR standards:
 Rule of thumb: *All new classes MUST respect PSR-4*
 
 Javascript code formatting
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Javascript files (.js) and Vue files (.vue) are parsed by two tools on a pre-commit hook:
 
@@ -30,6 +30,15 @@ hours fixing code to satisfy those comments ;).
 You should configure your editor or IDE to automatically report linter errors.
 This will give you the fastest feedback. If some code does not conform to
 formatting or syntax rules, the pre-commit hook will reject it.
+
+Sass code formatting
+~~~~~~~~~~~~~~~~~~~~
+
+Sass files (.scss) are also parsed by an automated tool on a pre-commit hook. We currently use scss-lint_ to automatically check Sass files.
+
+This tool will warn you when you make a mistake in a Sass rule. It will also enforce some stylistic conventions such as using shorthand notations or ordering the properties in rules.
+
+This time also, feel free to configure your editor or IDE to automatically report scss-lint errors. This will give you the fastest feedback. The pre-commit hook will warn you otherwise.
 
 Internal conventions
 ~~~~~~~~~~~~~~~~~~~~
@@ -117,6 +126,7 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _PSR-4: https://www.php-fig.org/psr/psr-2/
 .. _eslint: https://eslint.org/
 .. _prettier: https://prettier.io/
+.. _scss-lint: https://github.com/brigade/scss-lint
 
 Tuleap principles
 -----------------
@@ -126,10 +136,10 @@ As of June 2018, the general guidelines are:
 - Autoloader must be done with composer
 - Plugins should not expose a `www` directory anymore (exception for images)
 - New end points must be exposed via `FrontRouter`
-- Mostly static pages that are rendered server side using mustache templating (with some vanilia JS for simple interactions).
+- Mostly static pages that are rendered server side using mustache templating (with some vanilla Javascript for simple interactions).
 - Rich, dynamic, pages that are rendered client side using Vuejs.
 - Database code should use `EasyDB`
-- PHP tests should be use `PHPUnit`
+- PHP tests should use `PHPUnit`
 
 Internationalization
 ~~~~~~~~~~~~~~~~~~~~
