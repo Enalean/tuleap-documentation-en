@@ -95,7 +95,8 @@ Plugins and tools external to the main Tuleap repository
 Some plugins and tools are not in the main Tuleap repository as such their versions
 must be updated and tagged individually.
 
-The list of the concerned plugins and tools can be found in the manifest file.
+The list of the concerned plugins and tools can be found in the
+`manifest file <https://tuleap.net/plugins/git/tuleap/tools/release-manifest?a=blob&f=stable%2Fmanifest.json>`_.
 
 The procedure to follow is similar for each one of the concerned plugins and tools:
  1. Clone the repository or update your local workspace to be on the top of the remote master branch
