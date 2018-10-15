@@ -2,7 +2,7 @@
 Troubleshooting
 ===============
 
-.. _user_supported_browers:
+.. _user_supported_browsers:
 
 Which browser should I use to browse Tuleap?
 ============================================

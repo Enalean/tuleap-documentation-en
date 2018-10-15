@@ -20,6 +20,7 @@ Historically you will also find
 
     front-end/mustache
     front-end/css
-    front-end/angular
+    front-end/javascript
     front-end/vue
     front-end/karma
+    front-end/angular

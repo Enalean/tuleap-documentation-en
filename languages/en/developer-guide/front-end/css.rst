@@ -48,7 +48,7 @@ When you submit a patch for review, we may request changes to better match the f
 * Don't use the `descendant combinator`_, for example ".class1 .class2". It hurts performances because when the browser gets to "class2", it will have to recursively find all its ancestors to see if they are "class1".
 * For the same performance reason, don't use the `child combinator`_, for example ".class1 > .class2".
 * Instead, use a single specific class name that targets precisely what you want.
-* Always make sure the rules you are using work on our list of :ref:`supported browsers <user_supported_browers>`. To do that you can check with the `Can I use`_ website.
+* Always make sure the rules you are using work on our list of :ref:`supported browsers <user_supported_browsers>`. To do that you can check with the `Can I use`_ website.
 
 
 Resources
