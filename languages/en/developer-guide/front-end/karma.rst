@@ -63,9 +63,6 @@ The goal of this file is to import every ``*.spec.js`` file.
 .. code-block:: Javascript
 
     // tuleap/plugins/<your_plugin>/scripts/<your_app>/src/index.spec.js
-
-    import "babel-polyfill"; // Import babel-polyfill to make sure that the tests will not fail on modern JavaScript features.
-
     /*
     * We can also import custom mocks.
     * Note: Here we import 'tlp-mocks' as an external module because it is resolved by an alias in the webpack config.
