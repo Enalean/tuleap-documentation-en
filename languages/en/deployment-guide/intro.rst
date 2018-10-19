@@ -11,6 +11,13 @@ Tuleap 10.7
 
   Tuleap 10.7 is currently under development.
 
+Crosstracker nginx configuration
+--------------------------------
+
+The nginx custome configuration file for the crosstracker plugin must be deleted.
+To do this, you have to delete the file ``/etc/nginx/conf.d/tuleap-plugins/crosstracker.conf``
+and restart the nginx service.
+
 Tuleap 10.6
 ===========
 
