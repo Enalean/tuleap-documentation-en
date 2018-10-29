@@ -82,7 +82,7 @@ Authentication and permissions:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **project_certification**: Add additional information to a project such as the notion of project ownership
+* **project_ownership**: Add additional information to a project such as the notion of project ownership
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 

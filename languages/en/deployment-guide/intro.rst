@@ -11,6 +11,18 @@ Tuleap 10.7
 
   Tuleap 10.7 is currently under development.
 
+Renaming of the Project Certification plugin
+--------------------------------------------
+
+The Project Certification plugin has been renamed to Project Ownership. If you use this plugin, you will need
+to update the ForgeUpgrade configuration before the execution of the ForgeUpgrade utility.
+
+You can use the following command to do so:
+
+.. sourcecode:: shell
+
+    #> sed -i 's#/usr/share/tuleap/plugins/project_certification#/usr/share/tuleap/plugins/project_ownership#' /etc/tuleap/forgeupgrade/config.ini
+
 Crosstracker nginx configuration
 --------------------------------
 
