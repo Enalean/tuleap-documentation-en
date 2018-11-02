@@ -387,7 +387,7 @@ We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
 .. WARNING::
   If you use the webdav plugin with Windows 7 clients, you need to check if the
   `support of the TLSv1.2 protocol is enabled on your clients
-  <https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-a-default-secure-protocols-in>`_
+  <https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi>`_
   before updating the configuration. If you update the TLS configuration and your
   Windows clients does not support TLSv1.2 they won't able to connect anymore.
   If you have the possibility on your infrastructure

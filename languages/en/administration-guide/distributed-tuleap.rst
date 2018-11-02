@@ -280,7 +280,7 @@ Install the packages list
 
 .. note::
 
-  If you are using subversion from `Wandisco <https://www.wandisco.com/subversion/download>`_ to run newer versions,
+  If you are using subversion from `Wandisco <https://www.wandisco.com/resource-library>`_ to run newer versions,
   make sure to install the same version on both el6 and el7 servers.
 
 Configure Nginx

@@ -80,7 +80,7 @@ supported by default by Windows 7 clients hence you will get an error message:
 
 If possible you should enable the support of TLSv1.2 in WinHTTP on your Windows
 7 clients, `Microsoft support page provides information on how to proceed
-<https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-a-default-secure-protocols-in>`_.
+<https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi>`_.
 
 If you are not enable the support of TLSv1.2 in WinHTTP for your Windows 7 clients,
 you will need to customize the default TLS configuration provided by Tuleap. You

@@ -51,8 +51,8 @@ You can checkout https://gerrit.tuleap.net/#/admin/projects/tuleap. You need an 
 
   The reference repository, stable, is "the true master" (ie. it's from this
   repository that releases are rolled out). There are mirrors of stable
-  repository available on `Github <https://github.com/Enalean/tuleap/>`_
-  or `repo.or.cz <http://repo.or.cz/tuleap.git>`_, that are synchronized on
+  repository available on `GitHub <https://github.com/Enalean/tuleap/>`_
+  or `repo.or.cz <https://repo.or.cz/tuleap.git>`_, that are synchronized on
   every push on master.
 
 Setting up your environment

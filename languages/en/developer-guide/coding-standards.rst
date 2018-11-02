@@ -114,7 +114,7 @@ Resources
 
 A couple of documents worth to read when you consider contributing to Tuleap:
 
-- https://www.phptherightway.com/
+- https://phptherightway.com/
 
 .. _+600k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
