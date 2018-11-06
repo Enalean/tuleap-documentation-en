@@ -1,6 +1,56 @@
 Administration Tasks
 ====================
 
+Projects management
+-------------------
+
+Projects can have 5 statuses:
+
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+| Status    | What it means                                                                                          | Can it be changed? |
++===========+========================================================================================================+====================+
+| Pending   | The project is waiting for approval from the site-administrator.                                       | Yes                |
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+| Active    | This project is currently active, some people are working on it.                                       | Yes                |
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+| Suspended | This project isn't accessible anymore by anyone excepted the site-administrator with read access only. | Yes                |
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+| Deleted   | This project has been deleted.                                                                         | No                 |
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+| System    | This project is a system project.                                                                      | No                 |
++-----------+--------------------------------------------------------------------------------------------------------+--------------------+
+
+.. note::
+    Please note that the ``pending`` status is meant to be temporary.
+    It is automatically assigned to newly created projects when the option ``Project must be approved by administrators``
+    is activated (``/admin/project-creation/moderation/``).
+    Once approved the projects are toggled ``active``.
+    In conclusion you can't assign it by yourself. If you need to block temporarily a project, please consider using the ``suspended`` status.
+
+Suspended projects
+``````````````````
+When a project is ``suspended``, it will not appear anymore in the project selector.
+If a user tries to access it via its url, he will be redirected to an error page:
+
+.. image:: ../images/screenshots/project-admin/suspended-project-redirection.png
+    :alt: Suspended project redirection
+    :align: center
+
+In addition to that, all access to its resources are disabled:
+    - CLI operations are blocked for Git and SVN repositories.
+    - REST calls to fetch resources belonging to suspended projects are also blocked and it will result a 403 error.
+    - The services used by this project are blocked.
+
+.. warning::
+    The following services are not blocked and may still be used:
+        - Mailing lists (Lists Service)
+        - Project web pages (Home Page Service)
+        - CVS
+        - SOAP API
+
+This status can be toggled back and forth with no impact on the project. When back to ``active``, all access will be
+unlocked.
+
 Pending users
 -------------
 
