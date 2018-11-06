@@ -22,8 +22,7 @@ Projects can have 5 statuses:
 
 .. note::
     Please note that the ``pending`` status is meant to be temporary.
-    It is automatically assigned to newly created projects when the option ``Project must be approved by administrators``
-    is activated (``/admin/project-creation/moderation/``).
+    It is automatically assigned to newly created projects when the option ``Project must be approved by administrators`` is activated.
     Once approved the projects are toggled ``active``.
     In conclusion you can't assign it by yourself. If you need to block temporarily a project, please consider using the ``suspended`` status.
 
