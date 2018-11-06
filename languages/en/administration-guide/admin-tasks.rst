@@ -21,19 +21,11 @@ Projects can have 5 statuses:
 +-----------+--------------------------------------------------------------------------------------------------------+--------------------+
 
 .. note::
-    Please note that the ``pending`` status is meant to be temporary.
-    It is automatically assigned to newly created projects when the option ``Project must be approved by administrators`` is activated.
-    Once approved the projects are toggled ``active``.
-    In conclusion you can't assign it by yourself. If you need to block temporarily a project, please consider using the ``suspended`` status.
+    The pending status is meant to be temporary and can not be directly used by administrators.
 
 Suspended projects
 ``````````````````
-When a project is ``suspended``, it will not appear anymore in the project selector.
-If a user tries to access it via its url, he will be redirected to an error page:
-
-.. image:: ../images/screenshots/project-admin/suspended-project-redirection.png
-    :alt: Suspended project redirection
-    :align: center
+When a project is ``suspended``, only site-administrators can access it.
 
 In addition to that, all access to its resources are disabled:
     - CLI operations are blocked for Git and SVN repositories.
