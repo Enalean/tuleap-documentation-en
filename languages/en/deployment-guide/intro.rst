@@ -7,10 +7,6 @@ file, the default is automatically set for you.
 Tuleap 10.7
 ===========
 
-.. NOTE::
-
-  Tuleap 10.7 is currently under development.
-
 Renaming of the Project Certification plugin
 --------------------------------------------
 
