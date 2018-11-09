@@ -66,7 +66,7 @@ Configure Tuleap
 
 In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take following values:
 
-* ``false``: equivalent to not defining the variable at all: disable backend worker, the notification will be done inline. Useful to disable the feature if it doesn't work.
+* ``''``: equivalent to not defining the variable at all: disable backend worker, the notification will be done inline. Useful to disable the feature if it doesn't work.
 * ``'all'``: activate the feature for all projects.
 * ``'X,Y,Z'``: activate the feature for projects X, Y and Z (project ids, integers)
 
