@@ -66,11 +66,11 @@ Setting up your environment
 2. Configure your gerrit environment
 
   Login on https://gerrit.tuleap.net (same account than tuleap.net) and publish your ssh key (not needed if you are
-  using http as transport).
+  using http as transport). In Tuleap folder:
 
   .. code-block:: bash
 
-    $> git clone ssh://USERNAME@gerrit.tuleap.net:29418/tuleap && scp -p -P 29418 USERNAME@gerrit.tuleap.net:hooks/commit-msg tuleap/.git/hooks/
+    $> git remote add gerrit ssh://USERNAME@gerrit.tuleap.net:29418/tuleap && scp -p -P 29418 USERNAME@gerrit.tuleap.net:hooks/commit-msg .git/hooks/
 
 Push you changes
 ----------------

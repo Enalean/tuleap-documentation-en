@@ -11,6 +11,7 @@ You will need the following tools to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
 - make
+- php
 - `scss-lint <https://github.com/brigade/scss-lint/>`_
 - `nodejs <https://nodejs.org/en/>`_ >= v6.x
 - `npm <https://docs.npmjs.com/>`_ >= v6.0
@@ -23,6 +24,7 @@ respective documentation for installation instructions:
 
         ``sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin``
 
+In macOS, you also need ``gettext``. Steps to install : ``brew install gettext``, then add gettext/bin in PATH.
 
 First start of Tuleap
 ---------------------
@@ -31,6 +33,7 @@ First start of Tuleap
 
     $ cd /path/to/tuleap
     $ make composer
+    $ npm install
     $ npm run build
     $ make dev-setup
     $ make start
@@ -38,7 +41,7 @@ First start of Tuleap
 
 .. NOTE:: docker will download base images for mysql, tuleap, … Please be patient!
 
-Then you need to know the IP address of the web container, with ``docker inspect tuleap-web | grep '"IPAddress"'`` and
+Then you need to know the IP address of the web container, with ``make show-ips`` and
 edit (as root) the ``/etc/hosts`` file: ``172.17.0.4    tuleap-web.tuleap-aio-dev.docker``.
 
 Now open your browser and go to https://tuleap-web.tuleap-aio-dev.docker/. You should see the homepage of your Tuleap
@@ -69,6 +72,8 @@ Descriptions of commands
     149428f796ea: tuleap-web — enalean/tuleap-aio-dev:nodb 22/tcp, 80/tcp, 443/tcp
     7cd1e645b3a9: tuleap_ldap_1 — enalean/ldap:latest 389/tcp, 636/tcp
     9d026f381fbf: tuleap_db_1 — mysql:5.5 3306/tcp
+    bfbd9f32b2ae: tuleap_reverse-proxy_1 — tuleap_reverse-proxy 22/tcp, 80/tcp, 443/tcp
+    742b540e876c: tuleap_realtime_1 — tuleap_realtime 443/tcp
 
 * ``make post-checkout``: Install npm dependencies, generate the javascript and CSS files to be used by the browser,
   deploy gettext translation... You need to run this command everytime you switch a branch.
@@ -87,8 +92,7 @@ If you need to connect to the server you can run:
 
 .. code-block:: bash
 
-    $ docker exec -ti tuleap-web bash
-    $> export TERM=linux
+    $ make bash-web
 
 And if you need to connect to the database:
 
