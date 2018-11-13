@@ -25,7 +25,7 @@ Build the documentation
     make html
     deactivate
 
-The documentation is generated in `tuleap-documentation-en/_build/html/` You can check the modifications by opening `index.html` with your web browser. You need to build the documentation in order to see your modifications.
+The documentation is generated in `tuleap-documentation-en/_build/html/en/` You can check the modifications by opening `index.html` with your web browser. You need to build the documentation in order to see your modifications.
 
 To build documentation for tuleap.org:
 
