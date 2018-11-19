@@ -13,7 +13,7 @@ respective documentation for installation instructions:
 - make
 - php
 - `scss-lint <https://github.com/brigade/scss-lint/>`_
-- `nodejs <https://nodejs.org/en/>`_ >= v6.x
+- `nodejs <https://nodejs.org/en/>`_ >= v6.x and < 10.x
 - `npm <https://docs.npmjs.com/>`_ >= v6.0
 - `composer <https://getcomposer.org/>`_
 
