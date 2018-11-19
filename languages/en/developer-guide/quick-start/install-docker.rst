@@ -54,22 +54,18 @@ See also the official Docker documentation: `Installation on Fedora <https://doc
 You can ensure docker is working properly by using :code:`$ docker run hello-world`.
 
 
-Installing Docker on Mac OS X
-"""""""""""""""""""""""""""""
+Installing Docker on macOS
+""""""""""""""""""""""""""
 
-Go to https://docs.docker.com/toolbox/ and download Docker Toolbox for Mac
-OS X. It will install Docker, Docker Machine, Docker Compose, Docker Kitematic
-and VirtualBox. Once the install is done, launch "Docker Quickstart Terminal",
-then follow this documentation.
+Go to https://docs.docker.com/docker-for-mac/ and download Docker for Mac.
+It will install all you need to run Tuleap containers.
 
-You should also add the entry ``tuleap-web.tuleap-aio-dev.docker`` to your ``/etc/hosts``. Run ``docker-machine env`` to get your docker machine IP if need be (usually ``192.168.99.100``).
+You should also add the entry ``tuleap-web.tuleap-aio-dev.docker`` to your ``/etc/hosts``.
 
     # contents of /etc/hosts
-    127.0.0.1       localhost
+    127.0.0.1       localhost tuleap-web.tuleap-aio-dev.docker
     255.255.255.255 broadcasthost
     ::1             localhost
-
-    192.168.99.100  tuleap-web.tuleap-aio-dev.docker
 
 
 Install Docker Compose
@@ -78,5 +74,5 @@ Install Docker Compose
 Once ``docker`` is installed, you must install ``docker-compose``. Follow steps
 on `Docker Compose documentation <https://docs.docker.com/compose/install/>`_.
 
-.. NOTE:: There is no need to manually install ``docker-compose`` on Mac OS X since
-    it has already been installed via Docker Toolbox.
+.. NOTE:: There is no need to manually install ``docker-compose`` on macOS since
+    it has already been installed via Docker for Mac.
