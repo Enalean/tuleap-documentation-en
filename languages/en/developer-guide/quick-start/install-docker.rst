@@ -60,13 +60,6 @@ Installing Docker on macOS
 Go to https://docs.docker.com/docker-for-mac/ and download Docker for Mac.
 It will install all you need to run Tuleap containers.
 
-You should also add the entry ``tuleap-web.tuleap-aio-dev.docker`` to your ``/etc/hosts``.
-
-    # contents of /etc/hosts
-    127.0.0.1       localhost tuleap-web.tuleap-aio-dev.docker
-    255.255.255.255 broadcasthost
-    ::1             localhost
-
 
 Install Docker Compose
 ----------------------
