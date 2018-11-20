@@ -1882,6 +1882,8 @@ First, you select a source field.
    all its values. On the opposite, it will propose only those which
    satisfy the dependencies.
 
+.. _tracker-semantic:
+
 Semantic
 ````````
 
