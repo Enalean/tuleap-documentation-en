@@ -24,6 +24,19 @@ We use the *domain* feature provided by gettext in order to have i18n in plugins
 
 .. NOTE:: You can use localized strings from core or other plugins (beware of dependencies!) in a given plugin.
 
+In REST routes
+--------------
+
+When error messages have functional meaning that cannot be deducted by the client (for example an error message explaining why a tracker expert query is invalid), then they should be translated with the following pattern:
+
+  .. code-block:: php
+  
+     throw new RestException(
+           404,
+           null,
+           ['i18n_error_message' => dgettext('tuleap-docman', 'The folder does not exist.')]
+     );
+
 Pluralization
 -------------
 
