@@ -11,6 +11,14 @@ Tuleap 10.8
 .. NOTE::
 
   Tuleap 10.8 is currently under development.
+  
+Apache configuration must be redelpoyed
+---------------------------------------
+The statistics parse of SVN might be broken, the apache conf should be redeployed.
+
+.. sourcecode:: shell
+
+    #> /usr/share/tuleap/tools/utils/php56/run.php --module=apache
 
 
 Tuleap 10.7
