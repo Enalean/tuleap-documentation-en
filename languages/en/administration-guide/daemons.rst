@@ -12,5 +12,3 @@ The root user on Tuleap has a number of script defined in the crontab.
 | /usr/share/tuleap/src/utils/underworld-root/...              | Same as above but this time it is for weekly statistics                                                                                             |
 |  db\_project\_weekly\_metric.pl                              |                                                                                                                                                     |
 +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| /usr/lib/tuleap/bin/backup\_job                              | Backup of all Tuleap file system.                                                                                                                   |
-+--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
