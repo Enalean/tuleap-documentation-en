@@ -12,9 +12,13 @@ Tuleap 10.8
 
   Tuleap 10.8 is currently under development.
   
-Apache configuration must be redelpoyed
+Apache configuration must be redeployed
 ---------------------------------------
-The statistics parse of SVN might be broken, the apache conf should be redeployed.
+
+In some cases the parsing of Apache logs was not done resulting in missing SVN usage statistics.
+In order to fix that, some configuration files might need to be redeployed.
+
+You can use the following command to do so:
 
 .. sourcecode:: shell
 
