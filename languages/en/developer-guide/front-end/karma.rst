@@ -83,6 +83,39 @@ To run your tests locally, use the :ref:`npm scripts <npm_scripts>`.
 
     - Chromium is installed on your machine if it runs under Linux.
     - Chrome is installed otherwise.
+    
+How to debug tests
+^^^^^^^^^^^^^^^^^^
+
+To ease test debugg, you should launch them directly in your browser, to do this:
+
+In `/tools/utils/script/karma-configurator.js`, update `singleRun` parameter from `true` to `false` 
+
+.. code-block:: Javascript
+
+    function configureKarmaForSingleTest() {
+        return {
+            singleRun: false,
+    ...
+    }
+
+
+In `/tools/utils/script/karma-common-config.js` update browser form `ChromiumHeadless` to `Chromium`
+
+.. code-block:: Javascript
+
+    function getBaseConfig(config) {
+     ...
+    browsers  : [
+                process.platform !== 'linux'
+                    ? 'ChromeHeadless'
+                    : 'Chromium'
+            ]
+    ...
+    }
+
+Launch `npm run watch` on your app folder, and you should see that all tests are executed in browser.
+
 
 Run your unit tests during the CI validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
