@@ -87,20 +87,9 @@ To run your tests locally, use the :ref:`npm scripts <npm_scripts>`.
 How to debug tests
 ^^^^^^^^^^^^^^^^^^
 
-To ease test debugg, you should launch them directly in your browser, to do this:
+To ease test debugging, you can launch them directly in your browser, to do this:
 
-In `/tools/utils/script/karma-configurator.js`, update `singleRun` parameter from `true` to `false` 
-
-.. code-block:: Javascript
-
-    function configureKarmaForSingleTest() {
-        return {
-            singleRun: false,
-    ...
-    }
-
-
-In `/tools/utils/script/karma-common-config.js` update browser form `ChromiumHeadless` to `Chromium`
+In `/tools/utils/script/karma-common-config.js` set the value of the browsers property to Chromium.
 
 .. code-block:: Javascript
 
@@ -114,7 +103,7 @@ In `/tools/utils/script/karma-common-config.js` update browser form `ChromiumHea
     ...
     }
 
-Launch `npm run watch` on your app folder, and you should see that all tests are executed in browser.
+Launch `npm run watch` on your app folder, the browser should be launched. Then click on "Debug" and open web-console and you'll see the errors.
 
 
 Run your unit tests during the CI validation
