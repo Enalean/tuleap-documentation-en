@@ -1,3 +1,5 @@
+.. _tuleap-coding-standards:
+
 Tuleap coding standards
 =======================
 

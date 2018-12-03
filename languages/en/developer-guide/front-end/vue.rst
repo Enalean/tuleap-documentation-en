@@ -11,7 +11,7 @@ Here you will find some guidelines explaining how you have to proceed to build u
 Before beginning
 ----------------
 
-Vue.js can be used along with some additional libraries like `VueX <https://vuex.vuejs.org/>`_ or `vue-router <https://router.vuejs.org/>`_.
+Vue.js can be used along with some additional libraries like `VueX <https://vuex.vuejs.org/>`_ or `Vue-router <https://router.vuejs.org/>`_.
 To know when you have to use these libraries, here is a table that will help you to decide:
 
 +-------------------------------------------------+----------------------------+
@@ -19,23 +19,18 @@ To know when you have to use these libraries, here is a table that will help you
 +=================================================+============================+
 |    Has a component with few responsibilities    |          Vue.js            |
 +-------------------------------------------------+----------------------------+
-|    Is medium-sized and has complex workflows    |      Vue.js + vuex         |
+|    Is medium-sized and has complex workflows    |      Vue.js + Vuex         |
 +-------------------------------------------------+----------------------------+
-|          Has several pages to display           | Vue.js + vuex + vue-router |
+|          Has several pages to display           | Vue.js + Vuex + Vue-router |
 +-------------------------------------------------+----------------------------+
 
 .. NOTE:: We strongly suggest you to install the `vue-devtools browser extension <https://github.com/vuejs/vue-devtools>`_.
     It provides nice features that ease the development of your applications.
 
-
-.. warning:: Please avoid the usage of `vue directives shorthands <https://vuejs.org/v2/guide/syntax.html#Shorthands>`_.
-    Shorthands are nice to use but it is not obvious for the others to figure out which directive you are actually using.
-
-
-Folder structure of a vue application
+Folder structure of a Vue application
 -------------------------------------
 
-A vue app has to be split out in distinct parts.
+A Vue app has to be split out in distinct parts.
 
 Here is the folder structure you have to follow:
 
@@ -44,15 +39,16 @@ Here is the folder structure you have to follow:
     my-vue-app/
         |-- po/                # Localization strings
         |-- src/               # The app source-code
-        |    |-- api/          # REST api consumers
-        |    |-- components/   # Vue components
-        |    |-- store/        # Vuex store components (actions/mutations/getters)
-        |    |-- index.js      # The app bootsrapping
-        |    |-- index.spec.js # Unit tests bootstrapping
+             |-- api/          # REST API consumers
+             |-- components/   # Vue components
+             |-- store/        # Vuex store modules (actions/mutations/getters)
+             |-- router/       # Vue-router modules
+             |-- index.js      # The app bootsrapping
+             |-- index.spec.js # Unit tests bootstrapping
 
 Your application folder must be placed in  ``tuleap/plugins/<your_plugin>/scripts/``.
 
-Build your vue application
+Build your Vue application
 --------------------------
 To build up your application, you will have to update or create a ``webpack.config.js`` file.
 This file should be located in ``<your_plugin>/scripts/``.
@@ -91,7 +87,7 @@ This file should be located in ``<your_plugin>/scripts/``.
         },
         plugins: [webpack_configurator.getManifestPlugin(), webpack_configurator.getVueLoaderPlugin()],
         resolveLoader: {
-            alias: webpack_configurator.extendAliases({}, webpack_configurator.easygettext_loader_alias)
+            alias: webpack_configurator.easygettext_loader_alias
         }
     };
 
@@ -183,3 +179,34 @@ Once your mount point is ready, head to your ``index.js`` file.
     });
 
 Now you know how to create your Vue.js application, let's move on with the unit-tests in the next section.
+
+Best-practices for Tuleap
+-------------------------
+
+When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
+Many rules are already enforced by the pre-commit hook that runs eslint_ with `eslint-plugin-vue`_.
+
+* Please avoid the usage of `vue directives shorthands <https://vuejs.org/v2/guide/syntax.html#Shorthands>`_. Shorthands are nice to use but it is not obvious for the others to figure out which directive you are actually using.
+* Always use ``PascalCase`` for component names.
+* Always use multi-word names for components, for example: "DocumentSearch". In templates, this translates as ``<document-search/>``. See `the dedicated Vue Style Guide rule <https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential>`_.
+* Always use ``snake_case`` for computed properties. I know, there are parentheses when we define them, but they really are *properties*, not methods. See :ref:`Tuleap coding standards <tuleap-coding-standards>`.
+* Always use ``snake_case`` for props.
+* Always use ``camelCase`` for methods.
+* Always use ``snake_case`` for Vuex State properties and Getters. They are properties too.
+* Always use ``camelCase`` for Vuex Mutations and Actions. They are methods.
+* Always name files and folders inside ``components/`` with ``PascalCase`` (just like component names).
+* Always name javascript files (in all other folders) with ``dash-case``.
+* Avoid having too many components that depend on ``this.$route``. Inject what you need via props instead.
+
+Resources
+^^^^^^^^^
+
+- Vue.js doc: https://vuejs.org/v2/guide/
+- Vuex doc: https://vuex.vuejs.org/
+- Vue-router doc: https://router.vuejs.org/
+- Vue.js Official Style Guide: https://vuejs.org/v2/style-guide/
+- eslint-plugin-vue's rules: https://vuejs.github.io/eslint-plugin-vue/rules/
+
+.. _eslint: https://eslint.org/
+.. _eslint-plugin-vue: https://github.com/vuejs/eslint-plugin-vue
+.. _Vue Style Guide: https://vuejs.org/v2/style-guide/
