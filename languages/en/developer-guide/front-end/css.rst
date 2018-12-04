@@ -26,7 +26,7 @@ This command will compile all SCSS files present in ``plugin`` and ``src`` direc
     * CSS files will be git-ignored so there is no use in modifying them.
 
 Best-practices for Tuleap
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
@@ -49,6 +49,7 @@ When you submit a patch for review, we may request changes to better match the f
 * For the same performance reason, don't use the `child combinator`_, for example ".class1 > .class2".
 * Instead, use a single specific class name that targets precisely what you want.
 * Always make sure the rules you are using work on our list of :ref:`supported browsers <user_supported_browsers>`. To do that you can check with the `Can I use`_ website.
+* When you prepend a Copyright block at the beginning of a SCSS file, never use the ``/*!`` style of comments. Those comments are output in compressed CSS. This makes them a lot larger for no benefit, because all included files will each add 30 lines of copyright to the final CSS file. Always use ``/**``. See the `Sass documentation on comments`_.
 
 
 Resources
@@ -62,3 +63,4 @@ Resources
 .. _child combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors
 .. _Can I use: https://caniuse.com/
 .. _supported browsers: https://docs.tuleap.org/user-guide/troubleshooting.html#which-browser-should-i-use-to-browse-tuleap
+.. _Sass documentation on comments: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
