@@ -31,6 +31,7 @@ You create the MyWelcomeMessage.php file in src/common/widget with following con
 
     .. code-block:: php
 
+        /** src/common/widget/MyWelcomeMessage.php */
         <?php
 
         namespace Tuleap\Widget;
@@ -102,6 +103,7 @@ It's becoming common to have complicated widgets with lots of user interaction. 
 
 .. code-block:: php
 
+    /** src/common/widget/MyWelcomeMessage.php */
     public function getJavascriptDependencies()
     {
         $kanban_include_assets = new IncludeAssets(
@@ -122,6 +124,7 @@ The previous code block shows an example with the Kanban widget. It returns an a
 
 .. code-block:: php
 
+    /** src/common/widget/MyWelcomeMessage.php */
     public function getStylesheetDependencies()
     {
         $collection = new CssAssetCollection();
