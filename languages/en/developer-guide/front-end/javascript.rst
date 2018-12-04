@@ -40,7 +40,7 @@ While you are working, in the appropriate "scripts" folder, run the following co
 Where can I run npm commands ?
 ------------------------------
 
-Tuleap has a long history and as more functionalities are added, more javascript is added too. Nowadays, it can get hard to know where to run ``npm run watch`` in all those plugins.
+Tuleap has a long history and the more functionalities are added, the more javascript is added. Nowadays, it can get hard to know where to run ``npm run watch`` in all those plugins.
 The safest way to know is to find ``package.json`` files. Here's a bash command to let you do that:
 
 	.. code-block:: bash
