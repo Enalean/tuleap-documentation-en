@@ -44,6 +44,7 @@ Best-practices for Tuleap
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
 * Always use a Javascript file. No manual <script> tags.
+* Always name javascript files with ``dash-case``.
 * Whenever you need to run code when the page is loaded, do it like this:
 
 	.. code-block:: javascript
