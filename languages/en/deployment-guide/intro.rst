@@ -11,6 +11,24 @@ Tuleap 10.8
 .. NOTE::
 
   Tuleap 10.8 is currently under development.
+
+Deployment of a new allowed command when doing Git over SSH operation
+---------------------------------------------------------------------
+
+A new command must be allowed when doing Git over SSH operation for the support of Git LFS.
+You are concerned if:
+
+* you are running a RHEL/CentOS 6 server with the ``tuleap-plugin-git-gitolite3`` package
+* you are running a RHEL/CentOS 7 server with the ``tuleap-plugin-git`` package
+
+In the Gitolite configuration (``/var/lib/gitolite/.gitolite.rc``) the command ``git-lfs-authenticate``
+must be added to the whitelisted commands.
+
+The following one-liner can be used to achieve that:
+
+.. sourcecode:: shell
+
+    #> sed -i -e "/# These are the commands enabled by default/a 'git-lfs-authenticate'," /var/lib/gitolite/.gitolite.rc
   
 Apache configuration must be redeployed
 ---------------------------------------
