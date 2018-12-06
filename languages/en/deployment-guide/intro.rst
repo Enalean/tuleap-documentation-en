@@ -8,10 +8,6 @@ file, the default is automatically set for you.
 Tuleap 10.8
 ===========
 
-.. NOTE::
-
-  Tuleap 10.8 is currently under development.
-
 Deployment of a new allowed command when doing Git over SSH operation
 ---------------------------------------------------------------------
 
