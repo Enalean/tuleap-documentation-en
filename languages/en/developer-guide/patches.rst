@@ -178,7 +178,7 @@ You are ready to publish !
 
   .. code-block:: bash
 
-    $> git push origin HEAD:refs/for/master%topic=wip
+    $> git push origin HEAD:refs/for/master%wip
 
 5. Check result on gerrit
 
@@ -290,7 +290,7 @@ Then you should `amend` the commit with your changes:
 
     $ git commit -a --amend
 
-And finally you can push your changes (git push origin HEAD:refs/for/master%topic=wip & publish)
+And finally you can push your changes (git push origin HEAD:refs/for/master%wip & publish)
 
 .. NOTE::
 
