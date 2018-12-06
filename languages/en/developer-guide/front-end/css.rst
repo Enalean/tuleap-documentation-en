@@ -59,8 +59,8 @@ Resources
 - Can I use, to check what is available for major browsers: https://caniuse.com/
 
 .. _specificity: https://specificity.keegan.st/
-.. _descendant combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors
-.. _child combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors
+.. _descendant combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator
+.. _child combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator
 .. _Can I use: https://caniuse.com/
 .. _supported browsers: https://docs.tuleap.org/user-guide/troubleshooting.html#which-browser-should-i-use-to-browse-tuleap
 .. _Sass documentation on comments: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
