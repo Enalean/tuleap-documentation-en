@@ -127,14 +127,12 @@ The previous code block shows an example with the Kanban widget. It returns an a
     /** src/common/widget/MyWelcomeMessage.php */
     public function getStylesheetDependencies()
     {
-        $collection = new CssAssetCollection();
         $theme_include_assets = new IncludeAssets(
             __DIR__ . '/../../../www/themes/BurningParrot/assets',
             AGILEDASHBOARD_BASE_URL . '/themes/BurningParrot/assets'
         );
 
-        $collection->add(new CssAsset($theme_include_assets, 'kanban'));
-        return $collection;
+        return new CssAssetCollection([new CssAsset($include_assets, 'kanban')]);
     }
 
 The previous code block shows an example, again with the Kanban widget. It returns a ``CssAssetCollection`` object which helps to deduplicate CSS files. That way, if there are two identical widgets on the same dashboard, their CSS will be loaded only once.
