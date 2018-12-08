@@ -35,11 +35,11 @@ formatting or syntax rules, the pre-commit hook will reject it.
 Sass code formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-Sass files (.scss) are also parsed by an automated tool on a pre-commit hook. We currently use scss-lint_ to automatically check Sass files.
+Sass files (.scss) are also parsed by an automated tool on a pre-commit hook. We currently use stylelint_ to automatically check Sass files.
 
 This tool will warn you when you make a mistake in a Sass rule. It will also enforce some stylistic conventions such as using shorthand notations or ordering the properties in rules.
 
-This time also, feel free to configure your editor or IDE to automatically report scss-lint errors. This will give you the fastest feedback. The pre-commit hook will warn you otherwise.
+This time also, feel free to configure your editor or IDE to automatically report linting errors. This will give you the fastest feedback. The pre-commit hook will warn you otherwise.
 
 Internal conventions
 ~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +126,7 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _PSR-4: https://www.php-fig.org/psr/psr-2/
 .. _eslint: https://eslint.org/
 .. _prettier: https://prettier.io/
-.. _scss-lint: https://github.com/brigade/scss-lint
+.. _stylelint: https://stylelint.io/
 
 Tuleap principles
 -----------------
