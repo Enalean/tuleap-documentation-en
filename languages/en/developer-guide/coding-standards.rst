@@ -8,7 +8,6 @@ PHP code formatting
 
 As Tuleap is mainly written in PHP, we use the PSR standards:
 
-* PSR-0_
 * PSR-1_
 * PSR-2_
 * PSR-4_
@@ -122,7 +121,6 @@ A couple of documents worth to read when you consider contributing to Tuleap:
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
 .. _STUPID: https://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
 .. _Code Smells: https://blog.codinghorror.com/code-smells/
-.. _PSR-0: https://www.php-fig.org/psr/psr-0/
 .. _PSR-1: https://www.php-fig.org/psr/psr-1/
 .. _PSR-2: https://www.php-fig.org/psr/psr-2/
 .. _PSR-4: https://www.php-fig.org/psr/psr-2/
