@@ -64,7 +64,7 @@ Workflow
 2. Run ``make generate-po``. This will update corresponding .pot files that are templates for your localization files.
 3. Edit localization files in ``site-content/fr_FR/LC_MESSAGES/tuleap-xxxx.po`` with your favorite editor (poedit is fine).
 4. Once you have localized your sentences, run ``make generate-mo`` (some editors, like poedit, generate .mo files for you).
-   You may need to restart your webserver (``docker exec tuleap-web /etc/init.d/php56-php-fpm restart``).
+   You may need to restart your webserver (``docker exec tuleap-web /etc/init.d/php72-php-fpm restart``).
 5. Refresh your browser, and voilà!
 
 .. NOTE:: If you are introducing gettext in a plugin, you must ``touch plugins/<name>/site-content/tuleap-<name>.pot`` and ``mkdir plugins/<name>/site-content/fr_FR`` before calling ``make generate-po``.

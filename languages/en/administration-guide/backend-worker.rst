@@ -26,14 +26,7 @@ Install and configure Redis
     If redis is installed for several servers, you must setup firewall rules to ensure only granted front-end servers
     can access it.
 
-You must install redis from EPEL from and the php lib from the remi-safe repository
-
-Then install the dependencies:
-
-.. code-block:: bash
-
-    $ yum install -y redis php56-php-pecl-redis
-    $ service php56-php-fpm restart
+You must install redis from EPEL.
 
 You will need to adapt 2 things in the configuration file ``/etc/redis.conf``
 

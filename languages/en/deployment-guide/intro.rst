@@ -12,6 +12,38 @@ Tuleap 10.9
   Tuleap 10.9 is currently under development.
 
 
+
+End of support of PHP 5.6
+-------------------------
+
+Tuleap now comes with PHP 7.2. All new installations defaults to this setup.
+
+To switch on it, you first need to deploy the PHP FPM configuration for PHP 7.2.
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php72/run.php --module=fpm
+
+Then stop the PHP FPM service running with PHP 5.6 and start a new one running
+with PHP 7.2.
+
+On RHEL/CentOS 7:
+
+.. sourcecode:: bash
+
+  systemctl daemon-reload
+  systemctl restart tuleap-php-fpm
+
+
+On RHEL/CentOS 6:
+
+.. sourcecode:: bash
+
+  service php56-php-fpm stop
+  chkconfig php56-php-fpm off
+  service php72-php-fpm start
+  chkconfig php72-php-fpm on # Useful if you want the service to be started on boot
+
 Tuleap 10.8
 ===========
 
