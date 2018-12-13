@@ -27,13 +27,23 @@ This command will compile all SCSS files present in ``plugin`` and ``src`` direc
     * you can use ``npm run watch`` to automatically rebuild CSS after changes.
     * CSS files will be git-ignored so there is no use in modifying them.
 
-Best-practices for Tuleap
+Best practices for Tuleap
 -------------------------
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
+Files best practices
+^^^^^^^^^^^^^^^^^^^^
+
 * Never use the "style" attribute.
-* Always use a CSS file. No <style> tags.
+* Always use a SCSS file. No <style> tags.
+* Split your SCSS files into multiple `partials`_ files. Smaller files are easier to understand and review. You can then ``@import`` them from your main SCSS file.
+* File names for `partials`_ should always start with an "underscore" character, for example: ``_colors.scss``.
+* When you prepend a Copyright block at the beginning of a SCSS file, never use the ``/*!`` style of comments. Those comments are output in compressed CSS. This makes them a lot larger for no benefit, because all included files will each add 30 lines of copyright to the final CSS file. Always use ``/**``. See the `Sass documentation on comments`_.
+
+Rules best practices
+^^^^^^^^^^^^^^^^^^^^
+
 * Prefer class to ID as a selector. Classes have lower specificity_, so when someone really needs to override the style you had set, they don't have to create crazy rules or worse, use "!important".
 * By the way, don't use "!important".
 * Always prefix class names by the plugin (or the general view) you are in. For example, when working in the Git plugin, prefix all class names with "git-"
@@ -51,8 +61,6 @@ When you submit a patch for review, we may request changes to better match the f
 * For the same performance reason, don't use the `child combinator`_, for example ".class1 > .class2".
 * Instead, use a single specific class name that targets precisely what you want.
 * Always make sure the rules you are using work on our list of :ref:`supported browsers <user_supported_browsers>`. To do that you can check with the `Can I use`_ website.
-* When you prepend a Copyright block at the beginning of a SCSS file, never use the ``/*!`` style of comments. Those comments are output in compressed CSS. This makes them a lot larger for no benefit, because all included files will each add 30 lines of copyright to the final CSS file. Always use ``/**``. See the `Sass documentation on comments`_.
-
 
 Resources
 ~~~~~~~~~
@@ -66,3 +74,4 @@ Resources
 .. _Can I use: https://caniuse.com/
 .. _supported browsers: https://docs.tuleap.org/user-guide/troubleshooting.html#which-browser-should-i-use-to-browse-tuleap
 .. _Sass documentation on comments: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
+.. _partials: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials
