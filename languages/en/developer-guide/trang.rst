@@ -29,5 +29,5 @@ Currently, there are 4 schema files which need trang in case of modification:
 Documentation
 `````````````
 
-You can find the trang documentation here: http://www.thaiopensource.com/relaxng/trang-manual.html
+You can find the trang documentation here: https://github.com/relaxng/jing-trang/blob/master/trang/doc/trang-manual.html
 
