@@ -672,7 +672,12 @@ To be able to move an artifact:
 However artifacts containing artifact links and artifacts connected to FRS releases cannot be moved.
 
 .. NOTE ::
-    For the moment, only fields based on semantics, submitted date, submitted by and follow-up comments can be moved.
+    For the moment, only:
+      - fields based on semantics Title, Description, Status, Assigned to and Initial effort
+      - field submitted date
+      - field submitted by
+
+    And follow-up comments can be moved.
 
    .. figure:: ../images/screenshots/tracker/move-artifact.png
       :align: center
