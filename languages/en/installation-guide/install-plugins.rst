@@ -67,7 +67,8 @@ Source control and continuous integration:
 
 * **svn**: Subversion integration (Core SVN is deprecated)
 * **git**: Git integration
-* **pullrequest**: Create pull requests on top of git
+* **gitlfs**: Add support of Git Large File Storage (LFS) to the Git integration
+* **pullrequest**: Create pull requests on top of Git
 * **hudson**: Jenkins integration
 * **hudson_git**: Jenkins integration for git
 * **hudson_svn**: Jenkins integration for svn
