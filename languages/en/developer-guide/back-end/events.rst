@@ -125,6 +125,13 @@ Therefore we need to declare this method:
     was given as first parameter of the callback to be able to have only one callback with a big switch to do answer to
     different events. You don't need to use it anymore.
 
+.. NOTE:: For performance reasons, the list of hooks listened by a plugin are cached. 
+
+    That means that when a hook is added or removed, you will need to refresh the cache to
+    have the change taken into account.
+    An helper is available to do that in the developer Makefile (``make dev-clear-cache``) and in the
+    tuleap CLI (``tuleap --clear-caches``).
+
 How to process an event
 ~~~~~~~~~~~~~~~~~~~~~~~
 
