@@ -24,7 +24,32 @@ Upgrade
 
 You should always read the :ref:`deployment guide instructions <deployment-guide>` before upgrading.
 
-On RHEL6, run as root:
+On RHEL/CentOS 7, run as root:
+
+::
+
+    # Stop service
+    systemctl stop tuleap
+    systemctl stop nginx
+    systemctl stop httpd
+
+    # Upgrade packages
+    yum update
+    # or to upgrade only Tuleap packages (/!\ you might miss security fixes in Tuleap dependencies):
+    # yum update tuleap\*
+
+    # Apply data upgrades
+    /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
+
+    # Re-generate nginx configuration
+    /usr/share/tuleap/tools/utils/php72/run.php --module=nginx
+
+    # Restart service
+    systemctl start httpd
+    systemctl start nginx
+    systemctl start tuleap
+
+On RHEL/CentOS 6, run as root:
 
 ::
 
