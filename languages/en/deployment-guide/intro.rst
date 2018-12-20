@@ -1,3 +1,5 @@
+.. _deployment-guide:
+
 This document explains the actions an admin must or should do during a given upgrade.
 
 Note about config files (Tuleap's \*.inc): as long as you are OK with the defaults set by

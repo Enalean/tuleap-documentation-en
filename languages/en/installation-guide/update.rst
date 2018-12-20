@@ -22,7 +22,7 @@ Note: you can update only the tuleap part (tuleap*) but we highly recommend you 
 Upgrade
 -------
 
-You should always read the deployment guide instructions before upgrading.
+You should always read the :ref:`deployment guide instructions <deployment-guide>` before upgrading.
 
 On RHEL6, run as root:
 
