@@ -18,6 +18,14 @@ is the name of the package of the plugin you want to install):
 
 ::
 
+    # On RHEL/CentOS 7
+    yum install tuleap-plugin-awesomestuff
+    /usr/share/tuleap/tools/utils/php72/run.php --module=nginx
+    systemctl reload nginx
+
+::
+
+    # On RHEL/CentOS 6
     yum install tuleap-plugin-awesomestuff
     /usr/share/tuleap/tools/utils/php72/run.php --module=nginx
     service nginx reload
