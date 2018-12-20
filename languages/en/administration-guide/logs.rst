@@ -41,6 +41,7 @@ Tuleap
  - ``/var/log/tuleap/botMattermost_syslog``: contains information on the BotMattermost plugins behavior.
  - ``/var/log/tuleap/worker_log``: contains information about backend workers activity (e.g. asynchronous notifications).
  - ``/var/log/tuleap/openid_connect_client.log``: contains errors specific to the OpenID Connect activity.
+ - ``/var/log/tuleap/mail_syslog``: contains errors and information specific to mails distribution.
 
 Tuleap Realtime
 ---------------
