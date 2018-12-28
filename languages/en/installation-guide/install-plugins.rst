@@ -67,9 +67,7 @@ File deliveries and documentation:
 * **docman**: Document management
 * **frs**: Enhance File Release System with better release view and REST API
 * **mediawiki**: Integration of "Wikipedia" wiki technology
-* **webdav**: access FRS and Documentation like a file system with WebDAV protocol
-
-  * This plugin *is not compatible RHEL/CentOs 7* yet.
+* **webdav**: Access FRS and Documentation like a file system with WebDAV protocol
 
 Source control and continuous integration:
 
