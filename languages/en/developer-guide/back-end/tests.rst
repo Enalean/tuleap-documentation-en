@@ -62,7 +62,6 @@ It will execute all REST tests in a docker container. This container is stopped 
 .. code-block:: bash
 
    $> make tests_rest_setup
-   $root@d4601e92ca3f> ./tests/rest/bin/run.sh setup
    $root@d4601e92ca3f> ./tests/rest/bin/test_suite.sh <optional_path_to_tests_you_want_to_run>
 
 In case of failure, you may need to attach to this running container in order to parse logs for example:
