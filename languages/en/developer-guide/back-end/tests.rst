@@ -23,10 +23,12 @@ Run tests with docker
 
 We have docker images to run unit tests on all environments:
 
-* centos6 + php 5.6 with simpletest: enalean/tuleap-simpletest:c6-php56
-* centos6 + php 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php56
+* CentOS 6 + PHP 5.6 with simpletest: enalean/tuleap-simpletest:c6-php56
+* CentOS 6 + PHP 5.6 with simpletest: enalean/tuleap-simpletest:c6-php72
+* CentOS 6 + PHP 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php56
+* CentOS 6 + PHP 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php72
 
-Basically, executing tests is as simple as, from root of Tuleap sources:
+Executing tests is as simple as, from root of Tuleap sources:
 
 .. code-block:: bash
 
@@ -68,7 +70,7 @@ In case of failure, you may need to attach to this running container in order to
 .. code-block:: bash
 
    $> docker exec -ti <name-of-the-container> bash
-   $root@d4601e92ca3f> tail -f /var/log/httpd/error_log
+   $root@d4601e92ca3f> tail -f /var/opt/remi/php72/log/php-fpm/error.log
 
 
 .. note::
