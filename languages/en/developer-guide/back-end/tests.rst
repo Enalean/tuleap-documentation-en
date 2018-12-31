@@ -61,9 +61,7 @@ It will execute all REST tests in a docker container. This container is stopped 
 
    $> make tests_rest_setup
    $root@d4601e92ca3f> ./tests/rest/bin/run.sh setup
-   $root@d4601e92ca3f> scl enable php72 bash
-   $root@d4601e92ca3f> php /usr/share/tuleap/tests/rest/bin/generate-testsuite.php /tmp /output
-   $root@d4601e92ca3f> src/vendor/bin/phpunit --configuration /tmp/suite.xml tests/rest/tests/ArtifactFilesTest.php
+   $root@d4601e92ca3f> ./tests/rest/bin/test_suite.sh <optional_path_to_tests_you_want_to_run>
 
 In case of failure, you may need to attach to this running container in order to parse logs for example:
 
