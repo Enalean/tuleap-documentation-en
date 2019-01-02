@@ -9,12 +9,6 @@ file, the default is automatically set for you.
 Tuleap 10.9
 ===========
 
-.. NOTE::
-
-  Tuleap 10.9 is currently under development.
-
-
-
 End of support of PHP 5.6
 -------------------------
 
