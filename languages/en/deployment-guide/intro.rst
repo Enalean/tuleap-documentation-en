@@ -7,7 +7,7 @@ the development team, there is no need for you to add those new variables in the
 file, the default is automatically set for you.
 
 Tuleap 10.10
-===========
+============
 
 .. NOTE::
 
