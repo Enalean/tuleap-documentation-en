@@ -6,14 +6,16 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 10.9
+Tuleap 10.10
 ===========
 
 .. NOTE::
 
-  Tuleap 10.9 is currently under development.
+  Tuleap 10.10 is currently under development.
 
 
+Tuleap 10.9
+===========
 
 End of support of PHP 5.6
 -------------------------
