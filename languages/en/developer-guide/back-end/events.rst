@@ -65,6 +65,8 @@ A minimal event is thus the following:
 
   .. code-block:: php
 
+        declare(strict_types=1);
+
         namespace Tuleap\Stuff;
         
         use Tuleap\Event\Dispatchable;
@@ -72,7 +74,7 @@ A minimal event is thus the following:
         class MyEvent implements Dispatchable
         {
 
-            const NAME = 'my_event';
+            public const NAME = 'my_event';
 
         }
 
@@ -171,6 +173,8 @@ The class ``GetPublicAreas`` looks like the following:
 
     .. code-block:: php
 
+        declare(strict_types=1);
+
         namespace Tuleap\Widget\Event;
 
         use Project;
@@ -178,7 +182,7 @@ The class ``GetPublicAreas`` looks like the following:
 
         class GetPublicAreas implements Dispatchable
         {
-            const NAME = 'service_public_areas';
+            public const NAME = 'service_public_areas';
 
             /**
              * @var string[]
@@ -196,10 +200,7 @@ The class ``GetPublicAreas`` looks like the following:
                 $this->areas   = array();
             }
 
-            /**
-             * @return Project
-             */
-            public function getProject()
+            public function getProject() : Project
             {
                 return $this->project;
             }
@@ -207,15 +208,12 @@ The class ``GetPublicAreas`` looks like the following:
             /**
              * @return \string[]
              */
-            public function getAreas()
+            public function getAreas() : array
             {
                 return $this->areas;
             }
 
-            /**
-             * @param string $html
-             */
-            public function addArea($html)
+            public function addArea(string $html)
             {
                 $this->areas[] = $html;
             }

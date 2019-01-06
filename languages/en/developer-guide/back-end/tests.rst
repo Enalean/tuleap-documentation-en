@@ -15,31 +15,29 @@ Plugins tests are in each plugin tests directory:
 
 To run tests you can either use multiple CLI commands (at the root of Tuleap sources):
 
-- make simpletest11x-56
-- make phpunit-docker-56
+- make simpletest-72
+- make phpunit-docker-72
 
 Run tests with docker
 `````````````````````
 
 We have docker images to run unit tests on all environments:
 
-* CentOS 6 + PHP 5.6 with simpletest: enalean/tuleap-simpletest:c6-php56
-* CentOS 6 + PHP 5.6 with simpletest: enalean/tuleap-simpletest:c6-php72
-* CentOS 6 + PHP 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php56
+* CentOS 6 + PHP 7.2 with simpletest: enalean/tuleap-simpletest:c6-php72
 * CentOS 6 + PHP 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php72
 
 Executing tests is as simple as, from root of Tuleap sources:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php56 \
+    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php72 \
         /tuleap/tests/simpletest /tuleap/tests/integration /tuleap/plugins
 
 If there is only one file or directory you are interested in:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php56 --nodb \
+    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php72 --nodb \
         /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
 
 .. note::
@@ -55,13 +53,13 @@ There is also a docker image for REST tests, just run the following command:
 
 .. code-block:: bash
 
-   $> make tests_rest
+   $> make tests_rest_72
 
 It will execute all REST tests in a docker container. This container is stopped and removed once the tests are finished. If you need to run tests manually, do the following instead:
 
 .. code-block:: bash
 
-   $> make tests_rest_setup
+   $> make tests_rest_setup_72
    $root@d4601e92ca3f> ./tests/rest/bin/test_suite.sh <optional_path_to_tests_you_want_to_run>
 
 In case of failure, you may need to attach to this running container in order to parse logs for example:
@@ -132,11 +130,15 @@ to split test cases in several classes to leverage on setUp.
 
 .. code-block:: php
 
-    class Bar_IsAvailableTest extends TuleapTestCase {
+    declare(strict_types=1);
+
+    class Bar_IsAvailableTest extends TuleapTestCase
+    {
         //... Will test Bar->isAvailable() public method
     }
 
-    class Bar_ComputeDistanceTest extends TuleapTestCase {
+    class Bar_ComputeDistanceTest extends TuleapTestCase
+    {
         //... Will test Bar->computeDistance() public method
     }
 
@@ -171,19 +173,21 @@ Most of those helpers are meant to help dealing with mock objects.
 
     <?php
 
+    declare(strict_types=1);
+
     class Bar_IsAvailableTest extends TuleapTestCase
     {
 
-        public function itThrowsAnExceptionWhenCalledWithNull()
+        public function itThrowsAnExceptionWhenCalledWithNull() : void
         {
             $this->expectException();
             $bar = new Bar();
             $bar->isAvailable(null);
         }
 
-        public function itIsAvailableIfItHasMoreThan3Elements()
+        public function itIsAvailableIfItHasMoreThan3Elements() : void
         {
-            $foo = mock('Foo');
+            $foo = mock(Foo::class);
             stub($foo)->count()->returns(4);
             // Syntaxic sugar for :
             // $foo = new MockFoo();
@@ -193,9 +197,9 @@ Most of those helpers are meant to help dealing with mock objects.
             $this->assertTrue($bar->isAvailable($foo));
         }
 
-        public function itIsNotAvailableIfItHasLessThan3Elements()
+        public function itIsNotAvailableIfItHasLessThan3Elements() : void
         {
-            $foo = stub('Foo')->count()->returns(2);
+            $foo = stub(Foo::class)->count()->returns(2);
 
             $bar = new Bar();
             $this->assertFalse($bar->isAvailable($foo));
@@ -206,7 +210,7 @@ Available syntaxic sugars:
 
 .. code-block:: php
 
-    $foo = mock('Foo');
+    $foo = mock(Foo::class);
     stub($foo)->bar($arg1, $arg2)->returns(123);
     stub($foo)->bar($arg1, $arg2)->once();
     stub($foo)->bar()->never();
@@ -214,7 +218,7 @@ Available syntaxic sugars:
     stub($foo)->bar()->count(4);
 
 
-See details and more helpers in ``plugins/tests/www/MockBuilder.php``.
+See details and more helpers in ``tests/lib/MockBuilder.php``.
 
 Helpers and database
 ````````````````````
@@ -232,13 +236,13 @@ and ``returnsDarWithErrors()``.
 
 .. code-block:: php
 
-        public function itDemonstrateHowToUseReturnsDar()
+        public function itDemonstrateHowToUseReturnsDar() : void
         {
 
             $project_id = 15;
-            $project    = stub('Project')->getId()->returns($project_id);
+            $project    = stub(Project::class)->getId()->returns($project_id);
 
-            $dao        = stub('FooBarDao')->searchByProjectId($project_id)->returnsDar(
+            $dao        = stub(FooBarDao::class)->searchByProjectId($project_id)->returnsDar(
                 array(
                     'id'  => 1
                     'name' => 'foo'
@@ -268,7 +272,7 @@ At time of writing, there are 2 builders in Core aUser.php and aRequest.php:
 
 .. code-block:: php
 
-    public function itDemonstrateHowToUseUserAndRequest()
+    public function itDemonstrateHowToUseUserAndRequest() : void
     {
 
         $current_user = aUser()->withId(12)->withUserName('John Doe')->build();

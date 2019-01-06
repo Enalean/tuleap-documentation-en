@@ -22,6 +22,8 @@ Example of Presenter
 
   .. code-block:: php
 
+    declare(strict_types=1);
+
     class Presenter
     {
         /** @var string */
@@ -59,8 +61,13 @@ If you need to put light formatting in you localised string, then you should esc
 
   .. code-block:: php
 
+    declare(strict_types=1);
+
     class Presenter
     {
+        /**
+         * @var string
+         */
         public $purified_description;
 
         public function __construct()
@@ -92,6 +99,8 @@ Controller.php:
 
   .. code-block:: php
 
+    declare(strict_types=1);
+
     namespace Tuleap/CsrfExample;
 
     use CSRFSynchronizerToken;
@@ -99,7 +108,7 @@ Controller.php:
 
     class Controller
     {
-        public function display()
+        public function display() : string
         {
             $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
             $presenter  = new Presenter($csrf_token);
@@ -108,7 +117,7 @@ Controller.php:
             $renderer->renderToPage('csrf-example', $presenter);
         }
 
-        public function process()
+        public function process() : void
         {
             $csrf_token = CSRFSynchronizerToken(CSRF_EXAMPLE_BASE_URL . '/do_things');
             $csrf_token->check();
@@ -120,6 +129,8 @@ Controller.php:
 Presenter.php:
 
   .. code-block:: php
+
+    declare(strict_types=1);
 
     namespace Tuleap/CsrfExample;
 
