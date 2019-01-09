@@ -68,8 +68,6 @@ Note that some field names are important to respect:
 -  Type of a task: the field representing the type must have "type" as field name in order to display the color
    representing the type of the task on the cards of the cardwall.
 
-Note also that the burndown field can be configured for including or not the week-ends (Saturday and Sundays can be excluded from burndown graph)
-
 Using an Agile Dashboard
 ------------------------
 
@@ -166,7 +164,7 @@ Daily project update
 The cardwall (see `Cardwall`_) lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
 and change the remaining effort on the fly, that is to say staying on the same page.
 
-The team can configure the display of the assignement by choosing between the display of the username or the avatar.
+The team can configure the display of the assignment by choosing between the display of the username or the avatar.
 
 This configuration will be the same for all the sprints, but can be changed at any moment thanks to the "Settings"
 select box on the right.
