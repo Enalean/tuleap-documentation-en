@@ -36,6 +36,11 @@ You can also activate the plugin from command line with:
 
 ::
 
+    # On RHEL/CentOS 6
+    su -l codendiadm -c "/usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/tools/utils/admin/activate_plugin.php awesomestuff"
+
+::
+
     # On RHEL/CentOS 7
     su -l codendiadm -c "/usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/tools/utils/admin/activate_plugin.php awesomestuff"
 
