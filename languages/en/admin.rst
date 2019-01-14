@@ -24,3 +24,4 @@ Administration guide
    administration-guide/realtime
    administration-guide/bot-mattermost-plugins
    administration-guide/subversion-migration
+   administration-guide/permission-delegation
