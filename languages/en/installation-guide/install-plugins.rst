@@ -32,6 +32,12 @@ is the name of the package of the plugin you want to install):
 
 Once the plugin is installed, go to Tuleap site admin home page and enter the plugin administration page. You can now
 install and activate the new plugin from 'Not yet installed' tab.
+You can also activate the plugin from command line with: 
+
+::
+
+    # On RHEL/CentOS 7
+    su -l codendiadm -c "/usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/tools/utils/admin/activate_plugin.php awesomestuff"
 
 List of all plugins
 -------------------
