@@ -34,30 +34,32 @@ You create the MyWelcomeMessage.php file in src/common/widget with following con
         /** src/common/widget/MyWelcomeMessage.php */
         <?php
 
+        declare(strict_types=1);
+
         namespace Tuleap\Widget;
 
         use Widget;
 
         class MyWelcomeMessage extends Widget
         {
-            const NAME = 'mywelcomemessage';
+            public const NAME = 'mywelcomemessage';
 
             public function __construct()
             {
                 parent::__construct(self::NAME);
             }
 
-            public function getTitle()
+            public function getTitle() : string
             {
                 return _('Welcome aboard');
             }
 
-            public function getDescription()
+            public function getDescription() : string
             {
                 return _('Welcome message and information for users');
             }
 
-            public function getContent()
+            public function getContent() : string
             {
                 return 'Welcome';
             }
@@ -80,16 +82,16 @@ The widget must be referenced in 2 places:
             break;
         ...
 
-* `src/common/Dasbhoard/Widget/Add/AddWidget/Controller.php` in `getWidgetsForOwnerType` method according to widget type (project or personal)
+* `src/common/Dashboard/Widget/Add/AddWidget/Controller.php` in `getWidgetsForOwnerType` method according to widget type (project or personal)
 
     .. code-block:: php
 
         switch ($owner_type) {
             case UserDashboardController::LEGACY_DASHBOARD_TYPE:
-                $widgets = array(
+                $widgets = [
                     ...
                     MyWelcomeMessage::NAME,
-                );
+                ];
                 break;
             ...
         }
@@ -104,7 +106,7 @@ It's becoming common to have complicated widgets with lots of user interaction. 
 .. code-block:: php
 
     /** src/common/widget/MyWelcomeMessage.php */
-    public function getJavascriptDependencies()
+    public function getJavascriptDependencies() : array
     {
         $kanban_include_assets = new IncludeAssets(
             __DIR__. '/../../../../src/www/assets/agiledashboard/scripts',
@@ -125,7 +127,7 @@ The previous code block shows an example with the Kanban widget. It returns an a
 .. code-block:: php
 
     /** src/common/widget/MyWelcomeMessage.php */
-    public function getStylesheetDependencies()
+    public function getStylesheetDependencies() : CssAssetCollection
     {
         $theme_include_assets = new IncludeAssets(
             __DIR__ . '/../../../www/themes/BurningParrot/assets',

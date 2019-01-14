@@ -14,7 +14,7 @@ for the front homepage:
 
 .. code-block:: php
 
-    $r->get('/', function () {
+    $r->get('/', function () : SiteHomepageController {
         return new SiteHomepageController();
     });
 
@@ -36,14 +36,14 @@ See bellow an example for 'stuff' plugin that want to expose the following route
 
 .. code-block:: php
 
-    public function getHooksAndCallbacks()
+    public function getHooksAndCallbacks() : Collection
     {
         ...
         $this->addHook(\Tuleap\Request\CollectRoutesEvent::NAME);
         ...
     }
 
-    public function collectRoutesEvent(\Tuleap\Request\CollectRoutesEvent $event)
+    public function collectRoutesEvent(\Tuleap\Request\CollectRoutesEvent $event) : void
     {
         $event->getRouteCollector()->addGroup('/plugins/stuff', function (FastRoute\RouteCollector $r) {
             $r->get('/admin[/[index.php]]', function () {

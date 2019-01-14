@@ -11,6 +11,8 @@ Example of DataAccessObject:
 
   .. code-block:: php
 
+    declare(strict_types=1);
+
     namespace Tuleap\Git;
 
     use Tuleap\DB\DataAccessObject;
@@ -18,7 +20,7 @@ Example of DataAccessObject:
 
     class RepositoryDao extends DataAccessObject
     {
-        public function searchByName($project_id, $name)
+        public function searchByName(int $project_id, string $name) : array
         {
             $sql = 'SELECT *
                     FROM plugin_git_repositories
@@ -27,7 +29,7 @@ Example of DataAccessObject:
             return $this->getDB()->run($sql, $project_id, $name);
         }
 
-        public function searchByProjectIDs(array $project_ids)
+        public function searchByProjectIDs(array $project_ids) : array
         {
             $project_ids_in_condition = EasyStatement::open()->in('?*', $project_ids);
 
@@ -81,7 +83,10 @@ Sample script
          * Copyright (c) Enalean, 2018. All Rights Reserved.
          * ....
          */
-        class b201806051455_add_cardwall_on_top_table extends ForgeUpgrade_Bucket // @codingStandardsIgnoreLine
+
+         declare(strict_types=1);
+
+        class b201806051455_add_cardwall_on_top_table extends ForgeUpgrade_Bucket // @phpcs:ignore
         {
             public function description()
             {
