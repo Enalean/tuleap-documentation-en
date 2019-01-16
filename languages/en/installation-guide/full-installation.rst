@@ -99,6 +99,9 @@ in section [mysqld]
 
 ::
 
+    # Add 'sql-mode' parameter after [mysqld]
+    sed -i '20 a sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' /etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf
+    
     # Activate mysql on boot
     systemctl enable rh-mysql57-mysqld
 
