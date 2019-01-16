@@ -65,20 +65,13 @@ You can find find more information about the installation of the remi-safe repos
 on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
 
--  **Install Tuleap repositories** (dev or stable) Create a /etc/yum.repos.d/Tuleap.repo with this content:
+-  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
 
 ::
 
-    [Tuleap-dev]
+    [Tuleap]
     name=Tuleap
     baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/dev/$basearch
-    enabled=1
-    gpgcheck=1
-    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
-    
-    [Tuleap-stable]
-    name=Tuleap
-    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/stable/$basearch
     enabled=1
     gpgcheck=1
     gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
