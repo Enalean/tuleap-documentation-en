@@ -199,6 +199,8 @@ Then start nginx:
 Project websites
 ################
 
+.. warning:: Enabling this feature has major security consequences, as such the feature is disabled by default. It is strongly advised to leave it disabled.
+
 If you need to enable the project websites:
 
 * if you access to project websites through domains like projectname.tuleap.example.com,
