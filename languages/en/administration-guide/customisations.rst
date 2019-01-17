@@ -73,6 +73,13 @@ As with other site-content files, you may customize the language files, so that 
     Change the messages.
     Repeat the operation for all the languages you need to support on your server.
 
+For performance reasons, Tuleap localization is kept in a cache file. When your customisations are finished, run the following command to clear this cache and see your modifications:
+
+.. code-block:: bash
+
+    $ tuleap --clear-caches
+
+
 Custom Tuleap Tours
 -------------------
 
@@ -126,8 +133,6 @@ The **tour_name** must correspond to a JSON file located in the same folder. E.g
 Note that the element corresponds to a standard css selector. It is the element to which the help bubble is binded.
 Further documentation on writing steps can be found here: http://bootstraptour.com/api/#step-options Bearing in mind that
 the JSON of this file has to be valid.
-
-
 
 Finally, each tour is shown on the page until the user decides to "End" the tour. Upon clicking this, a user will not see a tour
 by that name again.

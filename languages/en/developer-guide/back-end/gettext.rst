@@ -111,3 +111,12 @@ defined in language files:
   .. code-block:: php
 
     $GLOBALS['Language']->getText('include_exit', 'error'));
+
+Cache
+-----
+
+For performance reasons, Tuleap localization is kept in a cache file. When you are done adding / editing .tab files, connect to your ``web`` container and run the following command to clear this cache and see your modifications:
+
+.. code-block:: bash
+
+    $ tuleap --clear-caches
