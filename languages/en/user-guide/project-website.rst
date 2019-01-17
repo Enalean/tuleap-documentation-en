@@ -7,7 +7,7 @@ Project Web Site
 ================
 
  .. warning:: Enabling this feature has major security consequences, as such the
-    feature is disabled by default. It is **strongly** advised to let it disabled.
+    feature is disabled by default. It is **strongly** advised to leave it disabled.
 
 
 Visiting a Web Site
