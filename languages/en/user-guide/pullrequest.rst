@@ -353,8 +353,8 @@ You need to configure Jenkins webhook as described in the  :ref:`git documentati
 
 
 To trigger a new build each time a pull request is created or updated, set the
-refspec to ``+refs/tlpr/*/head:refs/remotes/*`` and the branch specifier to
-``$COMMIT_ID``.
+name to ``origin``, the refspec to ``+refs/tlpr/*:refs/remotes/origin/pr/*`` and
+the branch specifier to ``**``.
 
 .. figure:: ../images/screenshots/pullrequest/jenkins-job-setup.png
       :align: center
