@@ -449,7 +449,10 @@ Here is a list of predefined reference patterns:
    specify the project in the reference (e.g. 'rev #myproj:123'). The
    reference links to the subversion revision details page: log message,
    impacted files, link to diff view, etc.
-
+   
+-  **svn #repo_name/num**: Reference to Subversion plugin repository named 'repo_name'
+   revision number 'num'.
+   
 -  **wiki #wikipage and wiki #wikipage/num**: Reference to a wiki page
    named 'wikipage'. The second format allows one to specify a wiki page
    version. Wiki pages are project specific, so if you need to reference
