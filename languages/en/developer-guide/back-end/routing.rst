@@ -8,17 +8,17 @@ FrontRouter leverages Nikita Popov FastRoute package.
 Core
 ----
 
-Adding a new route to core should be done in ``FrontRouter`` class (in ``src/common/request`` if you don't use an IDE). The
+Adding a new route to core should be done in ``RouteCollector`` class (in ``src/common/request`` if you don't use an IDE). The
 route definition documentation can be found in `FastRoute <https://github.com/nikic/FastRoute>`_ package. Here is a sample
 for the front homepage:
 
 .. code-block:: php
 
-    $r->get('/', function () : SiteHomepageController {
-        return new SiteHomepageController();
-    });
+    $r->get('/', [__CLASS__, 'getSlash']);
 
-The handler associated to a route must implement a specific, ``Dispatchable``, interface. See next for details
+This means that instantiation of controller associated to ``/`` route will be done in ``getSlash`` method of ``RouteCollector`` class.
+
+The handler associated to a route must implement a specific, ``DispatchableWithRequest``, interface. See next for details
 
 Plugins
 -------
@@ -43,18 +43,27 @@ See bellow an example for 'stuff' plugin that want to expose the following route
         ...
     }
 
+    public function routeGetAdmin(): Tuleap\Stuff\Admin\IndexController
+    {
+        return new Tuleap\Stuff\Admin\IndexController();
+    }
+
+    public function routePostAdmin(): Tuleap\Stuff\Admin\UpdateController
+    {
+        return new Tuleap\Stuff\Admin\UpdateController();
+    }
+
+    public function routeGetSlash(): Tuleap\Stuff\StuffIndexController
+    {
+        return new Tuleap\Stuff\StuffIndexController();
+    }
+
     public function collectRoutesEvent(\Tuleap\Request\CollectRoutesEvent $event) : void
     {
         $event->getRouteCollector()->addGroup('/plugins/stuff', function (FastRoute\RouteCollector $r) {
-            $r->get('/admin[/[index.php]]', function () {
-                return new Tuleap\Stuff\Admin\IndexController();
-            });
-            $r->post('/admin', function () {
-                return new Tuleap\Stuff\Admin\UpdateController();
-            });
-            $r->get('/', function () {
-                return new Tuleap\Stuff\StuffIndexController();
-            });
+            $r->get('/admin[/[index.php]]', $this->getRouteHandler('routeGetAdmin'));
+            $r->post('/admin', $this->getRouteHandler('routePostAdmin'));
+            $r->get('/', $this->getRouteHandler('routeGetSlash'));
         });
     }
 
@@ -65,7 +74,7 @@ Rule of thumb: you should have one controller per route. It's an anti-pattern to
 verbs and return one controller for both. If you have common code between 2 controllers it should be extracted in a 3rd
 class and injected in constructor (no inheritance!)
 
-Controllers must implements a ``Dispatchable`` route. As of today there are 2 options:
+Controllers must implements a ``DispatchableWithRequest`` route. As of today there are 2 options:
 
 * ``Tuleap\Request\DispatchableWithRequest``
 * ``Tuleap\Request\DispatchableWithRequestNoAuthz``
