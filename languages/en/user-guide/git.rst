@@ -278,7 +278,31 @@ The basic workflow to get started with Git LFS is:
     git push
 
 
-More information about Git LFS can be found on the `Git LFS website <https://git-lfs.github.com/>`_.
+More information about Git LFS can be found on the `Git LFS website <https://git-lfs.github.com/>`_ and the
+`Git LFS wiki <https://github.com/git-lfs/git-lfs/wiki/Tutorial>`_.
+
+Existing repositories can be migrated to Git LFS. To rewrite all, e.g., `*.mp4` files not present
+on the remote, for example if you accidentally committed files not yet tracked by Git LFS:
+
+::
+
+    git lfs migrate import --include='*.mp4'
+
+You can also rewrite all, e.g., `*.mp4` files on given branches. Note this might require to rewrite the
+history of the repository and, as such, require Rewind access right. Only do this if you really need it
+and coordinate with the other contributors of the repository.
+
+::
+
+    git lfs migrate import --include="*.mp4" --include-ref=refs/heads/master --include-ref=refs/heads/dev
+
+
+After the conversion, push the new repository:
+
+::
+
+    git push
+
 
 Git References
 ---------------
