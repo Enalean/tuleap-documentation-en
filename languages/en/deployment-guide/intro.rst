@@ -6,13 +6,17 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 10.10
+Tuleap 10.11
 ============
 
 .. NOTE::
 
-  Tuleap 10.10 is currently under development.
+  Tuleap 10.11 is currently under development.
 
+Tuleap 10.10
+============
+
+Nothing to mention.
 
 Tuleap 10.9
 ===========
@@ -68,7 +72,7 @@ The following one-liner can be used to achieve that:
 .. sourcecode:: shell
 
     #> sed -i -e "/# These are the commands enabled by default/a 'git-lfs-authenticate'," /var/lib/gitolite/.gitolite.rc
-  
+
 Apache configuration must be redeployed
 ---------------------------------------
 
