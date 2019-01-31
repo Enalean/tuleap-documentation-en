@@ -9,10 +9,7 @@ file, the default is automatically set for you.
 Tuleap 10.10
 ============
 
-.. NOTE::
-
-  Tuleap 10.10 is currently under development.
-
+Nothing to mention.
 
 Tuleap 10.9
 ===========
@@ -68,7 +65,7 @@ The following one-liner can be used to achieve that:
 .. sourcecode:: shell
 
     #> sed -i -e "/# These are the commands enabled by default/a 'git-lfs-authenticate'," /var/lib/gitolite/.gitolite.rc
-  
+
 Apache configuration must be redeployed
 ---------------------------------------
 
