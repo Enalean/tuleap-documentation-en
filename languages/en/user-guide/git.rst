@@ -250,6 +250,36 @@ You can see the list of triggered jobs in the logs section of the Jenkins Webhoo
 
 .. _Push notification from repository: https://wiki.jenkins.io/display/JENKINS/Git+Plugin#GitPlugin-Pushnotificationfromrepository
 
+
+
+Git Large File Storage (LFS)
+----------------------------
+
+Managing large binary files such as video, graphic or audio files is not the strong suit of Git. Large Git repositories
+will quickly encounter performance issues. To work around that, Git LFS can be used.
+
+.. IMPORTANT:: The ``gitlfs`` plugin needs to be installed and activated in order to be able to use Git LFS. Ask to
+  your site administrator if it is not the case on your Tuleap instance.
+
+Using Git LFS
+`````````````
+
+The basic workflow to get started with Git LFS is:
+
+::
+
+    git clone gitolite@tuleap.example.com:<project_shortname>/<repo_name>.git
+    git lfs install                 # Make sure Git LFS is installed
+    git lfs track "*.mkv"           # Select the file types you want to manage with Git LFS
+    git add .gitattributes          # Make sure the .gitattributes file is tracked, otherwise Git LFS will not be able to manage the files
+
+    git add video.mkv               # Just work as usual, Git LFS works in a transparent way
+    git commit -m "Add video file"
+    git push
+
+
+More information about Git LFS can be found on the `Git LFS website <https://git-lfs.github.com/>`_.
+
 Git References
 ---------------
 
