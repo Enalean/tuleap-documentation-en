@@ -251,7 +251,6 @@ You can see the list of triggered jobs in the logs section of the Jenkins Webhoo
 .. _Push notification from repository: https://wiki.jenkins.io/display/JENKINS/Git+Plugin#GitPlugin-Pushnotificationfromrepository
 
 
-
 Git Large File Storage (LFS)
 ----------------------------
 
@@ -302,6 +301,18 @@ After the conversion, push the new repository:
 ::
 
     git push
+
+
+Git file size restrictions
+--------------------------
+
+Starting 10.9, new files bigger than 50MB will be rejected automatically by Tuleap. Git doesn't handle very will large
+files (esp. binary ones) and those files should really be handled by git lfs (see previous section).
+
+Note: If you were using tuleap before 10.9 and you already had files bigger than 50MB, you will still be able to modify them.
+
+.. IMPORTANT:: Site administrators might grant your project an exception and allow arbitrary file size in your projects.
+  For them, it's done in "Git" section of Site administration.
 
 
 Git References
