@@ -14,5 +14,4 @@ You can learn more about the project on `Tuleap web site <https://www.tuleap.org
 .. toctree::
    :maxdepth: 2
 
-   admin
    dev
