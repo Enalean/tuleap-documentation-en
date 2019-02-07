@@ -9,7 +9,6 @@ Administration guide
    administration-guide/files-permissions
    administration-guide/files-structure
    administration-guide/authentication/*
-   administration-guide/daemons
    administration-guide/backup
    administration-guide/services
    administration-guide/logs
@@ -20,7 +19,6 @@ Administration guide
    administration-guide/advanced-deployments
    administration-guide/distributed-tuleap
    administration-guide/backend-worker
-   administration-guide/run-php56
    administration-guide/realtime
    administration-guide/bot-mattermost-plugins
    administration-guide/subversion-migration
