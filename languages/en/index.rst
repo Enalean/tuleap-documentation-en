@@ -11,7 +11,3 @@ better and faster together.
 
 You can learn more about the project on `Tuleap web site <https://www.tuleap.org/>`_
 
-.. toctree::
-   :maxdepth: 2
-
-   dev
