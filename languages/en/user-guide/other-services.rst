@@ -93,7 +93,7 @@ more formal WSDL language at
 `https://tuleap.net/soap/?wsdl <https://tuleap.net/soap/codendi.wsdl.php?wsdl>`__.
 The WSDL also includes the types definition.
 
-You can find some examples of SOAP usage in these two sections: :ref:`Tracker SOAP <tracker_soap>` and :ref:`Legacy tracker SOAP <tracker_v3_soap>`
+You can find some examples of SOAP usage in these two sections: Tracker SOAP and Legacy tracker SOAP
 
 
 Tuleap Command Line Interface (CLI)

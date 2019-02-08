@@ -423,7 +423,7 @@ This will configure nginx as the new entry point for all HTTP (port 80) and HTTP
 Your exiting apache will be updated to listen to :8080 and only locally (loopback, 127.0.0.1)
 for subversion and mailman.
 
-Everything is described in :ref:`PHP 5.6 on Centos 6<admin_howto_php56-nginx-centos6>`
+Everything is described in PHP 5.6 on Centos 6
 
 Also, if you use ForumML and have not yet updated the mailman configuration,
 you need to do it now, in ``/etc/mailman/mm_cfg.py`` add the following parameters at the end::
@@ -626,7 +626,7 @@ This will configure nginx as the new entry point for all HTTP (port 80) and HTTP
 Your exiting apache will be updated to listen to :8080 and only locally (loopback, 127.0.0.1)
 for subversion and mailman.
 
-Everything is described in :ref:`PHP 5.6 on Centos 6<admin_howto_php56-nginx-centos6>`
+Everything is described in PHP 5.6 on Centos 6
 
 Crosstracker plugin
 -------------------
