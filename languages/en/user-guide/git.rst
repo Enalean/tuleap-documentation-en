@@ -131,11 +131,10 @@ the User Groups allowed to:
 
 -  READ: access the repository
 
--  WRITE: push content into the repository (commits, new branches,
-   deletion of branches, etc)
+-  WRITE: push content into the repository (commits, new branches, etc)
 
--  REWIND: go behind git barriers and play with repo history. This is
-   highly un-advised to activate it if you don't know exactly what you
+-  REWIND: references deletion (branches, tags) and full history rewriting.
+   This is highly un-advised to activate it if you don't know exactly what you
    are doing, you can erase your whole repository. You are warned!
 
 .. figure:: ../images/screenshots/sc_git_permissions.png
