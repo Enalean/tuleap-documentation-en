@@ -2151,8 +2151,8 @@ transition (see `Define workflow transitions`_).
 Fields and/or comment not empty
 ```````````````````````````````
 
-A tracker adminsitrator can defined a set a fields that must not be empty before processing a workflow transition.
-This could also be done for followup comments (not for transitions based on new artifact because no followup can be define while creating an artifact).
+A tracker administrator can define a set of fields that must not be empty before processing a workflow transition.
+This could also be done for followup comments (not for transitions based on new artifact because no followup can be defined while creating an artifact).
 
 Post actions
 ````````````
@@ -2162,7 +2162,7 @@ You can define a list of actions after the execution of a transition. The availa
 * Set a value to a date field
 * Set a value to a float field
 * Set a value to an integer field
-* Process a jenkins job by providing its URL
+* Process a Jenkins job by providing its URL
 
 For instance, you can set a date field to the date of transaction execution. It might be used to set automatically the close date of an
 artifact (eg. when it's state move from Resolved to Closed).
