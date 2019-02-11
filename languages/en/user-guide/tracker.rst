@@ -2152,7 +2152,8 @@ Fields and/or comment not empty
 ```````````````````````````````
 
 A tracker administrator can define a set of fields that must not be empty before processing a workflow transition.
-This could also be done for followup comments (not for transitions based on new artifact because no followup can be defined while creating an artifact).
+An administrator can also make adding a followup comment mandatory for a transition. 
+Keep in mind that this condition cannot be configured for transitions from "New artifact", as it is not possible to add a comment when creating a new artifact.
 
 Post actions
 ````````````
