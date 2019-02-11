@@ -49,37 +49,6 @@ The safest way to know is to find ``package.json`` files. Here's a bash command 
 
 This command returns all the folders containing a ``package.json`` file. You can run npm commands in them. Remember that not all npm scripts will be implemented, some of these folder may only have a "build" script.
 
-.. code-block:: text
-
-	./ # Tuleap root folder
-	./plugins/admindelegation/www/scripts/
-	./plugins/agiledashboard/www/js/
-	./plugins/agiledashboard/www/js/kanban/
-	./plugins/agiledashboard/www/js/planning-v2/
-	./plugins/botmattermost/
-	./plugins/botmattermost_agiledashboard/
-	./plugins/botmattermost_git/
-	./plugins/create_test_env/scripts/
-	./plugins/crosstracker/scripts/
-	./plugins/document/scripts/
-	./plugins/frs/www/js/angular/
-	./plugins/git/www/scripts/
-	./plugins/graphontrackersv5/www/scripts/
-	./plugins/hudson/www/js/
-	./plugins/label/www/scripts/
-	./plugins/ldap/www/scripts/
-	./plugins/pullrequest/www/scripts/
-	./plugins/statistics/www/js/
-	./plugins/svn/www/scripts/
-	./plugins/testmanagement/www/scripts/
-	./plugins/timetracking/www/scripts/
-	./plugins/tracker/grammar/
-	./plugins/tracker/www/scripts/
-	./plugins/tuleap_synchro/scripts/
-	./plugins/velocity/www/scripts/
-	./src/www/scripts/
-	./src/www/themes/common/tlp/
-
 Best-practices for Tuleap
 -------------------------
 
