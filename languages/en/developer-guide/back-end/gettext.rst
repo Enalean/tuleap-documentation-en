@@ -67,7 +67,7 @@ Workflow
    You may need to restart your webserver (``docker exec tuleap-web /etc/init.d/php72-php-fpm restart``).
 5. Refresh your browser, and voilà!
 
-.. NOTE:: If you are introducing gettext in a plugin, you must ``touch plugins/<name>/site-content/tuleap-<name>.pot`` and ``mkdir plugins/<name>/site-content/fr_FR`` before calling ``make generate-po``.
+.. NOTE:: If you are introducing gettext in a plugin, you must ``mkdir plugins/<name>/site-content/fr_FR`` before calling ``make generate-po``.
 
   Furthermore you must declare your domain in the constructor of your plugin. For example, for ``tracker`` plugin,
   in ``trackerPlugin.class.php``:
