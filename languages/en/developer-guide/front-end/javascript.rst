@@ -37,9 +37,51 @@ While you are working, in the appropriate "scripts" folder, run the following co
 		* ``npm run test`` will run the unit tests once. It is used by the Continuous integration to validate changes.
 		* ``npm run coverage`` will run the unit tests, generate HTML reports and open your default browser with those reports. You can use it to navigate in the code and check out how well unit tests cover the production code.
 
+Where can I run npm commands ?
+------------------------------
+
+Tuleap has a long history and the more functionalities are added, the more javascript is added. Nowadays, it can get hard to know where to run ``npm run watch`` in all those plugins.
+The safest way to know is to find ``package.json`` files. Here's a bash command to let you do that:
+
+	.. code-block:: bash
+
+		$ find . -type f -name 'package.json' -print -o -path '*/node_modules' -prune
+
+This command returns all the folders containing a ``package.json`` file. You can run npm commands in them. Remember that not all npm scripts will be implemented, some of these folder may only have a "build" script.
+
+.. code-block:: text
+
+	./ # Tuleap root folder
+	./plugins/admindelegation/www/scripts/
+	./plugins/agiledashboard/www/js/
+	./plugins/agiledashboard/www/js/kanban/
+	./plugins/agiledashboard/www/js/planning-v2/
+	./plugins/botmattermost/
+	./plugins/botmattermost_agiledashboard/
+	./plugins/botmattermost_git/
+	./plugins/create_test_env/scripts/
+	./plugins/crosstracker/scripts/
+	./plugins/document/scripts/
+	./plugins/frs/www/js/angular/
+	./plugins/git/www/scripts/
+	./plugins/graphontrackersv5/www/scripts/
+	./plugins/hudson/www/js/
+	./plugins/label/www/scripts/
+	./plugins/ldap/www/scripts/
+	./plugins/pullrequest/www/scripts/
+	./plugins/statistics/www/js/
+	./plugins/svn/www/scripts/
+	./plugins/testmanagement/www/scripts/
+	./plugins/timetracking/www/scripts/
+	./plugins/tracker/grammar/
+	./plugins/tracker/www/scripts/
+	./plugins/tuleap_synchro/scripts/
+	./plugins/velocity/www/scripts/
+	./src/www/scripts/
+	./src/www/themes/common/tlp/
 
 Best-practices for Tuleap
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
