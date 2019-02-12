@@ -23,6 +23,11 @@ respective documentation for installation instructions:
 
         ``sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin``
 
+- `chromium <https://chromium.woolyss.com/>`_
+
+    .. IMPORTANT:: Set the CHROME_BIN environment variable to chromium for karma tests:
+        ``export CHROME_BIN=/usr/bin/chromium-browser``
+
 In macOS, you also need ``gettext``. Steps to install : ``brew install gettext``, then add gettext/bin in PATH.
 
 First start of Tuleap
