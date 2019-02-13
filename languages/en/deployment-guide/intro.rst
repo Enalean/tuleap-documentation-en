@@ -13,6 +13,26 @@ Tuleap 10.11
 
   Tuleap 10.11 is currently under development.
 
+
+Incorrect path to the Git binaries in the Gitolite configuration
+----------------------------------------------------------------
+
+If you have installed after Tuleap 10.5.99.15, Gitolite will not be able to find the
+Git 2.12 binaries. Tuleap instances that have been installed before that and that have
+followed the deployment guide while upgrading are not impacted.
+Gitolite is the software used by Tuleap to, among other things, do the access control
+management of the Git repositories.
+
+The Gitolite configuration must be updated to set the path environnement to
+``/opt/rh/sclo-git212/root/usr/bin:$ENV{PATH}`` instead of ``/opt/rh/sclo-git212/root/usr/bin/git:$ENV{PATH}``.
+
+The following one-liner can be used to achieve that:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/sclo-git212/root/usr/bin/git:#/opt/rh/sclo-git212/root/usr/bin:#" /var/lib/gitolite/.gitolite.rc
+
+
 Tuleap 10.10
 ============
 
