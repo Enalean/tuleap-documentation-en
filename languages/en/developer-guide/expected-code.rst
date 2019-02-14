@@ -12,7 +12,7 @@ Yet, it's not inevitable and we are on the way to slowly and carefully clean thi
 We also strongly suggest that you familiarize yourself with  `Code Smells`_ as it might pop up during code reviews.
 
 Write code optimized for reading
------------------------------
+--------------------------------
 
 All new contributors should be aware that people will spend way more time reading their code than the time they will spend writing it.
 
@@ -21,15 +21,19 @@ From this fact, the rule of thumb is: **write code that is easy to read rather t
 It's not really easy to know what a code "easy to read" is so here are a few hints to help you:
 
 * Have a good unit test coverage of your code
-  * Have simple tests that can be read without having to switch between 3 files to understand what are the input and what are the output. Ideally a test should be readable without going out of the test method (+setUp).
+
+  * Have simple tests that can be read without having to switch between 3 files to understand what is the input and what is the output. Ideally a test should be readable without going out of the test method (+setUp).
   * Use simple assertions (assertEquals, assertTrue, assertFalse should be enough most of the time).
   * Be very strict about what you expect (for instance Mockery's `spy` should not be used in new tests)
+
 * Write smaller classes
 * Do not try to be "clever/smarter/subtle/..." unless absolutely needed. Write dumb code.
+
   * Make strong usage of types and static analysis of your code. If you cannot use your IDE to navigate easily in your code, odds are that you are trying to do something too smart.
-  * Be very careful with over-engineering.
+  * Be very careful with `over-engineering <https://en.wikipedia.org/wiki/Overengineering>`_.
+
 * Do not introduce an abstraction if there is only one thing that needs to be abstracted.
-* Respect YAGNI (You Ain't Gonna Need It) as much as possible. For instance, do not introduce something in a commit "because I will need it later" (pro-tip: you won't and the code will rot).
+* Respect `YAGNI (You Ain't Gonna Need It) <https://www.martinfowler.com/bliki/Yagni.html>`_ as much as possible. For instance, do not introduce something in a commit "because I will need it later" (pro-tip: you won't and the code will rot).
 
 
 Tuleap principles
