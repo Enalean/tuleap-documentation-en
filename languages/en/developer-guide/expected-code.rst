@@ -28,7 +28,7 @@ It's not really easy to know what a code "easy to read" is so here are a few hin
 * Do not try to be "clever/smarter/subtle/..." unless absolutely needed. Write dumb code.
   * Make strong usage of types and static analysis of your code. If you cannot use your IDE to navigate easily in your code, odds are that you are trying to do something too smart.
   * Be very careful with over-engineering.
-* Do not introduce an abstraction if there is only one thing that need to be abstracted.
+* Do not introduce an abstraction if there is only one thing that needs to be abstracted.
 * Respect YAGNI (You Ain't Gonna Need It) as much as possible. For instance, do not introduce something in a commit "because I will need it later" (pro-tip: you won't and the code will rot).
 
 
