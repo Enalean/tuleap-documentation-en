@@ -86,7 +86,7 @@ A bad commit has:
 - Cannot work without "the next one"
 - A meaningless commit message
 
-As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depend of one another if the very first one is not validated.
+As a contributor, it's your duty to get your commits integrated, it's useless to stack-up commits that depend on one another if the very first one is not validated.
 
 .. _+750k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
