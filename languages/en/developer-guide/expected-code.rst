@@ -25,7 +25,7 @@ It's not really easy to know what a code "easy to read is" here are a few hints 
   * Use simple assertions (assertEquals, assertTrue, assertFalse should be enough most of the time).
   * Be very strict about what you expect (for instance Mockery's `spy` should not be used in new tests)
 * Write smaller classes
-* Do not try to be "cleaver/smarter/subtle/..." unless absolutely needed. Write dump code.
+* Do not try to be "clever/smarter/subtle/..." unless absolutely needed. Write dumb code.
   * Make strong usage of types and static analysis of your code. If you cannot use your IDE to navigate easily in your code, odds are that you are trying to do something too smart.
   * Be very careful with over-engineering.
 * Do not introduce an abstraction if there is only one thing that need to be abstracted.
