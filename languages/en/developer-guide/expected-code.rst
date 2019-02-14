@@ -1,7 +1,7 @@
 Expected code
 =============
 
-Tuleap is a big (`+750k LOC`_) and old (20 years) software and has probably an example of every existing bad designs that existed during those 16 years.
+Tuleap is a big (`+750k LOC`_) and old (20 years) software and has probably an example of every existing bad designs that existed during those 20 years.
 
 Yet, it's not a fatality and we are on the way to, slowly and carefully clean things up. On our road toward a Clean Code, some motto might help you to make your design choices:
 
