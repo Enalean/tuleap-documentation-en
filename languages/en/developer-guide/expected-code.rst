@@ -18,7 +18,7 @@ All new contributors should be aware that people will spend way more time readin
 
 From this fact, the rule of thumb is: **write code that is easy to read rather than code that is easy to write**.
 
-It's not really easy to know what a code "easy to read is" here are a few hints to help you:
+It's not really easy to know what a code "easy to read" is so here are a few hints to help you:
 
 * Have a good unit test coverage of your code
   * Have simple tests that can be read without having to switch between 3 files to understand what are the input and what are the output. Ideally a test should be readable without going out of the test method (+setUp).
