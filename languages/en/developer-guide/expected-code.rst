@@ -11,7 +11,7 @@ Yet, it's not inevitable and we are on the way to slowly and carefully clean thi
 
 We also strongly suggest that you familiarize yourself with  `Code Smells`_ as it might pop up during code reviews.
 
-Write code optimized for read
+Write code optimized for reading
 -----------------------------
 
 All new contributors should be aware that people will spend way more time reading their code than the time they will spend writing it.
