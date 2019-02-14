@@ -64,3 +64,6 @@ linkcheck: pre-build
 
 watch-html: pre-build
 	$(SPHINX_AUTOBUILD) -b html $(WATCHOPTS) $(BUILDDIR)/html --port 5000 --open-browser
+
+docker-html:
+	docker run --rm -ti -u $(id -u):$(id -g) -v $(CURDIR):/sources enalean/build-documentation make html

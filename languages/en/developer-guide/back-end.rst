@@ -3,6 +3,8 @@ Back End
 
 Tuleap backend is mostly written in PHP.
 
+If you're new to php, you should have a look at https://phptherightway.com/ as a good start about modern PHP development.
+
 Generic principles, framework and libs.
 
 .. toctree::
