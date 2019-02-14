@@ -24,6 +24,7 @@ your code
    developer-guide/quick-start
    developer-guide/patches
    developer-guide/coding-standards
+   developer-guide/expected-code
    developer-guide/ide-blackfire-configuration
 
 Development 101, what you need to know

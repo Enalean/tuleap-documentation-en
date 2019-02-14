@@ -20,29 +20,6 @@ The Tuleap project uses Gerrit to ensure a proper review and integration of cont
 
   	   Activity diagram: Tuleap contribution
 
-As a commit is reviewed individually, it must be "autonomous" (corresponding to a task).
-It's a small part of a bigger story but it's fully functional at its level.
-
-Ideally, a commit is the smallest possible part of a feature.
-
-A good commit:
-
-- Doesn't break existing behaviour (unless it's intended to, well documented and with an escape path for current users).
-- Has tests (automated: unit, REST, SOAP or functional, described in commit message)
-- Has security guards (filter inputs, escape outputs, csrf tokens)
-- Has I18N code
-- Can be "not UI perfect" as long as there is a short term action (commit) to address it validated by the Design team
-- Might not have a direct effect on UI (modifications not visible) if it helps to reduce the size of upcoming reviews
-
-A bad commit has:
-
-- Fatal errors, warnings, notices
-- Was not refactored
-- Cannot work without "the next one"
-- A meaningless commit message
-
-As a contributor, it's your duty to get your commits integrated, it's useless to sum-up commits that depend of one another if the very first one is not validated.
-
 Development repository is hosted on https://gerrit.tuleap.net
 
 You can checkout https://gerrit.tuleap.net/#/admin/projects/tuleap. You need an account on gerrit in order to do the checkout.

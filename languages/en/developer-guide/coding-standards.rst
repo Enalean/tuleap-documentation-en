@@ -97,61 +97,12 @@ This header includes your copyright and a reference to the license GPLv2+ of the
 
 Adapt the copyright line to your situation.
 
-Good quality code
------------------
-
-Tuleap is a big (`+600k LOC`_) and old (16 years) software and has probably an example of every existing bad designs that existed during those 16 years.
-
-Yet, it's not a fatality and we are on the way to, slowly and carefully clean things up. On our road toward a Clean Code, some motto might help you to make your design choices:
-
-- Test your code; TDD (Test Driven Development) should be the default.
-- Follow SOLID_ design principles.
-- Don't contribute STUPID_ code.
-
-We also strongly suggest that you familiarize yourself with  `Code Smells`_ as it might pop up during code reviews.
-
 Resources
 ~~~~~~~~~
 
-A couple of documents worth to read when you consider contributing to Tuleap:
-
-- https://phptherightway.com/
-
-.. _+600k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
-.. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
-.. _STUPID: https://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
-.. _Code Smells: https://blog.codinghorror.com/code-smells/
 .. _PSR-1: https://www.php-fig.org/psr/psr-1/
 .. _PSR-2: https://www.php-fig.org/psr/psr-2/
 .. _PSR-4: https://www.php-fig.org/psr/psr-2/
 .. _eslint: https://eslint.org/
 .. _prettier: https://prettier.io/
 .. _stylelint: https://stylelint.io/
-
-Tuleap principles
------------------
-
-As of June 2018, the general guidelines are:
-
-- Autoloader must be done with composer
-- Plugins should not expose a `www` directory anymore (exception for images)
-- New end points must be exposed via `FrontRouter`
-- Mostly static pages that are rendered server side using mustache templating (with some vanilla Javascript for simple interactions).
-- Rich, dynamic, pages that are rendered client side using Vuejs.
-- Database code should use `EasyDB`
-- PHP tests should use `PHPUnit`
-
-Internationalization
-~~~~~~~~~~~~~~~~~~~~
-
-Because Tuleap is used by a large community of users, it is internationalized. For now, available
-languages are:
-
-- English
-- French
-
-Thus, there shouldn't be any untranslated words or sentences of natural language in source code. This applies to any
-strings displayed to end users (web, emails). Logs or system messages are in english.
-
-Internationalization is available in two different ways. The legacy one, based on .tab files, and the new one, based on
-gettext.
