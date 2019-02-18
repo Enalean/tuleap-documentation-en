@@ -82,12 +82,13 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
     yum install -y \
       rh-mysql57-mysql-server \
+      tuleap \
       tuleap-plugin-agiledashboard \
       tuleap-plugin-graphontrackers \
       tuleap-theme-burningparrot \
       tuleap-theme-flamingparrot \
       tuleap-plugin-git \
-      tuleap-plugin-pullrequest \
+      tuleap-plugin-pullrequest
 
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
