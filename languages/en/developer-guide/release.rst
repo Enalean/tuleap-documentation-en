@@ -31,8 +31,8 @@ This document consider that X.Y is the version number of Tuleap that you want to
 Tuleap
 ^^^^^^
 
-You should retrieve the sources of the master branch of the `stable repositories <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
-You will also need a remote to the `Gerrit repository <https://gerrit.tuleap.net/#/admin/projects/tuleap>`_.
+You should retrieve the sources of the master branch of the `Tuleap stable repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
+You will also need a remote to the `Tuleap repository on Gerrit <https://gerrit.tuleap.net/admin/repos/tuleap>`_.
 The top of the master branch must be what you want to release.
 Your workspace copy must be up to date and at the top of the master branch.
 

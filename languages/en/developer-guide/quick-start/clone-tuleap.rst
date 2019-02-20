@@ -22,6 +22,6 @@ After ensuring that git is installed, clone the Tuleap repository:
     named ``tuleap``.
 
 .. NOTE:: In order to ease the setup, we are using an anonymous clone url. If
-   you already have credentials on our gerrit server you can fetch the 
-   `tuleap project <https://gerrit.tuleap.net/#/admin/projects/tuleap>`_. 
+   you already have credentials on our gerrit server you can fetch the
+   `tuleap project <https://gerrit.tuleap.net/admin/repos/tuleap>`_.
    In any case, we will configure the gerrit server as a git remote later.
