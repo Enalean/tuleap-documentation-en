@@ -95,7 +95,7 @@ Comments column should give you all needed information about current status.
 
     The following diagram explains how the décision is made while parsing the users.xml:
 
-    .. figure:: ../images/diagrams/mapping-users-during-project-import.png
+    .. figure:: ../../images/diagrams/mapping-users-during-project-import.png
        :align: center
        :alt: Agile Dashboard Configuration
        :name: Agile Dashboard Configuration
