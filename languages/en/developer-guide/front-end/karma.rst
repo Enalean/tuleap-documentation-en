@@ -103,8 +103,24 @@ In `/tools/utils/script/karma-common-config.js` set the value of the browsers pr
     ...
     }
 
-Launch `npm run watch` on your app folder, the browser should be launched. Then click on "Debug" and open web-console and you'll see the errors.
+You will need to have Chromium or Chrome installed to be able to launch the tests.
+The Tuleap Karma configuration expects to find Chromium on Linux systems and Chrome otherwise.
+If needed, you can set the path to the Chromium/Chrome binary using either the ``CHROMIUM_BIN`` or
+``CHROME_BIN`` environnement variables depending on your OS. More information can be found in the
+`karma-chrome-launcher documentation <https://github.com/karma-runner/karma-chrome-launcher>`_.
 
+Launch ``npm run watch`` on your app folder, the browser should be launched. Then click on "Debug" and open web-console and you'll see the errors.
+
+
+Run the unit tests with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you do not have Chromium/Chrome installed you can launch the tests with a Docker image.
+To do that from the root of the Tuleap sources folder:
+
+.. code-block:: console
+
+    $ docker run -v "$(pwd)":/sources:ro --security-opt seccomp=tests/karma/seccomp_chrome.json enalean/tuleap-test-karma:latest --path <path_to_your_test_folder>
 
 Run your unit tests during the CI validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
