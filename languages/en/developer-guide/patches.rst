@@ -22,7 +22,7 @@ The Tuleap project uses Gerrit to ensure a proper review and integration of cont
 
 Development repository is hosted on https://gerrit.tuleap.net
 
-You can checkout https://gerrit.tuleap.net/#/admin/projects/tuleap. You need an account on gerrit in order to do the checkout.
+You can checkout https://gerrit.tuleap.net/admin/repos/tuleap. You need an account on gerrit in order to do the checkout.
 
 .. NOTE::
 
@@ -63,7 +63,7 @@ Each commit should work but, most important, should not break anything.
 Commit message
 ``````````````
 
-A good contrib has a good commit message. You can look at `Tuleap WIP dashboard <https://gerrit.tuleap.net/#/projects/tuleap,dashboards/main:wip>`_ to see what is expected.
+A good contrib has a good commit message. You can look at `Tuleap WIP dashboard <https://gerrit.tuleap.net/p/tuleap/+/dashboard/main:wip>`_ to see what is expected.
 
 Basically a good commit message has:
 
