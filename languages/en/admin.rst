@@ -5,6 +5,7 @@ Administration guide
    :maxdepth: 1
    :glob:
 
+   administration-guide/projects-management
    administration-guide/admin-tasks
    administration-guide/files-permissions
    administration-guide/files-structure
