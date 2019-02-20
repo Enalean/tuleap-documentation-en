@@ -1,4 +1,4 @@
-Installation-guide
+Installation guide
 ------------------
 
 .. toctree::
