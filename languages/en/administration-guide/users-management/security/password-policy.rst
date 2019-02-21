@@ -1,7 +1,4 @@
-Security
-========
-
-Password Policy
+Password policy
 ---------------
 
 Validators for users' password

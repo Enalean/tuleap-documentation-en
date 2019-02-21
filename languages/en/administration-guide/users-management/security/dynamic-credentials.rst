@@ -27,7 +27,7 @@ As of today, the dynamic credentials plugin only allows to create set of credent
 associated with a site adminitrator access.
 
 Setup
------
+*****
 
 The plugin ``tuleap-plugin-dynamic-credentials`` must be installed and enabled
 on your Tuleap instance, see :ref:`install-plugins` to learn how to do that.
@@ -80,7 +80,7 @@ How does it work?
 The following diagram summarizes the communication the user requesting the
 credentials, the HashiCorp Vault instance and the Tuleap instance:
 
-.. image:: ../../images/diagrams/dynamic-credentials/create_dynamic_creds_sequence.png
+.. image:: ../../../images/diagrams/dynamic-credentials/create_dynamic_creds_sequence.png
   :alt: Tuleap dynamic credentials creation sequence
   :align: center
 
@@ -101,7 +101,7 @@ credentials, the HashiCorp Vault instance and the Tuleap instance:
 The following diagram summarizes the communication the user requesting the
 credentials, the HashiCorp Vault instance and the Tuleap instance:
 
-.. image:: ../../images/diagrams/dynamic-credentials/revoke_dynamic_creds_sequence.png
+.. image:: ../../../images/diagrams/dynamic-credentials/revoke_dynamic_creds_sequence.png
   :alt: Tuleap dynamic credentials revocation sequence
   :align: center
 

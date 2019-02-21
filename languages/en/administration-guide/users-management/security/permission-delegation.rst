@@ -1,9 +1,9 @@
 Permission delegation
-=====================
+---------------------
 
 It is possible to grant some platform-wide permissions to certain users. To do so, you need to create some user groups, then grant permissions to these user groups.
 
-.. figure:: ../images/screenshots/create-new-delegation.png
+.. figure:: ../../../images/screenshots/create-new-delegation.png
     :align: center
     :alt: Creation of a new delegation
     :name: Creation of a new delegation
