@@ -327,6 +327,31 @@ Mailman Web interface. Mailman has a super user password allowing
 Tuleap site administrators to access the administration interface of
 any mailing lists created by Tuleap projects.
 
+Limit maximum number of subscribers (mailman)
+`````````````````````````````````````````````
+
+Tuleap team provides a patched version of mailman that allows to limit the
+number of subscribers to a mailing list.
+
+This can be useful to prevent overload of mail system with people creating
+mailing list with thousands of people and reply to reply, etc.
+
+  .. sourcecode:: console
+
+      $> $EDITOR /usr/lib/mailman/Mailman/mm_cfg.py
+
+      Add following snippet to the list
+
+      # Limit number of users in mailing lists.
+      # Possible values: integer or 'false'
+      LIST_MEMBER_MAX = 5
+
+And then restart mailman
+
+  .. sourcecode:: console
+
+      $> service mailman restart
+
 LDAP
 ----
 

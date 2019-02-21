@@ -32,11 +32,11 @@ Click on **Add Bot** to create a new bot which can be used later by others :ref:
 
 .. _Mattermost documentation: https://docs.mattermost.com/developer/webhooks-incoming.html#simple-incoming-webhook
 
-.. image:: ../images/screenshots/bot-mattermost-plugins/createBots.png
+.. image:: ../../../images/screenshots/bot-mattermost-plugins/createBots.png
     :alt: Bot creation
     :align: center
 
-.. image:: ../images/screenshots/bot-mattermost-plugins/botFillForm.png
+.. image:: ../../../images/screenshots/bot-mattermost-plugins/botFillForm.png
     :alt: Fill bot form
     :align: center
 

@@ -1,3 +1,122 @@
+Advanced deployments
+####################
+
+.. _admin_howto_reverseproxy:
+
+Deploy Tuleap behind a reverse proxy
+====================================
+
+We strongly recommend to setup the reverse proxy so that it terminates SSL.
+
+Install Nginx
+-------------
+
+Install nginx from EPEL.
+
+Configure Nginx
+---------------
+
+.. sourcecode:: nginx
+
+    # ++ Disable emitting nginx version in response header
+    server_tokens off;
+    # -- Disable emitting nginx version in response header
+
+    # ++ Cache and compress (not mandatory for reverse proxy)
+    proxy_cache_path    /tmp/nginx_cache levels=1:2 keys_zone=cache_zone:200m
+                        max_size=1g inactive=30m;
+    proxy_cache_key     "$scheme$request_method$host$request_uri";
+    gzip            on;
+    gzip_vary       on;
+    gzip_proxied    expired no-cache no-store private auth;
+    gzip_types      text/plain text/css text/xml text/javascript
+                    application/x-javascript application/xml;
+    gzip_disable    "MSIE [1-6]\.";
+    # -- Cache and compress
+
+    upstream tuleap {
+        server 127.0.0.1:4430;
+    }
+
+    server {
+        listen 443 ssl;
+        server_name tuleap.example.com;
+        ssl_certificate /etc/nginx/ssl/server.crt;
+        ssl_certificate_key /etc/nginx/ssl/server.key;
+        ssl_session_timeout 1d;
+        ssl_session_cache shared:SSL:50m;
+        ssl_session_tickets off;
+
+        # Path to Diffie-Hellman parameter
+        # You can generated the file with openssl dhparam -out /path/to/dhparam.pem 2048
+        ssl_dhparam /path/to/dhparam.pem;
+
+        ssl_protocols TLSv1.2;
+        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+        ssl_prefer_server_ciphers on;
+
+        # ++ Cache media (not mandatory for reverse proxy)
+        location ~* \.(?:js|css|png|gif|eot|woff)$ {
+            access_log              off;
+            add_header              X-Cache-Status $upstream_cache_status;
+            proxy_cache             cache_zone;
+            proxy_cache_valid       200 302 1h;
+            proxy_ignore_headers    "Set-Cookie";
+            proxy_hide_header       "Set-Cookie";
+            expires                 1h;
+
+            proxy_pass https://tuleap;
+            proxy_ssl_verify off;
+            proxy_set_header X-Real-IP         $remote_addr;
+            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Host              $host;
+        }
+        # -- Cache media
+
+        # The 4 proxy_set_header are mandatory
+        location / {
+            proxy_pass https://tuleap;
+            proxy_ssl_verify off;
+            proxy_set_header X-Real-IP         $remote_addr;
+            # Allow to know what is the original IP address (esp. for logging purpose as well as session management)
+            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+            # Allow to know what is the original protocol (so Tuleap knows if things were in HTTPS)
+            proxy_set_header X-Forwarded-Proto $scheme;
+            # What is the name of the platform to the end users
+            proxy_set_header Host              $host;
+            # Write Destination header for Subversion COPY and MOVE operations
+            set $fixed_destination $http_destination;
+            if ( $http_destination ~* ^https(.*)$ ) {
+                set $fixed_destination http$1;
+            }
+            proxy_set_header Destination $fixed_destination;
+        }
+    }
+
+    # Let Nginx manage "force HTTPS itself"
+    server {
+        listen       80;
+        server_name  tuleap.example.com;
+        return       301 https://$server_name:443$request_uri;
+    }
+
+Configure Tuleap
+----------------
+
+You will need to tell Tuleap that the IP of the reverse proxy is trusted, in local.inc:
+
+.. sourcecode:: php
+
+    $sys_trusted_proxies = '127.0.0.1';
+
+Be careful with this value, once you set it, Tuleap will automatically trust some request
+headers when the request come from this IP address (``X_FORWARDED_FOR``, ``X_FORWARDED_PROTO``, ``REMOTE_ADDR``).
+So if your proxy is not properly configured to value those headers, it could be used by an
+attacker to spoof requests.
+
+Please note that you can also use CIDR notation like ``192.168.0.0/24`` as well.
+
 Distributed Tuleap Configuration
 ================================
 
@@ -8,7 +127,7 @@ without any change for end users. As of today its possible to have offload SVN p
 
 Here is the architecture schema of the main components
 
-.. figure:: ../images/diagrams/DistributedTuleap.png
+.. figure:: ../../images/diagrams/DistributedTuleap.png
     :align: center
     :alt: Distributed Tuleap Architecture
     :name: Distributed Tuleap Architecture
@@ -34,7 +153,7 @@ one for redis, etc). It's quite common to only have one server for all "new comp
 
 This section will describe how to install this setup. It can be summarized by this diagram:
 
-.. figure:: ../images/diagrams/DistributedTuleapAllOnEl7.png
+.. figure:: ../../images/diagrams/DistributedTuleapAllOnEl7.png
     :align: center
     :alt: Distributed Tuleap "all on el7" Architecture
     :name: Distributed Tuleap "all on el7" Architecture
@@ -559,3 +678,160 @@ The various logs on el7 server:
 * svn browsing (viewvc + settings): ``/var/opt/remi/php72/log/php-fpm``
 * tuleap svn backend: ``/var/log/tuleap/svnroot_updater.log``
 * reverse proxy logs: ``/var/log/nginx``
+
+.. _admin_howto_backend_worker:
+
+Configure backend notifications
+===============================
+
+When you have a server with large amount of users or a mail system that is not really efficient, you may face troubles
+at artifact creation with very long creation/update timing.
+
+By profiling your page or by enabling 'debug' (``$sys_logger_level = 'debug';``) you can identify how long the notification is taking.
+
+Look at ``[Tuleap\Tracker\Artifact\Changeset\Notification\Notifier]`` string in ``codendi_syslog`` and measure how long it takes
+between ``Start notification`` and ``End notification`` marker. You can save this amount of time to your end users by
+switching to backend based notifications.
+
+It's based on a notification queue managed by Redis and a worker that will process the the queue as soon as it's pushed.
+Unlike "SystemEvents" there is no delay between the queue and the processing of the email so in most cases there should be
+no difference for end users in term of wait time to get the notification email.
+
+Install and configure Redis
+------------------------------
+
+.. note::
+
+    If redis is already configured, you just need to configure the connection with the server.
+    If redis is installed for several servers, you must setup firewall rules to ensure only granted front-end servers
+    can access it.
+
+You must install redis from EPEL.
+
+You will need to adapt 2 things in the configuration file ``/etc/redis.conf``
+
+#. You should set a password (at least 30 chars) with ``requirepass`` key
+#. You should enable ``appendonly`` persistence.
+
+We highly recommend that you read  `Redis Persistance Guide <https://redis.io/topics/persistence>`_
+as well as `Redis Security Guide <https://redis.io/topics/security>`_ to understand how data are stored and security
+practices.
+
+Then start the server and make it on at reboot time
+
+.. code-block:: bash
+
+    $ sudo service redis start
+    $ sudo chkconfig redis on
+
+And finally set server parameters for Tuleap in your config file ``/etc/tuleap/conf/redis.inc``
+
+.. code-block:: php
+
+   <?php
+
+   $redis_server   = '127.0.0.1';
+   $redis_port     = 6379;
+   $redis_password = '${REDIS_PASSWORD}';
+
+Configure Tuleap
+----------------
+
+In ``local.inc`` you should add ``$sys_async_emails`` variable. It can take following values:
+
+* ``''``: equivalent to not defining the variable at all: disable backend worker, the notification will be done inline. Useful to disable the feature if it doesn't work.
+* ``'all'``: activate the feature for all projects.
+* ``'X,Y,Z'``: activate the feature for projects X, Y and Z (project ids, integers)
+
+After having set the variable to at least 1 project, the backend worker (``/usr/share/tuleap/src/utils/worker.php``) will automatically be started by Tuleap
+and will process jobs and send emails.
+
+You can control the number of workers by setting the variable ``$sys_nb_backend_workers``.
+
+Troubleshooting
+---------------
+
+You can track worker activity in ``/var/log/tuleap/worker_log`` log file (you might need to change the
+``$sys_logger_level`` value to make if more verbose).
+
+The front end will also log useful information in ``codendi_syslog`` with the key ``Notification``.
+
+We also added a double check in ``SYSTEM_CHECK`` system event to ensure there is no pending notifications that last forever.
+If such a situation occurs, the SystemEvent will be marked as Warning, be sure to monitor that.
+
+Tuleap Realtime
+===============
+
+What is Realtime
+----------------
+
+Tuleap Realtime brings interactivity when users are viewing the same screen at the same time.
+For example in Kanban, when one user moves a card from one column to another, then the card is automatically moved for every users that are on the same Kanban.
+
+Tuleap Realtime installation
+----------------------------
+The first step consists to configure yum in order to exclude nodejs packages.
+Edit the file '/etc/yum.conf' with:
+
+  .. code-block:: bash
+
+         # NodeJS from scl seems to conflict with NodeJS from epel
+         # hence, exclude everything that come from scl for node related
+         # stuff
+         exclude=nodejs-*
+
+
+You can now install the ``tuleap-realtime`` package:
+
+  .. code-block:: bash
+
+        $ yum install tuleap-realtime
+
+You have a tuleap-realtime service and a config file created.
+
+Generate a private key that will be shared between the Tuleap Realtime server machine and the Tuleap server machine.
+To generate it, you can use the following command:
+
+  .. code-block:: bash
+
+        head -c 64 /dev/urandom | base64 --wrap=88
+
+
+.. attention::
+    Be careful, the confidentiality of the data rely on this key so it needs to be strong enough
+
+The next step is to adapt your Tuleap Realtime config file.
+To do this, you have to edit the ``/etc/tuleap-realtime/config.json`` file:
+
+* Replace value of ``full_path_ssl_cert`` and ``full_path_ssl_key`` by a path where is the certificate and key.
+* Replace value of ``port`` by the port that tuleap-realtime server will listen.
+* Replace value of ``nodejs_server_jwt_private_key`` by the generated private key.
+
+Then, you have to change configurations on Tuleap server machine, in the ``/etc/tuleap/conf/local.inc`` file.
+
+The port and the private key have to be the same in your config file.
+You also have to replace the value of ``nodejs_server_jwt_private_key`` in the ``local.inc`` config file by the new key.
+
+  .. code-block:: bash
+
+         $nodejs_server = '<domain_name>:<port>';
+         $nodejs_server_jwt_private_key = '<your_private_key_generated>';
+
+
+Run Tuleap Realtime server
+--------------------------
+
+A service tuleap-realtime is available. You can ``start|stop|condrestart|status`` the server.
+
+* start: start the service starting Node.js server
+* stop: stop the service stoping Node.js server
+* condrestart: restart the service if already running
+* status: display service's status
+
+Notes
+-----
+
+If your certificate used by tuleap-realtime isn't in the list of recognized CAs then the real time won't work.
+To verify you can see this error "Unable to reach nodejs server ..." in the ``/var/log/tuleap/codendi_syslog`` file.
+
+To resolve it, you have to add a new certification authority to the CA bundle.

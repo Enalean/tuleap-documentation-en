@@ -79,6 +79,31 @@ For performance reasons, Tuleap localization is kept in a cache file. When your 
 
     $ tuleap --clear-caches
 
+Localize service names
+``````````````````````
+
+If you would like to add new system-wide or project-wide services please
+note the following:
+
+For those service names to be localized, we store a simple key for the
+service label and description in the database. These keys are then
+translated into the users current language by doing a look up of the key
+in the site\_content/<*language*>/project/project.tab file.
+
+The keys follow a simple pattern:
+
+-  ``service_<service short name>_lbl_key`` for the service label
+-  ``service_<service short name>_desc_key`` for the service description
+
+To assure the correct localization when adding a new service please
+follow the instructions below:
+
+-  Choose ``service_<service short name>_lbl_key`` as service label
+-  Choose ``service_<service short name>_desc_key`` as service
+   description
+-  Add two entries into each
+   **site\_content/<*language*>/project/project.tab**
+   `` project_admin_editservice   service_<service short name>_lbl_key <your localized service label> project_admin_editservice   service_<service short name>_desc_key    <your localized service description>``
 
 Custom Tuleap Tours
 -------------------

@@ -1,5 +1,5 @@
-Administration Tasks
-====================
+Site news
+=========
 
 Site News Approval
 ------------------
