@@ -16,7 +16,6 @@ Administration guide
    administration-guide/security
    administration-guide/customisations
    administration-guide/howto
-   administration-guide/project-export-import
    administration-guide/advanced-deployments
    administration-guide/distributed-tuleap
    administration-guide/backend-worker
