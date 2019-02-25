@@ -2115,17 +2115,29 @@ Add a workflow to a tracker
    icon: the transition can happens, grey bullet: the transition is
    forbidden.
 
-   Once you defined all your transition, click on Submit button to save
-   it.
-
    For instance, in `Add a workflow to a tracker`_, various transitions have been defined: on
-   artifact submission, defined by fake state "new artifact", the only
-   value available for the field "Status" will be "New". Then, once
-   Status is "New", possible changes will be "Unconfirmed", "Verified"
-   and "Closed".
+   artifact submission, defined by fake state "new artifact", values available for the field "Status" 
+   will be "To do", "On Going" and "Review". 
+   Then, once Status is "Todo", possible changes will be "On Going" and "Done", etc.
 
-To delete the workflow, simply, click on the red cross near to the field
+To delete the workflow, simply click on the "Change or remove" button near to the field
 name. Transitions are deleted too.
+
+Workflow simple and advanced mode
+``````````````````````````````````
+
+A tracker workflow can use two modes: simple or advanced.
+
+* In simple mode, transitions are configured at state level. 
+* In advanced mode, each transitions are defined individually.
+
+By default, a tracker is created in simple mode.
+
+A tracker administrator can change the workflow mode:
+
+* From simple to advanced: Each defined transitions inherit from their state configuration and are now editable individually.
+* From advanced to simple: Transitions are now editable by target state. For each state, the first found transition is used as a template 
+  and its configuration is used for all transitions in this state.
 
 Define rules on transitions
 ```````````````````````````
