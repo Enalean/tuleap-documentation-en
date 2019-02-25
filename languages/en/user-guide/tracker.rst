@@ -2092,7 +2092,7 @@ administrator.
 For now, a tracker can have only one workflow defined on one field. This
 field must be a list field (select box).
 
-N.B. Worflow is not taken into account in artifacts mass change
+N.B. Worflow is not taken into account in artifacts mass change, during artifact copy and during XML import.
 
 Add a workflow to a tracker
 ```````````````````````````
@@ -2126,18 +2126,23 @@ name. Transitions are deleted too.
 Workflow simple and advanced mode
 ``````````````````````````````````
 
-A tracker workflow can use two modes: simple or advanced.
+Each transitions can be configured.
+That means that they can have pre-conditions and post actions.
 
-* In simple mode, transitions are configured at state level. 
-* In advanced mode, each transitions are defined individually.
+A tracker workflow can uses two modes: simple or advanced.
 
-By default, a tracker is created in simple mode.
+* In simple mode, pre-conditions and post actions of transitions are configured at target state level.
+  This means that all transitions defined at target state level share the same configuration.
+* In advanced mode, each transitions are configured individually.
+  This means that the administrator has to configure pre-conditions and post actions in each transitions.
+
+By default, a workflow is created in simple mode.
 
 A tracker administrator can change the workflow mode:
 
-* From simple to advanced: Each defined transitions inherit from their state configuration and are now editable individually.
-* From advanced to simple: Transitions are now editable by target state. For each state, the first found transition is used as a template 
-  and its configuration is used for all transitions in this state.
+* From simple to advanced: Each transitions copy from their target state the configuration and are now editable individually.
+* From advanced to simple: Transitions are now editable by target state. For each state, the first transition found is used as a template
+  and its configuration is used to configure all transitions defined for this target state.
 
 Define rules on transitions
 ```````````````````````````
@@ -2149,26 +2154,26 @@ Define rules on transitions
 
    Define workflow transitions
 
-For a given transition, you can select the people allowed to perform it
+For a given transition, you can select the people allowed to perform it, define fileds and comment not empty
 and actions exectued after the transition happens (if allowed).
 
 Groups that may process the transition
-```````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the transition is defined, you can refine who can make the
-transition. To do this, click the "[details]" link next to the
-transition. Then, select the group of users you allow to do the
+transition. To do this, click the "Configure" button.
+Then, select the group of users you allow to do the
 transition (see `Define workflow transitions`_).
 
 Fields and/or comment not empty
-```````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A tracker administrator can define a set of fields that must not be empty before processing a workflow transition.
 An administrator can also make adding a followup comment mandatory for a transition. 
 Keep in mind that this condition cannot be configured for transitions from "New artifact", as it is not possible to add a comment when creating a new artifact.
 
 Post actions
-````````````
+^^^^^^^^^^^^
 
 You can define a list of actions after the execution of a transition. The available post actions are:
 
