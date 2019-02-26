@@ -2097,7 +2097,7 @@ N.B. Worflow is not taken into account in artifacts mass change, during artifact
 Add a workflow to a tracker
 ```````````````````````````
 
-.. figure:: ../images/screenshots/tracker/sc_manage_workflow.png
+.. figure:: ../images/screenshots/tracker/sc_manage_workflow_simple.png
    :align: center
    :alt: Add a workflow to a tracker
    :name: Add a workflow to a tracker
@@ -2118,7 +2118,7 @@ Add a workflow to a tracker
    For instance, in `Add a workflow to a tracker`_, various transitions have been defined: on
    artifact submission, defined by fake state "new artifact", values available for the field "Status" 
    will be "To do", "On Going" and "Review". 
-   Then, once Status is "Todo", possible changes will be "On Going" and "Done", etc.
+   Then, once Status is "To do", possible changes will be "On Going" and "Done", etc.
 
 To delete the workflow, simply click on the "Change or remove" button near to the field
 name. Transitions are deleted too.
@@ -2143,6 +2143,17 @@ A tracker administrator can change the workflow mode:
 * From simple to advanced: Each transitions copy from their target state the configuration and are now editable individually.
 * From advanced to simple: Transitions are now editable by target state. For each state, the first transition found is used as a template
   and its configuration is used to configure all transitions defined for this target state.
+
+The workflow presented in `Add a workflow to a tracker`_ is in simple mode. 
+You can see that the target state can be configured.
+
+.. figure:: ../images/screenshots/tracker/sc_manage_workflow_advanced.png
+   :align: center
+   :alt: Workflow in advanced mode
+   :name: Workflow in advanced mode
+
+This picture above shows the same workflow, but switched to the advanced mode.
+You can see that now, each transition is configurable individually.
 
 Define rules on transitions
 ```````````````````````````
