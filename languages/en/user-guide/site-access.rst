@@ -10,7 +10,7 @@ Before we go further into the user registration process it is worth
 reviewing the various types of Tuleap citizens. There are always 3 of them:
 
 -  **Registered Users**: once you have created your own account (see
-   below) you can use your login/password to authenticate yourself with
+   below) you can use your login/password to authenticate with
    Tuleap. Registered users have access to all
    Tuleap projects including source code unless the project
    administrators decided otherwise. And since the system knows about
@@ -41,20 +41,20 @@ two extra roles:
 
 -  **Anonymous Users**: when you first visit the Tuleap site
    you are typically an anonymous user. Anonymous users can browse the
-   site but many of the or resources cannot be used or accessed by an
+   site but many of the resources cannot be used or accessed by an
    anonymous user.
 
 -  **Restricted Users**: users who are project members, or even project
    administrators, but with restricted access rights: they cannot access
-   pages from projects they are not member of. This special role is only
+   pages from projects they are not a member of. This special role is only
    enabled on servers in heterogeneous environments
    where corporate users and external consultants share the same server.
 
 Site configuration
 ------------------
 
-Tuleap permission model is first defined by the platform configuration.
-This configuration is done by site administrator in ``Admin > Configure anonymous and restricted access``
+The permission model of Tuleap is first defined by the platform configuration.
+This configuration is done by a site administrator in ``Admin > Configure anonymous and restricted access``
 section.
 
 .. figure:: ../images/screenshots/site_admin_anonymous_restricted.png
@@ -108,7 +108,7 @@ Then the list of available groups would be:
 Project's permissions
 ---------------------
 
-In addition to site configuration, project administrators can decided whether their projects are:
+In addition to site configuration, project administrators can decide whether their projects are:
 
 * **Public**
 * **Private**
@@ -117,7 +117,7 @@ In addition to site configuration, project administrators can decided whether th
 Resources visibility
 ````````````````````
 
-You can find bellow the complete matrix of *Who access What* depending to the various configurations:
+You can find bellow the complete matrix of *Who can access What* depending to the various configurations:
 
 +-----------------------+---------------------------------------------+---------------------------------------------+-----------------------------------------------------------------------+
 |   Site configuration  |                 Anonymous                   |                 Registered                  |                      Registered + Restricted                          |
