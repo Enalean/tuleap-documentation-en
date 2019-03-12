@@ -12,6 +12,24 @@ Tuleap 11.0
 .. NOTE::
 
   Tuleap 11.0 is currently under development.
+  
+  If you have start using POST docman_items route, you should adapt your code.
+  In order to have easier to use routes, it has been split in smaller routes:
+    - POST /docman_folders/{id}/files
+        Create new file
+
+    - POST /docman_folders/{id}/folders
+        Create new folder
+
+    - POST /docman_folders/{id}/empties
+        Create new empty document
+
+    - POST /docman_folders/{id}/wikis
+        Create new wiki document
+        
+    - POST /docman_folders/{id}/links
+        Create new link document
+
 
 Tuleap 10.11
 ============
