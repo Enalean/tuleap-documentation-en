@@ -127,5 +127,4 @@ Those plugins are not compatible with RHEL/CentOS 7
 Those plugins should not be installed and only kept for legacy reasons. They will be removed
 
 * tracker_encryption
-* fulltextsearch
 * graphontrackers
