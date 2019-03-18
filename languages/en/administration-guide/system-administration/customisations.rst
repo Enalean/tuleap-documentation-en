@@ -156,7 +156,7 @@ The **tour_name** must correspond to a JSON file located in the same folder. E.g
     }
 
 Note that the element corresponds to a standard css selector. It is the element to which the help bubble is binded.
-Further documentation on writing steps can be found here: http://bootstraptour.com/api/#step-options Bearing in mind that
+Further documentation on writing steps can be found here: https://bootstraptour.com/api/#step-options Bearing in mind that
 the JSON of this file has to be valid.
 
 Finally, each tour is shown on the page until the user decides to "End" the tour. Upon clicking this, a user will not see a tour

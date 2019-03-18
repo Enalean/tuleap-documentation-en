@@ -73,5 +73,5 @@ Resources
 .. _child combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator
 .. _Can I use: https://caniuse.com/
 .. _supported browsers: https://docs.tuleap.org/user-guide/troubleshooting.html#which-browser-should-i-use-to-browse-tuleap
-.. _Sass documentation on comments: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
-.. _partials: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials
+.. _Sass documentation on comments: https://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
+.. _partials: https://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials
