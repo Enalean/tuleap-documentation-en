@@ -319,10 +319,9 @@ If you already use the Tracker Artifact Export (see :ref:`project-data-export`) 
 that the format of the files to import and the exported files are
 exactly the same. This means that if you changed your CSV separator for
 exporting data, you must use the same to import those data. You can
-refer to the export format especially for the date formats as well as
-the format of the follow-up comments (see `Comments`_). The first record in the
-CSV import file is always the header row containing all the tracker
-field names that will be used in the following artifact records.
+refer to the export format especially for the date formats. The first
+record in the CSV import file is always the header row containing all
+the tracker field names that will be used in the following artifact records.
 
 Depending on whether you want to import new artifacts or update the ones
 that already exist in the tracker you need to provide different
