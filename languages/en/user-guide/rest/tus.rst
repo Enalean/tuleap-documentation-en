@@ -6,6 +6,14 @@ Use TUS for file upload
 It's currently supported for upload of data in Docman and FRS. Both routes support it, the following example is done on
 FRS but same principle applies on docman.
 
+.. important::
+
+    You should really consider using an existing `tus implementation <https://tus.io/implementations.html>`_ that already
+    exists in your favorite language. More precisely a tus client that is able to resume a transfer.
+
+    Here in case of a failure the user might block itself, in the document manager he will not be able to create an item with
+    the same name until the lock is released, 12 hours after.
+
 For complete usage of the protocol, you should refer to the reference site, however the simple usage is made with 2 calls.
 
 First you should "reserve" a slot for your file upload with:
@@ -45,4 +53,8 @@ A successful upload will return an empty response with following headers:
     upload-offset: 1998
     tus-resumable: 1.0.0
 
-It might be a better idea to use one of the existing `TUS implementation <https://tus.io/implementations.html>`_ that already exists in your favorite language.
+
+.. important::
+
+    You must check that returned "upload-offset" corresponds to what you sent (PATCH command) and what you declared
+    first-hand (POST) otherwise your file won't be made available on the server.
