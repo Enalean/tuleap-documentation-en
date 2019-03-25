@@ -8,9 +8,10 @@ This documentation is still sparse but all end-points are auto-documented. You s
 You can also see it in action on https://tuleap.net/api/explorer/
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    rest/quick-start
    rest/xml
    rest/concurrency
+   rest/tus
    rest/api
