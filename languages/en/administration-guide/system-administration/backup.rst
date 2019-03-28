@@ -61,4 +61,4 @@ As only data were backed up, you first need a Tuleap server to restore them. It 
     - suspend all services
     - restore databases
     - restore directories
-    - run a forge upgrade ('/usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update')
+    - run a forge upgrade ``/usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update``
