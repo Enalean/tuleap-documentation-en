@@ -20,7 +20,7 @@ Depending on services you use, you will want to stop them before the backup (It 
     $ service nginx stop
     $ service httpd stop
     $ service tuleap stop
-    $ su - gitolite -c "gitolite writable off"
+    $ su - gitolite -c "gitolite writable @all off 'Backup in progress'"
 
 Don't forget to restart services once the backup is done.
 
