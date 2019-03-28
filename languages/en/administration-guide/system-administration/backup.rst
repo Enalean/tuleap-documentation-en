@@ -15,6 +15,17 @@ Suspend services
 
 Depending on services you use, you will want to stop them before the backup (It should guarantee you a consistent backup):
 
+On CentOS/RHEL 7:
+
+.. code-block:: bash
+
+    $ systemctl stop nginx
+    $ systemctl stop httpd
+    $ systemctl stop tuleap
+    $ su - gitolite -c "gitolite writable @all off 'Backup in progress'"
+
+On CentOS/RHEL 6:
+
 .. code-block:: bash
 
     $ service nginx stop
