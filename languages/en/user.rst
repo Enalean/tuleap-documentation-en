@@ -27,6 +27,7 @@ User guide
    user-guide/project-labels
    user-guide/mediawiki
    user-guide/doc
+   user-guide/document
    user-guide/ci
    user-guide/wiki
    user-guide/communication
