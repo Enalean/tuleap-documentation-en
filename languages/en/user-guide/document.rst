@@ -12,13 +12,17 @@ Drag and drop
 -------------
 The major difference between both user interface, is that the new document manager now support the drag and drop:
 
-If you drop a document in the current folder, it will add it under the folder
+In current folder
+`````````````````
+If you drop a document in the current folder, it will add in your folder content
 
 .. figure:: ../images/screenshots/document/current_folder.png
    :align: center
    :alt: create a new file under current folder
    :name: create a new file under current folder
 
+In a given folder
+`````````````````
 If you drop a document in a specific folder, it will add it inside
 
 .. figure:: ../images/screenshots/document/specific_folder.png
@@ -26,7 +30,9 @@ If you drop a document in a specific folder, it will add it inside
    :alt: create a new file under a specific folder
    :name: create a new file under a specific folder
 
-If you drop a document on an existing on, it will create a new version of the document
+Create a new version of a file
+``````````````````````````````
+If you drop a document on an existing file, it will create a new version of the file
 
 .. figure:: ../images/screenshots/document/new_version.png
    :align: center
@@ -35,8 +41,8 @@ If you drop a document on an existing on, it will create a new version of the do
 
 Quick look
 ----------
-In document manager items now have a quick look option, it will enable you to see document metadata and actions you can do.
-If document is an image or an embedded file, it will display a preview of the document.
+Each item of the new document manager now has a quick look option, it will enable you to see document metadata and actions you can do.
+If the document is an image or an embedded file, it will display a preview of the document.
 
 .. figure:: ../images/screenshots/document/preview.png
    :align: center
@@ -46,7 +52,7 @@ If document is an image or an embedded file, it will display a preview of the do
 Switch
 ------
 
-As all functionalities are not available for now only project who has no required metadata are automatically
-switch on the new interface.
+As all functionalities are not available for now, only project who has no required metadata are automatically
+switched on the new interface.
 
 Please note that each user can switch between the legacy and the new UI at any moment.
