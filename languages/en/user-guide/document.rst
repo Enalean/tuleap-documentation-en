@@ -12,6 +12,10 @@ Drag and drop
 -------------
 The major difference between both user interface, is that the new document manager now support the drag and drop:
 
+.. attention::
+
+  Drag an d drop is not supported for IE11. Please use Edge, Firefox or Chrome instead.
+
 In current folder
 `````````````````
 If you drop a document in the current folder, it will add in to the folder content
