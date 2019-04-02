@@ -10,7 +10,7 @@ The new interface of document manager provide a more modern way to interact with
 
 Drag and drop
 -------------
-The major difference between both user interface, is that we now support drag and drop:
+The major difference between both user interface, is that the new document manager now support the drag and drop:
 
 If you drop a document in current folder, it will add it under the folder
 
