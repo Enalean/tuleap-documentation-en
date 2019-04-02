@@ -18,7 +18,7 @@ The major difference between both user interface, is that the new document manag
 
 In current folder
 `````````````````
-If you drop a document in the current folder, it will add in to the folder content
+If you drop a document in the current folder, it will add it into the folder content
 
 .. figure:: ../images/screenshots/document/current_folder.png
    :align: center
