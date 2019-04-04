@@ -9,11 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.0
 ===========
 
-.. NOTE::
-
-  Tuleap 11.0 is currently under development.
-
-
 Changes in the document manager REST routes
 -------------------------------------------
 
