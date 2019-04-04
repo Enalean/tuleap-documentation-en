@@ -6,12 +6,16 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 11.0
+Tuleap 11.1
 ===========
 
 .. NOTE::
 
-  Tuleap 11.0 is currently under development.
+  Tuleap 11.1 is currently under development.
+
+
+Tuleap 11.0
+===========
 
 
 Changes in the document manager REST routes
