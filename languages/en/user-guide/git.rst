@@ -156,7 +156,7 @@ If the platform allows it, regexp can be used in pattern.
 .. IMPORTANT:: When regex are enabled, they are kept the way administrators
   wrote them, it might end up in a non working state, invalids regex
   are ignored without errors. Please see Gitolite regex documentation:
-  http://gitolite.com/gitolite/regex.html
+  https://gitolite.com/gitolite/regex.html
 
 
 .. figure:: ../images/screenshots/fined_grained.png
