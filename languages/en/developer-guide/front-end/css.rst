@@ -7,7 +7,7 @@ Tuleap uses Sass for its CSS generation.
 
 SCSS files are just extended CSS files. It means you can use variables, functions, operations and more in CSS files very easily. It's fully backward compatible with exiting CSS files (you can rename file.css to file.scss, compile file.scss and it'll just work).
 
-Please refer to the `Sass documentation <https://sass-lang.com/documentation/file.SASS_REFERENCE.html>`_ for more information.
+Please refer to the `Sass documentation <https://sass-lang.com/documentation>`_ for more information.
 
 Compile SCSS files
 ------------------
@@ -73,5 +73,5 @@ Resources
 .. _child combinator: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator
 .. _Can I use: https://caniuse.com/
 .. _supported browsers: https://docs.tuleap.org/user-guide/troubleshooting.html#which-browser-should-i-use-to-browse-tuleap
-.. _Sass documentation on comments: https://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments
-.. _partials: https://sass-lang.com/documentation/file.SASS_REFERENCE.html#partials
+.. _Sass documentation on comments: https://sass-lang.com/documentation/syntax/comments
+.. _partials: https://sass-lang.com/documentation/at-rules/import#partials
