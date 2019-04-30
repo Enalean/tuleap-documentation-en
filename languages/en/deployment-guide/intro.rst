@@ -14,6 +14,22 @@ Tuleap 11.1
   Tuleap 11.1 is currently under development.
 
 
+Missing scheduled jobs on CentOS/RHEL7
+--------------------------------------
+
+Some jobs were missing on CentOS/RHEL7 instances and as result
+some actions might not work. You will need to enable and start
+those jobs:
+
+
+.. sourcecode:: shell
+
+    #> systemctl enable tuleap-launch-daily-event.timer
+    #> systemctl enable tuleap-launch-plugin-job.timer
+    #> systemctl start tuleap-launch-daily-event.timer
+    #> systemctl start tuleap-launch-plugin-job.timer
+
+
 Tuleap 11.0
 ===========
 
