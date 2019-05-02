@@ -9,11 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.1
 ===========
 
-.. NOTE::
-
-  Tuleap 11.1 is currently under development.
-
-
 Missing scheduled jobs on CentOS/RHEL7
 --------------------------------------
 
