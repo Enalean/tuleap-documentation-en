@@ -7,6 +7,13 @@ This documentation is still sparse but all end-points are auto-documented. You s
 
 You can also see it in action on https://tuleap.net/api/explorer/
 
+Implementations of the API in various languages are welcomed, please find the list below:
+
+* `Python <https://github.com/djurodrljaca/tuleap-rest-api-client>`_
+
+Table of contents
+-----------------
+
 .. toctree::
    :maxdepth: 2
 
