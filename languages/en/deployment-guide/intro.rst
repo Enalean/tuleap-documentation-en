@@ -13,6 +13,40 @@ Tuleap 11.2
 
   Tuleap 11.2 is currently under development.
 
+Distributed SVN Setups
+----------------------
+
+After move of svn plugin to "front controller" pattern, nginx configuration must be adapted so svn server can continue to
+serve the web browsing of svn repo (it's not necessary if svn server is setup only to serve svn tools related traffic).
+
+On svn server, you should remove the previous ``location ^~ /plugins/svn { ... }`` block and add the following snippet:
+
+.. sourcecode:: nginx
+
+        root /usr/share/tuleap/src/www;
+        index index.php;
+
+        location /index.php {
+            include fastcgi_params;
+
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index                   index.php;
+
+            fastcgi_param DOCUMENT_ROOT             $realpath_root;
+            fastcgi_param SCRIPT_FILENAME   $realpath_root$fastcgi_script_name;
+        }
+
+        location / {
+            try_files $uri $uri/ /index.php?$args;
+        }
+
+        location ^~ /plugins/svn/ {
+            alias /usr/share/tuleap/plugins/svn/www/;
+
+            if (!-f $request_filename) {
+                rewrite ^ /index.php last;
+            }
+        }
 
 Tuleap 11.1
 ===========

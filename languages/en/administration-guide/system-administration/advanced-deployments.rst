@@ -538,20 +538,28 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
         }
 
         # -- SVN
-        location ^~ /plugins/svn {
-            alias /usr/share/tuleap/plugins/svn/www;
+        root /usr/share/tuleap/src/www;
+        index index.php;
+
+        location /index.php {
+            include fastcgi_params;
+
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index                   index.php;
+
+            fastcgi_param DOCUMENT_ROOT             $realpath_root;
+            fastcgi_param SCRIPT_FILENAME   $realpath_root$fastcgi_script_name;
+        }
+
+        location / {
+            try_files $uri $uri/ /index.php?$args;
+        }
+
+        location ^~ /plugins/svn/ {
+            alias /usr/share/tuleap/plugins/svn/www/;
 
             if (!-f $request_filename) {
-                rewrite ^ /plugins/svn/index.php last;
-            }
-
-            location ~ \.php(/|$) {
-                if (!-f $request_filename) {
-                    rewrite ^ /plugins/svn/index.php last;
-                }
-                fastcgi_pass 127.0.0.1:9000;
-                include fastcgi_params;
-                fastcgi_param SCRIPT_FILENAME $request_filename;
+                rewrite ^ /index.php last;
             }
         }
 
