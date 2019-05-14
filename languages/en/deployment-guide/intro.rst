@@ -13,6 +13,18 @@ Tuleap 11.2
 
   Tuleap 11.2 is currently under development.
 
+Max file size change when uploading an item to the document manager through Webdav
+----------------------------------------------------------------------------------
+
+The max file size when uploading an item to the document manager is now global to
+the document manager plugin for all type of accesses.
+
+This means that the max file size limit that is defined in the configuration file
+``/etc/tuleap/plugins/webdav/etc/webdav.inc`` is not used anymore for the document
+manager. Instead, you can change the max allowed size of a file in the document
+manager plugin from the site administration.
+
+
 Distributed SVN Setups
 ----------------------
 
