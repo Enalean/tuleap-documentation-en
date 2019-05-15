@@ -137,13 +137,17 @@ Therefore we need to declare this method:
 How to process an event
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    The following code snippets show direct usage of ``EventManager`` instance + dispatch. In real code you are suppose
+    to inject event manager instead of making use of singleton everywhere. Your class MUST then typehint against
+    `PSR-14 <https://www.php-fig.org/psr/psr-14/>`_ ``EventDispatcherInterface``.
+
 When the core or a plugin wants to raise an event, it must use the ``EventManager``:
 
     .. code-block:: php
 
-        $my_event = new \Tuleap\Stuff\MyEvent();
-
-        EventManager::instance()->processEvent($my_event);
+        $my_event = EventManager::instance()->dispatch(new \Tuleap\Stuff\MyEvent());
 
 You can (should?) add some business logic into your event. This is useful to add some context to the listeners and allow
 them to give back results if needed. For example we can look at the following usage:
@@ -151,9 +155,8 @@ them to give back results if needed. For example we can look at the following us
 
     .. code-block:: php
 
-        $event = new GetPublicAreas($project);
-        EventManager::instance()->processEvent($event);
-        foreach($event->getAreas() as $area) {
+        $get_public_areas = EventManager::instance()->dispatch(new GetPublicAreas($project));
+        foreach($get_public_areas->getAreas() as $area) {
             …
         }
 
@@ -298,11 +301,9 @@ Example of leak:
 
 .. code-block:: php
 
-      EventManager::instance()->processEvent(self::ITEM_UPDATED, array(
-          'item_metadata' => &$item_metadata,
-      ));
+      $item_updated = EventManager::instance()->dispatch(new ItemUpdated());
 
-      if (isset($item_metadata['wiki_is_mediawiki'])) {
+      if ($item_updated->isMediawiki()) {
           ...
       }
 
@@ -322,7 +323,7 @@ during system events.
 
 System events are basically a queue (there are several as plugins can manage
 their own queues). The queues are consumed on regular basis by a backend process.
-This backend process is a managed by a cron job (see ``src/utils/cron.d/codendi``)
+This backend process is a managed by a cron job (see ``src/utils/cron.d/tuleap``)
 that launch every minute the command ``src/utils/process_system_events.php``
 
 In Core, all system events are managed by ``SystemEventManager`` (which is, bye
@@ -352,7 +353,7 @@ This event is listened by ``SystemEventManager`` that will queue a ``SystemEvent
                 SystemEvent::PRIORITY_HIGH
              );
 
-And finaly, there a class that corresponds to the system event type, ``SystemEvent_USER_RENAME``
+And finally, there a class that corresponds to the system event type, ``SystemEvent_USER_RENAME``
 that will hold the user renaming
 
 .. code-block:: php
@@ -376,4 +377,4 @@ Wrap-up, to add a new system event, developer should:
 - Listen to this event in ``SystemEventManager`` to properly queue the SystemEvent
 - Have class named after SystemEvent_EVENT_TYPE with a ``process`` method that finish by ``$this->done()`` when successful or ``$this->error()`` otherwise.
 
-That's all! All the process of instanciation and queue management is done by Tuleap.
+That's all! All the process of instantiation and queue management is done by Tuleap.
