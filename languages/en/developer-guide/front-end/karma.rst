@@ -75,15 +75,13 @@ The goal of this file is to import every ``*.spec.js`` file.
     import "./store/getters.spec.js";
     import "./api/rest-querier.spec.js";
 
-.. note:: All your tests **must** be located in the same folder than the tested files and to be suffixed with ``.spec.js``.
-
 To run your tests locally, use the :ref:`npm scripts <npm_scripts>`.
 
 .. note:: The Karma server might be unable to launch the unit tests if no browser is available. Please ensure that:
 
     - Chromium is installed on your machine if it runs under Linux.
     - Chrome is installed otherwise.
-    
+
 How to debug tests
 ^^^^^^^^^^^^^^^^^^
 
@@ -147,3 +145,23 @@ To do so, you have to update Tuleap's Jenkins file.
             'Karma Git plugin': { runKarmaTests('git', 'plugins/git/www/scripts') },
         }
     }
+
+Best-practices for Tuleap
+-------------------------
+
+When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
+
+* Always define an ``index.spec.js`` file and import unit test files in it. This makes it possible to define mocks for all tests and lets us control the order in which tests are run. We don't want to let some magic globbing library control (and change unexpectedly) this order.
+* Always name unit test files with the same name as their test subject and suffixed with ``.spec.js``. For example: ``form-tree-builder.spec.js`` tests ``form-tree-builder.js``, ``DocumentBreadcrumb.spec.js`` tests ``DocumentBreadcrumb.vue``.
+* Always put unit test files next to their test subject, in the same folder. See `Angular.js Style Guide rule`_ for reasons why having unit tests close to the source is a good idea.
+
+Resources
+^^^^^^^^^
+
+- `Angular.js Style Guide rule`_ related to unit test file location.
+- Google Best Practice Recommendations for Angular App Structure: https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
+- React File Structure recommendation: https://reactjs.org/docs/faq-structure.html
+
+.. note:: The Vue.js community has no recommendation at the time of writing. Some projects write unit tests in a separate folder hierarchy, some write them side-by-side with source files. We chose the latter for reasons outlined in the `Angular.js Style Guide rule`_.
+
+.. _Angular.js Style Guide rule: https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y197
