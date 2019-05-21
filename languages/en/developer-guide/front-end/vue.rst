@@ -199,6 +199,7 @@ Many rules are already enforced by the pre-commit hook that runs eslint_ with `e
 * Avoid having too many components that depend on ``this.$route``. Inject what you need via props instead.
 * Always use named exports in Vuex Getters, Mutations and Actions. Default export may be used for State definition. Named exports make it easier to import only what we want.
 * Always use the inline export syntax ``export function myAction()`` or ``export const myMutation() => {}``. It makes it easy to add "private" (non-exported) functions that will be reused.
+* Always avoid create uneeded computed methods: if method only do a return use a v-bind ``v-bind:title="$gettext('No color')"`` is better than ``v-bind:title="my_custom_title"`` (it will help for test coverage)
 
 Resources
 ^^^^^^^^^
