@@ -328,7 +328,7 @@ Basics:
 - Within a ``<tracker>`` there is first the structure of the tracker and then the
   data themselves within ``<artifacts>`` node.
 - The tracker structure is made of metadata (like ``<name>``), fields (``<formElements>``),
-  semantics (``<semantics>``), Workflow & field dependencies (``<rules>``, ``<workflow>``),
+  semantics (``<semantics>``), Workflow & field dependencies (``<rules>``, ``<workflow>``, ``<simple_workflow>``),
   reports (``<reports>``) and permissions (``<permissions>``).
 - An ``<artifact>`` is made of ``<changeset>``, each ``<changeset>`` corresponds to a modification
   of the artifact. Order matters! the first <changeset> is the artifact creation.
@@ -583,6 +583,103 @@ Some insights to better understand how this works:
         </tracker>
       </trackers>
     </project>
+
+Workflow modes
+--------------
+
+Both workflow types (simple and advanced) are importable through the XML import.
+Each types define their own tags and hierarchy.
+
+Here is an exemple of the ``advanced`` mode:
+
+.. sourcecode:: xml
+  :linenos:
+
+  <workflow>
+    <field_id REF="F688"/>
+    <is_used>1</is_used>
+    <transitions>
+      <transition>
+        <from_id REF="null"/>
+        <to_id REF="V427"/>
+        <postactions>
+          <postaction_field_date valuetype="2">
+            <field_id REF="F689"/>
+          </postaction_field_date>
+        </postactions>
+        <conditions>
+          <condition type="perms">
+            <permissions>
+              <permission ugroup="UGROUP_PROJECT_MEMBERS"/>
+            </permissions>
+          </condition>
+          <condition type="notempty">
+            <field REF="F692"/>
+          </condition>
+        </conditions>
+      </transition>
+      <transition>
+        <from_id REF="V428"/>
+        <to_id REF="V427"/>
+        <postactions>
+          <postaction_field_date valuetype="2">
+            <field_id REF="F689"/>
+          </postaction_field_date>
+        </postactions>
+        <conditions>
+          <condition type="perms">
+            <permissions>
+              <permission ugroup="UGROUP_PROJECT_MEMBERS"/>
+            </permissions>
+          </condition>
+          <condition type="notempty">
+            <field REF="F692"/>
+          </condition>
+        </conditions>
+      </transition>
+    </transitions>
+  </workflow>
+
+Here is an exemple of the ``simple`` mode:
+
+.. sourcecode:: xml
+  :linenos:
+
+  <simple_workflow>
+    <field_id REF="F42704"/>
+    <is_used>1</is_used>
+    <states>
+      <state>
+        <to_id REF="V36863"/>
+        <transitions>
+            <transition>
+                <from_id REF="null"/>
+            </transition>
+            <transition>
+                <from_id REF="V36864"/>
+            </transition>
+        </transitions>
+        <postactions>
+            <postaction_field_date valuetype="2">
+                <field_id REF="F42705"/>
+            </postaction_field_date>
+            <postaction_frozen_fields>
+                <field_id REF="F42708"/>
+            </postaction_frozen_fields>
+        </postactions>
+        <conditions>
+          <condition type="perms">
+            <permissions>
+              <permission ugroup="UGROUP_PROJECT_MEMBERS"/>
+            </permissions>
+          </condition>
+          <condition type="notempty">
+            <field REF="F42708"/>
+          </condition>
+        </conditions>
+      </state>
+    </states>
+  </simple_workflow>
 
 Artifact link types
 -------------------
