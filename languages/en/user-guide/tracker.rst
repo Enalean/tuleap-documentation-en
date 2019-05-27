@@ -597,6 +597,23 @@ extensions:
    Posting a canned response is just a matter of selecting the
    appropriate response from the pull down menu in the artifact update
    screen and submitting the changes.
+   
+File attachments
+~~~~~~~~~~~~~~~~~
+
+You can attach files to an artifact by using file field. 
+
+Please note that it is possible to drag 'n drop (or copy/paste) images 
+directly in the text or in the follow-up comment field as soon as they 
+are in ``html`` mode. 
+
+Such images will be added in the first updatable file field in the artifact.
+
+Drag 'n drop or copy/paste are not possible if:
+
+* there isn't any file field
+* the file field is not updatable (due to permissions) or is frozen (due to workflow)
+
 
 Artifact Link
 -------------
