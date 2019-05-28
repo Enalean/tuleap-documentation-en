@@ -548,7 +548,7 @@ For this option to be present in Tuleap, the Gerrit server needs to have an addi
 
 * First, download the plugin:
 
-  * Gerrit 2.8: https://tuleap.net/file/download.php/101/92/p22_r77/delete-project.jar
+  * Gerrit 2.8: https://tuleap.net/file/download/92
   * For later version, you have to build the plugin yourself.
 
 To install the plugin, put delete-project.jar in the 'plugins' folder of your Gerrit instance then run
