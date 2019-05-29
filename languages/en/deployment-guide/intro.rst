@@ -9,10 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.2
 ===========
 
-.. NOTE::
-
-  Tuleap 11.2 is currently under development.
-
 Max file size change when uploading an item to the document manager through Webdav
 ----------------------------------------------------------------------------------
 
