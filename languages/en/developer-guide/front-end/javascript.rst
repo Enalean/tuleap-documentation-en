@@ -73,10 +73,10 @@ When you submit a patch for review, we may request changes to better match the f
 Resources
 ~~~~~~~~~
 
-- Exploring ES6: http://exploringjs.com/es6/index.html
+- Exploring ES6: https://exploringjs.com/es6/index.html
 - Can I use, to check what is available for major browsers: https://caniuse.com/
 
 .. _Babel: https://babeljs.io/
 .. _Can I use: https://caniuse.com/
 .. _DOM4: https://github.com/WebReflection/dom4
-.. _exploring ES6: http://exploringjs.com/es6/index.html
+.. _exploring ES6: https://exploringjs.com/es6/index.html
