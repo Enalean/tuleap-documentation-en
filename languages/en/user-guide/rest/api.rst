@@ -36,56 +36,69 @@ Here an example of artifact created with some artifact typed links:
 Retrieve artifact attachment
 ----------------------------
 
-The following javascript snippet shows how we can retrieve the content of a file attached in an 
-artifact. Assuming that the file is an image, this can be run in the console of a recent browser 
-like Chrome or Firefox (don't forget to update the base url, file id, and credentials).
+The following javascript snippet shows how we can retrieve the content of an
+artifact, find a suitable file field and retrieve its first attachment. Assuming
+that the file is an image, this can be run in the console of a recent browser
+like Chrome or Firefox (don't forget to update the base url, file id, and
+credentials).
 
 .. code-block:: javascript
 
-    (async () => {
-      const base_url    = 'https://tuleap.example.com/api/v1';
-      const file_id     = 1;
-      const access_key = 'tlp-k1-22.3329b8ac4401eaf03cf7776d6bab1809883624eef7a2e2dd2dc4d07696d32504';
-  
-      const file_content = await getFileContentRecursively(file_id);
-      saveTheFileSomewhere(file_content);
-  
-      async function getFileContentRecursively(file_id, offset = 0) {
-        console.log(`getFileContentRecursively (offset = ${offset})`);
+    (() => {
+      const base_url = "https://tuleap.example.com/api/v1";
+      const artifact_id = 1;
+      const access_key =
+        "tlp-k1-22.3329b8ac4401eaf03cf7776d6bab1809883624eef7a2e2dd2dc4d07696d32504";
+
+      async function downloadImage() {
+        const artifact = await getArtifact(artifact_id);
+        const file_html_url = getFirstFileHTMLURL(artifact);
+        saveTheFileSomewhere(file_html_url);
+      }
+
+      async function getArtifact(artifact_id) {
+        console.log(`getArtifact (artifact_id = ${artifact_id})`);
         const init = {
-          method: 'GET',
+          method: "GET",
           headers: new Headers({
-            'Content-type': 'application/json',
-            'X-Auth-AccessKey': access_key
+            "Content-type": "application/json",
+            "X-Auth-AccessKey": access_key
           }),
-          mode: 'cors'
+          mode: "cors"
         };
-        const response      = await fetch(`${base_url}/artifact_files/${file_id}?offset=${offset}`, init);
-        const json          = await response.json();
-        const encoded_chunk = json.data;
-        const decoded_chunk = atob(encoded_chunk);
-  
-        const limit = parseInt(response.headers.get('X-Pagination-Limit'), 10);
-        const size  = parseInt(response.headers.get('X-Pagination-Size'), 10);
-        if (offset + limit < size) {
-          console.log('There are remaining chunks to fetch');
-          const remaining_file = await getFileContentRecursively(file_id, offset + limit);
-          return decoded_chunk + remaining_file;
+        const response = await fetch(`${base_url}/artifacts/${artifact_id}`);
+        return response.json();
+      }
+
+      function getFirstFileHTMLURL(artifact) {
+        const field = findFirstValidFileField(artifact);
+        if (typeof field === "undefined") {
+          throw new Error(
+            "There are no attachments on this artifact (or you don't have permission to read them)."
+          );
         }
-  
-        return decoded_chunk;
+        return field.file_descriptions[0].html_url;
       }
-  
-      function saveTheFileSomewhere(file_content) {
+
+      const findFirstValidFileField = artifact =>
+        artifact.values.find(isValidFileField);
+
+      const isValidFileField = field =>
+        field.type === "file" && fileHasAnAttachment(field);
+
+      const fileHasAnAttachment = field => field.file_descriptions.length > 0;
+
+      function saveTheFileSomewhere(file_html_url) {
         // For the demo, instead of saving the file, we display it in the browser
-        console.log('Building an image with the binary content we just received');
         const img = new Image();
-        img.src = 'data:image/png;base64;,' + btoa(file_content);
-  
-        console.log('Attaching the image element at the end of the body');
+        img.src = file_html_url;
+
+        console.log("Attaching the image element at the end of the body");
         document.body.appendChild(img);
-        console.log('done');
+        console.log("done");
       }
+
+      downloadImage();
     })();
 
 
