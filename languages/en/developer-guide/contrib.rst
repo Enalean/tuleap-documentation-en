@@ -2,7 +2,7 @@ Contribution
 ============
 
 All developments should be announced by `opening a request on Tuleap.net <https://tuleap.net/plugins/tracker/?tracker=140>`_ and/or at least
-starting a discussion about it in the `#developers channel on the chat <https://chat.tuleap.org/>`_.
+start a discussion about it in the `#developers channel on the chat <https://chat.tuleap.org/>`_.
 
 By announcing what you want to do in advance, you limit the risk of developing something that will not be integrated because it conflicts with plan/vision of other developers.
 Moreover you can get meaningful feedback on what to do and how to do it.
