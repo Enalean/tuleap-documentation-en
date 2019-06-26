@@ -10,9 +10,8 @@ This guide will gives you the insights to start your contributions to Tuleap:
 - Push your code for review to integrators
 - Understand Tuleap internals
 
-As a rule of thumb, you will always find answers to your dev questions on
-`tuleap-devel <https://tuleap.net/plugins/forumml/message.php?group_id=101&list=1>`_
-mailing-list.
+You can also find help for your dev related questions on the `chat in
+the #developers channel <https://chat.tuleap.org/>`_.
 
 Getting started, what you need to know to setup your environement and push
 your code

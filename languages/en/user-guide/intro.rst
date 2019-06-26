@@ -36,8 +36,7 @@ useful information and good practices to get the most of the Tuleap suite.
 
 The Tuleap team makes great work to make this guide updated to
 every new release. Do not hesitate to help us improve it, share your
-experience and tips: write to the mailing list `tuleap-devel <mailto:tuleap-devel@tuleap.net>`_ or
-leave us a message on our `chat <https://chat.tuleap.org>`_.
+experience and tips by leaving us a message on our `chat <https://chat.tuleap.org>`_.
 
 Enjoy Tuleap capabilities and let us know how you use it!
 
