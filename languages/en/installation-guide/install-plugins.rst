@@ -22,6 +22,7 @@ is the name of the package of the plugin you want to install):
     yum install tuleap-plugin-awesomestuff
     /usr/share/tuleap/tools/utils/php72/run.php --module=nginx
     systemctl reload nginx
+    systemctl restart tuleap-php-fpm
 
 ::
 
@@ -29,6 +30,7 @@ is the name of the package of the plugin you want to install):
     yum install tuleap-plugin-awesomestuff
     /usr/share/tuleap/tools/utils/php72/run.php --module=nginx
     service nginx reload
+    service php72-php-fpm restart
 
 Once the plugin is installed, go to Tuleap site admin home page and enter the plugin administration page. You can now
 install and activate the new plugin from 'Not yet installed' tab.
