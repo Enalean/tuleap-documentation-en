@@ -2202,7 +2202,18 @@ Keep in mind that this condition cannot be configured for transitions from "New 
 Post actions
 ^^^^^^^^^^^^
 
-You can define a list of actions after the execution of a transition. The available post actions are:
+You can define a list of actions after the execution of a transition. The available post actions may vary depending on the configuration mode you are in (Simple or Advanced).
+
+In Simple configuration mode:
+
+* Set a value to a date field
+* Set a value to a float field
+* Set a value to an integer field
+* Process a Jenkins job by providing its URL
+* Hide fieldsets in the artifact view
+* Freeze fields values so that users can't change them while in this state
+
+In Advanced configuration mode:
 
 * Set a value to a date field
 * Set a value to a float field
@@ -2211,6 +2222,13 @@ You can define a list of actions after the execution of a transition. The availa
 
 For instance, you can set a date field to the date of transaction execution. It might be used to set automatically the close date of an
 artifact (eg. when it's state move from Resolved to Closed).
+
+Hide fieldsets will hide them in the artifact view which can be useful when you don't want users to bother with information irrelevant
+to the current state of the artifact; they can still press a dedicated button if they want to see them anyway, it is a visualization help,
+not an access control option.
+
+Freeze fields values will render the selected fields uneditable for the current state. This can be useful if you want to prevent users from
+editing parts of the artifacts data at or past a certain state of your workflow.
 
 Canned Responses
 ~~~~~~~~~~~~~~~~
