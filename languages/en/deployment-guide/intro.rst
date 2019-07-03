@@ -13,6 +13,20 @@ Tuleap 11.4
 
   Tuleap 11.4 is currently under development.
 
+Removal of the function ``\get_server_url()``
+---------------------------------------------
+
+The function ``\get_server_url()`` has been removed and must be replaced by
+``\HTTPRequest::instance()->getServerUrl()``. This change impacts you if you
+have customized one of the following site-content files:
+
+  - ``site-content/en_US/mail/html_template.php``
+  - ``site-content/en_US/project/tos.txt``
+  - ``site-content/fr_FR/project/tos.txt``
+  - ``site-content/en_US/tos/privacy.txt``
+  - ``site-content/fr_FR/tos/privacy.txt``
+
+
 Tuleap 11.3
 ===========
 
