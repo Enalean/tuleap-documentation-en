@@ -190,7 +190,7 @@ Many rules are already enforced by the pre-commit hook that runs eslint_ with `e
 * Always use ``PascalCase`` for component names.
 * Always use multi-word names for components, for example: "DocumentSearch". In templates, this translates as ``<document-search/>``. See `the dedicated Vue Style Guide rule <https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential>`_.
 * Always use ``snake_case`` for computed properties. I know, there are parentheses when we define them, but they really are *properties*, not methods. See :ref:`Tuleap coding standards <tuleap-coding-standards>`.
-* Always use ``snake_case`` for props.
+* Always use ``camelCase`` for props.
 * Always use ``camelCase`` for methods.
 * Always use ``snake_case`` for Vuex State properties and Getters. They are properties too.
 * Always use ``camelCase`` for Vuex Mutations and Actions. They are methods.
