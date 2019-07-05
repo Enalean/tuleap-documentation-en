@@ -13,6 +13,50 @@ Tuleap 11.4
 
   Tuleap 11.4 is currently under development.
 
+
+New PHP FPM pool to process long running requests
+-------------------------------------------------
+
+Tuleap now uses a dedicated PHP FPM pool to process long running requests
+such as file uploads. A few manual actions is needed:
+
+In the nginx configuration file ``/etc/nginx/conf.d/tuleap.conf`` replace
+the ``upstream`` block by:
+
+.. sourcecode:: nginx
+
+    upstream tuleap-apache {
+      server 127.0.0.1:8080;
+    }
+
+    upstream tuleap-php-fpm {
+      server 127.0.0.1:9000;
+    }
+
+    upstream tuleap-php-fpm-long-running-request {
+      server 127.0.0.1:9002;
+    }
+
+You will also need to redeploy the configuration managed by Tuleap for
+nginx and PHP FPM and restart the services.
+
+On RHEL/CentOS 7:
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php72/run.php --module=nginx,fpm
+  systemctl restart tuleap-php-fpm
+  systemctl restart nginx
+
+On RHEL/CentOS 6:
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php72/run.php --module=nginx,fpm
+  service php72-php-fpm restart
+  service nginx restart
+
+
 Removal of the function ``\get_server_url()``
 ---------------------------------------------
 
