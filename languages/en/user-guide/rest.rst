@@ -21,4 +21,5 @@ Table of contents
    rest/xml
    rest/concurrency
    rest/tus
+   rest/collections
    rest/api
