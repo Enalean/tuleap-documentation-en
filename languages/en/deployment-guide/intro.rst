@@ -13,6 +13,41 @@ Tuleap 11.4
 
   Tuleap 11.4 is currently under development.
 
+End of support of PHP 7.2
+-------------------------
+
+Tuleap now comes with PHP 7.3. All new installations defaults to this setup.
+
+To switch on it, you first need to deploy the PHP FPM configuration for PHP 7.3.
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php73/run.php --module=fpm
+
+Then stop the PHP FPM service running with PHP 7.2 and start a new one running
+with PHP 7.3.
+
+On RHEL/CentOS 7:
+
+.. sourcecode:: bash
+
+  systemctl daemon-reload
+  systemctl restart tuleap-php-fpm
+
+
+On RHEL/CentOS 6:
+
+.. sourcecode:: bash
+
+  service php72-php-fpm stop
+  chkconfig php72-php-fpm off
+  service php73-php-fpm start
+  chkconfig php73-php-fpm on # Useful if you want the service to be started on boot
+
+If you have made some tweaks to the configuration file
+``/etc/opt/remi/php72/php-fpm.d/tuleap.conf`` you will also needs
+to adapt them for the new configuration at ``/etc/opt/remi/php73/php-fpm.d/tuleap.conf``.
+
 
 New PHP FPM pool to process long running requests
 -------------------------------------------------
@@ -37,23 +72,21 @@ the ``upstream`` block by:
       server 127.0.0.1:9002;
     }
 
-You will also need to redeploy the configuration managed by Tuleap for
-nginx and PHP FPM and restart the services.
+Do not forget to also redeploy the configuration managed by Tuleap for
+nginx and restart the service (as for a standard Tuleap update).
 
 On RHEL/CentOS 7:
 
 .. sourcecode:: bash
 
-  /usr/share/tuleap/tools/utils/php72/run.php --module=nginx,fpm
-  systemctl restart tuleap-php-fpm
+  /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
   systemctl restart nginx
 
 On RHEL/CentOS 6:
 
 .. sourcecode:: bash
 
-  /usr/share/tuleap/tools/utils/php72/run.php --module=nginx,fpm
-  service php72-php-fpm restart
+  /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
   service nginx restart
 
 

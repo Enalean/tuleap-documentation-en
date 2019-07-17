@@ -15,29 +15,29 @@ Plugins tests are in each plugin tests directory:
 
 To run tests you can either use multiple CLI commands (at the root of Tuleap sources):
 
-- make simpletest-72
-- make phpunit-docker-72
+- make simpletest-73
+- make phpunit-docker-73
 
 Run tests with docker
 `````````````````````
 
 We have docker images to run unit tests on all environments:
 
+* CentOS 6 + PHP 7.3 with simpletest: enalean/tuleap-simpletest:c6-php73
 * CentOS 6 + PHP 7.2 with simpletest: enalean/tuleap-simpletest:c6-php72
-* CentOS 6 + PHP 5.6 with PHPUnit: enalean/tuleap-test-phpunit:c6-php72
 
 Executing tests is as simple as, from root of Tuleap sources:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php72 \
+    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php73 \
         /tuleap/tests/simpletest /tuleap/tests/integration /tuleap/plugins
 
 If there is only one file or directory you are interested in:
 
 .. code-block:: bash
 
-    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php72 --nodb \
+    $> docker run --rm=true -v $PWD:/tuleap:ro enalean/tuleap-simpletest:c6-php73 --nodb \
         /tuleap/tests/simpletest/common/project/ProjectManagerTest.php
 
 .. note::
@@ -53,13 +53,13 @@ There is also a docker image for REST tests, just run the following command:
 
 .. code-block:: bash
 
-   $> make tests_rest_72
+   $> make tests_rest_73
 
 It will execute all REST tests in a docker container. This container is stopped and removed once the tests are finished. If you need to run tests manually, do the following instead:
 
 .. code-block:: bash
 
-   $> make tests_rest_setup_72
+   $> make tests_rest_setup_73
    $root@d4601e92ca3f> ./tests/rest/bin/test_suite.sh <optional_path_to_tests_you_want_to_run>
 
 In case of failure, you may need to attach to this running container in order to parse logs for example:
@@ -67,7 +67,7 @@ In case of failure, you may need to attach to this running container in order to
 .. code-block:: bash
 
    $> docker exec -ti <name-of-the-container> bash
-   $root@d4601e92ca3f> tail -f /var/opt/remi/php72/log/php-fpm/error.log
+   $root@d4601e92ca3f> tail -f /var/opt/remi/php73/log/php-fpm/error.log
 
 
 .. note::
@@ -76,7 +76,7 @@ In case of failure, you may need to attach to this running container in order to
 
   You can run your test container with:
 
-  ``docker run -ti --rm -v "$(pwd)":/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php56-mysql57 bash``
+  ``docker run -ti --rm -v "$(pwd)":/usr/share/tuleap --tmpfs /tmp -w /usr/share/tuleap enalean/tuleap-test-rest:c6-php73-mysql57 bash``
 
 Cypress tests
 """""""""""""

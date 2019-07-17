@@ -26,7 +26,7 @@ Install php connector if not already installed:
 
 .. code-block:: console
 
-    $tuleap> yum install php56-php-pecl-redis
+    $tuleap> yum install php73-php-pecl-redis
 
 
 Ensure SVN conf includes redis

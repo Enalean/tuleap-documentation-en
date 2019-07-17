@@ -392,8 +392,8 @@ Install the packages list
 
    $ sudo yum install $(cat rhel6_tuleap_packages.lst) \
                       nginx \
-                      php72-php-fpm \
-                      php72-php-bcmath \
+                      php73-php-fpm \
+                      php73-php-bcmath \
                       tuleap-plugin-svn \
                       php-amqplib-amqplib
 
@@ -613,7 +613,7 @@ You can start Nginx service
 Finalize php configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Define the name of the handler and the path session in ``/etc/opt/remi/php72/php-fpm.d/tuleap.conf``
+Define the name of the handler and the path session in ``/etc/opt/remi/php73/php-fpm.d/tuleap.conf``
 
 .. code-block:: php
 
@@ -627,7 +627,7 @@ Mask RHEL php-fpm unit to avoid confusion with the tuleap-php-fpm unit
 
 .. code-block:: bash
 
-   $ sudo systemctl mask php72-php-fpm
+   $ sudo systemctl mask php73-php-fpm
 
 Restart apache and make it persistent:
 
@@ -683,7 +683,7 @@ plugin and subversion operations made on svn plugin.
 The various logs on el7 server:
 
 * svn operations (svn ls, etc): ``/var/log/httpd/``
-* svn browsing (viewvc + settings): ``/var/opt/remi/php72/log/php-fpm``
+* svn browsing (viewvc + settings): ``/var/opt/remi/php73/log/php-fpm``
 * tuleap svn backend: ``/var/log/tuleap/svnroot_updater.log``
 * reverse proxy logs: ``/var/log/nginx``
 

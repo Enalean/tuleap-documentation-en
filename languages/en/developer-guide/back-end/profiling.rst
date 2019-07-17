@@ -2,7 +2,7 @@ Profiling with XDebug
 ---------------------
 
 
-Edit ``/etc/opt/remi/php72/php.d/xdebug.ini`` and add those lines:
+Edit ``/etc/opt/remi/php73/php.d/xdebug.ini`` and add those lines:
 
     .. code-block:: properties
 
