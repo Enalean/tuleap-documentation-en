@@ -148,16 +148,16 @@ Synchronized project membership management
 The relationship between "Project Members" and "User groups Member" depends on visibility of the project.
 
 When a project is Private (Only project members can see it), then adding a user as member of any Custom user group will
-transparently makes it member of the project if the user is not already.
+transparently make it member of the project if the user is not already.
 
-When a project is Public, by default, adding someone as member of any Custom user group **will not** makes it member of
+When a project is Public, by default, adding someone as member of any Custom user group **will not** make it member of
 the project. However, as a project administrator, you can opt-in for this behaviour (same as for Private projects) by
 toggling "Activate synchronized project membership management" option.
 
 .. IMPORTANT::
 
     The "synchronized project membership management" doesn't apply for groups that are defined outside the project (see
-    binding bellow). When users become members of a Custom user group via a Binding propagation or LDAP synchronization,
+    Binding below). When users become members of a Custom user group via a Binding propagation or LDAP synchronization,
     they are not automatically added as project members.
 
 
