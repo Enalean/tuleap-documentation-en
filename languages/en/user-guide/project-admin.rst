@@ -117,22 +117,15 @@ comprising the group do not necessarily belong to that project.
 
 There are two different kinds of user groups:
 
-Predefined Users groups
-```````````````````````
-These groups are defined for every project.
--  **Project Admin**: is a project member with absolutely all rights over the project services, project
-deliverable and project members. Only Project Admin can access the project members permission page.
--  **Project Admin**: is a project member. He has read/write permissions
-(depending on service configuration).
-- **Wiki administrators**: has administration privilege over Wiki service
-- **News administrators**: has administration privilege over News service
-- **News writer**: can write news.
+* System groups
+* Custom groups
 
-Examples of pre-defined groups: project\_admins, news administrators ...
-Those groups are dynamic: if you assign some permission to 'project\_admins', and a new
-project administrator is defined, then this new user will automatically
-be granted the corresponding permission.
-Those groups are not editable or removable, you can only manage their members.
+**System groups** are defined by Tuleap and comes as a dependency of some services (like the group of people allowed to
+write News). They cannot be deleted. Those system groups are less and less used in favor of custom groups. There is only one mandatory System Group:
+Project administrators.
+
+A Project Administrator is a project member with absolutely all rights over the project services, project
+deliverable and project members. Only Project Admin can access the project members permission page.
 
 **Custom User Groups** are defined by project administrators. They are
 composed of a static list of users. The only requirement is that any
@@ -144,6 +137,28 @@ member is removed from the project or deleted from the system.
     :align: center
     :alt: User group list
     :name: User group list
+
+Synchronized project membership management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. NOTE::
+
+   This section applies starting Tuleap 11.4
+
+The relationship between "Project Members" and "User groups Member" depends on visibility of the project.
+
+When a project is Private (Only project members can see it), then adding a user as member of any Custom user group will
+transparently makes it member of the project if the user is not already.
+
+When a project is Public, by default, adding someone as member of any Custom user group **will not** makes it member of
+the project. However, as a project administrator, you can opt-in for this behaviour (same as for Private projects) by
+toggling "Activate synchronized project membership management" option.
+
+.. IMPORTANT::
+
+    The "synchronized project membership management" doesn't apply for groups that are defined outside the project (see
+    binding bellow). When users become members of a Custom user group via a Binding propagation or LDAP synchronization,
+    they are not automatically added as project members.
 
 
 Creating a User Group
