@@ -139,7 +139,7 @@ member is removed from the project or deleted from the system.
     :name: User group list
 
 Synchronized project membership management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````````````````````
 
 .. NOTE::
 
@@ -162,31 +162,30 @@ toggling "Activate synchronized project membership management" option.
 
 
 Creating a User Group
-~~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
 Click the "+ Add users group" button to add new custom ugroup.
 
-.. NOTE::
-    The create from dropdown is a quick way to pre-select group members.
-    For instance if you choose Project members, your group will be created with
-    all your project members by default.
-    If you update your project members, it won't have any incidence
-    on the user group you just created.
+The create from dropdown is a quick way to pre-select group members.
+For instance if you choose Project members, your group will be created with
+all your project members by default.
+If you update your project members, it won't have any incidence
+on the user group you just created.
 
-    Sometimes, you might want to grant some permissions to all project
-    members and some other Tuleap users.
-    In this case, you might be tempted to build a user group from project
-    members and to add the other users to the group.
-    It's a bad way to do this: we advise you to use project members group
-    and a second group with the non project members you want to grant permission.
-    Indeed if you just create a group with all members, it will be painful
-    to maintain: new project members won't be automatically added to your
-    custom group, each time new member is added to project you will have
-    to update your custom group.
+Sometimes, you might want to grant some permissions to all project
+members and some other Tuleap users.
+In this case, you might be tempted to build a user group from project
+members and to add the other users to the group.
+It's a bad way to do this: we advise you to use project members group
+and a second group with the non project members you want to grant permission.
+Indeed if you just create a group with all members, it will be painful
+to maintain: new project members won't be automatically added to your
+custom group, each time new member is added to project you will have
+to update your custom group.
 
 
 Deleting a User Group
-~~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
 User groups can be deleted. Click on the delete button next to the
 group name in the group management page to suppress the user group
@@ -216,7 +215,7 @@ can change settings or add/remove members.
 .. NOTE:: Only add/remove members is available for predefined users groups.
 
 Permissions delegation
-~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````
 
 You can delegate to a users group several permissions. All the members of this group will
 take advantage of these permissions. Only the following permission is currently available:
@@ -225,7 +224,7 @@ take advantage of these permissions. Only the following permission is currently 
   members without having them project admin.
 
 Binding users group between two projects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````````````````
 User Group Binding allows non project members who belong to a user group in
 another project to be allocated rights without becoming project members
 themselves.
@@ -241,7 +240,7 @@ group to manage your users
 
 
 Binding users group to a directory group binding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````````````````````````
 You can bind your members to your enterprise directory group (LDAP, Active directory...).
 Once your members are bound to an enterprise directory group, you are
 still able to add non lined users to your project with the "Add members" button.
