@@ -12,6 +12,7 @@ User guide
    user-guide/project-admin
    user-guide/portfolio
    user-guide/site-access
+   user-guide/services
    user-guide/tracker
    user-guide/tql
    user-guide/agile-dashboard
