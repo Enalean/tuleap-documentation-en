@@ -14,6 +14,14 @@ Tuleap 11.5
   Tuleap 11.5 is currently under development.
 
 
+Project level information about the document manager plugin given by the REST route `GET /project/:id` has moved
+----------------------------------------------------------------------------------------------------------------
+
+API users that were exploiting the REST endpoint `GET /project/:id` to
+retrieve project level information needs to migrate to the REST endpoint
+`GET /project/:id/docman_service`.
+
+
 Tuleap 11.4
 ===========
 
