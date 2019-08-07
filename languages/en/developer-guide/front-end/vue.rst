@@ -54,6 +54,7 @@ The build system will read ``build-manifest.json`` to understand where it needs 
 
 .. code-block:: JavaScript
 
+    // tuleap/plugins/my-plugin/build-manifest.json
     {
         "name": "my-plugin",
         "components": [
@@ -73,7 +74,7 @@ This file should be located in ``my-plugin/scripts/``.
 
 .. code-block:: JavaScript
 
-    // tuleap/plugins/<your_plugin>/scripts/webpack.config.js
+    // tuleap/plugins/my-plugin/scripts/webpack.config.js
     const path = require("path");
     const webpack_configurator = require("../../../tools/utils/scripts/webpack-configurator.js");
 
@@ -112,7 +113,7 @@ Once you have a webpack config, you will need a ``package.json`` in ``my-plugin/
 
 .. code-block:: JavaScript
 
-    // tuleap/plugins/<your_plugin>/scripts/package.json
+    // tuleap/plugins/my-plugin/scripts/package.json
     {
       "author": "you",
       "name": "my-vue-app",
@@ -170,7 +171,7 @@ Once your mount point is ready, head to your ``index.js`` file.
 
 .. code-block:: JavaScript
 
-    // tuleap/plugins/<your_plugin>/scripts/<my_vue_app>/src/index.js
+    // tuleap/plugins/my-plugin/scripts/<my_vue_app>/src/index.js
 
     import Vue      from 'vue';
     import MyVueApp from './components/MyVueApp.vue';
