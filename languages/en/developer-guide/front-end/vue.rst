@@ -35,23 +35,41 @@ A Vue app has to be split out in distinct parts.
 Here is the folder structure you have to follow:
 
 .. code-block:: bash
-
-    my-vue-app/
-        |-- po/                # Localization strings
-        |-- src/               # The app source-code
-             |-- api/          # REST API consumers
-             |-- components/   # Vue components
-             |-- store/        # Vuex store modules (actions/mutations/getters)
-             |-- router/       # Vue-router modules
-             |-- index.js      # The app bootsrapping
-             |-- index.spec.js # Unit tests bootstrapping
-
-Your application folder must be placed in  ``tuleap/plugins/<your_plugin>/scripts/``.
+    my-plugin/
+        |-- build-manifest.json          # Edit it to declare your app for the build system and for translations
+        |-- scripts/
+             |-- my-vue-app/
+                  |-- po/                # Localization strings
+                  |-- src/               # The app source-code
+                       |-- api/          # REST API consumers
+                       |-- components/   # Vue components
+                       |-- store/        # Vuex store modules (actions/mutations/getters)
+                       |-- router/       # Vue-router modules
+                       |-- index.js      # The app bootsrapping
+                       |-- app.spec.js   # Unit tests bootstrapping
 
 Build your Vue application
 --------------------------
+The build system will read ``build-manifest.json`` to understand where it needs to run ``npm install`` and ``npm run build``.
+
+.. code-block:: JavaScript
+
+    {
+        "name": "my-plugin",
+        "components": [
+            "scripts/"
+        ],
+        "gettext-vue": {
+            "my-vue-app": {
+                "src": "scripts/my-vue-app/src",
+                "po": "scripts/my-vue-app/po"
+            }
+        }
+    }
+
+
 To build up your application, you will have to update or create a ``webpack.config.js`` file.
-This file should be located in ``<your_plugin>/scripts/``.
+This file should be located in ``my-plugin/scripts/``.
 
 .. code-block:: JavaScript
 
@@ -60,11 +78,6 @@ This file should be located in ``<your_plugin>/scripts/``.
     const webpack_configurator = require("../../../tools/utils/scripts/webpack-configurator.js");
 
     const assets_dir_path = path.resolve(__dirname, "./assets");
-
-    const path_to_badge = path.resolve(
-        __dirname,
-        "../../../src/www/scripts/my-vue-app/"
-    );
 
     const webpack_config_for_my_awesome_vue_app = {
         entry: {
@@ -95,7 +108,7 @@ This file should be located in ``<your_plugin>/scripts/``.
 
 .. _npm_scripts:
 
-Once you have a webpack config, ensure that the npm scripts are set up in the ``package.json``
+Once you have a webpack config, you will need a ``package.json`` in ``my-plugin/scripts/``.
 
 .. code-block:: JavaScript
 
@@ -106,9 +119,9 @@ Once you have a webpack config, ensure that the npm scripts are set up in the ``
       "version": "0.0.1",
       "private": true,
       "dependencies": {
-        "vue": "^2.5.13",
-        "vue-gettext": "^2.0.31",
-        "vuex": "^3.0.1"
+        "vue": "^2.6.10",
+        "vue-gettext": "^2.1.0",
+        "vuex": "^3.1.1"
       },
       "devDependencies": {},
       "config": {
@@ -118,8 +131,7 @@ Once you have a webpack config, ensure that the npm scripts are set up in the ``
         "build": "NODE_ENV=production $npm_package_config_bin/webpack --mode=production",
         "watch": "NODE_ENV=watch $npm_package_config_bin/concurrently --raw --kill-others '$npm_package_config_bin/webpack --watch --mode=development' '$npm_package_config_bin/karma start ./karma.conf.js'",
         "coverage": "rm -rf ./coverage/* && NODE_ENV=coverage $npm_package_config_bin/karma start ./karma.conf.js && $npm_package_config_bin/http-server -os -a 0.0.0.0 -p 9000 coverage/",
-        "test": "NODE_ENV=test $npm_package_config_bin/karma start ./karma.conf.js",
-        "extract-gettext-cli": "$npm_package_config_bin/gettext-extract --attribute v-translate $(find repositories/src/components/ -type f -name '*.vue')"
+        "test": "NODE_ENV=test $npm_package_config_bin/karma start ./karma.conf.js"
       }
     }
 
@@ -164,10 +176,12 @@ Once your mount point is ready, head to your ``index.js`` file.
     import MyVueApp from './components/MyVueApp.vue';
 
     document.addEventListener('DOMContentLoaded', () => {
-        const vue_mount_point = document.getElementById("my-vue-app-mount-point"); // Retrieve the mount point from the DOM
+        // Retrieve the mount point from the DOM
+        const vue_mount_point_id = "my-vue-app-mount-point";
+        const vue_mount_point = document.getElementById(vue_mount_point_id);
 
-        if (! vue_mount_point) {
-            return;
+        if (!vue_mount_point) {
+            throw new Error(`Could not find Vue mount point ${vue_mount_point_id}`);
         }
         const MyVueAppComponent = Vue.extend(MyVueApp);
 
