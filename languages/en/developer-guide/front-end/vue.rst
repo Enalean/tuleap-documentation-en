@@ -35,6 +35,7 @@ A Vue app has to be split out in distinct parts.
 Here is the folder structure you have to follow:
 
 .. code-block:: bash
+
     my-plugin/
         |-- build-manifest.json          # Edit it to declare your app for the build system and for translations
         |-- scripts/
