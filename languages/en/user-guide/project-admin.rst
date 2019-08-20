@@ -329,6 +329,34 @@ fields:
 
 **Service Label**: This is the label that will be displayed in the
 sidebar. It should be as concise as possible.
+For **System services**, there are special values that become translated
+strings. Here is the list of these special values:
+
+====================== ===================================== =======================================
+Service                Service label                         Service description
+====================== ===================================== =======================================
+Summary                service_summary_lbl_key               service_summary_desc_key
+Administration         service_admin_lbl_key                 service_admin_desc_key
+Forums                 service_forum_lbl_key                 service_forum_desc_key
+Mails                  service_mail_lbl_key                  service_mail_desc_key
+News                   service_news_lbl_key                  service_news_desc_key
+CVS                    service_cvs_lbl_key                   service_cvs_desc_key
+File                   service_file_lbl_key                  service_file_desc_key
+Wiki                   service_wiki_lbl_key                  service_wiki_desc_key
+Legacy Trackers        service_tracker_lbl_key               service_tracker_desc_key
+Legacy SVN             service_svn_lbl_key                   service_svn_desc_key
+Legacy homepage        service_homepage_lbl_key              service_homepage_desc_key
+Agile Dashboard        plugin_agiledashboard:service_lbl_key plugin_agiledashboard:service_desc_key
+Baseline               plugin_baseline:service_lbl_key       plugin_baseline:service_desc_key
+Docman                 plugin_docman:service_lbl_key         plugin_docman:service_desc_key
+Git                    plugin_git:service_lbl_key            plugin_git:service_desc_key
+Continuous Integration plugin_hudson:service_lbl_key         plugin_hudson:service_desc_key
+Mediawiki              plugin_mediawiki:service_lbl_key      plugin_mediawiki:service_desc_key
+ProFTPd                plugin_proftpd:service_lbl_key        plugin_proftpd:service_desc_key
+SVN Plugin             plugin_svn:service_lbl_key            plugin_svn:service_desc_key
+TestManagement         plugin_testmanagement:service_lbl_key plugin_testmanagement:service_desc_key
+Trackers               plugin_tracker:service_lbl_key        plugin_tracker:service_desc_key
+====================== ===================================== =======================================
 
 **Service Link**: This is the URL of the service, i.e. the address the
 user will be redirected to when clicking on the service label.
@@ -343,9 +371,10 @@ replaced by their value:
 
 -  **$group\_id**: project number.
 
-
 **Service Description**: Short description of the service. It will be
 displayed as a tooltip when the mouse cursor is over the service label.
+For **System services**, there are special values that become translated
+strings. See the table above.
 
 **Enabled**: Toggling this check box will simply disable (or enable) the
 service. Disabling a service just means that it no longer appears in the
