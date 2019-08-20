@@ -343,8 +343,6 @@ replaced by their value:
 
 -  **$group\_id**: project number.
 
--  **$sys\_default\_protocol**: 'https' if your server is configured in
-   secure mode, 'http' otherwise.
 
 **Service Description**: Short description of the service. It will be
 displayed as a tooltip when the mouse cursor is over the service label.
