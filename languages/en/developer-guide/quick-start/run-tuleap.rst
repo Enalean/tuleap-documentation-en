@@ -12,8 +12,8 @@ respective documentation for installation instructions:
 
 - make
 - php
-- `nodejs <https://nodejs.org/en/>`_ >= v6.x
-- `npm <https://docs.npmjs.com/>`_ >= v6.0
+- `nodejs <https://nodejs.org/en/>`_ >= v8.x
+- `npm <https://docs.npmjs.com/>`_ >= v6.11.x
 - `composer <https://getcomposer.org/>`_
 
    .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
