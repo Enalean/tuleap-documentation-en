@@ -9,11 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.5
 ===========
 
-.. NOTE::
-
-  Tuleap 11.5 is currently under development.
-
-
 Project level information about the document manager plugin given by the REST route `GET /project/:id` has moved
 ----------------------------------------------------------------------------------------------------------------
 
