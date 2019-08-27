@@ -280,7 +280,7 @@ Many rules are already enforced by the pre-commit hook that runs eslint_ with `e
 * Always use ``PascalCase`` for component names.
 * Always use multi-word names for components, for example: "DocumentSearch". In templates, this translates as ``<document-search/>``. See `the dedicated Vue Style Guide rule <https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential>`_.
 * Always use ``snake_case`` for computed properties. I know, there are parentheses when we define them, but they really are *properties*, not methods. See :ref:`Tuleap coding standards <tuleap-coding-standards>`.
-* Always use ``camelCase`` for props.
+* Always use ``snake_case`` for props. They follow the same rule as variables.
 * Always use ``camelCase`` for methods.
 * Always use ``snake_case`` for Vuex State properties and Getters. They are properties too.
 * Always use ``camelCase`` for Vuex Mutations and Actions. They are methods.
@@ -289,7 +289,6 @@ Many rules are already enforced by the pre-commit hook that runs eslint_ with `e
 * Avoid having too many components that depend on ``this.$route``. Inject what you need via props instead.
 * Always use named exports in Vuex Getters, Mutations and Actions. Default export may be used for State definition. Named exports make it easier to import only what we want.
 * Always use the inline export syntax ``export function myAction()`` or ``export const myMutation() => {}``. It makes it easy to add "private" (non-exported) functions that will be reused.
-* Always avoid create uneeded computed methods: if method only do a return use a v-bind ``v-bind:title="$gettext('No color')"`` is better than ``v-bind:title="my_custom_title"`` (it will help for test coverage)
 
 Resources
 ^^^^^^^^^
