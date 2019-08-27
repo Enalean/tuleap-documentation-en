@@ -194,8 +194,6 @@ Once your mount point is ready, head to your ``index.js`` file.
         }).$mount(vue_mount_point);                                 // Mount the app on the moint point
     });
 
-Now you know how to create your Vue.js application, let's move on with the unit-tests in the next section.
-
 Gettext
 -------
 
