@@ -1,6 +1,9 @@
 Karma unit tests
 ================
 
+.. warning:: Tuleap is moving to Jest to run the Javascript unit tests, :ref:`see the dedicated section <jest_unit_test>`.
+             New packages should use Jest instead of Karma/Jasmine.
+
 `Karma <https://karma-runner.github.io/2.0/index.html>`_ is a test runner that we use with the testing framework `Jasmine <https://jasmine.github.io>`_ to write down our JavaScript unit tests.
 
 You must provide some unit tests for any front-end development.
