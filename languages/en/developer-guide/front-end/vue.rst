@@ -194,7 +194,81 @@ Once your mount point is ready, head to your ``index.js`` file.
         }).$mount(vue_mount_point);                                 // Mount the app on the moint point
     });
 
-Now you know how to create your Vue.js application, let's move on with the unit-tests in the next section.
+Gettext
+-------
+
+We use Gettext with `vue-gettext`_ to translate strings in our Vue apps.
+Here is some advice specific to ``vue-gettext``:
+
+* Always add a ``key`` attribute when you have conditional translated strings.
+
+For example, DO NOT do this:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-translate v-if="a_condition">First translated string</p> 
+        <p v-translate v-else>This string will never be shown</p> <!-- <== This string will NEVER be shown -->
+    </template>
+
+The string in the ``v-else`` will never be shown, because Vue does not know that the two ``<p>`` tags actually have different content. Vue tries to limit the number of DOM changes, so it will only change attributes and will change the text node, which will mess up ``vue-gettext``. See `the Vue.js documentation on the key attribute <https://vuejs.org/v2/api/#key>`_ for details.
+
+INSTEAD, DO THIS:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-translate v-if="a_condition" key="first_case">First translated string</p>
+        <p v-translate v-else key="other_case">This string will be shown</p>
+    </template>
+
+* Never use Vue.js interpolation inside translated strings.
+
+For example, DO NOT do this:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-translate>Current value: {{ reactive_value }}</p>
+        <translate>Current value: {{ reactive_value }}</translate>
+    </template>
+
+This will break the translation. The string will always show in English, never in translated languages. Always use ``v-bind:translate-params="{ params }"`` or ``v-translate="{ params }"`` with ``%{ param }`` in the translated string. See  `vue-gettext's syntax <https://github.com/Polyconseil/vue-gettext#custom-parameters>`_
+
+INSTEAD, DO THIS:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+       <p v-translate="{ reactive_value }">Current value: %{ reactive_value }</p>
+       <translate v-bind:translate-params="{ reactive_value }">Current value: %{ reactive_value }</translate>
+   </template>
+
+* Never use ``v-bind`` on attributes in HTML tags in translated strings.
+
+For example, DO NOT do this:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-translate><a v-bind:href="link_url">{{ link_text }}</a> has done some changes in this document.</p>
+    </template>
+    
+This will break reactivity. If ``link_url`` or ``link_text`` change value, the text will not change. See `vue-gettext's doc about this <https://github.com/Polyconseil/vue-gettext#caveat-when-using-v-translate-with-vue-components-or-vue-specific-attributes>`_.
+
+INSTEAD, DO THIS:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-translate="{ link_url, link_text }"><a href="%{ link_url }">%{ link_text }</a> has done some changes in this document.</p>
+    </template>
 
 Best-practices for Tuleap
 -------------------------
@@ -225,7 +299,9 @@ Resources
 - Vue-router doc: https://router.vuejs.org/
 - Vue.js Official Style Guide: https://vuejs.org/v2/style-guide/
 - eslint-plugin-vue's rules: https://vuejs.github.io/eslint-plugin-vue/rules/
+- vue-gettext: https://github.com/Polyconseil/vue-gettext
 
 .. _eslint: https://eslint.org/
 .. _eslint-plugin-vue: https://github.com/vuejs/eslint-plugin-vue
 .. _Vue Style Guide: https://vuejs.org/v2/style-guide/
+.. _vue-gettext: https://github.com/Polyconseil/vue-gettext
