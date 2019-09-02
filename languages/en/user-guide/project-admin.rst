@@ -154,7 +154,7 @@ When a project is Public, by default, adding someone as member of any Custom use
 the project. However, as a project administrator, you can opt-in for this behaviour (same as for Private projects) by
 toggling "Activate synchronized project membership management" option.
 
-.. IMPORTANT::
+.. warning::
 
     The "synchronized project membership management" doesn't apply for groups that are defined outside the project (see
     Binding below). When users become members of a Custom user group via a Binding propagation or LDAP synchronization,
@@ -197,7 +197,7 @@ User groups can be deleted. Click on the delete button next to the
 group name in the group management page to suppress the user group
 from the database. Only custom user groups can be deleted.
 
-    .. IMPORTANT::
+.. warning::
 
        Please note that if a user group was specifically granted some
        permission, deleting the user group might be dangerous. Indeed, if a
