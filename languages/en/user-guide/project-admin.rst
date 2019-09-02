@@ -160,6 +160,12 @@ toggling "Activate synchronized project membership management" option.
     Binding below). When users become members of a Custom user group via a Binding propagation or LDAP synchronization,
     they are not automatically added as project members.
 
+Please note that:
+
+* Platform Administrators are excluded from the automated synchronization. They are considered being project administrator
+  of all projects even when they are not explicitly member of.
+* Project Administrators cannot be removed from User Group and Project in one operation (as you can do with non project administrators).
+  You explicitly un-grant project administration capabilities first.
 
 Creating a User Group
 `````````````````````
