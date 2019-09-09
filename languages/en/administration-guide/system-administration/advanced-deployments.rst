@@ -117,10 +117,10 @@ attacker to spoof requests.
 
 Please note that you can also use CIDR notation like ``192.168.0.0/24`` as well.
 
+.. _admin_howto_distributed_tuleap:
+
 Distributed Tuleap Configuration
 ================================
-
-**This require Tuleap >= 9.7**
 
 Distributed Tuleap is a configuration of Tuleap to allow distribution of the workload across several servers
 without any change for end users. As of today its possible to have offload SVN plugin traffic on a dedicated server.
@@ -149,7 +149,7 @@ Pack everything on el7 setup
 ----------------------------
 
 While the architecture is designed to be used with several separted servers (one for regular Tuleap, one for Tuleap SVN,
-one for redis, etc). It's quite common to only have one server for all "new components" (svn, redis, rabbitmq, reverse proxy).
+one for redis, etc). It's quite common to only have one server for all "new components" (svn, redis, reverse proxy).
 
 This section will describe how to install this setup. It can be summarized by this diagram:
 
@@ -181,10 +181,9 @@ Distributions
 Services
 ~~~~~~~~
   * The Reverse Proxy needs to be **Nginx 1.10** or newer
-  * The database needs to be **MySQL 5.6**
+  * The database needs to be **MySQL 5.7**
   * The SVN repository needs to be **svn/wandisco 1.9** or newer
   * You need **Redis 3.2** or newer
-  * You need **RabbitMQ 3.3** or newer
 
 On the MySQL server
 '''''''''''''''''''
@@ -300,46 +299,6 @@ That would mean that the codendiadm user doesn't have the correct IDs.
     * If it works, keep the configuration, otherwise revert the ``sshd_config``
 
 When everything is OK (esp. the ssh part), update the DNS entry for your tuleap server to point to RHEL7 server IP address.
-
-Install Rabbitmq
-~~~~~~~~~~~~~~~~
-
-Install RabbitMQ from `official rabbitmq builds <https://www.rabbitmq.com/install-rpm.html>`_
-
-Start the RabbitMQ server & enable it at boot time
-
-.. code-block:: bash
-
-   $ sudo systemctl start rabbitmq-server
-   $ sudo systemctl enable rabbitmq-server
-
-It is advisable to delete the **guest** user
-
-.. code-block:: bash
-
-   $ sudo rabbitmqctl delete_user guest
-
-Create a tuleap user with a strong password ``${RABBIT_PASSWORD}``
-
-.. code-block:: bash
-
-   $ sudo rabbitmqctl add_user tuleap ${RABBIT_PASSWORD}
-   $ sudo rabbitmqctl set_permissions tuleap "^tuleap_svnroot_update.*|^httpd_postrotate_.*" ".*" ".*"
-
-And finally set rabbitmq parameters for Tuleap in your config file ``/etc/tuleap/conf/rabbitmq.inc``
-
-.. code-block:: bash
-
-   <?php
-
-   $rabbitmq_server   = '${TULEAP_RHEL7_IP}';
-   $rabbitmq_port     = 5672;
-   $rabbitmq_user     = 'tuleap';
-   $rabbitmq_password = '${RABBIT_PASSWORD}';
-
-Firewall configuration:
-
-* Ensure EL6 server can access port 5672/tcp
 
 Install Redis
 ~~~~~~~~~~~~~

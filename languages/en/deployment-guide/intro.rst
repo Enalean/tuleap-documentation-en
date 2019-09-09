@@ -13,6 +13,14 @@ Tuleap 11.6
 
   Tuleap 11.6 is currently under development.
 
+RabbitMQ dependency removed
+---------------------------
+
+For platforms leveraging :ref:`Distributed SVN <admin_howto_distributed_tuleap>`, this should be completely transparent
+as the queue management was transferred to Redis that you should already be running. To ensure everything is working
+smoothly after upgrade, create a new svn repository and ensure the event is properly propagated (ie repository is created
+and accessible on the SVN server).
+
 
 Tuleap 11.5
 ===========
