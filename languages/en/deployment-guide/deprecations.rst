@@ -12,7 +12,6 @@ Legacy Tracker Workflows configuration web interface Removed           Nothing
 MySQL versions < 5.7                                 End of support    Upgrade to Mysql 5.7 or higher
 RabbitMQ (replaced by Redis)                         Replaced by Redis Uninstall RabbitMQ
 WebDAV with Windows 7 client                         End of support    End-users should switch to Cyberduck
-PHP 7.3                                              Start of support  (Optionally switch to PHP 7.3)
 Internet Explorer 11                                 End of support    New features won't be usable with IE 11.
                                                                        End-users should switch to Firefox or Chrome
 ==================================================== ================= ==============================================
@@ -21,7 +20,6 @@ Internet Explorer 11                                 End of support    New featu
 Q4 2019                         Status            As platform administrator, what should I do ?
 =============================== ================= =============================================
 Codendi CLI                     End of support    Use REST API
-PHP 7.2                         End of support    Switch to PHP 7.3
 GitShell backend for Git plugin Removed           End-users should push to Gitolite repository
 Gerrit versions < 2.16          End of support    Switch to Gerrit 2.16 or higher
 Mysql 8                         Start of support  (Optionally switch to Mysql 8)
