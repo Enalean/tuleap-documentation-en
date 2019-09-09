@@ -23,7 +23,7 @@ Q4 2019                         Status            As platform administrator, wha
 Codendi CLI                     End of support    Use REST API
 PHP 7.2                         End of support    Switch to PHP 7.3
 GitShell backend for Git plugin Removed           End-users should push to Gitolite repository
-Gerrit versions < 2.12          End of support    Switch to Gerrit 2.16 or higher
+Gerrit versions < 2.16          End of support    Switch to Gerrit 2.16 or higher
 Mysql 8                         Start of support  (Optionally switch to Mysql 8)
 Realtime server using NodeJS    Replaced          (To be announced)
 RHEL 6                          End of support    Switch to RHEL 7
