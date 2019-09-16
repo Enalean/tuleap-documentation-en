@@ -27,6 +27,8 @@ There are various permissions to be granted. However, think wisely about the peo
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | User Management                                           | Grants the right to manage users: change the status, the username, etc,.. through the REST API                      |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| REST Read only administrator                              | Grants the right to browser the whole REST API as a read only platform administrator. User should not browse Web UI |
++-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. NOTE::
     A security prevents you to remove the user group containing the last Platform administration permission or you might be unable to access the platform administration anymore.
