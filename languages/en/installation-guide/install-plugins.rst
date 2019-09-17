@@ -49,6 +49,10 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **taskboard**: Visually keep track of things that need to get done in a task board, used in Agile Dashboard.
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 * **testmanagement**: Test campaigns and traceability (aka TTM).
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
