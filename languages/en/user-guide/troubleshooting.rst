@@ -17,8 +17,9 @@ IE browser <= 11 is deprecated and while most of Tuleap still work on it, latest
 development don't. For example Taskboard will not work on IE11. 
 Please upgrade your browser or use an alternative.
 
-If you still want to use Internet Explorer (you shouldn't) then IE browser should 
-not be in compatibility mode. Tuleap will offer a bad user
+If you still want to use Internet Explorer (
+`you shouldn't <https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732>`_
+) then you should  not be in compatibility mode. Tuleap will offer a bad user
 experience if you are using the compatibility mode. Here are the steps to
 configure Internet Explorer:
 
