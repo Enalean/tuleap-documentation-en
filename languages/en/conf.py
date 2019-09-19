@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.imgmath', 'sphinxcontrib.phpdomain']
+extensions = ['sphinx.ext.imgmath', 'sphinx_rtd_theme']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -93,7 +93,7 @@ pygments_style = 'tango'
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
-    html_theme = 'srtd_theme'
+    html_theme = 'sphinx_rtd_theme'
     html_theme_path = ["_themes"]
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -264,4 +264,3 @@ from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
-primary_domain = 'php'
