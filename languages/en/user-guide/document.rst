@@ -69,7 +69,7 @@ But the access to this feature is made through the new UI.
    :alt: actions on a document
    :name: actions on a document
    
-The actions available are the following :
+The actions available are the following:
  - Create a new version for a document 
  - Create a new folder or a new document for a folder
  - Update properties of your document
@@ -91,16 +91,16 @@ In the tree view, a small coloured badge, depending on the status, is displayed 
 
 Administration actions handled by the old interface
 ---------------------------------------------------
-On this new interface, we chose to improve  the most frequent actions. 
+On this new interface, we chose to improve  the most frequent actions.
+
 Here are the administration actions still handled by the old interface:
  - Advanced and simple search
  - Notifications
  - History
  - Approval tables
+
 When clicking on it, you will be redirected to the old interface.
 
-
-   
 REST API
 --------
 New interface comes with new REST API routes. If you wish to use it, note that the following are not available (only on SOAP):
