@@ -9,10 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.6
 ===========
 
-.. NOTE::
-
-  Tuleap 11.6 is currently under development.
-
 RabbitMQ dependency removed
 ---------------------------
 
