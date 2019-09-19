@@ -62,8 +62,6 @@ Actions on document
 ```````````````````
 All the actions are accessible through the quick look drop down.
 
-But the access to this feature is made through the new UI.
-
 .. figure:: ../images/screenshots/document/actions_on_document.png
    :align: center
    :alt: actions on a document
@@ -78,11 +76,14 @@ The actions available are the following:
  - Permissions (available for the project administrators)
  - Approval tables
  - Cut/Paste a document or a folder
+ - Delete document or folder
+ - Lock/Unlock a document
 
 View the approval status
 ````````````````````````
-The new interface lets you know directly the status of the documents.
-In the tree view, a small coloured badge, depending on the status, is displayed on documents having an approval table.
+The new interface displays the approval table badge next to the document. You don't have to get to the approval table
+anymore to have that information.
+In the tree view, a small coloured badge, depending on the status review, is displayed on documents having an approval table.
 
 .. figure:: ../images/screenshots/document/approval_table_status.png
    :align: center
