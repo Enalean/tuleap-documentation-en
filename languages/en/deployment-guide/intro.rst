@@ -6,12 +6,21 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 11.6
+Tuleap 11.7
 ===========
 
 .. NOTE::
 
-  Tuleap 11.6 is currently under development.
+  Tuleap 11.7 is currently under development.
+  
+Note about custom plugins
+-------------------------
+
+If you have custom internal plugins, then you must  rename the base file of the plugin and remove the ``.class`` from the extension. For example if you have a plugin ``acme``, then you must rename ``plugins/acme/include/acmePlugin.class.php`` to ``plugins/acme/include/acmePlugin.php``.
+
+
+Tuleap 11.6
+===========
 
 RabbitMQ dependency removed
 ---------------------------
