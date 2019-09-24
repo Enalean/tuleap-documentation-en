@@ -16,6 +16,12 @@ Tuleap 11.7
 Note about custom plugins
 -------------------------
 
+On our duty to clean the codebase, we renamed the base file of our plugins. If you encounter errors during cache regeneration, you should issue the following command:
+
+.. sourcecode:: bash
+
+  rm /var/tmp/tuleap_cache/tuleap_hooks_cache
+
 If you have custom internal plugins, then you must  rename the base file of the plugin and remove the ``.class`` from the extension. For example if you have a plugin ``acme``, then you must rename ``plugins/acme/include/acmePlugin.class.php`` to ``plugins/acme/include/acmePlugin.php``.
 
 
