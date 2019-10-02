@@ -36,6 +36,16 @@ as the queue management was transferred to Redis that you should already be runn
 smoothly after upgrade, create a new svn repository and ensure the event is properly propagated (ie repository is created
 and accessible on the SVN server).
 
+Removal of copyright and powered_by .tab entries
+------------------------------------------------
+
+The following ``.tab`` entries has been removed:
+
+* ``global	copyright`` (Default to Copyright Enalean)
+* ``global	powered_by`` (Default to Tuleap)
+
+You should check that everything is ok in the footer "about" block. If you see "*** Unknown message …***", then you must edit ``/etc/tuleap/site-content/en_US/layout/footer_about.php`` file and adjust it to your liking. 
+
 
 Tuleap 11.5
 ===========
