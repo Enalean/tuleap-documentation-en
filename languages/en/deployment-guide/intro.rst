@@ -15,11 +15,11 @@ Tuleap 11.7
   
 Major update on Docman REST routes
 ----------------------------------
-The route GET docman_items/id/docman_items was returning too much data:
+The route GET docman_items/:id/docman_items was returning too much data:
  - for link the link url were returned
  - for embedded file, the embedded file content were returned
  
-Having such info directly accessible without querying docman_items/id prevented us from count user access so we did not have choice to break our API and remove this keys from the route results.
+Having such info directly accessible without querying docman_items/:id prevented us to take into account user accesses to a document. That's why we needed to update our API and remove these keys from the route results.
 If you need to access them, please call docman_items/id.
  
   
