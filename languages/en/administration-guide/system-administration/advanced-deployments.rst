@@ -351,10 +351,7 @@ Install the packages list
 
    $ sudo yum install $(cat rhel6_tuleap_packages.lst) \
                       nginx \
-                      php73-php-fpm \
-                      php73-php-bcmath \
-                      tuleap-plugin-svn \
-                      php-amqplib-amqplib
+                      tuleap-plugin-svn
 
 .. note::
 
@@ -599,7 +596,9 @@ And start Tuleap service
 
 .. code-block:: bash
 
+   $ sudo systemctl enable tuleap-svn-updater.service
    $ sudo systemctl start tuleap
+
 
 Tuleap service is an umbrella unit and start the following services
 
