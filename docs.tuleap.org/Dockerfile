@@ -17,7 +17,7 @@ WORKDIR /home/builder/tuleap-documentation
 RUN tmp_venv="$(mktemp -d)" && virtualenv "$tmp_venv" && \
     source "$tmp_venv"/bin/activate && \
     pip install -r requirements.txt && \
-    make SPHINXOPTS="-D html_theme=tuleap_org -D html_theme_options.ga_id=$GA_ID -D html_theme_options.ga_content_group_index=$GA_CONTENT_GROUP_INDEX -D html_theme_options.ga_content_group_name=$GA_CONTENT_GROUP_NAME" html
+    make SPHINXOPTS="-D html_theme=sphinx_rtd_theme -D html_theme_options.ga_id=$GA_ID -D html_theme_options.ga_content_group_index=$GA_CONTENT_GROUP_INDEX -D html_theme_options.ga_content_group_name=$GA_CONTENT_GROUP_NAME" html
 
 FROM nginx:alpine
 
