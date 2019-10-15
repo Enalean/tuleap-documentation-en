@@ -34,4 +34,4 @@ To activate it and launch the first purge at the same time, you have to do:
 
 .. sourcecode:: console
 
-      $> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/codendi/plugins/statistics/bin/purgeDiskUsageData.php
+      $> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/statistics/bin/purgeDiskUsageData.php

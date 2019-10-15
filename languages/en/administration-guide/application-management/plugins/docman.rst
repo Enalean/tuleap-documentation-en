@@ -23,7 +23,7 @@ the DB as blob).
 How to run migration for one project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As ``codendiadm``, in ``/usr/share/codendi``, run
+As ``codendiadm``, in ``/usr/share/tuleap``, run
 
   .. sourcecode:: console
 

@@ -13,7 +13,7 @@ same project. To do this migration, you have to run the following command as ``r
 
 .. code-block:: bash
 
-    /usr/share/codendi/src/utils/php-launcher.sh \
+    /usr/share/tuleap/src/utils/php-launcher.sh \
     /usr/share/tuleap/plugins/svn/bin/migrate_to_plugin.php PROJECT_ID REPOSITORY_NAME USER_NAME
 
 
