@@ -1,0 +1,50 @@
+%blue-turquoise-135 {
+    background-image:
+        linear-gradient(to top,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(to bottom,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(135deg,
+            transparentize($blue, .94)      0%,
+            transparentize($turquoise, .94) 30%,
+            transparentize($white, 1)       60%
+        );
+}
+
+%red-purple-45 {
+    background-image:
+        linear-gradient(to top,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(to bottom,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(-45deg,
+            transparentize($red, .93)    0%,
+            transparentize($purple, .93) 30%,
+            transparentize($white, 1)    60%
+        );
+}
+
+%purple-mytuleap-45 {
+    background-image:
+        linear-gradient(to top,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(to bottom,
+            $white 0%,
+            transparentize($white, 1) 20%
+        ),
+        linear-gradient(-45deg,
+            transparentize($purple, .9)    0%,
+            transparentize($mytuleap, .8) 35%,
+            transparentize($white, 1)    70%
+        );
+}

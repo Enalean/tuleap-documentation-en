@@ -29,12 +29,16 @@ The documentation is generated in `tuleap-documentation-en/_build/html/en/` You 
 
 To build documentation for tuleap.org:
 
+    npm ci
+    npm run build
     source venv/bin/activate
     make SPHINXOPTS="-D html_theme=tuleap_org" html
     deactivate
 
 To add a Google Analytics snippet, use the following theme options:
 
+    npm ci
+    npm run build
     source venv/bin/activate
     make SPHINXOPTS="-D html_theme=tuleap_org -D html_theme_options.ga_id=UA-XXXXXXXX-Y -D html_theme_options.ga_content_group_index=YYYYYYYYYYY -D html_theme_options.ga_content_group_name=WWWWWWWW" html
     deactivate

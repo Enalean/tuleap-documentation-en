@@ -1,0 +1,116 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: $footer-height;
+    background: $black;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $container-width;
+
+    @media screen and (min-width: #{$big-screen-size}) {
+        max-width: $big-screen-size;
+    }
+
+    @media screen and (max-width: #{$small-screen-size}) {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        padding: 20px;
+    }
+}
+
+.footer-sponsored {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-enalean {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 20px;
+}
+
+.footer-logo-enalean-image {
+    height: 40px;
+}
+
+.footer-sponsored-text {
+    margin: 0 0 10px;
+    color: #606060;
+    font-size: 13px;
+    line-height: 18px;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    > a {
+        color: #909090;
+
+        &:hover {
+            color: lighten(#909090, 20%);
+            text-decoration: none;
+        }
+    }
+}
+
+.footer-links {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer-link-spacer {
+    position: relative;
+    width: 5%;
+    margin: 0 0 0 30px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        height: 30px;
+        transform: translate(-50%, -50%);
+        background: #505050;
+    }
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        margin: 0 0 0 5px;
+    }
+}
+
+.footer-link {
+    margin: 0 0 0 30px;
+    color: #606060;
+    font-size: 13px;
+
+    .footer-link-image {
+        height: 30px;
+        opacity: .7;
+    }
+
+    &:hover {
+        color: lighten(#606060, 20%);
+        text-decoration: none;
+
+        .footer-link-image {
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        margin: 0 5px;
+    }
+}

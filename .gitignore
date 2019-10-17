@@ -2,3 +2,5 @@
 nbproject
 .idea/
 venv/
+node_modules/
+languages/en/_themes/tuleap_org/static/assets/
