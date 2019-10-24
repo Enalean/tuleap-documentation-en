@@ -21,7 +21,7 @@ documented in their respective documentations.
 Configuration of Tuleap
 -----------------------
 
-First step is to install a Redis server and to configure Tuleap to use it, 
+First step is to install a Redis server and to configure Tuleap to use it,
 checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
 
 After having installed and activated ``tuleap-plugin-prometheus-metrics`` rpm, you need to setup a password to access the
@@ -51,14 +51,30 @@ The following example uses COPR repository
 
 .. sourcecode:: bash
 
-    $> curl -Lo /etc/yum.repos.d/_copr_ibotty-prometheus-exporters.repo https://copr.fedorainfracloud.org/coprs/ibotty/prometheus-exporters/repo/epel-6/ibotty-prometheus-exporters-epel-6.repo
+    # On RHEL/CentOS 7
+    $> curl -Lo /etc/yum.repos.d/_copr_ibotty-prometheus-exporters.repo https://copr.fedorainfracloud.org/coprs/ibotty/prometheus-exporters/repo/epel-7/ibotty-prometheus-exporters-epel-7.repo
     $> yum install -y node_exporter
+
+    # Either run node_exporter manually (nohup node_exporter &) or create systemd service if you want node_exporter to run
+    # at server reboot
+    # $> nohup node_exporter &
+
+    $> tuleap config-set prometheus_node_exporter http://127.0.0.1:9100/metrics
+
+
+.. sourcecode:: bash
+
+    # On RHEL/CentOS 6
+    $> wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
+    $> tar xvfz node_exporter-*.*-amd64.tar.gz
+    $> sudo cp node_exporter-*.*-amd64/node_exporter /usr/sbin/
 
     # Either run node_exporter manually (nohup node_exporter &) or configure supervisord if you want node_exporter to run
     # at server reboot
     # $> nohup node_exporter &
 
     $> tuleap config-set prometheus_node_exporter http://127.0.0.1:9100/metrics
+
 
 Then you will see a bunch of data like ``node_cpu_seconds_total`` on ``/metrics`` end-point.
 
