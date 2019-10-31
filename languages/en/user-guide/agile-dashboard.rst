@@ -126,6 +126,16 @@ Populate backlog
 ````````````````
 A product owner can populate a backlog either going directly to the "Top Backlog planning" or to the release or sprint content.
 
+Explicit backlog
+~~~~~~~~~~~~~~~~
+The top backlog planning will contains artifact you choose. They are added inside when you directly add them in top backlog view. On every single artifact that can be used in a top backlog planning you will have a link to add it to the top backlog.
+
+You can enable this option in Agiledashboard administration by checking the use explicit backlog option.
+
+Open backlog
+~~~~~~~~~~~~
+The top backlog planning will contains all open and unplanned artifacts. They are removed from top backlog when you prioritize them in a release or a sprint or when you update their status.
+
 The agile dashboard also provides the possibility to prioritize the backlog, by drag'n'dropping elements from top to bottom.
 
 Monitor project progress
