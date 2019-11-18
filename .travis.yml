@@ -1,5 +1,8 @@
 language: python
 
+services:
+  - docker
+
 python:
     - "3.6"
     - "3.7"
@@ -9,3 +12,9 @@ install:
 
 script:
     - make SPHINXOPTS='-W' html
+
+
+jobs:
+  include:
+    - stage: "Verify build docs.tuleap.org"
+      script: docker build -f docs.tuleap.org/Dockerfile -t test-build .

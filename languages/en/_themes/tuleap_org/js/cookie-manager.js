@@ -1,4 +1,4 @@
-function setCookie(cookie_name, cookie_value, expiration_days) {
+export function setCookie(cookie_name, cookie_value, expiration_days) {
     var d = new Date();
     d.setTime(d.getTime() + (expiration_days * 24 * 60 * 60 * 1000));
 
@@ -7,7 +7,7 @@ function setCookie(cookie_name, cookie_value, expiration_days) {
     document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/;domain=.tuleap.org";
 }
 
-function getCookie(cookie_name) {
+export function getCookie(cookie_name) {
     var name = cookie_name + "=",
         ca   = document.cookie.split(';');
 
@@ -26,7 +26,7 @@ function getCookie(cookie_name) {
     return undefined;
 }
 
-function removeAllCookies() {
+export function removeAllCookies() {
     var cookies = document.cookie.split(';');
 
     for (var i = 0; i < cookies.length; i++) {

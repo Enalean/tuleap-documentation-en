@@ -1,0 +1,336 @@
+::selection {
+    background: $orange;
+    color: $white;
+}
+
+h1 {
+    margin: 20px 0 60px;
+    color: $grey;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 66px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: $orange;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+.section-title {
+    width: 100%;
+    margin: 0 0 50px;
+    color: $black;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 54px;
+    text-align: center;
+
+    @each $name, $hexa in $colors {
+        &.#{$name} {
+            color: $hexa;
+        }
+    }
+
+    .section-subtitle {
+        display: block;
+        margin: 10px 0 0;
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+h3 {
+    margin: 0 0 10px;
+    color: transparentize($grey, .3);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+h4 {
+    margin: 0 0 10px;
+    color: transparentize($grey, .4);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.intro {
+    display: block;
+    width: 80%;
+    margin: 0 auto 50px;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+}
+
+dt,
+dd,
+p {
+    margin: 0 0 20px;
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    + h2 {
+        margin: 60px 0 20px;
+    }
+
+    + h3 {
+        margin: 40px 0 10px;
+    }
+}
+
+dt {
+    margin: 0 0 5px;
+}
+
+.scroll-to {
+    cursor: pointer;
+}
+
+.highlighted {
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-image: linear-gradient(to top, #ffdc00 0%, #ffdc00 100%);
+    font-weight: 600;
+}
+
+span.highlighted {
+    @each $name, $hexa in $colors {
+        &.#{$name} {
+            padding: 0;
+            border-radius: 0;
+            background-image: linear-gradient(to top, transparentize($hexa, .7) 0%, transparentize($hexa, .85) 100%);
+            background-repeat: no-repeat;
+            background-position: 0 85%;
+            background-size: 100% 20%;
+            font-weight: inherit;
+
+            &.colored {
+                color: $hexa;
+            }
+        }
+    }
+}
+
+pre {
+    margin: 0 0 20px;
+    padding: 10px;
+    border: 1px solid transparentize($blue, .8);
+    border-radius: 4px;
+    background: transparentize($blue, .95);
+    color: darken(#6cd3ff, 40%);
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+code {
+    padding: 3px 7px;
+    border: 1px solid transparentize($blue, .8);
+    border-radius: 3px;
+    background: transparentize($blue, .95);
+    color: darken(#6cd3ff, 40%);
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+blockquote {
+    margin: 0 0 20px;
+    color: $grey;
+    font-size: 16px;
+    line-height: 30px;
+
+    + h2 {
+        margin: 60px 0 20px;
+    }
+
+    + h3 {
+        margin: 40px 0 20px;
+    }
+
+    > .quote {
+        position: relative;
+        top: 5px;
+        color: $orange;
+        font-size: 30px;
+        line-height: 0;
+    }
+}
+
+ul {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style-type: none;
+
+    + h2 {
+        margin: 60px 0 20px;
+    }
+
+    + h3 {
+        margin: 40px 0 20px;
+    }
+}
+
+li {
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    &::before {
+        content: '\f111';
+        position: relative;
+        top: -3px;
+        margin: 0 8px 0 0;
+        color: $orange;
+        font-family: 'FontAwesome';
+        font-size: 8px;
+    }
+
+    > ul {
+        margin: 0 0 30px 30px;
+
+        > li::before {
+            content: '\f10c';
+        }
+    }
+}
+
+ol > li {
+    margin-left: 20px;
+
+    &::before {
+        display: none;
+    }
+}
+
+a {
+    color: $orange;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+a.button,
+.button {
+    $button-transition: 100ms;
+
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+    transition: top $button-transition, background $button-transition, box-shadow $button-transition, border-color $button-transition;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    color: $white;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    > .fa {
+        margin: 0 5px 0 0;
+    }
+
+    &:hover {
+        transition: top $button-transition, background $button-transition, box-shadow $button-transition, border-color $button-transition;
+        box-shadow: 0 1px 1px rgba(50, 50, 93, .2);
+    }
+
+    &.small {
+        padding: 8px 12px;
+        border-radius: 3px;
+        font-size: 14px;
+        letter-spacing: .2px;
+        line-height: 18px;
+    }
+
+    &.large {
+        padding: 20px;
+        border-radius: 6px;
+        font-size: 22px;
+        letter-spacing: .4px;
+        line-height: 26px;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .6;
+    }
+
+    @each $name, $hexa in $colors {
+        &.#{$name} {
+            border: 1px solid $hexa;
+            background: $hexa;
+
+            @if $name == 'white' {
+                color: $grey;
+            }
+
+            &:hover:not(:disabled),
+            &:focus:not(:disabled) {
+                border-color: darken($hexa, 10%);
+                background: darken($hexa, 10%);
+            }
+
+            &:active, {
+                border-color: darken($hexa, 15%);
+                background: darken($hexa, 15%);
+            }
+
+            &.outline {
+                border: 1px solid $hexa;
+                background: transparent;
+                box-shadow: 0 4px 6px rgba(50, 50, 93, .05), 0 1px 3px rgba(0, 0, 0, .02);
+                color: $hexa;
+
+                &:hover:not(:disabled),
+                &:focus:not(:disabled) {
+                    border-color: darken($hexa, 10%);
+                    background: transparentize($hexa, .9);
+                }
+
+                &:active {
+                    border-color: darken($hexa, 12%);
+                    background: transparentize($hexa, .8);
+                }
+            }
+
+            &.no-border {
+                border-color: transparentize($hexa, .92);
+                background: transparentize($hexa, .94);
+                box-shadow: 0 2px 4px rgba(50, 50, 93, .05), 0 1px 3px rgba(0, 0, 0, .02);
+                color: $hexa;
+
+                &:hover:not(:disabled),
+                &:focus:not(:disabled) {
+                    border-color: transparentize($hexa, .9);
+                    background: transparentize($hexa, .9);
+                    box-shadow: 0 4px 6px rgba(50, 50, 93, .05), 0 1px 3px rgba(0, 0, 0, .02);
+                }
+
+                &:active {
+                    border-color: transparent;
+                    background: transparentize($hexa, .9);
+                }
+            }
+        }
+    }
+}

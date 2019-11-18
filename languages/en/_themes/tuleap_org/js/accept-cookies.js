@@ -1,3 +1,5 @@
+import { setCookie, getCookie, removeAllCookies } from "./cookie-manager";
+
 (function() {
     var accept_cookie      = getCookie('accept_cookies'),
         accept_cookies_bar = document.getElementById('accept-cookies-bar');

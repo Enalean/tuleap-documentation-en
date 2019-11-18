@@ -1,0 +1,37 @@
+.step {
+    visibility: hidden;
+    position: absolute;
+    top: -10000px;
+    left: -1000000px;
+    transform: scale(0);
+    pointer-events: none;
+
+    &.active {
+        visibility: visible;
+        position: relative;
+        top: 0;
+        left: auto;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+}
+
+.previous-step {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 0 0 30px;
+
+    > .fa {
+        margin: 0 5px 0 0;
+    }
+
+    @each $name, $hexa in $colors {
+        &.#{$name} {
+            color: $hexa;
+        }
+    }
+}
+
+.step-spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,61 @@
+.footer-section {
+    border-top: 1px solid transparent;
+    background-image:
+        radial-gradient(ellipse 100% 50%, transparentize($white, .4) 0%, $white 100%),
+        linear-gradient(to right,
+            transparentize($blue, .75)       0%,
+            transparentize($light-blue, .75) 14.2%,
+            transparentize($turquoise, .75)  28.4%,
+            transparentize($green, .75)      42.6%,
+            transparentize($orange, .75)     56.8%,
+            transparentize($red, .75)        71%,
+            transparentize($pink, .75)       85.2%,
+            transparentize($purple, .75)     100%
+        );
+
+    > .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section-title {
+        margin: 0 0 40px;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .footer-section-content {
+        max-width: 800px;
+        margin: 0 0 40px;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .footer-section-ctas {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        > .button {
+            flex: 0 0 auto;
+            width: 250px;
+            margin: 0 10px;
+        }
+    }
+
+    @each $name, $hexa in $colors {
+        &.#{$name} {
+            border-top-color: transparentize($hexa, .6);
+
+            a:not(button):not(.button),
+            .footer-section-title,
+            li::before {
+                color: $hexa;
+            }
+        }
+    }
+}

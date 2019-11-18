@@ -1,0 +1,557 @@
+$table-border-radius: 6px;
+
+.comparison-table-container {
+    position: relative;
+    width: 75%;
+    min-width: 980px;
+    margin: 0 0 50px;
+
+    &.full-size {
+        width: 100%;
+        min-width: auto;
+    }
+
+    @media screen and (max-width: #{$small-screen-size}) {
+        width: 100%;
+        min-width: auto;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: $table-border-radius;
+        box-shadow: 0 3px 5px transparentize($black, .9);
+    }
+}
+
+.comparison-table {
+    $border-color: #f4f4f4;
+
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    &.tuleap-enterprise .item-section {
+        background: #f5f7f9;
+        color: $tuleap-enterprise;
+    }
+
+    thead > tr:first-child > th {
+        border-top: 0;
+    }
+
+    tbody > tr:last-child > td {
+        border-bottom: 0;
+    }
+
+    th,
+    td {
+        border-top: 1px solid $border-color;
+        border-right: 0;
+        border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        background: $white;
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            min-width: 20%;
+        }
+
+        &.tuleap {
+            color: $tuleap;
+        }
+
+        &.tuleap-enterprise {
+            color: $tuleap-enterprise;
+        }
+
+        &.mytuleap {
+            color: $mytuleap;
+        }
+
+        &.silver {
+            color: $silver;
+        }
+
+        &.gold {
+            color: $gold;
+        }
+
+        &.diamond {
+            color: $diamond;
+        }
+    }
+
+    th {
+        padding: 40px 5px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .empty-cell {
+        border-right: 1px solid $border-color;
+        border-bottom: 0;
+        border-left: 0;
+    }
+
+    .right-border {
+        border-right: 3px solid darken($border-color, 5%);
+    }
+
+    .top-left {
+        border-top: 0;
+        border-top-left-radius: $table-border-radius;
+    }
+
+    .top-right {
+        border-top: 0;
+        border-top-right-radius: $table-border-radius;
+    }
+
+    .bottom-left {
+        border-bottom: 0;
+        border-bottom-left-radius: $table-border-radius;
+    }
+
+    .bottom-right {
+        border-bottom: 0;
+        border-bottom-right-radius: $table-border-radius;
+    }
+
+
+    .logo-cell {
+        padding: 30px 5px;
+        border-top: 0;
+    }
+
+    .logo {
+        max-width: 100%;
+    }
+
+    .solution-type {
+        padding: 25px 20px 0;
+        border-bottom: 0;
+        color: #505050;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .hosted-place {
+        padding: 10px 20px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .tuleap-enterprise-plan {
+        padding: 20px 30px 10px;
+        border-top: 0;
+        border-bottom: 0;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .tuleap-enterprise-plan-name {
+        padding: 0 5px 10px;
+        border-top: 0;
+        border-bottom: 0;
+
+        > .badge {
+            display: inline-block;
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+    }
+
+    .tuleap-enterprise-plan-description {
+        padding: 15px 20px;
+        border-top: 0;
+        border-bottom: 0;
+        color: #888888;
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: top;
+    }
+
+    .starter-pack {
+        padding: 20px 20px 0;
+        border-top: 0;
+        border-bottom: 0;
+        vertical-align: top;
+
+        > .starter-pack-name {
+            display: inline-block;
+            margin: 0 0 20px;
+            font-size: 18px;
+        }
+
+        > ul {
+            margin: 0;
+            text-align: left;
+        }
+
+        &.silver > ul > li {
+            &::before {
+                color: $silver;
+            }
+        }
+
+        &.gold > ul > li {
+            &::before {
+                color: $gold;
+            }
+        }
+    }
+
+    .starter-pack-prices {
+        padding: 20px 5px 10px;
+        border-top: 0;
+        border-bottom: 0;
+
+        > .starter-pack-prices-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+
+            @media screen and (max-width: $tiny-screen-size) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .starter-pack-price {
+            flex: 0 0 auto;
+
+            @media screen and (max-width: $tiny-screen-size) {
+                margin: 0 0 20px;
+            }
+
+            > .price-users {
+                display: block;
+                margin: 0 0 10px 11px;
+                color: $grey;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            > .price-value {
+                color: $black;
+                font-size: 32px;
+            }
+
+            > .price-currency {
+                position: relative;
+                top: -13px;
+                margin: 0 3px 0 0;
+                color: #888888;
+                font-size: 13px;
+            }
+
+            > .price-frequency {
+                display: block;
+                margin: 3px 0 0;
+                color: #888888;
+                font-size: 12px;
+                text-align: right;
+            }
+        }
+
+        &.silver .price-users {
+            color: $silver;
+        }
+
+        &.gold .price-users {
+            color: $gold;
+        }
+    }
+
+    .item {
+        border-left: 0;
+        color: $grey;
+        font-size: 14px;
+        line-height: 26px;
+        text-align: right;
+        vertical-align: middle;
+    }
+
+    .item-section {
+        padding: 15px 20px;
+        border-left: 0;
+        background: #fafafa;
+        color: #707070;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .3px;
+        line-height: 18px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .product-type {
+        padding: 20px;
+        border-color: #fafafa;
+        border-top: 3px solid darken($border-color, 3%);
+        background: #fafafa;
+        color: $grey;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .checked,
+    .not-checked {
+        padding: 15px 20px;
+        vertical-align: middle;
+
+        > .check-text {
+            display: block;
+            margin: 10px 0 0;
+            font-size: 14px;
+
+            &.tuleap-enterprise {
+                color: $tuleap-enterprise;
+            }
+
+            > .fa {
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+
+    .adapted-reason {
+        padding: 15px 20px;
+        border-top: 0;
+        border-bottom: 0;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+
+    .ask-for-quote {
+        padding: 30px;
+        border-bottom: 0;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .price {
+        padding: 20px 5px 0;
+        border-top: 0;
+        border-bottom: 0;
+
+        &.hidden {
+            display: none;
+        }
+
+        > .price-value {
+            font-size: 40px;
+        }
+
+        > .price-currency {
+            position: relative;
+            top: -15px;
+            margin: 0 3px 0 0;
+            color: #888888;
+            font-size: 18px;
+        }
+
+        > .price-frequency {
+            color: #888888;
+            font-size: 12px;
+        }
+
+        > .price-per-user {
+            display: block;
+            margin: 10px 0 0;
+            color: #888888;
+            font-size: 12px;
+            white-space: nowrap;
+
+            > .price-currency {
+                position: relative;
+                top: -2px;
+                left: -2px;
+                font-size: 10px;
+            }
+
+            > .price-value {
+                margin: 0 2px 0 0;
+                color: $black;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .users-packs {
+        padding: 30px 20px 20px;
+        border-top: 0;
+        border-left: 0;
+        vertical-align: top;
+    }
+
+    .users-packs-slider-legend {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+        margin: 20px auto 0;
+
+        > .users-packs-slider-legend-text {
+            color: #aaaaaa;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    .users-packs-slider-selected-value {
+        display: block;
+        margin: 0 0 10px;
+        color: $black;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .users-packs-slider {
+        width: 100%;
+        background: transparent;
+        -webkit-appearance: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-slider-thumb {
+            width: 25px;
+            height: 25px;
+            margin-top: -11px;
+            border-radius: 50%;
+            background: $tuleap-enterprise;
+            box-shadow: 0 2px 5px transparentize($black, .8);
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        &::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: $tuleap-enterprise;
+            box-shadow: 0 2px 5px transparentize($black, .8);
+            cursor: pointer;
+        }
+
+        &::-ms-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: $tuleap-enterprise;
+            box-shadow: 0 2px 5px transparentize($black, .8);
+            cursor: pointer;
+        }
+
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            border: 3px;
+            border-radius: 3px;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        &::-moz-range-track {
+            width: 100%;
+            height: 4px;
+            border-radius: 3px;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        &::-ms-track {
+            width: 100%;
+            height: 4px;
+            border-radius: 3px;
+            border-color: transparent;
+            background: #f0f0f0;
+            color: transparent;
+            cursor: pointer;
+        }
+
+        &::-ms-fill-lower {
+            background: #f0f0f0;
+        }
+
+        &:focus::-ms-fill-lower {
+            background: #f0f0f0;
+        }
+
+        &::-ms-fill-upper {
+            background: #f0f0f0;
+        }
+
+        &:focus::-ms-fill-upper {
+            background: #f0f0f0;
+        }
+    }
+
+    .cta {
+        padding: 20px;
+        border-top: 0;
+
+        &.hidden {
+            display: none;
+        }
+
+        &.full-size > .button {
+            width: 100%;
+        }
+
+        > .cta-more {
+            margin: 15px 0 0;
+
+            &.tuleap-enterprise {
+                color: $tuleap-enterprise;
+
+                > a {
+                    color: $tuleap-enterprise;
+
+                    > .fa {
+                        font-size: 14px;
+                        margin: 0 0 0 5px;
+                    }
+                }
+            }
+
+            &.mytuleap {
+                color: $mytuleap;
+
+                > a {
+                    color: $mytuleap;
+
+                    > .fa {
+                        font-size: 14px;
+                        margin: 0 0 0 5px;
+                    }
+                }
+            }
+        }
+    }
+}

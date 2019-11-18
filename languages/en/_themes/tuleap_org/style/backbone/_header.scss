@@ -1,0 +1,457 @@
+/* stylelint-disable selector-no-qualifying-type */
+body.pinned {
+    header {
+        position: fixed;
+        height: $header-pinned-height;
+        -webkit-transform: translate3d(0, 0, 0);
+        background: $white;
+        box-shadow: 0 1px 5px transparentize($black, .8);
+    }
+
+    .header-content {
+        height: $header-pinned-height;
+    }
+
+    .header-logo-image {
+        height: 50px;
+    }
+
+    &.tuleap-enterprise header {
+        .header-menu-item-container:hover {
+            .header-menu-item {
+                color: lighten($tuleap-enterprise, 30%);
+            }
+        }
+
+        .header-menu-item {
+            color: $tuleap-enterprise;
+
+            &.active {
+                background: $tuleap-enterprise;
+                color: $white;
+            }
+        }
+    }
+
+    &.mytuleap header {
+        .header-menu-item-container:hover {
+            .header-menu-item {
+                color: lighten($mytuleap, 30%);
+            }
+        }
+
+        .header-menu-item {
+            color: $mytuleap;
+
+            &.active {
+                background: $mytuleap;
+                color: $white;
+            }
+        }
+    }
+
+    @each $name, $hexa in $guides {
+        &.#{$name} header {
+            .header-menu-item-container:hover {
+                .header-menu-item {
+                    color: lighten($hexa, 30%);
+                }
+            }
+
+            .header-menu-item {
+                color: $hexa;
+
+                &.active {
+                    background: $hexa;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+body:not(.pinned) {
+    &.black header {
+        .header-logo-image-orange-white {
+            display: block;
+        }
+
+        .header-logo-image-orange-black,
+        .header-logo-image-white-white {
+            display: none;
+        }
+
+        .header-burger {
+            color: $white;
+        }
+
+        .header-menu {
+            @media screen and (max-width: #{$tiny-screen-size}) {
+                background: transparentize($black, .05);
+
+                &:not(.show) {
+                    display: none;
+                }
+            }
+        }
+
+        .header-menu-item-container:hover {
+            .header-menu-item {
+                background: #000000;
+                color: $orange;
+            }
+        }
+
+        .header-menu-item {
+            color: $white;
+        }
+
+        .header-submenu {
+            background: #000000;
+
+            @media screen and (max-width: #{$mobile-screen-size}) {
+                background: none;
+            }
+        }
+
+        .header-submenu-item {
+            color: $white;
+
+            &:hover {
+                background: lighten(#000000, 7%);
+            }
+        }
+    }
+
+    &.tuleap-enterprise header,
+    &.orange header {
+        .header-logo-image-white-white {
+            display: block;
+        }
+
+        .header-logo-image-orange-black,
+        .header-logo-image-orange-white {
+            display: none;
+        }
+
+        .header-burger {
+            color: $white;
+        }
+
+        .header-menu-item-container:hover {
+            .header-menu-item {
+                background: darken($black, 5%);
+                color: $orange;
+            }
+        }
+
+        .header-menu-item {
+            color: $white;
+
+            &.active {
+                background: $white;
+                color: $orange;
+            }
+        }
+
+        .header-submenu {
+            background: darken($black, 5%);
+
+            @media screen and (max-width: #{$mobile-screen-size}) {
+                background: none;
+            }
+        }
+
+        .header-submenu-item {
+            color: $white;
+
+            &:hover {
+                background: darken($black, 10%);
+            }
+        }
+    }
+
+    &.orange header {
+        .header-menu {
+            @media screen and (max-width: #{$tiny-screen-size}) {
+                background: transparentize(#e07e3b, .05);
+
+                &:not(.show) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.tuleap-enterprise header {
+        .header-logo {
+            opacity: .5;
+        }
+
+        .header-menu {
+            @media screen and (max-width: #{$tiny-screen-size}) {
+                background: transparentize(#3c6b81, .05);
+
+                &:not(.show) {
+                    display: none;
+                }
+            }
+        }
+
+        .header-menu-item-container:hover .header-menu-item {
+            color: lighten($tuleap-enterprise, 30%);
+        }
+
+        .header-menu-item.active {
+            color: $tuleap-enterprise;
+        }
+    }
+
+    &.mytuleap header {
+        .header-menu-item-container:hover .header-menu-item {
+            background: $black;
+            color: lighten($mytuleap, 10%);
+        }
+
+        .header-menu-item {
+            color: $mytuleap;
+
+            &.active {
+                background: $mytuleap;
+                color: $white;
+            }
+        }
+    }
+
+    @each $name, $hexa in $guides {
+        &.#{$name} header {
+            .header-menu-item-container:hover .header-menu-item {
+                background: $black;
+                color: lighten($hexa, 10%);
+            }
+
+            .header-menu-item {
+                color: $hexa;
+
+                &.active {
+                    background: $hexa;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+header {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: $header-height;
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        position: fixed;
+        width: 100vw;
+        height: $header-pinned-height;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: $container-width;
+    height: $header-height;
+
+    @media screen and (min-width: #{$big-screen-size}) {
+        max-width: $big-screen-size;
+    }
+
+    @media screen and (max-width: #{$small-screen-size}) {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        height: $header-pinned-height;
+    }
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 30px 0 0;
+}
+
+.header-logo-image-white-white,
+.header-logo-image-orange-white,
+.header-logo-image-orange-black {
+    height: 60px;
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        height: 50px;
+    }
+}
+
+.header-logo-image-orange-black {
+    display: block;
+}
+
+.header-logo-image-orange-white,
+.header-logo-image-white-white {
+    display: none;
+}
+
+.header-burger {
+    display: none;
+    color: $orange;
+    font-size: 40px;
+    cursor: pointer;
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        position: fixed;
+        top: calc(#{$header-pinned-height} - 10px);
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        height: calc(100vh - #{$header-pinned-height} + 10px);
+        background: transparentize($white, .05);
+
+        &:not(.show) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: #{$mobile-screen-size}) {
+        justify-content: stretch;
+        overflow: scroll;
+    }
+}
+
+.header-menu-item-container:hover {
+    .header-menu-item {
+        border-radius: 5px 5px 0 0;
+        background: $grey;
+        color: $white;
+        text-decoration: none;
+
+        &:only-child {
+            border-radius: 5px;
+        }
+    }
+
+    > .header-submenu {
+        display: flex;
+        pointer-events: auto;
+    }
+}
+
+span.header-menu-item {
+    line-height: normal;
+    cursor: default;
+}
+
+.header-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    padding: 13px 10px;
+    border-radius: 5px;
+    color: $orange;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    line-height: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &.active {
+        background: $orange;
+        color: $white;
+    }
+
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: #{$small-screen-size}) {
+        padding: 10px 8px;
+    }
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        margin: 15px 0;
+        padding: 13px 10px;
+        font-size: 18px;
+    }
+}
+
+.header-submenu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    flex-direction: column;
+    margin: -1px 5px 0;
+    overflow: hidden;
+    border-radius: 0 5px 5px;
+    background: $grey;
+    box-shadow: 0 10px 20px transparentize($black, .8);
+    pointer-events: none;
+
+    @media screen and (max-width: #{$tiny-screen-size}) {
+        position: relative;
+        margin: -15px 0 0;
+        border-radius: 0 0 5px 5px;
+    }
+    @media screen and (max-width: #{$mobile-screen-size}) {
+        display: flex;
+        background: none;
+        box-shadow: none;
+        pointer-events: background-position;
+    }
+}
+
+.header-submenu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 13px 10px;
+    color: transparentize($white, .1);
+    font-size: 13px;
+    letter-spacing: .2px;
+    text-decoration: none;
+
+    &:hover {
+        background: $black;
+        color: transparentize($white, .1);
+        text-decoration: none;
+    }
+    @media screen and (max-width: #{$mobile-screen-size}) {
+        color: $black;
+    }
+}
+
+.header-submenu-item-details {
+    margin: 10px 0 0;
+    color: transparentize($white, .5);
+    font-size: 10px;
+    letter-spacing: .8px;
+    line-height: normal;
+    text-transform: uppercase;
+}
