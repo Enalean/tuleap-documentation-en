@@ -3,7 +3,7 @@
 Jest unit tests
 ===============
 
-`Jest <https://jestjs.io/>`_ is Javascript testing framework to write down our JavaScript unit tests.
+`Jest <https://jestjs.io/>`_ is the Javascript testing framework to write down our JavaScript unit tests.
 
 You must provide some unit tests for any front-end development.
 
@@ -19,11 +19,15 @@ This config file is pretty easy to set up.
 
     // tuleap/plugins/<your_plugin>/scripts/jest.config.js
 
-    module.exports = require("../../../tests/jest/jest.config.js");
+    const base_config = require("../../../tests/jest/jest.base.config.js");
+
+    module.exports = {
+        ...base_config,
+        displayName: "<your_plugin>"
+    };
 
 
-You will then need to add a test script in your `package.json` file to launch the
-Jest when `npm test` is used.
+You will then need to add a test script in your `package.json` file to launch Jest when `npm test` is used.
 
 
 .. code-block:: JavaScript
@@ -32,7 +36,7 @@ Jest when `npm test` is used.
     {
         //...
         "config": {
-            "bin": "../../../node_modules/.bin/"
+            "bin": "../../../node_modules/.bin"
         },
         //...
         "scripts": {
@@ -58,7 +62,7 @@ Best-practices for Tuleap
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
-* Always name unit test files with the same name as their test subject and suffixed with ``.test.js``. For example: ``form-tree-builder.test.js`` tests ``form-tree-builder.js``, ``DocumentBreadcrumb.test.js`` tests ``DocumentBreadcrumb.vue``.
+* Always name unit test files with the same name as their test subject and suffixed with ``.test.ts``. For example: ``form-tree-builder.test.ts`` tests ``form-tree-builder.ts``, ``DocumentBreadcrumb.test.ts`` tests ``DocumentBreadcrumb.vue``.
 * Always put unit test files next to their test subject, in the same folder. See `Angular.js Style Guide rule`_ for reasons why having unit tests close to the source is a good idea.
 
 Resources

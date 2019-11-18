@@ -22,6 +22,5 @@ Historically you will also find
     front-end/css
     front-end/javascript
     front-end/vue
-    front-end/karma
     front-end/jest
     front-end/angular
