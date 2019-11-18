@@ -34,8 +34,8 @@ While you are working, in the appropriate "scripts" folder, run the following co
 	.. important::
 
 		* ``npm run watch`` will automatically rebuild Javascript after changes. It will also run the unit tests.
-		* ``npm run test`` will run the unit tests once. It is used by the Continuous integration to validate changes.
-		* ``npm run coverage`` will run the unit tests, generate HTML reports and open your default browser with those reports. You can use it to navigate in the code and check out how well unit tests cover the production code.
+		* ``npm test`` will run the unit tests once. It is used by the Continuous integration to validate changes.
+		* ``npm test -- --coverage`` will run the unit tests and generate a coverage report.
 
 Where can I run npm commands ?
 ------------------------------
