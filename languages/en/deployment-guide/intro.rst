@@ -9,10 +9,7 @@ file, the default is automatically set for you.
 Tuleap 11.8
 ===========
 
-.. NOTE::
-
-  Tuleap 11.8 is currently under development.
-
+Nothing to mention.
 
 Tuleap 11.7
 ===========
