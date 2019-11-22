@@ -107,6 +107,24 @@ You can easily attach the context of a task as an attachment and submit
 it on the Tuleap server. You can retrieve the context from an attachment
 too.
 
+Use Tuleap artifact fields in commit template
+---------------------------------------------
+
+When a task is active, you can use Mylyn to pre-format commit messages, including values from the Tuleap artifact's fields.
+Open the "Window -> Preferences" menu, then the "Mylyn -> Team" Page. Check the option to let Mylyn manage the commit message, then enter your commit message template.
+
+|image8|
+
+You have access to Tuleap artifact's field values with ${tuleap.fieldXXX("key")} placeholders, available on auto-completion.
+The field's label is easy to find as it is the one you see on the artifact page.
+The field's name is available from the tracker's administration page
+
+|image9|
+
+The field's integer id can be retrieved from the same administration page, by hovering the field's edition button. You then see the field's id at the end of the pointed URL after "formElement=".
+
+|image10|
+
 .. |image0| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_08.png
 .. |image1| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_10.png
 .. |image2| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_14.png
@@ -115,3 +133,6 @@ too.
 .. |image5| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_17.png
 .. |image6| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_18.png
 .. |image7| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_19.png
+.. |image8| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_20.png
+.. |image9| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_21.png
+.. |image10| image:: ../images/screenshots/mylyn/Mylyn_Connector_for_Tuleap_22.png
