@@ -1,4 +1,4 @@
-: .. _i18n:
+.. _i18n:
 
 Internationalization (i18n)
 ===========================
