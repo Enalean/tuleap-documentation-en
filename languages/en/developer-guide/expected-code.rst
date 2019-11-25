@@ -62,8 +62,7 @@ languages are:
 Thus, there shouldn't be any untranslated words or sentences of natural language in source code. This applies to any
 strings displayed to end users (web, emails). Logs or system messages are in english.
 
-Internationalization is available in two different ways. The legacy one, based on .tab files, and the new one, based on
-gettext.
+See :ref:`Internationalization <i18n>` for details.
 
 Commits
 -------

@@ -1,5 +1,8 @@
-Gettext
-=======
+i18n in the Back-end
+====================
+
+All new work should use gettext for translation. Translation using ``.tab``
+files should only exist in the legacy code and will be replaced by gettext.
 
 `Gettext system documentation <https://www.gnu.org/software/gettext/>`_
 
@@ -30,12 +33,14 @@ In REST routes
 When error messages have functional meaning that cannot be deducted by the client (for example an error message explaining why a tracker expert query is invalid), then they should be translated with the following pattern:
 
   .. code-block:: php
-  
-     throw new RestException(
-           404,
-           null,
-           ['i18n_error_message' => dgettext('tuleap-docman', 'The folder does not exist.')]
-     );
+
+     throw new I18NRestException(
+          400,
+          sprintf(
+              dgettext('tuleap-taskboard', "Could not find artifact to add with id %d."),
+              $id
+          )
+      );
 
 Pluralization
 -------------

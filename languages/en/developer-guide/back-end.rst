@@ -12,7 +12,6 @@ Generic principles, framework and libs.
 
     back-end/database
     back-end/routing
-    back-end/gettext
     back-end/autoload
     back-end/profiling
     back-end/tests
