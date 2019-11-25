@@ -9,7 +9,6 @@ Q3 2019                                              Status            As platfo
 ==================================================== ================= ==============================================
 Legacy GitPHP web interface                          Removed           Nothing
 Legacy Tracker Workflows configuration web interface Removed           Nothing
-MySQL versions < 5.7                                 End of support    Upgrade to Mysql 5.7 or higher
 RabbitMQ (replaced by Redis)                         Replaced by Redis Uninstall RabbitMQ
 WebDAV with Windows 7 client                         End of support    End-users should switch to Cyberduck
 Internet Explorer 11                                 End of support    New features won't be usable with IE 11.
@@ -22,19 +21,20 @@ Q4 2019                         Status            As platform administrator, wha
 Codendi CLI                     End of support    Use REST API
 GitShell backend for Git plugin Removed           End-users should push to Gitolite repository
 Gerrit versions < 2.16          End of support    Switch to Gerrit 2.16 or higher
-Mysql 8                         Start of support  (Optionally switch to Mysql 8)
-Realtime server using NodeJS    Replaced          (To be announced)
-RHEL 6                          End of support    Switch to RHEL 7
 tab file-based translations     Replaced by       Nothing
                                 gettext
 =============================== ================= =============================================
 
-======= ================= =============================================
-S1 2020 Status            As platform administrator, what should I do ?
-======= ================= =============================================
-PHP 7.4 Start of support  (Optionally switch to PHP 7.4)
-RHEL 8  Start of support  (Optionally switch to RHEL 8)
-======= ================= =============================================
+============================= ================= =============================================
+S1 2020                       Status            As platform administrator, what should I do ?
+============================= ================= =============================================
+RHEL 6                        End of support    Switch to RHEL 7
+PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
+MySQL versions < 5.7          End of support    Upgrade to MySQL 5.7 or higher
+RHEL 8                        Start of support  (Optionally switch to RHEL 8)
+MySQL 8                       Start of support  (Optionally switch to MySQL 8)
+Realtime server using NodeJS  Replaced          (To be announced)
+============================= ================= =============================================
 
 ==================== =============== =============================================
 S2 2020              Status          As platform administrator, what should I do ?
