@@ -4,7 +4,7 @@ Internationalization (i18n)
 ===========================
 
 i18n in Tuleap should always be done with gettext. Depending on where you are,
-you should use different means to translate your strings. One thing is constant
+you should use different ways to translate your strings. One thing is constant
 though:
 
 To extract translated strings and add them to the ``.po`` files for translation,
