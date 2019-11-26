@@ -73,6 +73,29 @@ INSTEAD, DO THIS:
     <template>
         <p v-translate="{ link_url, link_text }"><a href="%{ link_url }">%{ link_text }</a> has done some changes in this document.</p>
     </template>
+    
+        
+ * Name your parameter when your translations have parameters.
+ 
+ For example, DO NOT do this:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-bind:translate-params="vue_variable_for_nb">%{ vue_variable_for_nb } changes have been done in this document.</p>
+    </template>
+
+If your vue variable is updated, then you won't have to update the corresponding translation.
+
+INSTEAD, DO THIS:
+
+.. code-block:: html
+
+    // TranslatedExample.vue
+    <template>
+        <p v-bind:translate-params="{nb: vue_variable_for_nb">%{ nb } changes have been done in this document.</p>
+    </template>
 
 Resources
 ^^^^^^^^^
