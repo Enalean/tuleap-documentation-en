@@ -19,4 +19,4 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 
 More information on `Tuleap.org website`_.
 
-.. _Tuleap.org website: https://www.tuleap.org/solutions/tuleap-enterprise
+.. _Tuleap.org website: https://www.tuleap.org/pricing/on-premise/
