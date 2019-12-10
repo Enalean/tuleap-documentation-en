@@ -151,3 +151,29 @@ Some rule are specific to this route:
  - limit is set by platform administrators and is common for all projects
  - if plugin archive deleted items is enabled, XML is archived
  
+  POST /projects
+---------------
+Here an example of of public created project:
+
+::
+
+  {
+  "shortname": "string",
+  "description": "string",
+  "label": "string",
+  "is_public": true,
+  "allow_restricted": true,
+  "template_id": 101,
+  "categories": [
+    {
+      "category_id": 1,
+      "value_id": 2
+    }
+  ],
+  "fields": [
+    {
+      "field_id": 1,
+      "value": "My custom value"
+    }
+  ]
+}
