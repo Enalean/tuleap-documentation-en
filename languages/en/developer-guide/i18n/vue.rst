@@ -94,7 +94,7 @@ INSTEAD, DO THIS:
 
     // TranslatedExample.vue
     <template>
-        <p v-bind:translate-params="{nb: vue_variable_for_nb">%{ nb } changes have been done in this document.</p>
+        <p v-bind:translate-params="{nb: vue_variable_for_nb}">%{ nb } changes have been done in this document.</p>
     </template>
 
 Resources
