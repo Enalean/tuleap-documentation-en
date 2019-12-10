@@ -153,7 +153,7 @@ Some rule are specific to this route:
  
 POST /projects
 --------------
-Here an example of of public created project:
+Here an example of the pyload to create a public project:
 
 ::
 
