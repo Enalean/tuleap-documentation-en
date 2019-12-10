@@ -6,6 +6,13 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
+Tuleap 11.9
+===========
+
+Rest route POST /projects have been reworked :
+ - it does no longer need the delegation permission of REST administrator to be used (but it respect project configuration rule and check if user can create new projects).
+ - you can specify trove categories and project field at creation, if they are required and not provided in payload, the REST call will fail.
+
 Tuleap 11.8
 ===========
 
