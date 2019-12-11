@@ -9,7 +9,10 @@ file, the default is automatically set for you.
 Tuleap 11.9
 ===========
 
-Rest route POST /projects has been reworked :
+Changes on REST endpoint to create projects
+-------------------------------------------
+
+REST route POST /projects has been reworked :
  - it does no longer need the delegation permission of REST administrator to be used (but it respects project configuration rule and check if user can create new projects).
  - you can specify trove categories and project field at creation, if they are required and not provided in payload, the REST call will fail.
 
