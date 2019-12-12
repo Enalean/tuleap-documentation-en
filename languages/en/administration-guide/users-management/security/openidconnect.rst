@@ -32,5 +32,5 @@ A different modal opens and you can fill the necessary fields. Note authorizatio
 They are replaced by Tenant Id.
 
 .. image:: ../../../images/openidconnect/add-azure-provider.png
-  :alt: Tuleap Open Id Connect azure provider creation
+  :alt: Tuleap OpenID Connect Azure provider creation
   :align: center
