@@ -1,4 +1,4 @@
-Open Id Connect
+OpenID Connect
 ---------------
 
 The Open Id Connect plugin allow to allows to authenticate with Open Id Connect.
