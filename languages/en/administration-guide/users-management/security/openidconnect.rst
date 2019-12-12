@@ -25,7 +25,7 @@ The Azure Active Directory provider takes into account the specificities of `Azu
 If you want to add an Azure AD provider, click on the caret down and "Azure Active Directory".
 
 .. image:: ../../../images/openidconnect/azure-add-button.png
-  :alt: Tuleap Open Id Connect provider creation
+  :alt: Tuleap OpenID Connect provider creation
   :align: center
 
 A different modal opens and you can fill the necessary fields. Note authorization endpoint, token endpoint and user information endpoint are not more necessary.
