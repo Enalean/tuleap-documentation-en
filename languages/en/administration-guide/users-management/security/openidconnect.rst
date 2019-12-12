@@ -9,7 +9,7 @@ The OpenID Connect client plugin allows users to authenticate with an OpenID Con
 Generic Provider
 ****************
 
-This is the one who is used more the most of the Open Id provider.
+This is the type of provider that should be used most of the time.
 To add a generic provider, you need to go on PLUGINS >> OpenID Connect Client >> Add provider as site administrator.
 A modal opens and you can fill in the necessary fields
 
