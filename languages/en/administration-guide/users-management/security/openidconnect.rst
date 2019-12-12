@@ -1,7 +1,7 @@
 OpenID Connect
 ---------------
 
-The Open Id Connect plugin allow to allows to authenticate with Open Id Connect.
+The OpenID Connect client plugin allows users to authenticate with an OpenID Connect provider.
 
 .. attention::
     As of today, this plugin can not be used when the LDAP plugin is enabled.
