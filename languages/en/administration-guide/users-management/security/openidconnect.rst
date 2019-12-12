@@ -14,7 +14,7 @@ To add a generic provider, you need to go on PLUGINS >> OpenID Connect Client >>
 A modal opens and you can fill in the necessary fields
 
 .. image:: ../../../images/openidconnect/add-generic-provider.png
-  :alt: Tuleap Open Id Connect generic provider creation
+  :alt: Tuleap OpenID Connect generic provider creation
   :align: center
 
 
