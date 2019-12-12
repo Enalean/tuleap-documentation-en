@@ -44,7 +44,7 @@ Configure Nginx
         ssl_certificate /etc/nginx/ssl/server.crt;
         ssl_certificate_key /etc/nginx/ssl/server.key;
         ssl_session_timeout 1d;
-        ssl_session_cache shared:SSL:50m;
+        ssl_session_cache shared:MozSSL:10m;
         ssl_session_tickets off;
 
         # Path to Diffie-Hellman parameter
@@ -52,8 +52,8 @@ Configure Nginx
         ssl_dhparam /path/to/dhparam.pem;
 
         ssl_protocols TLSv1.2;
-        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
-        ssl_prefer_server_ciphers on;
+        ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+        ssl_prefer_server_ciphers off;
 
         # ++ Cache media (not mandatory for reverse proxy)
         location ~* \.(?:js|css|png|gif|eot|woff)$ {
@@ -463,12 +463,12 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
         ssl_certificate ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_certificate_key ${PATH_TO_YOUR_SSL_CERTIFICATE};
         ssl_session_timeout 1d;
-        ssl_session_cache shared:SSL:50m;
+        ssl_session_cache shared:MozSSL:10m;
         ssl_session_tickets off;
 
         ssl_protocols TLSv1.2;
-        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
-        ssl_prefer_server_ciphers on;
+        ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+        ssl_prefer_server_ciphers off;
 
         client_max_body_size 50M;
 
