@@ -18,7 +18,7 @@ Authentication methods available when interacting with the REST API are describe
 
 
 Setup OpenID Connect
----------------
+--------------------
 
 The OpenID Connect client plugin allows users to authenticate with an OpenID Connect provider.
 
