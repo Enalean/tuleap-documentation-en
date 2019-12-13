@@ -8,10 +8,8 @@ management through plugins:
 * OpenID Connect with ``tuleap-plugin-openidconnectclient``. As of today, this plugin can not be used when the LDAP plugin is enabled.
 * Generation of credentials on demand with ``tuleap-plugin-dynamic-credentials``, see :ref:`dynamic-credentials`.
 
-The following flowchart explains how Tuleap deals with user authentication:
+.. toctree::
+   :maxdepth: 2
 
-.. image:: ../../../images/diagrams/authentication-flowchart.png
-  :alt: Tuleap authentication flowchart
-  :align: center
-
-Authentication methods available when interacting with the REST API are described in the following section: :ref:`rest-auth`.
+   user-authentication/authentication-flowchart
+   user-authentication/openidconnect
