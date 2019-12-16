@@ -12,7 +12,7 @@ respective documentation for installation instructions:
 
 - make
 - php
-- `nodejs <https://nodejs.org/en/>`_ >= v8.x
+- `nodejs <https://nodejs.org/en/>`_ >= v10.13.x
 - `npm <https://docs.npmjs.com/>`_ >= v6.11.x
 - `composer <https://getcomposer.org/>`_
 
