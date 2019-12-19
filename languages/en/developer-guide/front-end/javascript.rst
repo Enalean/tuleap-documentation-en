@@ -3,12 +3,14 @@
 Javascript
 ==========
 
-Javascript code should always go in "scripts" folders.
+New code must be written in typescript.
+
+Typescript code should always go in "scripts" folders.
 
 * For the core, it should go in "src/www/scripts/"
 * For plugins, it should go in "plugins/<my-plugin>/scripts/"
 
-Build the javascript files
+Build the typescript files
 --------------------------
 
 From the root directory of the Tuleap sources (you must have npm installed):
@@ -54,6 +56,7 @@ Best-practices for Tuleap
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
+* Always write new code in typescript.
 * Always use a Javascript file. No manual <script> tags.
 * Always name javascript files with ``dash-case``.
 * Whenever you need to run code when the page is loaded, do it like this:
