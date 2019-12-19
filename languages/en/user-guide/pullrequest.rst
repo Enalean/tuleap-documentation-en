@@ -326,6 +326,23 @@ From any element in Tuleap, you can reference the pull request using ``pr`` or
       :alt: Cross reference to pull request
       :name: Cross reference to pull request
 
+Mail notifications
+------------------
+
+A mail notification is sent to the reviewers of a pull request, the creator of the pull request
+and to the users having updated the pull request when one of the following actions happen:
+
+* the pull request is updated (new commit are pushed into the pull request branch)
+* the pull request is merged
+* the pull request is abandoned
+* a new global comment is added
+* a new inline comment is added
+
+User being added to list of reviewers of a pull request also receive a notification.
+
+Notifications are not sent to the user doing the action, i.e. a user will not
+receive a mail for a comment she has posted.
+
 Integrate with Jenkins
 ----------------------
 
