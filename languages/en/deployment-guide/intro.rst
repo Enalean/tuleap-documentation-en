@@ -14,6 +14,18 @@ Tuleap 11.10
   Tuleap 11.10 is currently under development.
 
 
+End of support of Digest authentication against Gerrit servers
+--------------------------------------------------------------
+
+Tuleap is no more able to use Digest authentication against a Gerrit server.
+If you had configured a Gerrit server to use Digest authentication in Tuleap,
+it has been automatically migrated to use Basic authentication.
+
+Note that if you are affected by this change in any way you should consider
+upgrading your Gerrit server to a supported version (Gerrit 2.16 or ulterior),
+support of Digest authentication has been removed in Gerrit 2.14.
+
+
 Tuleap 11.9
 ===========
 
