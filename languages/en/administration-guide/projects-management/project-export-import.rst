@@ -244,7 +244,7 @@ Core information imported as of today:
   - projectsvnstats
   - projectrss (with 'rss' preference: 2 values 'title' and 'url')
   - projectimageviewer (with 'image' preference: 2 values 'title' and 'url')
-  - projectcontact
+  - projectcontacts
   - plugin_agiledashboard_projects_kanban (with 'kanban' preference: 1 reference 'id' that must refer to a kanban 'id')
 
 .. sourcecode:: xml
