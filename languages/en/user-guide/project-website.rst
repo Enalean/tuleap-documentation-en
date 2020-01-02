@@ -99,7 +99,7 @@ Web Site Scripting with PHP
 ```````````````````````````
 
 Project members can build sophisticated project Web sites by using the
-`PHP language <https://secure.php.net>`__. PHP, is becoming extremely
+`PHP language <https://www.php.net/>`__. PHP, is becoming extremely
 popular as a server-side scripting language for the Web. PHP is easy to
 learn, optimized for the Web and interact nicely with SQL databases.
 
@@ -107,7 +107,7 @@ If you decide to embed PHP scripts in your Project Web pages, first make
 sure to use the ".php" extensions for all the files with PHP code in it.
 For pure HTML pages use the "htm" or "html" extensions as usual.
 
-For `security reasons <https://secure.php.net/manual/en/security.php>`__,
+For `security reasons <https://www.php.net/manual/en/security.php>`__,
 your php scripts will only be allowed to access files located in the
 document root of your project (e.g.
 ``/home/groups/projectname/htdocs``).
