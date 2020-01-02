@@ -1,19 +1,14 @@
 ..  _install_el7:
 
-Full Installation
-=================
+Installation of Tuleap Community Edition (TCE)
+==============================================
 
-Why should I use the Tuleap full installation?
-----------------------------------------------
-
-The full installation is the common way to install tuleap.
-It uses your distribution package system and will provide a fully configurable and adjustable
-environment. It is robust so you can deploy production environment this way.
+If you want to try out some of the Tuleap features and if you are a tech enthusiast with the ability to self-support, Tuleap Community Edition is available and offer powerful capabilities for non-critical business process or development needs.
 
 Requirements
 ------------
 
-To install Tuleap you will need a **fully dedicated server**. It can be **virtualized or physical**.
+To install Tuleap Community Edition you will need a **fully dedicated server**. It can be **virtualized or physical**.
 It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a mutualized server
 will certainly cause probleme in both Tuleap and your other applications.
