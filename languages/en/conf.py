@@ -260,6 +260,8 @@ texinfo_documents = [
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
 
+nitpicky = True
+
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
