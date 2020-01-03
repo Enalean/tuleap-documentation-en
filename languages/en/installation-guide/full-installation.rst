@@ -1,14 +1,14 @@
 ..  _install_el7:
 
-Installation of Tuleap Community Edition (TCE)
-==============================================
+Installation of Tuleap 
+======================
 
-If you want to try out some of the Tuleap features and if you are a tech enthusiast with the ability to self-support, Tuleap Community Edition is available and offer powerful capabilities for non-critical business process or development needs.
+If you want to try out some of the Tuleap features and if you are a tech enthusiast with the ability to self-support, Tuleap Community Edition is available and offer powerful capabilities for non-critical business process or development needs. If you need enterprise-class features, scalability and security and if you plan to use Tuleap in a production environment, you should consider `Tuleap Enterprise Edition <https://www.tuleap.org/pricing/on-premise/>`_.
 
 Requirements
 ------------
 
-To install Tuleap Community Edition you will need a **fully dedicated server**. It can be **virtualized or physical**.
+To install Tuleap Community Edition or Tuleap Enterprise Edition, you will need a **fully dedicated server**. It can be **virtualized or physical**.
 It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a mutualized server
 will certainly cause probleme in both Tuleap and your other applications.
