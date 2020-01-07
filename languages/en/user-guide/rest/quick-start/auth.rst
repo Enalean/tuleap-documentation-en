@@ -28,9 +28,10 @@ You can create as many personal access keys as you need for your account prefere
  2. Go to your account preferences
  3. Find the section about personal API access keys
  4. Click on *Generate new key*
- 5. Optionally add description to help you distinguish your new key from the others
- 6. Click on *Generate new key*
- 7. Save the access key somewhere safe. Once you leave or refresh the page there is no way to retrieve it again.
+ 5. Choose the scope *REST*
+ 6. Optionally add description to help you distinguish your new key from the others
+ 7. Click on *Generate new key*
+ 8. Save the access key somewhere safe. Once you leave or refresh the page there is no way to retrieve it again.
 
 If do not need an personal access key anymore or if one your personal access key has been compromised,you can delete
 them any time in the same section.

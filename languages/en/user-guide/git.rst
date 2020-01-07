@@ -14,11 +14,13 @@ read some of the documents listed in the references section (see `Git References
 Git support has been designed to support multiple repositories for a
 given project as well as "Personal repositories" for each developer.
 This is consistent with the Distributed Version Control System
-philosophy which allows to delegate project features to be developped in
+philosophy which allows to delegate project features to be developed in
 separated repositories.
 
-Git access (for both read and write operations) requires a valid SSH key
+Git over SSH access (for both read and write operations) requires a valid SSH key
 to be configured in user account preference. See :ref:`account-maintenance` for details.
+Git over HTTPS access requires your username and ap personal access key with the *Git repository*
+scope. Access keys can be created from your user account preference.
 
 Two types of repositories are available:
 
