@@ -33,7 +33,7 @@ You can create as many personal access keys as you need for your account prefere
  7. Click on *Generate new key*
  8. Save the access key somewhere safe. Once you leave or refresh the page there is no way to retrieve it again.
 
-If do not need an personal access key anymore or if one your personal access key has been compromised,you can delete
+If you do not need an personal access key anymore or if one your personal access key has been compromised, you can delete
 them any time in the same section.
 
 Use of a personal access key
