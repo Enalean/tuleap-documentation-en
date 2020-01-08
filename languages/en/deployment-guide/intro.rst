@@ -9,11 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.10
 ============
 
-.. NOTE::
-
-  Tuleap 11.10 is currently under development.
-
-
 End of support of Digest authentication against Gerrit servers
 --------------------------------------------------------------
 
