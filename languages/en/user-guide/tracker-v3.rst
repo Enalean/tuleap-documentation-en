@@ -7,6 +7,7 @@ Tracker (Legacy)
 
   Tracker v3 are deprected. There is no longer functional update on them.
   Only security bugs might be fixed when possible.
+  They cannot be created anymore.
 
   It's highly recommended to switch to Tracker V5 :ref:`trackers-and-real-time-reports`
 
@@ -931,9 +932,6 @@ the table below:
                                                                                                and project members with Admin. and
                                                                                                Tech. permission on this tracker.
 
- `Tracker Creation <#TrackerFieldUsageManagement>`__                                           Only available to project
-                                                                                               administrators.
-
  `Tracker Administration - General Settings <#TrackerFieldUsageManagement>`__                  Only available to project administrators
                                                                                                and project members with Admin.
                                                                                                permission on this tracker.
@@ -964,223 +962,6 @@ the table below:
 
                             Table: Default Tracker Access Permissions
 
-Tracker Creation
-----------------
-
-Before one can define what fields and field values to use in a tracker
-it must first be created. Tracker creation can be accessed from the
-"Create a New Tracker" menu item that is available either in the public
-part of the tracker or in the Tracker Administration section.
-
-    **Tip**
-
-    When a new project is created on Tuleap a number of
-    trackers are automatically created for this project. This would
-    typically be a bug tracker, a task tracker and a support request
-    tracker. If your project manages this type of artifact please use
-    the predefined trackers first. Of course, you are free to define new
-    fields or customize existing ones in each of the trackers.
-
-To define a new tracker you must provide the following information (see
-`Creation of a new tracker (here a defect tracking system)`_):
-
--  **Name**: this is the name of your tracker. A tracker is typically
-   named after the type of artifact it is going to manage. This name
-   will be used by Tuleap in the title of the various
-   screens of the trackers. Typical examples of tracker names are:
-   Action Requests, Support Requests, Requirements, Defects, Bugs…
-
--  **Description**: A longer description of what this tracker is all
-   about and the type of managed artifacts.
-
--  **Short name**: this is a short name that best describe the type of
-   artifact managed in this tracker. This name must be quite short as it
-   is used in various screens of the Tuleap Tracker like the
-   artifact update form where it appears in the tracker menu and also
-   next to the artifact ID. Following the examples given for the Name
-   field above, short names can be: AR for Action Request, SR for
-   Support Requests, Reqt for Requirements, bug for Bugs…
-
-.. figure:: ../images/screenshots/sc_legacytrackercreatenewtracker.png
-   :align: center
-   :alt: Creation of a new tracker (here a defect tracking system)
-   :name: Creation of a new tracker (here a defect tracking system)
-
-   Creation of a new tracker (here a defect tracking system)
-
-The next step is to decide upon the set of fields available for this
-tracker. In order to avoid the pain of defining the most common type of
-trackers again and again (e.g. Bug tracker, Support Request tracker,
-etc.) Tuleap offers the ability to create a new tracker from
-a set of templates. Those templates are either Tuleap-wide
-templates (also known as site templates) or project specific templates.
-
-**Remark**: using a template doesn't mean you have to stick to the list
-of fields and field values defined in this template. You can always add
-or remove fields or fine-tune the field settings afterwards.
-
--  **Tuleap-wide Template**: these are templates that have
-   been defined by the administrators of the Tuleap site
-   because it is expected that most project needs them. It is also a way
-   to ensure a certain level of harmonization across projects that will
-   make developers' life easier. The list of available templates may
-   vary from one Tuleap site to another but you will
-   typically find templates for Bugs, Tasks, etc. A specific tracker
-   called "Empty" allows you to create a virgin tracker with no
-   predefined fields other than the minimal set of required fields. See
-   `Tuleap-wide Tracker Templates`_ for more explanations on the semantic of those templates.
-
--  **Project Templates**: in case you have already defined a tracker
-   that suits your needs or you have seen a tracker from another project
-   that you'd like to reuse, you just have to specify the project ID and
-   tracker ID either by hand or from the pull down menus and click on
-   the create button to create the exact same tracker in your project
-
-    **Note**
-
-    This does not copy the artifacts of the original tracker
-    but only the field settings.
-
-Tuleap-wide Tracker Templates
------------------------------
-
-The standard trackers provided for each new Tuleap project
-are:
-
--  Bugs
-
--  Patch
-
--  Support Requests
-
--  Tasks
-
--  Scrum Backlog
-
-Each of those templates have predefined fields that correspond to the
-specific work processes around bugs, patches etc. In the following, we
-give a short overview of these different work processes. For each of
-those templates, the Tuleap Team also tried to maintain a
-fair balance between sophistication and ease of use. As a consequence,
-fairly simple and straightforward templates are configured by default
-for all new hosted projects. Then it is up to the project members to
-decide how much information they want to see attached to an artifact and
-customize their tracker configuration accordingly.
-
-The Bug Tracker Template
-````````````````````````
-
-One of the golden rules in a collaborative project environment is to let
-your project community test the software and freely report on any defect
-(or bug) they have seen. The Bug template was developed with this
-objective in mind.
-
-The template Bug Tracker comes pre-configured with a set of fields (used
-or not) that are probably enough for the majority of projects hosted on
-Tuleap. You can either decide that the template is lacking
-some critical fields that you can create or, on the contrary, switch
-some fields to the "Unused" status to make the tracker simpler.
-
-The Patch Tracker Template
-``````````````````````````
-
-The role of the Patch tracker is to let non project members or project
-members with restricted permissions to contribute source code
-modifications to the project.
-
-On how to generate source code patches see the CVS chapter (:ref:`contributing-your-changes-(other-users)`) or the
-Subversion chapter (:ref:`contributing-your-changes-(for-other-users)`).
-
-    **Note**
-
-    *A note to the project team*
-
-    Receiving source code modifications or other contributions from
-    other Tuleap users does not imply that you have to
-    accept the new code and insert it in your main source tree. It is up
-    to the project team to decide what to do with it. One of the
-    interesting features of the Patch tracker is that submitted patches
-    are available to anybody at all time regardless of the final
-    decision of the project team. Therefore any Tuleap
-    visitor is free to download any submitted patch and apply it onto
-    its own version of the software even if the project team has decided
-    not to apply the patch on the main source tree.
-
-The Support Request Tracker Template
-````````````````````````````````````
-
-The Support Request (SR) tracker is one of the communication mechanisms
-that your project should offer to the project community. It allows any
-Tuleap user to ask question to the project team and call for
-assistance.
-
-Tuleap users who have access to the tracker can follow the
-thread of discussions between the other users and the project team. It
-is also possible to review all the SRs that were posted in the past and
-the answer given by the project team. With the Support Request tracker,
-a project team can easily and efficiently coordinate technical support
-activities.
-
-The Task Tracker Template
-`````````````````````````
-
-The Tuleap Task tracker is a task manager and not a project
-management software like CA-SuperProject, MS-Project or other powerful
-and complex desktop products available on the market. The
-Tuleap Task Tracker cannot build a Pert chart, it doesn't
-have any planning capabilities. It is rather a time sheet tool which
-allows project members to track their time and manage other things like
-weekly TODO list for instance.
-
-However the Tuleap Task Tracker offer a number of features
-that makes it very complementary with the above mentioned project
-planning tools:
-
--  Like all Tuleap tools, the Task Tracker is entirely web
-   based. Therefore any project member can update his/her time sheet
-   regardless of its physical location.
-
--  Tasks can be managed by authorized project members.
-
--  Each project member has its own time sheet showing all open tasks
-   assigned to her, their priority, description, start and end dates,
-   percentage completion, related tasks, follow-up comments and a full
-   audit trail of the past changes.
-
--  Task data can be collected by the project leader(s) at any point in
-   time and exported out of the Tuleap project thanks to the
-   Project Data Export facility (see :ref:`project-data-export`). This allows for an easy
-   generation of progress reports or project re-planning.
-
-The Scrum Backlog Template
-``````````````````````````
-
-Codendi makes it easy to implement the Scrum methodology, by providing a
-Scrum Backlog tracker to each project. You will find a comprehensive
-description of Scrum on
-`Wikipedia <https://en.wikipedia.org/wiki/Scrum_(development)>`__.
-
-The Scrum Backlog tracker contains artifacts called "User Stories", that
-describe needs expressed by the customers of the project. The tracker
-has been customized to capture customer requirements: it is possible to
-define the customer value of each story, its acceptance criteria, its
-effort, its current backlog (Product Backlog or Sprint Backlog), etc.
-
-Other optional fields are available, and of course, each project may
-customize the tracker to fit the way it implements the methodology
-
-At the beginning of a Scrum project, each customer user story must be
-stored in the Product Backlog ('Backlog' field of the tracker). During
-the first Sprint Meeting, a few stories are selected by the team to be
-implemented in the first iteration. They are moved to the "Sprint
-Backlog" ('Backlog' field), and evaluated ('Initial Effort'), or even
-duplicated into smaller stories. The team then affects the stories to
-team members ('Owner') and can start developing.
-
-At the end of the Sprint (after two to four weeks), the team meets for
-the new Sprint Meeting. User stories selected in the past Sprint are
-updated, and new stories are selected for the next Sprint.
-
 Tracker Administration
 ----------------------
 
@@ -1193,8 +974,7 @@ Trackers Admin" menu item in the Tracker Menu bar.
 The top level administration screen shows a list of existing trackers
 for your project. From this page, existing trackers can be configured
 and new ones can be created (see `Tracker Administration - Top Level Page`_). This section focuses on the
-configuration of an existing tracker. Creation of new tracker is covered
-in `Tracker Creation`_.
+configuration of an existing tracker.
 
 .. figure:: ../images/screenshots/sc_trackertopadminpage.png
    :align: center
