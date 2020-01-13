@@ -932,9 +932,6 @@ the table below:
                                                                                                and project members with Admin. and
                                                                                                Tech. permission on this tracker.
 
- `Tracker Creation <#TrackerFieldUsageManagement>`__                                           Only available to project
-                                                                                               administrators.
-
  `Tracker Administration - General Settings <#TrackerFieldUsageManagement>`__                  Only available to project administrators
                                                                                                and project members with Admin.
                                                                                                permission on this tracker.
@@ -977,8 +974,7 @@ Trackers Admin" menu item in the Tracker Menu bar.
 The top level administration screen shows a list of existing trackers
 for your project. From this page, existing trackers can be configured
 and new ones can be created (see `Tracker Administration - Top Level Page`_). This section focuses on the
-configuration of an existing tracker. Creation of new tracker is covered
-in `Tracker Creation`_.
+configuration of an existing tracker.
 
 .. figure:: ../images/screenshots/sc_trackertopadminpage.png
    :align: center
