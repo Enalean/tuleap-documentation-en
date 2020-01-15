@@ -42,6 +42,7 @@ Q3 2020               Status   As platform administrator, what should I do ?
 Trackers v3           Removed  Migrate to Trackers v5
 Subversion (SVN Core) Removed  Switch to SVN Plugin
 ===================== ======== =============================================
+
 ==================== =============== =============================================
 Q4 2020              Status          As platform administrator, what should I do ?
 ==================== =============== =============================================
