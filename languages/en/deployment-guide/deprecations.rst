@@ -36,8 +36,15 @@ MySQL 8                       Start of support  (Optionally switch to MySQL 8)
 Realtime server using NodeJS  Replaced          (To be announced)
 ============================= ================= =============================================
 
+===================== ======== =============================================
+Q3 2020               Status   As platform administrator, what should I do ?
+===================== ======== =============================================
+Trackers v3           Removed  Migrate to Trackers v5
+Subversion (SVN Core) Removed  Switch to SVN Plugin
+===================== ======== =============================================
+
 ==================== =============== =============================================
-S2 2020              Status          As platform administrator, what should I do ?
+Q4 2020              Status          As platform administrator, what should I do ?
 ==================== =============== =============================================
 PHP 7.3              End of support  Switch to PHP 7.4
 Internet Explorer 11 End of support  End-users should switch to Firefox or Chrome
@@ -53,7 +60,5 @@ MySQL 5.7 End of support  Switch to MySQL 8
 The Future            Status   As platform administrator, what should I do ?
 ===================== ======== =============================================
 SOAP API              Removed  End-users should switch to REST API
-Trackers v3           Removed  Migrate to Trackers v5
-Subversion (SVN Core) Removed  Switch to SVN Plugin
 PHP Wiki              Removed  Switch to Mediawiki
 ===================== ======== =============================================
