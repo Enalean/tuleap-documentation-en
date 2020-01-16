@@ -425,3 +425,32 @@ to your context:
         -H 'Content-Type: application/json' \
         -H 'Accept: application/json' \
          --data-binary "{ \"state\": \"$status\", \"token\": \"$token\"}"
+
+You might also to check out the community-maintained
+`CS-SI/tuleap-jenkins-lib <https://github.com/CS-SI/tuleap-jenkins-lib>`_ library
+which makes it easier to configure your pipeline. For example, with a declarative pipeline:
+
+.. sourcecode::
+
+    # Example with the CS-SI/tuleap-jenkins-lib library
+    # See https://github.com/CS-SI/tuleap-jenkins-lib
+    pipeline {
+        environment {
+            GIT_TOKEN = credentials('git-token')
+        }
+        # Add you own build/test stages instead of this
+        stages {
+            stage('Build') {
+                steps {
+                    sh('make all')
+                }
+            }
+        }
+        post {
+            always {
+                sendTuleapStatus gitToken: this.env.GIT_TOKEN,
+                                tuleapServer: 'https://tuleap.example.com',
+                                targetRepo: 'project-name/repo-name.git'
+            }
+        }
+    }
