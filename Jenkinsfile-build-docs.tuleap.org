@@ -12,15 +12,10 @@ pipeline {
         stage('Build and publish image') {
             steps {
                 script {
-                    def image
-                    withCredentials([string(credentialsId: 'google-analytics-uid', variable: 'GA_ID'),
-                                    string(credentialsId: 'google-analytics-content-group-index', variable: 'GA_CONTENT_GROUP_INDEX'),
-                                    string(credentialsId: 'google-analytics-content-group-name', variable: 'GA_CONTENT_GROUP_NAME')]) {
-                        image = docker.build(
-                            'tuleap-documentation.docs.tuleap.org',
-                            "-f docs.tuleap.org/Dockerfile --build-arg GA_ID='${env.GA_ID}' --build-arg GA_CONTENT_GROUP_INDEX='${env.GA_CONTENT_GROUP_INDEX}' --build-arg GA_CONTENT_GROUP_NAME='${env.GA_CONTENT_GROUP_NAME}' ."
-                        )
-                    }
+                    def image = docker.build(
+                        'tuleap-documentation.docs.tuleap.org',
+                        '-f docs.tuleap.org/Dockerfile .'
+                    )
                     docker.withRegistry('https://nexus.enalean.com:22000', 'ci-write') {
                         image.push()
                     }

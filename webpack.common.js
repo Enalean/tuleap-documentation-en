@@ -24,7 +24,6 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
     entry: {
-        "accept-cookies": "./js/accept-cookies.js",
         "scroll": "./js/scroll.js",
         "nav": "./js/nav.js",
         "theme": "./js/theme.js",
