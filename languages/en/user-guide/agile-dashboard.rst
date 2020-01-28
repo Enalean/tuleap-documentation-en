@@ -11,9 +11,9 @@ It is highly configurable and adapts to almost any agile team.
 Features
 --------
 
-The Tuleap Agile Dashboard has many features including a cardwall, a burndown and a backlog planner.
+The Tuleap Agile Dashboard has many features including a taskboard, a burndown and a backlog planner.
 
-The cardwall allows for the visual monitoring of an artifact's progress, the individuals who are working on it
+The taskboard allows for the visual monitoring of a story or task's progress, the individuals who are working on it
 or the remaining effort.
 
 Interactive actions currently include on the fly assigning, edition of the remaining effort and
@@ -171,24 +171,68 @@ To configure a velocity chart please refer to (:ref:`velocity_administration`) p
 
 Daily project update
 ````````````````````
-The cardwall (see `Cardwall`_) lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
+The taskboard lets the development team manipulates the cards with drag'n drop to change their status, or assign the tasks
 and change the remaining effort on the fly, that is to say staying on the same page.
 
-The team can configure the display of the assignment by choosing between the display of the username or the avatar.
-
-This configuration will be the same for all the sprints, but can be changed at any moment thanks to the "Settings"
-select box on the right.
-
-Finally, it offers the possibility to filter the cards thanks to the search at the top right of the cardwall. You will be able to filter by
-assignee for instance, or by the type of tracker (display only the tasks or only the user stories).
-
-.. figure:: ../images/screenshots/agiledashboard/sc_ad_cardwall.png
+.. figure:: ../images/screenshots/agiledashboard/taskboard/sc-taskboard.png
    :align: center
-   :alt: Cardwall
-   :name: Cardwall
+   :alt: Taskboard
+   :name: Taskboard
    :width: 800px
 
-   Agile Dashboard: Cardwall
+.. NOTE::
+
+   Taskboard is replacing the legacy Cardwall feature. Both don't offer the same feature set yet.
+   Please refer to the following table for a list of differences:
+
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Feature                                                                               | Cardwall | Taskboard |
+   +=======================================================================================+==========+===========+
+   | Display stories, bugs, … as cards on a board                                          | ✓        | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Display expanded cards (card fields semantic)                                         | ✓        |           |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Display initial effort                                                                |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Display number of cards in a column                                                   |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Display in fullscreen                                                                 | ✓        | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Change status of a card with drag 'n drop                                             | ✓        | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Reorder cards with drag 'n drop                                                       |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Edit in place the assignees                                                           | ✓        | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Edit in place the remaining effort                                                    | ✓        | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Edit in place the title                                                               |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Edit or add card with a modal                                                         | ✓        |           |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Add in place a card in a given column                                                 |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Filter cards                                                                          | ✓        |           |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Progress bars of the milestone                                                        | ✓        |           |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Progress bars of the story (or equivalent parent card)                                |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Sticky (always visible) headers (both columns and swimlanes)                          |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Hide closed items                                                                     |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Expand/Collapse swimlanes                                                             |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | Expand/Collapse columns                                                               |          | ✓         |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+   | IE11 support                                                                          | ✓        |           |
+   +---------------------------------------------------------------------------------------+----------+-----------+
+
+.. attention::
+
+  Taskboard is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
 
 .. _kanban:
 
