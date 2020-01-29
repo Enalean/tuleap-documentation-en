@@ -1,7 +1,328 @@
 .. _project-administration:
 
-Project Administration
-======================
+Project Management
+==================
+
+Creating a New Project
+----------------------
+
+So - you are a freshly registered Tuleap user and you want
+to make your developer or project leader life easier. In other words you
+want to:
+
+-  Avoid the pain and cost of creating your own project infrastructure
+   (with servers and backup)
+
+-  Avoid paying a premium price for commercial version control, defect
+   tracking and task management tools
+
+-  Quickly setup a project environment that you can share with your
+   colleagues, your partners, your contractors or your customers where
+   ever they are while keeping your information safe and under control.
+
+-  Make your organization globally more productive and efficient by
+   possibly letting others re-use your software and build on it.
+
+If any of these points is appealing to you then you should definitely
+host your software project on Tuleap. Let's see how you can
+do that.
+
+.. _project-registration:
+
+Project Registration
+````````````````````
+
+Before you create a new project you must be a registered user (see :ref:`classes-of-citizens`).
+You then login and select the item "+ New Project" in the "Projects" dropdown of Tuleap Main Menu.
+
+The project registration is an easy process:
+
+
+-  **Project Name**
+
+   Give the project short name and the project full name. Carefully read
+   the restrictions that apply to both names before you type anything.
+   The full name can be changed at any time in the life of the project.
+   The short name cannot [#f1]_. So think about it twice before you make a
+   decision!
+
+-  **Project Template**
+
+   You already registered a Tuleap project and would now
+   like to reuse the same configuration (services, trackers, documents,
+   references, ...) ? Make your old project a template project (see :ref:`project-type`)
+   and you will find it here in the list of available project templates.
+   Check your old project as template and your new registered project
+   will be staffed as you are used to. If you don't want to reuse a
+   specific template just keep the Default Tuleap Template
+   checked and go on.
+
+   The new project will use exactly the same configuration as the template.
+   This includes that:
+
+   -  the new project inherit the same dashboards and widget for project home page
+
+   -  the new project is classified into the same trove categories as
+      the template project (see :ref:`software-map-(or Project Tree)`).
+
+   -  the same services are enabled (see :ref:`service-configuration`). Unavailable services won't
+      be present. Disabled services will be disabled by default.
+
+   -  the same reference patterns are defined (see :ref:`reference-overview`).
+
+   -  the same project specific user groups exist (see :ref:`user-groups`).
+
+   -  all trackers with the option "instantiate for new projects" are
+      copied with their associated fields, field values, field
+      dependencies, reports, and permissions (see ?).
+
+   -  the same forums are created (but the messages are not copied).
+
+   -  the documents, as well as the document tree will be present.
+
+   -  the SVN admin settings are copied but
+      the emails and the SVN access permissions are not copied.
+
+   -  the Git admin settings and global permissions are copied, but
+      the emails and the Git access permissions are not copied.
+
+   -  the file packages and their permissions are copied
+
+   -  the CVS admin settings are copied (preamble, tracking mode, CVS
+      Watch Mode), but the emails and the CVS permissions are not
+      copied.
+
+-  **Project Description**
+
+   This is where the rubber hits the road! Tell us about your project.
+   Give an accurate description. This is really important if you want to
+   maximize the chance of re-use by others. Also list any information
+   related to Intellectual Property like Invention Proposal or Patents
+   related to the software whether pending or already filed. Give the
+   list of software needed (whether internal or 3rd party) to make your
+   own software run properly. And the last field is entirely for you.
+   Write down all the things that you consider as crucial for your
+   project or for the community of users.
+
+
+-  **Project Categorization**
+
+   Some categories can be mandatory for project creation.
+   These categories are managed by your system administrator.
+   More information about categorization in :ref:`software-map-(or Project Tree)`.
+
+-  **Software Policy**
+
+   Most of the time the only valid choice here is the default one:
+   "SYS\_ORG\_NAME Code eXchange Policy". As explained earlier in this
+   document the Tuleap Team assisted by SYS\_ORG\_NAME
+   lawyers have carefully crafted the Tuleap Policy and it
+   is very unlikely that you need to create your own. If you do you'll
+   have to talk to us and to the SYS\_ORG\_NAME Legal Department to
+   validate it. A number of truly Open Source licenses are also
+   mentioned in the list. Finally you can also choose you own licensing
+   conditions.
+
+-  **Final Confirmation**
+
+   Last chance to review the submitted information before you send it to
+   the Tuleap Team for validation. Don't worry: the project
+   members can later update all pieces of information shown on this
+   page.
+
+After you validate the project registration, the Tuleap Team
+reviews the information you submitted and decides to approve it or not.
+This process can take up to 24 hours but in most cases it's less than a
+couple of hours. So far all projects have been accepted so there is
+little to fear ... Shortly after the Tuleap Team approval
+you'll receive an e-mail summarizing the characteristics of your project
+including a pointer to your new "Project Dashboard" page. Bookmark it in
+a safe place!
+
+Post-Registration Configuration
+```````````````````````````````
+
+The first thing to do after you receive the confirmation for your
+project registration is to visit the "Project Dashboard" page (URL
+included in the e-mail) and finish the configuration of your project.
+The 2 following actions are the most frequent ones that have to be taken
+after a project is registered:
+
+-  **Categorize your project in the Software Map**
+
+   If you haven't done it during the project registration process, you
+   should do it now! Your project categorization appears on your
+   "Project Dashboard" page. To categorize your project select the
+   "categorize it now" link and fill out the category form fields.
+
+-  **Build the project team**
+
+   Once a project is created, the creator is assigned the role of
+   project administrator on this project. It is her responsibility to
+   define who are the project members and what their permissions are.
+   This can be done by accessing the "Project Admin" page, typing the
+   names of all the registered users promote as team members and then
+   define their permissions.
+
+.. [#f1]
+   Actually it can but you have to ask the Tuleap Team to do
+   it for you.
+
+.. _portfolio:
+
+Portfolio
+---------
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+.. NOTE::
+  This widget is still under development.
+
+You may want to perform a search based on several trackers and several projects.
+A widget "Cross tracker search" enables you to do that.
+
+.. figure:: ../images/screenshots/widget/crosstracker-widget.png
+    :align: center
+    :alt: Example of dashboard with cross-tracker widget
+    :name: Example of dashboard with cross-tracker widget
+
+If you don't fill a query, the request will retrieve "Open" artifacts.
+If you use the query, the retrieved artifacts will match the query and not only the "Open" ones.
+The query uses the TQL language. You can find more information about the query format :ref:`here <tql>`.
+
+The search respects Tuleap permissions model: you can choose only projects you are member of and trackers you can read.
+If you can't read all trackers or all columns needed by the query, an error message will be displayed.
+
+After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
+
+CSV Export
+``````````
+
+Once a report is saved, an "Export CSV" button will appear. Click it to download a CSV file representing all the artifacts you can see on the widget.
+
+.. figure:: ../images/screenshots/widget/crosstracker-widget-export-csv.png
+	:align: center
+	:alt: CSV Export button
+	:name: CSV Export button
+
+.. note:: The CSV file contains more information than you can see on the widget. It will export Tracker Semantics and match fields based on their types and names.
+
+The following information will be exported for all artifacts and will always be filled:
+
+- Artifact Id
+- Project label
+- Tracker label
+- Submitted by (Who submitted the artifact)
+- Submitted on (Date of submission)
+- Last update by (Who updated the artifact)
+- Last update date
+
+:ref:`Tracker Semantics <status-semantic>` will be exported when defined in the tracker:
+
+- Title semantic
+- Description semantic
+- Status semantic
+
+When any of those semantic is not defined in a tracker, it will have an "empty" value in the CSV file.
+
+Then, the following rules will be used to find similar fields in the selected trackers:
+
+	* When two fields have the same short name (not Label, See :ref:`Tracker Administration<tracker-admin-field-edition>` for details), the same type and are bound to the same kind of values, then they will be considered as similar fields and will be exported in the same column of the CSV file.
+	* Fields that are not considered similar with another field are skipped and won't be exported in the CSV file. That means that fields that are only present in one tracker will be skipped.
+	* Fields that are selected as a Semantic will be skipped so that they are not exported twice.
+
+For example, let's consider that we have selected a "User story" tracker in project "Alpha" and another "User story" tracker in project "Beta". I will name them "User story Alpha" and "User story Beta" to simplify things.
+
+- Tracker "User story Alpha" has an **integer** field named "hours_spent" and Tracker "User story Beta" also has an **integer** field named "hours_spent". Both fields will be considered as similar and will be exported in the same column.
+- Tracker "User story Alpha" has an **integer** field named "total_effort" and Tracker "User story Beta" has a **float** field named "total_effort". Both fields do not have the same type and will be skipped.
+- Tracker "User story Alpha" has a selectbox field named "notify" bound to **User groups** and Tracker "User story Beta" has a selectbox field named "notify" bound to **Users**. Both fields have the same name and type, but are not bound on the same kind of value. They will be skipped.
+
+.. attention::
+
+	Only some field types can be exported as CSV in Cross-tracker reports. Here is the list of supported field types:
+
+	- String field
+	- Text field
+	- Integer field
+	- Float field
+	- Date field (with or without time displayed)
+	- Selectbox field (but **not Multi Select Box**)
+	- Radio button field
+
+	All other fields are not supported yet and will be skipped.
+
+Special cases
+~~~~~~~~~~~~~
+
+- Tracker "User story Alpha" has a text field named "details" which is defined as Description Semantic.
+- Tracker "User story Beta" has two text fields named "details" and "description". The "description" field is defined as Description Semantic.
+- The "details" field will be skipped because it is selected as a semantic in tracker "User story Alpha".
+
+
+Project Dashboard
+-----------------
+
+The project dashboards are the entry point of a Tuleap hosted
+project. And, for any project, they are the only pages you need to know
+about. From those pages both ordinary registered users and project
+members/administrators can access all project resources and services.
+Unlike the project administration page, the dashboards are
+public and can be visited by any Tuleap user including
+anonymous ones. In some sense the dashboard display the public
+face of a project.
+
+.. _project-dashboard-content:
+
+Project Dashboard Content
+`````````````````````````
+
+A sample project dashboard is available below. The page is split in
+several areas:
+
+-  The header with the project name and some indicators (project scope, number of members, …).
+
+-  A navigation bar to access to each dashboard. For project administrators, this is where they can
+   add a new dashboard, and edit or delete a dashboard. They can also add widgets to the current dashboard.
+
+-  The various information presented by widgets.
+
+.. figure:: ../images/screenshots/project-dashboards.png
+   :align: center
+   :alt: An example of project dashboard
+   :name: An example of project dashboard
+
+   An example of project dashboard
+
+Tuleap allows project admins to personalize the dashboards. The content
+of the page is made of *widgets*. All widgets can be moved, collapsed or
+removed. Some of them can provide an rss feed or be edited.
+
+Other users than project admins will see the corresponding static page.
+The widgets will be the same, in the same position, but they won't be
+able to modify the page.
+
+New widgets can be added through the dropdown entry "Add widget". Here is an
+example of available widgets for the project dashboard:
+
+-  **Public Areas**: this is an iconic list of all available services
+   for this project along with some information next to it. Click on any
+   of this item to access a service. The role of this area is pretty
+   much equivalent to the sidebar except that it shows additional information
+   about each of the service (e.g. list of trackers, …)
+
+-  **Heartbeat**: the list of latest items updated in this project. This
+   is helpful to have an overview of the activity of the project. Please note
+   that not all services can push information in this widget; as of today
+   Artifacts and Git activities are listed. Permissions apply, it means that
+   the content of hearbeat will change from one user to another according to
+   their permissions.
+
+-  **RSS Reader** allows project admins to include public rss (or atom)
+   feeds. For example the reader can display a feed published by
+   external tools used by the project (like continuous integration).
 
 Whenever you enter the Project Dashboard of a given project or any of
 its service you'll see a menu item called Admin appears in the project
@@ -407,19 +728,65 @@ System services cannot be deleted. However, you can disable them and
 they will not appear in the sidebar.
 
 
-Label
------
-You can administrate here all your project labels:
-  - change color badge
-  - delete unused or obsolete labels
+Project Labels
+--------------
 
-.. figure:: ../images/screenshots/widget/label-administration.png
-   :align: center
-   :alt: An example of project label usage
-   :name: An example of project label usage
+Projects labels enables you to add labels on items.
+With the associate widget you can see all items corresponding to given labels.
 
-To see more about project label please see (:ref:`project-labels`) section
+.. NOTE::
 
+    For now labels are only available for pullrequest service
+
+Add a label
+```````````
+
+You can add labels on items by click on the "+" icon.
+If label does not exists in project, it will be automatically created.
+The input will suggest you existing project labels.
+
+.. figure:: ../images/screenshots/widget/add-label.png
+    :align: center
+    :alt: Example of adding a label in pull request
+    :name: Example of adding a label in pull request
+
+Remove a label
+``````````````
+You can remove a label by clicking on the cross in label badge.
+
+Administration of labels
+````````````````````````
+
+If your project can use the Git pullrequest feature, the administration of labels is available for project administrators.
+This administration panel allows project administrators to:
+
+* Update label
+* Add color for a label
+* Remove a label
+* Create a new label
+
+.. figure:: ../images/screenshots/label/label-administration.png
+    :align: center
+    :alt: Administration of labels
+    :name: Administration of labels
+
+.. _label_widget:
+
+Label widget
+````````````
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+In your project dashboard, you can add several widgets to track your items:
+
+
+.. figure:: ../images/screenshots/widget/label-dashboard.png
+    :align: center
+    :alt: Example of dashboard with labels widgets
+    :name: Example of dashboard with labels widgets
 
 Reference Pattern Configuration
 -------------------------------
@@ -496,10 +863,10 @@ Here is a list of predefined reference patterns:
    specify the project in the reference (e.g. 'rev #myproj:123'). The
    reference links to the subversion revision details page: log message,
    impacted files, link to diff view, etc.
-   
+
 -  **svn #repo_name/num**: Reference to Subversion plugin repository named 'repo_name'
    revision number 'num'.
-   
+
 -  **wiki #wikipage and wiki #wikipage/num**: Reference to a wiki page
    named 'wikipage'. The second format allows one to specify a wiki page
    version. Wiki pages are project specific, so if you need to reference
@@ -656,6 +1023,9 @@ pattern must be re-created if you need to use it again.
 System reference patterns cannot be deleted. However, you can disable
 them so that they will not be extracted.
 
+
+.. _software-map-(or Project Tree):
+
 Categories
 ----------
 
@@ -663,6 +1033,13 @@ In "Categories" tab, you can categorize your project. You can define up to 3
 values for each of the criteria used in the Software Map. If you
 cannot find any matching value in the predefined list do not hesitate to
 contact the Tuleap Team.
+
+Software map will allow users to find your project with the chosen categories.
+
+.. figure:: ../images/screenshots/sc_softwaremap.png
+   :align: center
+   :alt: Software Map sample browsing
+   :name: Software Map sample browsing
 
 .. _project-data-export:
 
@@ -748,3 +1125,379 @@ can also be adjusted to show more or less access log history.
    :name: Sample Access Log
 
    Sample Access Log
+
+Project Links
+-------------
+
+Project Links superimpose a structure onto Tuleap project workspaces
+making easily visible the relationships between projects, and they can
+simplify finding related project. Applications include:
+
+-  Project families so that a parent project workspace can gain easy
+   access to its child projects (for example for programme management).
+-  Rings of interest, where several projects may decide they have
+   sufficient in common that they wish to be related (e.g. projects that
+   use the same technology), but none of them is strictly a master, and
+   each is free to join or leave the ring.
+-  Linking a product-related workspace with a support project that
+   covers a number of products - i.e. an easy linkage from the product
+   to its support and from generalised support to a specific product
+   (note that this is a simplified project family, with each project
+   showing the other as a relation).
+
+To create a project relationship, a project first defines a link type
+and then assigns that link type to as many projects as it wishes. The
+link type is named in any way (except it must be unique within the
+project), for example "Sub-projects", "Related projects", "Division",
+"Team", "C++ Projects". The main use of the name is as a heading when
+the linked projects are listed.
+
+When referring to a relationship link, the project that administers the
+link is the owner and the project referenced by the link is the target
+of the link. A link type also specifies a reverse name, which is used
+when a project lists those of which it is the target. For example
+"Children" may be the name of a link type and "Parent" the reverse link
+name for that same link type. Projects linked this way would be listed
+under "Children" in the owner project, but those projects would see the
+(reverse) relationship as "Parent".
+
+To create a "ring of interest", someone must take responsibility to
+create (and administer) a ringmaster project (which behaves just as a
+parent project in a project family but its only function is to be the
+owner project links) - the ring administrator would normally take
+responsibility to be the ring animator (the one who makes the ring works
+well). To join a ring of interest, a project must request the ring
+animator to create a relationship with it in the ringmaster project.
+
+When a new project is created from a template project it inherits a copy
+of all the project links (and link types) from the template.
+Additionally, any project that references a template as a target will
+gain a link to the new project (it means that the project wants all
+projects created from the template to be linked as the template is).
+Thus a master project may keep tabs on all projects created from a
+template, and a ring may automatically expand. There is also a mechanism
+that allows projects to resynchronise link types with their template.
+Newly created links are highlighted with a faint yellow star - mainly to
+highlight those created from template links.
+
+A project shows reverse linkages (those projects for which it is the
+link target) on the summary page.
+
+Terms and Definitions
+`````````````````````
+
+=====================================   ==========================================
+ Term                                   Definition
+=====================================   ==========================================
+**Data Aggregation**                    The process of collecting data from
+                                        related projects for display in a
+                                        collated form.
+
+**Link Administrator**                  The users who are allowed to create link
+                                        types and to modify project linkages -
+                                        project administrators are automatically
+                                        link administrators.
+
+ **Link Type**                          The data item that defines the
+                                        properties of a project linkage and
+                                        gives it a name. They are defined within
+                                        a project, and are inherited from a
+                                        template.
+
+ **Owner**                              The project that is responsible for
+                                        creating and administering a link.
+
+**Project Family**                      A strict hierarchy where there is a
+                                        parent project with one or more child
+                                        (or sub-) projects.
+
+ **Project Link / Relationship Link**   The data item that joins one project
+                                        with another to create related projects
+                                        - an instance of a project link type
+
+ **Related Projects**                   Two projects for which there is a link
+                                        entry in at least one of them pointing
+                                        to the other.
+
+ **Reverse name/linkage**               The name (defined in the owner project)
+                                        to be used to describe the relationship
+                                        within its target projects' context
+                                        (e.g. parent and children).
+
+ **Ring of interest**                   A group of projects that have declared
+                                        themselves as having something in common
+                                        and are linked together to share
+                                        information.
+
+ **Ringmaster**                         A project that exists (only) so that
+                                        other projects may reference it to
+                                        become members of a ring.
+
+ **Target**                             The project that is the subject of a
+                                        link from another project.
+=====================================   ==========================================
+
+      Project links terms and definitions
+
+Creating links
+``````````````
+
+A project administrator may add new related projects by using the
+following procedure:
+
+On the 'Project Links Configuration' page of your master project, first
+set up at least one link type (if none already exists) by clicking 'Add
+a project link type'.
+
+Then tick the "Create Project links from this project" box and follow
+this process:
+
+-  go and find a project you want to link by any means you like (via My
+   Personal page, project tree, browsing, favorites, ...)
+-  click on the "link to this project" button/icon on the summary page
+-  this takes you back to the context of the master project, there you
+   select the link type (from the presented list) and "add" the link
+-  either go and find another project you want to link to (repeating the
+   above steps), or uncheck "link to this project"
+
+Note that "link to this project" is a personal setting, not a project
+one, so you can leave it checked all the time if you wish, which leaves
+visible in all projects visited the "link to this project" button/icon
+on the summary page. Checking it in another project just makes that one
+the future master, there's no need to uncheck it first.
+
+Link Administration
+```````````````````
+
+Administration of the linkage belongs to the link owner project, the
+project to which the link points is called the target project (the link
+target).
+
+Project administrator users are automatically link administrators.
+
+On the (link) administration page, the project's link administrator user
+may:
+
+-  Add new link types.
+-  Modify (including change the link type of) existing relationships
+   with target project.
+-  Delete individual project relationships (i.e. remove them from the
+   list of related projects).
+-  Delete relationship types - all referenced projects with that
+   relationship are disconnected (i.e. the whole relationship is
+   deleted).
+-  Refresh link types from the project's template (if it has one, see
+   details below)
+-  Clone link type: creates an exact copy of a link type (with a
+   different name)
+-  Modify link types (all attributes)
+
+Note that a project relationship linkage has an explicit direction
+(owner project and target project); only the owner project link
+administrator can establish and remove project links.
+
+Ring Administration
+```````````````````
+
+A ringmaster project is a special type of project that just displays the
+list of projects linked to it using a ring-type link.
+
+Template Projects
+`````````````````
+
+The following are inherited from a template project at project creation:
+
+-  Project link types
+-  Related project
+
+If a template project is the target of a relationship, the new project
+is (automatically) added to that linkage at project creation.
+
+When a project is refreshed from its template, the following actions are
+proposed to the user for individual confirmation:
+
+-  Link types defined in the template and not present in the target
+   project are added (thus types recently added to the template can be
+   adopted into the project).
+-  Link types sharing a name with the template project are replaced with
+   the template ones (i.e. types with the same name in the template and
+   project are assumed to be the same; and it is assumed that the
+   template is the master, so they are copied from the template
+   overwriting the project's version, if confirmed)
+-  Linked projects in the template that are not linked to by the project
+   are added.
+-  Projects that specify the template as target but do not link to the
+   project are identified for information only (i.e. if the project were
+   being newly created, it would be added automatically to the master
+   project's links, but when refreshing we can't be certain that it has
+   not been deleted by that project, nor that it is really wanted as a
+   link).
+-  Ringmaster projects referenced by the template are offered to join
+   the ring.
+
+Note: link types that are defined in the target project but not in the
+template project are neither modified nor deleted - no proposal is made
+to the user; they are listed for information only.
+
+No mechanism is proposed for a template project to force an update upon
+its offspring; the template administrator user must ask the project
+administrators to do the refresh themselves.
+
+.. _project-web-site:
+
+Project Web Site
+----------------
+
+ .. warning:: Enabling this feature has major security consequences, as such the
+    feature is disabled by default. It is **strongly** advised to leave it disabled.
+
+
+Visiting a Web Site
+```````````````````
+
+When a new project is created on Tuleap a project specific
+Web Site is created as well. You can access a project Web site in 2
+different ways:
+
+-  By forming the following URL in your favorite Web browser (where
+   projectname is your project short name):
+
+   ::
+
+       http://projectname.tuleap.example.com
+
+
+   Or, if your server is setup in secure mode:
+
+   ::
+
+       https://projectname.tuleap.example.com
+
+
+-  Click on the "Home Page" link in the Project Main menu at the top of
+   the Project Dashboard.
+
+If the project team has not yet created its own Web pages, you'll see
+the default project home page informing you that the site will come soon
+as well as a link back to the Tuleap site.
+
+Web Site Creation
+`````````````````
+
+Directory Structure and Location
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each project has its own specific location where to store their
+collection of HTML pages along with the images or related data files and
+document that comes with it. The location of the directory where to
+store all these documents is:
+
+::
+
+    /home/groups/projectname
+
+If you use your Shell Account (see :ref:`shell-account`) to log into the Tuleap
+server and place yourself in this directory with the Unix command "cd
+/home/groups/projectname" you'll see 3 subdirectories:
+
+-  **htdocs**: this is where you must place all your HTML pages
+   including those with embedded PHP or SSI instructions (see below for
+   more details). All the images, icons or documents used or referenced
+   in your Web pages must also be stored in this directory (or in any
+   sub-directory under htdocs). In the Apache jargon the directory
+   ``/home/groups/projectname/htdocs`` is the Document Root of your Web
+   Site.
+
+       **Tip**
+
+       Apache is the HTTP server developed by the Apache Consortium. It
+       is available under an Open Source license and is by far the most
+       popular Web server in the world with more than 60% of the market
+       share. For more information on Apache see
+       `https://httpd.apache.org <https://www.apache.org>`__
+
+   Apache expects your home page to have one of the following name:
+
+   -  ``index.html, index.htm`` for pure HTML pages
+
+   -  ``index.shtml`` for pages using Apache SSI extensions
+
+   -  ``index.php`` if you use embedded PHP scripts
+
+   If your own home page is called index.php then rename the default
+   index.php file created by Tuleap into something else by
+   using the following commands from your Shell Account:
+
+   ``cd /home/groups/projectname/htdocs mv index.php index_default.php``
+
+-  **cgi-bin**: this directory is where you must place all your CGI
+   scripts. CGI scripts can be written in a number of languages like
+   Perl, Python, Shell or even C.
+
+-  **log**: this is a reserved directory. Do not put any of your files
+   in it.
+
+Web Site Scripting with PHP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Project members can build sophisticated project Web sites by using the
+`PHP language <https://www.php.net/>`__. PHP, is becoming extremely
+popular as a server-side scripting language for the Web. PHP is easy to
+learn, optimized for the Web and interact nicely with SQL databases.
+
+If you decide to embed PHP scripts in your Project Web pages, first make
+sure to use the ".php" extensions for all the files with PHP code in it.
+For pure HTML pages use the "htm" or "html" extensions as usual.
+
+For `security reasons <https://www.php.net/manual/en/security.php>`__,
+your php scripts will only be allowed to access files located in the
+document root of your project (e.g.
+``/home/groups/projectname/htdocs``).
+
+Web Site Publishing
+~~~~~~~~~~~~~~~~~~~
+
+You can use various methods to publish your Web pages on your
+Tuleap Web site:
+
+-  Remote editing with HTML capable editors like Netscape or Mozilla
+   Composer, Microsoft FrontPage or Emacs with transparent ftp access
+
+-  Local editing on your machine and transfer of the files either via
+   ftp or, even better, via scp
+
+-  Small changes to web pages can be made from the shell account on
+   Tuleap, using emacs or vi, but substantial editing is
+   discouraged.
+
+Local Editing and Remote Transfer
++++++++++++++++++++++++++++++++++
+
+For those of you who use an HTML editing tool that has no built-in
+export facility you can transfer your HTML files by other means.
+
+-  **FTP**: this is the simplest method for transferring your Web pages
+   to the Tuleap remote location. Use ftp to connect to
+   ``projectname.tuleap.example.com`` and use your Tuleap
+   username and password to login. Once logged in issue the following
+   command:
+
+   ::
+
+       cd /home/groups/projectname/htdocs
+
+   and finally use the put (or mput) command to transfer the modified
+   files. Check with your Web browser that everything is ok. Mind your
+   Web Browser page cache and force page reloading to be sure you see
+   the latest version of your pages!
+
+-  **SCP**:
+
+   ::
+
+       scp -r * login@SYS_SHELL_HOST:/home/groups/projectname/htdocs/
+
+   where login is your Tuleap login. The -r option stands
+   for recursive copy and will copy all the files in the directory as
+   well as all others in subdirectory while preserving your directory
+   structure.

@@ -1,8 +1,8 @@
 
 .. _continuous-integration-with-Hudson/Jenkins:
 
-Continuous Integration with Hudson/Jenkins
-==========================================
+Continuous Integration
+======================
 
 Introduction to Continuous Integration
 --------------------------------------

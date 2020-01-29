@@ -1,11 +1,7 @@
 .. _trackers-and-real-time-reports:
 
-Trackers and real-time Reports
-==============================
-
-**Disclaimer:** this chapter covers the new generation (aka v5) of
-Tracker system. For documentation on the legacy tracker system (v3) see
-:ref:`tracker_v3`.
+Trackers
+========
 
 The Tuleap Tracker is one of the most powerful and flexible
 service provided by Tuleap. It allows tracking change
@@ -597,15 +593,15 @@ extensions:
    Posting a canned response is just a matter of selecting the
    appropriate response from the pull down menu in the artifact update
    screen and submitting the changes.
-   
+
 File attachments
 ~~~~~~~~~~~~~~~~~
 
-You can attach files to an artifact by using file field. 
+You can attach files to an artifact by using file field.
 
-Please note that it is possible to drag 'n drop (or copy/paste) images 
-directly in the text or in the follow-up comment field as soon as they 
-are in ``html`` mode. 
+Please note that it is possible to drag 'n drop (or copy/paste) images
+directly in the text or in the follow-up comment field as soon as they
+are in ``html`` mode.
 
 Such images will be added in the first updatable file field in the artifact.
 
@@ -2132,8 +2128,8 @@ Add a workflow to a tracker
    forbidden.
 
    For instance, in `Add a workflow to a tracker`_, various transitions have been defined: on
-   artifact submission, defined by fake state "new artifact", values available for the field "Status" 
-   will be "To do", "On Going" and "Review". 
+   artifact submission, defined by fake state "new artifact", values available for the field "Status"
+   will be "To do", "On Going" and "Review".
    Then, once Status is "To do", possible changes will be "On Going" and "Done", etc.
 
 To delete the workflow, simply click on the "Change or remove" button near to the field
@@ -2160,7 +2156,7 @@ A tracker administrator can change the workflow mode:
 * From advanced to simple: Transitions are now editable by target state. For each state, the first transition found is used as a template
   and its configuration is used to configure all transitions defined for this target state.
 
-The workflow presented in `Add a workflow to a tracker`_ is in simple mode. 
+The workflow presented in `Add a workflow to a tracker`_ is in simple mode.
 You can see that the target state can be configured.
 
 .. figure:: ../images/screenshots/tracker/sc_manage_workflow_advanced.png
@@ -2196,7 +2192,7 @@ Fields and/or comment not empty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A tracker administrator can define a set of fields that must not be empty before processing a workflow transition.
-An administrator can also make adding a followup comment mandatory for a transition. 
+An administrator can also make adding a followup comment mandatory for a transition.
 Keep in mind that this condition cannot be configured for transitions from "New artifact", as it is not possible to add a comment when creating a new artifact.
 
 Post actions
@@ -2435,3 +2431,187 @@ See the :ref:`webhook-tracker` section in the webhook documentation section.
 .. WARNING::
 
    The payload contains changeset representations. They are sent without any permission checking, so be careful where you send your webhooks.
+
+.. _timetracking:
+
+Timetracking
+------------
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+The Timetracking plugin of Tuleap aims at providing a simple and easy way to deal with
+artifact time tracking and time reporting for users.
+
+Timetracking features:
+
+* Add (update and delete) a time per artifact
+* Display our personal times in a user widget
+
+Activate the time tracking
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The time tracking feature must be enabled per tracker. Once activated, ``writers`` users will be able to add times per artifact.
+By default, a writer will only see their own times. Members of the ``readers`` user group can see an aggregated view of submitted times.
+
+.. figure:: ../images/screenshots/timetracking/timetracking-admin-tracker.png
+   :align: center
+   :alt: Timetracking administration
+   :name: Timetracking administration
+
+Add a time
+~~~~~~~~~~
+
+Writers users will be able to add times per artifact in a dedicated tab in the artifact view.
+This table will contain all the times added and be displayed according to the permissions defined.
+
+.. figure:: ../images/screenshots/timetracking/timetracking-artifact-times.png
+   :align: center
+   :alt: Timetracking artifact times view
+   :name: Timetracking artifact times view
+
+.. attention::
+   The format to add a time is hh:mm
+
+User widgets
+~~~~~~~~~~~~
+
+Timetracking plugin also provides user widgets :
+
+* :ref:`personal_time_tracking`
+* :ref:`timetracking_overview`
+
+.. _personal_time_tracking:
+
+Personal Time Tracking
+``````````````````````
+
+Timetracking plugin also provides a user widget. This widget allows users to filter and display times added in the whole
+platform during the time period provided. By default, the search is done for the last week.
+
+If multiple times are added in the same artifact in this time period, the widget will only show one entry per artifact
+summing the total time for this period.
+
+.. figure:: ../images/screenshots/timetracking/timetracking-personal-widget.png
+   :align: center
+   :alt: Timetracking user widget
+   :name: Timetracking user widget
+
+Detailed times modal
+^^^^^^^^^^^^^^^^^^^^
+
+Artifact's data are displayed on the top of the modal. Artifact's times of the given period are displayed on the table.
+It's possible to add and edit times on this modal.
+
+.. figure:: ../images/screenshots/timetracking/timetracking-personal-user-widget-modal.png
+   :align: center
+   :alt: Timetracking personal user widget modal
+   :name: Timetracking personal user widget modal
+
+.. _timetracking_overview:
+
+Timetracking Overview
+`````````````````````
+
+This widget allows users to filter and display times added in the selected trackers in the time period provided. By default, the search is done for the last month.
+Times are grouped by trackers. You must be able to access a tracker to select it. The sum of selected trackers' times is displayed.
+
+.. figure:: ../images/screenshots/timetracking/timetracking-overview-widget.png
+   :align: center
+   :alt: Timetracking overview widget
+   :name: Timetracking overview widget
+
+Migrate from tracker v3 to tracker
+----------------------------------
+
+.. attention:: **Deprecation notice**
+
+  Tracker v3 are deprected. There is no longer functional update on them.
+  Only security bugs might be fixed when possible.
+  They cannot be created anymore.
+
+  It's highly recommended to switch to Tracker V5 :ref:`trackers-and-real-time-reports`
+
+How to run a migration (for now, it requires to have an admin login on the server) from the legacy version (aka v3) of
+Tracker service :
+
+  .. code-block:: bash
+
+      # Run the whole migration
+      codendiadm@tuleap$ time sh /usr/share/tuleap/plugins/tracker/bin/migrate_tv3_to_tv5.sh tuleap_username 105 119 Defects "defect tracker" defect
+      # Parameter 1: project id
+      # Parameter 2: tracker v3 id
+      # Parameter 3: tracker v5 name
+      # Parameter 4: tracker v5 description
+      # Parameter 5: tracker v5 item name (short name / reference)
+
+      # Just dump the tracker v3 for debug
+      codendiadm@tuleap$ time /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/src/utils/TrackerV3-data-exporter.php -d 119 $HOME/archive.zip
+
+General
+~~~~~~~
+
+Fields might not have history or, worse, can have partial history (changes recorded
+only for a portion of artifact lifetime).
+In those cases, a fake changeset is created at the time of export for those values.
+
+Attachment
+~~~~~~~~~~
+
+* Deleted attachments are not exported.
+  They will not appears in the history either.
+
+* If an artifact contains 2 attachments with the same name, export will not
+  be able to distinguish them and it will skip them.
+
+Numeric fields
+~~~~~~~~~~~~~~
+
+Values of Integer (resp. Float) fields are exported as int (resp. int). It
+sounds obvious but as you may know by now the tracker v5 fields like Integer or
+Float cannot change their type whereas it was the case in v3.
+
+This means that in the history of an Integer (Float) field in v3 we may find values that are
+plain string instead of int (float) if the field type had been changed from
+String to Integer (float).
+
+The values are then cast into the right type in
+order to be imported into a tracker v5.
+
+Multi selectboxes
+~~~~~~~~~~~~~~~~~
+
+Statics values
+``````````````
+
+We can have some strange cases in database side. It stores:
+
+  * A string comma separated if we select multiple values
+  * The label if its a unique value
+  * 0 when the field is cleared without selecting any value
+  * 'Any' or 'Tous' regarding the langage when the value is saved if the old value
+    is a cleared field
+
+  * We can manage the first case because we are sur that there is only label
+    The two following cases are ambiguous : how to be sure that 0 is the label of the value
+    or the representation of a cleared field ?
+
+  * Then, if the unique value is an int, how to be sure that this numeric is a
+    label instead of an ID sometimes stored in the database ?
+
+  * If a label has a comma in its content, we are not able to manage it.
+
+  * Finally, when the label can be a system word, we don't know if it's the label
+    or a magic system word saved in the database.
+
+Binded to users
+```````````````
+
+On the database side, we have:
+
+  * A string (user names) comma separated if we select multiple users
+  * A blank value if an error is raised when the form was submitted
+
+  * When we have an entry with a blank value, we skip it.
