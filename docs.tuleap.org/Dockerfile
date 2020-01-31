@@ -2,10 +2,6 @@ FROM alpine:3.11.3 AS builder
 
 RUN apk add --no-cache git make python3 py-virtualenv nodejs npm
 
-ARG GA_ID
-ARG GA_CONTENT_GROUP_INDEX
-ARG GA_CONTENT_GROUP_NAME
-
 RUN addgroup -S builder && adduser -S -G builder builder
 
 USER builder
@@ -18,7 +14,7 @@ RUN npm ci && npm run build && \
     tmp_venv="$(mktemp -d)" && virtualenv "$tmp_venv" && \
     source "$tmp_venv"/bin/activate && \
     pip install -r requirements.txt && \
-    make SPHINXOPTS="-D html_theme=tuleap_org -D html_theme_options.ga_id=$GA_ID -D html_theme_options.ga_content_group_index=$GA_CONTENT_GROUP_INDEX -D html_theme_options.ga_content_group_name=$GA_CONTENT_GROUP_NAME" html
+    make SPHINXOPTS="-D html_theme=tuleap_org" html
 
 FROM nginx:alpine
 

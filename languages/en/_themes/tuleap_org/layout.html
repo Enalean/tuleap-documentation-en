@@ -134,10 +134,6 @@
     </div>
 
     {% include "footer.html" %}
-
-    <div id="accept-cookies-bar">
-      Websites located at tuleap.org and other tuleap.org subdomains need to store and access cookies on your device. We need your acceptance. <a href="https://www.tuleap.org/legal">Get more information</a>. <a href="#" id="cookies-ok" class="button orange"><i class="fa fa-check"></i>Ok that's fine, I love cookies</a> <a href="#" id="cookies-nok" class="button orange"><i class="fa fa-remove"></i>No, I don't want your cookies</a>
-    </div>
   </main>
 
   {% if not embedded %}
@@ -158,14 +154,9 @@
   {%- endfor %}
   {%- block scripts %}
 
-  <script src="{{ pathto('_static/assets/accept-cookies.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/assets/scroll.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/assets/nav.js', 1) }}" charset="utf-8"></script>
   <script src="{{ pathto('_static/assets/theme.js', 1) }}" charset="utf-8"></script>
-  {% if theme_ga_id != '' %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_ga_id }}"></script>
-  <script src="{{ pathto('_static/assets/analytics.js', 1) }}" charset="utf-8"></script>
-  {% endif %}
   {%- endblock %}
 
   {%- block footer %} {% endblock %}
