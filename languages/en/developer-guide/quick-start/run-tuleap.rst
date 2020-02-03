@@ -69,7 +69,7 @@ You also havo to add this line into your local.inc file:
 
 
 Connect as Admin
----------------------
+----------------
 
 Now open your browser and go to https://tuleap-web.tuleap-aio-dev.docker/. You should see the homepage of your Tuleap
 instance. You can connect with ``admin`` account, the password will be given by ``make show-passwords``.
