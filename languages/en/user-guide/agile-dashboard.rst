@@ -234,6 +234,24 @@ and change the remaining effort on the fly, that is to say staying on the same p
   Taskboard is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
+
+Add in place limitations
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to be able to add in place in the taskboard, few conditions must be met (we are assuming in the following that you are trying to add tasks to a user story swimlane; please adapt the example to your situation).
+
+* The user story tracker must have only one child tracker: task
+* The user story tracker must have an artifact link updatable by the current user
+* The task tracker must have column mapping defined (aka ``column field``) in planning configuration
+* The task tracker must have a title semantic (aka ``title field``)
+* The ``title field`` and ``column field`` must be submitable by the current user
+* The ``title field`` and ``column field`` are the only one allowed to be required
+
+Please note that the workflow is not checked *a priori*. This means that if nothing allows the creation of a task in a given status ``done``, then the add in place will be displayed in the ``done`` column, but the card won't be created at form submition (you will get an error modal).
+
+Please also note that you can only add tasks artifacts. Adding in place user stories (or swimlanes) is not allowed yet.
+
+
 .. _kanban:
 
 Using a Kanban
