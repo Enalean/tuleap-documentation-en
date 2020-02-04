@@ -6,13 +6,35 @@ Note about config files (Tuleap's \*.inc): as long as you are OK with the defaul
 the development team, there is no need for you to add those new variables in the corresponding
 file, the default is automatically set for you.
 
-Tuleap 11.10
+Tuleap 11.11
 ============
 
 .. NOTE::
 
-  Tuleap 11.10 is currently under development.
+  Tuleap 11.11 is currently under development.
 
+
+Missing timers to process some system event queues on CentOS/RHEL7
+------------------------------------------------------------------
+
+Some system event queues were not processed due to missing timers, administrators must enable them manually.
+
+.. code-block:: bash
+
+    $ sudo systemctl enable tuleap-process-system-events-statistics.timer
+    $ sudo systemctl start tuleap-process-system-events-statistics.timer
+    $ sudo systemctl enable tuleap-process-system-events-tv3-tv5-migration.timer
+    $ sudo systemctl start tuleap-process-system-events-tv3-tv5-migration.timer
+
+If you have the Git plugin installed, you must also enable this one:
+
+.. code-block:: bash
+
+    $ sudo systemctl enable tuleap-process-system-events-grokmirror.timer
+    $ sudo systemctl start tuleap-process-system-events-grokmirror.timer
+
+Tuleap 11.10
+============
 
 End of support of Digest authentication against Gerrit servers
 --------------------------------------------------------------
