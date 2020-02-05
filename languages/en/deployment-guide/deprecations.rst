@@ -56,9 +56,10 @@ Internet Explorer 11 End of support  End-users should switch to Firefox or Chrom
 MySQL 5.7 End of support  Switch to MySQL 8
 ========= =============== =============================================
 
-===================== ======== =============================================
-The Future            Status   As platform administrator, what should I do ?
-===================== ======== =============================================
-SOAP API              Removed  End-users should switch to REST API
-PHP Wiki              Removed  Switch to Mediawiki
-===================== ======== =============================================
+===================== ============== =============================================
+The Future            Status         As platform administrator, what should I do ?
+===================== ============== =============================================
+SOAP API              Removed        End-users should switch to REST API
+PHP Wiki              Removed        Switch to Mediawiki
+PROFTPd               End of support End-users should use document/frs instead
+===================== ============== =============================================
