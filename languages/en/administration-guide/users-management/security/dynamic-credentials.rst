@@ -131,5 +131,5 @@ The security of the solution relies on the fact that the private key used to sig
 is generated directly in the HashiCorp Vault instance and, under a normal usage,
 is not known by other parties. The HashiCorp Vault instance is the only party
 able to generate a valid request accepted by the Tuleap instance. The
-`HashiCorp Vault security model <https://www.vaultproject.io/docs/internals/security.html>`_
+`HashiCorp Vault security model <https://www.vaultproject.io/docs/internals/security/>`_
 might of interest. For the Tuleap plugin, the usual security model of Tuleap applies.
