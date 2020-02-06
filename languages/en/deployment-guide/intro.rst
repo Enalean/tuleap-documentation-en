@@ -9,11 +9,6 @@ file, the default is automatically set for you.
 Tuleap 11.11
 ============
 
-.. NOTE::
-
-  Tuleap 11.11 is currently under development.
-
-
 Missing timers to process some system event queues on CentOS/RHEL7
 ------------------------------------------------------------------
 
