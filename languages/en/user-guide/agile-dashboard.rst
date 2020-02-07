@@ -128,7 +128,21 @@ A product owner can populate a backlog either going directly to the "Top Backlog
 
 Explicit backlog
 ~~~~~~~~~~~~~~~~
-The top backlog planning will contains artifact you choose. They are added inside when you directly add them in top backlog view. On every single artifact that can be used in a top backlog planning you will have a link to add it to the top backlog.
+The top backlog planning will contains artifact you choose. They are added inside when you directly add them in top backlog view. 
+
+On every single artifact that can be used in a top backlog planning you will have a link to add it to the top backlog.
+
+.. figure:: ../images/screenshots/agiledashboard/add_to_top_backlog_artifact_action.png
+   :align: center
+   :alt: Add to top backlog artifact action
+   :name: Add to top backlog artifact action
+
+A :ref:`workflow <tracker-workflow>` post-action named ``AddToTopBacklog`` can also be defined. It will automatically add the artifact to the top backlog when it reaches a given state.
+
+.. figure:: ../images/screenshots/agiledashboard/add_to_top_backlog_post_action.png
+   :align: center
+   :alt: AddToTopBacklog workflow post action
+   :name: AddToTopBacklog workflow post action
 
 You can enable this option in Agiledashboard administration by checking the use explicit backlog option.
 

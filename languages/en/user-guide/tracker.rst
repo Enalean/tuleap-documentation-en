@@ -2088,6 +2088,7 @@ that corresponds to this initial effort notion.
 The initial effort is used in the Agile Dashboard **content** and **planning**
 views.
 
+.. _tracker-workflow:
 
 Workflow Manager
 ~~~~~~~~~~~~~~~~
