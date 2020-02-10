@@ -246,7 +246,7 @@ You can see the list of triggered jobs in the logs section of the Jenkins Webhoo
 .. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
   your site administrator if it is not the case on your Tuleap instance.
 
-.. _Push notification from repository: https://web.archive.org/web/20190905084011/https://wiki.jenkins.io/display/JENKINS/Git+Plugin#GitPlugin-Pushnotificationfromrepository
+.. _Push notification from repository: https://plugins.jenkins.io/git/#gitplugin-pushnotificationfromrepository
 
 
 Git Large File Storage (LFS)
