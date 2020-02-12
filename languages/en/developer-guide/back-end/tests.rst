@@ -124,7 +124,7 @@ You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to 
 Automated tests
 """""""""""""""
 Some of our validation tests are executed by the CI.
-To declare a test as an automated you have to:
+To declare a test as automated, you have to:
 
 On you dev platform
 
@@ -137,9 +137,9 @@ In TTM open the test Validation Execution tracker
 * Open the artifact(s) correponding to the test you have automated
 * You should find a field ``Automated tests``
 * Enter the ``testcase`` name into this field
-* In the field ``Refactoring`` choose the value `moved to cypress` (in order to be able to see whats tests must be ran by the CI)
+* In the field ``Refactoring`` choose the value `moved to cypress` (in order to be able to see which tests must be run by the CI)
 
-Note: if an automated test covers multiple artifact, copy paste the test case into each artifacts
+Note: if an automated test covers multiple artifacts, copy paste the test case into each artifact.
     
 
 Organize your tests
