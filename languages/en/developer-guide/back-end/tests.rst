@@ -119,6 +119,28 @@ You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to 
   The electron app will be able to run only when container is fully monted.
   If https://tuleap/ is unreachable make sure that container initialisation has finished.
   If it does not solve your issue, verify the IP in your /etc/hosts
+  
+  
+Automated tests
+"""""""""""""""
+Some of our validation tests are executed by the CI.
+To declare a test as an automated you have to:
+
+On you dev platform
+
+* Checkout the patch introducing the new tests
+* make tests_cypress
+* in ``test_results_e2e_full`` look for the ``result<sha1>.xml`` corresponding to the tests you are automating
+
+In TTM open the test Validation Execution tracker
+
+* Open the artifact(s) correponding to the test you have automated
+* You should find a field ``Automated tests``
+* Enter the ``testcase`` name into this field
+* In the field ``Refactoring`` choose the value `moved to cypress` (in order to be able to see whats tests must be ran by the CI)
+
+Note: if an automated test covers multiple artifact, copy paste the test case into each artifacts
+    
 
 Organize your tests
 ```````````````````
