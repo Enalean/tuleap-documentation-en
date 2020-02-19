@@ -1,0 +1,372 @@
+Tuleap 8.x
+##########
+
+Tuleap 8.19
+===========
+
+New integration of ViewVC for SVN single and multi repositories and CVS
+-----------------------------------------------------------------------
+
+We now use the package viewvc from the EPEL repository instead of the package viewvc-tuleap to
+CVS and SVN repositories.
+The switch between the two packages is not automatic for now but we encourage you
+to do it to benefit of a nicer integration of ViewVC into Tuleap.
+
+To do that, you must swap the packages once you have updated Tuleap:
+
+.. sourcecode:: shell
+
+    #> yum shell -y <<EOF
+    remove viewvc-tuleap
+    install viewvc
+    run
+    quit
+    EOF
+
+Please note that EPEL repositories must be enabled before doing this yum transaction.
+
+Once you have swapped the packages, you should if do have a line saying ``Include conf.d/viewvc.conf``
+in your Apache configuration (``/etc/httpd/conf/httpd.conf``). If that's the case, please remove it
+and reload Apache.
+
+Removal of the ``sys_strip_outlook`` option
+-------------------------------------------
+
+The option ``sys_strip_outlook`` has been removed and the behavior this option activated
+is now enabled by default.
+
+Since this option is not used anymore, you can remove it from your configuration file (``local.inc``).
+
+SVN specific access logfile is always empty on recent installation
+------------------------------------------------------------------
+
+Tuleap instances installed between Tuleap 8.14.99.59 and now are impacted by a bug
+leaving the SVN specific access logfile always empty (``/var/log/httpd/svn_log``).
+
+The issue impacts the generation of usage statistics for SVN.
+
+The bug has been fixed for new installations but requires a manual modification
+for impacted instances. In the configuration file ``/etc/httpd/conf.d/tuleap-vhost.conf``,
+you should look for 2 sections like:
+
+  .. sourcecode:: ApacheConf
+
+    LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+    CustomLog logs/access_log commonvhost
+
+    #Uncomment the two following lines in order to display the username newt to the access url
+    #LogFormat "%h %l %{username}n %t \"%r\" %>s %b" common_with_tuleap_unix_username
+    #CustomLog logs/access_log_with_username common_with_tuleap_unix_username
+
+
+And then replace these 2 sections by:
+
+  .. sourcecode:: ApacheConf
+
+    LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+    CustomLog logs/access_log commonvhost
+    CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
+
+
+Tuleap 8.17
+===========
+
+Dependency to PHP Guzzle
+------------------------
+
+Tuleap starts using Guzzle package from the EPEL repository (``php-guzzle-Guzzle``) instead of
+the package provided until now by the Tuleap repository (``php-guzzle``). You should check if this
+package is not ignored by your yum configuration.
+
+Tuleap 8.15
+===========
+
+A new option for setup.sh
+-------------------------
+
+Now setup.sh is checking if your domain name is valid. And for your automation or if you are sure, you can still bypass the check with option:
+
+.. sourcecode:: shell
+
+        #> setup.sh --disable-domain-name-check
+
+
+Tuleap 8.14
+===========
+
+Changes in git plugin configuration
+-----------------------------------
+
+For Urls, Git plugin uses local.inc sys_default_domain instead of apache SERVER_NAME.
+
+Changes in SVN multirepositories plugin
+---------------------------------------
+
+The public URL for repositories changes. All users will have to update their checkout/checkin links.
+
+
+Tuleap 8.13
+===========
+
+New dependency required for Tuleap
+----------------------------------
+
+Tuleap now requires the package php-paragonie-random-compat to work. If you have
+followed the installation guide, the package will be installed automatically from
+the EPEL repository if you use CentOS 6 or from the Tuleap repository if you use
+CentOS 5.
+
+If you have not followed the installation guide and the dependency can not be found
+you must install it by hand.
+
+Tuleap 8.12
+===========
+
+Planning v1 removal
+-------------------
+
+Agile Dashboard Planning v1 (deprecated since 2 releases) is not anymore available. You can safely remove the following variable from your ``/etc/tuleap/conf/local.inc`` file:
+
+.. sourcecode:: php
+
+        // Display deprecated planning V1
+        $sys_showdeprecatedplanningv1 = 0;
+
+
+Tuleap 8.11
+===========
+
+Legacy themes removal
+---------------------
+
+Few themes are removed:
+
+- CodexSTN (tuleap-theme-codexstn)
+- Dawn (tuleap-theme-dawn)
+- savannah (tuleap-theme-savannah)
+- Steerforge (tuleap-theme-steerforge)
+- STTab (tuleap-theme-sttab)
+
+They are automatically replaced by FlammingParrot, if you don't have it installed yet
+it should be automatically fetched as a dependency. However, if it's not, you should
+install it by hand:
+
+.. sourcecode:: shell
+
+        #> yum install tuleap-theme-flamingparrot
+
+For end users that where using the old theme, they are automatically switch to the
+default theme defined in local.inc. If the default theme was one of them, it's
+flaming parrot that is used in last resort.
+
+Legacy packages removed
+-----------------------
+
+OpenId (tuleap-plugin-openid) is gone. You can try OpenID connect instead (require
+manual setup as of 8.11).
+
+Tuleap 8.10
+===========
+
+Subversion packaging issue
+--------------------------
+
+Due to a packaging issue we strongly suggest you install or force the reinstall of
+the following packages: tuleap-core-subversion and tuleap-core-subversion-modperl.
+
+Meaning that if these packages are not installed you can install them with:
+
+.. sourcecode:: shell
+
+        #> yum install tuleap-core-subversion tuleap-core-subversion-modperl
+
+If the packages are already installed, you can reinstall them with:
+
+.. sourcecode:: shell
+
+        #> yum reinstall tuleap-core-subversion tuleap-core-subversion-modperl
+
+Use tokens to authenticate a SVN user
+-------------------------------------
+
+It is now possible to use a token instead of a password to authenticate users for SVN
+operations. In order to make that possible, it is necessary to grant more rights
+to the database user used to authenticate a user. You must run the following commands
+on your database with a privileged user:
+
+.. sourcecode:: sql
+
+        GRANT SELECT,UPDATE ON svn_token TO dbauthuser;
+        FLUSH PRIVILEGES;
+
+If you use the LDAP plugin, you also need to grant this privilege:
+
+.. sourcecode:: sql
+
+        GRANT SELECT ON plugin_ldap_user TO dbauthuser;
+        FLUSH PRIVILEGES;
+
+Git evolution on CentOS 5 due to a system bug
+---------------------------------------------
+
+To find a workaround a system bug, we have been forced to introduce a change.
+To kept the Git plugin fully functional, you must edit your sudoers file to match the following informations:
+
+.. sourcecode:: bash
+
+        Defaults:gitolite !requiretty
+        Defaults:gitolite !env_reset
+        gitolite ALL= (codendiadm) SETENV: NOPASSWD: /usr/share/codendi/src/utils/php-launcher.sh /usr/share/codendi/plugins/git/hooks/post-receive.php*
+
+Git evolution on CentOS 5 to import/export project archive
+----------------------------------------------------------
+
+Now that it is possible to import a git repository alongside a project archive, you must edit your sudoers file to match the following informations:
+
+.. sourcecode:: bash
+
+        Defaults:codendiadm !requiretty
+        Defaults:codendiadm !env_reset
+
+        # Gitolite restore tar repository
+        Cmnd_Alias RESTORE_TAR_REPO_CMD = %libbin_dir%/restore-tar-repository.php
+
+        # Gitolite clone bundle
+        Cmnd_Alias BUNDLE_CMD = /usr/share/tuleap/plugins/git/bin/gl-clone-bundle.sh
+
+        codendiadm ALL= (gitolite) SETENV: NOPASSWD: RESTORE_TAR_REPO_CMD, BUNDLE_CMD
+
+Tuleap 8.9
+==========
+
+New configuration parameter in ``local.inc`` when Tuleap is behind a reverse proxy, check
+:ref:`Deploy Tuleap behind a reverse proxy <admin_howto_reverseproxy>` in Administration guide.
+
+Tuleap 8.8
+==========
+
+Create artifact by mail
+-----------------------
+
+A new feature adding the possibility of creating an artifact by email has been added.
+check :ref:`Activate reply to artifacts by email <admin_tracker_reply_by_email>` in Administration guide.
+
+
+Tuleap 8.7
+==========
+
+Git evolution on CentOS 5
+-------------------------
+
+With the introduction of the truncated notifications in the Git plugin, we have been forced to do some changes.
+To kept the Git plugin fully functional, you must add the following informations at the end of your sudoers
+file which is generally located at /etc/sudoers:
+
+.. sourcecode:: bash
+
+        Defaults:gitolite !requiretty
+        Defaults:gitolite !env_reset
+        gitolite ALL= (codendiadm) SETENV: NOPASSWD: /usr/share/codendi/plugins/git/hooks/post-receive.php
+
+Note that only Tuleap instances running on CentOS 5 are concerned.
+
+Tuleap 8.5
+==========
+
+User management via Active Directory
+------------------------------------
+
+A new template has been added to help configure Tuleap with Active Directory. You can find
+it in the sources ``plugins/ldap/etc/ActiveDirectory.inc.dist``
+
+If you have an existing ldap set-up and wish to be compatible with Active Directory then you will need to update
+the file ``/etc/tuleap/plugins/ldap/etc/ldap.inc`` with these extra properties
+
+.. sourcecode:: php
+
+        // The type of the ldap server
+        $sys_ldap_server_type = 'ActiveDirectory';
+
+        // The identifier of a user group
+        $sys_ldap_grp_uid = 'sAMAccountName';
+
+Tuleap 8.4
+==========
+
+API Explorer update
+-------------------
+
+We have updated the API Explorer. The package restler-api-explorer must be considered deprecated.
+To update to the new Explorer install the package tuleap-api-explorer and remove or
+at least comment the old Apache configuration. You probably have copied this configuration at
+``/etc/httpd/conf.d/tuleap-plugins/tuleap-api-explorer.conf``. After the removal,
+you need to restart Apache.
+
+Drop support of insecure SSL/TLS configurations
+-----------------------------------------------
+
+With this release we have updated the default TLS Apache configuration we provide with Tuleap.
+All new instances of Tuleap will use this one but if you already have an installation,
+your configuration will be left untouched. However, we encourage you to update your
+configuration for security reasons. As a side effect, this change also prevents Internet Explorer 7 and
+Internet Explorer 8 on Windows XP to be able to connect to the HTTPS server.
+
+If you want to update your configuration, replace the line SSLProtocol and SSLCipherSuite
+``/etc/httpd/conf/ssl.conf`` by:
+
+  .. sourcecode:: apacheconf
+
+    # SSL Protocol support:
+    # List the enable protocol levels with which clients will be able to
+    # connect.  Disable SSLv2 and SSLv3 access by default:
+    SSLProtocol all -SSLv2 -SSLv3
+
+    #   SSL Cipher Suite:
+    # List the ciphers that the client is permitted to negotiate.
+    # See the mod_ssl documentation for a complete list.
+    SSLCipherSuite ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
+    SSLHonorCipherOrder on
+
+Tuleap 8.3
+==========
+
+Password storage
+----------------
+
+We have added a new and more secure way to store passwords in Tuleap. This feature is activated
+default on new intalls but the legacy way is kept on the already running instances
+for compatibility purposes. We greatly advise to use this new functionality if you can.
+
+To activate the new password storage on a already existing instance you must add the
+following line in your ``local.inc``:
+
+  .. sourcecode:: php
+
+    $sys_keep_md5_hashed_password = 0;
+
+Execute this script if you have the Proftpd plugin installed:
+
+  .. sourcecode:: shell
+
+    #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
+
+Tuleap 8.1
+==========
+
+Mediawiki
+---------
+
+* Upgrade to mediawiki 1.23 check :ref:`Administration guide <admin_service_mediawiki>`
+
+REST API
+--------
+
+A new parameter in ``local.inc`` allow users to query api in HTTP without SSL. By default HTTPS is enforced.
+
+  .. sourcecode:: php
+
+    // Can query REST API without using HTTPS
+    // /!\ This is unsafe unless you have something else (reverse-proxy)
+    //      providing the SSL Layer between you and the server /!\
+    $sys_rest_api_over_http = 0;
+

@@ -1,0 +1,240 @@
+Tuleap 7.x
+##########
+
+Tuleap 7.11
+===========
+
+Logrotate
+---------
+
+Logrotate might be configured to use "dateext" instead of ``.X``. This might create garbage in logs and can be an issue when attempting to copy
+logs from ``/var/log/httpd/blalba.1`` to ``/var/log/tuleap/YYYY/MM/blalba_YYYYMMDD.log``. We prevent now this behavior by adding "nodateext" option
+to ``/etc/logrotate.d/httpd``.
+
+See ``/usr/share/tuleap/src/etc/logrotate.httpd.conf`` for reference.
+
+Tuleap 7.11
+===========
+
+CVS
+---
+
+We have enabled Tuleap to deal with incoming CVS commits from Windows machines. You can now toggle between allowing Windows
+encoding of the commit messages and utf-8 encoding. To set this up (CentOS 6):
+
+Local.inc:
+
+* Add ``$sys_cvs_convert_cp1252_to_utf8 = 1;`` at the end of the file.
+
+System:
+  .. sourcecode:: shell
+
+    # Note: for CentOS 5, you need to manually source and install the package 'perl-Text-Iconv'
+    $> yum install perl-Text-Iconv
+    $> cp /usr/share/tuleap/src/utils/cvs1/log_accum /usr/lib/tuleap/bin/log_accum
+
+
+Tuleap 7.10
+===========
+
+Git
+---
+
+* We drop the embedded version of gitphp in favor of the packaged one. This is reflected by the ``$gitphp_path`` in ``/etc/tuleap/plugins/git/etc/config.inc``
+* New installations have git HTTP access activated.
+* Existing installations without HTTP access can enable it by setting ``$git_http_url = "https://%server_name%/plugins/git";`` in ``/etc/tuleap/plugins/git/etc/config.inc``
+* Existing installations with HTTP access should keep existing HTTP access as default (without anonymous access) but can communicate to their users about the new URL ``https://%server_name%/plugins/git/%repo_path%`` for test.
+* gitolite3 path in ``sudoers.d/gitolite3-http`` file has been changed: ``codendiadm ALL= (gitolite) SETENV: NOPASSWD: /usr/share/gitolite3/gitolite-shell``
+
+LDAP
+----
+
+* Default search for daily syncho is now the whole LDAP subtree.
+
+  * If ``$sys_ldap_daily_sync`` was enabled (= 1), you should monitor duration of ``ROOT_DAILY`` system event (each night at 00:10)
+
+    * If duration is the same after upgrade, everything is fine
+    * If duration is really longer (20-30% longer). You can switch back to previous mode with ``$search_depth = 'onelevel';`` in ldap configuration ``/etc/tuleap/plugins/ldap/etc/ldap.inc``
+
+  * If ``$sys_ldap_daily_sync`` was disabled ( = 0), you should be able to enable it
+
+    * Do it first on a QA server
+    * You should expect some people to be suspended on first run
+    * If most users get suspended, there is something wrong and you should keep the synchro disabled and report the issue
+
+Core
+----
+
+The default backup path for deleted projects is ``/var/tmp``. See ``$sys_project_backup_path`` in ``/etc/tuleap/conf/local.inc``.
+
+
+Tuleap 7.7
+==========
+
+General
+-------
+
+Starting this release, the tuleap system logs are handled by logrotate.
+The default configuration is to rotate on weekly basis and to keep 4 weeks of logs.
+
+Local.inc:
+
+* ``$sys_create_project_in_one_step`` is no longer needed as legacy project creation is gone.
+* New option ``$sys_strip_outlook = 0;`` allow to test removal of outlook quote in tracker email reply (experimental)
+* New option ``$sys_default_mail_domain = "";`` Define the email domain for email gateway feature (By default, email domain = default Tuleap domain )
+
+Git
+---
+
+You can configure git and http urls in ``git/etc/config.inc``:
+
+  .. sourcecode:: php
+
+    // Urls
+    // By default, only ssh is available for use and you can setup HTTP(s) access
+    // to your server.
+    // For convenience, you can either hardcode the URLs or you can use %server_name%
+    // variable that will be replace automatically by the value of $_SERVER['SERVER_NAME']
+    // this is typical the URL the user see in location bar of the browser
+    // Tell to Tuleap that an HTTPS server for git is available at the given
+    // address
+    // $git_http_url = "https://%server_name%/git";
+
+    // Define a custom ssh URL to get access to the sources
+    // You can disable display of this url by activating this variable and setting
+    // to '' (empty string)
+    //
+    // $git_ssh_url = 'ssh://gitolite@%server_name%:2222';
+
+The ``$grokmanifest_path`` is no longer needed on server (you can remove grokmirror too).
+
+
+Tuleap 7.6
+==========
+
+Old Docman migration
+--------------------
+
+This release comes with a tool to assist admin of very old Tuleap to migrate from docman v1 to docman v2 (plugin). This might be relevant to you if you installed Tuleap before 2009. Check :ref:`Administration guide <admin_howto_docmanv1_to_docmanv2>`
+
+Git
+---
+
+Another change in this release is a dependency on a recent version of git. We know for sure that there are issues with git <= 1.7.4.1
+
+If in doubt, then you should upgrade to the latest version.
+
+  .. sourcecode:: shell
+
+    $> yum update git
+
+Tuleap 7.5
+==========
+
+Full text search
+----------------
+
+The index mapping for artifact'ss follow-up comments changed, you need to delete the current index and to create an empty new one (all previously indexed comments will be lost):
+
+  .. sourcecode:: shell
+
+    # Of course, you need to adapt username, password, servers and port to
+    # your configuration
+    $> curl -u superuser:Adm1n -X DELETE "localhost:9200/tracker"
+    $> curl -u superuser:Adm1n -X PUT "localhost:9200/tracker" -d '{
+        "settings" : { "index" : { "number_of_shards" : 1, "number_of_replicas" : 0 }}
+    }'
+
+
+Tuleap 7.4
+==========
+
+Mediawiki extra plugins compatibility mode
+------------------------------------------
+
+Tuleap 7.4 comes with a maturity about the limits of integrating Medaiwiki and its numerous plugins such as "wiki editor" into Tuleap.
+In order to avoid impossible javascript and css conflicts there is now a compatibility that can be enabled if needed.
+It needs to be enabled at a forge level before it can be enabled at a project level and this is how:
+
+New option in /etc/<tuleap|codendi>/plugins/mediawiki/etc/mediawiki.inc
+    .. sourcecode:: php
+
+        $enable_compatibility_view = true;
+
+This option can then be toggled by site administrators in the "plugins administration" area.
+
+Activating the compatibility view for a project is then done in the "Administration" section of a given mediawiki in the UI.
+
+
+Tuleap 7.3
+==========
+
+CentOs packages dependency
+--------------------------
+
+For Tuleap 7.3, we updated our mediawiki package by adding new modules.
+For a new extension, we create a dependency with a packahe named `htmldoc`
+
+This package is only available in **EPEL** repositories. So, in order to be able to update your Tuleap,
+you have to activate EPEL on your server.
+
+FlamingParrot Variants
+----------------------
+
+Tuleap 7.3 introduce new FlamingParrot theme variants. To be more concrete, new colors are available for our new theme.
+
+You are able to choose which variants you want to enable on your Tuleap by adding a new enrty in the local.inc file
+(by default, all variants are activated):
+
+    .. sourcecode:: php
+
+        // List of available theme variant in forge
+        // Available variants:
+        // * FlamingParrot_Orange
+        // * FlamingParrot_Blue
+        // * FlamingParrot_Green
+        // * FlamingParrot_BlueGrey
+        // * FlamingParrot_Purple
+        // * FlamingParrot_Red
+        // * FlamingParrot_DarkOrange
+        // * FlamingParrot_DarkBlue
+        // * FlamingParrot_DarkGreen
+        // * FlamingParrot_DarkBlueGrey
+        // * FlamingParrot_DarkPurple
+        // * FlamingParrot_DarkRed
+        $sys_available_theme_variants = 'FlamingParrot_Orange,FlamingParrot_Blue,FlamingParrot_Green,FlamingParrot_BlueGrey,FlamingParrot_Purple,FlamingParrot_Red,FlamingParrot_DarkOrange,FlamingParrot_DarkBlue,FlamingParrot_DarkGreen,FlamingParrot_DarkBlueGrey,FlamingParrot_DarkPurple,FlamingParrot_DarkRed';
+
+
+In addition, you can choose your default color for the whole platforme by adding a variable in your local.inc file:
+
+    .. sourcecode:: php
+
+        // Default theme variant in forge
+        $sys_default_theme_variant = 'FlamingParrot_Orange';
+
+Tuleap 7.2
+==========
+
+Tracker
+-------
+
+New option in local.inc
+
+  .. sourcecode:: php
+
+    // Allow users to reply by mail to artifact notifications
+    // As of today only adding a follow-up comment is supported
+    $sys_enable_reply_by_mail = 0;
+
+See ``plugins/tracker/README.emailgateway.mkd`` for details about sudoers deployment.
+
+Subversion
+----------
+
+New option in local.inc
+
+  .. sourcecode:: php
+
+    // Allow (or not) users to do a SVN commit without any commit message
+    // Set to 0 to force commit message to not be empty
+    $sys_allow_empty_svn_commit_message = 1;

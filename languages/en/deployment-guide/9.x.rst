@@ -1,0 +1,645 @@
+Tuleap 9.x
+##########
+
+Tuleap 9.19
+===========
+
+Redeployment of the NGINX configuration
+---------------------------------------
+
+This version comes with some changes in the NGINX configuration, so the configuration
+files needs to be deployed again. Be sure to follow the update guide: :ref:`update`.
+
+Custom headers in NGINX
+-----------------------
+
+If you have set some custom headers in nginx configuration for the Internet Explorer in compatibility mode,
+you have to delete them from these configuration files.
+This header is now `provided by default by Tuleap <https://tuleap.net/plugins/tracker/?aid=9007>`_.
+
+You have to remove all the instructions ``add_header X-UA-Compatible IE=Edge;`` located in ``/etc/nginx/conf.d/*.conf`` files.
+
+
+Tuleap 9.17
+===========
+
+End of support of PHP 5.3
+-------------------------
+
+.. warning::
+
+  Tuleap does not support PHP 5.3 anymore. If you have not migrated yet, it is now
+  mandatory otherwise your Tuleap instance will stop working.
+
+Tuleap now comes with ``php 5.6`` (from Software Collections) and ``nginx`` packages by default. All new installations
+defaults to this setup.
+
+You can switch to PHP 5.6 by using::
+
+    /usr/share/tuleap/tools/utils/php56/run.php
+
+This will configure nginx as the new entry point for all HTTP (port 80) and HTTPS (port 443).
+Your exiting apache will be updated to listen to :8080 and only locally (loopback, 127.0.0.1)
+for subversion and mailman.
+
+Everything is described in PHP 5.6 on Centos 6
+
+Also, if you use ForumML and have not yet updated the mailman configuration,
+you need to do it now, in ``/etc/mailman/mm_cfg.py`` add the following parameters at the end::
+
+  PUBLIC_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
+  PRIVATE_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
+
+Then restart mailman::
+
+  $> service mailman restart
+
+New cookies protections
+-----------------------
+
+To protect users, new cookies protection have been implemented. To make these
+protections as effective as possible you should make sure the setting ``sys_https_host``
+is not left empty in your ``local.inc`` if your Tuleap instance is reachable over HTTPS.
+
+
+Update default TLS configuration
+--------------------------------
+
+With this release we have updated the default TLS nginx configuration we provide
+by default with Tuleap.
+This change ensure the safest encryption settings will be used between browsers
+and your Tuleap instance.
+
+All new instances of Tuleap will use this configuration by default but if you already
+have an installation, your configuration will be left untouched.
+
+We encourage you to update it. To do it, replace the lines ``ssl_protocols`` and
+``ssl_ciphers`` in ``/etc/nginx/conf.d/tuleap.conf``::
+
+  # modern configuration. tweak to your needs.
+  ssl_protocols TLSv1.2;
+  ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+  ssl_prefer_server_ciphers on;
+
+.. WARNING::
+  If you use the webdav plugin with Windows 7 clients, you need to check if the
+  `support of the TLSv1.2 protocol is enabled on your clients
+  <https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi>`_
+  before updating the configuration. If you update the TLS configuration and your
+  Windows clients does not support TLSv1.2 they won't able to connect anymore.
+  If you have the possibility on your infrastructure
+  you should enable the support of TLSv1.2 on your clients,
+  else if that is not something possible you should not update the TLS configuration.
+
+Backend email notifications
+---------------------------
+
+In order to simplify Tuleap stack, the queue management for email notification that was based in 9.17 on RabbitMQ as been
+changed to rely on Redis instead. If you already have a Redis server installed and configured the change will be transparent.
+
+Otherwise you will need to setup a Redis server, checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+
+If do not use the backend email notifications, you can safely ignore this step while
+upgrading.
+
+New LDAP parameters
+-------------------
+
+Those new parameters are optional, if you don't need them, no need to define the variables.
+
+Better nested groups
+`````````````````````
+
+LDAP group configuration was made more comprehensive. You can now used nested groups that are defined outside the global
+configured group branch.
+
+Let's assume you have a structure like this:
+
+* Base       DC=company,DC=com"
+* Groups     OU=groups,DC=company,DC=com"
+* ExtGroups  OU=groups_ext,DC=company,DC=com"
+
+And you have a group "allUsers" which itself includes only two other groups "internalUsers" and "externalUsers" and "internalUsers" and "externalUsers" each have some users in them - like this:
+
+.. code-block:: bash
+
+    - allUsers (group)        CN=allUsers,OU=groups,DC=company,DC=com
+      - internalUsers (group) CN=internalUsers,OU=groups,DC=company,DC=com
+          - user A..E (users)
+      - externalUsers (group) CN=externalUsers,OU=groups_ext,DC=company,DC=com"
+          - user F..H (users)
+
+Then you can now link a Tuleap Project to "allUsers" and it will include all users from "internalUsers" and "externalUsers"
+
+In order to benefit of this you will need to define two variables in ``/etc/tuleap/plugins/ldap/etc/ldap.inc``:
+
+* ``$sys_ldap_grp_oc``: The object class that identify groups (usually ``group`` for Active Directroy and ``groupOfNames`` for OpenLDAP)
+* ``$sys_ldap_user_oc``: The object class that identify users (usually ``person`` for Active Directroy and ``person`` or ``posixAccount`` for OpenLDAP)
+
+Control group look-up
+`````````````````````
+
+By default, for performances reasons, Tuleap only look at the root of defined group dn when it needs to search for group names (autocompletion).
+
+You can now change it to a subtree look-up if your LDAP is properly indexed or if the dataset is small enough (be careful about performances).
+
+* ``$sys_ldap_grp_search_scope`` can be either ``onelevel`` (default & recommended) or ``subtree``
+
+
+Tuleap 9.16
+===========
+
+Purge old log file
+-------------------
+
+If your Tuleap instance is quite old, a useless (and heavy) log file could be created under ``/var/log/tuleap/debug.log``
+This file is no more written since Tuleap 9.15 and could be safely deleted.
+
+All the information about this file could be found in the `Tuleap public request <https://tuleap.net/plugins/tracker/?aid=10815>`_
+
+Tuleap 9.15
+===========
+
+SOAP API
+--------
+
+The documentation of the deprecated SOAP API is not anymore displayed. If your users still need it, you can force the display by adding the following statement in the ``/etc/tuleap/conf/local.inc``:
+
+.. code-block:: php
+
+  $should_display_documentation_about_deprecated_soap_api = 1;
+
+Users should **consider using REST API instead**.
+
+PHP 5.6 / nginx
+---------------
+
+In ``/etc/opt/remi/php56/php-fpm.d/tuleap.conf`` please add/uncomment the following if needed::
+
+  php_value[post_max_size] = 256M
+  php_value[upload_max_filesize] = 256M
+  php_value[max_input_vars] = 15000
+
+In ``/etc/nginx/conf.d/tuleap.conf`` please update the ``client_max_body_size``::
+
+  client_max_body_size 256M;
+
+ForumML
+-------
+
+You should upgrade the way mailman and Tuleap communicates, in ``/etc/mailman/mm_cfg.py``::
+
+  PUBLIC_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
+  PRIVATE_EXTERNAL_ARCHIVER = 'sudo -u codendiadm /usr/share/tuleap/plugins/forumml/bin/mail2dbng.php %(listname)s ;'
+
+
+Tuleap 9.14
+===========
+
+.. attention::
+
+  You can (and should) do this prior to upgrade so the upgrade will be straightforward.
+
+  If your ``my.cnf`` on your mysql server contains ``old_passwords=1`` you will have to desactivate it (comment the line)
+  and restart mysql.
+
+  Then update your password, as ``codendiadm`` and ``dbauthuser`` DB user:
+
+  * ``SET SESSION old_passwords=0;``
+  * ``SET PASSWORD = PASSWORD('your_existing_password')``
+
+Software Collections are now mandatory
+--------------------------------------
+
+Starting Tuleap 9.14 Software Collections must be enabled on your system if you have not done it yet.
+
+In a CentOS environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum install centos-release-scl
+
+In a RHEL environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum-config-manager --enable rhel-server-rhscl-6-rpms
+
+
+PHP 5.6 / nginx
+---------------
+
+.. note::
+
+  It's recommended to migrate to PHP 5.6 for better security and performances. Please note that PHP 5.3 will no longer
+  be supported after 9.16 (2 releases).
+
+Tuleap now comes with ``php 5.6`` (from Software Collections) and ``nginx`` packages by default. All new installations
+defaults to this setup.
+
+You can switch to php 5.6 by using::
+
+    /usr/share/tuleap/tools/utils/php56/run.php
+
+This will configure nginx as the new entry point for all HTTP (port 80) and HTTPS (port 443).
+Your exiting apache will be updated to listen to :8080 and only locally (loopback, 127.0.0.1)
+for subversion and mailman.
+
+Everything is described in PHP 5.6 on Centos 6
+
+Crosstracker plugin
+-------------------
+
+.. note::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+The crosstracker plugin is now part of :ref:`Tuleap Entreprise <tuleap-enterprise>` only.
+You will have to install the new plugin called tuleap-plugin-crosstracker.
+Once done, you can migrate your old widget to the new format, please run:
+
+.. sourcecode:: shell
+
+    cd /usr/share/tuleap
+    src/utils/php-launcher.sh plugins/crosstracker/bin/migrate_old_crosstracker_widgets.php
+
+
+CLI is gone
+-----------
+
+In order to help the deprecation usage of the SOAP API, we do not deliver anymore the CLI tool,
+nor its documentation. This tool was here to help Tuleap SOAP API adoption in the early days.
+Users that downloaded the CLI in the past can still use it, the SOAP API has not been changed yet.
+
+Users should **consider using REST API instead**.
+
+Indexation of follow-up comments
+--------------------------------
+
+Since Tuleap 9.14 we can search in artifacts follow-up comments in TQL. In order to achieve this,
+the existing comments must be indexed. Since we don't know how much it can take on your instance
+(there is high chance that indexing all comments of 1M+ artifcats will take some time), we prefer
+to delegate the migration to site administrator instead of relying on our standard database upgrade
+process (forgeupgrade).
+
+When the usage of your server is low, you can launch the following script:
+
+.. sourcecode:: shell
+
+  cd /usr/share/tuleap
+  src/utils/php-launcher.sh plugins/tracker/bin/store_stripped_body_of_comments.php
+
+The script will display how much comments it will have to store. You can safely cancel the execution
+of the script at any moment with ``ctrl-c`` and relaunch it later.
+
+Tuleap 9.13
+===========
+
+API keys used to access to a Bugzilla server in the Bugzilla reference plugin are now encrypted
+-----------------------------------------------------------------------------------------------
+
+If you use the Bugzilla reference plugin, it is recommended you change the API keys
+used until now. These keys are now stored encrypted instead of in cleartext in
+the database. You can do that as a site administrator in the plugin configuration.
+
+HTTPS is forced by default if available
+---------------------------------------
+
+Tuleap now forces the use of the HTTPS protocol if the parameter `sys_https_host`
+is not set to an empty value in the `local.inc` configuration file. Consequently,
+the parameter `sys_force_ssl` is no more needed as it becomes the only possible
+behavior and could safely be removed from your configuration file.
+
+Move to Mediawiki 1.23
+----------------------
+
+It's strongly recommended to migrate all your mediawiki databases to 1.23 (LTS) in order to
+prepare PHP 5.6 compatibility.
+
+Tuleap 9.12
+===========
+
+Update to the Test Management plugin
+------------------------------------
+
+The :ref:`Test Management<testmgmt>` plugin is only available with
+:ref:`Tuleap Enterprise<tuleap-enterprise>`.
+
+Instances with the :ref:`Test Management<testmgmt>` plugin installed and activated
+must execute the following command before running the ``forgeupgrade`` command
+during the update procedure:
+
+.. sourcecode:: shell
+
+    #> sed -i 's#/usr/share/tuleap/plugins/trafficlights#/usr/share/tuleap/plugins/testmanagement#' /etc/tuleap/forgeupgrade/config.ini
+
+Instances with the plugin installed should update their repo file
+(probably ``/etc/yum.repos.d/tuleap.repo``) to set the base URL of the Test Management
+repository to something like: ``https://<companyname>:<password>@my.enalean.com/pub/tuleap-by-enalean/tuleap-testmanagement/current/rhel6/noarch/``.
+If you encounter troubles to update your configuration, please contact your
+:ref:`Tuleap Enterprise<tuleap-enterprise>` support.
+
+After the upgrade, when you access for the first time in each project Test Management,
+a project administrator will need to link the service to a tracker to collect issues
+in the service administration. The tracker can be a tracker already existing
+or you can create a new one dedicated to issues found while executing a test suite.
+
+Plugin Git with Gitolite3 now requires Git 2.9
+----------------------------------------------
+
+If you have the package ``tuleap-plugin-git-gitolite3`` installed you will need
+to enable the Software Collections repositories to be able to retrieve Git 2.9.
+
+In a CentOS environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum install centos-release-scl
+
+In a RHEL environnement, this could be done with:
+
+.. sourcecode:: shell
+
+    #> yum-config-manager --enable rhel-server-rhscl-6-rpms
+
+The configuration of Gitolite must also been manually updated to take into account
+the new path to the Git binaries. The update can be done with the following command:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/git19/root/usr/bin#/opt/rh/rh-git29/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
+
+Deprecated feature
+------------------
+
+- Direct Database Access is disabled by default, and will be removed in a next release.
+  If users complain, you can enable the feature by adding
+  ``$sys_enable_deprecated_feature_database_export = 1;`` into ``/etc/tuleap/conf/local.inc`` file.
+  Please contact us if it is the case, else we will remove completely the feature.
+
+Tuleap 9.10
+===========
+
+Custom plugins impacted by _addHook removal
+-------------------------------------------
+
+We have done some code clean up in plugins management. You may be interested if you have custom
+plugins installed on your platform: starting Tuleap 9.9.99.73, we removed the deprecated method
+``_addHook`` (replaced by ``addHook``). Your platform will display a blank page if you are still
+using the former version.
+
+In order to fix the issue (if any), please replace all occurrences of ``_addHook`` by ``addHook``
+in your custom plugins.
+
+Tuleap 9.9
+==========
+
+Migration to the new dashboards can be slow
+-------------------------------------------
+
+Tuleap 9.9 introduces a new dashboard system for users and projects. The migration
+of the existing dashboard can take some time depending on the number of users
+and projects on your Tuleap instance. Plan your update accordingly.
+
+Bugzilla reference plugin uses API key instead of the user's password
+---------------------------------------------------------------------
+
+If you had configured Bugzilla servers you must edit them to provide an API key
+instead of the user's password that was previously used. Please refer to the
+`Bugzilla documentation <https://bugzilla.readthedocs.io/en/latest/using/preferences.html#api-keys>`_
+if you need help to get an API key.
+
+Packages in Tuleap repository are now signed
+--------------------------------------------
+
+The packages of the Tuleap repository are now signed so you can be sure that the
+packages you got has not been altered.
+
+We suggest you modify your repository configuration (`/etc/yum.repos.d/Tuleap.repo`)
+to:
+
+.. sourcecode:: ini
+
+        [Tuleap]
+        name=Tuleap
+        baseurl=https://ci.tuleap.net/yum/tuleap/rhel/6/dev/$basearch
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
+
+On the first run after the modification, Yum will ask if the key used to sign the
+packages is trusted.
+
+The key has the short ID `ADB0D167` and the fingerprint `3D03 B41A 172A 7FB9 4F1E  9E9E C0B5 E775 ADB0 D167`.
+
+Tuleap 9.8
+==========
+
+Disable web editing of plugin properties available in the site administration
+-----------------------------------------------------------------------------
+
+It is strongly recommended to disable the web editing of plugin properties for security reasons.
+You can disable the feature by adding into your ``local.inc`` the following parameter:
+
+.. sourcecode:: php
+
+        $sys_plugins_editable_configuration = 0;
+
+Changes in layout
+-----------------
+
+Starting 9.8, the footer has been changed to respect BurningParrot style guide. This means that
+if you customized the footer (in ``/etc/tuleap/site-content/…/layout/``), then there are high
+changes that its style will be broken. If this is the case, then we suggest that you take a look at
+the new version of the layout to be compatible (see ``/usr/share/tuleap/site-content/…/layout/``).
+
+This also applies to the following pages:
+
+* /contact.php
+* /help/
+
+If you customized them, you will have to apply the new look and feel or they will appear broken.
+
+Tuleap 9.7
+==========
+
+Pull requests in a Git repository using fine grained permissions with `tuleap-plugin-git`
+-----------------------------------------------------------------------------------------
+
+Starting Tuleap 9.7, it is not possible to merge or abandon a pull request in repository
+using fine grained permissions with `tuleap-plugin-git`. To make it works, you need
+to upgrade to `tuleap-plugin-git-gitolite3`. You can find more information on how to do
+the migration from Gitolite 2 to Gitolite 3 in the administration guide.
+
+Update of Git access log storage
+--------------------------------
+
+Starting Tuleap 9.7 the logs of git read access (gitolite) change to save disk space and improve parsing time. As the
+time to convert existing logs might be quite long (estimated to ~20 hours for dataset of 34GB) it's available in a dedicated
+convertion script meant to be run after the upgrade during a quiet moment (during week-end for instance).
+
+.. sourcecode:: shell
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/git/bin/convert_gitolite_full_logs.php
+
+Update the unsafe pattern in the Gitolite configuration
+-------------------------------------------------------
+
+To avoid getting your Gitolite configuration broken by users that are Git administrators,
+it is recommend to change the unsafe pattern:
+
+.. sourcecode:: shell
+
+    #> sed -i "s/$UNSAFE_PATT = qr();/$UNSAFE_PATT = qr([\\\n]);/" /var/lib/gitolite/.gitolite.rc
+
+Tuleap 9.5
+==========
+
+Purge data from the userlog plugin
+----------------------------------
+
+If you use the userlog plugin the data stored in the database can grow quite big.
+We have introduced a new utility to help you clean it. You can call it this way:
+
+.. sourcecode:: shell
+
+    #> /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/userlog/bin/clean_userlog_request.php
+
+Tuleap 9.4
+==========
+
+End of life for the Subversion authentication mod ``modmysql`` and ``modldap``
+------------------------------------------------------------------------------
+
+In Tuleap 9.5 the remaining SVN repositories still not using ``modperl`` as the authentication
+mod will be migrated and ``modmysql`` and ``modldap`` will not be available anymore.
+
+To ease the migration, we encourage you to make the switch today by setting in
+your ``local.inc`` the parameter ``sys_auth_svn_mod`` to ``modperl``.
+
+Block mail notification option
+------------------------------
+
+Tuleap 9.4 introduces a change on the way mail notifications are handled.
+You can choose to never send notifications to non projects member of private project.
+
+This feature is disabled by default, if you want to enable it, update ``local.inc`` and set ``sys_mail_secure_mode`` to 1.
+
+.. sourcecode:: php
+
+        // When 0 mail sent to everybody can lead to information leak, non projects members can receive mails of private projects
+        $sys_mail_secure_mode = 1;
+
+
+Update default TLS configuration
+--------------------------------
+
+With this release we have updated the default TLS Apache configuration we provide with Tuleap.
+This change can result in small performance gain and use the safest cipher suite
+we have available.
+
+All new instances of Tuleap will use this new configuration but if you already
+have an installation, your configuration will be left untouched.
+
+We encourage you to update it. To do it, replace the line SSLCipherSuite
+in ``/etc/httpd/conf/ssl.conf`` or ``/etc/httpd/conf.d/tuleap-vhost.conf``,
+depending how old your installation is, by:
+
+  .. sourcecode:: ApacheConf
+
+    #   SSL Cipher Suite:
+    # List the ciphers that the client is permitted to negotiate.
+    # See the mod_ssl documentation for a complete list.
+    SSLCipherSuite ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS
+
+
+Merge of fusionforge_compat plugin with the Mediawiki plugin
+------------------------------------------------------------
+
+Since Tuleap 9.3 the fusionforge_compat plugin has been merged with the Mediawiki
+plugin. As a result the package ``tuleap-plugin-fusionforge_compat`` is an empty
+shell that can be safely removed with ``yum remove tuleap-plugin-fusionforge_compat``.
+
+The package ``tuleap-plugin-fusionforge_compat`` is going to be removed completely
+in the next version of Tuleap.
+
+Invalidation of all existing user sessions
+------------------------------------------
+
+Tuleap 9.4 introduces a change in the way the user sessions are handled. All
+existing user sessions are flushed during this upgrade, this will force your
+users to log in again.
+
+End of support of package ``viewvc-tuleap``
+-------------------------------------------
+
+Since Tuleap 8.19, Tuleap is able to use the package ``viewvc`` provided by EPEL.
+Starting Tuleap 9.4, the package ``viewvc-tuleap`` is removed from the official
+Tuleap repository. For those of you that have still not made the switch, we urge
+you to do it for security reasons. The swap of the packages can be done this way:
+
+.. sourcecode:: shell
+
+    #> yum shell -y <<EOF
+    remove viewvc-tuleap
+    install viewvc
+    run
+    quit
+    EOF
+
+Tuleap 9.3
+==========
+
+Snippets are disabled
+---------------------
+
+The snippets are now disabled unless specifically forced and this feature will
+be completely removed in Tuleap 9.5. If you think you have a valid use case and
+think this feature should be kept, please manifest yourself on the
+`tuleap-devel <https://tuleap.net/plugins/forumml/message.php?group_id=101&list=1>`_
+mailing list. In the meantime, if you really need it, the feature can be force activated by setting
+``$sys_use_snippet`` to ``'force'``.
+
+Tuleap 9.2
+==========
+
+HTTP persistent connection is now enabled by default on new installations
+-------------------------------------------------------------------------
+The default Apache configuration that is deployed during Tuleap installation now enable HTTP persistent connection.
+We encourage existing instances to do the same as it can improve performance by setting the option ``KeepAlive``
+to ``On`` in the configuration file ``/etc/httpd/conf/httpd.conf``.
+
+Tuleap 9.1
+==========
+
+We put some gloss, makeup and rhinestones on site administration. This is the introduction of a new theme named BurningParrot. It is transparent for the users – no need to change the user preferences, however it comes as a dependency of ``tuleap-all`` package. When you upgrade to 9.1, if you don't have/upgrade ``tuleap-all`` package then you should manually install ``tuleap-theme-burningparrot`` package. Enjoy <3
+
+In the same vein, we removed the old and nasty theme named 'Tuleap'. You must issue the following command if you have installed it: ``yum remove tuleap-theme-tuleap``.
+
+Tuleap 9.0
+==========
+
+Definitive removal of the deprecated password storage
+-----------------------------------------------------
+This release can only work with the password storage introduced in Tuleap 8.3.
+You must ensure that you have properly updated the Proftpd plugin.
+
+The following command must be executed this script:
+
+.. sourcecode:: shell
+
+    #> /usr/share/tuleap/plugins/proftpd/bin/switch_to_unix_password.php
+
+You must also check that in ``/etc/proftpd.conf``, the parameter SQLAuthTypes is set to Crypt and not MD5.
+
+Import all gitolite3 logs
+-------------------------
+You can parse all your gitolite3 log by running next script,
+logs previsously parsed won't be taken in account.
+
+    .. sourcecode:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> ./src/utils/php-launcher.sh plugins/git/bin/import_all_giotlite3_logs.php
