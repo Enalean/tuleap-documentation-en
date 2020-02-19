@@ -1,0 +1,393 @@
+Tuleap 10.x
+###########
+
+Tuleap 10.11
+============
+
+Incorrect path to the Git binaries in the Gitolite configuration
+----------------------------------------------------------------
+
+If you have installed after Tuleap 10.5.99.15, Gitolite will not be able to find the
+Git 2.12 binaries. Tuleap instances that have been installed before that and that have
+followed the deployment guide while upgrading are not impacted.
+Gitolite is the software used by Tuleap to, among other things, do the access control
+management of the Git repositories.
+
+The Gitolite configuration must be updated to set the path environnement to
+``/opt/rh/sclo-git212/root/usr/bin:$ENV{PATH}`` instead of ``/opt/rh/sclo-git212/root/usr/bin/git:$ENV{PATH}``.
+
+The following one-liner can be used to achieve that:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/sclo-git212/root/usr/bin/git:#/opt/rh/sclo-git212/root/usr/bin:#" /var/lib/gitolite/.gitolite.rc
+
+
+Tuleap 10.10
+============
+
+Nothing to mention.
+
+Tuleap 10.9
+===========
+
+End of support of PHP 5.6
+-------------------------
+
+Tuleap now comes with PHP 7.2. All new installations defaults to this setup.
+
+To switch on it, you first need to deploy the PHP FPM configuration for PHP 7.2.
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php72/run.php --module=fpm
+
+Then stop the PHP FPM service running with PHP 5.6 and start a new one running
+with PHP 7.2.
+
+On RHEL/CentOS 7:
+
+.. sourcecode:: bash
+
+  systemctl daemon-reload
+  systemctl restart tuleap-php-fpm
+
+
+On RHEL/CentOS 6:
+
+.. sourcecode:: bash
+
+  service php56-php-fpm stop
+  chkconfig php56-php-fpm off
+  service php72-php-fpm start
+  chkconfig php72-php-fpm on # Useful if you want the service to be started on boot
+
+Tuleap 10.8
+===========
+
+Deployment of a new allowed command when doing Git over SSH operation
+---------------------------------------------------------------------
+
+A new command must be allowed when doing Git over SSH operation for the support of Git LFS.
+You are concerned if:
+
+* you are running a RHEL/CentOS 6 server with the ``tuleap-plugin-git-gitolite3`` package
+* you are running a RHEL/CentOS 7 server with the ``tuleap-plugin-git`` package
+
+In the Gitolite configuration (``/var/lib/gitolite/.gitolite.rc``) the command ``git-lfs-authenticate``
+must be added to the whitelisted commands.
+
+The following one-liner can be used to achieve that:
+
+.. sourcecode:: shell
+
+    #> sed -i -e "/# These are the commands enabled by default/a 'git-lfs-authenticate'," /var/lib/gitolite/.gitolite.rc
+
+Apache configuration must be redeployed
+---------------------------------------
+
+In some cases the parsing of Apache logs was not done resulting in missing SVN usage statistics.
+In order to fix that, some configuration files might need to be redeployed.
+
+You can use the following command to do so:
+
+.. sourcecode:: shell
+
+    #> /usr/share/tuleap/tools/utils/php56/run.php --module=apache
+
+
+Tuleap 10.7
+===========
+
+Renaming of the Project Certification plugin
+--------------------------------------------
+
+The Project Certification plugin has been renamed to Project Ownership. If you use this plugin, you will need
+to update the ForgeUpgrade configuration before the execution of the ForgeUpgrade utility.
+
+You can use the following command to do so:
+
+.. sourcecode:: shell
+
+    #> sed -i 's#/usr/share/tuleap/plugins/project_certification#/usr/share/tuleap/plugins/project_ownership#' /etc/tuleap/forgeupgrade/config.ini
+
+Crosstracker nginx configuration
+--------------------------------
+
+The nginx custom configuration file for the crosstracker plugin must be deleted.
+To do this, you have to delete the file ``/etc/nginx/conf.d/tuleap-plugins/crosstracker.conf``
+and restart the nginx service.
+
+Tuleap 10.6
+===========
+
+
+Plugin Git with Gitolite3 now requires Git 2.12
+-----------------------------------------------
+
+The configuration of Gitolite must been manually updated to take into account
+the new path to the Git binaries. The update can be done with the following command:
+
+.. sourcecode:: shell
+
+    #> sed -i "s#/opt/rh/rh-git29/root/usr/bin#/opt/rh/sclo-git212/root/usr/bin#" /var/lib/gitolite/.gitolite.rc
+
+REST route ``POST /git/{id}/build_status`` is no more available
+---------------------------------------------------------------
+
+As announced in Tuleap 10.2, this REST route has been replaced
+by the REST route ``POST /git/{id_or_path}/statuses/{commit_reference}``.
+
+Your CI jobs and scripts that are still using the last route will need to be updated.
+
+More information on how to configure your CI jobs and updated script to publish
+the feedback of your jobs to Tuleap can be found here: :ref:`pullrequest-with-jenkins-feedback`.
+
+Removal of the IM plugin
+------------------------
+
+The IM plugin has been removed and is not available anymore in the Tuleap repository.
+If you still had the plugin enabled on your Tuleap instance, it will disappear after
+the update.
+
+
+Tuleap 10.5
+===========
+
+PHP-FPM does not restart after PHP-FPM upgrade
+----------------------------------------------
+
+Tuleap configuration can conflict with the default configuration of the PHP-FPM package.
+We advise you to create an empty configuration file for the default configuration to
+avoid the recreation of the default configuration file.
+
+::
+
+    touch /etc/opt/remi/php56/php-fpm.d/www.conf
+
+
+Tuleap 10.4
+===========
+
+New RPM repository for PHP packages
+-----------------------------------
+
+The Software Collection for PHP 5.6 is not supported anymore, therefore Tuleap
+has moved to the **remi-safe** repository. You will need to install to be able
+to upgrade.
+
+To install it if you are using RHEL/CentOS 6:
+
+::
+
+    yum install https://rpms.remirepo.net/enterprise/remi-release-6.rpm
+
+To install it if you are using RHEL/CentOS 7:
+
+::
+
+    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+You can find find more information about the installation of the remi-safe repository
+on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+
+Once the installation of this repository is done, you will need to stop the existing
+PHP-FPM service before proceeding to the update (see :ref:`update`):
+
+.. sourcecode:: bash
+
+  service rh-php56-php-fpm stop
+
+After the update, you will need to deploy the PHP-FPM configuration for the new
+service and to start it:
+
+.. sourcecode:: bash
+
+  /usr/share/tuleap/tools/utils/php56/run.php --module=fpm
+  service php56-php-fpm start
+  chkconfig php56-php-fpm on # Useful if you want the service to be started on boot
+
+If you had the ``sclo-php56-php-pecl-redis`` package installed, you will need to
+install the ``php56-php-pecl-redis`` package (``yum install php56-php-pecl-redis``).
+
+After that your Tuleap instance should be running, you can then remove previous
+PHP56 packages coming from the RH PHP56 SCL and PHP56 SCLo with ``yum remove rh-php56\* sclo-php56\*``.
+
+If you previously had installed the CentOS Vault RPM repository you can also safely
+remove it from your system (``rm /etc/yum.repos.d/centos-vault-rh-php56.repo``).
+
+Tuleap 10.3
+===========
+
+Update of themes variants
+-------------------------
+
+The following theme variants does not exist anymore:
+
+* DarkOrange
+* DarkBlue
+* DarkGreen
+* DarkRed
+* DarkBlueGrey
+* DarkPurple
+
+Please make sure that they are not anymore used by ``$sys_default_theme_variant`` and ``$sys_available_theme_variants`` variables in your ``/etc/tuleap/conf/local.inc`` file.
+
+Monitoring and instrumentation
+------------------------------
+
+Instrumentation based on statsd has been removed in favor of Prometheus. See :ref:`admin_monitoring_with_prometheus`.
+
+Tuleap 10.2
+===========
+
+Continuous integration jobs should use pullrequest target repository
+--------------------------------------------------------------------
+
+Until now it was necessary to use the source repository when using continuous
+integration with pull requests. It is now recommended to update your jobs to use
+the target repository to retrieve data.
+The existing REST route to publish the build status has also been deprecated,
+in favor of a new route.
+
+More information on how to configure your CI jobs and updated script to publish
+the feedback of your jobs to Tuleap can be found here: :ref:`pullrequest-with-jenkins-feedback`.
+
+
+Changes in Tuleap internal API to communicate with the database impacting external plugins
+------------------------------------------------------------------------------------------
+
+These changes only impacts users maintaining plugins outside the Tuleap codebase.
+If you are only using plugins from the official Tuleap repository you are not
+concerned and you can safely ignore this.
+
+If you maintain a plugin, it is highly recommended to do the following changes:
+ * any direct usage of ``\DataAccess`` must be replaced by ``\Tuleap\DB\Compat\Legacy2018\LegacyDataAccessInterface``
+ * any direct usage of ``\DataAccessResult`` must be replaced by ``\Tuleap\DB\Compat\Legacy2018\LegacyDataAccessResultInterface``
+
+If possible, your code should be updated to work directly the API proposed under
+the ``\Tuleap\DB\`` namespace.
+
+Theses changes will become mandatory in upcoming versions of Tuleap.
+
+
+Deprecation of statsd for the instrumentation
+---------------------------------------------
+
+Tuleap 10.2 is the last version supporting statsd to publish instrumentation
+data. Tuleap 10.3 will come with a native support of Prometheus which will be
+the only supported way of collecting and processing instrumentation data in
+Tuleap.
+
+
+Tuleap 10.0
+===========
+
+Git mirroring: necessary update of the gitolite admin update script
+-------------------------------------------------------------------
+
+If you use the Git mirroring feature, you will need to update the gitolite admin
+update script on the mirrors so it can work with recent of gitolite.
+
+You need to replace on the mirrors the content of the file
+``/usr/local/bin/update_gladmin.sh`` by:
+
+.. sourcecode:: bash
+
+  #!/bin/sh
+
+  git=$1
+  gitname="`basename $git`"
+
+  if [ $gitname = gitolite-admin.git ]
+  then
+    cd $git
+    export GL_BINDIR=/usr/share/gitolite3
+    export GL_LIBDIR=$GL_BINDIR/lib
+    $HOME/.gitolite/hooks/gitolite-admin/post-update refs/heads/master
+  fi
+
+
+Improper certificate validation when communicating with Mattermost servers
+--------------------------------------------------------------------------
+
+This change only impacts users of the bot Mattermost plugins. Until Tuleap 10.0,
+certificates to communicate with Mattermost servers over HTTPS were not properly
+verified. The certificates are now properly verified as anywhere else in Tuleap,
+that means that connections to Mattermost might stop working if you use a
+certificate that is not signed by one of the certificate authorities recognized
+by your operating system. To solve it, you might want to use on your Mattermost
+server a certificate signed by a recognized certificate authority such as
+`Let's Encrypt <https://letsencrypt.org/>`_ or if you use your own internal
+certificate authority you will need to add it to the store of your OS as
+described here: :ref:`admin_howto_add_certicate`.
+
+
+
+Apache configuration update to deal with an issue affecting Subversion copy and move operations
+-----------------------------------------------------------------------------------------------
+
+An issue affecting the Subversion copy and move operations has been discovered
+and fixed. Unfortunately, the fix requires from the administrators a manual
+update of the Apache configuration.
+
+The following line needs to be added in the Apache virtualhost processing the
+Subversion requests:
+
+  .. sourcecode:: ApacheConf
+
+    RequestHeader edit Destination ^https http early
+
+
+The corresponding configuration block can either be found in ``/etc/httpd/conf.d/tuleap-vhost.conf``
+or if the file does not exist in ``/etc/httpd/conf/httpd.conf``.
+
+In ``/etc/httpd/conf.d/tuleap-vhost.conf``, once updated the virtualhost block will
+look like this:
+
+  .. sourcecode:: ApacheConf
+
+    <VirtualHost 127.0.0.1:8080>
+        ServerName tuleap.example.com
+        ServerAlias www.tuleap.example.com
+        ServerAlias lists.tuleap.example.com
+
+        RequestHeader edit Destination ^https http early
+
+        # Include all configuration files from conf.d (php, subversion, etc.)
+        # (also included from conf/ssl.conf)
+        Include conf.d/tuleap-aliases/*.conf
+
+       LogFormat "%v %h %l %u %t \"%r\" %>s %b" commonvhost
+       CustomLog logs/access_log commonvhost
+       CustomLog logs/svn_log "%h %l %u %t %U %>s \"%{SVN-ACTION}e\"" env=SVN-ACTION
+    </VirtualHost>
+
+In ``/etc/httpd/conf/httpd.conf``, once updated the virtualhost block will look
+like this:
+
+  .. sourcecode:: ApacheConf
+
+    <VirtualHost *:8080>
+        ServerName tuleap.example.com
+        ServerAlias svn.*.tuleap.example.com
+        RequestHeader edit Destination ^https http early
+        Include conf.d/codendi_svnroot.conf
+    </VirtualHost>
+
+
+If you use a Distributed Tuleap setup, you will need to replace the following
+section in your nginx configuration
+
+  .. sourcecode:: nginx
+
+    set $fixed_destination $http_destination;
+    if ( $http_destination ~* ^https(.*)$ ) {
+        set $fixed_destination http$1;
+    }
+
+with
+
+  .. sourcecode:: nginx
+
+    proxy_set_header Destination $http_destination;
