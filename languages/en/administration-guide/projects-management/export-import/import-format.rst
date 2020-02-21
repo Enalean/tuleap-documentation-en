@@ -26,5 +26,6 @@ As of today, the following things are covered by the import tool:
    import-format/git
    import-format/svn
    import-format/frs
+   import-format/document
    import-format/mediawiki
    import-format/references
