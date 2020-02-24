@@ -5,4 +5,4 @@ Deployment guide
    :maxdepth: 1
 
    deployment-guide/deprecations
-   deployment-guide/intro
+   deployment-guide/11.x.rst
