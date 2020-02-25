@@ -1,13 +1,5 @@
-.. _deployment-guide:
-
-Actions during Tuleap upgrade
-=============================
-
-This document explains the actions an admin must or should do during a given upgrade.
-
-Note about config files (Tuleap's \*.inc): as long as you are OK with the defaults set by
-the development team, there is no need for you to add those new variables in the corresponding
-file, the default is automatically set for you.
+Tuleap 11.x
+###########
 
 Tuleap 11.12
 ============
@@ -326,14 +318,3 @@ Full Text Search plugin removal
 
 The plugin was deprecated for a while and has been removed. The plugin will not be available
 on your instance after your upgrade.
-
-Previous releases
-=================
-
-.. toctree::
-  :maxdepth: 1
-
-  10.x
-  9.x
-  8.x
-  7.x
