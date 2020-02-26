@@ -4,7 +4,6 @@ Documents
 Documents and their history can be imported. There are still limitations though.
 Here are the list of unsupported features:
 
-* Export/import version's label & changelog
 * Export/import metadata in project
 * Export/import item's metadata
 * Export/import wiki versions
@@ -202,6 +201,38 @@ The author of a version can also be specified:
   </item>
 
 .. NOTE:: See :ref:`project-export-import-users` for more details of user format.
+
+Labels & Changelog
+------------------
+
+The label or changelog of an item version can be specified:
+
+.. sourcecode:: xml
+  :linenos:
+  :emphasize-lines: 10,17,18
+
+  <item type="file">
+    <properties>
+      <title>…</title>
+    </properties>
+    <versions>
+      <version>
+        <filename><![CDATA[button.gif]]></filename>
+        <filetype><![CDATA[image/gif]]></filetype>
+        <filesize><![CDATA[1312544]]></filesize>
+        <label><![CDATA[The label]]></label>
+        <content><![CDATA[documents/content-212.bin]]></content>
+      </version>
+      <version>
+        <filename><![CDATA[button-v2.png]]></filename>
+        <filetype><![CDATA[image/png]]></filetype>
+        <filesize><![CDATA[799789]]></filesize>
+        <label><![CDATA[Another label]]></label>
+        <label><![CDATA[A changelog]]></label>
+        <content><![CDATA[documents/content-214.bin]]></content>
+      </version>
+    </versions>
+  </item>
 
 Permissions
 -----------
