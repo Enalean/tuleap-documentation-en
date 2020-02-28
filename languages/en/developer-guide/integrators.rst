@@ -36,13 +36,13 @@ Integration of contributions
   to the contributor to rebase her changes in case of conflicts. (Except for ``autoload.php`` conflicts where integrators can run ``make autoload-docker`` + ``git add``. In other cases, the rebase must be done by the contributor.)
 
 
-* Edit VERSION numbers:
+* Edit VERSION number:
 
   .. code-block:: bash
 
     $ tools/utils/version_numbers/generate.sh
 
-  **Important:** Do **not** ``git add`` the updated version files.
+  **Important:** Do **not** ``git add`` the updated version file.
 
 * Commit (signed) **only** the merge (**do not touch the commit message**).
 

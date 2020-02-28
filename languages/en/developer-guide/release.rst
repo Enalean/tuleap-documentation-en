@@ -36,20 +36,16 @@ You will also need a remote to the `Tuleap repository on Gerrit <https://gerrit.
 The top of the master branch must be what you want to release.
 Your workspace copy must be up to date and at the top of the master branch.
 
- 1. Verify that all VERSION files of the plugins and themes has been correctly updated::
-
-    $ php ./tools/rpm/check_release/check_release_git.php
-
- 2. Update `/VERSION` to the X.Y version you are releasing
- 3. Commit::
+ 1. Update `/VERSION` to the X.Y version you are releasing
+ 2. Commit::
 
     $ git commit -S -a -m 'This is Tuleap X.Y'
 
- 4. Tag::
+ 3. Tag::
 
     $ git tag -s -m 'Create tag for Tuleap X.Y' X.Y
 
- 5. Publish your commit and tag::
+ 4. Publish your commit and tag::
 
     $ git push stable HEAD:master
     $ git push gerrit HEAD:master
