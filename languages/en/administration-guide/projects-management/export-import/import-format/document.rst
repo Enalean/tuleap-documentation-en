@@ -6,11 +6,10 @@ Here are the list of unsupported features:
 
 * Export/import metadata in project
 * Export/import item's metadata
-* Export/import wiki versions
+* Export/import wiki documents
 * Export/import link versions
 * Export/import approval tables
 * Export/import locked document
-* Export/import of phpwiki page content
 
 Basic XML syntax
 ----------------
@@ -55,12 +54,6 @@ Basic XML syntax
           <item type="link">
             <properties>
               <title><![CDATA[My link]]></title>
-            </properties>
-            <url><![CDATA[https://tuleap.org]]></url>
-          </item>
-          <item type="wiki">
-            <properties>
-              <title><![CDATA[My wiki page]]></title>
             </properties>
             <url><![CDATA[https://tuleap.org]]></url>
           </item>
