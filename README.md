@@ -2,7 +2,11 @@ Tuleap Documentation
 ====================
 
 [Tuleap](https://tuleap.org/) uses Sphinx in order to generate [its
-documentation](http://doc-en.tuleap.net/en/latest/).
+documentation](https://docs.tuleap.org/).
+
+Contributors are encouraged to have a look at [Google Technical Writing]
+(https://developers.google.com/tech-writing) course in order to add
+high quality content.
 
 Download the sources from GitHub
 --------------------------------
