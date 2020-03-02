@@ -82,6 +82,6 @@ can add an expiration date to a user account in several ways:
    information page, you can add or modify the expiration date of a user
    account.
 
-Once the date is reached, the account status becomes suspended. If you
+The day after the chosen date, the account status will be suspended. If you
 want to expand the account validity, you have to reactivate the account
 **and** change the expiration date.
