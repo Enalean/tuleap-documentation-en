@@ -135,22 +135,18 @@ New widgets can be added through the dropdown entry “Add widget”. Here is an
 
 .. _account-maintenance:
 
-Account Maintenance
--------------------
+Preferences
+-----------
 
 You provided a certain amount of demographic information to
 Tuleap when you first registered on the Tuleap
 site. This and other information can be modified at any time by
 clicking on the "cog" image near your user name.
 
-Most of the items on the "My Account" page will look obvious to
+Most of the items on the "Preferences" page will look obvious to
 you. However, we would like to draw your attention on some of them:
 
--  Add an avatar by clicking on the image at the top left of the page.
-
--  Change your password or email adress.
-
--  **SSH shared keys**: this one has to do with the Shell Account
+-  **SSH keys**: this one has to do with the Shell Account
    service. When you are a registered user, the Tuleap
    server gives you a personal shell account with the same
    login/password as for the Web interface. To automate the shell login
@@ -164,31 +160,15 @@ you. However, we would like to draw your attention on some of them:
    Then look at the file '~/.ssh/identity.pub' where the generated public key has been stored.
    Read the ssh documentation for further information on sharing keys.
 
-
-Your preferences are available at the right of the page. Here
-are some of the preferences you can define:
-
--  **Remember my Login/Password**: by default your current login session
-   on Tuleap is terminated whenever you stop your Web
-   browser. When you restart your browser and visit Tuleap
-   you will be asked for your login/password again. By checking this box
-   you ask Tuleap to remember about your login/password
-   forever or at least until you explicitly select the "Logout" item in
-   the Tuleap Main Menu. For security reasons we do not
-   recommend using this feature unless you are equipped with a strictly
-   personal desktop machine
-
 -  **CSV separator**: Tuleap provides you export and import
    functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
    format. Like CSV norm is not implemented by the same way in each
    software, we allow you to change the CSV separator, in order to fit
    with your preferred software! The available separators are:
 
-   -  comma (,) : the default separator.
-
-   -  semicolon (;) : used by default by the french version of Excel.
-
-   -  tab (tab).
+   -  ``comma`` (,): the default separator.
+   -  ``semicolon`` (;): used by default by the french version of Excel.
+   -  ``tab`` (tab).
 
 -  **CSV date format**: Tuleap provides export and import
    functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
@@ -196,34 +176,11 @@ are some of the preferences you can define:
    software, we allow you to change the CSV date format, in order to fit
    with your preferred software! The available formats are:
 
-   -  month/day/year : the default format (generally used in United
+   -  ``month/day/year``: the default format (generally used in United
       States).
-
-   -  day/month/year : used by default by the french version of Excel.
+   -  ``day/month/year``: used by default by the french version of Excel.
 
    This format will be used to generate the exported artifacts, and will
    also be used when importing. Then, don't forget to check your dates
    value before importing. They should be the same format as defined in
    your preferences.
-
--  **Accessibility**: Enabling this option will show special patterns on cards
-   that have a background color (see :ref:`semantic_color`). Cards in Agile
-   dashboard and Cardwall trackers will display the accessibility pattern.
-   This helps distinguish between colors.
-
-    .. figure:: ../images/screenshots/citizen/accessibility_mode_user_preference.png
-        :align: center
-        :alt: Accessibility mode option
-        :name: Accessibility mode option
-
-        Accessibility mode option
-
-    .. figure:: ../images/screenshots/citizen/accessibility_pattern.png
-        :align: center
-        :alt: Accessibility pattern on cards
-        :name: Accessibility pattern on cards
-
-        Accessibility pattern on cards
-
--  **Activate the Lab mode**: give access to features in preview. This is for advanced users who
-    know what they are doing.
