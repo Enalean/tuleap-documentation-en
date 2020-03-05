@@ -4,11 +4,7 @@ Tuleap 11.x
 Tuleap 11.12
 ============
 
-.. NOTE::
-
-  Tuleap 11.12 is currently under development.
-
-
+Nothing to mention.
 
 Tuleap 11.11
 ============
