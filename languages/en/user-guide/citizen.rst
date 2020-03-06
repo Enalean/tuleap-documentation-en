@@ -157,7 +157,7 @@ clone a git repository you can either do it with you regular login/password
 and https://... address or you might want to use the ssh protocol because
 it makes things generally faster and easier. To use the ssh protocol, you will
 have to upload your public ssh key and wait ~1 to 2 minutes for the key to
-be deployed
+be deployed.
 
 To generate a public key, run the program ``ssh-keygen`` on your machine.
 Then look at the file ``~/.ssh/id_rsa.pub`` where the generated public key has been stored.
@@ -171,7 +171,7 @@ Access Keys
 
 Access Keys are a convenient way to deal with automated access for scripts or integrations. They can be used as an
 authentication mean without having to leak your username and password. It's very important to understand that access keys
-are not more secure (or less secure) than as username/password. Access Keys are "just" easier to revoke than passwords
+are not more secure (or less secure) than a username/password. Access Keys are "just" easier to revoke than passwords
 when got leaked. They also are easier to rotate than passwords as part of a sane management of secrets.
 
 .. figure:: ../images/screenshots/account/access-keys.png
@@ -189,8 +189,8 @@ Access Keys also have a scope:
   - Git: The access key can be used to do git operations over https (``clone`` & ``push``, according to your permissions).
     When doing git with an access key, you will have to use https basic authentication mode with your username.
 
-A scope restrict what you can do with an access key. An access key with 'git' scope won't be usable for REST API calls
-for instance. As a matter of fact, it means that, as most, an access key can be used only to do git & rest operations.
+A scope restricts what you can do with an access key. An access key with 'git' scope won't be usable for REST API calls
+for instance. As a matter of fact, it means that, at most, an access key can be used only to do git & rest operations.
 It's not possible to login on the web interface with an access key for instance.
 
 When you know that the access key should be used for a limited amount of time, you should be setting an expiration date
