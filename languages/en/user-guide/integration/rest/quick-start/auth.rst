@@ -36,6 +36,8 @@ You can create as many personal access keys as you need for your account prefere
 If you do not need an personal access key anymore or if one your personal access key has been compromised, you can delete
 them any time in the same section.
 
+More information in :ref:`access-keys`
+
 Use of a personal access key
 ````````````````````````````
 
