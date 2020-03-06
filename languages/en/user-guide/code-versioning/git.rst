@@ -226,6 +226,7 @@ webhooks are available:
 
 #. Custom Webhooks
 #. Jenkins Webhooks
+#. Jenkins Webhooks for Tuleap Branch Source Jenkins plugin
 
 Custom Webhooks
 ```````````````
@@ -248,6 +249,22 @@ You can see the list of triggered jobs in the logs section of the Jenkins Webhoo
 
 .. _Push notification from repository: https://github.com/jenkinsci/git-plugin/blob/git-4.2.0/README.adoc#push-notification-from-repository
 
+Jenkins Webhooks for Tuleap Branch Source Jenkins plugin
+````````````````````````````````````````````````````````
+
+.. IMPORTANT:: The ``Tuleap Branch Source`` Jenkins plugin must be installed in order to be able to trigger the build. The
+  Tuleap project must be already created on your Jenkins server.
+
+When a git push is done in a Tuleap git repository of a project, the linked Jenkins job will be automatically built.
+
+The configuration is done in the Git administration menu:
+
+1. Go on "Jenkins" pane from the Git Administration menu of your Tuleap project.
+2. Click on "Add Jenkins server".
+3. In the input add your Jenkins server URL
+
+.. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
+  your site administrator if it is not the case on your Tuleap instance.
 
 Git Large File Storage (LFS)
 ----------------------------
