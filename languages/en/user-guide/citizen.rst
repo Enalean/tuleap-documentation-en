@@ -146,35 +146,78 @@ clicking on the "cog" image near your user name.
 Most of the items on the "Preferences" page will look obvious to
 you. However, we would like to draw your attention on some of them:
 
--  **SSH keys**: this one has to do with the Shell Account
-   service. When you are a registered user, the Tuleap
-   server gives you a personal shell account with the same
-   login/password as for the Web interface. To automate the shell login
-   you can share a public encryption key with Tuleap and use
-   the secure shell SSH to access Tuleap instantly without
-   having to type a password. More on that in :ref:`shell-account`
+Keys & Tokens
+`````````````
 
-   Your public key(s) here and they will be placed on the server in
-   your '~/.ssh/authorized_keys' file.
-   To generate a public key, run the program 'ssh-keygen' (or ssh-keygen1) on your desktop machine.
-   Then look at the file '~/.ssh/identity.pub' where the generated public key has been stored.
-   Read the ssh documentation for further information on sharing keys.
+SSH keys
+~~~~~~~~
 
--  **CSV separator**: Tuleap provides you export and import
-   functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
-   format. Like CSV norm is not implemented by the same way in each
-   software, we allow you to change the CSV separator, in order to fit
-   with your preferred software! The available separators are:
+This one has to do with the Git service. When you want to
+clone a git repository you can either do it with you regular login/password
+and https://... address or you might want to use the ssh protocol because
+it makes things generally faster and easier. To use the ssh protocol, you will
+have to upload your public ssh key and wait ~1 to 2 minutes for the key to
+be deployed
+
+To generate a public key, run the program ``ssh-keygen`` on your machine.
+Then look at the file ``~/.ssh/id_rsa.pub`` where the generated public key has been stored.
+Read the ssh documentation for further information on sharing keys.
+
+
+.. _access-keys:
+
+Access Keys
+~~~~~~~~~~~
+
+Access Keys are a convenient way to deal with automated access for scripts or integrations. They can be used as an
+authentication mean without having to leak your username and password. It's very important to understand that access keys
+are not more secure (or less secure) than as username/password. Access Keys are "just" easier to revoke than passwords
+when got leaked. They also are easier to rotate than passwords as part of a sane management of secrets.
+
+.. figure:: ../images/screenshots/account/access-keys.png
+   :align: center
+   :alt: Modal for access key generation
+   :name: Modal for access key generation
+
+You can generate as much access keys as you need. It's recommended to generate one per app/script/integration you want
+to do (again, easier to revoke). You should give the access key a purpose otherwise you won't remember which key was generated
+for what usage and you won't know the ones you can revoke and the ones you must keep.
+
+Access Keys also have a scope:
+
+  - REST API: The access key can be used to make any REST call to Tuleap API. Look at :ref:`rest-auth` to learn how to use it.
+  - Git: The access key can be used to do git operations over https (``clone`` & ``push``, according to your permissions).
+    When doing git with an access key, you will have to use https basic authentication mode with your username.
+
+A scope restrict what you can do with an access key. An access key with 'git' scope won't be usable for REST API calls
+for instance. As a matter of fact, it means that, as most, an access key can be used only to do git & rest operations.
+It's not possible to login on the web interface with an access key for instance.
+
+When you know that the access key should be used for a limited amount of time, you should be setting an expiration date
+so Tuleap will clean keys for you.
+
+Edition & CSV
+`````````````
+
+Tuleap provides you export and import
+features (See :ref:`project-data-export` for details). The import/export format is CSV
+format. Like CSV norm is not implemented by the same way in each
+software, we allow you to change the CSV flavors, in order to fit
+with your preferred software! The available separators are:
+
+CSV separator
+~~~~~~~~~~~~~
+
+The available separators are:
 
    -  ``comma`` (,): the default separator.
    -  ``semicolon`` (;): used by default by the french version of Excel.
    -  ``tab`` (tab).
 
--  **CSV date format**: Tuleap provides export and import
-   functionalities (See :ref:`project-data-export` for details). The import/export format is CSV
-   format. Like CSV norm is not implemented by the same way in each
-   software, we allow you to change the CSV date format, in order to fit
-   with your preferred software! The available formats are:
+CSV date format
+~~~~~~~~~~~~~~~
+
+The available formats are:
 
    -  ``month/day/year``: the default format (generally used in United
       States).
