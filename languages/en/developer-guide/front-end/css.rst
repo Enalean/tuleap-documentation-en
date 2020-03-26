@@ -17,13 +17,13 @@ From the root directory of the Tuleap sources (you must have npm installed):
 .. code-block:: bash
 
    $ npm install
-   $ npm run sass
+   $ npm run build
 
 This command will compile all SCSS files present in ``plugin`` and ``src`` directories.
 
 .. important::
 
-    * you have to run ``npm run sass`` everytime you edit a SCSS file.
+    * you have to run ``npm run build`` everytime you edit a SCSS file.
     * you can use ``npm run watch`` to automatically rebuild CSS after changes.
     * CSS files will be git-ignored so there is no use in modifying them.
 
@@ -35,7 +35,7 @@ When you submit a patch for review, we may request changes to better match the f
 Files best practices
 ^^^^^^^^^^^^^^^^^^^^
 
-* Never use the "style" attribute.
+* Never use the "style" HTML attribute.
 * Always use a SCSS file. No <style> tags.
 * Split your SCSS files into multiple `partials`_ files. Smaller files are easier to understand and review. You can then ``@import`` them from your main SCSS file.
 * File names for `partials`_ should always start with an "underscore" character, for example: ``_colors.scss``.

@@ -17,9 +17,9 @@ This config file is pretty easy to set up.
 
 .. code-block:: JavaScript
 
-    // tuleap/plugins/<your_plugin>/scripts/jest.config.js
+    // tuleap/plugins/<your_plugin>/jest.config.js
 
-    const base_config = require("../../../tests/jest/jest.base.config.js");
+    const base_config = require("../../tests/jest/jest.base.config.js");
 
     module.exports = {
         ...base_config,
@@ -27,16 +27,16 @@ This config file is pretty easy to set up.
     };
 
 
-You will then need to add a test script in your `package.json` file to launch Jest when `npm test` is used.
+You will then need to add a test script in your ``package.json`` file to launch Jest when ``npm test`` is used.
 
 
 .. code-block:: JavaScript
 
-    // tuleap/plugins/<your_plugin>/scripts/package.json
+    // tuleap/plugins/<your_plugin>/package.json
     {
         //...
         "config": {
-            "bin": "../../../node_modules/.bin"
+            "bin": "../../node_modules/.bin"
         },
         //...
         "scripts": {
