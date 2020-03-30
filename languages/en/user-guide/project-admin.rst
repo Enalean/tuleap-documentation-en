@@ -35,32 +35,38 @@ Project Registration
 Before you create a new project you must be a registered user (see :ref:`classes-of-citizens`).
 You then login and select the item "+ New Project" in the "Projects" dropdown of Tuleap Main Menu.
 
-The project registration is an easy process:
+The project registration is a two steps process:
+
+-  **Choose a template** : Templates are divided in 3 categories:
+
+   -  Your company templates: some companies are proposing predefined templates in order to provide
+      templates in compliance with the processes defined in your company
+
+   -  Tuleap templates: ready-to-use templates in order to help you start your project
+
+   -  For Advanced users: if you need to reuse the configuration of one of your project. You need to be project
+      administrator of that project to be able to use it.
 
 
--  **Project Name**
+.. figure:: ../images/screenshots/project-admin/project_creation_step1.png
+	:align: center
+	:alt: Project Creation: choose your template
+	:name: Project Creation: choose your template
 
-   Give the project short name and the project full name. Carefully read
-   the restrictions that apply to both names before you type anything.
-   The full name can be changed at any time in the life of the project.
-   The short name cannot [#f1]_. So think about it twice before you make a
-   decision!
+-  **Project Information**
 
--  **Project Template**
+   Simply choose the name and the visibility of your project (see :ref:`project-visibility`), and add a description if you need. You will be able to add
+   one after the creation.
 
-   You already registered a Tuleap project and would now
-   like to reuse the same configuration (services, trackers, documents,
-   references, ...) ? Make your old project a template project (see :ref:`project-type`)
-   and you will find it here in the list of available project templates.
-   Check your old project as template and your new registered project
-   will be staffed as you are used to. If you don't want to reuse a
-   specific template just keep the Default Tuleap Template
-   checked and go on.
+.. figure:: ../images/screenshots/project-admin/project_creation_step2.png
+	:align: center
+	:alt: Project Creation: fill your project information
+	:name: Project Creation: fill your project information
 
    The new project will use exactly the same configuration as the template.
    This includes that:
 
-   -  the new project inherit the same dashboards and widget for project home page
+   -  the new project inherits the same dashboards and widget for project home page
 
    -  the new project is classified into the same trove categories as
       the template project (see :ref:`software-map-(or Project Tree)`).
@@ -75,6 +81,10 @@ The project registration is an easy process:
    -  all trackers with the option "instantiate for new projects" are
       copied with their associated fields, field values, field
       dependencies, reports, and permissions (see ?).
+
+   -  the test management configuration is copied (This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`)
+
+   -  the agile dashboard configuration is copied
 
    -  the same forums are created (but the messages are not copied).
 
@@ -92,52 +102,14 @@ The project registration is an easy process:
       Watch Mode), but the emails and the CVS permissions are not
       copied.
 
--  **Project Description**
 
-   This is where the rubber hits the road! Tell us about your project.
-   Give an accurate description. This is really important if you want to
-   maximize the chance of re-use by others. Also list any information
-   related to Intellectual Property like Invention Proposal or Patents
-   related to the software whether pending or already filed. Give the
-   list of software needed (whether internal or 3rd party) to make your
-   own software run properly. And the last field is entirely for you.
-   Write down all the things that you consider as crucial for your
-   project or for the community of users.
-
-
--  **Project Categorization**
-
-   Some categories can be mandatory for project creation.
-   These categories are managed by your system administrator.
-   More information about categorization in :ref:`software-map-(or Project Tree)`.
-
--  **Software Policy**
-
-   Most of the time the only valid choice here is the default one:
-   "SYS\_ORG\_NAME Code eXchange Policy". As explained earlier in this
-   document the Tuleap Team assisted by SYS\_ORG\_NAME
-   lawyers have carefully crafted the Tuleap Policy and it
-   is very unlikely that you need to create your own. If you do you'll
-   have to talk to us and to the SYS\_ORG\_NAME Legal Department to
-   validate it. A number of truly Open Source licenses are also
-   mentioned in the list. Finally you can also choose you own licensing
-   conditions.
-
--  **Final Confirmation**
-
-   Last chance to review the submitted information before you send it to
-   the Tuleap Team for validation. Don't worry: the project
-   members can later update all pieces of information shown on this
-   page.
-
-After you validate the project registration, the Tuleap Team
-reviews the information you submitted and decides to approve it or not.
-This process can take up to 24 hours but in most cases it's less than a
-couple of hours. So far all projects have been accepted so there is
-little to fear ... Shortly after the Tuleap Team approval
+After you validate the project registration, the Tuleap Team in charge
+of your platform reviews the information you submitted and decides
+to approve it or not.
+Note that some platforms automatically approve new projects.
+Shortly after the Tuleap Team approval
 you'll receive an e-mail summarizing the characteristics of your project
-including a pointer to your new "Project Dashboard" page. Bookmark it in
-a safe place!
+including a pointer to your new "Project Dashboard" page.
 
 Post-Registration Configuration
 ```````````````````````````````
@@ -164,9 +136,6 @@ after a project is registered:
    names of all the registered users promote as team members and then
    define their permissions.
 
-.. [#f1]
-   Actually it can but you have to ask the Tuleap Team to do
-   it for you.
 
 .. _portfolio:
 

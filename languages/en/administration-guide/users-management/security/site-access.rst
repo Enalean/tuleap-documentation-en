@@ -108,6 +108,8 @@ Then the list of available groups would be:
 Project's permissions
 ---------------------
 
+.. _project-visibility:
+
 In addition to site configuration, project administrators can decide whether their projects are:
 
 * **Public**
