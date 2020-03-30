@@ -55,7 +55,7 @@ The project registration is a two steps process:
 
 -  **Project Information**
 
-   Simply choose the name and the visibility of your project (see :ref:`project-visibility`), and add a description if you need. You will be able to add
+   Simply choose the name and the visibility of your project, and add a description if you need. You will be able to add
    one after the creation.
 
 .. figure:: ../images/screenshots/project-admin/project_creation_step2.png
@@ -63,8 +63,8 @@ The project registration is a two steps process:
 	:alt: Project Creation: fill your project information
 	:name: Project Creation: fill your project information
 
-   The new project will use exactly the same configuration as the template.
-   This includes that:
+The new project will use exactly the same configuration as the template.
+This includes that:
 
    -  the new project inherits the same dashboards and widget for project home page
 
