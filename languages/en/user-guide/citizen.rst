@@ -154,7 +154,7 @@ SSH keys
 
 This one has to do with the Git service. When you want to
 clone a git repository you can either do it with you regular login/password
-and https://... address or you might want to use the ssh protocol because
+and ``https://...`` address or you might want to use the ssh protocol because
 it makes things generally faster and easier. To use the ssh protocol, you will
 have to upload your public ssh key and wait ~1 to 2 minutes for the key to
 be deployed.
