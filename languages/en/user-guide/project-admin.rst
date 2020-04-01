@@ -55,13 +55,16 @@ The project registration is a two steps process:
 
 -  **Project Information**
 
-   Simply choose the name and the visibility of your project, and add a description if you need. You will be able to add
-   one after the creation.
+   Choose the name and the visibility of your project (see :ref:`project-visibility`),
+   and add a description if you need. You will be able to add one after the creation.
 
 .. figure:: ../images/screenshots/project-admin/project_creation_step2.png
 	:align: center
 	:alt: Project Creation: fill your project information
 	:name: Project Creation: fill your project information
+
+Some platforms may have more fields to fill. Tuleap offers the possibility to add more project informations if you need
+(see :ref:`software-map-(or Project Tree)`).
 
 The new project will use exactly the same configuration as the template.
 This includes that:
