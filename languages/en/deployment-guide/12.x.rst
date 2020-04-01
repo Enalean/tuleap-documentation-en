@@ -1,9 +1,0 @@
-Tuleap 12.x
-###########
-
-Tuleap 12.0
-===========
-
-.. NOTE::
-
-  Tuleap 12.0 is currently under development.
