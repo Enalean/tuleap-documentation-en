@@ -2,10 +2,10 @@
 
 .. _tuleap-enterprise:
 
-Tuleap Entreprise
+Tuleap Enterprise
 =================
 
-Tuleap Entreprise is a special distribution of Tuleap crafted by Enalean for
+Tuleap Enterprise is a special distribution of Tuleap crafted by Enalean for
 enhanced reliability.
 
 Some features are only distributed to Tuleap Enterprise subscribers:
@@ -15,7 +15,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Timetracking <timetracking>`.
 * :ref:`Dynamic credentials <dynamic-credentials>`.
 * :ref:`Label widget <label_widget>`.
-
+* :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
 
 More information on `Tuleap.org website`_.
 
