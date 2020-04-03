@@ -31,7 +31,7 @@ Tuleap Enterprise Edition
 What for ?
 ``````````
 
-The Tuleap Enteprise Edition docker image is meant to be used in production with an orchestrator (Kubernetes, Swarm, Nomad, etc)
+The Tuleap Enterprise Edition docker image is meant to be used in production with an orchestrator (Kubernetes, Swarm, Nomad, etc)
 or not.
 
 The current image bundles everything in one image to ease the deployment. It's not recommended to configure your deployment
@@ -48,7 +48,7 @@ The image has two dependencies:
 How to
 ``````
 
-You first need to authenticate toward tuleap registry:
+You first need to authenticate toward Tuleap registry:
 
 .. code-block:: bash
 
@@ -88,7 +88,7 @@ The next runs won't need the environment variable so you can restart with:
 
 .. NOTE::
 
-    In the context of an orchestrator you don't need to separate the 2 mode (first run or restart), you can expose the
+    In the context of an orchestrator you don't need to separate the 2 modes (first run or restart), you can expose the
     variables in all runs. Please note however that changing the variables in your deployment (compose, helm, etc) won't
     have any impact on the container. You will have to manually edit the configuration files to update the relevant data.
 
