@@ -92,6 +92,8 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
 
+..  _install_database:
+
 - **Configure the database**
 
 Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
