@@ -6,5 +6,6 @@ Projects management
 
    projects-management/project-status
    projects-management/projects-settings
+   projects-management/projects-templates
    projects-management/project-export-import
    projects-management/project-website
