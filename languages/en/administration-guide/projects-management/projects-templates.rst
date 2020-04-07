@@ -13,7 +13,7 @@ Steps to create a template dedicated to your company:
     3. Go in the Tuleap Administration
     4. Select the project you want to set as a template and click on details
     5. Select "Template" in the "Project Type" selectbox
-    6. Your new company templates is available to anybody in your company!
+    6. Your new company template is available to anybody in your company!
 
 
 .. figure:: ../../images/screenshots/siteadmin/project_template.gif
