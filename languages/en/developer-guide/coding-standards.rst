@@ -9,7 +9,7 @@ PHP code formatting
 As Tuleap is mainly written in PHP, we use the PSR standards:
 
 * PSR-1_
-* PSR-2_
+* PSR-12_
 * PSR-4_
 
 Rule of thumb: *All new classes MUST respect PSR-4*
@@ -51,7 +51,7 @@ Internal conventions
 * constants in UPPER_CASE
 * public methods documented (at least @return statement)
 * class documented (``I'm responsible of…``)
-* All added code should follow PSR-2. Existing code should be converted to PSR-2 in a dedicated commit in
+* All added code should follow PSR-12. Existing code should be converted to PSR-12 in a dedicated commit in
   order to not clutter the review of your functional change.
 * No trailing whitespaces
 * In DataAccessObject, convention is to name ``searchXxx()`` the methods that returns a set of rows (eg. ``searchProjectsUserIsAdmin(…)``, and ``getXxx``, ``isXxx``, ``hasXxx`` for other cases (eg. ``doesUserHavePermission(…)``).
@@ -101,8 +101,8 @@ Resources
 ~~~~~~~~~
 
 .. _PSR-1: https://www.php-fig.org/psr/psr-1/
-.. _PSR-2: https://www.php-fig.org/psr/psr-2/
-.. _PSR-4: https://www.php-fig.org/psr/psr-2/
+.. _PSR-12: https://www.php-fig.org/psr/psr-12/
+.. _PSR-4: https://www.php-fig.org/psr/psr-4/
 .. _eslint: https://eslint.org/
 .. _prettier: https://prettier.io/
 .. _stylelint: https://stylelint.io/
