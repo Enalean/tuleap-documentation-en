@@ -83,6 +83,33 @@ Cypress tests
 
 All end-to-end tests are written with `Cypress <https://www.cypress.io>`_.
 
+Writing good tests
+``````````````````
+
+Cypress tests come in addition to manual tests defined in our TestManagement tool.
+The major advantage of cypress is that tests are run every night and warn us quickly if something bad happens.
+
+One of the main difficulties in our end-to-end workflow is having a relevant test suite:
+ - Tests covered by Cypress should not aim to eliminate TestManagement test definitions.
+   That means that when we are working on a subject, before starting to write any code, we must think about what test we want to cover and who will execute the test (is the feature for everybody, for project admin ...). Once it's done, we can check if we have differences with our TestManagement test suite and adapt the TestManagement suite with what has been identified.
+ - When we add new tests in Cypress that don't exist in TestManagement, we must add them as a new TestManagement definition.
+ - When TestManagement test definitions can't fully be covered by Cypress, then we should split them:
+    - one part covered by Cypress
+    - one part which will be done manually during validation
+    
+Best practises for writing tests
+````````````````````````````````
+
+  - It's better to have tests split by user roles.
+  - Test should be executed by the least-powered user (don't use project administrator for everything).
+  - Multiple ``describe`` and small ``it`` will help us debug what's going on when tests fail.
+  - Multiple TestManagement test definitions can not be covered by a simple testdefinition (``ttm`` tool won't do the report automatically). In that case you should split your Cypress test and link each TestManagement test definition to a smaller ``it``.
+  - Always put your Cypress tests in the relevant plugin. End-to-end tests should still respect the plugin architecture.
+
+
+Write tests
+```````````
+
 If you want to run all cypress tests locally just launch:
 
 .. code-block:: bash
