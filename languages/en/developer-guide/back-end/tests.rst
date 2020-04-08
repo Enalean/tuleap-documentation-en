@@ -83,6 +83,33 @@ Cypress tests
 
 All end-to-end tests are written with `Cypress <https://www.cypress.io>`_.
 
+Writting good tests
+```````````````````
+
+Cypress tests comme in addition to manuel tests who are defined in our TTM tool.
+The major advantage of cypress is that tests are run every night and warn us quickly if something bad happens.
+
+One of the main difficulty in our end to end workflow is having pertinent test suite:
+ - Tests covered by cypress does not have vocation to eliminate TTM tests
+   That means, that when we are working on a subject, before starting any code, we must redefine the scenario by user role of what must scenario will be covered. Once it's done, we can check if we have differences with our TTM test suite and adapt TTM suite with what have been identified.
+ - When we add new tests in cypress who does not exist in TTM, we must add them in TTM too
+ - When TTM tests can't fully be covered by cypress, then we should split them 
+    - one part covered by cypress
+    - one part who will be done manually during validation
+    
+Best practises for writting tests
+`````````````````````````````````
+
+  - It's better to have tests split by user roles
+  - Test should be executed by the less powered user (don't use project administrator for everything)
+  - Multiply `describe` and small `it` will help us to debug what's going on when test fail
+  - Multiple TTM tests can not be covered by a simple testdefinition (ttm tool won't do the report automatically)
+  - be carefull with test architecture, for now everyting is done in `tests\e2e\cypress` but not for long.
+
+
+Write tests
+```````````
+
 If you want to run all cypress tests locally just launch:
 
 .. code-block:: bash
