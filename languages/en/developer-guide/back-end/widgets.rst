@@ -49,23 +49,23 @@ You create the MyWelcomeMessage.php file in src/common/widget with following con
                 parent::__construct(self::NAME);
             }
 
-            public function getTitle() : string
+            public function getTitle(): string
             {
                 return _('Welcome aboard');
             }
 
-            public function getDescription() : string
+            public function getDescription(): string
             {
                 return _('Welcome message and information for users');
             }
 
-            public function getContent() : string
+            public function getContent(): string
             {
                 return 'Welcome';
             }
         }
 
-and run `make autoload-docker` to refresh autoload files.
+and run `make composer` to refresh autoload files.
 
 Step 2: Reference the widget
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,19 +106,22 @@ It's becoming common to have complicated widgets with lots of user interaction. 
 .. code-block:: php
 
     /** src/common/widget/MyWelcomeMessage.php */
-    public function getJavascriptDependencies() : array
+    public function getJavascriptDependencies(): array
     {
-        $kanban_include_assets = new IncludeAssets(
-            __DIR__. '/../../../../src/www/assets/agiledashboard/scripts',
-            '/assets/agiledashboard/scripts/'
-        );
-        $ckeditor_path = '/scripts/ckeditor-4.3.2/';
+        $assets = $this->getAssets();
+        return [
+            ['file' => $assets->getFileURL('angular.js'), 'unique-name' => 'angular'],
+            ['snippet' => 'window.CKEDITOR_BASEPATH = "' . $ckeditor_path . '";'],
+            ['file' => $ckeditor_path . 'ckeditor.js'],
+            ['file' => $assets->getFileURL('kanban.js')],
+        ];
+    }
 
-        return array(
-            array('file' => $kanban_include_assets->getFileURL('angular.js'), 'unique-name' => 'angular'),
-            array('snippet' => 'window.CKEDITOR_BASEPATH = "' . $ckeditor_path . '";'),
-            array('file' => $ckeditor_path . 'ckeditor.js'),
-            array('file' => $kanban_include_assets->getFileURL('kanban.js')),
+    public function getAssets(): IncludeAssets
+    {
+        return new IncludeAssets(
+            __DIR__. '/../../www/assets/agiledashboard',
+            '/assets/agiledashboard'
         );
     }
 
@@ -127,14 +130,9 @@ The previous code block shows an example with the Kanban widget. It returns an a
 .. code-block:: php
 
     /** src/common/widget/MyWelcomeMessage.php */
-    public function getStylesheetDependencies() : CssAssetCollection
+    public function getStylesheetDependencies(): CssAssetCollection
     {
-        $theme_include_assets = new IncludeAssets(
-            __DIR__ . '/../../../www/themes/BurningParrot/assets',
-            AGILEDASHBOARD_BASE_URL . '/themes/BurningParrot/assets'
-        );
-
-        return new CssAssetCollection([new CssAsset($include_assets, 'kanban')]);
+        return new CssAssetCollection([new CssAsset($this->getAssets(), 'kanban')]);
     }
 
 The previous code block shows an example, again with the Kanban widget. It returns a ``CssAssetCollection`` object which helps to deduplicate CSS files. That way, if there are two identical widgets on the same dashboard, their CSS will be loaded only once.
