@@ -9,23 +9,41 @@ SCSS files are just extended CSS files. It means you can use variables, function
 
 Please refer to the `Sass documentation <https://sass-lang.com/documentation>`_ for more information.
 
+SCSS files should always go in "themes" folders.
+
+* For the core, it should go in ``src/themes/BurningParrot/css/``
+* For plugins, it should go in ``plugins/<my-plugin>/themes/BurningParrot/``
+
 Compile SCSS files
 ------------------
 
 From the root directory of the Tuleap sources (you must have npm installed):
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   $ npm install
-   $ npm run build
+        $ npm install
+        $ npm run build
 
 This command will compile all SCSS files present in ``plugin`` and ``src`` directories.
 
-.. important::
+    .. important::
 
-    * you have to run ``npm run build`` everytime you edit a SCSS file.
-    * you can use ``npm run watch`` to automatically rebuild CSS after changes.
-    * CSS files will be git-ignored so there is no use in modifying them.
+        * you have to run ``npm run build`` everytime you edit a SCSS file.
+        * CSS files will be git-ignored so there is no use in modifying them.
+
+
+If you are working in Tuleap "core", change your current directory to ``src/`` to run the "npm" commands.
+If you are working in a plugin for Tuleap, change your current directory to the "root" of that plugin in ``plugins/<my-plugin>/`` to run the "npm" commands.
+
+While you are working, the following command should help you:
+
+    .. code-block:: bash
+
+        $ npm run watch
+
+    .. important::
+
+        ``npm run watch`` will automatically rebuild CSS after changes.
 
 Best practices for Tuleap
 -------------------------
@@ -49,12 +67,12 @@ Rules best practices
 * Always prefix class names by the plugin (or the general view) you are in. For example, when working in the Git plugin, prefix all class names with "git-"
 * Use naming to indicate where the selector is. For example:
 
-  .. code-block:: html
+    .. code-block:: html
 
     <div class="git-repository-list">
         <section class="git-repository-card">
-        	<div class="git-repository-card-header">
-        	<!-- ... -->
+            <div class="git-repository-card-header">
+            <!-- ... -->
 
   The long names help us avoid name-clashing with another plugin and help get a sense of where the rule is applied when reading Sass files.
 * Don't use the `descendant combinator`_, for example ".class1 .class2". It hurts performances because when the browser gets to "class2", it will have to recursively find all its ancestors to see if they are "class1".

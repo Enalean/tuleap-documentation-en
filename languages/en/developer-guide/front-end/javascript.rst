@@ -7,7 +7,7 @@ New code must be written in `Typescript <https://www.typescriptlang.org/>`_.
 
 Typescript code should always go in "scripts" folders.
 
-* For the core, it should go in ``src/www/scripts/``
+* For the core, it should go in ``src/scripts/``
 * For plugins, it should go in ``plugins/<my-plugin>/scripts/``
 
 Build the typescript files
@@ -27,7 +27,7 @@ This command will install the tools needed, transpile the javascript to make it 
 		* you have to run ``npm run build`` every time you edit a Javascript file.
 		* Built javascript files go to the "assets" folder. You should never modify files in "assets" folders as they are removed when you rebuild.
 
-If you are working in Tuleap "core", change your current directory to ``src/www/scripts/`` to run the "npm" commands.
+If you are working in Tuleap "core", change your current directory to ``src/`` to run the "npm" commands.
 If you are working in a plugin for Tuleap, change your current directory to the "root" of that plugin in ``plugins/<my-plugin>/`` to run the "npm" commands.
 
 While you are working, the following commands should help you:
