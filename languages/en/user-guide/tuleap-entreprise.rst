@@ -16,6 +16,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Dynamic credentials <dynamic-credentials>`.
 * :ref:`Label widget <label_widget>`.
 * :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
+* :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
 
 More information on `Tuleap.org website`_.
 
