@@ -6,8 +6,20 @@ Tuleap 11.14
 
 .. NOTE::
 
-  Tuleap 11.13 is currently under development.
+  Tuleap 11.14 is currently under development.
 
+New upgrade command
+-------------------
+
+There is a new command to run whenever you update your tuleap:
+
+.. code-block:: bash
+
+    $ sudo tuleap-cfg site-deploy
+
+In the current form, you need to run it to have the organisation logo (on the top left of the site) displayed.
+
+The command is now mentioned in the :ref:`update instructions <update>`.
 
 Tuleap 11.13
 ============

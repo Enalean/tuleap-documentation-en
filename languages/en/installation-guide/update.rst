@@ -18,7 +18,6 @@ As root, run:
 
 Note: you can update only the tuleap part (tuleap*) but we highly recommend you to upgrade the whole OS on regular basis.
 
-
 Upgrade
 -------
 
@@ -44,6 +43,9 @@ On RHEL/CentOS 7, run as root:
     # Re-generate nginx configuration
     /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
 
+    # Deploy site configurations
+    tuleap-cfg site-deploy
+
     # Restart service
     systemctl start httpd
     systemctl start nginx
@@ -68,6 +70,9 @@ On RHEL/CentOS 6, run as root:
 
     # Re-generate nginx configuration
     /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
+
+    # Deploy site configurations
+    tuleap-cfg site-deploy
 
     # Restart service
     service httpd start
