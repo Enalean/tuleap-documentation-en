@@ -100,6 +100,10 @@ Authentication and permissions:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **oauth2-server**: Delegate authorizations via OAuth 2.0 and authenticate Tuleap users on third-party apps via OpenID Connect
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 Administration:
 
 * **archivedeleteditems**: When something is deleted, move it into a dedicated place for archiving purpose
