@@ -70,9 +70,10 @@ after they give (or do not give) authorization to the Client Application.
 
 .. attention::
 
-	Tuleap will show **only once** a feedback with the Client Secret the
-	Client Application will need to use OAuth2. **Save it somewhere safe.** It is
- used	by Tuleap to authenticate the application and is like a password.
+  Tuleap will show **only once** a feedback with the Client Secret the
+  Client Application will need to use OAuth2. **Save it somewhere safe.** It is used
+  by Tuleap to authenticate the application and is like a password.
+
 
 Provider registration
 ---------------------
@@ -153,7 +154,7 @@ Client Application development
 ------------------------------
 
 If you wish to develop your own Client Application compatible with Tuleap,
-please refer to `RFC6749 <oauth2_spec_>`_, `RFC7636 <oauth_pkce_>`_ and
+please refer to `RFC6749 <oauth2_spec_>`_, `RFC7636 <oauth2_pkce_>`_ and
 `OpenIDConnect Core <oidc_spec_>`_. Those documents contain all the details
 needed to implement an OpenIDConnect compatible Application Client.
 
