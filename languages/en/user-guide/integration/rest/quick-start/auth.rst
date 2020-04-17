@@ -51,16 +51,39 @@ Example:
       --header 'X-Auth-AccessKey:  tlp.k1.1026…' \
       https://tuleap.example.com/api/projects/112
 
+.. _rest_oauth2_access_token:
+
+OAuth2 Access Token Authentication
+----------------------------------
+
+OAuth2 Access Tokens are another secure method for third party applications to
+authenticate with Tuleap's REST API.
+
+In order to use this method, a Project Administrator must first :ref:`register
+the third-party application in Tuleap <openidconnect_provider>`.
+
+Once registration is made and the application has been authorized to access
+Tuleap by an end-user, it will need to provide its OAuth2 Access Token as
+described in `RFC6750 <oauth2_bearer_token_spec_>`_ using the ``Authorization``
+Header field.
+
+Please note that ONLY the
+`Authorization Header <https://tools.ietf.org/html/rfc6750#section-2.1>`_
+method is supported. Using the
+`Form-Encoded Body Parameter <https://tools.ietf.org/html/rfc6750#section-2.2>`_
+or `URI Query Parameter <https://tools.ietf.org/html/rfc6750#section-2.3>`_ is
+NOT supported by Tuleap.
 
 Token-based Authentication
 --------------------------
 
 .. WARNING::
 
-  The usage of the token-based authentication is deprecated, a personal access key should be used instead.
-  Personal access keys will you a clearer picture of what has accesses to your account and when it was
-  accessed for the last time. The use of a personal access key is similar to that of a token, the migration
-  of existing uses should be relatively easy.
+  Usage of the token-based authentication is deprecated, a personal access key
+  should be used instead. Personal access keys will give you a clearer picture
+  of what has accesses to your account and when it was accessed for the last
+  time. The use of a personal access key is similar to that of a token, the
+  migration of existing uses should be relatively easy.
 
 The general principle is to issue a request to the  ``/api/tokens`` route to get a token
 and re-use this token later-on to prove identity.
@@ -138,3 +161,5 @@ Conclusions
 -----------
 
 Now that we are able to do authenticated calls we can continue to data retrieval in next section :ref:`rest-query`.
+
+.. _oauth2_bearer_token_spec: https://tools.ietf.org/html/rfc6750
