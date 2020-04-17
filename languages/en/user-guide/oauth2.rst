@@ -8,11 +8,11 @@ OAuth2 and OpenIDConnect
   This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The `OAuth2 <oauth2_>`_ and `OpenIDConnect <openidconnect_>`_ server plugin
-allows for other websites to interconnect with Tuleap easily. Users can grant
-authorizations to external websites or applications to let them access Tuleap
-resources (through the :ref:`REST API <rest_api>`) or sign in with a Tuleap
-account.
+Tuleap `oauth2_server` plugin provides both  `OAuth2 <oauth2_>`_ and
+`OpenIDConnect <openidconnect_>`_ servers. This plugin allows for other websites
+to interconnect with Tuleap easily. Users can grant authorizations to external
+websites or applications to let them access Tuleap resources (through the
+:ref:`REST API <rest_api>`) or sign in with a Tuleap account.
 
 It is a recommended and secure way to let other applications interact with
 Tuleap's REST API with :ref:`Access Tokens <rest_oauth2_access_token>`.
