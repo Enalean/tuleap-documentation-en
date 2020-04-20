@@ -296,7 +296,7 @@ Step Definition data changeset
 
 To import step defintion's data changeset, you can use the following format.
 
-- Type must be 'ttmstepdef'
+- Type must be ``ttmstepdef``
 - Steps inside are required
 
 .. sourcecode:: xml
