@@ -277,7 +277,7 @@ Step Definitions are external fields.
 Step Definition structure
 #########################
 
-- Type must be 'ttmstepdef'
+- Type must be ``ttmstepdef``
 - TTM must be activated in your project
 
 Here is an example of step definition field for tracker structure XML :
