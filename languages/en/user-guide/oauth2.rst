@@ -28,15 +28,15 @@ Tuleap instance, see :ref:`install-plugins` to learn how to do that.
 Definitions
 -----------
 
-Throughout this document, the terms "End-User", "Client Application",
-"Provider"and will be used. Here is what they mean:
+Throughout this document, the terms "End-User", "Client Application" and
+"Provider" will be used. Here is what they mean:
 
 - "Project Administrator": a Tuleap user. They belong to their Project's
   "Project Administrators" user group.
 - "End-User": a Tuleap user. They are NOT Project Administrator. In OAuth2
   terminology this corresponds to a "resource owner".
 - "Client Application": a software application that is able to request
-  authorization from End-Users to access your Tuleap instance on your behalf
+  authorization from End-Users to access your Tuleap instance on their behalf
   through `OAuth2 <oauth2_>`_ and `OpenIDConnect <openidconnect_>`_. In OAuth2
   terminology this corresponds to a "client". In OpenIDConnect terminology this
   is a "Relying Party".
@@ -53,7 +53,7 @@ manually register ([1]_) the Client Application in a project.
 
 .. figure:: ../images/screenshots/openidconnect/oidc-register-app-modal.png
 
-  When you click on "Add an App", a modal opens. You may chose the
+  When you click on "Add an App", a modal opens. You may choose the
   application's name (text). The "Redirect endpoint" (URL) is required. If
   the Client Application supports `Proof Key for Code Exchange <oauth2_pkce_>`_, you should check the
   "Force usage of PKCE to authenticate" checkbox.
@@ -88,7 +88,7 @@ Client Application. You will need to provide:
   It is where the Client Application will redirect End-Users to ask Tuleap for
   authorization.
 * The Token endpoint: ``https://<your-tuleap-domain>/oauth2/token``. It is where
-  the Client Application will request its OAuth2 token to be able to access
+  the Client Application will request its OAuth2 Access token to be able to access
   the Tuleap REST API.
 * The User Information endpoint:
   ``https://<your-tuleap-domain>/oauth2/userinfo``. It is where the Client
@@ -102,7 +102,7 @@ Once the Client Application is registered in your project and Tuleap is
 registered on the Client Application, the Client Application can ask End-Users
 to grant it authorization to access Tuleap.
 
-The process starts in the Client Application, which will redirect users to
+The process starts in the Client Application, which will redirect End-Users to
 Tuleap's Authorization endpoint page:
 
 .. figure:: ../images/screenshots/openidconnect/oidc-authorize.png
