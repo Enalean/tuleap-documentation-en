@@ -285,7 +285,7 @@ Here is an example of step definition field for tracker structure XML :
 .. sourcecode:: xml
   :linenos:
 
-    <externalField type="ttmstepdef" ID="F431" rank="2" id="431" tracker_id="16" parent_id="422">
+    <externalField type="ttmstepdef" ID="F431" rank="2">
       <name><![CDATA[steps]]></name>
       <label><![CDATA[Steps definition]]></label>
       <description><![CDATA[Definition of the test's steps]]></description>
