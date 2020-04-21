@@ -142,7 +142,7 @@ To write tests in plugins, just go on plugin namespace and run `npx cypress open
    $> cd plugins/<plugin_name/tests/e2e/cypress/
    $> npx cypress open
 
-As a reminded, a, architecture schema is available:
+As a reminder, an architecture schema is available:
 
 ..
     graph TD
