@@ -142,7 +142,32 @@ To write tests in plugins, just go on plugin namespace and run `npx cypress open
    $> cd plugins/<plugin_name/tests/e2e/cypress/
    $> npx cypress open
 
-As reminder a namespace `architecture scheme <https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtUdWxlYXBdIC0tPiBwbHVnaW5zXG4gIEFbVHVsZWFwXSAtLT4gQlt0ZXN0c11cbiAgcGx1Z2lucyAtLT4gcGx1Z2luX25hbWVcbiAgcGx1Z2luX25hbWUgLS0-IHRlc3RcbiAgdGVzdCAtLT4gZTJlXG4gIGUyZSAtLT4gY3lwcmVzc1xuICBjeXByZXNzIC0tPiBDW2N5cHJlc3NdXG4gIENbY3lwcmVzc10gLS0-IF9maXh0dXJlc1xuICBfZml4dHVyZXMgLS0-IHByb2plY3QtdG8taW1wb3J0LnhtbFxuICBDW2N5cHJlc3NdIC0tPiBpbnRlZ3JhdGlvblxuICBpbnRlZ3JhdGlvbiAtLT4gdGVzdC5zcGVjLmpzXG4gIENbY3lwcmVzc10gLS0-IHN1cHBvcnRcbiAgc3VwcG9ydCAtLT4gaW5kZXguanMgXG4gIEJbdGVzdHNdIC0tPiBEW2UyZV1cbiAgRFtlMmVdIC0tPiBmdWxsXG4gIGZ1bGwgLS0-IEVbY3lwcmVzc11cbiAgIEVbY3lwcmVzc10gLS0-IEZbX2ZpeHR1cmVzXVxuICBGW19maXh0dXJlc10gLS0-IEdbcHJvamVjdC10by1pbXBvcnQueG1sXVxuICAgRVtjeXByZXNzXSAtLT4gSFtpbnRlZ3JhdGlvbl1cbiAgSFtpbnRlZ3JhdGlvbl0gLS0-IElbdGVzdC5zcGVjLmpzXVxuICBFW2N5cHJlc3NdIC0tPiBKW3N1cHBvcnRdXG4gIEpbc3VwcG9ydF0gLS0-IEtbaW5kZXguanNdXG5cdFx0IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0>`_. is available:
+As a reminded, a, architecture schema is available:
+
+..
+    graph TD
+        A[Tuleap] --> plugins
+        A[Tuleap] --> B[tests]
+        plugins --> plugin_name
+        plugin_name --> test
+        test --> e2e
+        e2e --> cypress
+        cypress --> C[cypress]
+        C[cypress] --> _fixtures
+        _fixtures --> project-to-import.xml
+        C[cypress] --> integration
+        integration --> test.spec.js
+        C[cypress] --> support
+        support --> index.js 
+        B[tests] --> D[e2e]
+        D[e2e] --> full
+        full --> E[cypress]
+        E[cypress] --> F[_fixtures]
+        F[_fixtures] --> G[project-to-import.xml]
+        E[cypress] --> H[integration]
+        H[integration] --> I[test.spec.js]
+        E[cypress] --> J[support]
+        J[support] --> K[index.js]
 
 .. figure:: ../../images/diagrams/architecture/cypress.png
     :align: center
