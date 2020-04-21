@@ -126,11 +126,29 @@ If you want to add new tests, you should use the cypress dev image:
 
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
 Once the container has started, you must be able to launch the Cypress electron app.
+The test structure respect the Tuleap dictinction between core and plugins.
+
+To write tests in core, just go on core namespace and run `npx cypress open`
 
 .. code-block:: bash
 
    $> cd tests/e2e/full/
    $> npx cypress open
+
+To write tests in plugins, just go on plugin namespace and run `npx cypress open`
+
+.. code-block:: bash
+
+   $> cd plugins/<plugin_name/tests/e2e/cypress/
+   $> npx cypress open
+
+As reminder a namespace `architecture scheme <https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtUdWxlYXBdIC0tPiBwbHVnaW5zXG4gIEFbVHVsZWFwXSAtLT4gQlt0ZXN0c11cbiAgcGx1Z2lucyAtLT4gcGx1Z2luX25hbWVcbiAgcGx1Z2luX25hbWUgLS0-IHRlc3RcbiAgdGVzdCAtLT4gZTJlXG4gIGUyZSAtLT4gY3lwcmVzc1xuICBjeXByZXNzIC0tPiBDW2N5cHJlc3NdXG4gIENbY3lwcmVzc10gLS0-IF9maXh0dXJlc1xuICBfZml4dHVyZXMgLS0-IHByb2plY3QtdG8taW1wb3J0LnhtbFxuICBDW2N5cHJlc3NdIC0tPiBpbnRlZ3JhdGlvblxuICBpbnRlZ3JhdGlvbiAtLT4gdGVzdC5zcGVjLmpzXG4gIENbY3lwcmVzc10gLS0-IHN1cHBvcnRcbiAgc3VwcG9ydCAtLT4gaW5kZXguanMgXG4gIEJbdGVzdHNdIC0tPiBEW2UyZV1cbiAgRFtlMmVdIC0tPiBmdWxsXG4gIGZ1bGwgLS0-IEVbY3lwcmVzc11cbiAgIEVbY3lwcmVzc10gLS0-IEZbX2ZpeHR1cmVzXVxuICBGW19maXh0dXJlc10gLS0-IEdbcHJvamVjdC10by1pbXBvcnQueG1sXVxuICAgRVtjeXByZXNzXSAtLT4gSFtpbnRlZ3JhdGlvbl1cbiAgSFtpbnRlZ3JhdGlvbl0gLS0-IElbdGVzdC5zcGVjLmpzXVxuICBFW2N5cHJlc3NdIC0tPiBKW3N1cHBvcnRdXG4gIEpbc3VwcG9ydF0gLS0-IEtbaW5kZXguanNdXG5cdFx0IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0>`_. is available:
+
+.. figure:: ../../images/diagrams/architecture/cypress.png
+    :align: center
+    :alt: Cypress organisation
+    :name: Cypress organisation
+
 
 The electron app will launch tests on ``https://tuleap/``.
 You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to the IP of your container ``tuleap_runtests_backend-web-e2e``.
