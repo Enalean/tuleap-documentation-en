@@ -126,11 +126,54 @@ If you want to add new tests, you should use the cypress dev image:
 
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
 Once the container has started, you must be able to launch the Cypress electron app.
+The test structure respects the Tuleap distinction between core and plugins.
+
+To write tests in core, just go on core namespace and run `npx cypress open`
 
 .. code-block:: bash
 
    $> cd tests/e2e/full/
    $> npx cypress open
+
+To write tests in plugins, just go on plugin namespace and run `npx cypress open`
+
+.. code-block:: bash
+
+   $> cd plugins/<plugin_name/tests/e2e/cypress/
+   $> npx cypress open
+
+As a reminder, an architecture schema is available:
+
+..
+    graph TD
+        A[Tuleap] --> plugins
+        A[Tuleap] --> B[tests]
+        plugins --> plugin_name
+        plugin_name --> test
+        test --> e2e
+        e2e --> cypress
+        cypress --> C[cypress]
+        C[cypress] --> _fixtures
+        _fixtures --> project-to-import.xml
+        C[cypress] --> integration
+        integration --> test.spec.js
+        C[cypress] --> support
+        support --> index.js 
+        B[tests] --> D[e2e]
+        D[e2e] --> full
+        full --> E[cypress]
+        E[cypress] --> F[_fixtures]
+        F[_fixtures] --> G[project-to-import.xml]
+        E[cypress] --> H[integration]
+        H[integration] --> I[test.spec.js]
+        E[cypress] --> J[support]
+        J[support] --> K[index.js]
+
+.. figure:: ../../images/diagrams/architecture/cypress.png
+    :align: center
+    :alt: Cypress organisation
+    :name: Cypress organisation
+
 
 The electron app will launch tests on ``https://tuleap/``.
 You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to the IP of your container ``tuleap_runtests_backend-web-e2e``.
