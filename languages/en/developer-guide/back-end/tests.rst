@@ -126,7 +126,7 @@ If you want to add new tests, you should use the cypress dev image:
 
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
 Once the container has started, you must be able to launch the Cypress electron app.
-The test structure respect the Tuleap dictinction between core and plugins.
+The test structure respects the Tuleap distinction between core and plugins.
 
 To write tests in core, just go on core namespace and run `npx cypress open`
 
