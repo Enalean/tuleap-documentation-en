@@ -263,6 +263,56 @@ Some insights to better understand how this works:
       </trackers>
     </project>
 
+
+External Fields
+---------------------------------------------
+Since 11.14, it's possible to add external fields on import XML.
+This external fields are form elements from plugins.
+
+Test Management Step Definitions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Step Definitions are external fields.
+
+Step Definition structure
+#########################
+
+- Type must be ``ttmstepdef``
+- TTM must be activated in your project
+
+Here is an example of step definition field for tracker structure XML :
+
+.. sourcecode:: xml
+  :linenos:
+
+    <externalField type="ttmstepdef" ID="F431" rank="2">
+      <name><![CDATA[steps]]></name>
+      <label><![CDATA[Steps definition]]></label>
+      <description><![CDATA[Definition of the test's steps]]></description>
+    </externalField>
+
+Step Definition data changeset
+##############################
+
+To import step defintion's data changeset, you can use the following format.
+
+- Type must be ``ttmstepdef``
+- Steps inside are required
+
+.. sourcecode:: xml
+  :linenos:
+
+    <external_field_change field_name="steps" type="ttmstepdef">
+      <step>
+        <description format="text"><![CDATA[here is the first step]]></description>
+        <expected_results format="text"><![CDATA[here is the first expected result]]></expected_results>
+      </step>
+      <step>
+        <description format="html"><![CDATA[here is the second step]]></description>
+        <expected_results format="html"><![CDATA[here is the second expected result]]></expected_results>
+      </step>
+    </external_field_change>
+
 Workflow modes
 --------------
 
