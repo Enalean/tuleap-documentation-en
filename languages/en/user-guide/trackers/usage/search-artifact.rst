@@ -6,7 +6,7 @@ Search for existing artifacts
 Tuleap offers the ability to browse the artifact database
 according to a variable set of criteria.
 
-.. figure:: ../../images/screenshots/tracker/sc_trackerbrowsing.png
+.. figure:: ../../../images/screenshots/tracker/sc_trackerbrowsing.png
    :align: center
    :alt: A Tracker browsing screen
    :name: A Tracker browsing screen
@@ -370,7 +370,7 @@ Available chart:
 
 -  **Cardwall chart**
 
-.. figure:: ../../images/screenshots/tracker/sc_chartrenderer.png
+.. figure:: ../../../images/screenshots/tracker/sc_chartrenderer.png
    :align: center
    :alt: A renderer with some charts
 

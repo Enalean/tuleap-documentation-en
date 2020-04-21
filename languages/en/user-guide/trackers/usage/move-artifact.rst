@@ -19,7 +19,7 @@ However artifacts containing artifact links and artifacts connected to FRS relea
 
     And follow-up comments can be moved.
 
-   .. figure:: ../../images/screenshots/tracker/move-artifact.png
+   .. figure:: ../../../images/screenshots/tracker/move-artifact.png
       :align: center
       :alt: Move artifact modal
       :name: Move artifact modal

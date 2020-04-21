@@ -145,7 +145,7 @@ This feature gives to the user the ability to add a type to a link between two a
 Trackers and project administrators are able to deactivate the whole feature or some types for the project.
 This can be done in the new tracker global administration section
 
-.. figure:: ../../images/screenshots/tracker/global_admin_tracker.png
+.. figure:: ../../../images/screenshots/tracker/global_admin_tracker.png
    :align: center
    :alt: Tracker global administration
    :name: Tracker global administration

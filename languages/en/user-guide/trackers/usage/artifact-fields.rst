@@ -117,7 +117,7 @@ permissions are not taken in account during calculation process, user will see t
 
 Example of computation work:
 
-.. figure:: ../../images/screenshots/tracker/computed.png
+.. figure:: ../../../images/screenshots/tracker/computed.png
    :align: center
    :alt: Example of computed field calculation
 
@@ -143,7 +143,7 @@ Burnup
 Burnup chart represent team progress overtime for a release or a sprint.
 It's a new field for Agiledashboard plugin.
 
-.. figure:: ../../images/screenshots/tracker/burnup.png
+.. figure:: ../../../images/screenshots/tracker/burnup.png
    :align: center
    :alt: A burnup field
 

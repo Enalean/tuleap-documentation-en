@@ -24,7 +24,7 @@ an update. It is then followed by a complete snapshot of the artifact.
 Web pointers are also included in the message to quickly and easily
 access the artifact form on Tuleap.
 
-.. figure:: ../../images/screenshots/tracker/sc_emailnotification.png
+.. figure:: ../../../images/screenshots/tracker/sc_emailnotification.png
    :align: center
    :alt: Notification by email
    :name: Notification by email
