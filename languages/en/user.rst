@@ -8,7 +8,7 @@ User guide
    user-guide/citizen
    user-guide/project-admin
    user-guide/agile-dashboard
-   user-guide/tracker
+   user-guide/trackers-management
    user-guide/scm
    user-guide/ci
    user-guide/testmanagement
