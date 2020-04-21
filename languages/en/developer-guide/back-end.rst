@@ -14,7 +14,7 @@ Generic principles, framework and libs.
     back-end/routing
     back-end/autoload
     back-end/profiling
-    back-end/tests
+    tests/unit-test
 
 Tuleap internals
 

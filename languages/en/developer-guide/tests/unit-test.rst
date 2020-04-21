@@ -1,7 +1,37 @@
-.. _jest_unit_test:
+Unit tests
+==========
+
+PHPUnit
+-------
+
+Run tests in cli
+^^^^^^^^^^^^^^^^
+
+Tuleap comes with a handy test environment, based on PHPUnit.
+Core tests (for things in src directory) can be found in tests/phpunit directory with same subdirectory organization (eg. ``src/common/frs/FRSPackage.class.php`` tests are in ``tests/phpunit/common/frs/FRSPackageTest.php``).
+Plugins tests are in each plugin tests directory.
+
+To run tests you can either use multiple CLI commands (at the root of Tuleap sources):
+
+- make phpunit-docker-73
+- make phpunit-docker-74
+
+
+Helpers and database
+^^^^^^^^^^^^^^^^^^^^
+
+.. hint:: **A bit of vocabulary**
+
+    Interactions between Tuleap and the database should be done via ``DataAccessObject``
+    (aka. dao) objects (see ``src/common/dao/include/DataAccessObject.class.php``)
+    A dao that returns rows from database wrap the result in a ``DataAccessResult``
+    (aka. dar) object (see ``src/common/dao/include/DataAccessResult.class.php``)
+
+Tuleap provides a class `TestHelper` class who will help you to ease interaction with database objects.
+
 
 Jest unit tests
-===============
+---------------
 
 `Jest <https://jestjs.io/>`_ is the Javascript testing framework to write down our JavaScript unit tests.
 
