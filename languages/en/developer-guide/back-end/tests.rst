@@ -91,7 +91,7 @@ The major advantage of cypress is that tests are run every night and warn us qui
 
 One of the main difficulties in our end-to-end workflow is having a relevant test suite:
  - Tests covered by Cypress should not aim to eliminate TestManagement test definitions.
-   That means that when we are working on a subject, before starting to write any code, we must think about what test we want to cover and who will execute the test (is feautre for everybody, for project admin ...). Once it's done, we can check if we have differences with our TestManagement test suite and adapt the TestManagement suite with what has been identified.
+   That means that when we are working on a subject, before starting to write any code, we must think about what test we want to cover and who will execute the test (is the feature for everybody, for project admin ...). Once it's done, we can check if we have differences with our TestManagement test suite and adapt the TestManagement suite with what has been identified.
  - When we add new tests in Cypress that don't exist in TestManagement, we must add them as a new TestManagement definition.
  - When TestManagement test definitions can't fully be covered by Cypress, then we should split them:
     - one part covered by Cypress
