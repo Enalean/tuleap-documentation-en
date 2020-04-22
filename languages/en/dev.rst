@@ -33,9 +33,9 @@ Development 101, what you need to know
 
    developer-guide/front-end
    developer-guide/back-end
+   developer-guide/tests
    developer-guide/internationalization
    developer-guide/integrators
-   developer-guide/tests
 
 Advanced topics
 

@@ -1,5 +1,5 @@
-End to end
-==========
+End to end tests
+================
 
 Cypress tests
 -------------

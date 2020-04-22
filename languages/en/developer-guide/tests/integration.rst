@@ -4,7 +4,7 @@ Integration tests
 REST tests
 ----------
 
-There is also a docker image for REST tests, just run the following command:
+There is a docker image for REST tests, just run the following command:
 
 .. code-block:: bash
 

@@ -27,5 +27,5 @@ Front end build system is based on webpack.
     front-end/css
     front-end/javascript
     front-end/vue
-    tests/unit-test
+    front-end/tests
     front-end/angular

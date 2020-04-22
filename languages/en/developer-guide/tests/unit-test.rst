@@ -1,6 +1,8 @@
 Unit tests
 ==========
 
+.. _phpunit_test:
+
 PHPUnit
 -------
 
@@ -29,6 +31,7 @@ Helpers and database
 
 Tuleap provides a class `TestHelper` class who will help you to ease interaction with database objects.
 
+.. _jest_unit_test:
 
 Jest unit tests
 ---------------
@@ -88,7 +91,7 @@ For others tools, like VS Code check out the `Jest documentation <https://jestjs
 
 
 Best-practices for Tuleap
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
