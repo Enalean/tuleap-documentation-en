@@ -127,7 +127,25 @@ Example of computation work:
    * User story #6 remaining effort is count just once for release, but sprint #2 and #3 reflect correct remaining effort
    * If I manually set remaining effort for Sprint #2 to 10, release remaining effort will be 60 (10+30+20)
    * I am connected as a member who only can see release, I will see 60 as remaining effort
-   * `Flow chart <https://mermaid-js.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcblx0QVtDb21wdXRlIHJlbWFpbmluZyBlZmZvcnQ8YnI-IG9mIGFuIGFydGlmYWN0XSAtLT4gSntIYXMgPGJyPnJlbWFpbmluZ19lZmZvcnQ8YnI-IGZpZWxkP31cblx0SiAtLT58eWVzfCBFe1wiSXMgaW50L2Zsb2F0L2xpc3Q8YnI-IGZpZWxkP1wifVxuXHRKIC0tPnxub3wgRltEb24ndCByZXR1cm4gYW55dGhpbmddXG5cdEUgLS0-fG5vfCBHe0lzIGNvbXB1dGVkP31cblx0RyAtLT58eWVzfCBCe0hhcyBtYW51YWwgdmFsdWU_fVxuICAgIEQgLS0-IEFcbiAgICBCIC0tPnx5ZXN8IEhbUmV0dXJuIG1hbnVhbCB2YWx1ZV1cblx0QiAtLT58bm98IERbU3VtIHJlbWFpbmluZyBlZmZvcnRzPGJyPiBvZiBhbGwgbGlua2VkIGFydGlmYWN0c11cblx0RSAtLT58eWVzfCBJW1JldHVybiB2YWx1ZV1cbiAgICBHIC0tPnxub3wgRiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19>`_ explaining computation mechanisms.
+
+A flow chart explain computation mechanisms.
+
+.. figure:: ../../../images/diagrams/computed/computed_flowchart.jpeg
+   :align: center
+   :alt: Computed flow chart
+
+..
+    graph TD
+        A[Compute remaining effort<br> of an artifact] --> J{Has <br>remaining_effort<br> field?}
+        J -->|yes| E{"Is int/float/list<br> field?"}
+        J -->|no| F[Don't return anything]
+        E -->|no| G{Is computed?}
+        G -->|yes| B{Has manual value?}
+        D --> A
+        B -->|yes| H[Return manual value]
+        B -->|no| D[Sum remaining efforts<br> of all linked artifacts]
+        E -->|yes| I[Return value]
+        G -->|no| F
 
 .. _burnup_administration:
 
