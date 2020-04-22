@@ -12,6 +12,5 @@ It means that you can customize tracker as you wish, you will find in this page 
 
    administration/mass-change
    administration/tracker-creation
-   administration/templates
    administration/tracker-access-permissions
    administration/configuration-settings
