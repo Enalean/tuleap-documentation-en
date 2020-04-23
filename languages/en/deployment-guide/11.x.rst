@@ -8,6 +8,22 @@ Tuleap 11.14
 
   Tuleap 11.14 is currently under development.
 
+Update to PHP Redis 5
+---------------------
+
+Until now was depending on PHP Redis 4. To do the upgrade you will first need to remove it:
+
+.. sourcecode:: shell
+
+    #> yum shell -y <<EOF
+    remove php73-php-pecl-redis4
+    update
+    run
+    quit
+    EOF
+
+The rest of the upgrade must follow the same :ref:`update instructions <update>` as usual.
+
 New upgrade command
 -------------------
 
