@@ -143,7 +143,7 @@ Here are the step-by-step instructions:
 
 -  Log in as root.
 -  If not already done, install cvs2svn from
-   `http://cvs2svn.tigris.org <http://cvs2svn.tigris.org>`_
+   `http://cvs2svn.tigris.org <https://web.archive.org/web/20200411115305/http://cvs2svn.tigris.org/>`_
 -  Check that the SVN repository is empty:
 
    ::
@@ -168,7 +168,7 @@ Here are the step-by-step instructions:
 -  This will convert the CVS repository with all the historical
    information (including all commits, tags and branches). To select a
    set of historical data, please read:
-   `http://cvs2svn.tigris.org/cvs2svn.html <http://cvs2svn.tigris.org/cvs2svn.html>`_
+   `http://cvs2svn.tigris.org/cvs2svn.html <https://web.archive.org/web/20190926021537/http://cvs2svn.tigris.org/cvs2svn.html>`_
 -  You should then set proper ownership on the repository:
 
    ::

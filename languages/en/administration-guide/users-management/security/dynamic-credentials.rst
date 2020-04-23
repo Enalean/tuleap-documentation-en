@@ -34,7 +34,7 @@ on your Tuleap instance, see :ref:`install-plugins` to learn how to do that.
 
 On your Vault instance, you must install the ``vault-tuleap-plugin`` and mount
 the secret engine, refer to the
-`Vault documentation <https://www.vaultproject.io/docs/plugin/index.html>`_ to
+`Vault documentation <https://www.vaultproject.io/docs/plugin>`_ to
 learn how to do that. A compiled version of the ``vault-tuleap-plugin`` can be
 found `here <https://ci.tuleap.org/jenkins/job/vault-tuleap-plugin-build/>`_.
 This document assumes the Tuleap secrets engine is enabled at the ``tuleap``
