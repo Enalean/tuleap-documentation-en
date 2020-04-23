@@ -307,7 +307,7 @@ Install Redis server from epel repository
 
 .. code-block:: bash
 
-   $ sudo yum install -y redis php56-php-pecl-redis
+   $ sudo yum install -y redis
 
 Generate a strong password ``${REDIS_PASSWORD}`` and set in the configuration:
 
@@ -613,13 +613,7 @@ Tuleap service is an umbrella unit and start the following services
 Finalize configuration on el6 server
 ''''''''''''''''''''''''''''''''''''
 
-Install php redis connector:
-
-.. code-block:: bash
-
-   $ sudo yum install -y php-pecl-redis php-amqplib-amqplib
-
-Then edit ``/etc/httpd/conf.d/php.conf`` and update:
+Edit ``/etc/httpd/conf.d/php.conf`` and update:
 
 .. code-block:: apacheconf
 
