@@ -266,6 +266,23 @@ The configuration is done in the Git administration menu:
 .. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
   your site administrator if it is not the case on your Tuleap instance.
 
+Markdown documents
+------------------
+
+Tuleap supports rendering Markdown documents written with the `CommonMark syntax <https://commonmark.org/>`_ directly in the
+web interface of your Git repository.
+
+It is possible to link to other files in your repo or to images stored in the repository:
+
+.. sourcecode::
+
+    ## Feature A
+
+    You can find more information about Feature A in this [document](docs/feature-a.md)
+    ![Screenshoot of feature A](screenshoot/feature-a.jpg)
+
+Relative links operands ``./`` and ``../`` can be used to link to a file relatively to the current file.
+
 Git Large File Storage (LFS)
 ----------------------------
 
