@@ -17,6 +17,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Label widget <label_widget>`.
 * :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
 * :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
+* :ref:`Project Milestones <project-milestones>`.
 
 More information on `Tuleap.org website`_.
 

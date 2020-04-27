@@ -434,7 +434,7 @@ Hudson Widgets
 
 Hudson service lets you adorn your personal and project dashboards with
 many widgets. To know how to add widgets to your personal dashboard, see
-:ref:`login-and-personal-page`. The procedure is similar to add widgets to
+:ref:`my-personal-dashboard`. The procedure is similar to add widgets to
 project dashboards (see :ref:`project-dashboard-content`).
 
 -  **My Hudson jobs**: only available on the personal dashboards. By
