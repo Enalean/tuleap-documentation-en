@@ -96,42 +96,7 @@ To log into the Tuleap site, go to the Tuleap
 Site and click on the "Login" link. If you typed your login and password correctly,
 Tuleap displays your Personal Page (or Personal
 Dashboard). At any point in time you can return to your
-Tuleap Personal Page by clicking on your avatar or user name.
-
-User Dashboard Content
------------------------
-
-A sample user dashboard is available below. The page is split in several areas:
-
--  The header with your user name and avatar
--  A navigation bar to access to each dashboard. This is where you can add a new dashboard, and edit or delete a dashboard.
-   You can also add widgets to the current dashboard.
--  The various information presented by widgets.
-
-.. figure:: ../images/screenshots/user-dashboards.png
-   :align: center
-   :alt: An example of user dashboard
-   :name: An example of user dashboard
-
-
-Tuleap allows you to personalize your dashboards. Your dashboard is personal, nobody except you can access it.
-The content of the page is made of *widgets*. All widgets can be moved, collapsed or removed.
-Some of them can provide an rss feed or be edited.
-
-New widgets can be added through the dropdown entry “Add widget”. Here is an example of available widgets for the user dashboard:
-
--  **My Artifacts** lists artifacts you have submitted or assigned to
-   you, by project.
-
--  **My Projects** lists the projects you belong to. Selecting any of
-   these projects brings you to the corresponding Project Dashboard.
-
--  **Monitored File Packages** lists packages that you are currently
-   monitoring, by project. To cancel any of the monitored items just
-   click on the trash icon next to the item label.
-
--  **RSS Reader** allows you to include public rss (or atom) feeds into
-   your personal page.
+Tuleap Personal Page by clicking on your avatar or user name (see :ref:`My Personal Dashboard <my-personal-dashboard>`).
 
 .. _account-maintenance:
 

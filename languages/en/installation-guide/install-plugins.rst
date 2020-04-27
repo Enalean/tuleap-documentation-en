@@ -69,6 +69,10 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **projectmilestones**: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 File deliveries and documentation:
 
 * **docman**: Document management
