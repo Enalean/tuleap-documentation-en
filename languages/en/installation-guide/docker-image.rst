@@ -73,7 +73,7 @@ You can also modify the behaviour of Tuleap with the following environment varia
 * ``TULEAP_REDIS_SERVER``: needed if you set ``redis`` for ``TULEAP_FPM_SESSION_MODE``
 * ``TULEAP_REDIS_PORT``: needed if redis is listening on port that is not ``6379`` (the default)
 * ``TULEAP_REDIS_PASSWORD``: needed if redis requires a password
-* ``TULEAP_REDIS_USE_TLS``: set to 1 if you want encrypt connection to redis
+* ``TULEAP_REDIS_USE_TLS``: set to 1 if you want to encrypt the connection to Redis
 
   * **WARNING**: You cannot enforce encryption of Redis communication if you enabled Subversion because the underlying code, written in perl, doesn't support encryption.
 
