@@ -65,7 +65,7 @@ You can also modify the behaviour of Tuleap with the following environment varia
 
 * ``TULEAP_DB_SSL_MODE``: by default, the connection to the database is not encrypted. You can change that to either:
 
-  * ``no-verify``: connection is encrypted but host certificate is not checked. Your traffic cannot be captured but you are vulnerable to Man In The Middle attacks.
+  * ``no-verify``: connection is encrypted but host certificate is not checked. Your traffic cannot be passively inspected but you are vulnerable to Man In The Middle attacks.
   * ``verify-ca``: connection is encrypted and host certificate is verified. Your db server must use a public trusted certificate. **WARNING**: perl & python code (used for subversion) cannot enforce this, those parts will do encryption without certificate verification.
 
 * ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://docs.microsoft.com/en-us/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal#connect-to-mysql-by-using-the-mysql-command-line-tool>`_)
