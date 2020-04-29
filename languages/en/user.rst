@@ -6,6 +6,7 @@ User guide
 
    user-guide/intro
    user-guide/citizen
+   user-guide/my-personal-dashboard
    user-guide/project-admin
    user-guide/agile-dashboard
    user-guide/tracker
