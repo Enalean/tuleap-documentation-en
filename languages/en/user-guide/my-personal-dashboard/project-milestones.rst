@@ -8,7 +8,7 @@ Project Milestones
   This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The widget Project Milestones aims to display and concentrate a Scrum Agile Dashboard on a personal or project dashboard.
+The widget Project Milestones aims at displaying the main information of a Scrum Agile Dashboard on a personal or project dashboard.
 
 Project Milestones features:
 
@@ -26,7 +26,7 @@ Project Milestones can be displayed on any personal dashboard or project dashboa
 Add the widget
 ^^^^^^^^^^^^^^
 
-.. figure:: ../../../images/screenshots/project-milestones/project-milestones-add-widget.png
+.. figure:: ../../images/screenshots/project-milestones/project-milestones-add-widget.png
    :align: center
    :alt: Project Milestones add widget
    :name: Project Milestones add widget
@@ -44,7 +44,7 @@ You don't need to do anything else.
 Presentation
 ~~~~~~~~~~~~
 
-.. figure:: ../../../images/screenshots/project-milestones/project-milestones-full.png
+.. figure:: ../../images/screenshots/project-milestones/project-milestones-full.png
    :align: center
    :alt: Project Milestones full
    :name: Project Milestones full
@@ -61,7 +61,7 @@ This link displays the number of artifacts in the backlog and the upcoming relea
 What's hot
 ^^^^^^^^^^
 
-.. figure:: ../../../images/screenshots/project-milestones/project-milestones-current-release.png
+.. figure:: ../../images/screenshots/project-milestones/project-milestones-current-release.png
    :align: center
    :alt: Project Milestones current release
    :name: Project Milestones current release
