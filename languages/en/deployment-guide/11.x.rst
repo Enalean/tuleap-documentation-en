@@ -4,10 +4,6 @@ Tuleap 11.x
 Tuleap 11.14
 ============
 
-.. NOTE::
-
-  Tuleap 11.14 is currently under development.
-
 Update to PHP Redis 5
 ---------------------
 
