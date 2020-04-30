@@ -232,8 +232,8 @@ where:
    read-write access or blank if access is forbidden.
 
 As an illustration, the default permission settings of a
-Tuleap repository as explained in the previous section are
-expressed through the following set of rules:
+Tuleap repository, in a public project, as explained in the previous section,
+are expressed through the following set of rules:
 
 ::
 
@@ -264,35 +264,44 @@ cannot be edited. You should consider this section as the beginning of
 the Subversion permission file: project administrators can then edit
 additional permissions that will be added below the automatic section.
 
-Please note that it is not possible to restrict permissions already
-granted on the same directory.
-
-For instance, a public project has the default permission file detailed
-above; it is useless to add a stricter rule on the root directory. For
-instance, adding:
+So, a project administrator can change the default rules, for instance
+to define stricter rules:
 
 ::
+   
+   [/]
+   * =
+   @members = r
+   @staff = rw
 
-    [/]
-    * =
+Here, only members of the internal staff can update the repository.
 
-
-will not prevent registered users to access the repository, since the
-default rule already grants this permission. However, it is possible to
-restrict permissions on a subfolder:
+It's also possible to restrict access on a subfolder:
 
 ::
 
     [/secret]
-    * =
-    @members = rw
+    @members =
+    @staff = rw
 
-
-will indeed prevent registered users from reading the '/secret'
+will indeed prevent non ``staff`` group users from reading the ``/secret``
 directory.
 
+::
+   
+    [/inputs/customer]
+    @members =
+    @staff = r
+    @customer = rw
+
+will ensure only a customer can act on its inputs.
+
 For more information about the format of this file you should refer to
-the Subversion Book.
+the Subversion Book: http://svnbook.red-bean.com/en/1.8/svn.serverconfig.pathbasedauthz.html.
+
+.. warning:: Keep in mind that you may thus change obvious behaviours.
+             Since the last definition wins, you can, for instance,
+             give access to unregistered users on a private project.
 
 Subversion Immutable tags
 `````````````````````````
