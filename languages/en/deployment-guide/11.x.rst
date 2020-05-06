@@ -14,7 +14,9 @@ Tuleap 11.14
 Update to PHP Redis 5
 ---------------------
 
-Until now was depending on PHP Redis 4. To do the upgrade you will first need to remove it:
+Until now was depending on PHP Redis 4. To do the upgrade you will first need to remove it.
+
+When you apply the :ref:`update instructions <update>`, the ``yum update`` part must be replaced by:
 
 .. sourcecode:: shell
 
@@ -25,7 +27,13 @@ Until now was depending on PHP Redis 4. To do the upgrade you will first need to
     quit
     EOF
 
-The rest of the upgrade must follow the same :ref:`update instructions <update>` as usual.
+The rest of the upgrade should be done as usual.
+
+.. WARNING::
+
+    It's a one time change that only applies when you upgrade from prior to 11.14 to newer than 11.14 (e.g. you must
+    also run it this way if you upgrade from 11.12 to 11.16 for instance).
+    However, once done, you no longer need this specific step and you should apply the regular update procedure.
 
 New upgrade command
 -------------------
@@ -45,6 +53,12 @@ New plugin available
 
 A new plugin :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>` (Tuleap Enterprise only) is available.
 The correponding RPM package name is ``tuleap-plugin-oauth2-server``.
+
+Test Management repository
+--------------------------
+
+If you are running Tuleap Enterprise Edition, you should remove the ``[Tuleap-testmanagement]`` section from ``/etc/yum.repos.d/Tuleap.repo``.
+It's no longer needed.
 
 
 Tuleap 11.13
