@@ -24,8 +24,52 @@ file, the default is automatically set for you.
 Deprecations and end of support
 ===============================
 
+Specific deprecations:
+
+* Internet Explorer 11 is no longer supported for newly developed features. Compatibility is not broken "on purpose" so
+  most of the application *should* work on IE11, sometimes in degraded mode. We strongly suggest to switch to any other
+  browser: Firefox, Edge, Chrome.
+
 Here is the list of what Tuleap will remove, stop or start supporting with the
 planned time periods.
+
+============================= ================= =============================================
+S1 2020                       Status            As platform administrator, what should I do ?
+============================= ================= =============================================
+RHEL 6                        End of support    Switch to RHEL 7
+PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
+RHEL 8                        Start of support  (Optionally switch to RHEL 8)
+MySQL 8                       Start of support  (Optionally switch to MySQL 8)
+tab file-based translations   Replaced by       Nothing
+                              gettext
+============================= ================= =============================================
+
+============================= =============== =============================================
+S2 2020                       Status          As platform administrator, what should I do ?
+============================= =============== =============================================
+Trackers v3                   Removed         Migrate to Trackers v5
+Subversion (SVN Core)         Removed         Switch to SVN Plugin
+Realtime server using NodeJS  Replaced        (To be announced)
+PHP 7.3                       End of support  Switch to PHP 7.4
+Internet Explorer 11          End of support  End-users should switch to Firefox or Chrome
+============================= =============== =============================================
+
+========= =============== =============================================
+2021      Status          As platform administrator, what should I do ?
+========= =============== =============================================
+MySQL 5.7 End of support  Switch to MySQL 8
+========= =============== =============================================
+
+===================== ============== =============================================
+The Future            Status         As platform administrator, what should I do ?
+===================== ============== =============================================
+SOAP API              Removed        End-users should switch to REST API
+PHP Wiki              Removed        Switch to Mediawiki
+PROFTPd               End of support End-users should use document/frs instead
+===================== ============== =============================================
+
+Support already ended
+=====================
 
 ==================================================== ================= ==============================================
 Q3 2019                                              Status            As platform administrator, what should I do ?
@@ -45,44 +89,4 @@ Codendi CLI                     End of support    Use REST API
 GitShell backend for Git plugin Removed           End-users should push to Gitolite repository
 Gerrit versions < 2.16          End of support    Switch to Gerrit 2.16 or higher
 MySQL versions < 5.7            End of support    Upgrade to MySQL 5.7 or higher
-tab file-based translations     Replaced by       Nothing
-                                gettext
 =============================== ================= =============================================
-
-============================= ================= =============================================
-S1 2020                       Status            As platform administrator, what should I do ?
-============================= ================= =============================================
-RHEL 6                        End of support    Switch to RHEL 7
-PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
-RHEL 8                        Start of support  (Optionally switch to RHEL 8)
-MySQL 8                       Start of support  (Optionally switch to MySQL 8)
-Realtime server using NodeJS  Replaced          (To be announced)
-============================= ================= =============================================
-
-===================== ======== =============================================
-Q3 2020               Status   As platform administrator, what should I do ?
-===================== ======== =============================================
-Trackers v3           Removed  Migrate to Trackers v5
-Subversion (SVN Core) Removed  Switch to SVN Plugin
-===================== ======== =============================================
-
-==================== =============== =============================================
-Q4 2020              Status          As platform administrator, what should I do ?
-==================== =============== =============================================
-PHP 7.3              End of support  Switch to PHP 7.4
-Internet Explorer 11 End of support  End-users should switch to Firefox or Chrome
-==================== =============== =============================================
-
-========= =============== =============================================
-2021      Status          As platform administrator, what should I do ?
-========= =============== =============================================
-MySQL 5.7 End of support  Switch to MySQL 8
-========= =============== =============================================
-
-===================== ============== =============================================
-The Future            Status         As platform administrator, what should I do ?
-===================== ============== =============================================
-SOAP API              Removed        End-users should switch to REST API
-PHP Wiki              Removed        Switch to Mediawiki
-PROFTPd               End of support End-users should use document/frs instead
-===================== ============== =============================================
