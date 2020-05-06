@@ -37,6 +37,13 @@ In the current form, you need to run it to have the organisation logo (on the to
 
 The command is now mentioned in the :ref:`update instructions <update>`.
 
+New plugin available
+--------------------
+
+A new plugin :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>` (Tuleap Enterprise only) is available.
+The correponding RPM package name is ``tuleap-plugin-oauth2-server``.
+
+
 Tuleap 11.13
 ============
 
