@@ -1,7 +1,7 @@
 ..  _install_el7:
 
-Full Installation
-=================
+Tuleap Installation
+===================
 
 Why should I use the Tuleap full installation?
 ----------------------------------------------
