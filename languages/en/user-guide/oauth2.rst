@@ -175,6 +175,10 @@ To use that endpoint, the Client Application must authenticate itself with its
 Client ID and Client secret. Please consult `RFC7009 <oauth2_revocation_spec_>`_
 for implementation details.
 
+Integrations that leverage OpenID Connect
+-----------------------------------------
+
+* :ref:`Rocket.Chat <rocketchat>`
 
 Resources
 ---------
