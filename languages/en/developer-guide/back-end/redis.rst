@@ -29,6 +29,8 @@ Install php connector if not already installed:
     $tuleap> yum install php73-php-pecl-redis
 
 
+Edit the ``/etc/tuleap/conf/local.inc`` to have a number of backend worker greater than 0 (for example: ``$sys_nb_backend_workers = 1;``). Then restart tuleap deamon: ``service tuleap restart``.
+
 Ensure SVN conf includes redis
 ------------------------------
 
