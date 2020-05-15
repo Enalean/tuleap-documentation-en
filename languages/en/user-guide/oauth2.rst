@@ -162,6 +162,18 @@ Please note that only the OAuth2 `Authorization Code Grant
 <oauth2_authorization_code_grant_>`_ is supported by Tuleap. The OAuth2
 `Implicit Grant <oauth2_implicit_grant_>`_ is not supported.
 
+JSON Web Key Set (JWKS) endpoint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tuleap `signs <oidc_signing_>`_ its OpenIDConnect ID Tokens. To verify this
+signature, your client application will need to access the JSON Web Key Set
+endpoint to retrieve the signing keys. It can be found at
+``https://<your-tuleap-domain>/oauth2/jwks``.
+
+The signing key is regularly rotated so we advise against storing it in your
+application.
+
+
 Token Revocation endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -199,5 +211,6 @@ Resources
 .. _oidc_spec: https://openid.net/specs/openid-connect-core-1_0.html
 .. _oidc_dynamic_registration_spec: https://openid.net/specs/openid-connect-registration-1_0.html
 .. _oidc_discovery_spec: https://openid.net/specs/openid-connect-discovery-1_0.html
+.. _oidc_signing: https://openid.net/specs/openid-connect-core-1_0.html#Signing
 .. _access_token: https://tools.ietf.org/html/rfc6749#section-1.4
 .. _refresh_token: https://tools.ietf.org/html/rfc6749#section-1.5
