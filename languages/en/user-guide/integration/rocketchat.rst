@@ -38,5 +38,5 @@ Integrations
 
 You can use all the integrations that works with :ref:`Mattermost <botmattermost-plugins>` out of the box.
 
-You need as Rocket.Chat administrator create a new Incoming WebHook integration and then use the generated URL in Bot
+You need as Rocket.Chat administrator to create a new Incoming WebHook integration and then use the generated URL in Bot
 definition of Tuleap.
