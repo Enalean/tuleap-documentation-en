@@ -1,7 +1,10 @@
 .. _botmattermost-plugins:
 
-Bot Mattermost plugins
-======================
+Slack & Mattermost
+==================
+
+The bot are named after Mattermost because they were designed after this tool. However Incoming Webhooks are compatible
+with Slack and :ref:`Rocket Chat <rocketchat>` as well
 
 Configuration
 -------------
