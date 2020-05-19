@@ -78,6 +78,38 @@ The actions available are the following:
  - Cut/Paste a document or a folder
  - Delete document or folder
  - Lock/Unlock a document
+ - Download a folder as a zip archive
+
+.. _document-download-folder-zip:
+
+Download a folder as a zip archive
+``````````````````````````````````
+
+.. figure:: ../../images/screenshots/document/folder_download_zip.png
+  :alt: Screenshot of the "Download a folder as zip" dropdown menu item
+
+  You can download folders as a zip archive. Every sub-folder, file and embedded
+  file in this folder will be downloaded as a zip archive. Embedded files are
+  saved as HTML files.
+
+Downloading a folder as a zip archive is subjected to :ref:`size limitations<site-admin-document>`
+that can be enforced by your site administrator. By default, users may not
+download folders with a size above 2 Gigabytes (GB).
+
+.. attention::
+
+  If Tuleap encounters a problem while processing one of the files (the file is
+  corrupted, not found, not readable or Tuleap has not enough memory), it will
+  add a file named ``TULEAP_ERRORS.txt`` at the root of the zip archive. This
+  file will list all files with issues that could not be downloaded. If it
+  happens, please let your site administrator know.
+
+.. warning::
+
+  For Mac OS X users, there is a special limitation: if the folder has a size
+  above 4 Gigabytes (GB) or contains more than 64000 files, the native Mac OS
+  archive extraction tool might not be able to open the archive. Tuleap will
+  warn you if you encounter this case.
 
 View the approval status
 ````````````````````````
