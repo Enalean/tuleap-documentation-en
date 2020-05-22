@@ -210,7 +210,7 @@ Some widgets have documentation to explain how to configure and use them:
 - :ref:`Hudson/Jenkins <continuous-integration-with-Hudson/Jenkins>` permits to display many widgets for Continuous Integration.
 - :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard in project dashboard.
 - :ref:`Label widget <label_widget>` to track your items.
-- :ref:`Portfolio <portfolio>`.
+- :ref:`Portfolio <portfolio>`, also called Cross Trackers Search, allows you to make report with several trackers from several projects at the same place.
 
 Whenever you enter the Project Dashboard of a given project or any of
 its service you'll see a menu item called Admin appears in the project

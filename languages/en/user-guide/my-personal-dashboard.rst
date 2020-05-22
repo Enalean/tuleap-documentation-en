@@ -41,12 +41,21 @@ New widgets can be added through the dropdown entry “Add widget”. Here is an
 -  **RSS Reader** allows you to include public rss (or atom) feeds into
    your personal page.
 
+- **My Last Git pushes** displays the last commit you have pushed from all your projects
+
+- **My Latest SVN Commits** displays the last commit you have pushed from all your projects
+
+- You can also display reports with **Tracker Renderer** or graphs with **Tracker Chart** from any tracker
+
 Some widgets have documentation to explain how to configure and use them:
 
 - :ref:`Hudson/Jenkins <continuous-integration-with-Hudson/Jenkins>` permits to display many widgets for Continuous Integration.
-- :ref:`Kanban <kanban>` add a Kanban in your personal dashboard.
-- :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard in personal dashboard.
-- :ref:`Timetracking <timetracking>` allows you to visualize your saved times with TimeTracking plugin.
+- :ref:`Kanban <kanban>` adds a Kanban board on your personal dashboard.
+- :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard on personal dashboard.
+- :ref:`Timetracking <timetracking>` allows you to visualize your saved times or the time spent on multiple trackers
+  you're admin of with TimeTracking plugin
+- :ref:`Portfolio <portfolio>`, also called Cross Trackers Search, allows you to make report with several trackers from
+  several projects at the same place.
 
 
 .. toctree::
