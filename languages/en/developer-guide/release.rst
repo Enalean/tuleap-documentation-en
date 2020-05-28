@@ -116,6 +116,7 @@ The procedure to follow is similar for each one of the concerned plugins and too
 
  6. Publish your commit and tag::
 
+    $ git push
     $ git push --follow-tags
 
 Update the manifest
