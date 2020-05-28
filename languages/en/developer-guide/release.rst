@@ -114,8 +114,9 @@ The procedure to follow is similar for each one of the concerned plugins and too
 
     $ git tag -s -m 'Version T.U.0' T.U.0
 
- 6. Publish your commit and tag::
+ 6. Publish your commit and tag (each needs a dedicated push since Gerrit 3.1 does not allow to push commit and tag in the same operation)::
 
+    $ git push
     $ git push --follow-tags
 
 Update the manifest
