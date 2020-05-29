@@ -1,6 +1,28 @@
 Logs
 ====
 
+You can control global level of log verbosity with ``$sys_logger_level`` parameter in ``/etc/tuleap/conf/local.inc``. It
+accepts the following values:
+
+* ``emergency``
+* ``alert``
+* ``critical``
+* ``error``
+* ``warning`` (default value)
+* ``notice``
+* ``info``
+* ``debug``
+
+The verbosity applies regardless of the driver (file, syslog, graylog) and for the whole platform/services.
+
+.. NOTE::
+
+    Files is the default logging mechanism but it's unlikely to fit production needs we recommend either syslog or better
+    graylog/gelf (this last one provides more contextual information).
+
+    When syslog or graylog is used, we recommend to gather all application logs with those drivers (esp. nginx and apache
+    error logs).
+
 Files
 -----
 
