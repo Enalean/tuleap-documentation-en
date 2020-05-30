@@ -1,4 +1,4 @@
-FROM alpine:3.11.6 AS builder
+FROM alpine:3.12.0 AS builder
 
 RUN apk add --no-cache git make python3 py-virtualenv nodejs npm
 
