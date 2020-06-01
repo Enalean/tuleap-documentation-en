@@ -13,7 +13,7 @@ Authenticate with OAuth / OpenID Connect
 #. On top right, click on ``Add custom oauth`` and type Tuleap
 #. In newly created Tuleap provider:
 
-    #. Generate a new :ref:`OAuth2 <openidconnect_provider>` app in your project **without `Force usage of PKCE to authenticate`** and set as redirect endpoint the callback URL given by rocket chat (in the form https://.../_oauth/tuleap)
+    #. Generate a new :ref:`OAuth2 <openidconnect_provider>` app in your project **without `Force usage of PKCE to authenticate`** and set as redirect endpoint the callback URL given by rocket chat (in the form ``https://.../_oauth/tuleap``)
     #. ``URL``: https://tuleap.example.com (Replace by your Tuleap server)
     #. ``Token Path``: /oauth2/token
     #. ``Token Sent Via``: Header
