@@ -88,9 +88,15 @@ Download a folder as a zip archive
 .. figure:: ../../images/screenshots/document/folder_download_zip.png
   :alt: Screenshot of the "Download a folder as zip" dropdown menu item
 
-  You can download folders as a zip archive. Every sub-folder, file and embedded
-  file in this folder will be downloaded as a zip archive. Embedded files are
-  saved as HTML files.
+  Download as zip is available on all folders
+
+You can download folders as a zip archive. Every sub-folder, file and embedded
+file in this folder will be downloaded as a zip archive. Embedded files are
+saved as HTML files. The zip archive is made of the last version of the files.
+
+Please note that, even if the file is a ``.zip`` there is actually no compression of the files. The ``.zip`` is used
+to create an archive that can be downloaded but the server won't compress the files within because it would be too
+heavy to manage for the Tuleap server.
 
 Downloading a folder as a zip archive is subjected to :ref:`size limitations<site-admin-document>`
 that can be enforced by your site administrator. By default, users may not
