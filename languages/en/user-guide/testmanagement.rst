@@ -195,11 +195,12 @@ Navigate to the "Version 1.0 milestone, click on the "Test campaigns" tab and th
 
 Test automation
 ---------------
-
 .. note::
+   
+   As of Tuleap 11.15 the REST API is able to process junit files directly making the ``ttm`` CLI tool deprecated. This documentation
+   makes use of the Jq_ tool to format JSON payload but you obviously can run your own solution to format it.
 
-  This section is experimental and you will need to have access to ``ttm`` CLI tool to make it works. Ask your Enalean
-  representative if you want to go further.
+.. _jq: https://stedolan.github.io/jq
 
 TTM is able to consolidate automated test results inside its campaign. This way you can have a mixed campaign with both
 manual and automated tests. The key principles are:
@@ -228,8 +229,6 @@ a dedicated user with limited permissions to reduce risks of credentials leaking
 At Jenkins side, you need to register this Tuleap user in the "Credentials" section. Create a new entry for "username and
 password" and give it a descriptive id like ``jenkins-tuleap-bot``.
 
-You also need to upload the ``ttm`` binary on Jenkins server.
-
 Configure TTM
 ~~~~~~~~~~~~~
 
@@ -240,89 +239,55 @@ close to "Description". You can set whatever label you want, only the name is me
 
   Starting from Tuleap 9.19 the ``automated_tests`` field is part of the default Test Management tracker templates.
 
-Jenkinsfile scaffolding
-~~~~~~~~~~~~~~~~~~~~~~~
-
-In your local working copy of your automated tests we assume that you are able to run them locally and get a junit XML
-result. The following commands will create two files in your repository to allow test execution and reporting:
-
-* ``Jenkinsfile`` for jenkins job configuration
-* ``.ttm.yml`` for TTM configuration
-
-Execute it like
-
-.. sourcecode:: bash
-
-    $> ttm scaffold --use-campaign-name \
-         --credentials-id jenkins-tuleap-bot \
-         --server https://tuleap.example.com \
-         --project-name test-automation-demo \
-         --junit-file tests_results.xml
-
-In the previous command:
-
-* ``--credentials-id`` refers to the ID of the username + password credential you configured in the previous section
-* ``--server`` corresponds to the Tuleap server URL where TTM is running
-* ``--project-name`` corresponds to the Tuleap project's shortname, where your campaign is
-* ``--junit-file`` locates where the automated test results are generated within you working copy
-
-Then you should edit the generated ``Jenkinsfile`` to adjust Build and Test phases to your process. You can create as many
-steps and stages as needed, the only constraint is to keep the ``def ttm_credentials`` and the ``stage('Reporting')``.
-
-Once you're done, add ``Jenkinsfile`` and ``.ttm.yml`` files, commit and push.
-
 Associate automated tests results and test definitions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to associate ``testsuite`` from your junit test results and Test Definitions artifacts. ``ttm`` cli tool has
-a helper to assist you with that: ``ttm verify``.
-
-.. sourcecode:: bash
-
-    $> ttm verify --username jenkinsbot
-       Enter Password: xxxxx
-       Test suites with a match in TTM
-       Test suites without a test definition
-           'AccountingBalanceTest' with 5 test cases
-           'LoginWithUsernameTest' with 12 test cases
-           'SendInvoiceTest' with 1 test cases
-
-At first run it indicates that no test suites have been linked to a test definition.
-
-You need to go in your test definitions artifacts and set in "automated_tests" field the test suite name (eg. 'AccountingBalanceTest').
-
-Once done, you can run again the verify command:
-
-.. sourcecode:: bash
-
-    $> ttm verify --username jenkinsbot
-       Enter Password: xxxxx
-       Test suites with a match in TTM
-           'AccountingBalanceTest' (test #2446)
-           'LoginWithUsernameTest' (test #2512)
-       Test suites without a test definition
-           'SendInvoiceTest' with 1 test cases
+You need to associate ``testsuite`` from your junit test results and Test Definitions artifacts.
 
 At this point you've got everything you need to report test results. You can test it by yourself by creating a new test
-campaign "Test automated ttm" with the selected test definitions and run the ``send-results`` by hand:
+campaign "Test automated" with the selected test definitions and call the API by hand:
 
 .. sourcecode:: bash
 
     $> make tests
-    $> ttm send-results --username jenkinsbot --campaign-name "Test automated ttm"
+    $> ( for i in *.xml ; do cat $i ; echo 'JQ-SEPARATOR-JQ' ; done ) | \
+    jq -aRs 'rtrimstr("\n") | rtrimstr("JQ-SEPARATOR-JQ") | split("JQ-SEPARATOR-JQ") | {automated_tests_results: {build_url: "https://jenkins.example.com", junit_contents: .}} | \
+    curl -X PATCH --data-binary @- --header 'Content-type: application/json' --header 'X-Auth-AccessKey: tlp-k1-29.a3ba...' https://tuleap.example.com/api/testmanagement_campaigns/<YourCampaignId> '
 
 Then check the status of your campaign in Test Management.
 
 Configure Jenkins job
 ~~~~~~~~~~~~~~~~~~~~~
 
+First of all you will need an Access Key to access Tuleap API. Generate one for your user and then create a new credential in Jenkins selecting "Secret text" as "Kind" and giving it an ID or
+copying the one generated by Jenkins. For this example we'll consider that you chose ``tuleap-access-token`` as the ID.
+
 Create a new Jenkins job "Pipeline" and point it to your SCM repository (you might want to use ``jenkins-tuleap-bot``
 credentials to access the repo). You should also allow it to be triggered remotely. Check the "Trigger builds remotely" checkbox in the "Build Triggers" section and provide a secret Authentication token.
 
-Run a first build to configure the job. This job will fail.
+Here is an example Jenkinsfile using Jq and calling the API:
 
-At second run it should prompt for a campaign name. Create a new campaign "Test automated ttm from jenkins" with the same
-test definitions than in previous steps. After a few moment, the pipeline should succeed and your test campaign in Test Management is updated.
+.. sourcecode:: groovy
+
+   pipeline {
+      agent any
+      parameters {
+         string(name: 'campaign', defaultValue: '', description: 'ID of the campaign')
+      }
+      stages {
+         stage('Reporting') {
+            steps {
+               echo 'Report to Tuleap'
+               withCredentials([string(credentialsId:'tuleap-access-token', variable: 'ACCESS_TOKEN')]) {
+                  sh """
+                     ( for i in *.xml ; do cat \$i ; echo 'JQ-SEPARATOR-JQ' ; done ) | jq -aRs --arg BUILD_URL ${env.BUILD_URL} 'rtrimstr(\"\n\") | rtrimstr(\"JQ-SEPARATOR-JQ\") | split(\"JQ-SEPARATOR-JQ\") | {automated_tests_results: {build_url: \$BUILD_URL, junit_contents: .}}' | curl -X PATCH --data-binary @- --header 'Content-type: application/json' --header 'X-Auth-AccessKey: $ACCESS_TOKEN' https://tuleap-web.tuleap-aio-dev.docker/api/testmanagement_campaigns/${params.campaign}
+                  """
+               }
+            }
+         }
+      }
+   }
+
 
 Launch automated tests from the Test Management campaign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
