@@ -36,8 +36,6 @@ planned time periods.
 ============================= ================= =============================================
 S1 2020                       Status            As platform administrator, what should I do ?
 ============================= ================= =============================================
-PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
-RHEL 8                        Start of support  (Optionally switch to RHEL 8)
 MySQL 8                       Start of support  (Optionally switch to MySQL 8)
 tab file-based translations   Replaced by       Nothing
                               gettext
@@ -47,11 +45,13 @@ tab file-based translations   Replaced by       Nothing
 S2 2020                       Status          As platform administrator, what should I do ?
 ============================= =============== =============================================
 RHEL 6                        End of support  Switch to RHEL 7
+PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
 Trackers v3                   Removed         Migrate to Trackers v5
 Subversion (SVN Core)         Removed         Switch to SVN Plugin
 Realtime server using NodeJS  Replaced        (To be announced)
 PHP 7.3                       End of support  Switch to PHP 7.4
 Internet Explorer 11          End of support  End-users should switch to Firefox or Chrome
+RHEL 8                        Start of support  (Optionally switch to RHEL 8)
 ============================= =============== =============================================
 
 ========= =============== =============================================
