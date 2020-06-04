@@ -57,6 +57,10 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **testplan**: Integration between the agiledashboard and testmanagement plugins.
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 * **label**: Group and display labels on Project Dashboard (useful to track pull requests)
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
