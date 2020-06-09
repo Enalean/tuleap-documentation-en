@@ -262,8 +262,6 @@ texinfo_documents = [
 
 nitpicky = True
 
-user_agent = "Mozilla/5.0 Gecko/20100101 Firefox Tuleap Documentation"
-
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 lexers['php'] = PhpLexer(startinline=True, linenos=1)
