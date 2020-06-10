@@ -708,7 +708,24 @@ A service tuleap-realtime is available. You can ``start|stop|condrestart|status`
 * condrestart: restart the service if already running
 * status: display service's status
 
-You can test the activation of server with a curl command on "https://<tuleap_instance>:<port>"
+You can test the activation of the realtime server with curl:
+
+.. code-block:: bash
+
+    $ curl https://<tuleap_instance>:<port>
+
+    # It works if the response looks like the following (the Cannot GET / part is expected):
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    </head>
+    <body>
+    <pre>Cannot GET /</pre>
+    </body>
+    </html>
+    # If curl cannot connect to tuleap-realtime or verify its certificate, it will output a different error.
 
 Notes
 -----
