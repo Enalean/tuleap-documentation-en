@@ -708,6 +708,25 @@ A service tuleap-realtime is available. You can ``start|stop|condrestart|status`
 * condrestart: restart the service if already running
 * status: display service's status
 
+You can test the activation of the realtime server with curl:
+
+.. code-block:: bash
+
+    $ curl https://<tuleap_instance>:<port>
+
+    # It works if the response looks like the following (the Cannot GET / part is expected):
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    </head>
+    <body>
+    <pre>Cannot GET /</pre>
+    </body>
+    </html>
+    # If curl cannot connect to tuleap-realtime or verify its certificate, it will output a different error.
+
 Notes
 -----
 
@@ -715,3 +734,5 @@ If your certificate used by tuleap-realtime isn't in the list of recognized CAs 
 To verify you can see this error "Unable to reach nodejs server ..." in the ``/var/log/tuleap/codendi_syslog`` file.
 
 To resolve it, you have to add a new certification authority to the CA bundle.
+
+If your server is behind a firewall, make sure that the port used by realtime is opened in the firewall.
