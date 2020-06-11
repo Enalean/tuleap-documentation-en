@@ -16,6 +16,8 @@ between the :ref:`Agile Dashboard <agile-dashboard>` and the :ref:`Test Manageme
 
 To get it, install the `tuleap-plugin-testplan` package and activate it in the site
 administration. For more information about plugins installation, see :ref:`install-plugins`.
+The previous integration has been removed, so if you were using it you will need to install the
+new Test Plan.
 
 This new plugin is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
