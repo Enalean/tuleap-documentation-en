@@ -650,18 +650,8 @@ For example in Kanban, when one user moves a card from one column to another, th
 
 Tuleap Realtime installation
 ----------------------------
-The first step consists to configure yum in order to exclude nodejs packages.
-Edit the file '/etc/yum.conf' with:
 
-  .. code-block:: bash
-
-         # NodeJS from scl seems to conflict with NodeJS from epel
-         # hence, exclude everything that come from scl for node related
-         # stuff
-         exclude=nodejs-*
-
-
-You can now install the ``tuleap-realtime`` package:
+Install the ``tuleap-realtime`` package:
 
   .. code-block:: bash
 
