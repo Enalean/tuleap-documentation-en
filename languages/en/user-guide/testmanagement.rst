@@ -30,11 +30,6 @@ Here are the main concepts with Tuleap Test Management:
 
 Test Case, Test Campaign and Test Execution are 3 different trackers. Environment is a property of "Test execution".
 
-.. note::
-
-    Test Management is stable and used since 1.5 year at Enalean for all Tuleap
-    releases without any issues.
-
 Run a Test Campaign
 -------------------
 
@@ -177,26 +172,34 @@ A new modal will enable you to look for existing artifacts or to create directly
 Link with Agile Dashboard
 -------------------------
 
-If your project also uses the Agile Dashboard service, a "Test campaigns" tab will be added to milestones.
+If your project also uses the Agile Dashboard service, a "Tests" tab will be added to milestones.
 
-.. figure:: ../images/screenshots/testmanagement/agiledashboard-link.png
-   :align: center
-   :alt: Go to test campaigns from an agile dashboard milestone
-   :name: Go to test campaigns from an agile dashboard milestone
+This tab shows the test plan and campaigns of the milestone.
 
-After clicking on this tab, you will be able to create a new test campaign from Test definitions linked to the Milestone's items. For example, you have a user story in a Release "Version 1.0". You can link a Test definition to this user story.
+Test campaigns
+~~~~~~~~~~~~~~
 
-Navigate to the "Version 1.0 milestone, click on the "Test campaigns" tab and then create a new campaign. In the modal, you can choose "Milestone tests" which will select all the test definitions linked to "Version 1.0" milestone's user stories.
+This part displays all campaigns (and their tests progression) that are linked to the milestone.
 
-.. figure:: ../images/screenshots/testmanagement/create-campaign-from-milestone.png
-   :align: center
-   :alt: Create a test campaign from the milestone
-   :name: Create a test campaign from the milestone
+From here the creation of new campaigns is available (they will be automatically linked to the milestone).
+
+A campaign can be created with an initial subset of tests:
+
+* No tests: the campaign won't have any tests
+* All tests: all test cases will be added to the campaign
+* All tests in <milestone>: (this is the default) only test cases that are linked to a backlog item of the milestone will be added to the campaign
+* From tracker reports: only test cases that matches a given report's criteria will be added to the campaign
+
+Test plan
+~~~~~~~~~
+
+This part displays the backlog items of the milestone and their associated tests. This allows you to see how the
+content of the milestone is covered by tests.
 
 Test automation
 ---------------
 .. note::
-   
+
    As of Tuleap 11.15 the REST API is able to process junit files directly making the ``ttm`` CLI tool deprecated. This documentation
    makes use of the Jq_ tool to format JSON payload but you obviously can run your own solution to format it.
 
