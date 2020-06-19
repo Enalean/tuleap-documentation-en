@@ -65,7 +65,7 @@ Choose a cli interpreter and validate
 - Use composer autoloader
 - Path to script : `<tuleap_root>/src/vendor/autoload.php`
 
-Default configuration file: `<tuleap_root>/tests/phpunit/phpunit.xml`
+Default configuration file: `<tuleap_root>/tests/unit/phpunit.xml`
 
 `Run > Edit configuration > Default > PHPUnit`
 Choose custom working directory : `<tuleap_root>`
