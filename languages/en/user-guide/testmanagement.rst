@@ -194,7 +194,7 @@ Test plan
 ~~~~~~~~~
 
 This part displays the backlog items of the milestone and their associated tests. This allows you to see how the
-content of the milestone is covered by tests.
+content of the milestone is covered by tests, and to add new tests for each items. (You need to have the rights to update the artifact links of the item in order to add new tests).
 
 Test automation
 ---------------
