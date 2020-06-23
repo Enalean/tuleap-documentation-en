@@ -196,6 +196,8 @@ Test plan
 This part displays the backlog items of the milestone and their associated tests. This allows you to see how the
 content of the milestone is covered by tests, and to add new tests for each items. (You need to have the rights to update the artifact links of the item in order to add new tests).
 
+If a test has been executed in at least one of the campaign of the milestone, then its status (based on the last execution) is displayed (Passed, Failed, Blocked, or Not run).
+
 Test automation
 ---------------
 .. note::
