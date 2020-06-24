@@ -23,14 +23,6 @@ but corresponding user accounts will be created automatically during import.
 
     Check `source code <https://github.com/Enalean/bz2tuleap>`_ for more details.
 
-Jira
-''''
-
-`bz2tuleap, jira version <https://github.com/Enalean/bz2tuleap#jira-to-tuleap>`_ can also take Jira XML export and convert it to a valid
-Tuleap import archive.
-
-Once done, you will need to :ref:`import the archive<project-export-import>` as root on Tuleap server.
-
 Redmine
 '''''''
 
