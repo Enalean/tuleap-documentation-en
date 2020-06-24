@@ -4,10 +4,6 @@ Tuleap 11.x
 Tuleap 11.16
 ============
 
-.. NOTE::
-
-  Tuleap 11.16 is currently under development.
-
 Better integration between the Agile Dashboard and the Test Management plugins
 ------------------------------------------------------------------------------
 
