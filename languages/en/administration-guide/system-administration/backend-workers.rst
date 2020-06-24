@@ -119,4 +119,12 @@ Jira import
 
 Once activated, users can create a tracker from a Jira instance in the :ref:`tracker creation<creation-tracker>` page.
 
+Missing in trackers imported from Jira:
+
+* Attachments
+* Fields of type "list" bound to users and user groups
+* "Assigned to" fields
+* Authors of comments in issues
+* Permissions in issues trackers
+
 Since import of Jira can take some time to proceed, import is done asynchronously, and relies on :ref:`backend workers<admin_howto_backend_worker>`.
