@@ -200,12 +200,12 @@ following documents:
 -  The Subversion Book. See
    `http://svnbook.red-bean.com <http://svnbook.red-bean.com/>`__).
 
--  The Official Subversion Web Site. See http://subversion.tigris.org/
+-  The Official Subversion Web Site. See https://subversion.apache.org/
    This is where you'll find the subversion software including the
    rapidSVN client.
 
 -  TortoiseSVN. A graphical MS Windows and Linux graphical client. See
-   http://tortoisesvn.tigris.org/.
+   https://tortoisesvn.net/.
 
 -  jSVN. A graphical 100% Java graphical client. See
    http://jsvn.alternatecomputing.com/.
