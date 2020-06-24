@@ -120,8 +120,3 @@ Jira import
 Once activated, users can create a tracker from a Jira instance in the :ref:`tracker creation<creation-tracker>` page.
 
 Since import of Jira can take some time to proceed, import is done asynchronously, and relies on :ref:`backend workers<admin_howto_backend_worker>`.
-
-Configure Tuleap
-----------------
-
-You have to enable the feature: ``tuleap config-set display_jira_importer 1``.
