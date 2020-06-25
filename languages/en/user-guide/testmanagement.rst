@@ -240,7 +240,7 @@ Test strategies
 When creating a campaign from a milestone, Tuleap encourages to pick-up the tests of the milestones. That's great to ensure
 that the feature you built works as expected.
 
-However you might also need to guaranty some kind of non regression on feature previously delivered. How to do it ?
+However you might also need to guaranty some kind of non regression on feature previously delivered. How to do it?
 
 By default, you can create two non regression test suites. Each test case has a "Test Suite" field with 2 possible values:
 *Simple* and *Full*. A test can be in either test suites, both or none.
