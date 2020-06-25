@@ -237,7 +237,7 @@ A campaign can be created with an initial set of tests:
 Test strategies
 ~~~~~~~~~~~~~~~
 
-When creating a campaign from a milestone, Tuleap encourage to pick-up the tests of the milestones. That's great to ensure
+When creating a campaign from a milestone, Tuleap encourages to pick-up the tests of the milestones. That's great to ensure
 that the feature you built works as expected.
 
 However you might also need to guaranty some kind of non regression on feature previously delivered. How to do it ?
