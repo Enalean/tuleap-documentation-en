@@ -8,15 +8,16 @@ Test Management
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The Test Management plugin of Tuleap aims at providing a simple and easy way to deal with
+The Test Management plugin of Tuleap aims at providing a straightforward way to deal with
 test campaigns.
 
 Test Management features:
 
 * Create and maintain test case definitions
-* Create test campaigns as a collection of test cases
+* Create test campaigns as a collection of test cases (manual or automated)
 * Follow test executions (Not run, passed, failed, blocked)
 * Realtime update for concurrent test execution by team
+* Link with requirements managed by Agile Dashboard
 
 Overview
 --------
@@ -26,9 +27,8 @@ Here are the main concepts with Tuleap Test Management:
 * Test Case: it's the description of something to test. The definition is meant to be re-used
 * Test Campaign: a collection of Test Case to run.
 * Test Execution: it's the execution of one Test Case in the context of a Test Campaign
-* Environment: a given Test Excecution can run in different contexts (Same test but different setup)
 
-Test Case, Test Campaign and Test Execution are 3 different trackers. Environment is a property of "Test execution".
+Test Case, Test Campaign and Test Execution are 3 different trackers.
 
 Run a Test Campaign
 -------------------
@@ -58,15 +58,7 @@ Tests can have following status:
 * Blocked, the test cannot be run
 
 One can switch from one state to another (a test can be "Not run" then "Passed",
-re-switched to "Not run" because tester didn't get what was described to finish by "Faild").
-
-Tuleap will record the time taken for each test. It works this way:
-
-* It starts as soon as you load the test definition.
-* It ends when you hit one of the action buttons.
-
-Time is not yet used in the interface, it's only recorded for a future usage. You
-can see the value and make your own computation from the "Test Execution" tracker.
+re-switched to "Not run" because tester didn't get what was described to finish by "Failed").
 
 Example of test failure:
 
@@ -94,7 +86,7 @@ already have a base of tests or if you want to create test.
    :alt: Test Management test edition
    :name: Test Management test edition
 
-You can also edit the test directly from the interface.
+You can also edit the test directly from the Test Management interface.
 
 The test you create or you edit are automatically updated in the test campaign
 and will be re-usable in a following campaign.
@@ -102,7 +94,12 @@ and will be re-usable in a following campaign.
 Test steps
 ----------
 
-Starting Tuleap 10.3, a test case can be divided into steps. Each step have to be run in the campaign.
+..note:
+
+    You should manage steps in the Test Case tracker directly. Steps cannot be seen or defined from the Test Management
+    interface.
+
+Test case can be divided into steps. Each step have to be run in the campaign.
 
 .. figure:: ../images/screenshots/testmanagement/steps.png
    :align: center
