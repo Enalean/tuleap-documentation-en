@@ -169,37 +169,114 @@ A new modal will enable you to look for existing artifacts or to create directly
    :alt: Add tests to existing campaign
    :name: Add tests to existing campaign
 
-Link with Agile Dashboard
--------------------------
+Link tests with requirements / user stories
+-------------------------------------------
 
-If your project also uses the Agile Dashboard service, a "Tests" tab will be added to milestones.
+.. warning::
+
+    This feature is under development. This covers what's available in Tuleap 11.16 release. Shall you want to know
+    what's cooking for next release, please have a look at `Test Plan Epic <https://tuleap.net/plugins/tracker/?aid=14871>`_.
+
+If your project also uses the Scrum backlog of Agile Dashboard service, a "Tests" tab will be added to milestones.
 
 This tab shows the test plan and campaigns of the milestone.
 
-Test campaigns
-~~~~~~~~~~~~~~
+.. figure:: ../images/screenshots/testmanagement/testplan.png
+   :align: center
+   :alt: Test plan over a release
+   :name: Test plan over a release
 
-This part displays all campaigns (and their tests progression) that are linked to the milestone.
+The *Test* tab allows:
 
-From here the creation of new campaigns is available (they will be automatically linked to the milestone).
-
-A campaign can be created with an initial subset of tests:
-
-* No tests: the campaign won't have any tests
-* All tests: all test cases will be added to the campaign
-* All tests in <milestone>: (this is the default) only test cases that are linked to a backlog item of the milestone will be added to the campaign
-* From tracker reports: only test cases that matches a given report's criteria will be added to the campaign
+- to define how the feature that are being developed will be tested
+- to build the test campaigns along the release progress
+- to see the actual coverage of each backlog item (user stories, bugs, requirements, ...) with a traceability matrix
 
 Test plan
 ~~~~~~~~~
 
-This part displays the backlog items of the milestone and their associated tests. This allows you to see how the
-content of the milestone is covered by tests, and to add new tests for each items. (You need to have the rights to update the artifact links of the item in order to add new tests).
+The left hand side of the screen displays the backlog items of the milestone and their associated tests. This allows you to see how the
+content of the milestone is covered by tests, and to add new tests for each items.
 
-If a test has been executed in at least one of the campaign of the milestone, then its status (based on the last execution) is displayed (Passed, Failed, Blocked, or Not run).
+You need to have the permission to update the artifact links of the backlog item as well as the permission of creating test case in order to add new tests.
+
+When you click on "Create a new test" you go in "Artifact creation" view of the test case tracker. On "Submit" you will be redirected to the
+test plan you where. You can create several tests at once by choosing "Submit and continue".
+
+.. figure:: ../images/screenshots/testmanagement/testplan-newtest.png
+   :align: center
+   :alt: Create a new test case
+   :name: Create a new test case
+
+If a test has been executed in at least one of the campaign of the milestone, then its status is displayed on the right hand side of the test case (Passed, Failed, Blocked, or Not run).
+
+The status comes from the last execution of the test in any campaign of the milestone. In following screenshot, "Filter owners by name" status is "Failed" because the test *failed*
+in "RC2" campaign but it might have *passed* in RC1 campaign.
+
+.. figure:: ../images/screenshots/testmanagement/testplan-details.png
+   :align: center
+   :alt: Status of tests that cover a user story
+   :name: Status of tests that cover a user story
+
+Tests can be either manual or automated (see :ref:`Test Automation <testmgmt_automation>` section below)
+
+Test campaigns
+~~~~~~~~~~~~~~
+
+The right hand side of the screen displays all campaigns that are linked to the milestone and their tests progression.
+
+From here the creation of new campaigns is available. When a campaign is created from this screen it's automatically linked to the milestone.
+
+A campaign can be created with an initial set of tests:
+
+* No tests: the campaign won't have any tests
+* All tests: all test cases will be added to the campaign
+* **All tests in <milestone>**: (this is the default) only test cases that are linked to a backlog item of the milestone will be added to the campaign
+* From tracker reports: only test cases that matches a given report's criteria will be added to the campaign
+
+Test strategies
+~~~~~~~~~~~~~~~
+
+When creating a campaign from a milestone, Tuleap encourages to pick-up the tests of the milestones. That's great to ensure
+that the feature you built works as expected.
+
+However you might also need to guaranty some kind of non regression on feature previously delivered. How to do it?
+
+By default, you can create two non regression test suites. Each test case has a "Test Suite" field with 2 possible values:
+*Simple* and *Full*. A test can be in either test suites, both or none.
+
+Once you have made some tests available in one
+of those test suites, you will be able to create a non regression campaign in your release with either *Test Suite Complete* or
+*Test Suite Light* as shown below:
+
+.. figure:: ../images/screenshots/testmanagement/testplan-nonreg-create.png
+   :align: center
+   :alt: Create a non regression test suite
+   :name: Create a non regression test suite
+
+The Tuleap best practice for tests is to have at least 2 campaigns per milestones:
+
+- the campaign that validates the **new** features,
+- the campaign that ensures the **non regression**.
+
+.. figure:: ../images/screenshots/testmanagement/testplan-nonreg.png
+   :align: center
+   :alt: Features validated with multiple campaigns
+   :name: Features validated with multiple campaigns
+
+This way of working also encourages continuous testing as you can create tests and campaigns at any time during your release
+progress. You could decide to have weekly test campaigns or having test campaigns as soon as a feature development is
+completed for instance.
+
+Behind the scenes, you can customize at will how those predefined campaigns are made, the one thing you need is to have
+a test case tracker report that filters the test you want to include. By default, it's made with a "Test suite" field with
+*Simple* and *Full* values but you can define your own field and have whatever values make sense to you.
+
+.. _testmgmt_automation:
 
 Test automation
 ---------------
+
 .. note::
 
    As of Tuleap 11.15 the REST API is able to process junit files directly making the ``ttm`` CLI tool deprecated. This documentation
