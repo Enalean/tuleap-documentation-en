@@ -243,7 +243,7 @@ that the feature you built works as expected.
 However you might also need to guaranty some kind of non regression on feature previously delivered. How to do it ?
 
 By default, you can create two non regression test suites. Each test case has a "Test Suite" field with 2 possible values:
-*Simple* and *Full*. A test can be in either tests suites, both or none.
+*Simple* and *Full*. A test can be in either test suites, both or none.
 
 Once you have made some tests available in one
 of those test suites, you will be able to create a non regression campaign in your release with either *Test Suite Complete* or
