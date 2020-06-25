@@ -264,7 +264,7 @@ The Tuleap best practice for tests is to have at least 2 campaigns per milestone
    :alt: Features validated with multiple campaigns
    :name: Features validated with multiple campaigns
 
-This way of working also encourage continuous testing as you can create tests and campaigns at any time during your release
+This way of working also encourages continuous testing as you can create tests and campaigns at any time during your release
 progress. You could decide to have weekly test campaigns or having test campaigns as soon as a feature development is
 completed for instance.
 
