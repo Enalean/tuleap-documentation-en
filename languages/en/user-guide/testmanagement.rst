@@ -269,7 +269,7 @@ progress. You could decide to have weekly test campaigns or having test campaign
 completed for instance.
 
 Behind the scenes, you can customize at will how those predefined campaigns are made, the one thing you need is to have
-a test case tracker report that filters the test you want to include. By default it's made with a "Test suite" field with
+a test case tracker report that filters the test you want to include. By default, it's made with a "Test suite" field with
 *Simple* and *Full* values but you can define your own field and have whatever values make sense to you.
 
 .. _testmgmt_automation:
