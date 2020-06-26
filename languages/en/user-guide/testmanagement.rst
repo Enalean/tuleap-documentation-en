@@ -187,8 +187,8 @@ Linked bugs are then showed in the same "Bug" menu:
 
 .. figure:: ../images/screenshots/testmanagement/fail_linkedbug.png
    :align: center
-   :alt: Create a bug out of a failed test
-   :name: Create a bug out of a failed test
+   :alt: See bugs linked to failed tests
+   :name: See bugs linked to failed tests
 
 Test snapshot
 ~~~~~~~~~~~~~
