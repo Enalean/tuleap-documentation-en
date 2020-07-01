@@ -23,7 +23,7 @@ History enforcement
 .. figure:: ../../../images/screenshots/document/siteadmin_history_enforcement.png
   :alt: Screenshot of the "History enforcement" tab in Site administration
 
-By default, when a user drops a new version on a file to update it, he/she is not asked to fill up anything.
-In order to encourage people to fill up the version changelog of files, you can enable the option "Propose changelog after drag and drop".
-Each time a new version will be uploaded using dn'd, a changelog modal will be displayed beforehand.
+By default, when a user drops a new version on a file to update it, they are not asked to fill up anything.
+In order to encourage people to fill up the version changelog of files, site-administrators can enable the option "Propose changelog after drag and drop".
+Each time a new version will be uploaded using drag'n drop, a changelog modal will be displayed beforehand.
 Keep in mind that filling up the version title and the changelog is not mandatory and can be ignored.
