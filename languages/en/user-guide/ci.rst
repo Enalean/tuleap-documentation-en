@@ -1,541 +1,302 @@
-
 .. _continuous-integration-with-Hudson/Jenkins:
 
 Continuous Integration
 ======================
 
-Introduction to Continuous Integration
---------------------------------------
+Tuleap provides Continuous Integration to teams via a deep integration with Jenkins.
 
-Continuous Integration is the given name for the good practices used in
-software engineering. These good practices aim at checking that a source
-code modification does not lead to a regression on the developping
-software application. This checking is usually performed on a different
-machine than your development one (this machine is called an integration
-server); and this checking is carried out rather frequently  [#f1]_, and
-so it's called Continuous Integration.
+Tuleap team recommends to avoid big Jenkins instances shared by many projects and many teams as the security model of
+Jenkins doesn't allow to have a strict split of areas. That is to say, to guaranty that 2 concurrent teams that share
+the same Jenkins sever cannot have access to the code of each other.
 
-The tool responsible for this checking is a Continuous Integration tool
-such as CruiseControl or Hudson/Jenkins. This checking is called a
-**Build**. A build will correspond, according to your project, in a
-succession of steps, such as:
+In case of doubt the strategy of "One Tuleap Project, one Jenkins Master" is safe and efficient.
 
--  Compilation,
-
--  Documentation generation (javadoc for instance),
-
--  Unit tests execution,
-
--  Quality analysis on source code (coding conventions, number of
-   comments, code metrics, etc.),
-
--  Delivery generation (exe, zip, tar, etc.).
-
-The continuous integration tool does not perform the build itself, but
-just launch it with regular interval, display the result of the build,
-and is able of sending notification to project members if a modification
-involved any regression.
-
-This development method, initiated at the beginning by the Extreme
-Programming community and adopted by Agiles methods, brings adding value
-to your development process. For instance:
-
--  Tests are immediatly executed after each modification (step sometimes
-   neglected by developers),
-
--  Integration issues are continuously detected, to be fixed as soon as
-   possible,
-
--  It always exists an operational version of deliveries available for
-   tests, demo or distribution.
-
-The continuous integration tool we decided to integrate in
-Tuleap is **Hudson/Jenkins**, which is one of the best tool.
-Jenkins is a fork of Hudson. So in this chapter we will use the name
-Hudson. It stands both for Hudson and Jenkins. Hudson configuration can
-be easily done on the web interface, and there is a contextual help for
-each step of the configuration, which is really appreciable.
-
-The lexicon of Continuous integration and Hudson is quite specific.
-Let's then give a definition:
-
-=================================   ============================================================================================
-        Word                                                    Definition
-=================================   ============================================================================================
-        **Job**                     The concept of Job can be associated with the concept of project.
-                                    The job will trigger the build, but it's also in charge of setting the building
-                                    environment required for executing the build (updating the source code for instance).
-                                    It will also be able to execute the build, and then perform some tasks such as
-                                    publishing generated documentation, publishing test results, sending notifications, etc.)
-        **Build**                   Process is made of several steps executed periodically on a continuous integration server.
-        **Artifact**                Item are generated during the build, and are published  by the continuous integration tool.
-                                    The continuous integration notion of artifact is obviously different than the notion of a
-                                    Tuleap artifact (which is an item tracked in a tracker).
-        **Workspace**               Directory where the project will be deployed in order to perform the build, and
-                                    enventually publish artifacts.
-        **Status (of the build)**   Build status can take several values regarding the tool.
-                                    Hudson has 4 status:
-
-                                        -  Successfull : everything went fine, all tests were successfull,
-
-                                        -  Unstable : the build was successfull but unstable (failed tests for instance),
-
-                                        -  Failed : the build fatally failed
-
-                                        -  Disabled : the project has never been built before, or the project is disabled.
-        **Trend (of the builds)**   Trend based on the latest 5 builds. This trend is represented by a weather report
-                                    (sun, thunder, etc.) meaning that the trend is good or not.
-=================================   ============================================================================================
-
-                    Glossary of Hudson and continuous integration specific words
-
-Hudson Configuration
---------------------
-
-Before creating your own jobs, (see `Hudson Jobs Creation and Configuration`_), you need to configure Hudson.
-All these steps are optional, you only have to configure what you really
-need.
-
-System Configuration
-````````````````````
-
-To configure Hudson, select the link "Manage Hudson" in the top menu in
-Hudson interface, and then the link "Configure System".
-
-All these steps have an online contextual help. Don't be afraid to use
-it. To do it, you only have to select the question mark corresponding to
-the option needed.
-
-External Tools
-~~~~~~~~~~~~~~
-
-In order to be able to execute builds of your projects, Hudson needs to
-know the path to the tools required to.
-
-You can specify here the path to the external tools you need. By
-default, the available tools are JDK, Shell, Ant, Maven and CVS. If you
-install some plug-ins (see `Hudson Plug-ins`_) that need external tools, you will be able
-to configure them in this section. You can define several instances of
-the same tool (several version of JDK for instance).
-
-.. figure:: ../images/screenshots/sc_hudsonexternaltoolsconfiguration.png
-   :align: center
-   :alt: External Tools Configuration
-   :name: External Tools Configuration
-
-   External Tools Configuration
-
-Authentication
-~~~~~~~~~~~~~~
-
-By default, everyone can browse Hudson, browse the jobs, see the builds
-results and schedule builds on the web interface.
-
-You can nevertheless restrict the permissions. To do that, yo need to
-check the box "Enable security" (still in the menu "Manage Hudson" ->
-"Configure System"). You have several options:
-
--  **Delegate to servlet container:** in our case, it means Tomcat. The
-   Tomcat configuration file for user definition and permissions is
-   *<tomcat>/conf/tomcat-users.xml*. See container documentation for
-   more details.
-
--  **LDAP:** if you already have a LDAP directory, you only need to
-   specify the address of the server, and Hudson will recognize the
-   users.
-
--  **Hudson's own user database:** Hudson can manage its own user
-   database. In this case, you have to create yourself the users, or
-   allow them to register.
-
-The choice of enabling security or not will depend on your company
-internal rules, or the specificity of your projects or the size of the
-teams.
-
-Email Notification
-~~~~~~~~~~~~~~~~~~
-
-Hudson is able to send notification to warn about build result. You can
-of course configure this for each job. To enable notification, you need
-to state a mail server (SMTP server). Leave the field empty if you want
-to use the default mail server (localhost).
-
-You can also define a default user email suffix. By default, all of the
-Tuleap users have an email address of the form
-**login@tuleap.example.com** that is mapped to the real email address.
-You can then fill this field with the value **@tuleap.example.com**
-and the emails will be automatically sent to the right users.
-
-You can also specify the system Admin Email Address. Notification
-e-mails from Hudson to project owners will be sent with this address in
-the from header.
-
-You finally need to state the URL of the Hudson server. URL in sent
-emails will then be correct.
-
-Hudson Plug-ins
-```````````````
-
-Lots of plug-ins are available to extend Hudson. Among them, we can
-quote: checkstyle, CI game, Crap4J, LDAP Email, MSBuild, NAnt, NUnit,
-Selenium, etc.
-
-The list of available plug-ins is also available in the menu "Manage
-Hudson" -> "Manage plugins". The list is dynamicaly updated. If your
-continuous integration server is behind a proxy, you will need to
-configure it in the "Advanced" tab.
-
-To install a plug-in, check the box in front of the wished plug-in,
-press the Install button and then follow the instructions.
-
-Hudson Jobs Creation and Configuration
---------------------------------------
-
-Once the system is configured, you can start defining your jobs. To do
-that, select the link "New job" in the menu on top left. You just have
-to give a name (the name of your project for instance) and choose the
-type. Several types of jobs are possible. The most common is "free style
-software project" that we are using as an example in this documentation.
-There is also a type "Maven2" if you already use this build tool.
-
-Select the Ok button to confirm the job creation. The next screen is
-then the job configuration screen. You can add a description if you
-want. Then, you will be able to specify the source code repository, and
-the way that Hudson will handle the source code updates, define the
-steps of the build, and tell Hudson what to do after the build.
-
-CVS and Subversion
-``````````````````
-
-By default, Hudson suggests the same two SCM (Source Code Management) as
-Tuleap: CVS and Subversion. Select the manager you're using
-for your project, and then enter the information about the paths to your
-project's repository.
-
-CVS
-~~~
-
-To configure CVS, you need to give the CVSROOT of your project. The
-expecting format is **:protocol:user@host:path**
-
-You can find the details of the expecting string selecting the CVS tab
-of your project in Tuleap. It looks like
-**:pserver:[username]@[projectname].tuleap.example.com:/cvsroot/[projectname]**
-
-You can also provide one or several modules and/or a branch.
-
-Subversion
-~~~~~~~~~~
-
-To configure Subversion, you need to provide the URL of the repository.
-This piece of information is available on the Tuleap
-interface, by selecting the SVN tab of your project. It looks like
-**https://tuleap.example.com/svnroot/[projectname]**
-
-Hudson will then ask you to give credentials for Subversion, to be able
-to access the repository. You can then choose several options for
-managing this authentication (either give your login/password or use SSH
-public key authentication or HTTPS client certificate). We let you
-choosing what option better fits your needs.
-
-You can add several repositories by pressing the button "Add more
-locations...".
-
-Finally, if you want to give the ability to the users to navigate in the
-source code repository through Hudson interface, you can select
-"ViewSVN" in the field "Repository browser", and then enter the folowing
-string:
-**https://tuleap.example.com/svn/viewvc.php?roottype=svn&root=[your\_projet\_short\_name]**
-
-Builds Schedule
-```````````````
-
-As explained in introduction, the big thing with continuous integration
-is the fact that once configured, the build is continuously done, and
-you don't have to think about it. However, we still need to configure
-the way hudson will schedule the build. Two main options are available:
-
--  **Poll SCM**: will poll changes in your project SCM (CVS or
-   Subversion). You can define the frequency following the cron syntax
-   (see Hudson inline help). This option can however be expensive
-   operations for the Tuleap server. You can think of using
-   the 'push' option to avoid this problem (see below).
-
--  **Trigger builds remotely**: this 'push' option avoids server
-   overloading. The build is triggered by an URL. To avoid anybody to
-   trigger builds, you can protect the operation by specifying an
-   authentication token. To really enable the build trigger after each
-   commit, you will need to configure it in Tuleap, in the
-   'Build' tab of your project (See :ref:`link-hudson-job-with-your-Tuleap-project`). You will be able to specify your
-   token if you have defined one.
-
-Build configuration (steps)
-```````````````````````````
-
-You now need to define what the build will effectively do (compile your
-project, generate documentation, launch unit tests, etc.). To do that,
-you can add as many steps as needed. By default (meaning without any
-other plug-ins), Hudson offers 4 types of possible steps:
-
--  **Execute shell**: let you simply enter a shell script in the text
-   area. You can use several environment variables (see inline help).
-
--  **Execute Windows batch command**: let you simply enter a Windows
-   batch script in the text area. You can use several environment
-   variables (see inline help).
-
--  **Invoke Ant**: let you invoke an Ant script. If several Ant version
-   are available (see `External Tools`_), you can choose the one you want. You can also
-   precise the Ant target if needed. Pressing the "Advanced" button, you
-   will be able to specify properties and Java options.
-
--  **Invoke top-level Maven targets**: let you invoke Maven targets. You
-   can specify the expected targets. The "Advanced" button lets you
-   define POM file, properties and Java options.
-
-The step configuration is specific to your project. We will let you
-configure it as needed.
-
-Post-build Actions
-``````````````````
-
-After a build, Hudson can do some actions. Among them:
-
--  **Archive the artefacts**: if your build produces deliveries (such as
-   exe, zip, or tar), or generate user documentation for instance, you
-   can publish these artifacts on the Hudson build page of your job. You
-   need then to specify the path to the artifacts to publish (the
-   reference directory is the workspace of your project). You can use
-   the wildcard (\*) to state artifacts to publish. You can also decide
-   to keep the history of artifacts, or just the latest successfully
-   generated ones to save space.
-
--  **Publish Javadoc**: if your build produces javadoc, you can publish
-   it on the build page by giving the path to the root folder of the
-   generated javadoc. The reference folder is the workspace. You can
-   also use the wildcard, and can choose either archive old versions of
-   the javadoc or not.
-
--  **Publish JUnit test result report**: if your build executes JUnit
-   tests, you can publish a result report on the build page in
-   specifying the path of the JUnit generated XML report files. If you
-   use another test plug-in, you will find nearly the same.
-
--  **Build other projects**: Your job can depend on another one. In this
-   case, you maybe want to build another project after the current
-   build. If so, just indicate the name of the job to build after this
-   build. You can specify if the job has to be built even if the current
-   build failed or not.
-
--  **Email notification**: Hudson is able to send emails while some
-   events happen. You can enter a list of email addresses to be
-   notified. A good practice could be giving a mailing list address
-   (specific for Hudson or not) in order to notify all the team (see :ref:`creation`
-   to know how to create mailing lists). Events that trigger
-   notification are managed as followed:
-
-   -  Every failed build triggers a new e-mail.
-
-   -  A successful build after a failed (or unstable) build triggers a
-      new e-mail, indicating that a crisis is over.
-
-   -  An unstable build after a successful build triggers a new e-mail,
-      indicating that there's a regression.
-
-   -  Unless configured, every unstable build triggers a new e-mail,
-      indicating that regression is still there.
-
-   For lazy projects where unstable builds are the norm, Uncheck "Send
-   e-mail for every unstable build".
-
-   You can also send a separate email to people who broke the build. To
-   do this, the continuous integration server must be well configured
-   (see `Email Notification`_).
-
-Integration in Tuleap
+Jenkins Configuration
 ---------------------
 
-As continuous integration is a good practice in software engineering,
-Tuleap integrates Hudson tool. We know how to install (see the official installation guide)
-and configure (see `Hudson Configuration`_) Hudson, and how to create and configure Hudson
-jobs (see `Hudson Jobs Creation and Configuration`_). Let's see now how Hudson is integrated to
-Tuleap.
+This section will cover how to configure a Jenkins server to be used efficiently with Tuleap. We assume a fresh Jenkins
+instance that was just installed.
 
-Hudson Service
-``````````````
+Some adaptations might be needed if you modify an existing Jenkins server (be very careful with authentication to not lock
+yourself out of jenkins).
 
-If Hudson plugin is installed and enabled on your Tuleap
-server, each project can enable the Hudson service (see :ref:`service-configuration` to know how to
-enable services for your project).
+.. attention::
 
-Once the service is enabled, you will see a "Build" tab in the service
-bar of your project : the Hudson continuous integration tab.
+    Both Jenkins and Tuleap servers **must** be in https and certificate must be either `valid <https://certbot.eff.org/lets-encrypt/centosrhel7-nginx.html>`_
+    or, at least, trusted.
+
+    If you cannot have valid certificates:
+
+    - `Jenkins must trust Tuleap server certificate <https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate>`_
+    - `Jenkins must run behind a reverse proxy that does TLS termination <https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy>`_
+    - `Tuleap must trust Jenkins server certificate <admin_howto_add_certicate>`_
+
+Plugins installation
+````````````````````
+
+Two plugins should be installed:
+
+- `Tuleap Git Branch Source <https://plugins.jenkins.io/tuleap-git-branch-source/>`_
+- `Tuleap Authentication <https://plugins.jenkins.io/tuleap-oauth/>`_
+
+Both are available publicly on the jenkins plugin marketplace and the installation is done from within Jenkins in "Manage Plugins"
+section.
+
+You might also need to install other plugins related to your pipeline of email notifications, artifact publishing to Artifactory, etc.
+This is business specific to each project and not covered in this documentation.
+
+Plugins configuration
+`````````````````````
+
+First, you need to associate your Jenkins server with a Tuleap server. This is done in "Manage Jenkins > System configuration".
+
+.. figure:: ../images/screenshots/jenkins/configure_tuleap_server.png
+   :align: center
+   :alt: Configure Tuleap server in Jenkins
+   :name: Configure Tuleap server in Jenkins
+
+If the connection to the Tuleap server is successful you will see ``Connexion established with these Urls`` message in
+the Jenkins interface (as in the previous screenshot). Otherwise you will get a stacktrace (Jenkins...) with, hopefully,
+an error message that will help to diagnose the problem.
+
+Most common issues are related to DNS (is your server name valid and can jenkins access it) and TLS (does jenkins trust
+Tuleap server).
+
+Authentication configuration
+````````````````````````````
+
+This section requires that your Tuleap server has :ref:`OAuth2 Server <openidconnect_provider>` plugin installed.
+
+First, on your Tuleap server, in one of your project, you need to create a new :ref:`OAuth2 app <openidconnect_provider_client_registration>`.
+The app will ask for a callback URL. This callback URL is your Jenkins server base URL (eg. https://jenkins.example.com/jenkins) + ``/securityRealm/finishLogin``.
+
+Keep the generated Client Secret securely until the next step.
+
+.. figure:: ../images/screenshots/jenkins/new_oauth2_app.png
+   :align: center
+   :alt: Register a new OAuth2 app for Jenkins in Tuleap
+   :name: Register a new OAuth2 app for Jenkins in Tuleap
+
+Then Jenkins, go In *Manage Jenkins > Configure Global Security*, and select *Tuleap Authentication* and fill:
+
+- Client ID
+- Client Secret
+
+With the values provided by Tuleap.
+
+.. figure:: ../images/screenshots/jenkins/configure_oidc.png
+   :align: center
+   :alt: Register Tuleap as OpenID Connect provider for Jenkins
+   :name: Register Tuleap as OpenID Connect provider for Jenkins
+
+Ensure that *Authorization* (bellow *Authentication section*) is still set to *Anyone can do anything* and click save.
+
+You should then be able to login on Jenkins with you Tuleap credentials and still have access to *Manage jenkins*.
+
+.. note::
+
+    If you locked yourself out of Jenkins you can start over by `disabling security <https://stackoverflow.com/questions/16323896/locked-out-of-jenkins>`_.
+
+Authorization configuration
+```````````````````````````
+
+This section depends on the previous one. If you don't use Tuleap Authentication, you cannot do the following configurations.
+
+In the `Authorization Matrix <https://plugins.jenkins.io/matrix-auth/>`_ you can reference:
+
+- Tuleap users with their ``login_name``
+- Tuleap user groups in the form ``project-shortname#user-group-name``
+
+Most of the time should refer to user groups to ease the maintenance. Once you setup the groups, you only have to deal
+with people management at Tuleap side without having to bother with their jenkins permissions anymore.
+
+In the following screenshot you have a good start point in term of permissions management with the default groups defined
+in Tuleap:
+
+- Access to Jenkins must be authenticated. Controlled by Tuleap => only the people who have access to Tuleap will have access to Jenkins
+- The people who can access can only Read your jobs. That correspond to a "Public" project (or "Public including Restricted" if you have restricted users in Tuleap).
+- The project members of the Tuleap mozilla project can manage jobs, builds and credentials.
+- The project administrators of Tuleap mozilla project can administer Jenkins (plugins, grants & co).
+
+.. figure:: ../images/screenshots/jenkins/configure_authorizations.png
+   :align: center
+   :alt: Reference Tuleap users and groups in Jenkins Authorization Matrix
+   :name: Reference Tuleap users and groups in Jenkins Authorization Matrix
+
+At this point you are almost done with Jenkins administration. You might need to install and configure other plugins depending
+of the content of your pipelines, configure agent to distribute the load and, of course, update jenkins itself but you are done
+for the permission and user management.
+
+.. _continuous_integration_git_branch_source:
+
+Tuleap Git / Jenkins integration
+--------------------------------
+
+Thanks to `Tuleap Git Branch Source <https://plugins.jenkins.io/tuleap-git-branch-source/>`_ Jenkins plugin, most of the
+integration between the two tools is completely streamlined.
+
+The configuration is done once at project level, then every new git repository created in Tuleap will be automatically
+discovered by Jenkins, branches will be inspected to find ``Jenkinsfile`` and created corresponding pipelines.
+
+Whenever a new commit will be pushed, the corresponding job will be triggered on Jenkins.
+
+Step 1: Have an access key to your repositories
+```````````````````````````````````````````````
+
+In Tuleap, either with a service or personal account that have read access to the project's repositories go in user preferences,
+"Keys & Tokens" section and generate a new Access Key with both ``Git`` and ``REST`` scopes.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_access_key.png
+   :align: center
+   :alt: Create a new access key for build user
+   :name: Create a new access key for build user
+
+Step 2: Create a Tuleap Project
+```````````````````````````````
+
+In Jenkins, create a new job with type "Tuleap Project". It should be named after your Tuleap project name to ease organisation.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_new_project.png
+   :align: center
+   :alt: New Tuleap Project job creation
+   :name: New Tuleap Project job creation
+
+Once the job created you should grant it access to Tuleap with the credential you generated at Step 1. Near the credential
+drop down, you have a "Add" button. Create a new "Project name" credential of type "Tuleap Access Key" and give it a
+descriptive id so you can find it later.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_new_credential.png
+   :align: center
+   :alt: Create a new Tuleap Acccess Key credential
+   :name: Create a new Tuleap Acccess Key credential
+
+Once the credential is saved, select it in the "Credentials" dropdown.
+
+In the "Project" dropdown right after, select the Tuleap project you want to automate.
+
+You can adjust "Behaviours" to match your need. By default we suggest to remove ``*`` from ``Exclude`` field of "Filter by name (with wildcards)" section
+otherwise nothing will be built at all.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_conf.png
+   :align: center
+   :alt: Configure Tuleap Project jenkins job
+   :name: Configure Tuleap Project jenkins job
+
+When the configuration is ready, save it. This will trigger a scan of your project to look for git repositories, their branches
+and ``Jenkinsfile`` to create Jenkins jobs.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_scan.png
+   :align: center
+   :alt: Initial scan of Tuleap project by Jenkins
+   :name: Initial scan of Tuleap project by Jenkins
+
+When the scan is completed, you will find all the git repositories where Jenkins found a ``Jenkinsfile`` and the status
+of the builds that were triggered.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_project_view.png
+   :align: center
+   :alt: Jenkins jobs in project
+   :name: Jenkins jobs in project
+
+.. attention::
+
+    On Jenkins, in your project settings, you might also want to adjust "Scan Project Triggers" to a shorter period
+    otherwise you will have to wait for 1 day between a new repository creation and jenkins to discover it.
+
+    As this will trigger a full analyze of all branches of git repositories of your Tuleap project, you need to find a
+    balance between reactivity and Tuleap server overloading.
+
+    If you don't create a new repository every other hours, you might want to let 1 day period and trigger manually the
+    scan whenever you create a new repository.
+
+Step 3: Tell Tuleap where the Jenkins server is
+```````````````````````````````````````````````
+
+The final step is on Tuleap. You need to inform the git server where is the jenkins server that must be informed about
+new commits that are pushed.
+
+In the administration of the Git service of your project, there is a ``Jenkins`` tab where you set the jenkins root url.
+For instance ``https://jenkins.example.com/jenkins``.
+
+.. figure:: ../images/screenshots/jenkins/tgbs_tuleap_trigger.png
+   :align: center
+   :alt: Tuleap configuration of Jenkins Trigger
+   :name: Tuleap configuration of Jenkins Trigger
+
+That's it
+`````````
+
+When those 3 steps are completed, you no longer have to worry about Jenkins / Tuleap integration, everything is automated.
+
+Continuous Integration service in Tuleap
+----------------------------------------
+
+.. note::
+
+    The "Continuous Integration" service in Tuleap refers to an historical implementation that was mainly targeting Subversion
+    and CVS.
+
+    It also provides some widgets that can be used on Project and Personal dashboards.
 
 .. _link-hudson-job-with-your-Tuleap-project:
 
-Link Hudson job with your Tuleap project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reference Jenkins job with your Tuleap project
+``````````````````````````````````````````````
 
-In order to link Hudson job with your project, select the Build tab of
+In order to link Jenkins job with your project, select the Continuous Integration tab of
 your project, and then select the 'Add a job' link. You need then to
 give the URL of the Hudson job you want to associate with your project
-(for instance: ``https://[my\_ci\_server]:8080/hudson/job/[my\_job]``).
+(for instance: ``https://[my\_ci\_server]:8080/jenkins/job/[my\_job]``).
 
 .. figure:: ../images/screenshots/sc_hudsonaddjob.png
    :align: center
-   :alt:  Link Hudon job with your project
-   :name:  Link Hudon job with your project
-
-   Link Hudon job with your project
+   :alt:  Link Jenkins job with your project
+   :name:  Link Jenkins job with your project
 
 You may also want to enable the auto trigger of the build for this job
 after each commit in your project repository (CVS or Subversion). If you
-have protected your build with a token, you can specify this token (see
-`Builds Schedule`_ for more information). By checking this option, each commit will
+have protected your build with a token, you can specify this token.
+
+By checking this option, each commit will
 trigger a build of the associated job, using the pre-commit hook (you
 don't have anything more to do).
 
-By the way, it is possible to link several Hudson jobs with one
+By the way, it is possible to link several Jenkins jobs with one
 Tuleap project.
 
-Browse Hudson jobs and builds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jenkins jobs and builds
+```````````````````````
 
-When you select the Build tab of your project, you can see a table with
+When you select the Continuous Integration tab of your project, you can see a table with
 all the jobs associated with your project. For every job, you can see
 the current status (colored bullet left to the name of the job), the
-name, the last successfull build, the last failed build, if you have
-enabled SCM trigger or not (see ?). Project admins will also see for
+name, the last successful build, the last failed build, if you have
+enabled SCM trigger or not.
+
+Project admins will also see for
 each job some icons that let them modify the job or delete it (remove
 the link with Tuleap).
 
 .. figure:: ../images/screenshots/sc_hudsonbrowsejobs.png
    :align: center
-   :alt:  Hudson jobs associated with your project
-   :name:  Hudson jobs associated with your project
-
-   Hudson jobs associated with your project
+   :alt:  Jenkins jobs associated with your project
+   :name:  Jenkins jobs associated with your project
 
 The name of the job is automatically detected during job creation. But
 you can change it if needed. This is pretty convenient if you want to
-make references to Hudson items (see `Make a reference to a Job`_). Spaces in the name of jobs are
+make references to Jenkins items (see `Make a reference to a Job`_). Spaces in the name of jobs are
 not allowed. They are replaced by (\_), in order to allow references.
 
-The name of the job and the latest builds are hypertext links that will
-be opened the corresponding Hudson section in a frame below the table.
-This is really convenient to browse Hudson interface while staying in
-the Tuleap interface. If you want to open the Hudson frame
-in a specific window, just select the 'show only this frame' link.
+Jenkins References
+------------------
 
-The table provides also links to Hudson jobs RSS feed.
-
-Hudson Widgets
-``````````````
-
-Hudson service lets you adorn your personal and project dashboards with
-many widgets. To know how to add widgets to your personal dashboard, see
-:ref:`my-personal-dashboard`. The procedure is similar to add widgets to
-project dashboards (see :ref:`project-dashboard-content`).
-
--  **My Hudson jobs**: only available on the personal dashboards. By
-   default, it gives an overview of all the jobs of all the projects you
-   are member of. You can of course select the jobs you wish to display
-   by selecting the preferences link of the widget.
-
-.. figure:: ../images/screenshots/sc_hudson_widget_my_jobs.png
-   :align: center
-   :alt:  "My Hudson Jobs" Widget
-   :name:  "My Hudson Jobs" Widget
-
-   "My Hudson Jobs" Widget
-
--  **Jobs Overview**: this widget is only available on project
-   dashboards. It can display an overview of all the jobs associated with
-   this project. You can always choose the ones you want to display in
-   the widget (preferences link).
-
-.. figure:: ../images/screenshots/sc_hudson_widget_jobs_overview.png
-   :align: center
-   :alt: "Jobs Overview" Widget
-   :name: "Jobs Overview" Widget
-
-   "Jobs Overview" Widget
-
--  **Last Builds**: this widget is available for both personal and
-   project dashboards. It is linked to only one job, and show the last
-   builds for this job (last one, last successfull, last failed). It
-   also displays the project weather report (project trend, see `Introduction to Continuous Integration`_).
-
-.. figure:: ../images/screenshots/sc_hudson_widget_last_builds.png
-   :align: center
-   :alt: "Lasts Builds" Widget
-   :name: "Lasts Builds" Widget
-
-   "Lasts Builds" Widget
-
--  **Test Results**: this widget is available for both personal and
-   project dashboards. It is linked to only one job, and show the test
-   results of the latest build for the selected job. To display
-   something, your job needs to execute tests and publish them. The
-   result is shown on a pie chart.
-
-.. figure:: ../images/screenshots/sc_hudson_widget_test_results.png
-   :align: center
-   :alt: "Test results" Widget
-   :name: "Test results" Widget
-
-   "Test results" Widget
-
--  **Test Trend**: this widget is available for both personal and
-   project dashboards. It is linked to only one job, and show the test
-   result trend for the job. Of course, your job needs to have tests to
-   display something. The graph will show the number of tests (failed
-   and successfull) along time. It can be very convenient for project
-   managers to check that the number of tests is increasing while the
-   number of build and commits are increasing too.
-
-.. figure:: ../images/screenshots/sc_hudson_widget_test_trend.png
-   :align: center
-   :alt: "Tests Trend" Widget
-   :name: "Tests Trend" Widget
-
-   "Tests Trend" Widget
-
--  **Build History**: this widget is available for both personal and
-   project dashboards. It is linked to only one job, and show the build
-   history, under the form of RSS feed. For each build of the list, you
-   can see the build number, the status and the date the build has been
-   scheduled.
-
-.. figure:: ../images/screenshots/sc_hudson_widget_builds_history.png
-   :align: center
-   :alt: "Builds History" Widget
-   :name: "Builds History" Widget
-
-   "Builds History" Widget
-
--  **Last Artifacts of the Build**: this widget is available for both
-   personal and project dashboards. It is linked to only one job, and
-   show the last artifacts published. To display something, your job
-   needs to publish artifacts.
-
-.. figure:: ../images/screenshots/sc_hudson_widget_last_artifacts.png
-   :align: center
-   :alt: "Last artifacts of the Build" Widget
-   :name: "Last artifacts of the Build" Widget
-
-   "Last artifacts of the Build" Widget
-
-Hudson References
-`````````````````
-
-It is possible to make references to Hudson items in Tuleap.
+It is possible to make references to Jenkins items in Tuleap.
 There are some predefined references (job, build), but you can also
 create your own references if needed (see :ref:`reference-overview` for more details about
 references)
 
 Make a reference to a Job
-~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````
 
 The keyword to make a reference to a Job is: **job**. To make a
 reference to a job, you can use the expressions:
@@ -549,7 +310,7 @@ reference to a job, you can use the expressions:
    job 'JobNameToReference' of the project with number 'project\_num')
 
 Make a reference to a build
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````````
 
 The keyword to make a reference to a build is: **build**. To make a
 reference to a build, you can use the expressions:
@@ -566,8 +327,3 @@ reference to a build, you can use the expressions:
 
 -  build #projet\_num:AJob/XXX (will make a reference to the build
    number 'XXX' of the job 'AJob' of the project number 'project\_num')
-
-.. [#f1]
-   Several strategies are possible: after each commit, with regular
-   interval (every hours, every night). It depends on the size of the
-   project, the number of developers, the frequency of modifications.

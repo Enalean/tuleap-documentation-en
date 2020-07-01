@@ -244,27 +244,20 @@ for more information.
 
 You can see the list of triggered jobs in the logs section of the Jenkins Webhook.
 
-.. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
-  your site administrator if it is not the case on your Tuleap instance.
+.. IMPORTANT::
+
+    The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook.
 
 .. _Push notification from repository: https://plugins.jenkins.io/git/#push-notification-from-repository
 
 Jenkins Webhooks for Tuleap Branch Source Jenkins plugin
 ````````````````````````````````````````````````````````
 
-.. IMPORTANT:: The ``Tuleap Branch Source`` Jenkins plugin must be installed in order to be able to trigger the build. The
-  Tuleap project must be already created on your Jenkins server.
+The feature is documented in :ref:`continuous_integration_git_branch_source` section.
 
-When a git push is done in a Tuleap git repository of a project, the linked Jenkins job will be automatically built.
+.. IMPORTANT::
 
-The configuration is done in the Git administration menu:
-
-1. Go on "Jenkins" pane from the Git Administration menu of your Tuleap project.
-2. Click on "Add Jenkins server".
-3. In the input add your Jenkins server URL
-
-.. IMPORTANT:: The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook. Ask to
-  your site administrator if it is not the case on your Tuleap instance.
+    The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook.
 
 Markdown documents
 ------------------
@@ -289,8 +282,7 @@ Git Large File Storage (LFS)
 Managing large binary files such as video, graphic or audio files is not the strong suit of Git. Large Git repositories
 will quickly encounter performance issues. To work around that, Git LFS can be used.
 
-.. IMPORTANT:: The ``gitlfs`` plugin needs to be installed and activated in order to be able to use Git LFS. Ask to
-  your site administrator if it is not the case on your Tuleap instance.
+.. IMPORTANT:: The ``gitlfs`` plugin needs to be installed and activated in order to be able to use Git LFS.
 
 Using Git LFS
 `````````````

@@ -41,6 +41,8 @@ Throughout this document, the terms "End-User", "Client Application" and
   terminology this corresponds to a "client". In OpenIDConnect terminology this
   is a "Relying Party".
 
+.. _openidconnect_provider_client_registration:
+
 Client registration
 -------------------
 
