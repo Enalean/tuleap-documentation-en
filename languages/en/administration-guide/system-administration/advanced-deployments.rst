@@ -639,6 +639,8 @@ The various logs on el7 server:
 * tuleap svn backend: ``/var/log/tuleap/svnroot_updater.log``
 * reverse proxy logs: ``/var/log/nginx``
 
+.. _install_realtime:
+
 Tuleap Realtime
 ===============
 

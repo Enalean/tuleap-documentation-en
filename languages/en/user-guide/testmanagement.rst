@@ -8,15 +8,27 @@ Test Management
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The Test Management plugin of Tuleap aims at providing a simple and easy way to deal with
+The Tuleap Test Management plugin (aka **TTM**) aims at providing a straightforward way to deal with
 test campaigns.
 
 Test Management features:
 
 * Create and maintain test case definitions
-* Create test campaigns as a collection of test cases
-* Follow test executions (Not run, passed, failed, blocked)
+* Create test campaigns as a collection of test cases (manual or automated)
+* Follow test executions (Not run, passed, failed, blocked), with creation of bugs when a test fails
 * Realtime update for concurrent test execution by team
+* Link with requirements managed by Agile Dashboard
+
+.. note::
+
+    It's strongly recommended to site administrator to configure :ref:`Tuleap Realtime <install_realtime>` on the platforms that runs TTM.
+
+    When active, TTM will, without having to reload the page:
+
+    - show presence of all testers in the top bar
+    - up date the the overall progress bar (number of tests not run, passed, failed, blocked)
+    - show the status of each steps and test (passed, failed, blocked)
+    - show who is looking at which test
 
 Overview
 --------
@@ -26,22 +38,110 @@ Here are the main concepts with Tuleap Test Management:
 * Test Case: it's the description of something to test. The definition is meant to be re-used
 * Test Campaign: a collection of Test Case to run.
 * Test Execution: it's the execution of one Test Case in the context of a Test Campaign
-* Environment: a given Test Excecution can run in different contexts (Same test but different setup)
 
-Test Case, Test Campaign and Test Execution are 3 different trackers. Environment is a property of "Test execution".
+Test Case, Test Campaign and Test Execution are 3 different trackers.
 
-Run a Test Campaign
--------------------
-
-The welcome screen of Test Management lists all active Test Campaigns with a quick
-overview of the overall progress and the ability to access the test list.
+When you click on Test management service in a project, you land on TTM home page that lists all active test campaigns
+and allows to create new ones.
 
 .. figure:: ../images/screenshots/testmanagement/home.png
    :align: center
-   :alt: Test Management home page
-   :name: Test Management home page
+   :alt: Test management home page
+   :name: Test management home page
 
-By hitting "Test list" you will see the list of tests proposed in the given campaign.
+Create a test campaign
+----------------------
+
+From the home page of the service, there is "New campaign" button that will open
+the Campaign creation screen.
+
+.. figure:: ../images/screenshots/testmanagement/create-1.png
+   :align: center
+   :alt: Test Management test creation
+   :name: Test Management test creation
+
+You need to give a name to your campaign and select which tests you want to execute
+during your validation campaign.
+
+Adding tests to a campaign
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Within a campaign, you can create add tests with a click on "Edit" button.
+
+A new modal will enable you to look for existing artifacts or to create directly a new one.
+
+.. figure:: ../images/screenshots/testmanagement/link-new-tests.png
+   :align: center
+   :alt: Add tests to existing campaign
+   :name: Add tests to existing campaign
+
+Modify or create tests
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can create tests directly inside the "Test Case" tracker, it means that you
+benefit of all tracker power for artifact creation:
+
+* Create one after another
+* Import from CSV
+* Import via REST
+* Import via XML
+
+You can also directly create tests in campaigns via the [Edit] button next to campaign title.
+
+.. figure:: ../images/screenshots/testmanagement/edit.png
+   :align: center
+   :alt: Test Management test edition
+   :name: Test Management test edition
+
+You can also edit the test directly from the Test Management interface.
+
+The test you create or you edit are automatically updated in the test campaign
+and will be re-usable in a following campaign.
+
+Test steps
+~~~~~~~~~~
+
+.. important::
+
+    You should manage steps in the Test Case tracker directly. Steps cannot be seen or defined from the Test Management
+    interface.
+
+In the artifact view of the test case you can:
+
+- Create new steps, at any place in the step list
+- Delete steps
+- Reorder existing steps
+
+Each step is made of two text boxes:
+
+- In first place, Actions: should hold a list of things to do.
+- Then Expected Results: what you are expected to get after having done the Actions.
+
+Both areas supports HTML formating as well as images (copy/paste, drag'n drop, ...).
+
+.. figure:: ../images/screenshots/testmanagement/steps_edit.png
+   :align: center
+   :alt: Test Management test step edit in artifact
+   :name: Test Management test step edit in artifact
+
+Those steps are displayed in the test management view, in the campaign.
+
+.. figure:: ../images/screenshots/testmanagement/steps.png
+   :align: center
+   :alt: Test Management test step
+   :name: Test Management test step
+
+These steps provide a global result for the tests:
+
+* All steps are done -> test done
+* At least one step failed -> test fail
+* At least one step is blocked -> test blocked
+* At lest one step is not run -> test not run
+
+Run a test campaign, execute tests
+----------------------------------
+
+Within a campaign, you will see the list of tests proposed in the given campaign.
 
 In the following figure, the user selected a test that "Passed".
 
@@ -58,15 +158,7 @@ Tests can have following status:
 * Blocked, the test cannot be run
 
 One can switch from one state to another (a test can be "Not run" then "Passed",
-re-switched to "Not run" because tester didn't get what was described to finish by "Faild").
-
-Tuleap will record the time taken for each test. It works this way:
-
-* It starts as soon as you load the test definition.
-* It ends when you hit one of the action buttons.
-
-Time is not yet used in the interface, it's only recorded for a future usage. You
-can see the value and make your own computation from the "Test Execution" tracker.
+re-switched to "Not run" because tester didn't get what was described to finish by "Failed").
 
 Example of test failure:
 
@@ -75,102 +167,49 @@ Example of test failure:
    :alt: Test Management test fail
    :name: Test Management test fail
 
-Modify or create tests
-~~~~~~~~~~~~~~~~~~~~~~
+On failure, testers can give context and comments about it. In the comment section they can use inline HTML as well as
+paste images:
 
-You can create tests directly inside the "Test Case" tracker, it means that you
-benefit of all tracker power for artifact creation:
-
-* Create one after another
-* Import from CSV
-* Import via REST
-* Import via XML
-
-You can also directly create tests in campaigns, this is convenient if you don't
-already have a base of tests or if you want to create test.
-
-.. figure:: ../images/screenshots/testmanagement/edit.png
+.. figure:: ../images/screenshots/testmanagement/fail_desc.png
    :align: center
-   :alt: Test Management test edition
-   :name: Test Management test edition
+   :alt: Pasted image in a failed test
+   :name: Pasted image in a failed test
 
-You can also edit the test directly from the interface.
+Sometimes a failed test should lead to the creation of bug report. Testers can click on the bug icon in the test toolbar
+to either create a new bug or link to an existing one:
 
-The test you create or you edit are automatically updated in the test campaign
-and will be re-usable in a following campaign.
-
-Test steps
-----------
-
-Starting Tuleap 10.3, a test case can be divided into steps. Each step have to be run in the campaign.
-
-.. figure:: ../images/screenshots/testmanagement/steps.png
+.. figure:: ../images/screenshots/testmanagement/fail_createbug.png
    :align: center
-   :alt: Test Management test step
-   :name: Test Management test step
+   :alt: Create a bug out of a failed test
+   :name: Create a bug out of a failed test
 
-These steps provide a global result for the tests:
+Linked bugs are then showed in the same "Bug" menu:
 
-* All steps are done -> test done
-* At least one step failed -> test fail
-* At least one step is blocked -> test blocked
-* At lest one step is not run -> test not run
-
-Create or modify steps for your tests
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-There are two new fields to add in your testmanagement trackers to be able to defined your steps:
-
-* Field ``step definition`` into Test definition tracker
-* Field ``step execution`` into Test execution tracker.
-
-If one of this field is missing, steps cannot be run. In addition, these fields can only be added in the Test definition tracker
-and Test exec tracker defined in your testmanagement configuration.
-
-To have working steps, these 2 fields must have a specific shortname:
-
-* Field ``step definition`` must have the shortname ``steps``
-* Field ``step execution`` must have the shortname ``steps_results``
-
-Once these fields added, you can defined your step in your test case by editing the artifact:
-
-.. figure:: ../images/screenshots/testmanagement/steps_edit.png
+.. figure:: ../images/screenshots/testmanagement/fail_linkedbug.png
    :align: center
-   :alt: Test Management test step edit in artifact
-   :name: Test Management test step edit in artifact
+   :alt: See bugs linked to failed tests
+   :name: See bugs linked to failed tests
 
-Create a Test Campaign
-----------------------
+Test snapshot
+~~~~~~~~~~~~~
 
-From the home page of the service, there is "New campaign" button that will open
-the Campaign creation screen.
+When a test is selected for a campaign, Tuleap makes a snapshot of it. It means that if the test evolves later on, the
+campaign will still display the old version of the test. This allows to keep campaign consistent with the status of the
+project at a given point in the past.
 
-.. figure:: ../images/screenshots/testmanagement/create-1.png
-   :align: center
-   :alt: Test Management test creation
-   :name: Test Management test creation
+When you modify a test in the Test Case tracker, the campaigns that were already created with this test will show the
+previous version of the test. To be precise, each campaign will the state of the test at the time ot the campaign creation.
 
-You need to give a name to your campaign and select which tests you want to execute
-during your validation campaign.
+When you modify a test within a given campaign (with the Edit button) the test content in **this campaign** will be **automatically updated**.
 
-
-Adding Tests to a Campaign
---------------------------
-
-Once the validation has started you might want add some new tests to your campaign.
-Open your campaign by clicking on "Details button".
-
-Then click on the "Edit" button.
-
-A new modal will enable you to look for existing artifacts or to create directly a new one.
-
-.. figure:: ../images/screenshots/testmanagement/link-new-tests.png
-   :align: center
-   :alt: Add tests to existing campaign
-   :name: Add tests to existing campaign
+.. _testmgmt_link_tests_requirements:
 
 Link tests with requirements / user stories
 -------------------------------------------
+
+.. note::
+
+    Tuleap administrators must install and activate ``TestPlan`` plugin beforehand.
 
 .. warning::
 
@@ -389,3 +428,28 @@ The button lets you trigger the Jenkins job which will run the automated tests a
    :align: center
    :alt: Launch the Jenkins job from the Test campaign
    :name: Launch the Jenkins job from the Test campaign
+
+Configuration of TTM
+--------------------
+
+This section is for project administrators that want to customize / adapt TTM to better fit their usage.
+
+Steps are missing in Test Case
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Steps are parts of all templates but if you are using TTM since a long time you might not have them in you tracker yet.
+
+This section covers how to activate steps in TTM when they are not present.
+
+There are two new fields to add in your testmanagement trackers to be able to defined your steps:
+
+* Field ``step definition`` into Test definition tracker
+* Field ``step execution`` into Test execution tracker.
+
+If one of this field is missing, steps cannot be run. In addition, these fields can only be added in the Test definition tracker
+and Test exec tracker defined in your testmanagement configuration.
+
+To have working steps, these 2 fields must have a specific shortname:
+
+* Field ``step definition`` must have the shortname ``steps``
+* Field ``step execution`` must have the shortname ``steps_results``

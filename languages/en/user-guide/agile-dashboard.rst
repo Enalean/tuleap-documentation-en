@@ -265,6 +265,17 @@ Please note that the workflow is not checked *a priori*. This means that if noth
 
 Please also note that you can only add tasks artifacts. Adding in place user stories (or swimlanes) is not allowed yet.
 
+Cover requirements with tests
+`````````````````````````````
+
+When used in combination with Tuleap Test Management, the Backlog can be covered with tests.
+
+.. figure:: ../images/screenshots/testmanagement/testplan.png
+   :align: center
+   :alt: Test plan over a release
+   :name: Test plan over a release
+
+The full documentation is available in :ref:`Test Management <testmgmt_link_tests_requirements>` section.
 
 .. _kanban:
 
