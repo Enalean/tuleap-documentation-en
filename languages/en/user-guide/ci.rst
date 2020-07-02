@@ -18,7 +18,7 @@ This section will cover how to configure a Jenkins server to be used efficiently
 instance that was just installed.
 
 Some adaptations might be needed if you modify an existing Jenkins server (be very careful with authentication to not lock
-yourself out of jenkins).
+yourself out of Jenkins).
 
 .. attention::
 
@@ -39,7 +39,7 @@ Two plugins should be installed:
 - `Tuleap Git Branch Source <https://plugins.jenkins.io/tuleap-git-branch-source/>`_
 - `Tuleap Authentication <https://plugins.jenkins.io/tuleap-oauth/>`_
 
-Both are available publicly on the jenkins plugin marketplace and the installation is done from within Jenkins in "Manage Plugins"
+Both are available publicly on the Jenkins plugin marketplace and the installation is done from within Jenkins in "Manage Plugins"
 section.
 
 You might also need to install other plugins related to your pipeline of email notifications, artifact publishing to Artifactory, etc.
@@ -59,7 +59,7 @@ If the connection to the Tuleap server is successful you will see ``Connexion es
 the Jenkins interface (as in the previous screenshot). Otherwise you will get a stacktrace (Jenkins...) with, hopefully,
 an error message that will help to diagnose the problem.
 
-Most common issues are related to DNS (is your server name valid and can jenkins access it) and TLS (does jenkins trust
+Most common issues are related to DNS (is your server name valid and can Jenkins access it) and TLS (does jenkins trust
 Tuleap server).
 
 Authentication configuration
@@ -69,6 +69,7 @@ This section requires that your Tuleap server has :ref:`OAuth2 Server <openidcon
 
 First, on your Tuleap server, in one of your project, you need to create a new :ref:`OAuth2 app <openidconnect_provider_client_registration>`.
 The app will ask for a callback URL. This callback URL is your Jenkins server base URL (eg. https://jenkins.example.com/jenkins) + ``/securityRealm/finishLogin``.
+The plugin allows the PKCE usage for the authentication. You can force its usage at the creation of the :ref:`OAuth2 app <openidconnect_provider_client_registration>`.
 
 Keep the generated Client Secret securely until the next step.
 
@@ -91,7 +92,7 @@ With the values provided by Tuleap.
 
 Ensure that *Authorization* (bellow *Authentication section*) is still set to *Anyone can do anything* and click save.
 
-You should then be able to login on Jenkins with you Tuleap credentials and still have access to *Manage jenkins*.
+You should then be able to login on Jenkins with you Tuleap credentials and still have access to *Manage Jenkins*.
 
 .. note::
 
@@ -108,7 +109,7 @@ In the `Authorization Matrix <https://plugins.jenkins.io/matrix-auth/>`_ you can
 - Tuleap user groups in the form ``project-shortname#user-group-name``
 
 Most of the time should refer to user groups to ease the maintenance. Once you setup the groups, you only have to deal
-with people management at Tuleap side without having to bother with their jenkins permissions anymore.
+with people management at Tuleap side without having to bother with their Jenkins permissions anymore.
 
 In the following screenshot you have a good start point in term of permissions management with the default groups defined
 in Tuleap:
@@ -212,10 +213,10 @@ of the builds that were triggered.
 Step 3: Tell Tuleap where the Jenkins server is
 ```````````````````````````````````````````````
 
-The final step is on Tuleap. You need to inform the git server where is the jenkins server that must be informed about
+The final step is on Tuleap. You need to inform the git server where is the Jenkins server that must be informed about
 new commits that are pushed.
 
-In the administration of the Git service of your project, there is a ``Jenkins`` tab where you set the jenkins root url.
+In the administration of the Git service of your project, there is a ``Jenkins`` tab where you set the Jenkins root url.
 For instance ``https://jenkins.example.com/jenkins``.
 
 .. figure:: ../images/screenshots/jenkins/tgbs_tuleap_trigger.png
