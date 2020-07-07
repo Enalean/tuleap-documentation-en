@@ -17,7 +17,7 @@
  * along with Tuleap Documentation. If not, see <http://www.gnu.org/licenses/>.
  */
 
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = merge(require("./webpack.common.js"), {
