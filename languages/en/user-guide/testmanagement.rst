@@ -213,8 +213,9 @@ Link tests with requirements / user stories
 
 .. warning::
 
-    This feature is under development. This covers what's available in Tuleap 11.16 release. Shall you want to know
-    what's cooking for next release, please have a look at `Test Plan Epic <https://tuleap.net/plugins/tracker/?aid=14871>`_.
+    This feature is under heavy development, most the documentation covers what's available in 11.16.
+
+    The part related to coverage of backlog items is available starting 11.17.
 
 If your project also uses the Scrum backlog of Agile Dashboard service, a "Tests" tab will be added to milestones.
 
@@ -256,6 +257,19 @@ in "RC2" campaign but it might have *passed* in RC1 campaign.
    :align: center
    :alt: Status of tests that cover a user story
    :name: Status of tests that cover a user story
+
+The backlog item status is computed out of the tests that covers it as show in the the screenshot above. The rules are (order matters):
+
+#. If there are no tests, there is no status associated to the backlog item.
+#. If at least one test final status is **failed**, the backlog item status is **failed**.
+#. If no failure but at least one test final status is **blocked**, the backlog item status is **blocked**.
+#. If no failure and no blocked but at least one test final status is **not run** or test is **not planned**, the backlog item status is **not run**.
+#. If all tests final status are **passed**, the backlog item status is **passed**.
+
+.. note::
+
+    In this context as test **not planned** means that the test was created or linked to the backlog item but no campaigns
+    exists with this test yet.
 
 Tests can be either manual or automated (see :ref:`Test Automation <testmgmt_automation>` section below)
 
