@@ -258,7 +258,7 @@ in "RC2" campaign but it might have *passed* in RC1 campaign.
    :alt: Status of tests that cover a user story
    :name: Status of tests that cover a user story
 
-The backlog item status is computed out of the tests that covers it as show in the the screenshot above. The rules are (order matters):
+The backlog item status is computed out of the tests that cover it as shown in the screenshot above. The rules are (order matters):
 
 #. If there are no tests, there is no status associated to the backlog item.
 #. If at least one test final status is **failed**, the backlog item status is **failed**.
