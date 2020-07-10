@@ -8,6 +8,15 @@ Tuleap 11.17
 
   Tuleap 11.17 is currently under development.
 
+
+Globals settings are no longer loaded into the global scope
+-----------------------------------------------------------
+
+Settings defined in ``/etc/tuleap/conf/local.inc`` are no longer accessible via
+``$GLOBALS``. If you have customized some ``txt`` or ``php`` files in ``/etc/tuleap/site-content/``,
+you need to replace every occurrence of ``$GLOBALS['<setting_name>']`` by ``\ForgeConfig::get('<setting_name>')``.
+
+
 Tuleap 11.16
 ============
 
