@@ -3,7 +3,7 @@ Front End
 
 Tuleap front end can be divided in two worlds
 
-- Mostly static pages that are rendered server side using mustache templating (with some vanilia JS for simple interactions).
+- Mostly static pages that are rendered server side using mustache templating (with some vanilla JS for simple interactions).
 - Rich, dynamic, pages that are rendered client side using Vuejs.
 
 Front end build system is based on webpack.
