@@ -217,7 +217,8 @@ latex_documents = [
 # Linkcheck Options
 linkcheck_ignore = [
     r'https://example\.com.*',
-    r'https://tuleap.example\.com.*',
+    r'https://tuleap\.example\.com.*',
+    r'https://jenkins\.example\.com.*',
     'https://tuleap-web.tuleap-aio-dev.docker/',
     'https://tuleap/',
     'https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders', # Anchor is not found due to the page generation client side
