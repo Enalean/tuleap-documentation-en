@@ -9,11 +9,11 @@ Slack, Mattermost, Teams, etc.
 Authenticate with OAuth / OpenID Connect
 ----------------------------------------
 
-#. In Administration, look for ``OAuth`` in the search entry in the side bar.
+#. On your rocket.chat server, in Administration, look for ``OAuth`` in the search entry in the side bar.
 #. On top right, click on ``Add custom oauth`` and type Tuleap
-#. In newly created Tuleap provider:
-
+#. On your Tuleap Server
     #. Generate a new :ref:`OAuth2 <openidconnect_provider>` app in your project **without `Force usage of PKCE to authenticate`** and set as redirect endpoint the callback URL given by rocket chat (in the form ``https://.../_oauth/tuleap``)
+#. On your rocket.chat server, in newly created Tuleap provider:
     #. ``URL``: https://tuleap.example.com (Replace by your Tuleap server)
     #. ``Token Path``: /oauth2/token
     #. ``Token Sent Via``: Header
