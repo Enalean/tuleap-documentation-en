@@ -121,10 +121,9 @@ Once activated, users can create a tracker from a Jira instance in the :ref:`tra
 
 Missing in trackers imported from Jira:
 
-* Attachments
-* Fields of type "list" bound to users and user groups
-* "Assigned to" fields
-* Authors of comments in issues
 * Permissions in issues trackers
+
+.. warning::
+  Before importing the tracker, please ask team members to make their email address public on Jira, or the importer won't be able to identify them on the Tuleap platform.
 
 Since import of Jira can take some time to proceed, import is done asynchronously, and relies on :ref:`backend workers<admin_howto_backend_worker>`.
