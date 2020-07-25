@@ -98,6 +98,69 @@ In this part, you can choose to use :
 
   This does not copy the artifacts of the original tracker but only the configuration settings.
 
+Create from Jira issue
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In this part, you can choose to import a bunch of issues from a Jira instance.
+
+.. figure:: ../../../images/screenshots/tracker/tracker-creation-from-jira.png
+   :align: center
+   :alt: Import issues from Jira
+   :name: Import issues from Jira
+
+   Import issues from Jira
+
+To import your Jira issues, you have to provide:
+
+* The Jira instance URL
+* Your Jira account email
+* One of your Jira API token
+
+.. NOTE::
+
+  In order to have all the issues and all the content possible, the Jira user used to do the import must be administrator of your Jira project.
+
+Then, you are able to select a Jira project and an issue type. Once all selected, the Jira import is queued.
+
+.. NOTE::
+
+  Jira issue import is only done asynchronously. Once finished, you will receive an email with the status and the output of this import.
+
+Imported data
+`````````````
+
+All the issues of the selected type in the selected project will be imported. The import is able to deal with the following fields:
+
+* Text
+* String
+* Date
+* Date with time
+* Selectbox
+* Radio button
+* Checkbox
+* Status field
+* Attachments
+
+Comments are also imported. The issue history is recreated.
+
+User mapping
+````````````
+
+The Jira import process will try to map the users found in the Jira data with Tuleap users:
+
+* Issue creator
+* Issue updater
+* Commentator
+* File uploader
+* Users in field values
+
+To be relevant, the mapping is based on the email address. If the Jira user email address map a Tuleap user email address, then the mapping is done.
+
+All the details about the mapping will be displayed in the Jira import output in the email.
+
+.. NOTE::
+
+  The Jira user email address can only be used if the user allows the address email visibility in the Jira API. More information `here. <https://confluence.atlassian.com/doc/user-email-visibility-138596.html>`_
 
 Fill informations about your tracker
 ------------------------------------
