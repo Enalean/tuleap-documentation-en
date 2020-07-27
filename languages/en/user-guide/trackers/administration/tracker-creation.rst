@@ -98,6 +98,74 @@ In this part, you can choose to use :
 
   This does not copy the artifacts of the original tracker but only the configuration settings.
 
+Create from Jira issue
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Import prerequisites
+`````````````````````
+
+Before doing the Jira issue import, you have to check the following points:
+
+* Users email addresses are visible to anyone in the Jira configuration (must be done by each user)
+* The Jira user used to do the import must be administrator of your Jira project in order to have all the issues and all the content possible.
+
+Jira issue import is only done asynchronously. Once finished, you will receive an email with the status and the output of this import.
+
+Process the import 
+```````````````````
+
+In this part, you can choose to import a bunch of issues from a Jira instance.
+
+.. figure:: ../../../images/screenshots/tracker/tracker-creation-from-jira.png
+   :align: center
+   :alt: Import issues from Jira
+   :name: Import issues from Jira
+
+   Import issues from Jira
+
+To import your Jira issues, you have to provide:
+
+* The Jira instance URL
+* Your Jira account email
+* One of your Jira API token
+
+Then, you are able to select a Jira project and an issue type. Once all selected, the Jira import is queued.
+
+Imported data
+`````````````
+
+All the issues of the selected type in the selected project will be imported. The import is able to deal with the following fields:
+
+* Text
+* String
+* Date
+* Date with time
+* Selectbox
+* Radio button
+* Checkbox
+* Status field
+* Attachments
+
+Comments are also imported. The issue history is recreated.
+
+User mapping
+````````````
+
+.. ATTENTION::
+   The Jira user email address can only be used if the user allows the address email visibility in the Jira API. More information `here. <https://confluence.atlassian.com/doc/user-email-visibility-138596.html>`_
+   If this is not done, the import process will map the Jira user to a default `Tracker Importer` Tuleap user
+
+The Jira import process will try to map the users found in the Jira data with Tuleap users:
+
+* Issue creator
+* Issue updater
+* Commentator
+* File uploader
+* Users in field values
+
+To be relevant, the mapping is based on the email address. If the Jira user email address map a Tuleap user email address, then the mapping is done.
+
+All the details about the mapping will be displayed in the Jira import output in the email.
 
 Fill informations about your tracker
 ------------------------------------

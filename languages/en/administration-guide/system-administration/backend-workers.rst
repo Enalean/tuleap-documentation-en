@@ -7,7 +7,6 @@ Backend workers are used to process asynchronous tasks. Currently it is used for
 
 * :ref:`Backend notifications<backend_notifications>`
 * :ref:`Monitoring with Prometheus<admin_monitoring_with_prometheus>`
-* :ref:`Jira import<jira_import>`
 
 It's based on a notification queue managed by Redis and a worker that will process the the queue as soon as it's pushed.
 Unlike "SystemEvents" there is no delay between the queue and the processing of the job.
@@ -107,23 +106,3 @@ The front end will log useful information in ``codendi_syslog`` with the key ``N
 
 We also added a double check in ``SYSTEM_CHECK`` system event to ensure there is no pending notifications that last forever.
 If such a situation occurs, the SystemEvent will be marked as Warning, be sure to monitor that.
-
-.. _jira_import:
-
-Jira import
-===========
-
-.. attention::
-
-  This module is still under heavy development. Import is not fully implemented and is available only for testing purpose.
-
-Once activated, users can create a tracker from a Jira instance in the :ref:`tracker creation<creation-tracker>` page.
-
-Missing in trackers imported from Jira:
-
-* Permissions in issues trackers
-
-.. warning::
-  Before importing the tracker, please ask team members to make their email address public on Jira, or the importer won't be able to identify them on the Tuleap platform.
-
-Since import of Jira can take some time to proceed, import is done asynchronously, and relies on :ref:`backend workers<admin_howto_backend_worker>`.
