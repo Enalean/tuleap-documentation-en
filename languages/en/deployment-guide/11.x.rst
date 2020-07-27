@@ -1,13 +1,15 @@
 Tuleap 11.x
 ###########
 
-Tuleap 11.17
+Tuleap 11.18
 ============
 
 .. NOTE::
 
   Tuleap 11.17 is currently under development.
 
+Tuleap 11.17
+============
 
 Globals settings are no longer loaded into the global scope
 -----------------------------------------------------------
