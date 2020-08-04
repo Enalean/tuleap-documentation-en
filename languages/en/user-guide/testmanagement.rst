@@ -260,10 +260,10 @@ in "RC2" campaign but it might have *passed* in RC1 campaign.
 
 The backlog item status is computed out of the tests that cover it as shown in the screenshot above. The rules are (order matters):
 
-#. If there are no tests, there is no status associated to the backlog item.
+#. If there are no planned tests, there is no status associated to the backlog item.
 #. If at least one test final status is **failed**, the backlog item status is **failed**.
 #. If no failure but at least one test final status is **blocked**, the backlog item status is **blocked**.
-#. If no failure and no blocked but at least one test final status is **not run** or test is **not planned**, the backlog item status is **not run**.
+#. If no failure and no blocked but at least one test final status is **not run**, the backlog item status is **not run**.
 #. If all tests final status are **passed**, the backlog item status is **passed**.
 
 .. note::
