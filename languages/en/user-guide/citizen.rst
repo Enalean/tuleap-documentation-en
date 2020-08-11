@@ -192,3 +192,16 @@ The available formats are:
    also be used when importing. Then, don't forget to check your dates
    value before importing. They should be the same format as defined in
    your preferences.
+
+Appearance and language
+```````````````````````
+
+Relative dates display
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can choose the way dates will be displayed in Tuleap. You have the choice between four options:
+
+- ``Relative (absolute)``: highlight the relative date, the absolute date is displayed smaller
+- ``Absolute (relative)``: highlight the absolute date, the relative date is displayed smaller
+- ``Relative``: display only the relative date, the absolute date is displayed in a tooltip when hovered
+- ``Absolute``: display only the absolute date, the relative date is displayed in a tooltip when hovered
