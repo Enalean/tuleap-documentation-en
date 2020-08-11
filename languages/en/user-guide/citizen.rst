@@ -201,7 +201,7 @@ Relative dates display
 
 You can choose the way dates will be displayed in Tuleap. You have the choice between four options:
 
-- ``Relative (absolute)``: display the relative date first, and the absolute date in a tooltip
-- ``Absolute (relative)``: display the absolute date first, and the relative date in a tooltip
-- ``Relative``: display only the relative date
-- ``Absolute``: display only the absolute date
+- ``Relative (absolute)``: highlight the relative date, the absolute date is displayed smaller
+- ``Absolute (relative)``: highlight the absolute date, the relative date is displayed smaller
+- ``Relative``: display only the relative date, the absolute date is displayed in a tooltip when hovered
+- ``Absolute``: display only the absolute date, the relative date is displayed in a tooltip when hovered
