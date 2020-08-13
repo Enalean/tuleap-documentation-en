@@ -199,9 +199,18 @@ Appearance and language
 Relative dates display
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can choose the way dates will be displayed in Tuleap. You have the choice between four options:
+In Tuleap, the dates can be displayed in several ways. You want to quickly know how much time has passed since the last update of your document?
+No problem! Tuleap will display the relative date next to it. You don't really care? Let's only display the absolute date.
+You prefer to read the relative date first? Here you go!
 
-- ``Relative (absolute)``: highlight the relative date, the absolute date is displayed smaller
-- ``Absolute (relative)``: highlight the absolute date, the relative date is displayed smaller
-- ``Relative``: display only the relative date, the absolute date is displayed in a tooltip when hovered
-- ``Absolute``: display only the absolute date, the relative date is displayed in a tooltip when hovered
+.. figure:: ../images/screenshots/account/relative-dates.png
+   :align: center
+   :alt: Relative dates display modes
+   :name: Relative dates display modes
+
+To configure it, go to your account preferences. In the appearance and language tab, you have the choice between four options:
+
+- ``Relative date first``: highlight the relative date, the absolute date is displayed smaller
+- ``Absolute date first``: highlight the absolute date, the relative date is displayed smaller
+- ``Relative date only``: display only the relative date, the absolute date is displayed in a tooltip when hovered
+- ``Absolute date only``: display only the absolute date, the relative date is displayed in a tooltip when hovered
