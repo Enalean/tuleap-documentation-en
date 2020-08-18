@@ -231,6 +231,7 @@ The *Test* tab allows:
 - to define how the feature that are being developed will be tested
 - to build the test campaigns along the release progress
 - to see the actual coverage of each backlog item (user stories, bugs, requirements, ...) with a traceability matrix
+- to export a report in the XLSX format (Office Open XML) including the coverage of each backlog item with the traceability elements
 
 Test plan
 ~~~~~~~~~
@@ -286,6 +287,22 @@ A campaign can be created with an initial set of tests:
 * All tests: all test cases will be added to the campaign
 * **All tests in <milestone>**: (this is the default) only test cases that are linked to a backlog item of the milestone will be added to the campaign
 * From tracker reports: only test cases that matches a given report's criteria will be added to the campaign
+
+Export
+~~~~~~
+
+For traceability and audit (ISO, SOX, compliance…), you can export a report in the XSLX format (Office Open XML).
+
+This document includes the list of requirements of the milestone with the associated tests and their respective results.
+It allows you to determine when a specific test has been executed and by whom.
+
+Test failures are highlighted in a dedicated section with a zone to justify the failure.
+
+.. figure:: ../images/screenshots/testmanagement/testplan-export-xlsx.png
+   :align: center
+   :alt: Sample of a test management XLSX report
+   :name: Sample of a test management XLSX report
+
 
 Test strategies
 ~~~~~~~~~~~~~~~
