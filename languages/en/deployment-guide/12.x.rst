@@ -20,4 +20,4 @@ If you are still using it, after upgrading to 12.0, you have to run the followin
     find /cvsroot/*/CVSROOT -name "loginfo" -exec sed -r -i "s#ALL \(/usr/lib/tuleap/bin/log_accum (.*)\)#ALL sudo -u codendiadm -E /usr/lib/tuleap/bin/log_accum \1#" {} \;
     tuleap queue-system-check
 
-The queue system check command will recreate the CVS locks. These CVS reprositories will be usable once the system check is done.  
+The queue system check command will recreate the CVS locks. These CVS repositories will be usable once the system check is done.  
