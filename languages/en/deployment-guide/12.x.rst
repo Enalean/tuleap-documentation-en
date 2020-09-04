@@ -7,3 +7,17 @@ Tuleap 12.0
 .. NOTE::
 
   Tuleap 12.0 is currently under development.
+
+CVS modifications
+-----------------
+
+We made a lot of changes for CVS in the packaging and in the backend of this service.
+If you are still using it, after upgrading to 12.0, you have to run the following commands:
+
+.. sourcecode:: shell
+
+    find /cvsroot/*/CVSROOT -name "loginfo" -exec sed -i "s#ALL /usr/lib/tuleap/bin/log_accum#ALL sudo -u codendiadm -E /usr/lib/tuleap/bin/log_accum#" {} \;
+    find /cvsroot/*/CVSROOT -name "loginfo" -exec sed -r -i "s#ALL \(/usr/lib/tuleap/bin/log_accum (.*)\)#ALL sudo -u codendiadm -E /usr/lib/tuleap/bin/log_accum \1#" {} \;
+    tuleap queue-system-check
+
+The queue system check command will recreate the CVS locks. These CVS repositories will be usable once the system check is done.  
