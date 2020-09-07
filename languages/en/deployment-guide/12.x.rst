@@ -21,3 +21,20 @@ If you are still using it, after upgrading to 12.0, you have to run the followin
     tuleap queue-system-check
 
 The queue system check command will recreate the CVS locks. These CVS repositories will be usable once the system check is done.  
+
+OpenID Connect
+--------------
+
+.. attention::
+
+    Existing accounts that already connected to an OpenID Connect provider will no longer be allowed to authenticate with
+    their local Tuleap credentials.
+
+    This impact users for:
+
+    * Web login (they should use OpenID Connect instead)
+    * REST API access (they should use :ref:`Access Keys <access-keys>`.)
+    * Git over https access (they should use :ref:`Access Keys <access-keys>`.)
+    * Subversion access (they should use :ref:`SVN Tokens <svn-plugin-use-token>`.)
+
+    Access to **SOAP API is no longer possible** for users that switch to OpenID Connect.
