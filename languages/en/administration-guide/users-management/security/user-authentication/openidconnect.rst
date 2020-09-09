@@ -8,7 +8,7 @@ The OpenID Connect client plugin allows users to authenticate with an OpenID Con
     OpenID Connect is meant to delegate authentication to a 3rd party provider with a global goal to no longer have
     credentials management by Tuleap (either in Local DB or LDAP).
 
-    As soon users identify themselves with an OpenID Connect provider, they will no longer be able to use their existing
+    As soon as users identify themselves with an OpenID Connect provider, they will no longer be able to use their existing
     credentials (if they had any) for:
 
     * Web login (they should use OpenID Connect instead)
