@@ -383,6 +383,8 @@ Logging In
 Subversion will ask for your login name and password only when
 performing an operation (e.g. commit) that requires authentication.
 
+.. _svn-plugin-use-token:
+
 Access SVN with username/token instead of username/password
 ```````````````````````````````````````````````````````````
 

@@ -1,3 +1,5 @@
+.. _platform_logs:
+
 Logs
 ====
 
