@@ -60,7 +60,7 @@ OpenID Connect & LDAP
     for security and mental health reasons, there should be a single source of truth of user management.
 
 In order to activate LDAP and OpenID Connect in parallel you must define a common field between the two authentication
-sources. It means that your OpenID Connect provider should expose on it's ``userinfo`` route a field that match the one
+sources. It means that your OpenID Connect provider should expose on its ``userinfo`` route a field that matches the one
 configured as ``$sys_ldap_eduid`` in the LDAP configuration (will be user's ``ldap_id``).
 
 For instance, if your LDAP provider is Microsoft Active Directory, the OpenID Connect provider must expose the ``sAMAccountName``
