@@ -52,7 +52,7 @@ OpenID Connect & LDAP
 
 .. attention::
 
-    Only activate LDAP and OpenID Connect if your OpenID Connect provider build it's user base on the same LDAP server.
+    Only activate LDAP and OpenID Connect if your OpenID Connect provider builds its user base on the same LDAP server.
 
 .. warning::
 
