@@ -74,7 +74,7 @@ When you have this information, you must configure it with ``tuleap`` CLI as sys
 
 After having run this command, you can configure your OpenID Connect provider as described in previous sections.
 
-Please note that Tuleap trust 100% the OpenID Connect provider here, the value set for ``ldap_id`` is taken without any
+Please note that Tuleap trusts completely the OpenID Connect provider here, the value set for ``ldap_id`` is taken without any
 form of verification.
 
 Troubleshooting
