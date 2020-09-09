@@ -82,7 +82,7 @@ Troubleshooting
 
 You can monitor what's happening by looking at :ref:`LDAP and OpenID Connect logs <platform_logs>`:
 
-OpenID Connect will complain if is not found in userinfo route:
+OpenID Connect will complain if ``preferred_name`` is not found in the userinfo route:
 
 .. sourcecode::
 
