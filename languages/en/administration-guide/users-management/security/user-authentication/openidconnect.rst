@@ -9,7 +9,7 @@ The OpenID Connect client plugin allows users to authenticate with an OpenID Con
     credentials management by Tuleap (either in Local DB or LDAP).
 
     As soon users identify themselves with an OpenID Connect provider, they will no longer be able to use their existing
-    credentials (if they had some) for:
+    credentials (if they had any) for:
 
     * Web login (they should use OpenID Connect instead)
     * REST API access (they should use :ref:`Access Keys <access-keys>`.)
