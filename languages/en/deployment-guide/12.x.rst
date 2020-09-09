@@ -30,7 +30,7 @@ OpenID Connect
     Existing accounts that already connected to an OpenID Connect provider will no longer be allowed to authenticate with
     their local Tuleap credentials.
 
-    This impact users for:
+    This impacts users for:
 
     * Web login (they should use OpenID Connect instead)
     * REST API access (they should use :ref:`Access Keys <access-keys>`.)
