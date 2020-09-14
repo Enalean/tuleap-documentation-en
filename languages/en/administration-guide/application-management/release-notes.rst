@@ -5,7 +5,7 @@ Case 1: Tuleap provides easy access to the end-user to the Tuleap official relea
 ----------------------------------------------------------------------------------------
 When your Tuleap server is updated, the URL to the Tuleap official release notes is automatically
 up to date.
-and your users are informed with a star  in the Help dropdown at the bottom right.
+Your users are informed with a star in the Help dropdown at the bottom right.
 You have nothing to do.
 
 Case 2: You want to update the release notes URL provided
