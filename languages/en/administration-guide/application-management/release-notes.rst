@@ -1,7 +1,7 @@
 Release Notes
 =============
 
-Case 1: Tuleap provides easy access to the end-user to the Tuleap official release notes
+Case 1: Tuleap provides easy access to the end-user to the Tuleap official release note
 ----------------------------------------------------------------------------------------
 When your Tuleap server is updated, the URL to the Tuleap official release notes is automatically
 up to date.
