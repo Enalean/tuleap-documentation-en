@@ -4,7 +4,7 @@ Autoload and Composer
 Composer is used to manage the generation of the autoloaders. For a new plugin,
 your ``composer.json`` file should look like this:
 
-.. code-block:: json
+.. code-block::
 
     {
       "name": "tuleap\plugin-myplugin",
