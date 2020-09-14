@@ -211,12 +211,6 @@ Link tests with requirements / user stories
 
     Tuleap administrators must install and activate ``TestPlan`` plugin beforehand.
 
-.. warning::
-
-    This feature is under heavy development, most the documentation covers what's available in 11.16.
-
-    The part related to coverage of backlog items is available starting 11.17.
-
 If your project also uses the Scrum backlog of Agile Dashboard service, a "Tests" tab will be added to milestones.
 
 This tab shows the test plan and campaigns of the milestone.
