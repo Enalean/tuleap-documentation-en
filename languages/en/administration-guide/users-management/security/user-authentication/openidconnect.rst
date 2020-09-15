@@ -59,6 +59,16 @@ OpenID Connect & LDAP
     Enabling both LDAP and OpenID Connect is supposed to be temporary for the authentication part. As stated in introduction
     for security and mental health reasons, there should be a single source of truth of user management.
 
+There are two configurations:
+
+* **OpenID Connect in addition to existing LDAP authentication**. No extra configuration is needed but users that wants to use
+  OpenID Connect provider will have to re-authenticate using their LDAP login (only the first time). This might be acceptable
+  for existing users but for the new comers it will be weird: OIDC login + ask to re-authenticate with LDAP before getting started.
+  This can be used for initial deployment but **should be considered as a temporary solution**.
+* **OpenID Connect as "only authentication method"**. A configuration is required (see below). There is no re-authentication
+  after OIDC provider has vetted the user, they will be automatically connected to Tuleap. You need to trust your OIDC
+  provider and configuration to enable this mode.
+
 In order to activate LDAP and OpenID Connect in parallel you must define a common field between the two authentication
 sources. It means that your OpenID Connect provider should expose on its ``userinfo`` route a field that matches the one
 configured as ``$sys_ldap_eduid`` in the LDAP configuration (will be user's ``ldap_id``).
