@@ -8,6 +8,16 @@ Tuleap 12.0
 
   Tuleap 12.0 is currently under development.
 
+Organization logo
+-----------------
+
+We changed the way the organization logo is displayed. The default logo
+is now in SVG format. We encourage you to read the
+:ref:`organization logo documentation <organization-logo>`
+to know if you must adjust you existing logo.
+
+TL;DR: your existing organization logo might appear broken.
+
 CVS modifications
 -----------------
 
@@ -20,7 +30,7 @@ If you are still using it, after upgrading to 12.0, you have to run the followin
     find /cvsroot/*/CVSROOT -name "loginfo" -exec sed -r -i "s#ALL \(/usr/lib/tuleap/bin/log_accum (.*)\)#ALL sudo -u codendiadm -E /usr/lib/tuleap/bin/log_accum \1#" {} \;
     tuleap queue-system-check
 
-The queue system check command will recreate the CVS locks. These CVS repositories will be usable once the system check is done.  
+The queue system check command will recreate the CVS locks. These CVS repositories will be usable once the system check is done.
 
 OpenID Connect
 --------------
