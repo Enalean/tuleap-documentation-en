@@ -20,7 +20,6 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
     entry: {
@@ -32,8 +31,10 @@ module.exports = {
     context: path.resolve(__dirname, "languages/en/_themes/tuleap_org/"),
     output: {
         path: path.resolve(__dirname, "languages/en/_themes/tuleap_org/static/assets"),
-        filename: "[name].js"
+        filename: "[name].js",
+        publicPath: "/_static/assets/",
     },
+    target: ["web", "es5"], // Set as es5 to play nice with IE11...
     module: {
         rules: [
             {
@@ -84,10 +85,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ["!css-assets/", "!css-assets/**"]
-        }),
-        new FixStyleOnlyEntriesPlugin({
-            extensions: ["scss", "css"],
-            silent: true
         }),
         new MiniCssExtractPlugin()
     ]
