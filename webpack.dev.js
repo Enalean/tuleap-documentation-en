@@ -18,7 +18,6 @@
  */
 
 const { merge } = require("webpack-merge");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = merge(require("./webpack.common.js"), {
     mode: "development",

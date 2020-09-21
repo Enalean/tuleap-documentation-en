@@ -18,14 +18,13 @@
  */
 
 const { merge } = require("webpack-merge");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = merge(require("./webpack.common.js"), {
     mode: "production",
     plugins: [
-        new OptimizeCssAssetsPlugin({
-            cssProcessor: require("cssnano"),
-            cssProcessorPluginOptions: {
+        new CssMinimizerPlugin({
+            minimizerOptions: {
                 preset: [
                     "default",
                     {
@@ -39,10 +38,14 @@ module.exports = merge(require("./webpack.common.js"), {
     ],
     stats: {
         all: false,
+        chunks: true,
         assets: true,
         errors: true,
         errorDetails: true,
         performance: true,
         timings: true
-    }
+    },
+    optimization: {
+        removeEmptyChunks: true,
+    },
 });
