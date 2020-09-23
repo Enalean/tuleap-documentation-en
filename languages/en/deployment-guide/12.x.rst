@@ -11,11 +11,11 @@ Tuleap 12.0
 LDAP and Active directory configuration
 ---------------------------------------
 
-We have added a new configuration variable in ``/etc/tuleap/plugins/ldap/etc/ldap.inc``:
+We have added a new optional configuration variable in ``/etc/tuleap/plugins/ldap/etc/ldap.inc``:
 
 ``$sys_ldap_server_common_name``: This value is used in Tuleap screens to refer to the server like ``Enter your $sys_ldap_server_common_name credentials``.
 It defines how people refer to the Active Directory server, most of the time it's "Active Directory" but it can be "LDAP" or "Enterprise Directory".
-
+When it is not defined, its default value will be "LDAP".
 
 Organization logo
 -----------------
