@@ -384,47 +384,8 @@ the branch specifier to ``**``.
 Configure Jenkins to Tuleap feedback
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is no Tuleap jenkins plugin yet so you will need to add the quick snippet of
-shell code at the end of your job to send the status of your build to Tuleap server.
-
-Before deploying the script you will need a special, secret token to ensure
-that it's your jenkins job that recorded the build status. To do so, go into repository
-settings > API token:
-
-.. figure:: ../../images/screenshots/pullrequest/ci-token.png
-      :align: center
-      :alt: CI token
-      :name: CI token
-
-Then deploy the snippet bellow after having tailored the ``Configure`` arguments
-to your context:
-
-.. sourcecode:: bash
-
-    #!/bin/bash
-    # Configure: Tuleap server URL
-    mytuleap="https://tuleap.example.com"
-    # Configure: ID of your target repository
-    target_repo_id=1
-    # Configure: paste the token generated in repository admin
-    token="356c8877fee88a6951a6081026702e2b3420c5cbccfa85195246873861023f68"
-
-    # Configure: add your own tests instead of 'make all'
-    # following is the test to send either "success" or "failure" to
-    # Tuleap server
-    if make all; then
-        status="success"
-    else
-        status="failure"
-    fi
-
-    # REST call, you shouldn't need to modify this
-    rev=$(git rev-parse HEAD)
-    curl "$mytuleap/api/git/$target_repo_id/statuses/$rev" \
-        -X POST \
-        -H 'Content-Type: application/json' \
-        -H 'Accept: application/json' \
-         --data-binary "{ \"state\": \"$status\", \"token\": \"$token\"}"
+The Jenkins to Tuleap feedback is possible thanks to `Tuleap API <https://plugins.jenkins.io/tuleap-api/>`_ plugin which can be installed via the Jenkins plugins manager.
+The configuration of this plugin is :ref:`here <pullrequest_jenkins_notification_configuration>`
 
 You might also to check out the community-maintained
 `CS-SI/tuleap-jenkins-lib <https://github.com/CS-SI/tuleap-jenkins-lib>`_ library
