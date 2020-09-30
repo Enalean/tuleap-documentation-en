@@ -53,6 +53,7 @@ Realtime server using NodeJS  Replaced          (To be announced)
 PHP 7.3                       End of support    Switch to PHP 7.4
 Internet Explorer 11          End of support    End-users should switch to Firefox or Chrome
 RHEL 8                        Start of support  (Optionally switch to RHEL 8)
+Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
 ============================= ================= =============================================
 
 ========= =============== =============================================
