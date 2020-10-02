@@ -27,12 +27,12 @@
 <nav class="doc-breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
   {% block breadcrumbs %}
     <span class="button small orange outline doc-show-navigation">
-      <i class="fa fa-long-arrow-right"></i> {{ _('Menu') }}
+      <i class="fas fa-long-arrow-alt-right"></i> {{ _('Menu') }}
     </span>
   
-    <a class="doc-breadcrumb-item" href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a> <i class="fa fa-angle-double-right doc-breadcrumb-separator"></i>
+    <a class="doc-breadcrumb-item" href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a> <i class="fas fa-angle-double-right doc-breadcrumb-separator"></i>
     {% for doc in parents %}
-      <a class="doc-breadcrumb-item" href="{{ doc.link|e }}">{{ doc.title }}</a> <i class="fa fa-angle-double-right doc-breadcrumb-separator"></i>
+      <a class="doc-breadcrumb-item" href="{{ doc.link|e }}">{{ doc.title }}</a> <i class="fas fa-angle-double-right doc-breadcrumb-separator"></i>
     {% endfor %}
     <span class="doc-breadcrumb-item">{{ title }}</span>
   {% endblock %}
@@ -41,9 +41,9 @@
       {% if pagename != "search" %}
         {% if display_github %}
           {% if check_meta and 'github_url' in meta %}
-            <a class="doc-breadcrumb-item" href="{{ meta['github_url'] }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
+            <a class="doc-breadcrumb-item" href="{{ meta['github_url'] }}" class="fab fa-github"> {{ _('Edit on GitHub') }}</a>
           {% else %}
-            <a class="doc-breadcrumb-item" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
+            <a class="doc-breadcrumb-item" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fab fa-github"> {{ _('Edit on GitHub') }}</a>
           {% endif %}
         {% endif %}
       {% endif %}

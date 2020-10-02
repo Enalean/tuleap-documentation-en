@@ -87,7 +87,9 @@ body {
             }
 
             > a .toctree-expand::before {
-                content: '\f147';
+                content: '\f146'; // minus-square
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 400;
             }
         }
 
@@ -177,8 +179,9 @@ body {
                 line-height: normal;
 
                 &::before {
-                    content: '\f196';
-                    font-family: FontAwesome;
+                    content: '\f0fe'; // plus-square
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 400;
                 }
             }
         }
@@ -275,7 +278,8 @@ body {
             position: relative;
             top: -3px;
             left: -6px;
-            font-family: FontAwesome;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             font-size: 14px;
             font-weight: 400;
             line-height: normal;
@@ -519,7 +523,7 @@ body {
     > .button {
         flex: 1 0 0;
 
-        &:last-child > .fa {
+        &:last-child > .fas {
             margin: 0 0 0 5px;
         }
     }

@@ -183,7 +183,7 @@ select {
         font-size: 13px;
         line-height: 18px;
 
-        > .fa {
+        > .fas, > .far, > .fab {
             margin: 0 3px 0 0;
         }
 
@@ -270,12 +270,12 @@ select {
     }
 
     &.bounce {
-        > .fa {
+        > .fas, > .far, > .fab {
             animation: 500ms ease-in-out bounce;
         }
     }
 
-    > .fa {
+    > .fas, > .far, > .fab {
         margin: 0 0 10px;
         font-size: 30px;
     }
@@ -362,6 +362,7 @@ select {
         content: '\f071';
         position: absolute;
         left: 0;
-        font-family: 'FontAwesome';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
     }
 }
