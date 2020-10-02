@@ -25,11 +25,8 @@ file, the default is automatically set for you.
 Deprecations and end of support
 ===============================
 
-Specific deprecations:
-
-* Internet Explorer 11 is no longer supported for newly developed features. Compatibility is not broken "on purpose" so
-  most of the application *should* work on IE11, sometimes in degraded mode. We strongly suggest to switch to any other
-  browser: Firefox, Edge, Chrome.
+**Internet Explorer will no longer be supported by Tuleap in January 2021** and is already no longer supported for 
+newly developed features. We strongly suggest to switch to any other supported browser: Firefox, Edge, Chrome or Chromium.
 
 Here is the list of what Tuleap will remove, stop or start supporting with the
 planned time periods.
@@ -42,19 +39,19 @@ tab file-based translations   Replaced by       Nothing
                               gettext
 ============================= ================= =============================================
 
-============================= ================= =============================================
+============================= ================= =======================================================================================================
 S2 2020                       Status            As platform administrator, what should I do ?
-============================= ================= =============================================
+============================= ================= =======================================================================================================
 RHEL 6                        End of support    Switch to RHEL 7
 PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
 Trackers v3                   Removed           Migrate to Trackers v5
 Subversion (SVN Core)         Removed           Switch to SVN Plugin
 Realtime server using NodeJS  Replaced          (To be announced)
 PHP 7.3                       End of support    Switch to PHP 7.4
-Internet Explorer 11          End of support    End-users should switch to Firefox or Chrome
+Internet Explorer             End of support    End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium by the end of the year
 RHEL 8                        Start of support  (Optionally switch to RHEL 8)
 Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
-============================= ================= =============================================
+============================= ================= =======================================================================================================
 
 ========= =============== =============================================
 2021      Status          As platform administrator, what should I do ?
