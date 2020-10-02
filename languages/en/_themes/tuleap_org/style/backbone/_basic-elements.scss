@@ -196,7 +196,8 @@ li {
         top: -3px;
         margin: 0 8px 0 0;
         color: $orange;
-        font-family: 'FontAwesome';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
         font-size: 8px;
     }
 
@@ -204,7 +205,9 @@ li {
         margin: 0 0 30px 30px;
 
         > li::before {
-            content: '\f10c';
+            content: '\f111';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 400;
         }
     }
 }
@@ -245,7 +248,7 @@ a.button,
     white-space: nowrap;
     cursor: pointer;
 
-    > .fa {
+    > .fas, > .far, > .fab {
         margin: 0 5px 0 0;
     }
 

@@ -327,7 +327,7 @@ $table-border-radius: 6px;
                 color: $tuleap-enterprise;
             }
 
-            > .fa {
+            > .fas, > .far, > .fab {
                 margin: 0 0 0 5px;
             }
         }
@@ -533,8 +533,8 @@ $table-border-radius: 6px;
                 > a {
                     color: $tuleap-enterprise;
 
-                    > .fa {
-                        font-size: 14px;
+                    > .fas, > .far, > .fab {
+                        font-size: 16px;
                         margin: 0 0 0 5px;
                     }
                 }
@@ -546,8 +546,8 @@ $table-border-radius: 6px;
                 > a {
                     color: $mytuleap;
 
-                    > .fa {
-                        font-size: 14px;
+                    > .fas, > .far, > .fab {
+                        font-size: 16px;
                         margin: 0 0 0 5px;
                     }
                 }
