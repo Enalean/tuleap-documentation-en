@@ -16,7 +16,7 @@
         "sass-loader": "^10.0.2",
         "webpack": "^5.0.0-rc.3",
         "webpack-cli": "^3.3.12",
-        "webpack-merge": "^5.1.4"
+        "webpack-merge": "^5.2.0"
     },
     "scripts": {
         "build": "webpack --config webpack.prod.js",
