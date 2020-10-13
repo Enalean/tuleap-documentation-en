@@ -273,7 +273,7 @@ body {
         }
 
         &:hover .headerlink::after {
-            content: '\f0c1';
+            content: '\f0c1'; // fa-link
             visibility: visible;
             position: relative;
             top: -3px;
@@ -281,7 +281,6 @@ body {
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             font-size: 14px;
-            font-weight: 400;
             line-height: normal;
         }
     }
