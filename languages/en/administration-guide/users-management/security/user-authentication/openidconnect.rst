@@ -16,7 +16,7 @@ The OpenID Connect client plugin allows users to authenticate with an OpenID Con
     * Git over https access (they should use :ref:`Access Keys <access-keys>`.)
     * Subversion access (they should use :ref:`SVN Tokens <svn-plugin-use-token>`.)
 
-    Access to **SOAP API is no longer possible** for users that switch to OpenID Connect.
+    Access to **SOAP API & Webdav is no longer possible** for users that switch to OpenID Connect.
 
 Generic Provider
 ****************
