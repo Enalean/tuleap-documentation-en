@@ -21,6 +21,41 @@ const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const { Compilation } = require('webpack');
+
+class MiniCssExtractPluginCleanupJSEmptyChunk {
+    apply(compiler) {
+        compiler.hooks.compilation.tap(this.constructor.name, compilation => {
+            compilation.hooks.processAssets.tapAsync(
+                {
+                    name: this.constructor.name,
+                    stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_COUNT
+                },
+                (assets, callback) => {
+                    compilation.entrypoints.forEach((entrypoint) => {
+                        entrypoint.chunks.forEach((chunk) => {
+                            compilation.chunkGraph.getChunkModules(chunk).forEach((module) => {
+                                if (module.constructor.name !== "NormalModule" || module.originalSource().source() !== "// extracted by mini-css-extract-plugin\nexport {};") {
+                                    return;
+                                }
+
+                                chunk.files.forEach((file) => {
+                                    if (/\.js$/.test(file)) {
+                                        delete assets[file];
+                                        chunk.files.delete(file);
+                                    }
+                                });
+                            });
+                        });
+                    });
+
+                    callback();
+                }
+            );
+        });
+    }
+}
+
 module.exports = {
     entry: {
         "scroll": "./js/scroll.js",
@@ -86,6 +121,7 @@ module.exports = {
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ["!css-assets/", "!css-assets/**"]
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPluginCleanupJSEmptyChunk(),
+        new MiniCssExtractPlugin(),
     ]
 };
