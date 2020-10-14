@@ -1,12 +1,15 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.1
+Tuleap 12.2
 ===========
 
 .. NOTE::
 
-  Tuleap 12.1 is currently under development.
+  Tuleap 12.2 is currently under development.
+
+Tuleap 12.1
+===========
 
 OpenID Connect and Subversion
 -----------------------------
