@@ -3,7 +3,7 @@
     "private": true,
     "license": "GPL-2.0-or-later",
     "devDependencies": {
-        "@babel/core": "^7.12.1",
+        "@babel/core": "^7.12.3",
         "@babel/preset-env": "^7.12.1",
         "@fortawesome/fontawesome-free": "^5.15.1",
         "babel-loader": "^8.1.0",
