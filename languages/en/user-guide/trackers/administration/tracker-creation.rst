@@ -98,6 +98,8 @@ In this part, you can choose to use :
 
   This does not copy the artifacts of the original tracker but only the configuration settings.
 
+.. _tracker-import-from-jira:
+
 Create from Jira issue
 ~~~~~~~~~~~~~~~~~~~~~~~
 
