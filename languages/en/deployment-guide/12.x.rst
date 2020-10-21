@@ -11,8 +11,8 @@ Tuleap 12.2
 Tuleap 12.1
 ===========
 
-OpenID Connect and Subversion
------------------------------
+Mandatory changes for Subversion (core and plugin)
+--------------------------------------------------
 
 This is the continuation of the work initiated in Tuleap 12.0: accounts connected to an OpenID Connect provider must
 use :ref:`SVN Tokens <svn-plugin-use-token>` to access SVN repositories.
