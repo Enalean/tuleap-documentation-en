@@ -43,7 +43,6 @@ Advanced topics
    :maxdepth: 1
 
    developer-guide/release
-   developer-guide/trang
    developer-guide/ldap
    developer-guide/realtime
    developer-guide/trackers
