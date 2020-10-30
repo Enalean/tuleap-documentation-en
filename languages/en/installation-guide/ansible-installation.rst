@@ -21,13 +21,7 @@ Then you will need on your own computer or on a server an ansible client. See in
 Ansible Role
 ------------
 
-Install the Tuleap role for ansible with ansible galaxy:
-
-::
-
-    $ ansible-galaxy install Enalean.Tuleap
-
-You can find the description of the role here: https://galaxy.ansible.com/Enalean/Tuleap/
+Get the ansible role from github: https://github.com/Enalean/ansible-tuleap
 
 
 Installation
@@ -39,27 +33,22 @@ Create an inventory referencing your tuleap servers and describing the tuleap_do
 
 ::
 
-    [tuleap-test]
-    mytestserver1 tuleap_domain=tuleap-test1.example.com
-    mytestserver2 tuleap_domain=tuleap-test2.example.com
-
-    [tuleap-prod]
-    tuleap.example.com tuleap_domain=tuleap.example.com
+    [tuleap-serv]
+    tuleap.example.com tuleap_fqdn=tuleap.example.com
 
 
 Then you can create your playbook:
 
 ::
 
-    - hosts: tuleap-test
-      remote_user: root
+    - hosts: tuleap-serv
+      become: yes
       roles:
-        - { role: Enalean.Tuleap, tuleap_version=master }
-
-    - hosts: tuleap-prod
-      remote_user: root
-      roles:
-        - { role: Enalean.Tuleap, tuleap_version=stable }
+        - role: ansible-tuleap
+      vars:
+        tuleap_admin_email:      admin@tuleap.example.com
+        tuleap_packages_state:   latest
+        tuleap_generate_le_cert: True
 
 Execute your playbook to deploy your servers:
 
