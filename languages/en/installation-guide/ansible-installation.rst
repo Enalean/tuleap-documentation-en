@@ -21,7 +21,7 @@ Then you will need on your own computer or on a server an ansible client. See in
 Ansible Role
 ------------
 
-Get the ansible role from github: https://github.com/Enalean/ansible-tuleap
+Get the Ansible role from GitHub: https://github.com/Enalean/ansible-tuleap
 
 
 Installation
