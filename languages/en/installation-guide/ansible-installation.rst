@@ -44,7 +44,8 @@ Then you can create your playbook:
     - hosts: tuleap-serv
       become: yes
       roles:
-        - role: ansible-tuleap
+# On the next line, replace the path by the path were you retrieved the role and uncomment it
+#        - role: /path/to/ansible-tuleap/role
       vars:
         tuleap_admin_email:      admin@tuleap.example.com
         tuleap_packages_state:   latest
