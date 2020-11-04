@@ -18,6 +18,3 @@ The exported structure file can be used when you create a new tracker.
 
     This does not copy the artifacts of the tracker but only the
     structure (general settings, fields, values, workflow, semantic, canned responses and permissions).
-
-.. |image0| image:: ../images/icons/artifact-arrow.png
-.. |image1| image:: ../images/icons/sum--plus.png
