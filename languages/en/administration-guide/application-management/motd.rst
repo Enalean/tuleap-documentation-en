@@ -1,9 +1,9 @@
-MOTD
-----
+.. _platform-banner:
 
-You can define a message of the day that will appear at the top of the page of each user, connected or not to the platform.
+Platform banner
+===============
 
-The message should be defined, according to the language, in:
+You can define a message (formerly known as MOTD) that will appear at the top of the page of
+each user, connected or not to the platform.
 
-* /etc/tuleap/site-content/en_US/others/motd.txt
-* /etc/tuleap/site-content/fr_FR/others/motd.txt
+The message can be defined by site administrators in admin » global configuration » platform banner.
