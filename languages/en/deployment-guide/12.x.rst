@@ -8,6 +8,18 @@ Tuleap 12.2
 
   Tuleap 12.2 is currently under development.
 
+MOTD becomes Platform banner
+----------------------------
+
+When you had to display a message to all users, you were used to edit
+file ``/etc/tuleap/site-content/en_US/others/motd.txt``. Now you have to use
+the :ref:`Web interface <platform-banner>` instead
+(former files are not taken into account anymore,
+you can delete them). This will bring a more integrated experience
+than the old way. See `story #14670 <https://tuleap.net/plugins/tracker/?aid=14670>`_
+for more details.
+
+
 Tuleap 12.1
 ===========
 
