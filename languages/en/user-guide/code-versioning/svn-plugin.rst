@@ -1,10 +1,11 @@
 
 .. |SYSPRODUCTNAMES| replace:: *Tuleap*
 
+.. _version-control-with-subversion:
 .. _version-control-with-multiple-svn-repo:
 
-Subversion (multi repo)
-=======================
+Subversion
+==========
 
 The Subversion Browsing Interface
 ---------------------------------

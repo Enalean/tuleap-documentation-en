@@ -19,6 +19,38 @@ you can delete them). This will bring a more integrated experience
 than the old way. See `story #14670 <https://tuleap.net/plugins/tracker/?aid=14670>`_
 for more details.
 
+Subversion Core active deprecation
+----------------------------------
+
+The migration from Subversion Core (legacy `Subversion` service) to `SVN` plugin intensify with banner display to encourage
+the switch to plugin. Subversion administrator can initiate the migration on there own with the web UI. System administrator
+still have access to the CLI tool ``/usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/plugins/svn/bin/migrate_to_plugin.php``
+
+The migration is done "In Place" that is to say that data won't be touched and URLs remains the same.
+Settings are migrated (iso-functional) but the new hooks are deployed. Theoretically nothing should change for end user
+(except email format).
+
+The documentation of Subversion Core has been removed. The Subversion Core features that have no equivalent in plugin
+are disabled (SVN Widgets, SVN Query & My SVN Commits). Data remains, in case of big trouble there is a (temporary) way
+back (contact the dev team).
+
+In case of trouble the migration can be reverted with administrative actions:
+
+First, on database side:
+
+.. sourcecode:: sql
+
+        DELETE FROM plugin_svn_repositories WHERE project_id = $PROJECT_ID and is_core = 1;
+
+The, in the repository on file system (``/var/lib/tuleap/svnroot/$PROJECT_NAME/hooks``) as ``root``:
+
+.. sourcecode:: shell
+
+        /bin/rm -f post-commit post-revprop-change pre-commit pre-revprop-change
+        tuleap queue-system-check
+        tuleap process-system-events default
+
+If you have to revert, please contact the dev team to explain the issue
 
 Tuleap 12.1
 ===========
