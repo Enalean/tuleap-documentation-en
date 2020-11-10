@@ -40,9 +40,9 @@ First, on database side:
 
 .. sourcecode:: sql
 
-        DELETE FROM plugin_svn_repositories WHERE project_id = $PROJECT_ID and is_core = 1;
+        DELETE FROM plugin_svn_repositories WHERE project_id = PROJECT_ID and is_core = 1;
 
-The, in the repository on file system (``/var/lib/tuleap/svnroot/$PROJECT_NAME/hooks``) as ``root``:
+Then, in the repository on file system (``/var/lib/tuleap/svnroot/PROJECT_NAME/hooks``) as ``root``:
 
 .. sourcecode:: shell
 
