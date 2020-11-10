@@ -6,5 +6,4 @@ Code versioning
 
    code-versioning/git
    code-versioning/svn-plugin
-   code-versioning/svn
    code-versioning/cvs
