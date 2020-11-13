@@ -1,12 +1,16 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.2
+Tuleap 12.3
 ===========
 
 .. NOTE::
 
-  Tuleap 12.2 is currently under development.
+  Tuleap 12.3 is currently under development.
+
+
+Tuleap 12.2
+===========
 
 MOTD becomes Platform banner
 ----------------------------
