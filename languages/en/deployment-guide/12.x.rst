@@ -8,6 +8,13 @@ Tuleap 12.3
 
   Tuleap 12.3 is currently under development.
 
+End of support of CentOS/RHEL 6
+-------------------------------
+
+CentOS/RHEL 6 is no more supported (security fix included).
+Tuleap packages for this version are not available anymore.
+Instances must be migrated to CentOS/RHEL 7.
+
 
 Tuleap 12.2
 ===========

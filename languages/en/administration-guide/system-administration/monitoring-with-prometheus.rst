@@ -62,20 +62,6 @@ The following example uses COPR repository
     $> tuleap config-set prometheus_node_exporter http://127.0.0.1:9100/metrics
 
 
-.. sourcecode:: bash
-
-    # On RHEL/CentOS 6
-    $> wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
-    $> tar xvfz node_exporter-*.*-amd64.tar.gz
-    $> sudo cp node_exporter-*.*-amd64/node_exporter /usr/sbin/
-
-    # Either run node_exporter manually (nohup node_exporter &) or configure supervisord if you want node_exporter to run
-    # at server reboot
-    # $> nohup node_exporter &
-
-    $> tuleap config-set prometheus_node_exporter http://127.0.0.1:9100/metrics
-
-
 Then you will see a bunch of data like ``node_cpu_seconds_total`` on ``/metrics`` end-point.
 
 Configuration of Prometheus

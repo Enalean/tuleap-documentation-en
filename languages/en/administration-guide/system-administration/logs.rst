@@ -111,4 +111,4 @@ To activate it run:
 
     $> tuleap config-set sys_logger syslog
 
-You will find the logs with ``journalctl -t tuleap`` on RHEL7+ or ``/var/log/messages`` on RHEL6.
+You will find the logs with ``journalctl -t tuleap``.

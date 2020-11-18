@@ -163,7 +163,7 @@ Ensure you really need it before going further.
  2. Sign the package with the script `helpers/sign-packages.sh` provided in the Git repository `sign-packages-repositories <https://tuleap.net/plugins/git/tuleap/tools/sign-packages-repositories>`_
  3. Upload the signed package to ci.tuleap.org in `/var/lib/jenkins/pub/tuleap/upstream/rhel/VERSION/PHPBASE` where:
 
-    - VERSION is the major release of the OS (either 6 or 7)
-    - PHPBASE either common for RHEL6 or noarch for RHEL7
+    - VERSION is the major release of the OS (at the moment it can only be 7)
+    - PHPBASE (noarch for RHEL7)
 
  4. The package will be published with the next automated build of Tuleap

@@ -24,15 +24,6 @@ On CentOS/RHEL 7:
     $ systemctl stop tuleap
     $ su - gitolite -c "gitolite writable @all off 'Backup in progress'"
 
-On CentOS/RHEL 6:
-
-.. code-block:: bash
-
-    $ service nginx stop
-    $ service httpd stop
-    $ service tuleap stop
-    $ su - gitolite -c "gitolite writable @all off 'Backup in progress'"
-
 Don't forget to restart services once the backup is done.
 
 Database backup

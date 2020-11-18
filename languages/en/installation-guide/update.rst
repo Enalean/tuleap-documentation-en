@@ -51,35 +51,6 @@ On RHEL/CentOS 7, run as root:
     systemctl start nginx
     systemctl start tuleap
 
-On RHEL/CentOS 6, run as root:
-
-::
-
-    # Stop service
-    service tuleap stop
-    service nginx stop
-    service httpd stop
-
-    # Upgrade packages
-    yum update
-    # or to upgrade only Tuleap packages (/!\ you might miss security fixes in Tuleap dependencies):
-    # yum update tuleap\*
-
-    # Apply data upgrades
-    /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
-
-    # Re-generate nginx configuration
-    /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
-
-    # Deploy site configurations
-    tuleap-cfg site-deploy
-
-    # Restart service
-    service httpd start
-    service nginx start
-    service tuleap start
-
-
 Do not forget to execute the forgeupgrade command, no warnings should be displayed
 in the site administration about it (as Site Admin go in Admin > Plugin Administration).
 
