@@ -135,39 +135,39 @@ Here is the architecture schema of the main components
 The architecture is quite flexible in term of "what is installed where" and is pluggable easily with an existing
 regular Tuleap server ("all in one"). However there 2 strong requirements:
 
-* The subversion data path ``/var/lib/tuleap/svn_plugin`` must be shared between the 2 servers (el6 and el7).
+* The subversion data path ``/var/lib/tuleap/svn_plugin`` must be shared between the 2 servers (*Main* and *SVN* servers).
 * The tuleap configuration path ``/etc/tuleap`` must be share between the servers as well.
 
 Most of the time it means that those 2 directories must be on an NFS share mounted on both servers. The setup of NFS
 and mounting is outside the scope of this documentation.
 
-The subversion part that is installed on a new server is designed to run on el7 compatible server (either Centos or RHEL).
-We recommend to run the latest version (7.3 at time of writing). We will refer to it with el7. The regular Tuleap server
-running on centos6 or rhel6 will referenced as el6.
+The subversion part that is installed on a new server is designed to run on el7 compatible server (either CentOS or RHEL).
+We recommend to run the latest version (7.9 at time of writing). We will refer to it with *Tuleap SVN Server*. The regular Tuleap server
+running will be referenced as *Main Tuleap Server*.
 
-Pack everything on el7 setup
-----------------------------
+Pack all new components on one server
+-------------------------------------
 
-While the architecture is designed to be used with several separted servers (one for regular Tuleap, one for Tuleap SVN,
-one for redis, etc). It's quite common to only have one server for all "new components" (svn, redis, reverse proxy).
+While the architecture is designed to be used with several separated servers (one for regular Tuleap, one for Tuleap SVN,
+one for Redis, etc). It's quite common to only have one server for all "new components" (svn, Redis, reverse proxy).
 
 This section will describe how to install this setup. It can be summarized by this diagram:
 
-.. figure:: ../../images/diagrams/DistributedTuleapAllOnEl7.png
+.. figure:: ../../images/diagrams/DistributedTuleapAllComponentsPackedTogether.png
     :align: center
-    :alt: Distributed Tuleap "all on el7" Architecture
-    :name: Distributed Tuleap "all on el7" Architecture
+    :alt: Distributed Tuleap "all together" Architecture
+    :name: Distributed Tuleap "all together" Architecture
 
 .. attention::
 
    With this setup for existing platforms there are three main consequences:
 
    * the DNS entry for your tuleap will change as the IP address for "tuleap" service will now be the IP address of the
-     el7 server. This must be taken into account for the switch (for instance lower TTL a few weeks before the change to
+     *Tuleap SVN Server*. This must be taken into account for the switch (for instance lower TTL a few weeks before the change to
      avoid lost users).
    * if you platform enabled "git over ssh" (or any other ssh based access) you will have to setup an ssh reverse proxy
      as well (explained bellow) and that means that your administration access (ssh) to the server must be updated to
-     run on another port (eg. 2222) otherwise you won't be able to ssh the server (you will be redirected to el6 server).
+     run on another port (eg. 2222) otherwise you won't be able to ssh the server (you will be redirected to the *Main Tuleap Server*).
 
 Requirements
 ''''''''''''
@@ -175,8 +175,7 @@ Here are the requirements to install Distributed Tuleap.
 
 Distributions
 ~~~~~~~~~~~~~
-  * RHEL6: **RedHat 6.x/CentOS 6.x** for Tuleap regular
-  * RHEL7: **RedHat 7.x/CentOS 7.x** for Tuleap SVN
+All servers are expected to run CentOS/RedHat 7.
 
 Services
 ~~~~~~~~
@@ -188,29 +187,31 @@ Services
 On the MySQL server
 '''''''''''''''''''
 
-Add new privileges to **dbauthuser** for RHEL7 to access the database
+Add new privileges to **dbauthuser** so that the *Tuleap SVN Server* can access the database
 
 .. code-block:: sql
 
-   mysql> GRANT SELECT ON tuleap.user to 'dbauthuser'@'${RHEL7_IP}' identified by '${DBAUTHUSER_PASSWORD}';
-   mysql> GRANT SELECT ON tuleap.user_group to 'dbauthuser'@'${RHEL7_IP}';
-   mysql> GRANT SELECT ON tuleap.groups to 'dbauthuser'@'${RHEL7_IP}';
-   mysql> GRANT SELECT ON tuleap.svn_token to 'dbauthuser'@'${RHEL7_IP}';
-   mysql> GRANT SELECT ON tuleap.plugin_ldap_user 'dbauthuser'@'${RHEL7_IP}';
+   mysql> GRANT SELECT ON tuleap.user TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}' identified by '${DBAUTHUSER_PASSWORD}';
+   mysql> GRANT SELECT ON tuleap.user_group TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
+   mysql> GRANT SELECT ON tuleap.groups TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
+   mysql> GRANT SELECT ON tuleap.svn_token TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
+   mysql> GRANT SELECT ON tuleap.plugin_ldap_user TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
+   mysql> GRANT CREATE,SELECT ON plugin_openidconnectclient_user_mapping TO 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
+   mysql> REVOKE CREATE ON plugin_openidconnectclient_user_mapping FROM 'dbauthuser'@'${TULEAP_SVN_SERVER_IP}';
    mysql> FLUSH PRIVILEGES;
 
-On the el6 server
-'''''''''''''''''
+On the *Main Tuleap Server* server
+''''''''''''''''''''''''''''''''''
 
-Gather data for el7 setup
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Gather data for *SVN Server* setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, you must have the same tuleap packages installed on your RHEL6 and RHEL7
-servers. You must retrieve the packages list from your Tuleap RHEL6 server
+First, you must have the same tuleap packages installed on your *Main* and *SVN*
+servers. You must retrieve the packages list from your *Main Tuleap* server
 
 .. code-block:: bash
 
-   $ sudo rpm -aq --qf "%{NAME}\n" tuleap-plugin-\* > rhel6_tuleap_packages.lst
+   $ sudo rpm -aq --qf "%{NAME}\n" tuleap-plugin-\* > tuleap_packages.lst
 
 You will also need the ids of ``codendiadm`` user
 
@@ -226,13 +227,13 @@ That's very important because of the shared NFS mount between the 2 servers
 Configure for reverse-proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Remember**: the "old" el6 will no longer be the entry point for all requests:
+**Remember**: the "old" *Main Tuleap Server* will no longer be the entry point for all requests:
 
-* Edit your firewall configuration so only el7 server can access :80
-* Edit ``/etc/tuleap/conf/local.inc`` and add ``$sys_trusted_proxies = '${TULEAP_RHEL7_IP}';``
+* Edit your firewall configuration so only the *Tuleap SVN Server* can access :80
+* Edit ``/etc/tuleap/conf/local.inc`` and add ``$sys_trusted_proxies = '${TULEAP_SVN_SERVER_IP}';``
 
-On the el7 server
-'''''''''''''''''
+On the *Tuleap SVN Server*
+''''''''''''''''''''''''''
 
 Prepare the server
 ~~~~~~~~~~~~~~~~~~
@@ -254,16 +255,16 @@ Add the EPEL and the SCL repository
 
 For RHEL checkout `documentation about RHSCL <https://access.redhat.com/documentation/en-us/red_hat_software_collections/2/html-single/2.3_release_notes/index#sect-Installation-Subscribe>`_.
 
-Create ``codendiadm`` user with the same ids than on el6 (UID & GID corresponds to the value you got on el6):
+Create ``codendiadm`` user with the same ids than on the *Main Tuleap Server* (UID & GID corresponds to the value you got on the *Main Tuleap Server*):
 
 .. code-block:: bash
 
    $ sudo groupadd -g GID codendiadm
    $ sudo useradd -g codendiadm -M -d /var/lib/tuleap -u UID codendiadm
 
-Mount ``/etc/tuleap`` and ``/var/lib/tuleap/svn_plugin`` directories on el7.
+Mount ``/etc/tuleap`` and ``/var/lib/tuleap/svn_plugin`` directories on the *Tuleap SVN Server*.
 
-If you configured properly, when you run ``ls -l /etc/tuleap/`` on el7 and el6 server you should see
+If you configured properly, when you run ``ls -l /etc/tuleap/`` on the *Tuleap SVN Server* and *Main Tuleap Server* you should see
 
 .. code-block:: bash
 
@@ -273,7 +274,7 @@ If you configured properly, when you run ``ls -l /etc/tuleap/`` on el7 and el6 s
     drwxr-xr-x  2 codendiadm codendiadm 4096 Nov 18 14:41 forgeupgrade
     ...
 
-If it's wrongly configured you will have sth like:
+If it's wrongly configured you will have something like:
 
 .. code-block:: bash
 
@@ -286,19 +287,19 @@ That would mean that the codendiadm user doesn't have the correct IDs.
 .. attention::
 
     If you provide ssh access to your end users (for git over ssh, project web pages or ftp over ssh, ...) you
-    need to update the ssh port you will you to connect to el7 server:
+    need to update the ssh port you will you to connect to the *Tuleap SVN Server*:
 
-    **WARNING**: it's a dangerous operation, be careful to not close you shell until you are 100% sure everything works
+    **WARNING**: it's a dangerous operation, be careful to not close your shell until you are 100% sure everything works
     or you might lock yourself out of the server
 
 
     * Edit ``/etc/ssh/sshd_config`` and set ``Port 2222`` (or any other port that you want to use).
     * Update your firewall rules to open ``2222`` for tcp connexions
     * Restart sshd server
-    * With another terminal try to ssh the el7 server on port ``2222``
+    * With another terminal try to ssh the *Tuleap SVN Server* on port ``2222``
     * If it works, keep the configuration, otherwise revert the ``sshd_config``
 
-When everything is OK (esp. the ssh part), update the DNS entry for your tuleap server to point to RHEL7 server IP address.
+When everything is OK (esp. the ssh part), update the DNS entry for your tuleap server to point to *Tuleap SVN Server* IP address.
 
 Install Redis
 ~~~~~~~~~~~~~
@@ -328,7 +329,7 @@ Start the redis server & enable automatically
 
 Firewall configuration:
 
-* Ensure EL6 server can access port 6379/tcp
+* Ensure the *Main Tuleap Server* can access port 6379/tcp
 
 Install Tuleap packages
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -349,14 +350,14 @@ Install the packages list
 
 .. code-block:: bash
 
-   $ sudo yum install $(cat rhel6_tuleap_packages.lst) \
+   $ sudo yum install $(cat tuleap_packages.lst) \
                       nginx \
                       tuleap-plugin-svn
 
 .. note::
 
-  If you are using subversion from `Wandisco <https://www.wandisco.com/resource-library>`_ to run newer versions,
-  make sure to install the same version on both el6 and el7 servers.
+  If you are using subversion from `WANdisco <https://www.wandisco.com/resource-library>`_ to run newer versions,
+  make sure to install the same version on both the *Main Tuleap Server* and the *Tuleap SVN server*.
 
 Configure Nginx
 ~~~~~~~~~~~~~~~
@@ -450,7 +451,7 @@ Deploy ``/etc/nginx/conf.d/http/tuleap.conf``:
     # -- Cache and compress
 
     upstream backend-web {
-        server ${TULEAP_RHEL6_IP}:80;
+        server ${TULEAP_MAIN_SERVER_IP}:80;
     }
 
     upstream backend-httpd {
@@ -548,7 +549,7 @@ Deploy ``/etc/nginx/conf.d/tcp/ssh.conf``:
 .. sourcecode:: nginx
 
     upstream tuleap-ssh {
-        server ${TULEAP_RHEL6_IP}:22 max_fails=2 fail_timeout=5s;
+        server ${TULEAP_MAIN_SERVER_IP}:22 max_fails=2 fail_timeout=5s;
     }
 
     server {
@@ -566,7 +567,7 @@ You can start Nginx service
    $ sudo systemctl enable nginx
 
 
-Finalize php configuration
+Finalize PHP configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Define the name of the handler and the path session in ``/etc/opt/remi/php73/php-fpm.d/tuleap.conf``
@@ -576,7 +577,7 @@ Define the name of the handler and the path session in ``/etc/opt/remi/php73/php
    ...
    php_value[session.save_handler] = redis
    ...
-   php_value[session.save_path] = "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
+   php_value[session.save_path] = "tcp://${TULEAP_SVN_SERVER_IP}:6379?auth=${REDIS_PASSWORD}"
    ...
 
 Mask RHEL php-fpm unit to avoid confusion with the tuleap-php-fpm unit
@@ -610,29 +611,13 @@ Tuleap service is an umbrella unit and start the following services
    tuleap-svn-log-parser.service enabled
    tuleap-svn-updater.service    enabled
 
-Finalize configuration on el6 server
-''''''''''''''''''''''''''''''''''''
-
-Edit ``/etc/httpd/conf.d/php.conf`` and update:
-
-.. code-block:: apacheconf
-
-    php_value session.save_handler "redis"
-    php_value session.save_path "tcp://${TULEAP_RHEL7_IP}:6379?auth=${REDIS_PASSWORD}"
-
-and restart apache
-
-.. code-block:: bash
-
-   $ service httpd restart
-
 Test your new server
 --------------------
 
-You should be able to browse seamlessly your new server. All pages will be served by el6 server except browsing of svn
+You should be able to browse seamlessly your new server. All pages will be served by the *Main Tuleap Server* except browsing of svn
 plugin and subversion operations made on svn plugin.
 
-The various logs on el7 server:
+The various logs on the *Tuleap SVN Server*:
 
 * svn operations (svn ls, etc): ``/var/log/httpd/``
 * svn browsing (viewvc + settings): ``/var/opt/remi/php73/log/php-fpm``
