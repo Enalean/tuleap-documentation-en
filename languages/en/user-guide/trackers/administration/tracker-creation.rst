@@ -8,7 +8,7 @@ it must first be created. Tracker creation can be accessed from the
 "Create a New Tracker" menu item that is available in the tracker
 service page.
 
-.. figure:: ../../../images/screenshots/tracker/tracker-creation-link.png
+.. figure:: ../../../images/screenshots/tracker/create-new-tracker-en.png
    :align: center
    :alt: Tracker creation page access
    :name: Tracker creation access page
