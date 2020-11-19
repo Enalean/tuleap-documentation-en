@@ -5,7 +5,7 @@ To submit a new artifact to a given project you must first access the
 appropriate tracker of that project as indicated in the section above
 (see :ref:`entering-service`).
 
-.. figure:: ../../../images/screenshots/tracker/sc_trackerbrowsing.png
+.. figure:: ../../../images/screenshots/tracker/report-no-search-2-en.png
    :align: center
    :alt: A Tracker browsing screen
    :name: A Tracker browsing screen
@@ -16,7 +16,7 @@ let's click on the "Submit new artifact" item (or whatever the artifact
 name is) from the Tracker Menu Bar in the upper part of the welcome
 screen (see `A Tracker browsing screen`_).
 
-.. figure:: ../../../images/screenshots/tracker/sc_artifactsubmission_new.png
+.. figure:: ../../../images/screenshots/tracker/submit-new-artifact-en.png
    :align: center
    :alt: A sample artifact submission screen (the artifact is of type "bug" here)
    :name: A sample artifact submission screen
