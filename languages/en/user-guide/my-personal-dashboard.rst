@@ -13,7 +13,7 @@ A sample user dashboard is available below. The page is split in several areas:
    You can also add widgets to the current dashboard.
 -  The various information presented by widgets.
 
-.. figure:: ../images/screenshots/user-dashboards.png
+.. figure:: ../images/screenshots/mydashboard_en.png
    :align: center
    :alt: An example of user dashboard
    :name: An example of user dashboard
