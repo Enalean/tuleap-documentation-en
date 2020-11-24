@@ -19,8 +19,6 @@ Features:
 
 The setup and configuration of the plugin (ie. plugin is named 'proftpd') is available in plugin's readme.
 
-Please note that this feature requires RHEL 6 as base OS.
-
 .. figure:: ../../images/screenshots/sftp_browse.png
    	   :align: center
   	   :alt: SFTP browser example

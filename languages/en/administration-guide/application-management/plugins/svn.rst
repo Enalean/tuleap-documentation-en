@@ -45,4 +45,3 @@ You can use the following instructions to install Subversion 1.9:
 
  1. Install WANdisco repository on your server
  2. Upgrade Subversion with ``yum upgrade subversion``
- 3. **Only on RHEL/CentOS 6**, install Python 2.7 with the required dependency: ``yum install python27-python python27-subversion-python python27-MySQL-python``
