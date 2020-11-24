@@ -68,7 +68,7 @@ You can also modify the behaviour of Tuleap with the following environment varia
   * ``no-verify``: connection is encrypted but host certificate is not checked. Your traffic cannot be passively inspected but you are vulnerable to Man In The Middle attacks.
   * ``verify-ca``: connection is encrypted and host certificate is verified. Your db server must use a public trusted certificate. **WARNING**: perl & python code (used for subversion) cannot enforce this, those parts will do encryption without certificate verification.
 
-* ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://docs.microsoft.com/en-us/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal#connect-to-azure-database-for-mysql-server-using-mysql-command-line-client>`_)
+* ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://docs.microsoft.com/en-us/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal#connect-to-the-server-by-using-mysqlexe>`_)
 * ``TULEAP_FPM_SESSION_MODE``: you can set it to ``redis`` so php sessions will be stored in a `Redis <https://redis.io>`_ K/V store. This also activate usage of redis for Tuleap (background events, etc).
 * ``TULEAP_REDIS_SERVER``: needed if you set ``redis`` for ``TULEAP_FPM_SESSION_MODE``
 * ``TULEAP_REDIS_PORT``: needed if redis is listening on port that is not ``6379`` (the default)

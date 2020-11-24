@@ -28,7 +28,7 @@ yourself out of Jenkins).
     If you cannot have valid certificates:
 
     - `Jenkins must trust Tuleap server certificate <https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate>`_
-    - `Jenkins must run behind a reverse proxy that does TLS termination <https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy>`_
+    - `Jenkins must run behind a reverse proxy that does TLS termination <https://www.jenkins.io/doc/book/system-administration/reverse-proxy-configuration-nginx/>`_
     - :ref:`Tuleap must trust Jenkins server certificate <admin_howto_add_certicate>`
 
 Plugins installation
