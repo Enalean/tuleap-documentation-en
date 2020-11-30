@@ -67,7 +67,8 @@ Then you will see a bunch of data like ``node_cpu_seconds_total`` on ``/metrics`
 Configuration of Prometheus
 ---------------------------
 
-The following snippet should be added in your ``prometheus.yml`` config.
+The following snippet should be added in your ``prometheus.yml`` config. For more information about Prometheus configuration,
+it is recommended to take a look at `Prometheus documentation <https://prometheus.io/docs/prometheus/latest/configuration/configuration/>`_.
 
 .. sourcecode:: yaml
 
