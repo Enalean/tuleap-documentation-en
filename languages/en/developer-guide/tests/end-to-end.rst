@@ -48,24 +48,62 @@ If you want to add new tests, you should use the cypress dev image:
    $> make tests_cypress_dev
 
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
-Once the container has started, you must be able to launch the Cypress electron app.
-The test structure respects the Tuleap distinction between core and plugins.
 
-To write tests in core, just go on core namespace and run `npx cypress open`
-
-.. code-block:: bash
-
-   $> cd tests/e2e/full/
-   $> npx cypress open
-
-To write tests in plugins, just go on plugin namespace and run `npx cypress open`
+Before launching the Cypress electron app, you must be able to reach the "test"
+Tuleap container at ``https://tuleap``. Cypress will run tests on this URI. Add
+a new entry in the ``/etc/hosts`` file, the IP should correspond to the IP of
+your container named ``e2e-tests_tuleap_1``.
 
 .. code-block:: bash
 
-   $> cd plugins/<plugin_name/tests/e2e/cypress/
+   $> sudo vi /etc/hosts
+   172.18.0.2 oauth2-server-rp-oidc
+   172.18.0.4 tuleap
+
+The IP address should be written at the end of the output from ``make
+tests_cypress_dev``. If you can't find it, run this command:
+
+ .. code-block:: bash
+
+   $> docker inspect e2e-tests_tuleap_1
+   # At the end of the big JSON output, there is a section named "NetworkSettings". Inside it, there is "Networks" and then "IPAddress"
+
+After saving the ``/etc/hosts`` file, verify that you can reach a working Tuleap
+at https://tuleap. If you do not see a Tuleap Login screen, something is
+broken in the Tuleap container and tests will all fail.
+
+.. note::
+
+  The IP address will change every time you run ``make tests_cypress_dev``. You
+  should edit ``/etc/hosts`` each time.
+
+Once the container has started, you should be able to launch the Cypress
+electron app. The test structure respects the Tuleap distinction between core
+and plugins.
+
+To write tests in Tuleap core, go in core folder and run ``npx cypress
+open``
+
+.. code-block:: bash
+
+   $> cd tuleap/tests/e2e/full/
    $> npx cypress open
 
-As a reminder, an architecture schema is available:
+To write tests in plugins, go in plugin folder and run ``npx cypress open``
+
+.. code-block:: bash
+
+   $> cd tuleap/plugins/<plugin_name>/tests/e2e/cypress/
+   $> npx cypress open
+
+.. note::
+
+  The electron app will be able to run only when the Tuleap container is fully
+  started. If https://tuleap/ is unreachable make sure that container
+  initialisation has finished.
+  If it does not solve your issue, verify the IP in your ``/etc/hosts`` file.
+
+As a reminder, an architecture diagram is available:
 
 ..
     graph TD
@@ -93,36 +131,19 @@ As a reminder, an architecture schema is available:
         J[support] --> K[index.js]
 
 .. figure:: ../../images/diagrams/architecture/cypress.png
-    :align: center
-    :alt: Cypress organisation
-    :name: Cypress organisation
 
-
-The electron app will launch tests on ``https://tuleap/``.
-You have to add a new entry in ``/etc/hosts`` file, the IP should correspond to the IP of your container ``tuleap_runtests_backend-web-e2e``.
-
-.. code-block:: bash
-
-   $> sudo vi /etc/hosts
-   $> 172.19.0.3   tuleap
-
-
-.. note::
-
-  The electron app will be able to run only when container is fully monted.
-  If https://tuleap/ is unreachable make sure that container initialisation has finished.
-  If it does not solve your issue, verify the IP in your /etc/hosts
-
+  Cypress folder architecture
 
 Automated tests
 ---------------
-Some of our validation tests are executed by the CI.
-To declare a test as automated, you have to:
 
-On you dev platform
+Some of our validation tests are executed by the CI.
+To declare a test as automated, follow these steps:
+
+On your dev platform
 
 * Checkout the patch introducing the new tests
-* make tests_cypress
+* ``make tests_cypress``
 * in ``test_results_e2e_full`` look for the ``result<sha1>.xml`` corresponding to the tests you are automating
 
 In TTM open the test Validation Execution tracker
@@ -130,4 +151,4 @@ In TTM open the test Validation Execution tracker
 * Open the artifact(s) correponding to the test you have automated
 * You should find a field ``Automated tests``
 * Enter the ``testcase`` name into this field
-* In the field ``Refactoring`` choose the value `moved to cypress` (in order to be able to see which tests must be run by the CI)
+* In the field ``Refactoring`` choose the value ``moved to cypress`` (in order to see which tests must be run by the CI)
