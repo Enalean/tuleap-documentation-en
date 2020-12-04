@@ -8,7 +8,6 @@ Tuleap front end can be divided in two worlds
 
 Front end build system is based on webpack.
 
-
 .. ATTENTION::
 
   Historically you will also find:
@@ -29,3 +28,4 @@ Front end build system is based on webpack.
     front-end/vue
     front-end/tests
     front-end/angular
+    front-end/internal-libs
