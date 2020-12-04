@@ -26,7 +26,7 @@ as an example) with updated values.
 
     $ curl -XPUT --header 'Content-type: application/json' \
         --header 'X-Auth-AccessKey: tlp.k1.1026…'
-        -d '{"values":[{"field_id": 694, "bind_value_ids": [597]}], "comment": {"body": "some comments", "format": "text"}' \
+        -d '{"values":[{"field_id": 694, "bind_value_ids": [597]}], "comment": {"body": "some comments", "format": "text"}}' \
         https://tuleap.example.com/api/artifacts/220
 
     HTTP/1.1 200 OK
