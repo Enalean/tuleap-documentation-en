@@ -16,6 +16,13 @@ Tuleap packages for this version are not available anymore.
 Instances must be migrated to CentOS/RHEL 7.
 
 
+``server_tokens`` nginx setting is now set by default
+-----------------------------------------------------
+
+Tuleap now sets the setting ``server_tokens`` to off by default.
+If you have customized your nginx configuration to explicitely set
+``server_tokens``, you will need to remove this customization.
+
 Tuleap 12.2
 ===========
 
