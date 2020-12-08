@@ -42,9 +42,6 @@ Name, namespace and description are taken from GitLab, so you cannot change them
 
 The purpose of an integration is to create a link between Tuleap project and GitLab repository.
 
-To create integration, a "post push" webhook will be added on the integrated GitLab repository.
-If this webhook changes, we cannot ensure the good behavior of the plugin.
-
 References
 ----------
 A GitLab repository can be referenced in several Tuleap projects.
@@ -62,7 +59,7 @@ To reference a commit in the project where the GitLab repository is integrated y
 
 ``<repository_name>`` must be an integrated GitLab repository. If not, no reference will be created.
 
-When you click on this reference, you will redirect to the commit with the sha1 ``<sha1>``.
+When you click on this reference, you will redirect to the commit with the sha1 ``<sha1>`` in the GitLab instance.
 
 Reference in another project:
 '''''''''''''''''''''''''''''
@@ -73,7 +70,7 @@ To reference a commit in another project where the GitLab repository is integrat
 ``<project_name>`` must a valid short name project.
 ``<repository_name>`` must be an integrated GitLab repository in the project.
 
-When you click on this reference, you will redirect to the commit with the sha1 ``<sha1>``.
+When you click on this reference, you will redirect to the commit with the sha1 ``<sha1>`` in the GitLab instance.
 
 Cross References
 '''''''''''''''''
@@ -89,14 +86,17 @@ Before integration
 Before integrate a GitLab repository, you need to be Git administrator and provide:
 
 * The GitLab instance URL
-* GitLab API token
+* GitLab API token (GitLab API token scope must contain at least "api")
 
 You can only integrate GitLab repository that you maintain.
 
 To integrate GitLab repository
 ''''''''''''''''''''''''''''''
 
-Go to the Tuleap project where you want integrate GitLab repository.
+To create integration, a "post push" webhook will be added on the integrated GitLab repository.
+If this webhook changes, we cannot ensure the good behavior of the plugin.
+
+Go to the Tuleap project where you want to integrate GitLab repository.
 There is a button "Add GitLab repository".
 
 .. figure:: ../../images/screenshots/gitlab/button-gitlab-integration.png
@@ -106,7 +106,7 @@ There is a button "Add GitLab repository".
 
    Button integrate GitLab
 
-When you click on, a modal opens and ask you your GitLab instance URL and GitLab API token.
+When you click on, a modal opens and asks you your GitLab instance URL and GitLab API token.
 
 Your GitLab API token scope must contain at least "api".
 
@@ -157,4 +157,4 @@ On the click, you need to confirm the unlink.
    Modal to confirm unlink
 
 At this moment, the integration is deleted. All your created references can't be used anymore.
-If you referenced an artifact in this repository, no Cross References will be created.
+After removing, any GitLab commit with ``TULEAP-XXX`` in this repository will no more create Cross References.
