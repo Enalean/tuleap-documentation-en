@@ -5,7 +5,7 @@ GitLab
 
 .. note::
 
-  This plugin is under construction, the doc and the plugin can be change.
+  This plugin is under construction, the documentation and the plugin can change.
 
 .. attention::
 
@@ -14,19 +14,20 @@ GitLab
 
 .. attention:: Known issues / limitation
 
-  * If you have already a reference project named ``gitlab_commit``:
+  * If you already have a reference project named ``gitlab_commit``:
       * If you create a reference that references a GitLab commit, a link will be created to that commit
       * Else your reference project behavior is used.
   * GitLab provides two names for a repository:
       * ``name_with_namespace`` is displayed in UI
       * ``path_with_namespace`` is used to clone/checkout the repository
       * Tuleap displays only ``path_with_namespace`` and references are created with it.
+  * 2 repositories with the same name and path from 2 different GitLab instances cannot be integrated in the same project.
   * For the moment, the project name and namespace of your GitLab project must **not** contain "-" or ".".
 
 How to use it
 -------------
 
-You need to install Git and GitLab plugin.
+You need to install both Git and GitLab plugins.
 The different integrations are displayed as a tile in the Git plugin with a GitLab symbol next to it.
 
 .. figure:: ../../images/screenshots/gitlab/tile-gitlab.png
@@ -40,15 +41,14 @@ You cannot do anything except add or remove an integration.
 Name, namespace and description are taken from GitLab, so you cannot change them.
 
 The purpose of an integration is to create a link between Tuleap project and GitLab repository.
-A GitLab repository can be referenced in several Tuleap projects.
-A Tuleap project can reference several GitLab repositories.
 
-
-An integration allows to reference a GitLab commit in atifact Tuleap artifact in the message of a commit of the integrated GitLab repository.
-The reference of an artifact must be made with ``TULEAP-XXX``, where ``XXX`` is the id of the artifact.
+To create integration, a "post push" webhook will be added on the integrated GitLab repository.
+If this webhook changes, we cannot ensure the good behavior of the plugin.
 
 References
 ----------
+A GitLab repository can be referenced in several Tuleap projects.
+A Tuleap project can reference several GitLab repositories.
 
 Please refer to :ref:`reference-overview` for more details on References.
 
@@ -74,6 +74,11 @@ To reference a commit in another project where the GitLab repository is integrat
 ``<repository_name>`` must be an integrated GitLab repository in the project.
 
 When you click on this reference, you will redirect to the commit with the sha1 ``<sha1>``.
+
+Cross References
+'''''''''''''''''
+An integration allows to reference a Tuleap artifact in the message of a integrated GitLab commit.
+The reference of an artifact must be made with ``TULEAP-XXX``, where ``XXX`` is the id of the artifact.
 
 How to create an integration
 ----------------------------
@@ -151,5 +156,5 @@ On the click, you need to confirm the unlink.
 
    Modal to confirm unlink
 
-At this moment, the integration is deleted. All your created references can't be user anymore.
+At this moment, the integration is deleted. All your created references can't be used anymore.
 If you referenced an artifact in this repository, no Cross References will be created.
