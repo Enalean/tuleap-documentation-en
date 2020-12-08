@@ -20,8 +20,33 @@ Instances must be migrated to CentOS/RHEL 7.
 -----------------------------------------------------
 
 Tuleap now sets the setting ``server_tokens`` to off by default.
-If you have customized your nginx configuration to explicitely set
+If you have customized your nginx configuration to explicitly set
 ``server_tokens``, you will need to remove this customization.
+
+List pickers are activated in all trackers
+------------------------------------------
+
+By default, all trackers will use list pickers in artifact views and modals.
+If you notice that list pickers behavior prevent your users to use their trackers properly,
+it is possible to either deactivate completely the feature, or deactivate it for given trackers using the CLI:
+
+To disable the feature on your platform:
+
+.. sourcecode:: shell
+
+        tuleap config-set feature_flag_use_list_pickers_in_trackers_and_modals 0
+
+To disable the feature by tracker:
+
+.. sourcecode:: shell
+
+        tuleap config-set feature_flag_use_list_pickers_in_trackers_and_modals "t:<tracker_1_id>,<tracker_2_id>,<tracker_3_id>"
+
+To (re-)enable the feature in every trackers
+
+.. sourcecode:: shell
+
+        tuleap config-set feature_flag_use_list_pickers_in_trackers_and_modals 1
 
 Tuleap 12.2
 ===========
