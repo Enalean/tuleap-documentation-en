@@ -256,7 +256,7 @@ Other considerations
    access CVS: only the SSH method is supported (through the restricted
    shell). If you want to disable the pserver access, make sure you
    edit/etc/xinetd.d/cvs, change the 'disable' parameter to 'yes' and
-   restart xinetd (service xinetd restart). You may also fine-tune the
+   restart xinetd (systemctl restart xinetd). You may also fine-tune the
    configuration file to allow pserver for some IP addresses and deny it
    for others..
 -  Access to projects web sites by Restricted Users is not controlled.

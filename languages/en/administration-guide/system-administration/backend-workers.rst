@@ -38,8 +38,8 @@ Then start the server and make it on at reboot time
 
 .. code-block:: bash
 
-    $ sudo service redis start
-    $ sudo chkconfig redis on
+    $ sudo systemctl redis start
+    $ sudo systemctl enable redis
 
 And finally set server parameters for Tuleap in your config file ``/etc/tuleap/conf/redis.inc``
 
@@ -59,7 +59,7 @@ In ``local.inc`` you should set ``$sys_nb_backend_workers`` to a number greater 
 This controls the number of workers to process background jobs. It should be adapted given your server workload.
 ``2`` is a good starting value.
 
-You might need to ``service tuleap restart`` afterwards.
+You might need to ``systemctl restart tuleap`` afterwards.
 
 Troubleshooting
 ---------------

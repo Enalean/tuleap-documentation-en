@@ -159,7 +159,7 @@ By default, the Tuleap restarts Apache:
 
 
 You can force Apache restart to manually clear Apache module cache with
-``service httpd graceful``.
+``systemctl restart httpd``.
 
 DNS
 ---
@@ -350,7 +350,7 @@ And then restart mailman
 
   .. sourcecode:: console
 
-      $> service mailman restart
+      $> systemctl restart mailman
 
 LDAP
 ----

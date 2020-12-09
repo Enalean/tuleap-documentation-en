@@ -49,7 +49,7 @@ generally located in ``/etc/postfix/main.cf``:
         recipient_delimiter = +
 
 After this modification, you need to reload the Postfix configuration with
-``# service postfix reload``.
+``# systemctl reload postfix``.
 
 Token email gateway
 ~~~~~~~~~~~~~~~~~~~

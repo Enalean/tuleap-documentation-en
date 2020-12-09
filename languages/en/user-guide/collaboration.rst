@@ -127,7 +127,7 @@ Say you want to limit the number of members to 100. Add/ edit the following line
 Then restart the service
 ::
 
-    $ service mailman restart
+    $ systemctl restart mailman
 
 This will limit the number of people who can be subscribed to the mailing lists
 using the mass-import functionality of Mailman. However, it will not prevent

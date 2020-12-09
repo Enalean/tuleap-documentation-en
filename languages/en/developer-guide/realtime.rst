@@ -173,4 +173,4 @@ Run the Node.js server:
 
 .. code-block:: bash
 
-    # service tuleap-realtime start
+    # systemctl start tuleap-realtime
