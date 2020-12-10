@@ -12,18 +12,6 @@ GitLab
   This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-.. attention:: Known issues / limitation
-
-  * If you already have a reference project named ``gitlab_commit``:
-      * If you create a reference that references a GitLab commit, a link will be created to that commit
-      * Else your reference project behavior is used.
-  * GitLab provides two names for a repository:
-      * ``name_with_namespace`` is displayed in UI
-      * ``path_with_namespace`` is used to clone/checkout the repository
-      * Tuleap displays only ``path_with_namespace`` and references are created with it.
-  * 2 repositories with the same name and path from 2 different GitLab instances cannot be integrated in the same project.
-  * For the moment, the project name and namespace of your GitLab project must **not** contain "-" or ".".
-
 How to use it
 -------------
 
@@ -158,3 +146,15 @@ On the click, you need to confirm the unlink.
 
 At this moment, the integration is deleted. All your created references can't be used anymore.
 After removing, any GitLab commit with ``TULEAP-XXX`` in this repository will no more create Cross References.
+
+.. attention:: Known issues / limitation
+
+  * If you already have a project reference named ``gitlab_commit``:
+      * If you create a reference that references a GitLab commit, a link will be created to that commit
+      * Else your reference project behavior is used.
+  * GitLab provides two names for a repository:
+      * ``name_with_namespace`` is displayed in UI
+      * ``path_with_namespace`` is used to clone/checkout the repository
+      * Tuleap displays only ``path_with_namespace`` and references are created with it.
+  * 2 repositories with the same name and path from 2 different GitLab instances cannot be integrated in the same project.
+  * For the moment, the project name and namespace of your GitLab project must **not** contain "-" or ".".
