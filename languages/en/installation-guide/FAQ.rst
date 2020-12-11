@@ -40,7 +40,7 @@ Ports 80 and 443 should be opened.
 I have a blank page when accessing a web page
 ---------------------------------------------
 
-Check Nginx and PHP logs: :ref:`platform_logs`
+Check NGINX and PHP logs: :ref:`platform_logs`
 
 
 .. _FAQ_Cannot_Connect:
