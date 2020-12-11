@@ -21,7 +21,7 @@ Check the correct ports are exposed for each service with:
 
 .. code-block:: bash
 
-    netstat -lntp
+    ss -lntp
 
 
 Check your firewall is disabled or correctly configured:
@@ -40,7 +40,7 @@ Ports 80 and 443 should be opened.
 I have a blank page when accessing a web page
 ---------------------------------------------
 
-Check Nginx and PHP logs: :ref:`platform_logs`
+Check NGINX and PHP logs: :ref:`platform_logs`
 
 
 .. _FAQ_Cannot_Connect:
@@ -48,7 +48,7 @@ Check Nginx and PHP logs: :ref:`platform_logs`
 I can not log in or I'm redirected indefinitely on the login page
 -----------------------------------------------------------------
 
-Check that you access tuleap with the same URL than the one present in the following files:
+Check that you access your Tuleap instance with the same URL than the one present in the following files:
 
 .. code-block:: bash
     
