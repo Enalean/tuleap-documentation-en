@@ -50,7 +50,7 @@ If you want to add new tests, you should use the cypress dev image:
 It will launch a local container with a bunch of projects (defined in ``tests/e2e/_fixtures``).
 
 Before launching the Cypress electron app, you must be able to reach the "test"
-Tuleap container at ``https://tuleap``. Cypress will run tests on this URI. Add
+Tuleap container at ``https://tuleap/``. Cypress will run tests on this URI. Add
 a new entry in the ``/etc/hosts`` file, the IP should correspond to the IP of
 your container named ``e2e-tests_tuleap_1``.
 
