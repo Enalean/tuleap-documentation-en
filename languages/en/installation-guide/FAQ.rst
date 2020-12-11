@@ -1,5 +1,5 @@
-Frequently Asked Questions
-==========================
+Troubleshooting your Tuleap Installation
+========================================
 
 
 .. _FAQ_Timeout_URL:
