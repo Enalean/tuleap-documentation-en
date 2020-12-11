@@ -48,7 +48,7 @@ Check NGINX and PHP logs: :ref:`platform_logs`
 I can not log in or I'm redirected indefinitely on the login page
 -----------------------------------------------------------------
 
-Check that you access tuleap with the same URL than the one present in the following files:
+Check that you access your Tuleap instance with the same URL than the one present in the following files:
 
 .. code-block:: bash
     
