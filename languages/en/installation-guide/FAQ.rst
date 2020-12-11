@@ -21,7 +21,7 @@ Check the correct ports are exposed for each service with:
 
 .. code-block:: bash
 
-    netstat -lntp
+    ss -lntp
 
 
 Check your firewall is disabled or correctly configured:
