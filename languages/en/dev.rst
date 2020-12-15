@@ -48,3 +48,4 @@ Advanced topics
    developer-guide/trackers
    developer-guide/gerrit
    developer-guide/project-background
+   developer-guide/gitlab
