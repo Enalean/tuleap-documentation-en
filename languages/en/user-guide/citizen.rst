@@ -153,6 +153,8 @@ Access Keys also have a scope:
   - REST API: The access key can be used to make any REST call to Tuleap API. Look at :ref:`rest-auth` to learn how to use it.
   - Git: The access key can be used to do git operations over https (``clone`` & ``push``, according to your permissions).
     When doing git with an access key, you will have to use https basic authentication mode with your username.
+  - WebDAV: The access key can be used to access document manager or file release system files via the WebDAV server.
+    When accessing the WebDAV server with an access key, you will have to provide your username.
 
 A scope restricts what you can do with an access key. An access key with 'git' scope won't be usable for REST API calls
 for instance. As a matter of fact, it means that, at most, an access key can be used only to do git & rest operations.
