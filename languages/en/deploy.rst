@@ -25,9 +25,6 @@ file, the default is automatically set for you.
 Deprecations and end of support
 ===============================
 
-**Internet Explorer will no longer be supported by Tuleap in January 2021** and is already no longer supported for 
-newly developed features. We strongly suggest to switch to any other supported browser: Firefox, Edge, Chrome or Chromium.
-
 Here is the list of what Tuleap will remove, stop or start supporting with the
 planned time periods.
 
@@ -39,19 +36,18 @@ tab file-based translations   Replaced by       Nothing
                               gettext
 ============================= ================= =============================================
 
-============================= ================= =======================================================================================================
+============================= ================= ===========================================================================================================
 S2 2020                       Status            As platform administrator, what should I do ?
-============================= ================= =======================================================================================================
+============================= ================= ===========================================================================================================
 RHEL 6                        End of support    Switch to RHEL 7
 PHP 7.4                       Start of support  (Optionally switch to PHP 7.4)
 Trackers v3                   Removed           Migrate to Trackers v5
 Subversion (SVN Core)         Removed           Switch to SVN Plugin
 Realtime server using NodeJS  Replaced          (To be announced)
 PHP 7.3                       End of support    Switch to PHP 7.4
-Internet Explorer             End of support    End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium by the end of the year
 RHEL 8                        Start of support  (Optionally switch to RHEL 8)
 Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
-============================= ================= =======================================================================================================
+============================= ================= ===========================================================================================================
 
 ========= =============== =============================================
 2021      Status          As platform administrator, what should I do ?
@@ -77,8 +73,6 @@ Legacy GitPHP web interface                          Removed           Nothing
 Legacy Tracker Workflows configuration web interface Removed           Nothing
 RabbitMQ (replaced by Redis)                         Replaced by Redis Uninstall RabbitMQ
 WebDAV with Windows 7 client                         End of support    End-users should switch to Cyberduck
-Internet Explorer 11                                 End of support    New features won't be usable with IE 11.
-                                                                       End-users should switch to Firefox or Chrome
 ==================================================== ================= ==============================================
 
 =============================== ================= =============================================
@@ -89,3 +83,9 @@ GitShell backend for Git plugin Removed           End-users should push to Gitol
 Gerrit versions < 2.16          End of support    Switch to Gerrit 2.16 or higher
 MySQL versions < 5.7            End of support    Upgrade to MySQL 5.7 or higher
 =============================== ================= =============================================
+
+=============================== ================= ====================================================================================
+Q4 2020                         Status            As platform administrator, what should I do ?
+=============================== ================= ====================================================================================
+Internet Explorer               End of support    **End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium**
+=============================== ================= ====================================================================================

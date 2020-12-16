@@ -8,6 +8,12 @@ Tuleap 12.4
 
   Tuleap 12.4 is currently under development.
 
+End of support of Internet Explorer
+-----------------------------------
+
+Tuleap does not support Internet Explorer anymore. Users of Internet Explorer
+must migrate to a :ref:`supported modern alternative <user_supported_browsers>`.
+
 Tuleap 12.3
 ===========
 
