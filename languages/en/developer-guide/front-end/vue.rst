@@ -182,7 +182,7 @@ Use the npm scripts to build up the application or to launch the unit tests.
 
     npm run build # For a production build, outputs minified code.
     npm run watch # Build the app in watch mode.
-    npm test      # Run the :ref:`Jest <jest_unit_test>` unit tests only once.
+    npm test      # Run the Jest unit tests only once.
 
 Once you have a ``package.json`` file, you will also need a ``tsconfig.json`` file to configure Typescript.
 
