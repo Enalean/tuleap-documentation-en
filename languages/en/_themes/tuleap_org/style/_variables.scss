@@ -14,26 +14,11 @@ $white: #ffffff;
 $grey: #383838;
 $light-grey: #888888;
 
-// 🌈 Rainbow colors
 $orange: #f79514;
-$green: #98ba43;
-$turquoise: #32c28d;
 $light-blue: #3fc0d4;
 $blue: #0073e4;
 $purple: #954eb3;
-$pink: #db56a5;
 $red: #dc3c36;
-$silver: #8b9aa0;
-$gold: #dac408;
-$diamond: #7cb9ce;
-
-$tuleap: $orange;
-$tuleap-enterprise: #588fab;
-$mytuleap: #8f6c9f;
-
-$ambassador: #da674e;
-$contributor: #8cd246;
-$maintainer: #ddad41;
 
 $user-guide: $orange;
 $administration-guide: $red;
@@ -44,27 +29,11 @@ $developer-guide: $purple;
 $section-background: #f9f9f9;
 
 // color name, color hexa, link hexa
-$colors: ('black', $black, $orange),
-         ('white', $white, $orange),
-         ('grey', $grey, $orange),
-         ('light-grey', $light-grey, $orange),
-         ('orange', $orange, $orange),
-         ('green', $green, $green),
-         ('turquoise', $turquoise, $turquoise),
+$colors: ('orange', $orange, $orange),
          ('light-blue', $light-blue, $light-blue),
          ('blue', $blue, $blue),
          ('purple', $purple, $purple),
-         ('pink', $pink, $pink),
-         ('red', $red, $red),
-         ('tuleap', $tuleap, $tuleap),
-         ('tuleap-enterprise', $tuleap-enterprise, $tuleap-enterprise),
-         ('mytuleap', $mytuleap, $mytuleap),
-         ('ambassador', $ambassador, $ambassador),
-         ('contributor', $contributor, $contributor),
-         ('maintainer', $maintainer, $maintainer),
-         ('silver', $silver, $silver),
-         ('gold', $gold, $gold),
-         ('diamond', $diamond, $diamond);
+         ('red', $red, $red);
 
 $guides: ('user-guide', $user-guide, $user-guide),
          ('administration-guide', $administration-guide, $administration-guide),
