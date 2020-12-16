@@ -16,40 +16,6 @@ body.pinned {
         height: 50px;
     }
 
-    &.tuleap-enterprise header {
-        .header-menu-item-container:hover {
-            .header-menu-item {
-                color: lighten($tuleap-enterprise, 30%);
-            }
-        }
-
-        .header-menu-item {
-            color: $tuleap-enterprise;
-
-            &.active {
-                background: $tuleap-enterprise;
-                color: $white;
-            }
-        }
-    }
-
-    &.mytuleap header {
-        .header-menu-item-container:hover {
-            .header-menu-item {
-                color: lighten($mytuleap, 30%);
-            }
-        }
-
-        .header-menu-item {
-            color: $mytuleap;
-
-            &.active {
-                background: $mytuleap;
-                color: $white;
-            }
-        }
-    }
-
     @each $name, $hexa in $guides {
         &.#{$name} header {
             .header-menu-item-container:hover {
@@ -123,7 +89,6 @@ body:not(.pinned) {
         }
     }
 
-    &.tuleap-enterprise header,
     &.orange header {
         .header-logo-image-white-white {
             display: block;
@@ -179,46 +144,6 @@ body:not(.pinned) {
                 &:not(.show) {
                     display: none;
                 }
-            }
-        }
-    }
-
-    &.tuleap-enterprise header {
-        .header-logo {
-            opacity: .5;
-        }
-
-        .header-menu {
-            @media screen and (max-width: #{$tiny-screen-size}) {
-                background: transparentize(#3c6b81, .05);
-
-                &:not(.show) {
-                    display: none;
-                }
-            }
-        }
-
-        .header-menu-item-container:hover .header-menu-item {
-            color: lighten($tuleap-enterprise, 30%);
-        }
-
-        .header-menu-item.active {
-            color: $tuleap-enterprise;
-        }
-    }
-
-    &.mytuleap header {
-        .header-menu-item-container:hover .header-menu-item {
-            background: $black;
-            color: lighten($mytuleap, 10%);
-        }
-
-        .header-menu-item {
-            color: $mytuleap;
-
-            &.active {
-                background: $mytuleap;
-                color: $white;
             }
         }
     }
