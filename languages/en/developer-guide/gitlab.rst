@@ -73,5 +73,5 @@ You need to edit (as root) the ``/etc/hosts`` file of GitLab container:
     you@workstation $> docker exec -it tuleap_gitlab_1 /bin/bash
     you@workstation $> vim /etc/hosts
 
-Add IP of your Tuleap: ``127.0.0.1       tuleap-web.tuleap-aio-dev.docker``.
+Add IP of your Tuleap: ``172.17.0.3       tuleap-web.tuleap-aio-dev.docker``.
 You can know the IP address of web container with ``make show-ips``.
