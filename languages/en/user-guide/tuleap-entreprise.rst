@@ -18,6 +18,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
 * :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
 * :ref:`Project Milestones <project-milestones>`.
+* :ref:`GitLab Integration <version-control-with-gitlab>`.
 
 More information on `Tuleap.org website`_.
 

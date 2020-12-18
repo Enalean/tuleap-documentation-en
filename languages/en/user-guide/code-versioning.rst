@@ -7,3 +7,4 @@ Code versioning
    code-versioning/git
    code-versioning/svn-plugin
    code-versioning/cvs
+   code-versioning/gitlab
