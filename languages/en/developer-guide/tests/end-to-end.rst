@@ -69,7 +69,7 @@ tests_cypress_dev``. If you can't find it, run this command:
    # At the end of the big JSON output, there is a section named "NetworkSettings". Inside it, there is "Networks" and then "IPAddress"
 
 After saving the ``/etc/hosts`` file, verify that you can reach a working Tuleap
-at https://tuleap. If you do not see a Tuleap Login screen, something is
+at https://tuleap/. If you do not see a Tuleap Login screen, something is
 broken in the Tuleap container and tests will all fail.
 
 .. note::
