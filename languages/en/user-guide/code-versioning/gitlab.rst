@@ -39,6 +39,9 @@ The reference of an artifact must be made with ``TULEAP-XXX``, where ``XXX`` is 
 Cross Reference is created only if there is an integration between the project of the referenced artifact and
 GitLab repository of the commit.
 
+If the commit author's email is bind to an existing Tuleap user, then this user is displayed in the cross reference.
+Otherwise, the commit author's name is displayed.
+
 Manually reference
 ''''''''''''''''''
 
