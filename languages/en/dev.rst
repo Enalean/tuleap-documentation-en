@@ -49,3 +49,4 @@ Advanced topics
    developer-guide/gerrit
    developer-guide/project-background
    developer-guide/gitlab
+   developer-guide/old-configurations
