@@ -18,7 +18,7 @@ allow you to reference Tuleap artifacts in your commit messages and conversely.
 References
 ----------
 
-A GitLab repository can be referenced in several Tuleap artifacts, in different projects.
+A GitLab commit can reference several Tuleap artifacts, in different projects.
 A Tuleap artifact can reference several commits, in different GitLab repositories.
 
 Reference a Tuleap artifact
@@ -30,10 +30,7 @@ To be able to create GitLab cross-references, you need to:
 * Reference Tuleap artifacts in GitLab commit messages
 
 To link your commit to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
-to your commit message. 
-
-You can reference as many artifacts as you want. However, you must ensure that the projects your artifacts
-belong have your GitLab Repository registered.
+to your commit message. You can reference as many artifacts as you want in the same commit message.
 
 When the committer email is matching a Tuleap account, then its avatar and username will be displayed in the reference.
 Otherwise, the committer name is displayed as received from the Gitlab API.
@@ -45,7 +42,7 @@ Please refer to :ref:`reference-overview` for more details on references.
 
 You can reference a commit of one of the GitLab repositories registered in your Tuleap project.
 
-To do so, you have to use the keyword ``gitlab_commit`` followed by a ``#`` and the commit URL:
+To do so, you have to use the keyword ``gitlab_commit`` followed by a ``#`` and the commit sha1:
 
 ``gitlab_commit #<repository_name>/<sha1>``.
 
@@ -98,7 +95,7 @@ The list of the repositories you maintain is displayed. Select the repository to
    :alt: Modal to choose GitLab repository
    :name: Modal to choose GitLab repository
 
-Once the GitLab repository is registered, it is displayed in the repositories list and is visually identifiable thanks to a GitLab symbol.
+Once the GitLab repository is registered, it is displayed in the repositories list and is visually identifiable thanks to the GitLab icon.
 
 .. figure:: ../../images/screenshots/gitlab/tile-gitlab.png
    :align: center
@@ -109,10 +106,10 @@ From now on, each time you reference an artifact in a commit, a cross-reference 
 
 .. note::
   During the registration, a "post push" webhook is created in the GitLab repository.
-  If the parameters of this webhook change (URL, events, or anything else), we cannot ensure that cross-references will
-  be continue to be created.
+  If the parameters of this webhook change (URL, events, or anything else), we cannot ensure that cross-references will 
+  continue to be created.
 
-Unlinking repositories 
+Unregister repositories 
 '''''''''''''''''''''''
 
 As a Git administrator, go to the Git service of your project and find the repository to be unregistered in the list. Then click on the trash icon in the top right corner of the tile. 
@@ -129,7 +126,7 @@ Confirm the action.
    :alt: Modal to confirm unlink
    :name: Modal to confirm unlink
 
-From now on, existing references won't work anymore and any new commit in this repository referencing a Tuleap artifact in this project will create cross-references.
+From now on, existing references won't work anymore and any new commit in this repository referencing a Tuleap artifact in this project will not create cross-references.
 
 .. attention:: Known issues / limitations
 
