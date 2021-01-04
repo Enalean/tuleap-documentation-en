@@ -70,6 +70,10 @@ For example it will output the following information::
 
 We can then take the dominant color from the last line: ``rgb(76, 52, 34)``.
 
+The color is expected to have enough contrast when used with the same color with 7% opacity on a white background.
+The color needs to be adjusted manually to have a
+`contrast ratio of at least 4.5:1 <https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html>`_.
+
 Image definition in SCSS
 ------------------------
 
