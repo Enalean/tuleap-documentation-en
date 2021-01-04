@@ -44,16 +44,14 @@ Use mysqldump to backup all databases. You can also write a script to backup eac
 Files backup
 ````````````
 
-You need to save the following directories (be careful, you need to preserve the correct rights on files):
+You need to save the following directories. **Be careful, you need to preserve the correct rights on files**:
 
     - /etc/tuleap
-    - /home/codendiadm
-    - /home/users
-    - /home/groups
     - /var/lib/tuleap
     - /var/lib/gitolite
     - /var/lib/mailman
 
+Some directories might not exists depending on your configurations (plugins installed or not).
 
 Restore Tuleap
 --------------
