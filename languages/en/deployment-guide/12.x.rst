@@ -19,7 +19,7 @@ WebDAV
 
 Regardless of the configuration you've done on webdav plugin (dedicated host & path), as soon as webdav plugin is active
 the webdav service will be accessible on the ``/plugins/webdav`` path on the ``$sys_https_host`` configured in ``local.inc``.
-That is to say, if you access tuleap with ``https://tuleap.example.com``, then webdav will be accessible on ``https://tuleap.example.com/plugins/webdav``.
+That is to say, if you access Tuleap with ``https://tuleap.example.com``, then webdav will be accessible on ``https://tuleap.example.com/plugins/webdav``.
 
 The access via a dedicated host (like ``https://webdav.tuleap.example.com/``) that was once necessary for windows 7 and
 before support, is deprecated and should no longer be used. It still works but might be removed as it simplifies the nginx
