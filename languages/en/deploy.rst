@@ -29,6 +29,7 @@ Here is the list of what Tuleap will remove, stop or start supporting with the p
 
 End of March 2021
 '''''''''''''''''
+
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
