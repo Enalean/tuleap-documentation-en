@@ -25,6 +25,14 @@ The access via a dedicated host (like ``https://webdav.tuleap.example.com/``) th
 before support, is deprecated and should no longer be used. It still works but might be removed as it simplifies the nginx
 & DNS configurations so less trouble for administrators.
 
+.. _remove_permissions_overrider:
+PermissionsOverrider deprecated
+-------------------------------
+
+If you previously deployed a ``/etc/tuleap/local_glue/PermissionsOverrider.php`` this feature is now deprecated and will
+be removed end of March 2021. There is no replacement for the feature as it brings more security risk and maintenance burden
+than functional advantage.
+
 Tuleap 12.3
 ===========
 
@@ -57,6 +65,7 @@ you can delete them). This will bring a more integrated experience
 than the old way. See `story #14670 <https://tuleap.net/plugins/tracker/?aid=14670>`_
 for more details.
 
+.. _svn_core_to_plugin:
 Subversion Core active deprecation
 ----------------------------------
 
