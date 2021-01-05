@@ -115,6 +115,7 @@ Administration:
 Integrations:
 
 * **bugzilla_reference**: Integration with bugzilla, allow to reference bugzilla bugs (and vice-versa)
+* **gitlab**: Reference your GitLab commits in Tuleap artifacts and conversely
 * **botmattermost**: Integration with mattermost and slack
 * **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
 * **botmattermost-git**: Mattermost bot for git
