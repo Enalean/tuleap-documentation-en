@@ -57,10 +57,11 @@ Prerequisites
 '''''''''''''
 
 To be able to register a GitLab repository in your project, please ensure that:
-- both Git and GitLab plugins are installed and activated.
-- you have admin privileges in the Git service of your project.
-- you are identified by GitLab as the maintainer of the repository 
-- you have a GitLab API token authorized to be used to query the GitLab API (see below)
+
+    * both Git and GitLab plugins are installed and activated.
+    * you have admin privileges in the Git service of your project.
+    * you are identified by GitLab as the maintainer of the repository
+    * you have a GitLab API token authorized to be used to query the GitLab API (see below)
 
 .. figure:: ../../images/screenshots/gitlab/gitlab-api-scope.png
    :align: center
@@ -106,13 +107,13 @@ From now on, each time you reference an artifact in a commit, a cross-reference 
 
 .. note::
   During the registration, a "post push" webhook is created in the GitLab repository.
-  If the parameters of this webhook change (URL, events, or anything else), we cannot ensure that cross-references will 
+  If the parameters of this webhook change (URL, events, or anything else), we cannot ensure that cross-references will
   continue to be created.
 
-Unregister repositories 
+Unregister repositories
 '''''''''''''''''''''''
 
-As a Git administrator, go to the Git service of your project and find the repository to be unregistered in the list. Then click on the trash icon in the top right corner of the tile. 
+As a Git administrator, go to the Git service of your project and find the repository to be unregistered in the list. Then click on the trash icon in the top right corner of the tile.
 
 .. figure:: ../../images/screenshots/gitlab/tile-gitlab.png
    :align: center
