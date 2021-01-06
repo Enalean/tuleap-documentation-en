@@ -1,12 +1,15 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.4
+Tuleap 12.5
 ===========
 
 .. NOTE::
 
-  Tuleap 12.4 is currently under development.
+  Tuleap 12.5 is currently under development.
+
+Tuleap 12.4
+===========
 
 End of support of Internet Explorer
 -----------------------------------
