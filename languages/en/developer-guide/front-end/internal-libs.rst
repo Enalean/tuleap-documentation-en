@@ -7,6 +7,7 @@ In which situation do I need a library ?
 ----------------------------------------
 
 - When you need to share code between two apps or endpoints
+- When the shared code **does not** use dynamic import
 - When the shared code has at least one NPM dependency
 - When the shared code needs translated strings (gettext)
 - When you want a common endpoint to include Javascript and CSS styles
@@ -16,7 +17,8 @@ In which situation do I need a library ?
 When NOT to create a library ?
 ------------------------------
 
-- When you only share one file or a few files
+- When the code uses dynamic import, for example to load polyfills or translations. In this case,
+  use a standard webpack configuration
 
 Folder structure of an internal library
 ---------------------------------------
@@ -26,11 +28,9 @@ Create a ``scripts/lib/`` folder in Tuleap Core or in the plugin where code is s
  .. code-block:: sh
 
     # In core
-    $> mkdir tuleap/src/scripts/lib/ && cd tuleap/src/scripts/lib/
+    $> mkdir -p tuleap/src/scripts/lib/my-lib-name/ && cd tuleap/src/scripts/lib/my-lib-name/
     # In a plugin
-    $> mkdir tuleap/plugins/my-plugin/scripts/lib/ && cd tuleap/plugins/my-plugin/scripts/lib/
-    # Assuming you are in the scripts/lib/ folder
-    $> mkdir my-lib-name && cd my-lib-name
+    $> mkdir -p tuleap/plugins/my-plugin/scripts/lib/my-lib-name/ && cd tuleap/plugins/my-plugin/scripts/lib/my-lib-name/
 
 Here is the folder structure you should follow:
 
