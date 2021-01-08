@@ -10,10 +10,10 @@ on:
 jobs:
   build_warning:
     name: Build with warnings as errors
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8, 3.9]
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
@@ -29,7 +29,7 @@ jobs:
         run: make SPHINXOPTS='-W' html
   build_docker_image_theme_tuleap_org:
     name: Check build of the Docker image with the tuleap.org theme (docs.tuleap.org)
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
