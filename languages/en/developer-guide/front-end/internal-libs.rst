@@ -19,6 +19,8 @@ When NOT to create a library ?
 
 - When the code uses dynamic import, for example to load polyfills or translations. In this case,
   use a standard webpack configuration
+- When you need to output a file with a revision hash in its name, for example ``my-lib-name-0123456aea.js``.
+  In this case, use a standard webpack configuration.
 
 Folder structure of an internal library
 ---------------------------------------
