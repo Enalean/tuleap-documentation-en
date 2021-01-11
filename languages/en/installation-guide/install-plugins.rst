@@ -115,6 +115,7 @@ Administration:
 Integrations:
 
 * **bugzilla_reference**: Integration with bugzilla, allow to reference bugzilla bugs (and vice-versa)
+* **embed**: Provide a preview of `Figma <https://www.figma.com/>`_ and `Blackfire profiles <https://blackfire.io/>`_ inside the artifact view
 * **gitlab**: Reference your GitLab commits in Tuleap artifacts and conversely
 * **botmattermost**: Integration with mattermost and slack
 * **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
