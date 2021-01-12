@@ -72,6 +72,8 @@ The name of the token is not important, but you need at least to check ``api`` i
 
 Once your GitLab API token is created, copy it and save it for later.
 
+.. _register_gitlab_repository:
+
 GitLab repository registration
 ''''''''''''''''''''''''''''''
 
