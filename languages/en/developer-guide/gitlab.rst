@@ -61,6 +61,12 @@ As root account, you need to go to ``https://gitlab.local/admin/application_sett
 * Enter ``tuleap-web.tuleap-aio-dev.docker`` in ``Local IP addresses and domain names that hooks and services may access.``
 * Uncheck ``Enforce DNS rebinding attack protection``
 
+After Gitlab Webhook created
+----------------------------
+
+Once a GitLab repository was integrated in Tuleap (see :ref:`Register GitLab repository <register_gitlab_repository>`),
+you must edit the new webhook's settings and disable ``SSL verification``.
+You can access to your webhooks with ``https://gitlab.local/${namespace}/${project_name}/hooks``.
 
 After each restart
 ------------------
