@@ -269,10 +269,27 @@ External Fields
 Since 11.14, it's possible to add external fields on import XML.
 This external fields are form elements from plugins.
 
-Test Management Step Definitions
+Test Management Step Fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step Definitions are external fields.
+Step Definitions and Step Executions are external fields.
+
+Step Execution structure
+#########################
+
+- Type must be ``ttmstepexec``
+- TTM must be activated in your project
+
+Here is an example of step definition field for tracker structure XML :
+
+.. sourcecode:: xml
+  :linenos:
+
+    <externalField type="ttmstepexec" ID="F431" rank="2">
+      <name><![CDATA[steps]]></name>
+      <label><![CDATA[Steps Execution]]></label>
+      <description><![CDATA[Execution of the test's steps]]></description>
+    </externalField>
 
 Step Definition structure
 #########################
