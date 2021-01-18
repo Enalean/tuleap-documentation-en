@@ -14,6 +14,8 @@ must be use like:
            -t TRACKER_V5_ID \
            -o PATH_TO_ARCHIVE
 
+``--all`` instead of ``-t TRACKER_V5_ID`` export all trackers.
+
 This will generate a zip archive with:
 
 * a ``project.xml`` file that contains project data (usergroups with members + tracker structure + artifacts historized)
