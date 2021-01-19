@@ -4,6 +4,22 @@ Project Export
 The export script is located in ``/usr/share/tuleap/src/utils/export_project_xml.php`` and
 must be use like:
 
+Export with all trackers
+`````````````````````````
+
+  .. code-block:: bash
+
+        $> su - codendiadm
+        $> cd /usr/share/tuleap/
+        $> src/utils/php-launcher.sh src/utils/export_project_xml.php \
+           -p PROJECT_ID_EXPORT \
+           -u SITE_ADMIN_USERNAME \
+           --all \
+           -o PATH_TO_ARCHIVE
+
+Export single tracker
+`````````````````````
+
   .. code-block:: bash
 
         $> su - codendiadm
