@@ -7,14 +7,43 @@ Run Tuleap
 Mandatory development dependencies
 ----------------------------------
 
-You will need the following tools to develop on Tuleap, please refer to their
+To retrieve the mandatory development dependencies, two solutions are available:
+- use `Nix <https://nixos.org/>`_ and the ``shell.nix`` available in the sources
+- manually install and manage the dependencies
+
+.. _use-nix-dev-env:
+
+Use Nix to retrieve the mandatory development dependencies
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Tuleap uses `Nix <https://nixos.org/>`_ for its build process and to share an uniform configuration
+for its development environment. This is the preferred way to get a development environment as it is
+expected to always be up to date with Tuleap requirements.
+
+ 1. `Install Nix <https://nixos.org/download.html#nix-quick-install>`_
+ 2. With a terminal go to sources you previously cloned and type ``nix-shell``,
+    you will be dropped in a shell with all the needed tools to develop on Tuleap
+
+It is recommended to browse the `Nix documentation <https://nixos.org/manual/nix/unstable/introduction.html>`_
+to understand the basics of how it works.
+At the very least you should know `how to clean the unused packages <https://nixos.org/manual/nix/unstable/command-ref/nix-collect-garbage.html>`_.
+
+Developers wanting to keep their custom shell configurations should take a look at `direnv <https://direnv.net/>`_.
+
+Manually install the dependencies
+"""""""""""""""""""""""""""""""""
+
+Circa January 2021, the following tools are needed to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
-- make
-- php
-- `nodejs <https://nodejs.org/en/>`_ >= v10.13.x
-- `npm <https://docs.npmjs.com/>`_ >= v6.11.x
-- `composer <https://getcomposer.org/>`_
+- GNU make
+- GNU grep
+- GNU sed
+- `PHP <https://www.php.net/>`_ 7.3.x
+- `nodejs <https://nodejs.org/en/>`_ >= v14.15.x
+- `npm <https://docs.npmjs.com/>`_ v6.14.x
+- `composer <https://getcomposer.org/>`_ >= 2.x
+- `Docker Compose <https://docs.docker.com/compose/>`_ >= 1.27.x
 
    .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
 

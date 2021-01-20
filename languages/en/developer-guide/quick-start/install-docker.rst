@@ -1,13 +1,11 @@
 .. _install-docker:
 
-Install Docker Engine & Docker Compose
-======================================
+Install Docker Engine
+=====================
 
-We will install ``docker`` and ``docker-compose``. If you already have docker
-installed, you should still read this part as it contains important information
-about DNS configuration.
+We will install ``docker``.
 
-.. IMPORTANT::  Minimal versions: docker 1.17, docker-compose 1.10
+.. IMPORTANT::  Minimal versions: docker 1.17
 
 Install Docker Engine
 ---------------------
@@ -59,13 +57,3 @@ Installing Docker on macOS
 
 Go to https://docs.docker.com/docker-for-mac/ and download Docker for Mac.
 It will install all you need to run Tuleap containers.
-
-
-Install Docker Compose
-----------------------
-
-Once ``docker`` is installed, you must install ``docker-compose``. Follow steps
-on `Docker Compose documentation <https://docs.docker.com/compose/install/>`_.
-
-.. NOTE:: There is no need to manually install ``docker-compose`` on macOS since
-    it has already been installed via Docker for Mac.
