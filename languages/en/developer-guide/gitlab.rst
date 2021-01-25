@@ -64,7 +64,7 @@ As root account, you need to go to ``https://gitlab.local/admin/application_sett
 After Gitlab Webhook created
 ----------------------------
 
-Once a GitLab repository was integrated in Tuleap (see :ref:`Register GitLab repository <register_gitlab_repository>`),
+Once a GitLab repository is integrated in Tuleap (see :ref:`Register GitLab repository <register_gitlab_repository>`),
 you must edit the new webhook's settings and disable ``SSL verification``.
 You can access to your webhooks with ``https://gitlab.local/${namespace}/${project_name}/hooks``.
 
