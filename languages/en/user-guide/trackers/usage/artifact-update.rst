@@ -150,8 +150,7 @@ This can be done in the new tracker global administration section
    :alt: Tracker global administration
    :name: Tracker global administration
 
-Regarding the ``_is_child`` type, it cannot be disabled if a hierarchy exists in the project.
-If ``_is_child`` is disabled, a hierarchy cannot be set.
+Regarding the ``_is_child`` type, it cannot be disabled.
 
 .. attention::
 
@@ -164,3 +163,20 @@ Once deactivated:
 - Old links using this type still exist
 
 - The type of these links will be cleared after the next artifact update (the link will continue to exist without any type)
+
+Parent/Child relationship
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before Tuleap 12.5, parent/child relationship was driven by the hierarchy. 
+It meant that the artifact link type ``_is_child`` was automatically set between two artifacts if a hierarchy was defined between the two trackers.
+
+Since Tuleap 12.5, parent/child relationship is only defined by the artifact link type ``_is_child``
+that must be added manually by the user while linking an artifact to another.
+With this feature, any artifact must be defined as a parent/child of another, without any constraints.
+
+The hierarchy is now only an helper. 
+It means that the artifact link type ``_is_child`` is no more added automatically based on hierarchy but it's still used in:
+
+* Agiledashboard to have quick access to create new items and new parents
+* Agiledashboard for scrum plannings definition
+* Tracker triggers that only deals with children based on the hierarchy
