@@ -172,7 +172,8 @@ It meant that the artifact link type ``_is_child`` was automatically set between
 
 Since Tuleap 12.5, parent/child relationship is only defined by the artifact link type ``_is_child``
 that must be added manually by the user while linking an artifact to another.
-With this feature, any artifact must be defined as a parent/child of another, without any constraints.
+With this feature, any artifact can be defined as a child of another, without any constraints. 
+The children added this way will be displayed everywhere (artifact view, planning view, taskboard, cardwall, etc).
 
 The hierarchy is now only an helper. 
 It means that the artifact link type ``_is_child`` is no more added automatically based on hierarchy but it's still used in:
