@@ -12,14 +12,14 @@ Overview
 
 The purpose of this integration is to link Tuleap projects and GitLab repositories.
 
-If you are using GitLab and want to keep a trace of your commits in Tuleap, this plugin will
-allow you to reference Tuleap artifacts in your commit messages and conversely.
+If you are using GitLab and want to keep a trace of your commits and merge requests in Tuleap, this plugin will
+allow you to reference Tuleap artifacts in your commit messages or merge requests title/description and conversely.
 
 References
 ----------
 
-A GitLab commit can reference several Tuleap artifacts, in different projects.
-A Tuleap artifact can reference several commits, in different GitLab repositories.
+A GitLab commit or merge request can reference several Tuleap artifacts, in different projects.
+A Tuleap artifact can reference several commits or merge requests, in different GitLab repositories.
 
 Reference a Tuleap artifact
 '''''''''''''''''''''''''''
@@ -28,27 +28,68 @@ To be able to create GitLab cross-references, you need to:
 
 * Register your GitLab repository in the Git service of your Tuleap project
 * Reference Tuleap artifacts in GitLab commit messages
+* Reference Tuleap artifacts in GitLab merge request title or description
 
-To link your commit to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
-to your commit message. You can reference as many artifacts as you want in the same commit message.
+To link your commit (or merge request) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
+to your commit message (or merge request title/description).
+You can reference as many artifacts as you want in the same commit message (or merge request title/description).
+
+Reference a Tuleap artifact in GitLab commit
+`````````````````````````````````````````````
 
 When the committer email is matching a Tuleap account, then its avatar and username will be displayed in the reference.
-Otherwise, the committer name is displayed as received from the Gitlab API.
+Otherwise, the committer name is displayed as received from the GitLab API.
 
-Reference a GitLab commit in Tuleap
-'''''''''''''''''''''''''''''''''''
+On GitLab side, when a commit message contains some references to Tuleap, then a comment is automatically added in
+commit discuss.
+
+A comment is composed of a list of Tuleap references includes in the commit message, with links to Tuleap.
+
+.. figure:: ../../images/screenshots/gitlab/bot-on-commit-gitlab.png
+   :align: center
+   :alt: Comment on GitLab commit
+   :name: Comment on GitLab commit
+
+Reference a Tuleap artifact in GitLab merge request
+```````````````````````````````````````````````````
+
+On GitLab side, when a merge request contains some references to Tuleap, then a comment is automatically added in merge request discuss.
+
+A comment is composed of a list of Tuleap references includes in the merge request title/description, with links to Tuleap.
+
+.. figure:: ../../images/screenshots/gitlab/bot-on-mr-gitlab.png
+   :align: center
+   :alt: Comment on GitLab merge request
+   :name: Comment on GitLab merge request
+
+Reference a GitLab commit or merge request
+''''''''''''''''''''''''''''''''''''''''''
 
 Please refer to :ref:`reference-overview` for more details on references.
 
-You can reference a commit of one of the GitLab repositories registered in your Tuleap project.
+You can reference a commit or merge request of one of the GitLab repositories registered in your Tuleap project.
 
-To do so, you have to use the keyword ``gitlab_commit`` followed by a ``#`` and the commit sha1:
+Reference a GitLab commit in Tuleap
+```````````````````````````````````
+
+To reference GitLab commit, you have to use the keyword ``gitlab_commit`` followed by a ``#`` and the commit sha1:
 
 ``gitlab_commit #<repository_name>/<sha1>``.
 
 ``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
 
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit details.
+
+Reference a GitLab merge request in Tuleap
+``````````````````````````````````````````
+
+To reference GitLab merge request, you have to use the keyword ``gitlab_mr`` followed by a ``#`` and the merge request id:
+
+``gitlab_mr #<repository_name>/<merge_request_id>``
+
+``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
+
+When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the merge request details.
 
 Register your GitLab repository
 -------------------------------
@@ -60,8 +101,19 @@ To be able to register a GitLab repository in your project, please ensure that:
 
     * both Git and GitLab plugins are installed and activated.
     * you have admin privileges in the Git service of your project.
-    * you are identified by GitLab as the maintainer of the repository
-    * you have a GitLab API token authorized to be used to query the GitLab API (see below)
+    * you have a GitLab API token authorized to be used to query the GitLab API (see :ref:`gitlab-api-token`)
+
+.. _gitlab-api-token:
+
+GitLab API Token
+````````````````
+
+You can use a personal or project API token. The token will be used to manage integration of GitLab repository in Tuleap,
+and to write comments automatically on GitLab commit or merge requests.
+
+.. note::
+
+    If you use a personal API token, you need to be identified by GitLab as the maintainer of the repository that you want integrate.
 
 .. figure:: ../../images/screenshots/gitlab/gitlab-api-scope.png
    :align: center
@@ -84,14 +136,14 @@ Go to the Git service of your Tuleap project, click on [New repository], then cl
    :alt: Button integrate GitLab
    :name: Button integrate GitLab
 
-In the modal, provide the URL of your GitLab instance and your API token.
+In the modal, provide the URL of your GitLab instance and the GitLab API token.
 
 .. figure:: ../../images/screenshots/gitlab/modal-server-instance.png
    :align: center
    :alt: Modal to enter server instance and API token
    :name: Modal to enter server instance and API token
 
-The list of the repositories you maintain is displayed. Select the repository to link.
+The list of the repositories that you can integrated is displayed. Select the repository to link.
 
 .. figure:: ../../images/screenshots/gitlab/modal-choose-repository.png
    :align: center
@@ -105,26 +157,73 @@ Once the GitLab repository is registered, it is displayed in the repositories li
    :alt: GitLab repository tile
    :name: GitLab repository tile
 
-From now on, each time you reference an artifact in a commit, a cross-reference will be created in the target artifact.
+From now on, each time you reference an artifact in a commit or merge request, a cross-reference will be created in the target artifact.
 
 .. note::
-  During the registration, a "post push" webhook is created in the GitLab repository.
+  During the registration, a webhook is created in the GitLab repository.
   If the parameters of this webhook change (URL, events, or anything else), we cannot ensure that cross-references will
-  continue to be created.
+  continue to be created. See :ref:`gitlab-regenerate-webhook` to have more details.
 
-Unregister repositories
-'''''''''''''''''''''''
+Possible actions on GitLab repository
+'''''''''''''''''''''''''''''''''''''
 
-As a Git administrator, go to the Git service of your project and find the repository to be unregistered in the list. Then click on the trash icon in the top right corner of the tile.
+As a Git administrator, go to the Git service of your project and find the repository that you want apply action.
 
-.. figure:: ../../images/screenshots/gitlab/tile-gitlab.png
+When you click on cog icon in GitLab tile, you can:
+
+* Edit access token
+* Regenerate the GitLab webhook
+* Unlink the repository
+
+.. figure:: ../../images/screenshots/gitlab/tile-gitlab-dropdown.png
    :align: center
-   :alt: unlink GitLab repository tile
-   :name: unlink GitLab repository tile
+   :alt: Others actions on GitLab repository tile
+   :name: Others actions on GitLab repository tile
+
+Edit access token
+`````````````````
+
+If the token used during the integration has been revoked, you can change it by clicking on [Edit access token].
+See :ref:`gitlab-api-token` to have more details.
+
+.. figure:: ../../images/screenshots/gitlab/gitlab-edit-token-modal.png
+   :align: center
+   :alt: Editing GitLab API token
+   :name: Editing GitLab API token
 
 Confirm the action.
 
-.. figure:: ../../images/screenshots/gitlab/modal-confirm-unlink.png
+.. figure:: ../../images/screenshots/gitlab/gitlab-edit-token-modal-confirm.png
+   :align: center
+   :alt: Confirm editing GitLab API token
+   :name: Confirm editing GitLab API token
+
+.. note::
+  When you change API token, the :ref:`webhook is regenerated <gitlab-regenerate-webhook>` on GitLab side to be sure that the token is good.
+
+.. _gitlab-regenerate-webhook:
+
+Regenerate the GitLab webhook
+`````````````````````````````
+
+A webhook allows to communicate between GitLab server and Tuleap. This webhook is composed of a secret generated automatically by Tuleap
+and some events (push and merge requests events).
+If the webhook has been changed and is not functional, you can regenerate it by clicking on [Regenerate GitLab webhook].
+
+.. figure:: ../../images/screenshots/gitlab/gitlab-regenerate-webhook-modal.png
+   :align: center
+   :alt: Modal to regenerate webhook
+   :name: Modal to regenerate webhook
+
+When the webhook is regenerated, the old is deleted from GitLab server, and a new webhook with a new secret is created.
+
+Unregister repositories
+```````````````````````
+
+If you want unregister a repository, you need to select [Unlink the repository] in the list. Then a modal opens and
+you need to confirm the action.
+
+.. figure:: ../../images/screenshots/gitlab/gitlab-modal-confirm-unlink.png
    :align: center
    :alt: Modal to confirm unlink
    :name: Modal to confirm unlink
