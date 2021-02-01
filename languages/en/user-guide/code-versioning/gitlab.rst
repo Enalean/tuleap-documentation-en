@@ -52,6 +52,14 @@ A comment is composed of a list of Tuleap references included in the commit mess
 Reference a Tuleap artifact in GitLab merge request
 ```````````````````````````````````````````````````
 
+When the public email of the author of the Merge Request is matching a Tuleap account, then its avatar and
+username will be displayed in the reference.
+Otherwise, the author name is displayed as received from the GitLab API.
+
+.. note::
+    If the author of the Merge Requests changes its public email after creating the Merge Request, then no refresh will be
+    performed to update data displaying in the reference on Tuleap.
+
 On GitLab side, when a merge request contains some references to Tuleap, then a comment is automatically added.
 
 A comment is composed of a list of Tuleap references included in the merge request title/description, with links to Tuleap.
