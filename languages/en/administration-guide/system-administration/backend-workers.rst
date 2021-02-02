@@ -5,7 +5,7 @@ Backend workers
 
 Backend workers are used to process asynchronous tasks. Currently it is used for:
 
-* Asynchronous actions like sending tracker notifications or `importing Jira issues <tracker-import-from-jira>`_
+* Asynchronous actions like sending tracker notifications or :ref:`importing Jira issues <tracker-import-from-jira>`
 * :ref:`Monitoring with Prometheus<admin_monitoring_with_prometheus>`
 
 It's based on a notification queue managed by Redis and a worker that will process the the queue as soon as it's pushed.
