@@ -8,8 +8,8 @@ Tuleap 12.5
 
   Tuleap 12.5 is currently under development.
 
-Settings ``sys_async_emails`` is no more used
----------------------------------------------
+Setting ``sys_async_emails`` is no more used
+--------------------------------------------
 
 Tracker notifications are now always sent asynchronously as soon as Tuleap detects :ref:`backend workers<admin_howto_backend_worker>`.
 You can safely remove this setting from your ``/etc/tuleap/conf/local.inc`` file.
