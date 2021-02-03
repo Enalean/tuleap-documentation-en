@@ -4,7 +4,7 @@
     "license": "GPL-2.0-or-later",
     "devDependencies": {
         "@babel/core": "^7.12.13",
-        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-env": "^7.12.13",
         "@fortawesome/fontawesome-free": "^5.15.2",
         "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^3.0.0",
