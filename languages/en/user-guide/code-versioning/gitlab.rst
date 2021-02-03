@@ -1,11 +1,7 @@
 .. _version-control-with-gitlab:
 
-GitLab plugin
-=============
-
-.. note::
-
-  This plugin is under construction, the documentation and the plugin can change.
+GitLab
+======
 
 Overview
 --------
@@ -117,6 +113,14 @@ GitLab access Token
 
 You can use a personal or project access token. The token will be used to manage integration of GitLab repository in Tuleap,
 and to write comments automatically on GitLab commit or merge requests.
+
+
+With a project access token, you can only integrate the GitLab repository which provides the project access token.
+With a personal access token, you can integrate all repositories which you maintain.
+Don't forget that comments will be added automatically on GitLab commits and merge requests. These comments will be
+written with the access token, so if you provide a personal access token, the user providing this token will be displayed
+next to comments.
+
 
 .. note::
 
