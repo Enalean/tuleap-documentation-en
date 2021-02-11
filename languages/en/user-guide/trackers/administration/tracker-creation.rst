@@ -108,7 +108,7 @@ Import prerequisites
 
 Before doing the Jira issue import, you have to check the following points:
 
-* Redis must be enabled and backend workers are needed
+* Redis must be enabled and :ref:`backend workers configured <admin_howto_backend_worker>`
 * Users email addresses are visible to anyone in the Jira configuration (must be done by each user)
 * The Jira user used to do the import must be administrator of your Jira project in order to have all the issues and all the content possible.
 
