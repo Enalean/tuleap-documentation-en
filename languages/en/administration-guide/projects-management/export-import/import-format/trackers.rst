@@ -609,3 +609,77 @@ Supported `type` for `field` scope:
 * `PLUGIN_TRACKER_FIELD_READ` ugroup can see the field content
 * `PLUGIN_TRACKER_FIELD_SUBMIT` ugroup can set value for the field at artifact creation
 * `PLUGIN_TRACKER_FIELD_UPDATE` ugroup can upgrade the field value after creation
+
+Timetracking
+------------
+
+If you have times tracked on artifacts and you want to keep at import, you have to:
+
+* Enable timetracking in tracker
+* Add times for artifacts in this tracker
+
+Here is an example of how to enable timetracking to the tracker and import times:
+
+.. sourcecode:: xml
+  :linenos:
+  :emphasize-lines: 35-56
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project>
+          <services>
+            <service shortname="plugin_tracker" enabled="true" />
+            ...
+          </services>
+          ...
+          <trackers use-natures="true">
+            <tracker id="T239" parent_id="0" instantiate_for_new_projects="1">
+              <name><![CDATA[Simple Tracker]]></name>
+              <item_name>simple</item_name>
+              <description><![CDATA[simple tracker example]]></description>
+              <color>inca_silver</color>
+              <cannedResponses/>
+              <formElements>
+                <formElement type="computed" ID="F123" rank="97">
+                  <name>computed_field_name</name>
+                  <label><![CDATA[Computed_Field_Label]]></label>
+                </formElement>
+              </formElements>
+              ...
+              <artifacts>
+                <artifact id="445">
+                  <changeset>
+                    <submitted_by format="username">vaceletm</submitted_by>
+                    <submitted_on format="ISO8601">2015-11-10T09:05:19+01:00</submitted_on>
+                    <comments/>
+                    <field_change field_name="Artifact Links" type="art_link">
+                      <value nature="_in_folder">12</value>
+                    </field_change>
+                  </changeset>
+                  ...
+                </artifact>
+              </artifacts>
+              <timetracking is_enabled="1">
+                <permissions>
+                  <read>
+                    <ugroup><![CDATA[project_admins]]></ugroup>
+                  </read>
+                  <write>
+                    <ugroup><![CDATA[project_members]]></ugroup>
+                  </write>
+                </permissions>
+                <time artifact_id="445">
+                  <user format="ldap">102</user>
+                  <minutes>240</minutes>
+                  <step>Dev v2</step>
+                  <day format="ISO8601"><![CDATA[2020-07-25T00:00:00+02:00]]></day>
+                </time>
+                <time artifact_id="445">
+                  <user format="ldap">102</user>
+                  <minutes>60</minutes>
+                  <step>Dev</step>
+                  <day format="ISO8601"><![CDATA[2021-02-06T00:00:00+01:00]]></day>
+                </time>
+              </timetracking>
+            </tracker>
+          </trackers>
+    </project>
