@@ -47,7 +47,10 @@ section.
 
     ``Tuleap API`` is automatically installed if you install ``Tuleap Git Branch Source`` or ``Tuleap Authentication``.
 
-You might also need to install other plugins related to your pipeline of email notifications, artifact publishing to Artifactory, etc.
+Ideally, you will want to install the `Pipeline plugin <https://plugins.jenkins.io/workflow-aggregator/>`_ as well as the targeted workflows make an extensive use of ``Jenkinsfile``.
+The examples provided below assume you have this plugin installed on your Jenkins instance.
+
+Finally, you might also need to install other plugins related to your pipeline of email notifications, artifact publishing to Artifactory, etc.
 This is business specific to each project and not covered in this documentation.
 
 Plugins configuration
