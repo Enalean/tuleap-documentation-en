@@ -343,7 +343,8 @@ Add the Tuleap el7 repository
    name=Tuleap
    baseurl=https://ci.tuleap.org/yum/tuleap/rhel/7/dev/\$basearch
    enabled=1
-   gpgcheck=0
+   gpgcheck=1
+   gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
    EOF
 
 Install the packages list
