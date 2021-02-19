@@ -93,5 +93,5 @@ As a contributor, it's your duty to get your commits integrated, it's useless to
 
 .. _+750k LOC: https://www.openhub.net/p/tuleap/analyses/latest/languages_summary
 .. _SOLID: https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
-.. _STUPID: https://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
+.. _STUPID: https://www.npopov.com/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html
 .. _Code Smells: https://blog.codinghorror.com/code-smells/
