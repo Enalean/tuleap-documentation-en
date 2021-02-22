@@ -20,6 +20,7 @@ Table of contents
    rest/quick-start
    rest/xml
    rest/concurrency
+   rest/text-content
    rest/tus
    rest/collections
    rest/api
