@@ -12,6 +12,7 @@ LANG             = en
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) tmp/$(LANG)
 WATCHOPTS       = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) languages/$(LANG)
 
+.DEFAULT_GOAL:= default
 .PHONY: help clean html singlehtml linkcheck
 
 # Taken from zf-framework documentation
@@ -35,35 +36,36 @@ endif
 	@sed -i.bak 's/#language = None/language = "$(LANG)"/' tmp/$(LANG)/conf.py
 	@rm -f tmp/$(LANG)/conf.py.bak
 
-
 help:
-	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html       to make standalone HTML files"
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  linkcheck  to check all external links for integrity"
+	@grep -E '^[a-zA-Z0-9_\-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 clean:
 	-rm -rf tmp
 	-rm -rf $(BUILDDIR)/*
 
-html: pre-build
+html: pre-build ## Make standalone HTML files
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/$(LANG)
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-singlehtml: pre-build
+singlehtml: pre-build ## Make a signle large HTML file
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml/$(LANG)
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-linkcheck: pre-build
+linkcheck: pre-build ## Check all external links for integrity
 	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck/$(LANG)
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
-watch-html: pre-build
+watch-html: pre-build ## Watch the files and rebuild
 	$(SPHINX_AUTOBUILD) -b html $(WATCHOPTS) $(BUILDDIR)/html --port 5000 --open-browser
+
+watch-html-tuleap-org: pre-build ## Watch the files for the tuleap.org Theme
+	@$(MAKE) watch-html SPHINXOPTS="-D html_theme=tuleap_org"
 
 docker-html:
 	docker run --rm -ti -u `id -u`:`id -g` -v $(CURDIR):/sources enalean/build-documentation make html
+
+default: help
