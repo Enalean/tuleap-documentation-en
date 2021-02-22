@@ -54,9 +54,9 @@ Here is the folder structure you should follow:
                          |-- my-lib-name.es.js              # Javascript ES module bundle, it is referenced in "module" and in package.json
                          |-- my-lib-name-style.css          # CSS bundle, it is referenced in "style" in package.json
                     |-- types/                              # TypeScript declarations
-                        |--index.d.ts                 # Typescript declarations for the entrypoint, it is referenced in "types" in package.json
+                        |--index.d.ts                       # Typescript declarations for the entrypoint, it is referenced in "types" in package.json
                         |-- subfolder/
-                            |-- my-other-source.d.ts # Other source files also generate Typescript declarations. They are not used.
+                            |-- my-other-source.d.ts
                     |-- po/                                 # Localization strings
                          |-- fr_FR.po                       # Localized strings for French
                     |-- src/                                # The lib source-code
@@ -118,8 +118,8 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
       "modules": "dist/my-lib-name.es.js",        // The Javascript ES Module bundle of your lib
       "exports": {
         ".": {
-          "import": "./dist/my-lib-name.es.js", // The Javascript ES Module bundle of your lib
-          "require": "./distmy-lib-name.umd.js" // The Javascript UMD bundle of your lib
+          "import": "./dist/my-lib-name.es.js",   // The Javascript ES Module bundle of your lib
+          "require": "./dist/my-lib-name.umd.js"  // The Javascript UMD bundle of your lib
         }
       },
       "types": "types/index.d.ts",                // The Typescript declarations for the endpoint of your lib
@@ -228,15 +228,15 @@ Finally, your ``index.ts`` file (the lib entrypoint) should export types that
 callers will need. Exporting them will ensure that the generated ``index.d.ts``
 declaration file references those types.
 Also note that you need to import the style file you referenced in your ``package.json``
-so it can be processed by Vite. 
+so it can be processed by Vite.
 
  .. code-block:: Typescript
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/src/index.ts
-    import { MyType, MyOtherType } from "./types";
+    import type { MyType, MyOtherType } from "./types";
     import "../themes/style.scss";
 
-    export { MyType, MyOtherType };
+    export type { MyType, MyOtherType };
     export function myFunction(param: MyType): MyOtherType {
         //...
     }
@@ -268,7 +268,8 @@ Use the library like any other "npm module" in Javascript / Typescript files:
  .. code-block:: Typescript
 
     // tuleap/plugins/other-plugin/scripts/other-app/src/other-file.ts
-    import { myFunction, MyOtherType } from "@tuleap/my-lib-name";
+    import type { MyOtherType } from "@tuleap/my-lib-name";
+    import { myFunction } from "@tuleap/my-lib-name";
 
     const result: MyOtherType = myFunction(param);
 
