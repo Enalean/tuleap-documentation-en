@@ -11,7 +11,7 @@ Basics:
   reports (``<reports>``) and permissions (``<permissions>``).
 - An ``<artifact>`` is made of ``<changeset>``, each ``<changeset>`` corresponds to a modification
   of the artifact. Order matters! the first <changeset> is the artifact creation.
-- A ``<changeset>`` is composed of a ``<comment>`` (can be in ``text`` or ``html`` format) and
+- A ``<changeset>`` is composed of a ``<comment>`` (can be in ``text``, ``html`` or ``commonmark`` format) and
   a set of ``<field_change>``. Each ``<field_change>`` refers to a field referenced in
   the ``<formElements>`` section of ``<tracker>``.
 

@@ -117,7 +117,7 @@ Each step is made of two text boxes:
 - In first place, Actions: should hold a list of things to do.
 - Then Expected Results: what you are expected to get after having done the Actions.
 
-Both areas supports HTML formating as well as images (copy/paste, drag'n drop, ...).
+Both areas support HTML and Markdown formating as well as images (copy/paste, drag'n drop, ...).
 
 .. figure:: ../images/screenshots/testmanagement/steps_edit.png
    :align: center
