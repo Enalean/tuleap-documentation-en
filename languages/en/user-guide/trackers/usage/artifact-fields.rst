@@ -17,6 +17,8 @@ Allows the user to enter free text in a multi-line text area.
 The field "Original Submission" that is used to describe in details a
 defect, a task, etc. is of type "Text".
 
+It can have three formats: "Text", "HTML" or "Markdown".
+
 Select Box
 ``````````
 A "Select Box" field takes its value from a predefined
