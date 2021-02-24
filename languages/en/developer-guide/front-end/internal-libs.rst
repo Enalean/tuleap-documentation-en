@@ -165,9 +165,8 @@ file to configure Typescript.
     {
         "extends": "../../../../../tools/utils/scripts/tsconfig-for-libraries.json",
         "compilerOptions": {
-            "lib": ["ES2015"],  // Add values like "DOM" if your lib interacts with the DOM
-            "outDir": "types/",
-            "emitOnlyDeclarations": true
+            "lib": [],  // Add values like "DOM" if your lib interacts with the DOM
+            "outDir": "types/"
         },
         "include": ["src/**/*"],
         "exclude": ["src/**/*.test.ts"]
