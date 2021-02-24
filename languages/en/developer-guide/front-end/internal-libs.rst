@@ -90,11 +90,10 @@ This file should be located in ``my-lib-name/``.
  .. code-block:: TypeScript
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/vite.config.ts
-    import { defineConfig } from "vite";
+    import { defineConfig } from "../../../../../tools/utils/scripts/vite-configurator";
     import * as path from "path";
     export default defineConfig({
         build: {
-            brotliSize: false,
             lib: {
                 entry: path.resolve(__dirname, "src/index.ts"),
                 name: "MyLibName",
