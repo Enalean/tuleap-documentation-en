@@ -8,6 +8,16 @@ Tuleap 12.6
 
   Tuleap 12.6 is currently under development.
 
+User lab mode has been removed
+------------------------------
+
+The user lab mode was only used to enable the "Scrum v2"/"scrum mono-milestone" feature.
+This feature can now be made visible on the whole platform by executing on the instance:
+
+.. sourcecode:: shell
+
+        tuleap config-set feature_flag_allow_scrum_mono_milestone_usage 1
+
 Tuleap 12.5
 ===========
 
