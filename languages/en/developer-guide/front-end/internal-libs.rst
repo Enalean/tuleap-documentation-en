@@ -102,6 +102,7 @@ is NOT created but it will be filled with the translations.
     "MIME-Version: 1.0\n"
     "Content-Type: text/plain; charset=UTF-8\n"
     "Content-Transfer-Encoding: 8bit\n"
+    "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 To build up your application, you will have to create a ``vite.config.ts`` file.
 This file should be located in ``my-lib-name/``.
