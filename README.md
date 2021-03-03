@@ -17,6 +17,7 @@ Download the sources from GitHub
 Set-up your environment
 -----------------------
 
+    nix-shell
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt -r requirements-dev.txt
@@ -25,6 +26,7 @@ Set-up your environment
 Build the documentation
 -----------------------
 
+    nix-shell
     source venv/bin/activate
     make html
     deactivate
@@ -33,6 +35,7 @@ The documentation is generated in `tuleap-documentation-en/_build/html/en/` You 
 
 To build documentation for tuleap.org:
 
+    nix-shell
     npm ci
     npm run build
     source venv/bin/activate
@@ -42,6 +45,7 @@ To build documentation for tuleap.org:
 
 To build the documentation in watch mode:
 
+    nix-shell
     source venv/bin/activate
     make SPHINXOPTS="-D html_theme=tuleap_org" watch-html
     deactivate
