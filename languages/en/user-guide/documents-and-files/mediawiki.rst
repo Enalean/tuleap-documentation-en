@@ -100,7 +100,7 @@ Tuleap currently integrates the following Mediawiki extensions:
 * `PdfBook <https://www.mediawiki.org/wiki/Extension:PdfBook>`_ : lets you export a page as PDF.
 
 * `SyntaxHighlight_GeSHi <https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi>`_ : allows for source code syntax highlighting throught the ``<syntaxhighlight>`` tag
-  and the `GeSHi syntax highlighting <http://qbnz.com/highlighter/>`_.
+  and the `GeSHi syntax highlighting <https://web.archive.org/web/20200328063206/http://qbnz.com/highlighter/>`_.
 
 * `WikiEditor <https://www.mediawiki.org/wiki/Extension:WikiEditor>`_ : provides a text editor. Only available when display is 'Compatibility view' mode (see below).
 
