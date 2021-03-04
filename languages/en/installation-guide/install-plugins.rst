@@ -34,7 +34,7 @@ List of all plugins
 Project management:
 
 * **tracker**: Tuleap flagship, track anything the way you want
-* **graphontrackersv5**: Display graphs on top of trackers
+* **graphontrackers**: Display graphs on top of trackers
 * **agiledashboard**: Do Scrum and Kanban
 * **cardwall**: Build a board of cards on top of trackers or Agile Dashboard
 * **velocity**: Display velocity chart in the Agile Dashboard
@@ -134,4 +134,3 @@ Those plugins are not compatible with RHEL/CentOS 7
 Those plugins should not be installed and only kept for legacy reasons. They will be removed
 
 * tracker_encryption
-* graphontrackers
