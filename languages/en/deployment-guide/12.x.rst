@@ -4,10 +4,6 @@ Tuleap 12.x
 Tuleap 12.6
 ===========
 
-.. NOTE::
-
-  Tuleap 12.6 is currently under development.
-
 User lab mode has been removed
 ------------------------------
 
