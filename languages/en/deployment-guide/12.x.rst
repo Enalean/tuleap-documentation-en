@@ -1,12 +1,16 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.6
+Tuleap 12.7
 ===========
 
 .. NOTE::
 
-  Tuleap 12.6 is currently under development.
+  Tuleap 12.7 is currently under development.
+
+
+Tuleap 12.6
+===========
 
 User lab mode has been removed
 ------------------------------
