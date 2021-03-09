@@ -145,15 +145,21 @@ This command works with Jira REST API so Tuleap server must be able to reach the
 * The Jira user (``JIRA_USER``) used to do the import must be administrator of your Jira project in order to have all the issues and all the content possible.
 * The Jira user must first generate a token on the Jira instance (they will be prompted for the token when they launch the command).
 * For best conversion, Jira users' email addresses should visible to anyone in the Jira configuration (must be done by each user).
-  * If Jira users do not disclose their emails, everything will be owned by a "Tuleap importer" user.
+    * if Jira users do not disclose their emails, everything will be owned by a "Tuleap importer" user.
 
 This command will import:
 
 * all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort),
-* the links between issues with their types (related to, duplicate, etc)
-  * this includes sub-tasks as well as epics
-* all workload as :ref:`time tracking <timetracking>`,
+* the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
+* all worklog as :ref:`time tracking <timetracking>`,
 * Board and Sprints with associated issues and backlog.
+
+A given Jira project can have many Boards with different configurations. There is no equivalent concept in Tuleap
+so the importer arbitrarily choose the first declared board.
+
+Jira API doesn't expose what kind of issue type is an Epic so, by default, the importer relies on the naming and will
+pick the ``Epic`` issue type. If this label was modified in your project, you can tell the new name to the importer with
+``--jira-epic-issue-type`` option.
 
 The project is created and activated as soon as the command ends with ``TULEAP_USER_LOGIN`` as sole project administrator.
 By default the project privacy is "private" and can be changed after import.
