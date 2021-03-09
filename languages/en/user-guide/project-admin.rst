@@ -114,6 +114,61 @@ Shortly after the Tuleap Team approval
 you'll receive an e-mail summarizing the characteristics of your project
 including a pointer to your new "Project Dashboard" page.
 
+.. _jira-project-importer:
+
+Create project from Jira
+````````````````````````
+
+.. attention::
+
+  This feature is provided by package ``tuleap-plugin-jira-import`` it must be installed and activated by a site administrator
+  first.
+
+  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+It's also possible to create a new project by importing data from a Jira project.
+
+At the moment, this requires a site administrator action on the server because the
+feature is only available in tuleap CLI:
+
+.. sourcecode:: shell
+
+    tuleap import-project:from-jira \
+        --jira-host JIRA_HOST \
+        --jira-user JIRA_USER \
+        --tuleap-user TULEAP_USER_LOGIN \
+        --shortname TULEAP_PROJECT_SHORTNAME
+
+This command works with Jira REST API so Tuleap server must be able to reach the Jira server (``JIRA_HOST``). In addition to that:
+
+* The Jira user (``JIRA_USER``) used to do the import must be administrator of your Jira project in order to have all the issues and all the content possible.
+* The Jira user must first generate a token on the Jira instance (they will be prompted for the token when they launch the command).
+* For best conversion, Jira users' email addresses should visible to anyone in the Jira configuration (must be done by each user).
+    * if Jira users do not disclose their emails, everything will be owned by a "Tuleap importer" user.
+
+This command will import:
+
+* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort),
+* the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
+* all worklog as :ref:`time tracking <timetracking>`,
+* Board and Sprints with associated issues and backlog.
+
+A given Jira project can have many Boards with different configurations. There is no equivalent concept in Tuleap
+so the importer arbitrarily choose the first declared board.
+
+Jira API doesn't expose what kind of issue type is an Epic so, by default, the importer relies on the naming and will
+pick the ``Epic`` issue type. If this label was modified in your project, you can tell the new name to the importer with
+``--jira-epic-issue-type`` option.
+
+The project is created and activated as soon as the command ends with ``TULEAP_USER_LOGIN`` as sole project administrator.
+By default the project privacy is "private" and can be changed after import.
+
+.. note::
+
+    While the import of an entire project is a Tuleap Enterprise feature, the import of a :ref:`single issue type<tracker-import-from-jira>` with issues
+    and history is available on all versions of Tuleap.
+
 Post-Registration Configuration
 ```````````````````````````````
 

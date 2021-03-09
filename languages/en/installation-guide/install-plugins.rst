@@ -120,6 +120,9 @@ Integrations:
 * **botmattermost**: Integration with mattermost and slack
 * **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
 * **botmattermost-git**: Mattermost bot for git
+* **jira-import**: Import entire Jira project
+
+    * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
 .. note::
 

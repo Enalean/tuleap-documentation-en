@@ -13,6 +13,8 @@ Jira
 The import from Atlassian Jira is built in Tuleap trackers creation. Learn how to create a new Tuleap tracker from
 a Jira instance in the :ref:`dedicated section <tracker-import-from-jira>`.
 
+You can also import entire Jira project into Tuleap with :ref:`Jira Project importer <jira-project-importer>`.
+
 GitLab
 ''''''
 
