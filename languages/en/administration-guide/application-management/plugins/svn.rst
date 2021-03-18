@@ -45,3 +45,32 @@ You can use the following instructions to install Subversion 1.9:
 
  1. Install WANdisco repository on your server
  2. Upgrade Subversion with ``yum upgrade subversion``
+
+Define max file size
+--------------------
+
+Site administrators can enforce a max file size for the whole platform. This applies on all repositories of svn plugin
+in all projects. This limit will be enforced only with new commits (commits done after the limit is set) so you might
+well have 50GB files with a 128MB limit if the file was already there.
+
+This limit is not applied if you import a subversion repository or if you migrated from core to plugin.
+
+Whenever someone tries to modify a file bigger than the limit, the modification will be forbidden. However the file can
+be removed (``svn rm``) and re-added at a lower size. Please keep in mind that this won't save space on your disk as the
+large version of the file is still present in subversion history.
+
+There is no limit set by default.
+
+This configuration can be done either in command line on the server with
+
+.. code-block:: bash
+
+    tuleap config-set plugin_svn_file_size_limit 134217728
+
+In CLI, the filesize should be expressed in bytes (128MB in the previous example).
+
+There is also a GUI for site administrator in "SVN" section, "Max file size".
+
+.. image:: ../../../images/screenshots/svn/site-admin-max-file-size.png
+    :alt: Define max file size as site admin
+    :align: center
