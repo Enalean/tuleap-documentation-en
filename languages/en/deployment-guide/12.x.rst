@@ -8,6 +8,11 @@ Tuleap 12.7
 
   Tuleap 12.7 is currently under development.
 
+Subversion max file size
+------------------------
+
+A new parameter can be :ref:`configured at site level <subversion-max-file-size>` to limit the max file size in svn
+plugin repositories. By default no limit is set for existing platforms.
 
 Tuleap 12.6
 ===========
