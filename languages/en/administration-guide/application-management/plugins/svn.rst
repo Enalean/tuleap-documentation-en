@@ -59,7 +59,8 @@ Whenever someone tries to modify a file bigger than the limit, the modification 
 be removed (``svn rm``) and re-added at a lower size. Please keep in mind that this won't save space on your disk as the
 large version of the file is still present in subversion history.
 
-There is no limit set by default.
+The default limit for new platforms (starting Tuleap 12.7) is 50MB. Before 12.7 there was no limit set but administrators
+can add one afterward.
 
 This configuration can be done either in command line on the server with
 
