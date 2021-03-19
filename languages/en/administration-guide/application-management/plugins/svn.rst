@@ -53,7 +53,7 @@ Site administrators can enforce a max file size for the whole platform. This app
 in all projects. This limit will be enforced only with new commits (commits done after the limit is set) so you might
 well have 50GB files with a 128MB limit if the file was already there.
 
-This limit is not applied if you import a subversion repository or if you migrated from core to plugin.
+This limit is not applied if you import a subversion repository or if you migrate from core to plugin.
 
 Whenever someone tries to modify a file bigger than the limit, the modification will be forbidden. However the file can
 be removed (``svn rm``) and re-added at a lower size. Please keep in mind that this won't save space on your disk as the
