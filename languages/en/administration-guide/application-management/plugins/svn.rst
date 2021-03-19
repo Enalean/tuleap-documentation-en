@@ -68,9 +68,9 @@ This configuration can be done either in command line on the server with
 
 .. code-block:: bash
 
-    tuleap config-set plugin_svn_file_size_limit 134217728
+    # Limit is expressed in megabytes
+    tuleap config-set plugin_svn_file_size_limit 50
 
-In CLI, the filesize should be expressed in bytes (128MB in the previous example).
 
 There is also a GUI for site administrator in "SVN" section, "Max file size".
 
