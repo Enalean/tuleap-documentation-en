@@ -46,6 +46,8 @@ You can use the following instructions to install Subversion 1.9:
  1. Install WANdisco repository on your server
  2. Upgrade Subversion with ``yum upgrade subversion``
 
+.. _subversion-max-file-size:
+
 Define max file size
 --------------------
 
