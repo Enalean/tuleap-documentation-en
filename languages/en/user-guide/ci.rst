@@ -80,7 +80,7 @@ Tuleap API Plugin provides the pipeline command to send the build result of your
 
 Before using the command you will need a special, secret token to ensure
 that it's your jenkins job that recorded the build status. To do so, go into repository
-*Settings > CI token*:
+*Settings > CI Builds*:
 
 .. figure:: ../images/screenshots/pullrequest/ci-token.png
       :align: center
