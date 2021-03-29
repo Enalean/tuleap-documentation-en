@@ -8,6 +8,12 @@ Tuleap 12.7
 
   Tuleap 12.7 is currently under development.
 
+Permissions Overrider removal
+-----------------------------
+
+As :ref:`previously announced <remove_permissions_overrider>`, this feature has been removed.
+If you had deployed a ``/etc/tuleap/local_glue/PermissionsOverrider.php`` file, it can be removed as it is no more used.
+
 Subversion max file size
 ------------------------
 

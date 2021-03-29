@@ -9,5 +9,4 @@ Security
    security/dynamic-credentials
    security/site-access
    security/permission-delegation
-   security/permissions-overrider
    security/shell-account
