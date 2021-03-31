@@ -83,7 +83,7 @@ that it's your Jenkins's job that recorded the build status.
 
 There are currently two ways to proceed:
  - Either `using the CI token`_ of the repository
- - Either `using an access key`_ of a user belonging to a user group authorized to set build statuses.
+ - Or `using an access key`_ of a user belonging to a user group authorized to set build statuses.
 
 To do so, go into repository *Settings > CI Builds*:
 
@@ -144,7 +144,7 @@ To send the result you have to add the following command in your Jenkinsfile:
 Where:
  - ``BUILD_STATUS`` is either 'pending', 'failure' or 'success'.
  - ``GIT_REPOSITORY_ID`` is the ID of the concerned git repository. The ID can be found in the URL query (repo_id=XXX) in the 'Settings' menu of the repository.
- - ``CRED_ID_OF_CI_TOKEN_OR_ACCESS_KEY`` is the Jenkins credential ID of the CI token OR the access key bound to your repository. In the example below, it is ``b9a4832d-f26d-46ca-acd7-15b935de9069``
+ - ``CRED_ID_OF_CI_TOKEN_OR_ACCESS_KEY`` is the Jenkins credential ID of the CI token OR the access key of a user who has the permission to set builds statuses on your repository. In the example below, it is ``b9a4832d-f26d-46ca-acd7-15b935de9069``
 
 Here is an example Jenkinsfile using the tuleapNotifyCommitStatus command:
 
@@ -156,7 +156,7 @@ Here is an example Jenkinsfile using the tuleapNotifyCommitStatus command:
         stages {
             stage('Build') {
                 steps {
-                    tuleapNotifyCommitStatus status: 'pending', repositoryId: '1', credentialId: 'b9a4832d-f26d-46ca-acd7-15b935de9069n'
+                    tuleapNotifyCommitStatus status: 'pending', repositoryId: '1', credentialId: 'b9a4832d-f26d-46ca-acd7-15b935de9069'
 
                     sh('make all')
                 }
