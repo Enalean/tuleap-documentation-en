@@ -69,6 +69,10 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **roadmap**: Widget to display the roadmap on the project dashboard.
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 File deliveries and documentation:
 
 * **docman**: Document management

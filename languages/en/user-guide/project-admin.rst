@@ -266,6 +266,7 @@ Some widgets have documentation to explain how to configure and use them:
 - :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard in project dashboard.
 - :ref:`Label widget <label_widget>` to track your items.
 - :ref:`Portfolio <portfolio>`.
+- :ref:`Roadmap <roadmap>`.
 
 Whenever you enter the Project Dashboard of a given project or any of
 its service you'll see a menu item called Admin appears in the project
@@ -303,6 +304,41 @@ The search respects Tuleap permissions model: you can choose only projects you a
 If you can't read all trackers or all columns needed by the query, an error message will be displayed.
 
 After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
+
+.. _roadmap:
+
+Roadmap
+```````
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+.. NOTE::
+  This widget is still under development.
+
+This displays the roadmap of a project in the project dashboard. It is based on a tracker with:
+
+* Title semantic
+* Timeframe semantic
+
+All artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
+
+* they have at least a start date or a end date
+* the end date (if set) is greater than the start date
+
+If artifact has only start date, only end date, or start date equals to end date, then it is displayed as Gantt milestone.
+
+User can choose:
+
+* The timescale: Month, Quarter
+* To display links between artifacts: no links (aka "None") or a given type of links.
+
+.. NOTE::
+  As of today, links without specific type are labelled ``""`` (empty string, like it is done in artifact link field).
+
+
 
 CSV Export
 ~~~~~~~~~~
