@@ -17,7 +17,7 @@ Extensions
 Tuleap also adds a few extensions to make life easier. In Markdown, you can
 write "code fence" blocks to show little snippets of code. For example:
 
-  .. code-block:: Markdown
+  .. code-block:: markdown
 
     ```typescript
     function add(a: number, b: number): number {
@@ -30,7 +30,7 @@ These snippets are syntax highlighted when rendered in HTML.
 You can also write graphs in a text format called `Mermaid <mermaid_>`_
 in Markdown code blocks:
 
-  .. code-block:: Markdown
+  .. code-block:: markdown
 
     Flow-chart example:
 
