@@ -58,19 +58,7 @@ Here is the folder structure you have to follow:
                        |-- router/            # Vue-router modules
                        |-- index.ts           # App bootstrapping
         |-- themes/
-             |-- _my-vue-app.scss                    # All SCSS rules should go here
-             |-- my-vue-app-blue.scss                # All the following files provide color themes
-             |-- my-vue-app-blue-condensed.scss
-             |-- my-vue-app-green.scss
-             |-- my-vue-app-green-condensed.scss
-             |-- my-vue-app-grey.scss
-             |-- my-vue-app-grey-condensed.scss
-             |-- my-vue-app-orange.scss
-             |-- my-vue-app-orange-condensed.scss
-             |-- my-vue-app-purple.scss
-             |-- my-vue-app-purple-condensed.scss
-             |-- my-vue-app-red.scss
-             |-- my-vue-app-red-condensed.scss
+             |-- my-vue-app.scss              # All SCSS rules should go here
 
 Build your Vue application
 --------------------------
@@ -105,21 +93,12 @@ This file should be located in ``my-plugin/``.
         "/assets/my-plugin/"
     );
 
-    const entry_points = {
-        "my-vue-app": "./scripts/my-vue-app/src/index.ts"
-    };
-
-    const colors = ["blue", "green", "grey", "orange", "purple", "red"];
-    for (const color of colors) {
-        entry_points[`my-vue-app-${color}`] = `./themes/my-vue-app-${color}.scss`;
-        entry_points[
-            `my-vue-app-${color}-condensed`
-        ] = `./themes/my-vue-app-${color}-condensed.scss`;
-    }
-
     module.exports = [
         {
-            entry: entry_points,
+            entry: {
+                "my-vue-app": "./scripts/my-vue-app/src/index.ts",
+                "my-vue-app-style": "./themes/my-vue-app.scss",
+            },
             context,
             output,
             externals: {
@@ -127,9 +106,7 @@ This file should be located in ``my-plugin/``.
             },
             module: {
                 rules: [
-                    ...webpack_configurator.configureTypescriptRules(
-                        webpack_configurator.babel_options_ie11
-                    ),
+                    ...webpack_configurator.configureTypescriptRules(),
                     webpack_configurator.rule_easygettext_loader,
                     webpack_configurator.rule_vue_loader
                 ]
