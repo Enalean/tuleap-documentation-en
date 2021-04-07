@@ -23,6 +23,15 @@ Subversion max file size
 A new parameter can be :ref:`configured at site level <subversion-max-file-size>` to limit the max file size in svn
 plugin repositories. By default no limit is set for existing platforms.
 
+Mediawiki MLEB extensions desactivated
+--------------------------------------
+
+In order to prepare the upgrade to Mediawiki 1.35, some extensions are phased out. This is the case of the "MLEB" group.
+Most if not all platform should see no difference has this was never documented so it's unlikely anyone is still using it.
+
+A feature flag allow to reactivate it, please reach out the dev team if you need it so we can see how to move forward on
+that.
+
 Tuleap 12.6
 ===========
 
