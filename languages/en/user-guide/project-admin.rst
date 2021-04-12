@@ -208,7 +208,7 @@ face of a project.
 
 .. _project-dashboard-content:
 
-Project Dashboard Content
+Project Dashboard content
 `````````````````````````
 
 A sample project dashboard is available below. The page is split in

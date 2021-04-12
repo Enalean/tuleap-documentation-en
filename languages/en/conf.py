@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.imgmath', 'sphinx_rtd_theme']
+extensions = ['sphinx.ext.imgmath', 'sphinx_rtd_theme', 'sphinxext.rediraffe']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -271,3 +271,9 @@ lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
 from pygments.lexers.markup import MarkdownLexer
 lexers['markdown'] = MarkdownLexer(startinline=True, linenos=1)
+
+# Redirections
+
+rediraffe_redirects = {
+    "user-guide/trackers/usage/markdown.rst": "user-guide/citizen.rst",
+}

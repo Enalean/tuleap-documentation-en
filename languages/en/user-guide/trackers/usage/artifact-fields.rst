@@ -1,3 +1,5 @@
+.. _tracker_artifact_fields:
+
 Artifact Fields
 ---------------
 
