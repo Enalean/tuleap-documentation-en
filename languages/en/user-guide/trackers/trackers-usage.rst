@@ -12,5 +12,4 @@ Trackers Usage
    usage/move-artifact
    usage/notification
    usage/artifact-fields
-   usage/markdown
 

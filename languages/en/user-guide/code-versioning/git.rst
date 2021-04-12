@@ -259,10 +259,12 @@ The feature is documented in :ref:`continuous_integration_git_branch_source` sec
 
     The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook.
 
+.. _git_markdown_document:
+
 Markdown documents
 ------------------
 
-Tuleap supports rendering Markdown documents written with the `CommonMark syntax <https://commonmark.org/>`_ directly in the
+Tuleap supports rendering :ref:`Markdown documents <write_in_markdown>` directly in the
 web interface of your Git repository.
 
 It is possible to link to other files in your repo or to images stored in the repository:

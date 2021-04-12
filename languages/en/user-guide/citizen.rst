@@ -216,3 +216,80 @@ To configure it, go to your account preferences. In the appearance and language 
 - ``Absolute date first``: highlight the absolute date, the relative date is displayed smaller
 - ``Relative date only``: display only the relative date, the absolute date is displayed in a tooltip when hovered
 - ``Absolute date only``: display only the absolute date, the relative date is displayed in a tooltip when hovered
+
+.. _write_in_markdown:
+
+Write content in Markdown
+-------------------------
+
+Tuleap supports writing Text content in `Markdown format <what_is_markdown_>`_.
+To be more precise, Tuleap supports the `CommonMark <commonmark_>`_
+specification for Markdown.
+
+Here is a link to `an explanation of Markdown Syntax <markdown_syntax_>`_ that
+will help you understand how to write Markdown.
+
+If you're already a little bit familiar with it, check the `Markdown syntax
+cheat-sheet <cheat_sheet_>`_ for a quick reminder.
+
+Extensions
+``````````
+
+Tuleap also adds a few extensions to make life easier. In Markdown, you can
+write "code fence" blocks to show little snippets of code. For example:
+
+  .. code-block:: markdown
+
+    ```typescript
+    function add(a: number, b: number): number {
+      return a + b;
+    }
+    ```
+
+These snippets are syntax highlighted when rendered in HTML. There are `more than 250 languages supported <prism_>`_ by the
+underlying lib used for the syntax highlighting, PrismJS.
+
+You can also write graphs in a text format called `Mermaid <mermaid_>`_
+in Markdown code blocks:
+
+  .. code-block:: markdown
+
+    Flow-chart example:
+
+    ```mermaid
+      graph TD;
+        A-->B;
+        A-->C;
+        B-->D;
+        C-->D;
+    ```
+
+This will produce a flow-chart graph like this:
+
+  .. figure:: ../images/diagrams/mermaid/flowchart-example.png
+
+Where can I write Markdown ?
+````````````````````````````
+
+* In Tuleap Trackers Text :ref:`artifact fields <tracker_artifact_fields>` as well as in Follow-up comments,
+* in Tuleap Test Management :ref:`Step Definitions <testmanagement_test_steps>`,
+* in Tuleap Git for :ref:`markdown documents <git_markdown_document>`,
+* in :ref:`Project dashboard <project-dashboard-content>` Note widget.
+
+
+Resources
+---------
+
+- `What is Markdown <what_is_markdown_>`_
+- `CommonMark specification <commonmark_>`_
+- `Markdown syntax cheat-sheet <cheat_sheet_>`_
+- `Markdown syntax <markdown_syntax_>`_
+- `Mermaid graphs <mermaid_>`_
+- `Languages supported by PrismJS <prism_>`_
+
+.. _what_is_markdown: https://www.markdownguide.org/getting-started/#what-is-markdown
+.. _commonmark: https://commonmark.org/
+.. _cheat_sheet: https://www.markdownguide.org/cheat-sheet/
+.. _markdown_syntax: https://www.markdownguide.org/basic-syntax/
+.. _mermaid: https://mermaid-js.github.io/mermaid/
+.. _prism: https://prismjs.com/#supported-languages

@@ -98,10 +98,12 @@ You can also edit the test directly from the Test Management interface.
 The test you create or you edit are automatically updated in the test campaign
 and will be re-usable in a following campaign.
 
+.. _testmanagement_test_steps:
+
 Test steps
 ~~~~~~~~~~
 
-.. important::
+.. IMPORTANT::
 
     You should manage steps in the Test Case tracker directly. Steps cannot be seen or defined from the Test Management
     interface.
@@ -117,7 +119,7 @@ Each step is made of two text boxes:
 - In first place, Actions: should hold a list of things to do.
 - Then Expected Results: what you are expected to get after having done the Actions.
 
-Both areas support HTML and Markdown formating as well as images (copy/paste, drag'n drop, ...).
+Both areas support HTML and Markdown formatting as well as images (copy/paste, drag'n drop, ...).
 
 .. figure:: ../images/screenshots/testmanagement/steps_edit.png
    :align: center
