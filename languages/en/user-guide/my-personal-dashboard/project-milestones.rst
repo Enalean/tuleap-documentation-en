@@ -85,7 +85,7 @@ Finally, at the bottom there are links to go to Overview, Sprint Planning, Taskb
 Integration with TestManagement
 ```````````````````````````````
 
-If TestMangament is configured, there are more additional information:
+If TestManagement is configured, there are more additional information:
 
 * A pie chart to display the number of each tests classified by status.
 * A link to go to test campaigns of each sprints.
