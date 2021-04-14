@@ -1,7 +1,7 @@
 User
 ====
 
-You can learn more about the various class of Tuleap citizens in the dedicated section
+You can learn more about the various class of Tuleap users in the dedicated section
 (see  :ref:`classes-of-citizens`).
 
 .. toctree::
@@ -9,6 +9,4 @@ You can learn more about the various class of Tuleap citizens in the dedicated s
 
    user/create-account
    user/preferences
-   user/markdown
    user/dashboard
-

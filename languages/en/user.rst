@@ -6,6 +6,7 @@ User guide
 
    user-guide/intro
    user-guide/citizen
+   user-guide/writing-in-tuleap
    user-guide/project-admin
    user-guide/agile-dashboard
    user-guide/tracker

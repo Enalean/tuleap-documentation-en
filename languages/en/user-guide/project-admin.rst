@@ -863,35 +863,14 @@ In your project dashboard, you can add several widgets to track your items:
 Reference Pattern Configuration
 -------------------------------
 
+If you are looking for how to use references, check :ref:`how to use references <writing-in-tuleap-references>`.
+
 A project administrator can update, enable, disable or even create reference patterns.
 
 .. _reference-overview:
 
 Reference Overview
 ``````````````````
-
-References are a powerful tool that allow cross-referencing of
-Tuleap objects. Based on a text pattern, Tuleap
-automatically creates hyperlinks to the desired object.
-
-When typing a follow-up comment or a commit message, any text containing
-the pattern "XXX #NNN" will be interpreted as a reference to the object
-of type XXX with ID number NNN. For instance, 'artifact #123' is
-recognized as a reference to artifact number 123, and Tuleap
-automatically creates a hyperlink that directly points to the details of
-artifact 123.
-
-You may also reference an object that belongs to another project. In
-that case, use either 'XXX #group\_id:NNN' or 'XXX #group\_name:NNN' to
-reference object XXX number NNN belonging to project which ID is
-'group\_id' or which short name is 'group\_name'. For instance, 'wiki
-#myproj:Welcome' is a reference to the 'Welcome' wiki page of the
-project 'myproj'.
-
-Some reference patterns may need more than one parameter. In this case,
-use '/' as a separator between parameters. For example, 'wiki
-#Welcome/2' creates a reference to the wiki page named 'Welcome' at
-version '2'.
 
 There are two kinds of reference patterns:
 
@@ -973,43 +952,6 @@ Here is a list of predefined reference patterns:
    'Files' main page by hovering over a release name with the mouse
    pointer. This reference links to the project file manager page, where
    the referenced release is highlighted in the list.
-
-Reference Usage
-```````````````
-
-While working in the development or the maintenance phase of a software
-project, it is vital to keep track of the changes made to the source
-code. This is what Version Control systems like Git and Subversion do.
-In addition to keeping track of the source code change history it is
-often critical to relate the changes to the artifact (a task, a defect
-or a support request) that led the developers to make a change in the
-code. And conversely, when reading the artifact description it is also
-very helpful to immediately see how the change was implemented.
-
-The integration of Git, Subversion and CVS in Tuleap precisely
-provide the Tuleap users with this bi-directional
-cross-referencing mechanism. This is achieved through the use of
-references that are automatically detected by Tuleap in
-either the follow-up comments of the project artifacts or in the
-messages attached to a CVS or SVN commit.
-
-The system is not limited to artifact and commit references, so you may
-also reference the forum message where the bug was found, the
-documentation that describes an issue, or the file that fixes it. The
-system is flexible enough to allow referencing of items that are not
-stored in Tuleap. So you may now create your own reference
-pattern to link to an external document manager like DocuShare, or
-source code management tool like ClearCase
-
-    .. NOTE::
-
-       It is considered a best practice to always reference a bug, a task
-       or a support request in any of the log message attached to a
-       Subversion or CVS commit. Similarly when closing the related
-       artifact (task, bug,etc.) make sure you mention the revision or
-       commit number in the follow-up comment. You will find this extremely
-       convenient while trying to keep track of the changes and why they
-       were made.
 
 Creating or Updating a Reference Pattern
 ````````````````````````````````````````
