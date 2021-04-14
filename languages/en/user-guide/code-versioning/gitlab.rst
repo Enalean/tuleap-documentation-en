@@ -68,7 +68,7 @@ A comment is composed of a list of Tuleap references included in the merge reque
 Reference a GitLab commit or merge request
 ''''''''''''''''''''''''''''''''''''''''''
 
-Please refer to :ref:`reference-overview` for more details on references.
+Please refer to :ref:`writing-in-tuleap-references` for more details on references.
 
 You can reference a commit or merge request of one of the GitLab repositories registered in your Tuleap project.
 

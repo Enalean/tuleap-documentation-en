@@ -1,7 +1,12 @@
+Writing in Tuleap
+=================
+
+This section covers the general rules of that applies wherever you can write text in Tuleap.
+
 .. _write_in_markdown:
 
 Markdown
-========
+--------
 
 Tuleap supports writing Text content in `Markdown format <what_is_markdown_>`_.
 To be more precise, Tuleap supports the `CommonMark <commonmark_>`_
@@ -50,7 +55,7 @@ in Markdown code blocks:
 
 This will produce a flow-chart graph like this:
 
-  .. figure:: ../../images/diagrams/mermaid/flowchart-example.png
+  .. figure:: ../images/diagrams/mermaid/flowchart-example.png
 
 At the time of writing (Tuleap 12.7), Tuleap uses Mermaid v8 and supports following graph type:
 
@@ -77,6 +82,45 @@ Where can I write Markdown ?
 * in Tuleap Git for :ref:`markdown documents <git_markdown_document>`,
 * in :ref:`Project dashboard <project-dashboard-content>` Note widget.
 
+.. _writing-in-tuleap-references:
+
+Tuleap references
+-----------------
+
+References are a powerful tool that allow cross-referencing of
+Tuleap objects. Based on a text pattern, Tuleap
+automatically creates hyperlinks to the desired object.
+
+When typing a follow-up comment or a commit message, any text containing
+the pattern ``XXX #NNN`` will be interpreted as a reference to the object
+of type ``XXX`` with ID number ``NNN``.
+
+For instance, ``artifact #123`` is
+recognized as a reference to ``artifact`` number ``123``, and Tuleap
+automatically creates a hyperlink that directly points to the details of
+artifact 123.
+
+You may also reference an object that belongs to another project. In
+that case, use either ``XXX #project_id:NNN`` or ``XXX #project_name:NNN`` to
+reference object ``XXX`` number ``NNN`` belonging to project which ID is
+``project_id`` or which short name is ``project_name``. For instance, ``doc #myproj:567``
+is a reference to the document ``567`` of the project ``myproj``.
+
+Some reference patterns may need more than one parameter. In this case,
+use ``/`` as a separator between parameters. For example, ``git #a_repo/6eef1d01`` creates a reference to the
+git commit ``6eef1d01`` in the repository ``a_repo``
+
+Platform and projects can :ref:`define their own references <reference-overview>`.
+
+User mentions
+-------------
+
+When you type a text, you can mention a username by typing ``@username``, after 3 characters Tuleap will propose an
+auto completer to select a user.
+
+.. ATTENTION::
+
+    This feature doesn't notify the mentioned user.
 
 Resources
 ---------

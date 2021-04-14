@@ -379,7 +379,7 @@ as follows:
 
 -  The Tuleap reference mechanism allows cross-referencing
    with any Tuleap object: artifacts, documents, files, etc.
-   Please refer to :ref:`reference-overview` for more details on References.
+   Please refer to :ref:`writing-in-tuleap-references` for more details on References.
 
     **Tip**
 
