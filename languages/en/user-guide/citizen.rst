@@ -7,6 +7,5 @@ You can learn more about the various class of Tuleap users in the dedicated sect
 .. toctree::
    :maxdepth: 3
 
-   user/create-account
    user/preferences
    user/dashboard
