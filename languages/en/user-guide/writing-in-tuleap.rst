@@ -1,22 +1,22 @@
 Writing in Tuleap
 =================
 
-This section covers the general rules of that applies wherever you can write text in Tuleap.
+This section covers the general rules that apply wherever you can write text in Tuleap.
 
 .. _write_in_markdown:
 
 Markdown
 --------
 
-Tuleap supports writing Text content in `Markdown format <what_is_markdown_>`_.
-To be more precise, Tuleap supports the `CommonMark <commonmark_>`_
+Tuleap supports writing Text content in `Markdown format <https://www.markdownguide.org/getting-started/#what-is-markdown>`_.
+To be more precise, Tuleap supports the `CommonMark <https://commonmark.org/>`_
 specification for Markdown.
 
-Here is a link to `an explanation of Markdown Syntax <markdown_syntax_>`_ that
+Here is a link to `an explanation of Markdown Syntax <https://www.markdownguide.org/basic-syntax/>`_ that
 will help you understand how to write Markdown.
 
 If you're already a little bit familiar with it, check the `Markdown syntax
-cheat-sheet <cheat_sheet_>`_ for a quick reminder.
+cheat-sheet <https://www.markdownguide.org/cheat-sheet/>`_ for a quick reminder.
 
 Code Highlighting
 `````````````````
@@ -32,13 +32,13 @@ write "code fence" blocks to show little snippets of code. For example:
     }
     ```
 
-These snippets are syntax highlighted when rendered in HTML. There are `more than 250 languages supported <prism_>`_ by the
+These snippets are syntax highlighted when rendered in HTML. There are `more than 250 languages supported <https://prismjs.com/#supported-languages>`_ by the
 underlying lib used for the syntax highlighting, PrismJS.
 
 Graphs
 ``````
 
-You can also write graphs in a text format called `Mermaid <mermaid_>`_
+You can also write graphs in a text format called `Mermaid <https://mermaid-js.github.io/mermaid/>`_
 in Markdown code blocks:
 
   .. code-block:: markdown
@@ -118,23 +118,8 @@ User mentions
 When you type a text, you can mention a username by typing ``@username``, after 3 characters Tuleap will propose an
 auto completer to select a user.
 
+This will create a link toward user's public profile page.
+
 .. ATTENTION::
 
     This feature doesn't notify the mentioned user.
-
-Resources
----------
-
-- `What is Markdown <what_is_markdown_>`_
-- `CommonMark specification <commonmark_>`_
-- `Markdown syntax cheat-sheet <cheat_sheet_>`_
-- `Markdown syntax <markdown_syntax_>`_
-- `Mermaid graphs <mermaid_>`_
-- `Languages supported by PrismJS <prism_>`_
-
-.. _what_is_markdown: https://www.markdownguide.org/getting-started/#what-is-markdown
-.. _commonmark: https://commonmark.org/
-.. _cheat_sheet: https://www.markdownguide.org/cheat-sheet/
-.. _markdown_syntax: https://www.markdownguide.org/basic-syntax/
-.. _mermaid: https://mermaid-js.github.io/mermaid/
-.. _prism: https://prismjs.com/#supported-languages
