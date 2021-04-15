@@ -1,7 +1,7 @@
 Writing in Tuleap
 =================
 
-This section covers the general rules that apply wherever you can write text in Tuleap.
+This section covers the general rules that apply on texts in Tuleap.
 
 .. _write_in_markdown:
 
@@ -115,8 +115,8 @@ Platform and projects can :ref:`define their own references <reference-overview>
 User mentions
 -------------
 
-When you type a text, you can mention a username by typing ``@username``, after 3 characters Tuleap will propose an
-auto completer to select a user.
+When you type a text, you can mention a username by typing ``@username``. When possible, after 3 characters Tuleap will
+propose an auto completer to select a user.
 
 This will create a link toward user's public profile page.
 
