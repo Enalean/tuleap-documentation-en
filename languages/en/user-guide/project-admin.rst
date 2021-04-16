@@ -323,21 +323,23 @@ This displays the roadmap of a project in the project dashboard. It is based on 
 * Title semantic
 * Timeframe semantic
 
-All artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
+Artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
 
 * they have at least a start date or a end date
 * the end date (if set) is greater than the start date
+
+.. NOTE::
+  The widget filters out artifacts:
+  
+  * That are closed since more than one year
+  * That are closed with end date older than one year
 
 If artifact has only start date, only end date, or start date equals to end date, then it is displayed as Gantt milestone.
 
 User can choose:
 
-* The timescale: Month, Quarter
+* The timescale: Week, Month, Quarter
 * To display links between artifacts: no links (aka "None") or a given type of links.
-
-.. NOTE::
-  As of today, links without specific type are labelled ``""`` (empty string, like it is done in artifact link field).
-
 
 
 CSV Export
