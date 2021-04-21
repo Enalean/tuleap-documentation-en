@@ -9,7 +9,7 @@ Tuleap 12.8
   Tuleap 12.8 is currently under development.
 
 The rules regarding :ref:`browser compatibility <user_supported_browsers>` have been upgraded. Please take the time to review and check with
-the IT responsible of browsers deployments.
+the IT responsible for the browsers deployments.
 
 Tuleap 12.7
 ===========
