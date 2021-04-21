@@ -8,8 +8,23 @@ Tuleap 12.8
 
   Tuleap 12.8 is currently under development.
 
+The rules regarding :ref:`browser compatibility <user_supported_browsers>` have been upgraded. Please take the time to review and check with
+the IT responsible for the browsers deployments.
+
 Tuleap 12.7
 ===========
+
+.. ATTENTION::
+
+    Tuleap 12.7 is not compatible with old, vulnerable browsers.
+
+    People won't be able to browse Tuleap with Firefox below version 85 (except 78 ESR), Chrome or Edge below version 88.
+
+    Explanation: the build system to generate the javascript was entirely upgraded after the end of IE11/Edge Legacy
+    support. The generated javascript code is using features that are only available in recent version of browsers
+    for better performances and asset size.
+
+    This change will be smoothed in 12.8 for `backward compatibility <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=master&f=adr%2F0001-supported-browser-versions.md>`_ reasons.
 
 Permissions Overrider removal
 -----------------------------
