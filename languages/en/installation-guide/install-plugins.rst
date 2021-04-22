@@ -20,7 +20,7 @@ is the name of the package of the plugin you want to install):
 
     # On RHEL/CentOS 7
     yum install tuleap-plugin-awesomestuff
-    /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
+    tuleap-cfg site-deploy
     systemctl reload nginx
     systemctl restart tuleap-php-fpm
 
