@@ -27,26 +27,27 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-End of March 2021
-'''''''''''''''''
+June 2021
+'''''''''
 
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-PermissionsOverrider          Removed           :ref:`Delete the local glue <remove_permissions_overrider>`
 Subversion (SVN Core)         Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
-============================= ================= ============================================================
-
-Horizon June 2021
-'''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-PHP 7.3                       End of support    Switch to PHP 7.4
 Trackers v3                   Removed           Migrate to Trackers v5
+PHP 7.3                       End of support    Nothing, Tuleap will switch to php 7.4 automatically
 tab file-based translations   Replaced by       Nothing
                               gettext
+============================= ================= ============================================================
+
+September 2021
+''''''''''''''
+
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+Chrome & Edge < 87            End of support    Ensure your users have an up to date browser
+Firefox <= 78                 End of support    Ensure your users have an up to date browser
 ============================= ================= ============================================================
 
 Horizon end of 2021
@@ -55,6 +56,7 @@ Horizon end of 2021
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
+SOAP API                      Removed           End-users should switch to REST API
 Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
 MySQL 5.7                     End of support    Switch to MySQL 8
 ============================= ================= ============================================================
@@ -65,7 +67,6 @@ In the future
 ============================ ============== =============================================
 The Future                   Status         As platform administrator, what should I do ?
 ============================ ============== =============================================
-SOAP API                     Removed        End-users should switch to REST API
 PHP Wiki                     Removed        Switch to Mediawiki
 PROFTPd                      End of support End-users should use document/frs instead
 Realtime server using NodeJS Replaced       (To be announced)
@@ -77,6 +78,7 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+PermissionsOverrider            Q1 2021  Removed           :ref:`Delete the local glue <remove_permissions_overrider>`
 Internet Explorer               Q4 2020  End of support    **End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium**
 RHEL 6                          Q4 2020  End of support    Switch to RHEL 7
 Codendi CLI                     Q4 2019  End of support    Use REST API
