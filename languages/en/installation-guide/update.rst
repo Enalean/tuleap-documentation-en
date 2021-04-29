@@ -40,9 +40,6 @@ On RHEL/CentOS 7, run as root:
     # Apply data upgrades
     /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
 
-    # Re-generate nginx configuration
-    /usr/share/tuleap/tools/utils/php73/run.php --module=nginx
-
     # Deploy site configurations
     tuleap-cfg site-deploy
 
