@@ -1,15 +1,26 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.8
+Tuleap 12.9
 ===========
 
 .. NOTE::
 
-  Tuleap 12.8 is currently under development.
+  Tuleap 12.9 is currently under development.
+
+Tuleap 12.8
+===========
 
 The rules regarding :ref:`browser compatibility <user_supported_browsers>` have been upgraded. Please take the time to review and check with
 the IT responsible for the browsers deployments.
+
+Site Deploy is all you need
+---------------------------
+
+The command ``/usr/share/tuleap/tools/utils/php73/run.php`` that was part of the upgrade process is no longer needed and
+was removed. ``tuleap-cfg site-deploy`` now covers all the configuration after a platform update.
+
+You might need to adjust update scripts if you have any to remove usage of ``/usr/share/tuleap/tools/utils/php73/run.php``.
 
 Tuleap 12.7
 ===========
