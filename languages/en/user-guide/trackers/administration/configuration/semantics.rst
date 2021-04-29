@@ -182,6 +182,8 @@ For instance, if my artifact has a start date starting on Monday and has a 6 day
 
 The semantic **Timeframe** is used by various services across Tuleap (Taskboard, Planning, Roadmap, Burndown and Burnup graphs, Project milestones, etc.).
 
+.. _semantic-progress:
+
 Progress
 ````````
 
