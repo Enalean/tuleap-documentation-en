@@ -15,6 +15,8 @@ To define or update a semantic field, select the pencil icon next to the
 semantic property. Semantic admin section lets you define the following
 semantic properties:
 
+.. _semantic-title:
+
 Title
 `````
 
@@ -167,6 +169,8 @@ that corresponds to this initial effort notion.
 The initial effort is used in the Agile Dashboard **content** and **planning**
 views.
 
+.. _semantic-timeframe:
+
 Timeframe
 `````````
 
@@ -181,6 +185,8 @@ When set to "Start date + a number of days", the end date is automatically compu
 For instance, if my artifact has a start date starting on Monday and has a 6 days period of activity, then it will be supposed to end next Monday.
 
 The semantic **Timeframe** is used by various services across Tuleap (Taskboard, Planning, Roadmap, Burndown and Burnup graphs, Project milestones, etc.).
+
+.. _semantic-progress:
 
 Progress
 ````````

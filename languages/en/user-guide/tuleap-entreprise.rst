@@ -19,6 +19,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
 * :ref:`Project Milestones <project-milestones>`.
 * :ref:`Import Jira projects <jira-project-importer>`.
+* :ref:`Roadmap <roadmap>`.
 
 More information on `Tuleap.org website`_.
 

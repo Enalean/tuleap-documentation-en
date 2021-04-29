@@ -305,43 +305,6 @@ If you can't read all trackers or all columns needed by the query, an error mess
 
 After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
 
-.. _roadmap:
-
-Roadmap
-```````
-
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
-.. NOTE::
-  This widget is still under development.
-
-This displays the roadmap of a project in the project dashboard. It is based on a tracker with:
-
-* Title semantic
-* Timeframe semantic
-
-Artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
-
-* they have at least a start date or a end date
-* the end date (if set) is greater than the start date
-
-.. NOTE::
-  The widget filters out artifacts:
-  
-  * That are closed since more than one year
-  * That are closed with end date older than one year
-
-If artifact has only start date, only end date, or start date equals to end date, then it is displayed as Gantt milestone.
-
-User can choose:
-
-* The timescale: Week, Month, Quarter
-* To display links between artifacts: no links (aka "None") or a given type of links.
-
-
 CSV Export
 ~~~~~~~~~~
 
@@ -404,6 +367,49 @@ Special cases
 - Tracker "User story Alpha" has a text field named "details" which is defined as Description Semantic.
 - Tracker "User story Beta" has two text fields named "details" and "description". The "description" field is defined as Description Semantic.
 - The "details" field will be skipped because it is selected as a semantic in tracker "User story Alpha".
+
+.. _roadmap:
+
+Roadmap
+```````
+
+.. attention::
+
+  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  not be available on your installation of Tuleap.
+
+.. NOTE::
+  This widget is still under development.
+
+This displays the roadmap of a project in the project dashboard. It is based on a tracker with:
+
+* :ref:`semantic Title<semantic-title>`
+* :ref:`semantic Timeframe<semantic-timeframe>`
+
+Artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
+
+* they have at least a start date or a end date
+* the end date (if set) is greater than the start date
+
+The progress will be displayed on tasks only if the :ref:`semantic Progress<semantic-progress>` is defined in the tracker.
+
+.. figure:: ../images/screenshots/widget/roadmap-widget.png
+	:align: center
+	:alt: The roadmap widget
+	:name: The roadmap widget
+
+.. NOTE::
+  The widget filters out artifacts:
+
+  * That are closed since more than one year
+  * That are closed with end date older than one year
+
+If artifact has only start date, only end date, or start date equals to end date, then it is displayed as Gantt milestone.
+
+User can choose:
+
+* The timescale: Week, Month, Quarter
+* To display :ref:`links<types-artifact-links>` between artifacts: no links (aka "None") or a given type of links.
 
 Project Details
 ---------------
