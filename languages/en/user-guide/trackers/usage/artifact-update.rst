@@ -136,6 +136,8 @@ Linked or "to be linked" artifacts can be managed in the artifact link
 tabs view. Not yet linked artifacts are highlighted. All artifacts can
 be uncheck (by clicking the cross).
 
+.. _types-artifact-links:
+
 Using typed artifact links
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -167,15 +169,15 @@ Once deactivated:
 Parent/Child relationship
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before Tuleap 12.5, parent/child relationship was driven by the hierarchy. 
+Before Tuleap 12.5, parent/child relationship was driven by the hierarchy.
 It meant that the artifact link type ``_is_child`` was automatically set between two artifacts if a hierarchy was defined between the two trackers.
 
 Since Tuleap 12.5, parent/child relationship is only defined by the artifact link type ``_is_child``
 that must be added manually by the user while linking an artifact to another.
-With this feature, any artifact can be defined as a child of another, without any constraints. 
+With this feature, any artifact can be defined as a child of another, without any constraints.
 The children added this way will be displayed everywhere (artifact view, planning view, taskboard, cardwall, etc).
 
-The hierarchy is now only an helper. 
+The hierarchy is now only an helper.
 It means that the artifact link type ``_is_child`` is no more added automatically based on hierarchy but it's still used in:
 
 * Agiledashboard to have quick access to create new items and new parents

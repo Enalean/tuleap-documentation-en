@@ -383,8 +383,8 @@ Roadmap
 
 This displays the roadmap of a project in the project dashboard. It is based on a tracker with:
 
-* Title semantic
-* Timeframe semantic
+* :ref:`semantic Title<semantic-title>`
+* :ref:`semantic Timeframe<semantic-timeframe>`
 
 Artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
 
@@ -409,7 +409,7 @@ If artifact has only start date, only end date, or start date equals to end date
 User can choose:
 
 * The timescale: Week, Month, Quarter
-* To display links between artifacts: no links (aka "None") or a given type of links.
+* To display :ref:`links<types-artifact-links>` between artifacts: no links (aka "None") or a given type of links.
 
 Project Details
 ---------------

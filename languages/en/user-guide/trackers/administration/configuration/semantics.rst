@@ -15,6 +15,8 @@ To define or update a semantic field, select the pencil icon next to the
 semantic property. Semantic admin section lets you define the following
 semantic properties:
 
+.. _semantic-title:
+
 Title
 `````
 
@@ -166,6 +168,8 @@ that corresponds to this initial effort notion.
 
 The initial effort is used in the Agile Dashboard **content** and **planning**
 views.
+
+.. _semantic-timeframe:
 
 Timeframe
 `````````
