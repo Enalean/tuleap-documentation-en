@@ -166,3 +166,33 @@ that corresponds to this initial effort notion.
 
 The initial effort is used in the Agile Dashboard **content** and **planning**
 views.
+
+Timeframe
+`````````
+
+The semantic **Timeframe** represents the period on which the artifact is considered "active".
+
+It can be configured in two ways:
+    - Start date + end date
+    - Start date + a number of days
+
+When set to "Start date + a number of days", the end date is automatically computed, excluding Saturdays and Sundays.
+
+For instance, if my artifact has a start date starting on Monday and has a 6 days period of activity, then it will be supposed to end next Monday.
+
+The semantic **Timeframe** is used by various services across Tuleap (Taskboard, Planning, Roadmap, Burndown and Burnup graphs, Project milestones, etc.).
+
+Progress
+````````
+
+The semantic **Progress** is used to compute the progression of the ongoing work on artifacts.
+
+For now, only the effort-based computation method is available.
+
+To configure it, you will be asked to provide:
+    - a **Total effort** field (type: ``integer``, ``float``, ``computed``) representing the total effort needed to complete the work.
+    - a **Remaining effort** field (type: ``integer``, ``float``, ``computed``) representing the remaining effort to complete the work.
+
+The progress of artifacts will be computed by dividing their **remaining efforts** by their **total efforts**.
+
+This semantic is used in the Roadmap widget at the moment. In the longer term, we plan to use it in the Agile Dashboard as well.
