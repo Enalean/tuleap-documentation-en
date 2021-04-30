@@ -8,6 +8,7 @@ Mandatory development dependencies
 ----------------------------------
 
 To retrieve the mandatory development dependencies, two solutions are available:
+
 - use `Nix <https://nixos.org/>`_ and the ``shell.nix`` available in the sources
 - manually install and manage the dependencies
 
