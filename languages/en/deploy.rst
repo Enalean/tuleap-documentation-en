@@ -47,7 +47,7 @@ September 2021
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
 Chrome & Edge < 87            End of support    Ensure your users have an up to date browser
-Firefox <= 78                 End of support    Ensure your users have an up to date browser
+Firefox < 78.1                End of support    Ensure your users have an up to date browser
 ============================= ================= ============================================================
 
 Horizon end of 2021
