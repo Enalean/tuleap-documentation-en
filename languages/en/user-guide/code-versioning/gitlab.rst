@@ -74,7 +74,7 @@ The Tuleap reference will display the tag name, the tag message and the associat
 .. note::
     If the tag is moved, all previous information will be deleted on Tuleap side and recreated with new ones.
 
-On GitLab side, no backlink is added.
+On GitLab side, no backlink can be added because it's not possible to add comments on tags.
 
 Reference a GitLab commit or merge request
 ''''''''''''''''''''''''''''''''''''''''''
