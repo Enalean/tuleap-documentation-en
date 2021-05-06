@@ -225,7 +225,9 @@ linkcheck_ignore = [
     'https://github.com/Enalean/bz2tuleap#jira-to-tuleap', # Anchor is not found due to the page generation client side
     'https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y197', # Anchor is not found due to the page generation client side
     'https://github.com/Polyconseil/vue-gettext#caveat-when-using-v-translate-with-vue-components-or-vue-specific-attributes', # Anchor is not found due to the page generation client side
-    'https://github.com/Polyconseil/vue-gettext#custom-parameters' # Anchor is not found due to the page generation client side
+    'https://github.com/Polyconseil/vue-gettext#custom-parameters', # Anchor is not found due to the page generation client side
+    r'https://mermaid-js\.github\.io/mermaid/\#.*', # Anchors are not found due to the page generation client side
+    'https://prismjs.com/#supported-languages' # Anchor is not found due to the page generation client side
 ]
 
 # -- Options for manual page output --------------------------------------------

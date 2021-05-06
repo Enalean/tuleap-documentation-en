@@ -85,9 +85,9 @@ How to debug tests
 
 If you are using an IDE from JetBrains you should be able to run
 the tests and add breakpoints out of the box. For more information
-you can consult the `Jest documentation about debugging in WebStorm <https://jestjs.io/docs/en/troubleshooting#debugging-in-webstorm>`_.
+you can consult the `Jest documentation about debugging in WebStorm <https://jestjs.io/docs/troubleshooting#debugging-in-webstorm>`_.
 
-For others tools, like VS Code check out the `Jest documentation <https://jestjs.io/docs/en/troubleshooting#debugging-in-vs-code>`_.
+For others tools, like VS Code check out the `Jest documentation <https://jestjs.io/docs/troubleshooting#debugging-in-vs-code>`_.
 
 
 Best-practices for Tuleap
