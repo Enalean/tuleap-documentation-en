@@ -14,7 +14,7 @@ allow you to reference Tuleap artifacts in your commit messages or merge request
 References
 ----------
 
-A GitLab commit or merge request can reference several Tuleap artifacts, in different projects.
+A GitLab commit, tag or merge request can reference several Tuleap artifacts, in different projects.
 A Tuleap artifact can reference several commits or merge requests, in different GitLab repositories.
 
 Reference a Tuleap artifact
@@ -25,8 +25,9 @@ To be able to create GitLab cross-references, you need to:
 * Register your GitLab repository in the Git service of your Tuleap project
 * Reference Tuleap artifacts in GitLab commit messages
 * Reference Tuleap artifacts in GitLab merge request title or description
+* Reference Tuleap artifacts in GitLab tag message
 
-To link your commit (or merge request) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
+To link your commit (or merge request or tag) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
 to your commit message (or merge request title/description).
 You can reference as many artifacts as you want in the same commit message (or merge request title/description).
 
@@ -65,6 +66,16 @@ A comment is composed of a list of Tuleap references included in the merge reque
    :alt: Comment on GitLab merge request
    :name: Comment on GitLab merge request
 
+Reference a Tuleap artifact in GitLab tag message
+`````````````````````````````````````````````````
+
+The Tuleap reference will display the tag name, the tag message and the associated commit SHA-1.
+
+.. note::
+    If the tag is moved, all previous information will be deleted on Tuleap side and recreated with new ones.
+
+On GitLab side, no backlink can be added because it's not possible to add comments on tags.
+
 Reference a GitLab commit or merge request
 ''''''''''''''''''''''''''''''''''''''''''
 
@@ -93,6 +104,17 @@ To reference GitLab merge request, you have to use the keyword ``gitlab_mr`` fol
 ``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
 
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the merge request details.
+
+Reference a GitLab tag in Tuleap
+``````````````````````````````````````````
+
+To reference GitLab tag, you have to use the keyword ``gitlab_tag`` followed by a ``#``, the repository name, and the tag name:
+
+``gitlab_tag #<repository_name>/<tag_name>``
+
+``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
+
+When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit tagged with ``<tag_name>``.
 
 Register your GitLab repository
 -------------------------------
