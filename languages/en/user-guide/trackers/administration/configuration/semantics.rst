@@ -193,7 +193,12 @@ Progress
 
 The semantic **Progress** is used to compute the progression of the ongoing work on artifacts.
 
-For now, only the effort-based computation method is available.
+It is used in the Roadmap widget at the moment. In the longer term, we plan to use it in the Agile Dashboard as well.
+
+Two computation methods are available: **based on effort** and **based on artifact links count**.
+
+Effort based computation
+""""""""""""""""""""""""
 
 To configure it, you will be asked to provide:
     - a **Total effort** field (type: ``integer``, ``float``, ``computed``) representing the total effort needed to complete the work.
@@ -201,4 +206,11 @@ To configure it, you will be asked to provide:
 
 The progress of artifacts will be computed by dividing their **remaining efforts** by their **total efforts**.
 
-This semantic is used in the Roadmap widget at the moment. In the longer term, we plan to use it in the Agile Dashboard as well.
+Artifact links count based computation
+""""""""""""""""""""""""""""""""""""""
+
+The progress of artifacts will be computed by dividing the number of artifacts linked using the type ``Child`` by the number
+of closed children artifacts.
+
+**Only direct children are taken into account.** It means that children of the children will be ignored during the
+computation.
