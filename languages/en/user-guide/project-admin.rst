@@ -410,6 +410,7 @@ User can choose:
 
 * The timescale: Week, Month, Quarter
 * To display :ref:`links<types-artifact-links>` between artifacts: no links (aka "None") or a given type of links.
+* To display children if any (as soon as they can be displayed in the widget, see aforementionned conditions)
 
 Project Details
 ---------------
