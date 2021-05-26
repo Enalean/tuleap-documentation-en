@@ -1,12 +1,15 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.9
-===========
+Tuleap 12.10
+============
 
 .. NOTE::
 
-  Tuleap 12.9 is currently under development.
+  Tuleap 12.10 is currently under development.
+
+Tuleap 12.9
+===========
 
 End of support of PHP 7.3
 -------------------------
