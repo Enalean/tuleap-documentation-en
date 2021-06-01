@@ -106,18 +106,20 @@ restrict the access of the artifact to a group of users.
 Computed field
 ``````````````
 In Tuleap, computed fields are special fields that allows you to do the sum of
-all your child field in a tracker hierarchy.
+all linked artifact (regardless of link type).
+The computation is based on field name, in order to computed value the field doesn't have te be named remaining effort,
+but it need to have the same name than linked artifacts.
 
 A common use case for this field is calculation of remaining effort in release.
 Release remaining effort is the sum of sprint remaining effort
-and sprint remaining effort is the sum of user stories
+and sprint remaining effort is the sum of user stories.
 
 Computation rules:
 * we never compute twice the same node,
 if a user story is linked to two sprints, the release remaining effort add only one time the user story remaining effort
 * manual value break the calculation,
-* when calculation encounter a manual value we never computed children of node, we keep manual value for computation.
-permissions are not taken in account during calculation process, user will see the remaining effort global, even he/she can't see some artifacts.
+* when calculation encounter a manual value we never computed linked artifact of node, we keep manual value for computation.
+Permissions are not taken in account during calculation process, user will see the remaining effort global, even he/she can't see some artifacts.
 
 Example of computation work:
 
@@ -155,8 +157,8 @@ A flow chart explain computation mechanisms.
 
 Burndown
 ````````
-Burndown is a graphical representation of remaining effort,
-and is used to track team progress.
+Burndown is a graphical representation of remaining effort, and is used to track team progress.
+The computation of every dot is based on computed field.
 In burndown every dot represent the sum of all linked artifact remaining effort for a given day.
 
 Burnup
