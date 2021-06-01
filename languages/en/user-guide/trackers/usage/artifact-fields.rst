@@ -107,10 +107,12 @@ Computed field
 ``````````````
 In Tuleap, computed fields are special fields that allows you to do the sum of
 all linked artifact (regardless of link type).
+The computation is based on shortname of field, in order to computed value the filed doesn't have te be named remaining effort,
+but it need to have the same name than linked artifacts.
 
 A common use case for this field is calculation of remaining effort in release.
 Release remaining effort is the sum of sprint remaining effort
-and sprint remaining effort is the sum of user stories
+and sprint remaining effort is the sum of user stories.
 
 Computation rules:
 * we never compute twice the same node,
