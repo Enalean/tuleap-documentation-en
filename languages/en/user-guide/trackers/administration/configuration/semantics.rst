@@ -48,11 +48,13 @@ But you may want to define any other semantic. You can choose any
 This semantic information is used in **My artifacts** widget (this
 widget displays only *open* artifacts that belongs to you).
 
-Done (Agile Dashboard)
-``````````````````````
+.. _done-semantic:
+
+Done
+````
 
 The done semantic is used for burnup and velocity chart
-computation.
+computation. It can also be used in the :ref:`GitLab integration <version-control-with-gitlab>`.
 
 .. _velocity_administration:
 
