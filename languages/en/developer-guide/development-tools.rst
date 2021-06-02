@@ -103,3 +103,45 @@ Add the link of start debugger in bookmark (right click > bookmark this link)
 Add a break point (in pre.php for instance)
 Go on your tuleap page, then click on bookmark then refresh your page,
 debugger should start
+
+
+Generate artifacts with random data
+-----------------------------------
+
+Use *cli-generate:artifacts* CLI development tool to generate 1, 10, 1 000 000 artifacts in XML format.
+
+The command line will generate an artifacts.xml with the given number of artifacts containing random:
+ * number of changesets
+ * fields
+ * field values
+
+**1. Download the sources from Tuleap Git**
+
+SSH: ``git clone ssh://gitolite@tuleap.net/service-cleanup/cli-generate-stuffs.git``
+    HTTPS: ``git clone https://tuleap.net/plugins/git/service-cleanup/cli-generate-stuffs.git``
+
+
+**2. Installation**
+
+.. attention::
+
+    Your tuleap instance has to be running to be able to use this DevTool.
+
+\
+
+ * Run ``make composer`` to install project dependencies
+ * Run ``make setup`` to retrieve the certificate of your Tuleap development instance
+ * Add a config.json file in root directory to store your API access key as json data: ``{'access_key': 'youraccesskey' }``
+\
+
+**3. How to use it?**
+
+Run ``bin/console generate:artifacts [number_of_artifacts] [tracker id] [opt: title for all artifacts with semantic title]``
+    example: ``bin/console generate:artifacts 100 1`` will generate 100 artifacts with the structure of the tracker with id 1.
+
+
+**4. Import the generated XML artifacts in a project**
+
+ * Copy/paste the ``<artifacts>`` node into the matching node of your ``project.xml`` file.
+ * In console mode, from root directory: ``cp data/* {your-project-directory}/data``
+ * Use Tuleap CLI importer with that compressed project directory.
