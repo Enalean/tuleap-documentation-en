@@ -124,11 +124,11 @@ If a commit message containing a closing pattern is pushed in a GitLab repositor
 then the artifact will be closed :
 
 * If the artifact is in the same project of the integration
-* If a :ref:`done semantic <done-semantic>` or a :ref:`status semantic <status-semantic>` is defined for this artfact
+* If a :ref:`done semantic <done-semantic>` or a :ref:`status semantic <status-semantic>` is defined for this artifact
 * If the artifact is not yet closed
 * If the push occurs in the GitLab repository's default branch
 
-The handled closure keywords (case insensitive) in closing patterns are:
+The following keywords (case insensitive) can be used to close an artifact:
 
 * ``Closes`` TULEAP-1234
 * ``Resolves`` TULEAP-1234
@@ -142,8 +142,8 @@ Some variations of these keywords are handled:
 * ``Closed``/``Fixed``/``Resolved``/``Implemented``
 * ``Closing``/``Fixing``/``Resolving``/``Implementing``
 
-The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to add context about this closure.
-The first done value retrieved by Tuleap will be used in this closure. If there is no done semantic defined, then the first closed value will be used.
+The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to explain why it has been closed.
+The first done value retrieved by Tuleap will be used to close the artifact. If there is no done semantic defined, then the first closed value will be used.
 
 Register your GitLab repository
 -------------------------------
