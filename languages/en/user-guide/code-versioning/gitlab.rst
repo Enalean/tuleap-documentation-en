@@ -106,7 +106,7 @@ To reference GitLab merge request, you have to use the keyword ``gitlab_mr`` fol
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the merge request details.
 
 Reference a GitLab tag in Tuleap
-``````````````````````````````````````````
+````````````````````````````````
 
 To reference GitLab tag, you have to use the keyword ``gitlab_tag`` followed by a ``#``, the repository name, and the tag name:
 
@@ -115,6 +115,35 @@ To reference GitLab tag, you have to use the keyword ``gitlab_tag`` followed by 
 ``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
 
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit tagged with ``<tag_name>``.
+
+Close Tuleap artifact with GitLab commit messages
+`````````````````````````````````````````````````
+
+When integrating a GitLab repository in a Tuleap project, there is an option (disabled by default) that allow to close artifacts in this project based on GitLab commit messages.
+If a commit message containing a closing pattern is pushed in a GitLab repository integrated in a Tuleap project and this integration has activated this feature, 
+then the artifact will be closed :
+
+* If the artifact is in the same project of the integration
+* If a :ref:`done semantic <done-semantic>` or a :ref:`status semantic <status-semantic>` is defined for this artifact
+* If the artifact is not yet closed
+* If the push occurs in the GitLab repository's default branch
+
+The following keywords (case insensitive) can be used to close an artifact:
+
+* ``Closes`` TULEAP-1234
+* ``Resolves`` TULEAP-1234
+* ``Fixes`` TULEAP-1234
+* ``Implements`` TULEAP-1234
+
+Some variations of these keywords are handled: 
+
+* ``Close``/``Fix``/``Resolve``/``Implement``
+* ``Closes``/``Fixes``/``Resolves``/``Implements``
+* ``Closed``/``Fixed``/``Resolved``/``Implemented``
+* ``Closing``/``Fixing``/``Resolving``/``Implementing``
+
+The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to explain why it has been closed.
+The first done value retrieved by Tuleap will be used to close the artifact. If there is no done semantic defined, then the first closed value will be used.
 
 Register your GitLab repository
 -------------------------------
@@ -208,6 +237,7 @@ When you click on cog icon in GitLab tile, you can:
 
 * Edit access token
 * Regenerate the GitLab webhook
+* Allow artifacts closure option
 * Unlink the repository
 
 .. figure:: ../../images/screenshots/gitlab/tile-gitlab-dropdown.png
@@ -252,26 +282,15 @@ If the webhook has been changed and is not functional, you can regenerate it by 
 
 When the webhook is regenerated, the old is deleted from GitLab server, and a new webhook with a new secret is created.
 
+Allow artifacts closure option
+``````````````````````````````
 
-Close Tuleap artifact with GitLab commit messages
-`````````````````````````````````````````````````
+This option can be selected at repository integration. It can also be edited by any Git administrator.
 
-When integrating a GitLab repository in a Tuleap project, there is an option (disabled by default) that allow to close artifacts in this project based on GitLab commit messages.
-If a commit message containing a closure keyword is pushed in a GitLab repository integrated in a Tuleap project and this integration has activated this feature, 
-then the artifact will be closed :
-
-* If the artifact is in the same project of the integration
-* If a :ref:`status semantic <status-semantic>` is defined for this artfact
-* If the artifact is not yet closed
-
-The handled closure keywords (case insensitive) are:
-
-* ``Closes`` TULEAP-1234
-* ``Resolves`` TULEAP-1234
-* ``Fixes`` TULEAP-1234
-
-The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to add context about this closure.
-The first closed value retrieved by Tuleap will be used in this closure.
+.. figure:: ../../images/screenshots/gitlab/gitlab-allow-artiact-closure-modal.png
+   :align: center
+   :alt: Modal to allow artifacts closure
+   :name: Modal to allow artifacts closure
 
 Unregister repositories
 ```````````````````````
