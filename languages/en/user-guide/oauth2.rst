@@ -208,15 +208,15 @@ Resources
 
 .. _oauth2: https://auth0.com/docs/protocols/protocol-oauth2
 .. _openidconnect: https://auth0.com/docs/protocols/openid-connect-protocol
-.. _oauth2_spec: https://tools.ietf.org/html/rfc6749
-.. _oauth2_scopes: https://tools.ietf.org/html/rfc6749#section-3.3
-.. _oauth2_authorization_code_grant: https://tools.ietf.org/html/rfc6749#section-4.1
-.. _oauth2_implicit_grant: https://tools.ietf.org/html/rfc6749#section-4.2
-.. _oauth2_pkce: https://tools.ietf.org/html/rfc7636
-.. _oauth2_revocation_spec: https://tools.ietf.org/html/rfc7009
+.. _oauth2_spec: https://datatracker.ietf.org/doc/html/rfc6749
+.. _oauth2_scopes: https://datatracker.ietf.org/doc/html/rfc6749#section-3.3
+.. _oauth2_authorization_code_grant: https://datatracker.ietf.org/doc/html/rfc6749#section-4.1
+.. _oauth2_implicit_grant: https://datatracker.ietf.org/doc/html/rfc6749#section-4.2
+.. _oauth2_pkce: https://datatracker.ietf.org/doc/html/rfc7636
+.. _oauth2_revocation_spec: https://datatracker.ietf.org/doc/html/rfc7009
 .. _oidc_spec: https://openid.net/specs/openid-connect-core-1_0.html
 .. _oidc_dynamic_registration_spec: https://openid.net/specs/openid-connect-registration-1_0.html
 .. _oidc_discovery_spec: https://openid.net/specs/openid-connect-discovery-1_0.html
 .. _oidc_signing: https://openid.net/specs/openid-connect-core-1_0.html#Signing
-.. _access_token: https://tools.ietf.org/html/rfc6749#section-1.4
-.. _refresh_token: https://tools.ietf.org/html/rfc6749#section-1.5
+.. _access_token: https://datatracker.ietf.org/doc/html/rfc6749#section-1.4
+.. _refresh_token: https://datatracker.ietf.org/doc/html/rfc6749#section-1.5

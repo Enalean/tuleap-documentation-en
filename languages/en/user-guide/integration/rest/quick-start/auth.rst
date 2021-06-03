@@ -68,10 +68,10 @@ described in `RFC6750 <oauth2_bearer_token_spec_>`_ using the ``Authorization``
 Header field.
 
 Please note that ONLY the
-`Authorization Header <https://tools.ietf.org/html/rfc6750#section-2.1>`_
+`Authorization Header <https://datatracker.ietf.org/doc/html/rfc6750#section-2.1>`_
 method is supported. Using the
-`Form-Encoded Body Parameter <https://tools.ietf.org/html/rfc6750#section-2.2>`_
-or `URI Query Parameter <https://tools.ietf.org/html/rfc6750#section-2.3>`_ is
+`Form-Encoded Body Parameter <https://datatracker.ietf.org/doc/html/rfc6750#section-2.2>`_
+or `URI Query Parameter <https://datatracker.ietf.org/doc/html/rfc6750#section-2.3>`_ is
 NOT supported by Tuleap.
 
 Token-based Authentication
@@ -162,4 +162,4 @@ Conclusions
 
 Now that we are able to do authenticated calls we can continue to data retrieval in next section :ref:`rest-query`.
 
-.. _oauth2_bearer_token_spec: https://tools.ietf.org/html/rfc6750
+.. _oauth2_bearer_token_spec: https://datatracker.ietf.org/doc/html/rfc6750

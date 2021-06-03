@@ -1,7 +1,7 @@
 Back end tests
 ==============
 
-`PHPUnit <https://phpunit.readthedocs.io/en/9.1/>`_ is the php testing framework to write down our PHP unit tests.
+`PHPUnit <https://phpunit.readthedocs.io/en/9.5/>`_ is the php testing framework to write down our PHP unit tests.
 
 You must provide some unit tests for any back-end development.
 
