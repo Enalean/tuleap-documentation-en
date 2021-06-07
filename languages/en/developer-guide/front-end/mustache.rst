@@ -26,8 +26,7 @@ Example of Presenter
 
     class Presenter
     {
-        /** @var string */
-        public $my_title;
+        public string $my_title;
 
         public function __construct()
         {
@@ -65,10 +64,7 @@ If you need to put light formatting in you localised string, then you should esc
 
     class Presenter
     {
-        /**
-         * @var string
-         */
-        public $purified_description;
+        public string $purified_description;
 
         public function __construct()
         {
@@ -138,10 +134,7 @@ Presenter.php:
 
     class Presenter
     {
-        /**
-         * @var CSRFSynchronizerToken
-         */
-         public $csrf_token;
+         public CSRFSynchronizerToken $csrf_token;
 
         public function __construct(CSRFSynchronizerToken $csrf_token)
         {

@@ -190,12 +190,9 @@ The class ``GetPublicAreas`` looks like the following:
             /**
              * @var string[]
              */
-            private $areas;
+            private array $areas;
 
-            /**
-             * @var Project
-             */
-            private $project;
+            private Project $project;
 
             public function __construct(Project $project)
             {
