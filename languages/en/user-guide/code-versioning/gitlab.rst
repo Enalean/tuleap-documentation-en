@@ -15,7 +15,9 @@ References
 ----------
 
 A GitLab commit, tag or merge request can reference several Tuleap artifacts, in different projects.
-A Tuleap artifact can reference several commits or merge requests, in different GitLab repositories.
+A GitLab branch name can only reference one Tuleap artifact.
+
+A Tuleap artifact can reference several commits, tags, branches or merge requests, in different GitLab repositories.
 
 Reference a Tuleap artifact
 '''''''''''''''''''''''''''
@@ -26,10 +28,12 @@ To be able to create GitLab cross-references, you need to:
 * Reference Tuleap artifacts in GitLab commit messages
 * Reference Tuleap artifacts in GitLab merge request title or description
 * Reference Tuleap artifacts in GitLab tag message
+* Reference Tuleap artifacts in GitLab branch name
 
-To link your commit (or merge request or tag) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
+To link your commit (or merge request or tag or branch) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
 to your commit message (or merge request title/description).
-You can reference as many artifacts as you want in the same commit message (or merge request title/description).
+You can reference as many artifacts as you want in the same commit message (or merge request title/description or tag message).
+You can reference only one artifact in a branch name.
 
 Reference a Tuleap artifact in GitLab commit
 `````````````````````````````````````````````
@@ -76,6 +80,17 @@ The Tuleap reference will display the tag name, the tag message and the associat
 
 On GitLab side, no backlink can be added because it's not possible to add comments on tags.
 
+Reference a Tuleap artifact in GitLab branch name
+`````````````````````````````````````````````````
+
+The Tuleap reference will display the branch name, the associated commit SHA-1 and the last push date received for this branch.
+
+.. note::
+    If the branch is removed, all previous information will be deleted on Tuleap side.
+    Only one artifact can be referenced in the branch name. If multiple references are found, only the first one will be taken into account.
+
+On GitLab side, no backlink can be added because it's not possible to add comments on branch.
+
 Reference a GitLab commit or merge request
 ''''''''''''''''''''''''''''''''''''''''''
 
@@ -115,6 +130,18 @@ To reference GitLab tag, you have to use the keyword ``gitlab_tag`` followed by 
 ``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
 
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit tagged with ``<tag_name>``.
+
+Reference a GitLab branch in Tuleap
+````````````````````````````````````
+
+To reference GitLab tag, you have to use the keyword ``gitlab_branch`` followed by a ``#``, the repository name, and the tag name:
+
+``gitlab_branch #<repository_name>/<branch_name>``
+
+``<repository_name>`` must be a registered GitLab repository. If not, no reference will be created.
+
+When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit details 
+of the last commit in the branch ``<branch_name>``.
 
 Close Tuleap artifact with GitLab commit messages
 `````````````````````````````````````````````````
@@ -303,11 +330,11 @@ you need to confirm the action.
    :alt: Modal to confirm unlink
    :name: Modal to confirm unlink
 
-From now on, existing references won't work anymore and any new commit in this repository referencing a Tuleap artifact in this project will not create cross-references.
+From now on, existing references will be removed and any new commit in this repository referencing a Tuleap artifact in this project will not create cross-references.
 
 .. attention:: Known issues / limitations
 
-  * If you already have a project reference named ``gitlab_commit``, it will override the one used by the plugin.
+  * If you already have a project reference named ``gitlab_commit``, ``gitlab_mr``, ``gitlab_tag`` or ``gitlab_branch``, it will override the one used by the plugin.
   * GitLab provides two names for a repository:
       * ``name_with_namespace`` is displayed in UI
       * ``path_with_namespace`` is used to clone/checkout the repository
