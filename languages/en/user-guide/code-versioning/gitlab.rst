@@ -134,7 +134,7 @@ When you click on this reference, you will be redirected to your GitLab instance
 Reference a GitLab branch in Tuleap
 ````````````````````````````````````
 
-To reference GitLab tag, you have to use the keyword ``gitlab_branch`` followed by a ``#``, the repository name, and the tag name:
+To reference a GitLab branch, you have to use the keyword ``gitlab_branch`` followed by a ``#``, the repository name, and the branch name:
 
 ``gitlab_branch #<repository_name>/<branch_name>``
 
