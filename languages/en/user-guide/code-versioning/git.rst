@@ -114,9 +114,23 @@ project repositories. This includes:
 
 -  textual description of the repository,
 
+-  default branch,
+
 -  access control,
 
 -  and "Email notification on push"
+
+Default Branch
+``````````````
+
+In repositories with multiple branches, administrators can choose the default branch
+of the repository.
+
+The branch selected as the default one:
+
+- is the one selected when users open the repository via the web UI
+- is the one selected when users clone the repository
+- cannot be deleted
 
 Access control
 ``````````````
