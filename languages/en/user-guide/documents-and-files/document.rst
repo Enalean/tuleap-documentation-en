@@ -13,10 +13,6 @@ Drag and drop and multi upload
 ------------------------------
 The major difference between both user interfaces, is that the new document manager now supports the drag and drop and multi upload.
 
-.. attention::
-
-  Drag and drop is not supported for IE11. Please use Edge, Firefox or Chrome instead.
-
 In current folder
 `````````````````
 If you drop a document in the current folder, it will add it into the folder content
