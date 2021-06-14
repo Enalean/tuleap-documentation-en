@@ -43,7 +43,7 @@ Then you can re-use that in your actual upload command:
         -H 'Upload-Offset: 0' \
         -H 'Tus-Resumable: 1.0.0' \
         --data-binary '@README.md' \
-        'https://tuleap.example.com/uploads/frs/file/2'
+        'https://tuleap.example.com/uploads/frs/file/1'
 
 A successful upload will return an empty response with following headers:
 
