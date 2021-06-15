@@ -412,6 +412,18 @@ User can choose:
 * To display :ref:`links<types-artifact-links>` between artifacts: no links (aka "None") or a given type of links.
 * To display children if any (as soon as they can be displayed in the widget, see aforementionned conditions)
 
+In order to give context about artifacts being displayed, the widget can be configured to display iterations on top of the Gantt chart.
+For example we may want to track the progress of Epic in the context of Releases. Or in the context of Releases and their Sprints.
+
+It should be noted that:
+
+* The trackers for iterations can be chosen in the widget configuration, under the Timeframe ribbons section.
+* You can choose up to two levels of ribbons. Tracker of level 2 is expected to be a sub-division of tracker of level 1 (e.g Sprints vs Releases, or Iterations vs Program Increments).
+* Selected trackers must have :ref:`Title<semantic-title>` and :ref:`Timeframe<semantic-timeframe>` semantics.
+* Artifacts of selected trackers are expected to have continuous time. I.e. artifacts timeframe do not overlap, if it is the case the widget will not know how to display them and they will be omitted.
+* Old artifacts (the ones that end before the first task displayed in the Gantt) are not displayed.
+
+
 Project Details
 ---------------
 
