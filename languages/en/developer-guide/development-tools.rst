@@ -132,7 +132,6 @@ SSH: ``git clone ssh://gitolite@tuleap.net/service-cleanup/cli-generate-stuffs.g
  * Run ``make composer`` to install project dependencies
  * Run ``make setup`` to retrieve the certificate of your Tuleap development instance
  * Add a config.json file in root directory to store your API access key as json data: ``{'access_key': 'youraccesskey' }``
-\
 
 **3. How to use it?**
 
