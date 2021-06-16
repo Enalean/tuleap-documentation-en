@@ -17,7 +17,7 @@ WATCHOPTS       = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) languages/$(LANG)
 
 # Taken from zf-framework documentation
 pre-build:
-	@rm -rf tmp/$(LANG)
+	-rm -rf tmp/$(LANG)
 	@mkdir -p tmp/$(LANG)
 	@cp -R languages/en/* tmp/$(LANG)/
 ifneq ($(LANG),en)
