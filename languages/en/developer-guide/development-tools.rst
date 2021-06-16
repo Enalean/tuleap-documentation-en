@@ -108,17 +108,17 @@ debugger should start
 Generate artifacts with random data
 -----------------------------------
 
-Use *cli-generate:artifacts* CLI development tool to generate 1, 10, 1 000 000 artifacts in XML format.
+Use *cli-generate:artifacts* CLI development tool to generate 1, 10, 1 000 000 artifacts in XML format in order to test code performance.
 
-The command line will generate an artifacts.xml with the given number of artifacts containing random:
+The command line will generate an artifacts.xml file with the given number of artifacts containing random:
  * number of changesets
  * fields
  * field values
 
 **1. Download the sources from Tuleap Git**
 
-SSH: ``git clone ssh://gitolite@tuleap.net/service-cleanup/cli-generate-stuffs.git``
-    HTTPS: ``git clone https://tuleap.net/plugins/git/service-cleanup/cli-generate-stuffs.git``
+* SSH: ``git clone ssh://gitolite@tuleap.net/service-cleanup/cli-generate-stuffs.git``
+* HTTPS: ``git clone https://tuleap.net/plugins/git/service-cleanup/cli-generate-stuffs.git``
 
 
 **2. Installation**
@@ -127,20 +127,29 @@ SSH: ``git clone ssh://gitolite@tuleap.net/service-cleanup/cli-generate-stuffs.g
 
     Your tuleap instance has to be running to be able to use this DevTool.
 
-\
-
- * Run ``make composer`` to install project dependencies
- * Run ``make setup`` to retrieve the certificate of your Tuleap development instance
- * Add a config.json file in root directory to store your API access key as json data: ``{'access_key': 'youraccesskey' }``
+* Make sure your tuleap instance is running on this URL: https://tuleap-web.tuleap-aio-dev.docker
+* Run ``make composer`` to install project dependencies
+* Run ``make setup`` to retrieve the certificate of your Tuleap development instance
+* Add a config.json file in root directory to store your API access key as json data: ``{'access_key': 'youraccesskey' }``
 
 **3. How to use it?**
 
-Run ``bin/console generate:artifacts [number_of_artifacts] [tracker id] [opt: title for all artifacts with semantic title]``
-    example: ``bin/console generate:artifacts 100 1`` will generate 100 artifacts with the structure of the tracker with id 1.
+For example, the following line will generate 100 artifacts with the structure of the tracker with id 1 and with the same (optional) title "random":
+
+.. sourcecode:: shell
+
+    $> bin/console generate:artifacts 100 1 "random"
+
+The previous command line will generate artifacts in an artifacts.xml file at root directory and random artifact files in ``./data``.
 
 
-**4. Import the generated XML artifacts in a project**
+**4. Export the project in which you want to inject the XML artifacts node** \
 
- * Copy/paste the ``<artifacts>`` node into the matching node of your ``project.xml`` file.
- * In console mode, from root directory: ``cp data/* {your-project-directory}/data``
- * Use Tuleap CLI importer with that compressed project directory.
+* Please follow `Project Export documentation <https://docs.tuleap.org/administration-guide/projects-management/export-import/project-export.html>`_
+* Unzip the project directory you've just exported
+
+**5. Import the generated XML artifacts in a project**
+
+* Copy/paste the ``<artifacts>`` node into the matching node of your ``project.xml`` file exported to the previous step
+* In console mode, from root directory, copy the contents of data directory into your data project directory: ``cp data/* {your-project-directory}/data``
+* Use Tuleap CLI importer to import that compressed project directory: follow `Project Import documentation <https://docs.tuleap.org/administration-guide/projects-management/export-import/project-import.html>`_
