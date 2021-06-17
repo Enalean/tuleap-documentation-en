@@ -130,7 +130,7 @@ The command line will generate a XML file with the given number of artifacts con
 * Make sure your tuleap instance is running on this URL: https://tuleap-web.tuleap-aio-dev.docker
 * Run ``make composer`` to install project dependencies
 * Run ``make setup`` to retrieve the certificate of your Tuleap development instance
-* Add a config.json file in root directory to store your API access key as json data: ``{'access_key': 'youraccesskey' }``
+* Add a ``config.json`` file in root directory to store your :ref:`API Access Keys <access-keys>` as json data: ``{'access-key': 'your_access_key'}``
 
 **3. How to use it?**
 
@@ -142,7 +142,7 @@ For example, the following line will generate 100 artifacts with the structure o
 
     $> bin/console generate:artifacts 100 1 "random"
 
-The previous command line will generate at root directory an XML file named `artifacts.xml` and a directory ``./data`` that contains random generated artifact files within.
+The previous command line will generate at root directory an XML file named ``artifacts.xml`` and a directory ``./data`` that contains random generated artifact files within.
 
 
 **4. Export the project in which you want to inject the XML artifacts node**
@@ -153,5 +153,9 @@ The previous command line will generate at root directory an XML file named `art
 **5. Import the generated XML artifacts in a project**
 
 * Copy/paste the ``<artifacts>`` node into the matching node of your ``project.xml`` file exported to the previous step
-* In terminal, from root directory, copy the contents of data directory into your data project directory: ``cp data/* {exported-project-directory}/data``
+* In terminal, from root directory, copy the contents of ``./data`` directory into your data project directory:
+.. sourcecode:: shell
+
+    $> cp data/* {exported-project-directory}/data
+
 * Compress the project directory and use Tuleap CLI importer to import it: follow `Project Import documentation <https://docs.tuleap.org/administration-guide/projects-management/export-import/project-import.html>`_
