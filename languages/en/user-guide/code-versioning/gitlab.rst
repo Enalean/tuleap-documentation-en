@@ -9,7 +9,7 @@ Overview
 The purpose of this integration is to link Tuleap projects and GitLab repositories.
 
 If you are using GitLab and want to keep a trace of your commits and merge requests in Tuleap, this plugin will
-allow you to reference Tuleap artifacts in your commit messages or merge requests title/description and conversely.
+allow you to reference Tuleap artifacts in your commit messages or merge requests title/description/branch source name and conversely.
 
 References
 ----------
@@ -26,14 +26,14 @@ To be able to create GitLab cross-references, you need to:
 
 * Register your GitLab repository in the Git service of your Tuleap project
 * Reference Tuleap artifacts in GitLab commit messages
-* Reference Tuleap artifacts in GitLab merge request title or description
+* Reference Tuleap artifacts in GitLab merge request title, description or source branch name
 * Reference Tuleap artifacts in GitLab tag message
 * Reference Tuleap artifacts in GitLab branch name
 
 To link your commit (or merge request or tag or branch) to the Tuleap artifact of your choice, you must add the keyword ``TULEAP-<artifact_id>`` (case-sensitive)
-to your commit message (or merge request title/description).
+to your commit message (or merge request title, description or source branch name).
 You can reference as many artifacts as you want in the same commit message (or merge request title/description or tag message).
-You can reference only one artifact in a branch name.
+You can reference only one artifact in a branch name or in the source branch name of a merge request.
 
 Reference a Tuleap artifact in GitLab commit
 `````````````````````````````````````````````
@@ -63,7 +63,7 @@ Otherwise, the author name is displayed as received from the GitLab API.
 
 On GitLab side, when a merge request contains some references to Tuleap, then a comment is automatically added.
 
-A comment is composed of a list of Tuleap references included in the merge request title/description, with links to Tuleap.
+A comment is composed of a list of Tuleap references included in the merge request title, description or source branch name, with links to Tuleap.
 
 .. figure:: ../../images/screenshots/gitlab/bot-on-mr-gitlab.png
    :align: center
