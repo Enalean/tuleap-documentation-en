@@ -154,8 +154,6 @@ The previous command line will generate at root directory an XML file named ``ar
 
 * Copy/paste the ``<artifacts>`` node into the matching node of your ``project.xml`` file exported to the previous step
 * In terminal, from root directory, copy the contents of ``./data`` directory into your data project directory:
-.. sourcecode:: shell
-
-    $> cp data/* {exported-project-directory}/data
+``cp data/* {exported-project-directory}/data``
 
 * Compress the project directory and use Tuleap CLI importer to import it: follow `Project Import documentation <https://docs.tuleap.org/administration-guide/projects-management/export-import/project-import.html>`_
