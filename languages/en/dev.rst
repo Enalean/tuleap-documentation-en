@@ -24,7 +24,7 @@ your code
    developer-guide/patches
    developer-guide/coding-standards
    developer-guide/expected-code
-   developer-guide/ide-blackfire-configuration
+   developer-guide/development-tools
 
 Development 101, what you need to know
 
