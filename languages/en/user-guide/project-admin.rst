@@ -381,17 +381,17 @@ Roadmap
 .. NOTE::
   This widget is still under development.
 
-This displays the roadmap of a project in the project dashboard. It is based on a tracker with:
+This displays the roadmap of a project in the project dashboard. It shows the progress of artifacts with:
 
 * :ref:`semantic Title<semantic-title>`
 * :ref:`semantic Timeframe<semantic-timeframe>`
 
-Artifacts in this tracker will be displayed in the widget as a Gantt chart as soon as:
+Artifacts of selected trackers will be displayed in the widget as a Gantt chart as soon as:
 
 * they have at least a start date or a end date
 * the end date (if set) is greater than the start date
 
-The progress will be displayed on tasks only if the :ref:`semantic Progress<semantic-progress>` is defined in the tracker.
+The percentage of progression will be displayed on tasks only if the :ref:`semantic Progress<semantic-progress>` is defined in the tracker (if no semantic Progress, then a plain bar is displayed instead).
 
 .. figure:: ../images/screenshots/widget/roadmap-widget.png
 	:align: center
