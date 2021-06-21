@@ -1,3 +1,5 @@
-FROM alpine:3.14.0
+FROM nixos/nix:2.3.11
 
-RUN apk add --no-cache git make python3 py-virtualenv
+COPY *.nix ./
+
+RUN nix-env --install -f ./default.nix
