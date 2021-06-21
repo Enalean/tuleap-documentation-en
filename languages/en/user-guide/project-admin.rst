@@ -411,6 +411,7 @@ User can choose:
 * The timescale: Week, Month, Quarter
 * To display :ref:`links<types-artifact-links>` between artifacts: no links (aka "None") or a given type of links.
 * To display children if any (as soon as they can be displayed in the widget, see aforementionned conditions)
+* To hide closed items (to not clutter too much the Gantt chart when there are a lot of artifacts)
 
 In order to give context about artifacts being displayed, the widget can be configured to display iterations on top of the Gantt chart.
 For example we may want to track the progress of Epic in the context of Releases. Or in the context of Releases and their Sprints.
