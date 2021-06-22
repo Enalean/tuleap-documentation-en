@@ -92,7 +92,7 @@ In PHPStorm `Run > Webserver validation`
 Click on validate, you should only have a warning about remote host.
 Close modal.
 
-Then start listening `Run` > listen for PHP Debug Connections` in the PHPStorm toolbar
+Then start listening `Run` > `listen for PHP Debug Connections` in the PHPStorm toolbar
 
 
 Go on https://www.jetbrains.com/phpstorm/marklets/
