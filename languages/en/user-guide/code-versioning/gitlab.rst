@@ -172,6 +172,29 @@ Some variations of these keywords are handled:
 The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to explain why it has been closed.
 The first done value retrieved by Tuleap will be used to close the artifact. If there is no done semantic defined, then the first closed value will be used.
 
+Create GitLab branches from Tuleap artifact
+```````````````````````````````````````````
+
+If some preconditions are met, user can be able to create a GitLab branch directly from a Tuleap artifact.
+Those preconditions are:
+
+* At least one GitLab repository is integrated in the artfact's project with token well configured
+* User is project member
+* User is able to view the artifact
+
+The branch name cannot be choosen. It follows the pattern ``(prefix)tuleap-{artifact_id}(-slugified artifact title)`` with:
+
+* ``prefix`` that can be defined for each integration
+* ``tuleap-{artifact_id}`` to create a cross-reference between the branch and the artifact
+* ``slugified artifact title`` if artifact has a semantic title defined and an associated value
+
+This action can be performed through the artifact action button.
+
+.. figure:: ../../images/screenshots/gitlab/gitlab-artifact-create-branch-action.png
+   :align: center
+   :alt: Modal to create the GitLab branch
+   :name: Modal to create the GitLab branch
+
 Register your GitLab repository
 -------------------------------
 
@@ -265,6 +288,7 @@ When you click on cog icon in GitLab tile, you can:
 * Edit access token
 * Regenerate the GitLab webhook
 * Allow artifacts closure option
+* Edit create branch prefix
 * Unlink the repository
 
 .. figure:: ../../images/screenshots/gitlab/tile-gitlab-dropdown.png
@@ -318,6 +342,17 @@ This option can be selected at repository integration. It can also be edited by 
    :align: center
    :alt: Modal to allow artifacts closure
    :name: Modal to allow artifacts closure
+
+Edit create branch prefix
+`````````````````````````
+
+This option allows to edit the prefix used in the branch name while creating a GitLab branch from a Tuleap artifact. 
+It's empty by default. It can be edited by any Git administrator.
+
+.. figure:: ../../images/screenshots/gitlab/gitlab-edit-create-branch-prefix.png
+   :align: center
+   :alt: Modal to edit the create branch prefix
+   :name: Modal to edit the create branch prefix
 
 Unregister repositories
 ```````````````````````
