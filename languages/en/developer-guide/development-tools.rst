@@ -127,7 +127,7 @@ The command line will generate a XML file with the given number of artifacts con
 
     Your tuleap instance has to be running to be able to use this CLI.
 
-* Make sure your tuleap instance is running on this URL: https://tuleap-web.tuleap-aio-dev.docker
+* Make sure your tuleap instance is running on this URL: https://tuleap-web.tuleap-aio-dev.docker/
 * Run ``make composer`` to install project dependencies
 * Run ``make setup`` to retrieve the certificate of your Tuleap development instance
 * Add a ``config.json`` file in root directory to store your :ref:`API Access Keys <access-keys>` as json data: ``{'access-key': 'your_access_key'}``
