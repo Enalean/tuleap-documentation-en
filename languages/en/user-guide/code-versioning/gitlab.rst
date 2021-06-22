@@ -178,11 +178,11 @@ Create GitLab branches from Tuleap artifact
 If some preconditions are met, user can be able to create a GitLab branch directly from a Tuleap artifact.
 Those preconditions are:
 
-* At least one GitLab repository is integrated in the artfact's project with token well configured
-* User is project member
-* User is able to view the artifact
+* At least one GitLab repository is integrated in the artifact's project with token well configured
+* User is a project member
+* User can view the artifact
 
-The branch name cannot be choosen. It follows the pattern ``(prefix)tuleap-{artifact_id}(-slugified artifact title)`` with:
+The branch name cannot be chosen. It follows the pattern ``(prefix)tuleap-{artifact_id}(-slugified artifact title)`` with:
 
 * ``prefix`` that can be defined for each integration
 * ``tuleap-{artifact_id}`` to create a cross-reference between the branch and the artifact
