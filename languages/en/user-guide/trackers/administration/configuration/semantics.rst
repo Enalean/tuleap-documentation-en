@@ -178,15 +178,35 @@ Timeframe
 
 The semantic **Timeframe** represents the period on which the artifact is considered "active".
 
+It is used by various services across Tuleap (Taskboard, Planning, Roadmap, Burndown and Burnup graphs, Project milestones, etc.).
+
+Timeframes based on fields
+""""""""""""""""""""""""""
+
 It can be configured in two ways:
     - Start date + end date
     - Start date + a number of days
 
 When set to "Start date + a number of days", the end date is automatically computed, excluding Saturdays and Sundays.
 
-For instance, if my artifact has a start date starting on Monday and has a 6 days period of activity, then it will be supposed to end next Monday.
+For instance, if an artifact has a start date starting on Monday and has a 6 days period of activity, then it will be supposed to end next Monday.
 
-The semantic **Timeframe** is used by various services across Tuleap (Taskboard, Planning, Roadmap, Burndown and Burnup graphs, Project milestones, etc.).
+Timeframes inherited from another tracker
+"""""""""""""""""""""""""""""""""""""""""
+
+When set to "Inherited from another tracker", the timeframe of artifacts will be the same as artifacts linking them from the target tracker.
+
+For instance, let's consider that the User Story tracker is configured to inherit its timeframes from the Sprints tracker:
+    - A "Sprints" artifact has a timeframe starting on Monday and ending on Tuesday
+    - It links a "User Story" artifact
+    - The timeframe of the "User Story" artifact will start on Monday and end on Tuesday
+
+.. note::
+
+    To be able to define an inherited semantic timeframe, the following requirements have to be matched:
+        - The current tracker and the target tracker must both have artifact links fields
+        - The target tracker must have a semantic timeframe based on tracker fields
+
 
 .. _semantic-progress:
 
