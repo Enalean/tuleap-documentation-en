@@ -15,6 +15,7 @@ Generic principles, framework and libs.
     back-end/autoload
     back-end/profiling
     back-end/tests
+    back-end/bump-back-dependencies
 
 Tuleap internals
 
