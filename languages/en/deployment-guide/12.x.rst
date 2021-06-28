@@ -1,12 +1,17 @@
 Tuleap 12.x
 ###########
 
-Tuleap 12.10
+Tuleap 12.11
 ============
 
 .. NOTE::
 
-  Tuleap 12.10 is currently under development.
+  Tuleap 12.11 is currently under development.
+
+Tuleap 12.11
+============
+
+Nothing to mention.
 
 Tuleap 12.9
 ===========
