@@ -29,3 +29,4 @@ Front end build system is based on webpack.
     front-end/tests
     front-end/angular
     front-end/internal-libs
+    front-end/bump-dependencies
