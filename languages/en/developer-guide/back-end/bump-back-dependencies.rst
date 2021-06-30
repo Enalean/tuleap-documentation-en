@@ -15,7 +15,7 @@ You can run `composer outdated`, you will have a list of dependencies to bump.
 How to do the bump
 ------------------
 
-Run the following command
+Run the following command:
 
 .. code-block:: bash
 
