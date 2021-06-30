@@ -5,7 +5,7 @@ Bump dependencies
 
 At the beginning of each sprint, feature team has responsibility to update dependencies of plugin they are working on.
 
-Some plugin has lot of legacy and some bump will be painful, the main aim of it is to work with a best effort cost:
+Some plugins has lot of legacy and some bumps will be painful, the main aim of it is to work with a best effort cost:
 
  - we try to apply bump
  - if it fail we will purse the bump only if it's easy, if not the bump must be discussed with the rest of team, and eventually added in backlog to plan it
