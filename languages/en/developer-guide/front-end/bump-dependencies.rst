@@ -13,7 +13,7 @@ Some plugins has lot of legacy and some bumps will be painful, the main aim of i
 How to detect outdated dependencies in a plugin?
 ------------------------------------------------
 
-You can run `npm outdated` inside the plugin, you will have a list of dependencies to bump example:
+You can run `npm outdated` inside the plugin, you will have a list of dependencies to bump. Example:
 
 .. code-block:: bash
 
