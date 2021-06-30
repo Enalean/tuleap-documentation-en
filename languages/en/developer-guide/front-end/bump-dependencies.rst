@@ -22,7 +22,7 @@ You can run `npm outdated` inside the plugin, you will have a list of dependenci
     @juggle/resize-observer    3.3.0   3.3.1   3.3.1  @tuleap/plugin-roadmap
 
 
-When we bump a dependency, we try to bump it everywhere in tuleap, for instance the `@juggle/resize-observer` is used in `roadmap` plugin but it is also used in `src` and `list-picker` the bump should concern the three `package.json`
+When we bump a dependency, we bump it everywhere in tuleap. For instance the `@juggle/resize-observer` is used in `roadmap` plugin but it is also used in `src` and `list-picker`. The bump should concern the three `package.json`
 
 How to do the bump
 ------------------
