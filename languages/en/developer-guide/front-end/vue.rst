@@ -24,7 +24,7 @@ To know when you have to use these libraries, here is a table that will help you
 |          Has several pages to display           | Vue.js + Vuex + Vue-router |
 +-------------------------------------------------+----------------------------+
 
-.. NOTE:: We strongly suggest you to install the `vue-devtools browser extension <https://github.com/vuejs/vue-devtools>`_.
+.. NOTE:: We strongly suggest you to install the `vue-devtools browser extension <https://github.com/vuejs/devtools>`_.
     It provides nice features that ease the development of your applications.
 
 Folder structure of a Vue application
@@ -269,7 +269,7 @@ Resources
 - Vuex doc: https://vuex.vuejs.org/
 - Vue-router doc: https://router.vuejs.org/
 - Vue.js Official Style Guide: https://vuejs.org/v2/style-guide/
-- eslint-plugin-vue's rules: https://vuejs.github.io/eslint-plugin-vue/rules/
+- eslint-plugin-vue's rules: https://eslint.vuejs.org/rules/
 - TypeScript reference: https://www.typescriptlang.org
 - vue-gettext: https://github.com/Polyconseil/vue-gettext
 

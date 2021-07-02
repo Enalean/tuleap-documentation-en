@@ -58,7 +58,7 @@ Use one central database
 
 In some cases, you are not allowed to have one database per project (or the database user you got for running tuleap doesn't
 have the "create database" right). In that case, you can setup Mediawiki Farm using "table prefix" technique. It's not
-the `recommended setup <https://lists.wikimedia.org/pipermail/wikitech-l/2017-September/088735.html>`_ but it's been tested
+the `recommended setup <https://lists.wikimedia.org/hyperkitty/list/wikitech-l@lists.wikimedia.org/message/3CMZE2POZQTNZKJJNM3N2NGW3JRTFONR/>`_ but it's been tested
 and works.
 
 First you need to create a dedicated database, in your Mysql instance:
