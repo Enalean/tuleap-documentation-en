@@ -8,6 +8,12 @@ Tuleap 12.11
 
   Tuleap 12.11 is currently under development.
 
+Removal of project creation using deprecated SOAP API
+-----------------------------------------------------
+
+The ability to create a project using the SOAP API has been removed. 
+You have to use the REST API instead.
+
 Tuleap 12.10
 ============
 
