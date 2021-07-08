@@ -8,7 +8,7 @@ Tuleap 12.11
 
   Tuleap 12.11 is currently under development.
 
-Tuleap 12.11
+Tuleap 12.10
 ============
 
 Nothing to mention.
