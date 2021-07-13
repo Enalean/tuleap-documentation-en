@@ -5,7 +5,7 @@
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
         "sass": "^1.35.2",
-        "vite": "^2.4.1"
+        "vite": "^2.4.2"
     },
     "scripts": {
         "build": "vite build",
