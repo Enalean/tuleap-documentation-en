@@ -8,11 +8,25 @@ Tuleap 12.11
 
   Tuleap 12.11 is currently under development.
 
+.. ATTENTION::
+
+   Change in update procedure, read carefully the ForgeUpgrade section below.
+
 Removal of project creation using deprecated SOAP API
 -----------------------------------------------------
 
 The ability to create a project using the SOAP API has been removed. 
 You have to use the REST API instead.
+
+ForgeUpgrade part of site-deploy
+--------------------------------
+
+ForgeUpgrade, the tool for database migrations management used by Tuleap is now part of Tuleap itself. The app ``/usr/lib/forgeupgrade/bin/forgeupgrade``
+is still shipped under the control of Tuleap for backward compatibility but should no longer be used.
+
+The database migrations are now managed with the central tool ``tuleap-cfg site-deploy``. Running both tools will not
+hurt your platform (they do the same thing and are idempotent). But at some point in the future we are going to remove
+``forgeupgrade`` tool. So update your scripts/procedures and ensure they match the :ref:`official upgrade guide <update>`.
 
 Tuleap 12.10
 ============
