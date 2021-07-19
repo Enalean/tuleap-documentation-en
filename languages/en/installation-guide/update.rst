@@ -11,7 +11,7 @@ Check for upgrade
 
 As root, run:
 
-::
+.. sourcecode:: shell
 
     yum check-update tuleap\*
 
@@ -23,32 +23,20 @@ Upgrade
 
 You should always read the :ref:`deployment guide instructions <deployment-guide>` before upgrading.
 
-On RHEL/CentOS 7, run as root:
+Run as root:
 
-::
+.. sourcecode:: shell
 
     # Stop service
-    systemctl stop tuleap
-    systemctl stop nginx
-    systemctl stop httpd
+    systemctl stop tuleap nginx httpd
 
     # Upgrade packages
     yum update
-    # or to upgrade only Tuleap packages (/!\ you might miss security fixes in Tuleap dependencies):
-    # yum update tuleap\*
 
-    # Apply data upgrades
-    /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
-
-    # Deploy site configurations
+    # Deploy site configurations, run database migration & co
     tuleap-cfg site-deploy
 
     # Restart service
-    systemctl start httpd
-    systemctl start nginx
-    systemctl start tuleap
-
-Do not forget to execute the forgeupgrade command, no warnings should be displayed
-in the site administration about it (as Site Admin go in Admin > Plugin Administration).
+    systemctl start tuleap nginx httpd
 
 Enjoy all your new features!
