@@ -143,6 +143,24 @@ code {
     line-height: 24px;
 }
 
+// Download link
+code.download {
+    background: inherit;
+    padding: inherit;
+    font-weight: normal;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: inherit;
+    white-space: inherit;
+
+    > span:first-child::before {
+        @extend .fa;
+        @extend .fa-download;
+        margin-right: 4px;
+    }
+}
+
 strong {
     font-weight: 600;
 }
