@@ -4,7 +4,7 @@
     "license": "GPL-2.0-or-later",
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
-        "sass": "^1.36.0",
+        "sass": "^1.37.0",
         "vite": "^2.4.4"
     },
     "scripts": {
