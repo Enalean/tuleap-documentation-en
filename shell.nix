@@ -1,6 +1,6 @@
 { pkgs ? (import ./pinned-nixpkgs.nix) {} }:
 
-pkgs.mkShell {
+pkgs.mkShellNoCC {
   buildInputs = [
     (import ./default.nix { inherit pkgs; })
   ];
