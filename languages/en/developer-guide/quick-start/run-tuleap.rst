@@ -34,17 +34,17 @@ Developers wanting to keep their custom shell configurations should take a look 
 Manually install the dependencies
 """""""""""""""""""""""""""""""""
 
-Circa January 2021, the following tools are needed to develop on Tuleap, please refer to their
+Circa August 2021, the following tools are needed to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
 - GNU make
 - GNU grep
 - GNU sed
-- `PHP <https://www.php.net/>`_ 7.3.x
-- `nodejs <https://nodejs.org/en/>`_ >= v14.15.x
-- `npm <https://docs.npmjs.com/>`_ v6.14.x
-- `composer <https://getcomposer.org/>`_ >= 2.x
-- `Docker Compose <https://docs.docker.com/compose/>`_ >= 1.27.x
+- `PHP <https://www.php.net/>`_ 7.4.x
+- `nodejs <https://nodejs.org/en/>`_ >= v16.5.x
+- `npm <https://docs.npmjs.com/>`_ v7.20.x
+- `composer <https://getcomposer.org/>`_ >= 2.1.x
+- `Docker Compose <https://docs.docker.com/compose/>`_ >= 1.29.x
 
    .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
 
