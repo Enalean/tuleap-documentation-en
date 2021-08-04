@@ -292,6 +292,8 @@ It is possible to link to other files in your repo or to images stored in the re
 
 Relative links operands ``./`` and ``../`` can be used to link to a file relatively to the current file.
 
+.. _git_lfs:
+
 Git Large File Storage (LFS)
 ----------------------------
 
