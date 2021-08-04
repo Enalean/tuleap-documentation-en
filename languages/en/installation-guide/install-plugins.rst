@@ -95,7 +95,6 @@ Authentication and permissions:
 * **ldap**: Integration with OpenLDAP like or Active Directory
 * **openidconnectclient**: Delegate authentication to an OpenId Connect compatible server
 * **captcha**: Add a captcha to login page to avoid bots
-* **admindelegation**: Delegate administration grants to regular users
 * **dynamic_credentials**: Provide a way to generate short-lived credentials
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
