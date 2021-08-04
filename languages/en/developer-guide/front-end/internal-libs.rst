@@ -275,7 +275,8 @@ Use your library from another application
 -----------------------------------------
 
 To use your library from another application, you must first declare it as a
-dependency in the app's ``package.json`` file.
+dependency in the app's ``package.json`` file. Use ``npm install ../my-plugin/scripts/lib/my-lib-name``
+to achieve that. You will something looking like this:
 
  .. code-block:: Javascript
 
@@ -287,8 +288,7 @@ dependency in the app's ``package.json`` file.
         "@tuleap/my-lib-name": "file:../my-plugin/scripts/lib/my-lib-name" // Add your lib as a dependency. Reference it with file: protocol to create a symlink
       },
       "scripts": {
-        "build": "...",
-        "postshrinkwrap": "php ../../tools/utils/scripts/clean-lockfile-from-local-tuleap-dep.php \"$(pwd)\"" // Don't forget to add this script, otherwise package-lock.json will copy all your lib's dependencies
+        "build": "..."
       }
     }
 
