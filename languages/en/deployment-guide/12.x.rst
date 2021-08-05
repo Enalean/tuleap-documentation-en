@@ -1,6 +1,24 @@
 Tuleap 12.x
 ###########
 
+Tuleap 12.12
+============
+
+.. NOTE::
+
+  Tuleap 12.12 is currently under development.
+
+End of support of PHP 7.4
+-------------------------
+
+Tuleap now comes with PHP 8.0.
+
+PHP FPM configuration will be deployed automatically by ``tuleap-cfg site-deploy``.
+
+If you have made some tweaks to the configuration file
+``/etc/opt/remi/php74/php-fpm.d/tuleap.conf`` you will also needs
+to adapt them for the new configuration at ``/etc/opt/remi/php80/php-fpm.d/tuleap.conf``.
+
 Tuleap 12.11
 ============
 
