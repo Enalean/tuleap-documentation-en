@@ -1,6 +1,19 @@
 Statistics
 ==========
 
+This plugin is used to see the disk usage by the different services (git, document, frs...) and projects on a Tuleap instance.
+
+Project Quota
+-----------------------------------
+Project quota is part of the plugin statistics and uses the same data. It allows you to set a limit on the disk usage of a project.
+
+Pushing objects with :ref:`git_lfs` is not possible when you reach the limit quota.
+For other usages, nothing is blocked: the quota is only an information source that you can use to detect abuses and misuses.
+
+As an site administrator, you can define a quota for projects. It's in site administration >> Statistics >> Project quota.
+By default, this quota is defined at 5GB.
+It can be consulted as administrator at the same place or in project administration by project's administrator.
+
 Purge statistics tables in database
 -----------------------------------
 
