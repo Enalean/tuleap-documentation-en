@@ -23,7 +23,7 @@ in the following resources:
 -  **Wiki**: Wiki is a collaborative authoring tool (see :ref:`wiki`). You can
    perform a full text search by keywords in wikis.
 
--  **Object**: You can search any object in Tuleap with its keyword and its id.
+-  **Object**: You can search any referenced object in Tuleap with its keyword and its id.
    For example, if you search an artifact with keyword ``bug`` and id ``68``,
    you can type ``bug #68`` and press ``Enter`` to be redirected to this artifact.
    Same for other objects like documents with ``doc #_id_``.
