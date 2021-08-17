@@ -23,9 +23,10 @@ in the following resources:
 -  **Wiki**: Wiki is a collaborative authoring tool (see :ref:`wiki`). You can
    perform a full text search by keywords in wikis.
 
--  **This tracker**: If you enter any tracker in any Tuleap
-   project, the "This Tracker" item will show up in the search box,
-   allowing you to actually search this tracker database.
+-  **Object**: You can search any referenced object in Tuleap with its keyword and its id.
+   For example, if you search an artifact with keyword ``bug`` and id ``68``,
+   you can type ``bug #68`` and press ``Enter`` to be redirected to this artifact.
+   Same for other objects like documents with ``doc #_id_``.
 
 
 .. _user_supported_browsers:
