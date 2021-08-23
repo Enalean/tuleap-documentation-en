@@ -15,6 +15,7 @@ file, the default is automatically set for you.
 .. toctree::
    :maxdepth: 1
 
+   deployment-guide/13.x.rst
    deployment-guide/12.x.rst
    deployment-guide/11.x.rst
    deployment-guide/10.x.rst
