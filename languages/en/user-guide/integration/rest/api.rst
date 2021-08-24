@@ -5,12 +5,13 @@ In this section you will find utilization example of REST routes.
 
 POST /artifacts
 ---------------
-Here an example of artifact created with some artifact typed links:
 
 .. NOTE::
 
   "values" sent are the same for POST /artifacts and PUT artifacts/{id}
 
+With some artifact typed links
+``````````````````````````````
 
 ::
 
@@ -32,6 +33,47 @@ Here an example of artifact created with some artifact typed links:
         }
       ]
     }
+
+
+With a step definitions field
+`````````````````````````````
+
+The steps are ordered according the rank field.
+A step can be added or removed by adding or removing an entry in the ``value`` array.
+
+::
+
+    {
+      "tracker": {
+        "id": 81
+      },
+      "values": [
+        [
+          {
+            "field_id": 10162,
+            "type": "ttmstepdef",
+            "label": "steps",
+            "value": [
+              {
+                "description": "Click on the link",
+                "description_format": "commonmark",
+                "expected_results": "The page should open",
+                "expected_results_format": "commonmark",
+                "rank": 1
+              },
+              {
+                "description": "Search for the image on the page",
+                "description_format": "commonmark",
+                "expected_results": "An image is present on the page",
+                "expected_results_format": "commonmark",
+                "rank": 2
+              }
+            ]
+          }
+        ],
+      ]
+    }
+
 
 Retrieve artifact attachment
 ----------------------------
