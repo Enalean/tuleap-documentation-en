@@ -298,7 +298,7 @@ directory.
 will ensure only a customer can act on its inputs.
 
 For more information about the format of this file you should refer to
-the Subversion Book: http://svnbook.red-bean.com/en/1.8/svn.serverconfig.pathbasedauthz.html.
+the Subversion Book: https://svnbook.red-bean.com/en/1.8/svn.serverconfig.pathbasedauthz.html.
 
 .. warning:: Keep in mind that you may thus change obvious behaviours.
              Since the last definition wins, you can, for instance,
