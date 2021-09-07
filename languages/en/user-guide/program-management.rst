@@ -62,7 +62,7 @@ The Backlog is made of *Features* and *Program Enablers*. It corresponds to two 
 same way so in the following section we will only speak about *Features*.
 
 *Features* will be planned in a *Program Increment* thanks to *Program* service. If you are already familiar with Tuleap
-`Scrum Agile Dashboard<_agile-dashboard>`_, it works the same way.
+`Scrum Agile Dashboard <agile-dashboard>`_, it works the same way.
 
 *Features* are broken down in *User Stories*. The *User Stories* are created in their respective *Scrum Team* workspace.
 
@@ -104,5 +104,72 @@ Apart from the *Program Increment* and *Features*, the *Scrum Team* is fully ind
 How Program Management works ?
 ==============================
 
-TBC...
+At the heart of Program Management is the transparent backlog items and milestones management across projects. Keep concepts are:
 
+- Program: the Tuleap project that will coordinate the activities.
+- Aggregated Projects: Tuleap projects where the work of each Team is done.
+- Milestones: period of time, defined by artifacts of one tracker of Program project (e.g. Program Increment, Releases, etc).
+- Backlog Items: high level pieces of work. They come from at least one tracker of Program project (e.g. Features, Themes, Enablers, etc).
+
+The following section details each of those concept and how they assemble together to make the whole Program Management thing.
+
+Program Projects
+################
+
+A Program is a Tuleap Project that have:
+
+- The Program service activated
+- At least one other project Aggregated
+
+A project can be aggregated from the Program administration.
+
+There are no limits in the number of projects that can be aggregated nor pre-conditions except:
+
+- the aggregated project cannot be another Program.
+- the user who want to aggregate a project must be Project Administrator of it.
+- the aggregated project doesnt have Agile Dashboard usage. It's actually possible to aggregate but it won't do anything useful.
+
+A Program project cannot activate the "Scrum" part of Agile Dashboard. Similarly, a project that is using Scrum cannot
+activate Program service.
+
+Aggregated Projects
+###################
+
+A project can be aggregated to any number of Program (except Programs that cannot be aggregated at all). In practice it
+only make sense to aggregate project that make usage of "Scrum" part of Agile Dashboard.
+
+Each aggregated project is independent from the Program(s) it is aggregated with. That means t
+
+Milestones
+##########
+
+A milestone is a tracker that will define a period of time something is worked on. It should have the following `semantics <tracker-semantic>`_:
+
+- Title
+- Description
+- Duration
+- Status
+
+When a Milestone is created or updated in a Program, the milestone is replicated in all aggregated projects. Those replicated
+milestones are called Mirrored Milestones.
+This means there are a set of constraints on Milestone trackers of aggregated projects:
+
+- The milestone will be created in the higher level Planning defined in Agile Dashboard Scrum configuration.
+- This tracker must have following semantics defined: Title, Description, Duration (with same configuration) and Status (with same status values).
+- The user who want to create the Milestone must have "Submit" permission on the fields associated with the semantics as well as "artifact link" field.
+
+Apart from those constraints, each team can tweak its tracker with team related fields.
+
+Backlog Items
+#############
+
+Backlog Items are artifacts from trackers defined to be planned in Milestones in Program configuration. Typically it's
+high level kind of requirements like epics, themes, features, etc. Backlog Items are meant to be broken down in smaller pieces,
+Children Items, like User Stories, in Aggregated Projects.
+
+Backlog Items will appear in Program's Backlog at some point of their life thanks to "explicit backlog" mechanism:
+- either by adding it explicitly with the "Add to top backlog" action in the artifact view,
+- or by configuring a Workflow transition that will move the artifact in the Backlog when the artifact reach a given status.
+
+When a user plan a Backlog Item in a Milestone in Program's Backlog, the Children Items in each aggregated projects are
+planned in Mirrored Milestones.

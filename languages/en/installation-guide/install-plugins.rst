@@ -77,7 +77,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **program_management**: Manage multi project backlog and team synchronisation.
+* :ref:`program_management <program-management>`: Manage multi project backlog and team synchronisation.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
