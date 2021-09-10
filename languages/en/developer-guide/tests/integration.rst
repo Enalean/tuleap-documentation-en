@@ -15,7 +15,11 @@ It will execute all REST tests in a docker container. This container is stopped 
 .. code-block:: bash
 
    $> make tests-rest SETUP_ONLY=1
-   $root@d4601e92ca3f> ./tests/rest/bin/test_suite.sh <optional_path_to_tests_you_want_to_run>
+   $root@d4601e92ca3f> /opt/remi/php80/root/usr/bin/php \
+     /usr/share/tuleap/tests/rest/vendor/bin/phpunit \
+     --configuration /usr/share/tuleap/tests/rest/phpunit.xml \
+     --do-not-cache-result \
+     /usr/share/tuleap/plugins/testmanagement/tests/rest/TestManagement/ExecutionsTest.php # Optional path
 
 In case of failure, you may need to attach to this running container in order to parse logs for example:
 
