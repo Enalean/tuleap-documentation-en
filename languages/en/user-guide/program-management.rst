@@ -8,15 +8,17 @@ Program management
     This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
     not be available on your installation of Tuleap.
 
-Program Management plugin brings multi project backlog management as well as teams synchronisation. It's meant to be
-a general purpose tool for flexibility and adaptability that comes with templates for fast and easy on boarding.
+Program Management plugin brings multi project backlog management as well as teams synchronisation. Program Management
+can be adapted to any methodology and comes with templates for fast and easy on boarding.
 
-This section mainly covers the configuration and precondition to use Program Management. As a end user you will mainly
-care about the templating part that pre-configure everything. You will need to rest of the configuration if you want
-to adapt the templates to your own your case or even create your own templates.
+If you are looking for documentation on how to use Program Management, the first part covers the available templates and
+how to use them.
 
-Last introduction words: Program Management is meant to be methodology agnostic. While it has been designed primarily
-for implementation of SAFe® it has already been applied to Scrum of Scrum or "home made not yet fully agile" process.
+The second part, `How Program Management works ? <program_management_how_it_works>`_, targets people who need to adapt
+projects for their own use case or even create your own templates.
+
+Last introduction words: Program Management plugin is meant to be methodology agnostic. While it has been designed primarily
+for implementation of SAFe® it can be used for Scrum of Scrum or "home made not yet fully agile" process.
 
 .. note::
 
@@ -56,7 +58,7 @@ This is a two levels setup so it's not possible to aggregate a *Program* in anot
 Agile Release Train (ART)
 #########################
 
-Inside an Agile Release Train workspace, the Agile Product Delivery team gather and consolidate the Backlog of the product.
+Inside an Agile Release Train workspace, the Agile Product Delivery team gathers and consolidates the Backlog of the product.
 
 The Backlog is made of *Features* and *Program Enablers*. It corresponds to two different `Tuleap Trackers <trackers>`_ but they behave the
 same way so in the following section we will only speak about *Features*.
@@ -66,7 +68,7 @@ same way so in the following section we will only speak about *Features*.
 
 *Features* are broken down in *User Stories*. The *User Stories* are created in their respective *Scrum Team* workspace.
 
-*Program Increment* are automatically replicated in *Scrum Team* workspaces. When the Agile Product Delivery team create
+*Program Increment* are automatically replicated in *Scrum Team* workspaces. When the Agile Product Delivery team creates
 a new *Program Increment* in the ART Backlog, a new *Program Increment* will be created in each *Scrum Team* attached to the ART.
 Those "mirrored" *Program Increment* will share the same name, description, status and dates.
 
@@ -81,14 +83,14 @@ A *Feature* typical lifecycle is:
 Scrum Team
 ##########
 
-The *Scrum Team* template is more or less a regular *Scrum* template but with some adaptation to integrate automatically
+The *Scrum Team* template is more or less a regular *Scrum* template but with some adaptations to integrate automatically
 with *Agile Release Train* template and to use the same SAFe® jargon.
 
 In a *Scrum Team* workspace, the team members will be able to:
 
 - Create the *User stories* and attach them to the *Features* defined in the *Agile Release Train*
 - Automatically get the *Program Increments* defined in the *ART*
-- Automatically plan their *User Stories* that corresponds to the *Features* planned in the *ART Program Increment*
+- Automatically plan their *User Stories* that correspond to the *Features* planned in the *ART Program Increment*
 
 Apart from the *Program Increment* and *Features*, the *Scrum Team* is fully independent from the *Agile Release Train* workspace:
 
@@ -101,10 +103,12 @@ Apart from the *Program Increment* and *Features*, the *Scrum Team* is fully ind
     As of Tuleap 13.0, synchronised Iterations between ART and Scrum Teams are still under development. However, you
     can manually create Iterations below *Program Increments* in each *Scrum Team* to plan *User Stories*.
 
+.. _program_management_how_it_works:
+
 How Program Management works ?
 ==============================
 
-At the heart of Program Management is the transparent backlog items and milestones management across projects. Keep concepts are:
+At the heart of Program Management is the transparent backlog items and milestones management across projects. Key concepts are:
 
 - Program: the Tuleap project that will coordinate the activities.
 - Aggregated Projects: Tuleap projects where the work of each Team is done.
@@ -126,7 +130,7 @@ A project can be aggregated from the Program administration.
 There are no limits in the number of projects that can be aggregated nor pre-conditions except:
 
 - the aggregated project cannot be another Program.
-- the user who want to aggregate a project must be Project Administrator of it.
+- the user who wants to aggregate a project must be Project Administrator of it.
 - the aggregated project doesnt have Agile Dashboard usage. It's actually possible to aggregate but it won't do anything useful.
 
 A Program project cannot activate the "Scrum" part of Agile Dashboard. Similarly, a project that is using Scrum cannot
@@ -156,7 +160,7 @@ This means there are a set of constraints on Milestone trackers of aggregated pr
 
 - The milestone will be created in the higher level Planning defined in Agile Dashboard Scrum configuration.
 - This tracker must have following semantics defined: Title, Description, Duration (with same configuration) and Status (with same status values).
-- The user who want to create the Milestone must have "Submit" permission on the fields associated with the semantics as well as "artifact link" field.
+- The user who wants to create the Milestone must have "Submit" permission on the fields associated with the semantics as well as "artifact link" field.
 
 Apart from those constraints, each team can tweak its tracker with team related fields.
 
