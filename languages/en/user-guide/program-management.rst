@@ -42,6 +42,11 @@ level view, the framework, the terms & wording.
 Overview
 ########
 
+.. figure:: ../images/screenshots/program-management/safe-templates.png
+	:align: center
+	:alt: Tuleap SAFe® templates
+	:name: Tuleap SAFe® templates
+
 In order to implement SAFe® with Tuleap you will need separated workspace (projects). The easiest way to start is to create
 those new workspaces with the provided templates but it's also possible to adapt an existing workspace.
 
@@ -116,6 +121,11 @@ At the heart of Program Management is the transparent backlog items and mileston
 - Backlog Items: high level pieces of work. They come from at least one tracker of Program project (e.g. Features, Themes, Enablers, etc).
 
 The following section details each of those concept and how they assemble together to make the whole Program Management thing.
+
+.. figure:: ../images/screenshots/program-management/configuration.png
+	:align: center
+	:alt: Program management service configuration
+	:name: Program management service configuration
 
 Program Projects
 ################
