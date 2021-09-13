@@ -164,7 +164,7 @@ A milestone is a tracker that will define a period of time something is worked o
 - Duration
 - Status
 
-When a Milestone is created or updated in a Program, the milestone is replicated in all aggregated projects. Those replicated
+When a milestone is created or updated in a Program, the milestone is replicated in all aggregated projects. Those replicated
 milestones are called Mirrored Milestones.
 This means there are a set of constraints on Milestone trackers of aggregated projects:
 
