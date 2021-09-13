@@ -141,7 +141,7 @@ There are no limits in the number of projects that can be aggregated nor pre-con
 
 - the aggregated project cannot be another Program.
 - the user who wants to aggregate a project must be Project Administrator of it.
-- the aggregated project doesnt have Agile Dashboard usage. It's actually possible to aggregate but it won't do anything useful.
+- the aggregated project doesn't have Agile Dashboard usage. It's actually possible to aggregate it but it won't do anything useful.
 
 A Program project cannot activate the "Scrum" part of Agile Dashboard. Similarly, a project that is using Scrum cannot
 activate Program service.
