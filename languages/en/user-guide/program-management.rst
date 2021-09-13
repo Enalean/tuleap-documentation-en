@@ -130,7 +130,7 @@ The following section details each of those concepts and how they assemble toget
 Program Projects
 ################
 
-A Program is a Tuleap Project that have:
+A Program is a Tuleap Project that has:
 
 - The Program service activated
 - At least one other project Aggregated
