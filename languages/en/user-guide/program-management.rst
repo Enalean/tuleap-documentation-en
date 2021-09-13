@@ -152,7 +152,8 @@ Aggregated Projects
 A project can be aggregated to any number of Program (except Programs that cannot be aggregated at all). In practice it
 only make sense to aggregate project that make usage of "Scrum" part of Agile Dashboard.
 
-Each aggregated project is independent from the Program(s) it is aggregated with. That means t
+Each aggregated project is independent from the Program(s) it is aggregated with. That means that teams can customise
+their workspace as much as they want as long as they keep the synchronizations elements details in the sections hereafter.
 
 Milestones
 ##########
