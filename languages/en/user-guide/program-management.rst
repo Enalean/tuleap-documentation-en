@@ -52,7 +52,7 @@ those new workspaces with the provided templates but it's also possible to adapt
 
 Tuleap provides two type of templates for workspaces:
 
-* Essential SAFe® - ART and Program Management
+* Essential SAFe® - Agile Release Train
 * Essential SAFe® - Scrum Team
 
 A *Program* is meant to aggregate the work done in several *Scrum Teams*. There is no limits in the number of teams that
