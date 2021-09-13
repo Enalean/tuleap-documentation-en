@@ -120,7 +120,7 @@ At the heart of Program Management is the transparent backlog items and mileston
 - Milestones: period of time, defined by artifacts of one tracker of Program project (e.g. Program Increment, Releases, etc).
 - Backlog Items: high level pieces of work. They come from at least one tracker of Program project (e.g. Features, Themes, Enablers, etc).
 
-The following section details each of those concept and how they assemble together to make the whole Program Management thing.
+The following section details each of those concepts and how they assemble together to make the whole Program Management thing.
 
 .. figure:: ../images/screenshots/program-management/configuration.png
 	:align: center
