@@ -10,16 +10,17 @@ enhanced reliability.
 
 Some features are only distributed to Tuleap Enterprise subscribers:
 
-* :ref:`Test Management <testmgmt>`.
-* :ref:`Portfolio <portfolio>`.
-* :ref:`Timetracking <timetracking>`.
 * :ref:`Dynamic credentials <dynamic-credentials>`.
 * :ref:`Label widget <label_widget>`.
-* :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
-* :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
-* :ref:`Project Milestones <project-milestones>`.
 * :ref:`Import Jira projects <jira-project-importer>`.
+* :ref:`OAuth2 and OpenIDConnect Provider <openidconnect_provider>`.
+* :ref:`Portfolio <portfolio>`.
+* :ref:`Project Milestones <project-milestones>`.
+* :ref:`Program management <program-management>`.
 * :ref:`Roadmap <roadmap>`.
+* :ref:`Test Management <testmgmt>`.
+* :ref:`Timetracking <timetracking>`.
+* :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.
 
 More information on `Tuleap.org website`_.
 
