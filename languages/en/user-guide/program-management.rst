@@ -22,7 +22,7 @@ for implementation of SAFe® it can be used for Scrum of Scrum or "home made not
 
 .. note::
 
-    Program management requires installation of ``plugin-program_management`` RPM followed by activation of ``program_management``
+    Program Management requires installation of ``plugin-program_management`` RPM followed by activation of ``program_management``
     plugin at Tuleap site administration level.
 
 Usage of SAFe® templates
