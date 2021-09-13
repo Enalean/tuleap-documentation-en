@@ -110,7 +110,7 @@ Apart from the *Program Increment* and *Features*, the *Scrum Team* is fully ind
 
 .. _program_management_how_it_works:
 
-How Program Management works ?
+How Program Management works?
 ==============================
 
 At the heart of Program Management is the transparent backlog items and milestones management across projects. Key concepts are:
