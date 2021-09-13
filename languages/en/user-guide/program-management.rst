@@ -185,5 +185,5 @@ Backlog Items will appear in Program's Backlog at some point of their life thank
 - either by adding it explicitly with the "Add to top backlog" action in the artifact view,
 - or by configuring a Workflow transition that will move the artifact in the Backlog when the artifact reaches a given status.
 
-When a user plan a Backlog Item in a Milestone in Program's Backlog, the Children Items in each aggregated projects are
+When a user plans a Backlog Item in a Milestone in Program's Backlog, the Children Items in each aggregated projects are
 planned in Mirrored Milestones.
