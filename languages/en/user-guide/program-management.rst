@@ -14,7 +14,7 @@ can be adapted to any methodology and comes with templates for fast and easy on 
 If you are looking for documentation on how to use Program Management, the first part covers the available templates and
 how to use them.
 
-The second part, `How Program Management works ? <program_management_how_it_works>`_, targets people who need to adapt
+The second part, `How Program Management works? <program_management_how_it_works>`_, targets people who need to adapt
 projects for their own use case or even create your own templates.
 
 Last introduction words: Program Management plugin is meant to be methodology agnostic. While it has been designed primarily
