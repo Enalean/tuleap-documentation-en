@@ -17,6 +17,7 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 * :ref:`Portfolio <portfolio>`.
 * :ref:`Project Milestones <project-milestones>`.
 * :ref:`Program management <program-management>`.
+* :ref:`Roadmap <roadmap>`.
 * :ref:`Test Management <testmgmt>`.
 * :ref:`Timetracking <timetracking>`.
 * :ref:`Tuleap Enterprise Edition Docker Images <tee_docker_image>`.

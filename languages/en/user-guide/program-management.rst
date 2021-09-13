@@ -157,7 +157,8 @@ Each aggregated project is independent from the Program(s) it is aggregated with
 Milestones
 ##########
 
-A milestone is a tracker that will define a period of time something is worked on. It should have the following `semantics <tracker-semantic>`_:
+A milestone is an artifact from tracker that will define that something is worked on for a period of time. This tracker
+should have the following `semantics <tracker-semantic>`_:
 
 - Title
 - Description
