@@ -14,13 +14,11 @@ In case of doubt the strategy of "One Tuleap Project, one Jenkins Master" is saf
 Jenkins Configuration
 ---------------------
 
-This section will cover how to configure a Jenkins server to be used efficiently with Tuleap. We assume a fresh Jenkins
-instance that was just installed.
-
-Some adaptations might be needed if you modify an existing Jenkins server (be very careful with authentication to not lock
-yourself out of Jenkins).
-
 .. attention::
+   
+    The currently minimal Jenkins version is **2.222.4**
+
+    The currently minimal Tuleap version should be **12.11**
 
     Both Jenkins and Tuleap servers **must** be in https and certificate must be either `valid <https://certbot.eff.org/lets-encrypt/centosrhel7-nginx.html>`_
     or, at least, trusted.
@@ -30,6 +28,14 @@ yourself out of Jenkins).
     - `Jenkins must trust Tuleap server certificate <https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate>`_
     - `Jenkins must run behind a reverse proxy that does TLS termination <https://www.jenkins.io/doc/book/system-administration/reverse-proxy-configuration-nginx/>`_
     - :ref:`Tuleap must trust Jenkins server certificate <admin_howto_add_certicate>`
+
+This section will cover how to configure a Jenkins server to be used efficiently with Tuleap. We assume a fresh Jenkins
+instance that was just installed.
+
+Some adaptations might be needed if you modify an existing Jenkins server (be very careful with authentication to not lock
+yourself out of Jenkins).
+
+Each Jenkins plugin for Tuleap has a minimal version of Tuleap associated:
 
 Plugins installation
 ````````````````````
@@ -304,7 +310,7 @@ integration between the two tools is completely streamlined.
 The configuration is done once at project level, then every new git repository created in Tuleap will be automatically
 discovered by Jenkins, branches will be inspected to find ``Jenkinsfile`` and created corresponding pipelines.
 
-Whenever a new commit will be pushed, the corresponding job will be triggered on Jenkins.
+Whenever a new commit will be pushed or a Pull Request created, the corresponding job will be triggered on Jenkins.
 
 Step 1: Have an access key to your repositories
 ```````````````````````````````````````````````
@@ -340,15 +346,26 @@ Once the credential is saved, select it in the "Credentials" dropdown.
 
 In the "Project" dropdown right after, select the Tuleap project you want to automate.
 
-You can adjust "Behaviours" to match your need. By default we suggest to remove ``*`` from ``Exclude`` field of "Filter by name (with wildcards)" section
-otherwise nothing will be built at all.
+You can adjust "Behaviours" to match your need. The ``tuleap-git-branch-source`` plugin proposes 4 configuration traits:
+
++-----------------------------------------------------+-------------------+------------+----------------------------------------------------------------------------------------------------------------+
+| Trait Name                                          | Category          | By default | Behaviour                                                                                                      |
++=====================================================+===================+============+================================================================================================================+
+| Tuleap branches autodiscovery                       | Within Repository | Yes        | Discover all branches of the repository                                                                        |
++-----------------------------------------------------+-------------------+------------+----------------------------------------------------------------------------------------------------------------+
+| Tuleap Pull Requests from same origin autodiscovery | Within Repository | Yes        | Discover all Pull Requests created inside the repository                                                       |
++-----------------------------------------------------+-------------------+------------+----------------------------------------------------------------------------------------------------------------+
+| Tuleap Pull Requests from fork autodiscovery        | Within Repository | No         | Discover all Pull Requests coming from fork repositories                                                       |
++-----------------------------------------------------+-------------------+------------+----------------------------------------------------------------------------------------------------------------+
+| Notify build status to Tuleap                       | Additional        | No         | Automatically Notify Tuleap of the result of the build (will use the Access key configured in the scanner job) |
++-----------------------------------------------------+-------------------+------------+----------------------------------------------------------------------------------------------------------------+
 
 .. figure:: ../images/screenshots/jenkins/tgbs_conf.png
    :align: center
    :alt: Configure Tuleap Project jenkins job
    :name: Configure Tuleap Project jenkins job
 
-When the configuration is ready, save it. This will trigger a scan of your project to look for git repositories, their branches
+When the configuration is ready, save it. This will trigger a scan of your project to look for git repositories, their branches, their pull requests,
 and ``Jenkinsfile`` to create Jenkins jobs.
 
 .. figure:: ../images/screenshots/jenkins/tgbs_scan.png
@@ -369,7 +386,7 @@ of the builds that were triggered.
     On Jenkins, in your project settings, you might also want to adjust "Scan Project Triggers" to a shorter period
     otherwise you will have to wait for 1 day between a new repository creation and jenkins to discover it.
 
-    As this will trigger a full analyze of all branches of git repositories of your Tuleap project, you need to find a
+    As this will trigger a full analyze of all branches and pull requests of git repositories of your Tuleap project, you need to find a
     balance between reactivity and Tuleap server overloading.
 
     If you don't create a new repository every other hours, you might want to let 1 day period and trigger manually the
