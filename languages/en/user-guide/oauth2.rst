@@ -206,8 +206,8 @@ Resources
   <oidc_dynamic_registration_spec_>`_. All Client applications must be
   registered manually.
 
-.. _oauth2: https://auth0.com/docs/protocols/protocol-oauth2
-.. _openidconnect: https://auth0.com/docs/protocols/openid-connect-protocol
+.. _oauth2: https://auth0.com/docs/authorization/protocols/protocol-oauth2
+.. _openidconnect: https://auth0.com/docs/authorization/protocols/openid-connect-protocol
 .. _oauth2_spec: https://datatracker.ietf.org/doc/html/rfc6749
 .. _oauth2_scopes: https://datatracker.ietf.org/doc/html/rfc6749#section-3.3
 .. _oauth2_authorization_code_grant: https://datatracker.ietf.org/doc/html/rfc6749#section-4.1

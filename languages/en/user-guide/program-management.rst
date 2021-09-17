@@ -14,7 +14,7 @@ can be adapted to any methodology and comes with templates for fast and easy on 
 If you are looking for documentation on how to use Program Management, the first part covers the available templates and
 how to use them.
 
-The second part, `How Program Management works? <program_management_how_it_works>`_, targets people who need to adapt
+The second part, :ref:`program_management_how_it_works`, targets people who need to adapt
 projects for their own use case or even create your own templates.
 
 Last introduction words: Program Management plugin is meant to be methodology agnostic. While it has been designed primarily
@@ -33,7 +33,7 @@ for large scale products and programs.
 
 In the context of Tuleap, that means many different projects (Teams) that work together, synchronised, on a shared backlog.
 
-If you are working in a single team setup, the regular `Scrum <_agile-dashboard>`_ setup is probably enough. However if
+If you are working in a single team setup, the regular :ref:`Scrum <agile-dashboard>` setup is probably enough. However if
 your product is big enough to require several Scrum teams that work together, the SAFe® templates might be for you.
 
 Disclaimer: this section contains a lot of SAFe® jargon and is written for people who already know, at least with a high
@@ -65,11 +65,11 @@ Agile Release Train (ART)
 
 Inside an Agile Release Train workspace, the Agile Product Delivery team gathers and consolidates the Backlog of the product.
 
-The Backlog is made of *Features* and *Program Enablers*. It corresponds to two different `Tuleap Trackers <trackers>`_ but they behave the
+The Backlog is made of *Features* and *Program Enablers*. It corresponds to two different :ref:`Tuleap Trackers <trackers>` but they behave the
 same way so in the following section we will only speak about *Features*.
 
 *Features* will be planned in a *Program Increment* thanks to *Program* service. If you are already familiar with Tuleap
-`Scrum Agile Dashboard <agile-dashboard>`_, it works the same way.
+:ref:`Scrum Agile Dashboard <agile-dashboard>`, it works the same way.
 
 *Features* are broken down in *User Stories*. The *User Stories* are created in their respective *Scrum Team* workspace.
 
@@ -159,7 +159,7 @@ Milestones
 ##########
 
 A milestone is an artifact from tracker that will define that something is worked on for a period of time. This tracker
-should have the following `semantics <tracker-semantic>`_:
+should have the following :ref:`semantics <tracker-semantic>`:
 
 - Title
 - Description
