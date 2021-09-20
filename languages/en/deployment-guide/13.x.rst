@@ -8,7 +8,18 @@ Tuleap 13.1
 
   Tuleap 13.1 is currently under development.
 
-  Nothing to mention.
+Tuleap can no longer be accessed with http without TLS (HTTPS only)
+-------------------------------------------------------------------
+
+Tuleap always expects to be accessed over HTTPS, for this reason having a dedicated
+setting ``sys_https_host`` is no more necessary.
+
+You should make sure the setting ``sys_default_domain`` in your
+``/etc/tuleap/conf/local.inc`` file is set to the qualified domain
+name you use to access the instance.
+
+The setting ``sys_https_host`` can be removed from your
+``/etc/tuleap/conf/local.inc`` file as it is no more used.
 
 
 Tuleap 13.0
