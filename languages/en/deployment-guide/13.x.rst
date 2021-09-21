@@ -8,6 +8,15 @@ Tuleap 13.1
 
   Tuleap 13.1 is currently under development.
 
+Minimal browser support raised to Firefox 78 ESR and Chrome 87
+--------------------------------------------------------------
+
+The best effort support is now Firefox 78 ESR and Chrome 87. Versions
+older than that do not work at all anymore to browse Tuleap.
+
+:ref:`The recommendation is still to use the latest version of Mozilla Firefox, Microsoft Edge
+or Google Chrome <user_supported_browsers>`.
+
 Tuleap can no longer be accessed with http without TLS (HTTPS only)
 -------------------------------------------------------------------
 
