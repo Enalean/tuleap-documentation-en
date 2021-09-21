@@ -28,16 +28,6 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-September 2021
-''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-Chrome & Edge < 87            End of support    Ensure your users have an up to date browser
-Firefox < 78.1                End of support    Ensure your users have an up to date browser
-============================= ================= ============================================================
-
 End of 2021
 '''''''''''
 
@@ -73,6 +63,8 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+Chrome & Edge < 87              Q3 2021  End of support    Ensure your users have an up to date browser
+Firefox < 78.1                  Q3 2021  End of support    Ensure your users have an up to date browser
 PHP 7.3                         Q2 2021  Removed           Nothing, Tuleap will switch to php 7.4 automatically
 PermissionsOverrider            Q1 2021  Removed           :ref:`Delete the local glue <remove_permissions_overrider>`
 Internet Explorer               Q4 2020  End of support    **End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium**
