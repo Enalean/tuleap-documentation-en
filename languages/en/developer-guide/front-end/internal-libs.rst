@@ -52,7 +52,9 @@ Here is the folder structure you should follow:
                          |-- some-image.png
                     |-- dist/                               # Generated assets. Must be excluded from git
                          |-- my-lib-name.umd.js             # Javascript UMD bundle, it is referenced in "main" in package.json
+                         |-- my-lib-name.umd.d.js           # Typescript declarations entrypoint for my-lib-name.umd.js
                          |-- my-lib-name.es.js              # Javascript ES module bundle, it is referenced in "module" in package.json
+                         |-- my-lib-name.es.d.js            # Typescript declarations entrypoint for my-lib-name.es.js
                          |-- style.css                      # CSS bundle, it is referenced in "style" in package.json
                     |-- po/                                 # Localization strings
                          |-- fr_FR.po                       # Localized strings for French
@@ -62,10 +64,7 @@ Here is the folder structure you should follow:
                               |-- my-other-source.ts
                     |-- themes/                             # The lib styles
                          |-- style.scss                     # Entrypoint for your library styles
-                    |-- types/                              # TypeScript declarations
-                         |--index.d.ts                      # Typescript declarations for the entrypoint, it is referenced in "types" in package.json
-                         |-- subfolder/
-                              |-- my-other-source.d.ts
+
 
 Build your internal library
 ---------------------------
@@ -119,6 +118,7 @@ This file should be located in ``my-lib-name/``.
                 name: "MyLibName",
             },
         },
+        { typescript: true } // Or { vueTsc: true } if you are building a lib including Vue SFCs
     });
 
 Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/``.
@@ -151,17 +151,13 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
         "bin": "../../../../../node_modules/.bin" // This should point to the node_modules/.bin folder in tuleap/ root folder
       },
       "scripts": {
-        "build": "$npm_package_config_bin/run-p build:*",
-        "build:vite": "$npm_package_config_bin/vite build",
-        "build:types": "rm -rf types/ && $npm_package_config_bin/tsc",
-        "watch": "$npm_package_config_bin/run-p watch:*",
-        "watch:vite": "$npm_package_config_bin/nodemon --watch src/ --ignore \"src/**/*.test.ts\" --ext ts --exec '$npm_package_config_bin/vite build --mode development --minify false'",
-        "watch:types": "rm -rf types/ && $npm_package_config_bin/tsc -w --preserveWatchOutput",
+        "build": "$npm_package_config_bin/vite build",
+        "watch": "$npm_package_config_bin/vite build --watch --mode development --minify false",
         "test": "$npm_package_config_bin/jest"
       }
     }
 
-.. NOTE:: All the Vite/Jest/npm-run-all (run-p)/nodemon dependencies are available at the tuleap root folder, hence the ``config.bin``.
+.. NOTE:: All the Vite and Jest dependencies are available at the tuleap root folder, hence the ``config.bin``.
 
 Use the npm scripts to build the library or to launch the unit tests.
 
@@ -204,14 +200,13 @@ You also need a Jest config, but this one has nothing special.
         displayName: "my-lib-name",
     };
 
-Add a ``.gitignore`` file to remove the ``dist/`` and ``types`` folders from source control.
-They contains only generated files and should not be committed.
+Add a ``.gitignore`` file to remove the ``dist/`` folder from source control.
+It contains only generated files and should not be committed.
 
  .. code-block:: text
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/.gitignore
     dist/
-    types/
 
 If you have gettext translations with node-gettext, you will need a
 ``pofile-shim.d.ts`` so that TypeScript understands what is returned by ``import "file.po"``.
