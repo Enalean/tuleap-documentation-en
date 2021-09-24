@@ -16,7 +16,7 @@ Jenkins Configuration
 
 .. attention::
    
-    The currently minimal Jenkins version is **2.222.4**
+    The currently minimal Jenkins version is **2.249.3**
 
     The currently minimal Tuleap version should be **12.11**
 
@@ -35,8 +35,6 @@ instance that was just installed.
 Some adaptations might be needed if you modify an existing Jenkins server (be very careful with authentication to not lock
 yourself out of Jenkins).
 
-Each Jenkins plugin for Tuleap has a minimal version of Tuleap associated:
-
 Plugins installation
 ````````````````````
 
@@ -47,7 +45,7 @@ Three plugins should be installed:
 - `Tuleap API <https://plugins.jenkins.io/tuleap-api/>`_
 
 ``Tuleap API`` is the plugin responsible for calling the Tuleap API. ``Tuleap Git Branch Source`` is responsible for easing and automating the
-discovery and job creation for repositories, branches, PRs in Git respositories hosted on your Tuleap instance. ``Tuleap OAuth`` is responsible for delegating
+discovery and job creation for repositories, branches, pull requests (PRs) in Git respositories hosted on your Tuleap instance. ``Tuleap OAuth`` is responsible for delegating
 the authentication of Jenkins users to your Tuleap instance.
 
 .. figure:: ../images/screenshots/jenkins/jenkins_plugins_dependencies.png
