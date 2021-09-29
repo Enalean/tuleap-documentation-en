@@ -45,7 +45,7 @@ Three plugins should be installed:
 - `Tuleap API <https://plugins.jenkins.io/tuleap-api/>`_
 
 ``Tuleap API`` is the plugin responsible for calling the Tuleap API. ``Tuleap Git Branch Source`` is responsible for easing and automating the
-discovery and job creation for repositories, branches, pull requests (PRs) in Git respositories hosted on your Tuleap instance. ``Tuleap OAuth`` is responsible for delegating
+discovery and job creation for repositories, branches, pull requests (PRs) in Git respositories hosted on your Tuleap instance. ``Tuleap Authentication`` is responsible for delegating
 the authentication of Jenkins users to your Tuleap instance.
 
 .. figure:: ../images/screenshots/jenkins/jenkins_plugins_dependencies.png
