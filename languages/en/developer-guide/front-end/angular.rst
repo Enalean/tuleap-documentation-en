@@ -6,9 +6,9 @@ Angular.js
 Build the javascript files
 --------------------------
 
-From the root directory of the Tuleap sources (you must have npm installed):
+From the root directory of the Tuleap sources (you must have pnpm installed):
 
     .. code-block:: bash
 
-        $ npm install
-        $ npm run build
+        $ pnpm install
+        $ pnpm run build

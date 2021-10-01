@@ -34,15 +34,15 @@ Developers wanting to keep their custom shell configurations should take a look 
 Manually install the dependencies
 """""""""""""""""""""""""""""""""
 
-Circa August 2021, the following tools are needed to develop on Tuleap, please refer to their
+Circa October 2021, the following tools are needed to develop on Tuleap, please refer to their
 respective documentation for installation instructions:
 
 - GNU make
 - GNU grep
 - GNU sed
-- `PHP <https://www.php.net/>`_ 7.4.x
+- `PHP <https://www.php.net/>`_ 8.0.x
 - `nodejs <https://nodejs.org/en/>`_ >= v16.5.x
-- `npm <https://docs.npmjs.com/>`_ v7.20.x
+- `pnpm <https://pnpm.io/>`_ v6.16.x
 - `composer <https://getcomposer.org/>`_ >= 2.1.x
 - `Docker Compose <https://docs.docker.com/compose/>`_ >= 1.29.x
 
@@ -62,8 +62,8 @@ First start of Tuleap
 
     $ cd /path/to/tuleap
     $ make composer
-    $ npm install
-    $ npm run build
+    $ pnpm install
+    $ pnpm run build
     $ make dev-setup
     $ make start
     $ make post-checkout
@@ -132,7 +132,7 @@ Descriptions of commands
     bfbd9f32b2ae: tuleap_reverse-proxy_1 — tuleap_reverse-proxy 22/tcp, 80/tcp, 443/tcp
     742b540e876c: tuleap_realtime_1 — tuleap_realtime 443/tcp
 
-* ``make post-checkout``: Install npm dependencies, generate the javascript and CSS files to be used by the browser,
+* ``make post-checkout``: Install dependencies, generate the javascript and CSS files to be used by the browser,
   deploy gettext translation... You need to run this command everytime you switch a branch.
 
 .. NOTE:: Docker images are read-only, and every modification to the OS will be
