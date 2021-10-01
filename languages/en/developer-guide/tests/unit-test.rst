@@ -60,7 +60,7 @@ This config file is pretty easy to set up.
     };
 
 
-You will then need to add a test script in your ``package.json`` file to launch Jest when ``npm test`` is used.
+You will then need to add a test script in your ``package.json`` file to launch Jest when ``pnpm test`` is used.
 
 
 .. code-block:: JavaScript
@@ -68,13 +68,9 @@ You will then need to add a test script in your ``package.json`` file to launch 
     // tuleap/plugins/<your_plugin>/package.json
     {
         //...
-        "config": {
-            "bin": "../../node_modules/.bin"
-        },
-        //...
         "scripts": {
             //...
-            "test": "$npm_package_config_bin/jest"
+            "test": "jest"
             //...
         }
     }

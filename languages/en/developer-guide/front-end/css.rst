@@ -17,33 +17,33 @@ SCSS files should always go in "themes" folders.
 Compile SCSS files
 ------------------
 
-From the root directory of the Tuleap sources (you must have npm installed):
+From the root directory of the Tuleap sources (you must have pnpm installed):
 
     .. code-block:: bash
 
-        $ npm install
-        $ npm run build
+        $ pnpm install
+        $ pnpm run build
 
 This command will compile all SCSS files present in ``plugin`` and ``src`` directories.
 
     .. important::
 
-        * you have to run ``npm run build`` everytime you edit a SCSS file.
+        * you have to run ``pnpm run build`` everytime you edit a SCSS file.
         * CSS files will be git-ignored so there is no use in modifying them.
 
 
-If you are working in Tuleap "core", change your current directory to ``src/`` to run the "npm" commands.
-If you are working in a plugin for Tuleap, change your current directory to the "root" of that plugin in ``plugins/<my-plugin>/`` to run the "npm" commands.
+If you are working in Tuleap "core", change your current directory to ``src/`` to run the "pnpm" commands.
+If you are working in a plugin for Tuleap, change your current directory to the "root" of that plugin in ``plugins/<my-plugin>/`` to run the "pnpm" commands.
 
 While you are working, the following command should help you:
 
     .. code-block:: bash
 
-        $ npm run watch
+        $ pnpm run watch
 
     .. important::
 
-        ``npm run watch`` will automatically rebuild CSS after changes.
+        ``pnpm run watch`` will automatically rebuild CSS after changes.
 
 Best practices for Tuleap
 -------------------------
