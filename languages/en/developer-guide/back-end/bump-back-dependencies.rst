@@ -9,7 +9,7 @@ At the beginning of each sprint, feature team has responsibility to update depen
 How to detect outdated dependencies
 -----------------------------------
 
-You can run `composer outdated`, you will have a list of dependencies to bump.
+You can run ``composer outdated``, you will have a list of dependencies to bump.
 
 
 How to do the bump
