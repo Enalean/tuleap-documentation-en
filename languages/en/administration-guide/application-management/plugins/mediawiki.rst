@@ -68,6 +68,8 @@ First you need to create a dedicated database, in your Mysql instance:
     CREATE DATABASE 'tuleap_mediawiki';
     GRANT ALL PRIVILEGES on tuleap_mediawiki.* TO 'tuleapadm'@'%';
     FLUSH PRIVILEGES;
+  .. note::
+    If your platform is old, you might not have ``tuleapadm`` as MySQL user but ``codendiadm`` instead. You can verify it in ``/etc/tuleap/conf/database.inc``.
 
 Then reference this table in ``/etc/tuleap/plugins/mediawiki/etc/mediawiki.inc``:
 
