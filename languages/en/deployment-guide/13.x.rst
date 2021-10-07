@@ -30,6 +30,24 @@ name you use to access the instance.
 The setting ``sys_https_host`` can be removed from your
 ``/etc/tuleap/conf/local.inc`` file as it is no more used.
 
+Plugin configuration can no longer be edited from Tuleap Site Administrator UI
+------------------------------------------------------------------------------
+
+It's been deprecated and deactivated by default since :ref:`Tuleap 9.8 <deployment_guide_9_8>`, released in may 2017. So
+hopefully nobody still have this activated and used. Before Tuleap 9.8, plugin variables defined in ``/etc/tuleap/plugin/$PLUGIN/etc/$PLUGIN.inc``
+file were editable from site administration interface.
+
+This was a major security risk (allow users to write code that will be executed is always a major risk) so we deactivated
+it by default for all platforms and introduced a parameter in ``local.inc`` to allow admins to do a smooth transition.
+
+In case of doubt, check if ``/etc/tuleap/conf/local.inc`` contains a variable named ``$sys_plugins_editable_configuration``:
+
+
+* If it is set to ``0``. If it's the case, you're good, you can remove this variable, it's no longer used.
+* If it is set to ``1``. You were at risk and you are now safer.
+
+For teams that were still ``$sys_plugins_editable_configuration = 1;`` it means that update of the configuration must now
+be done with an SSH access to the platform.
 
 Tuleap 13.0
 ===========

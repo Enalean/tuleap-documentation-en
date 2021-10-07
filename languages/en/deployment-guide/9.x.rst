@@ -433,6 +433,8 @@ packages is trusted.
 
 The key has the short ID `ADB0D167` and the fingerprint `3D03 B41A 172A 7FB9 4F1E  9E9E C0B5 E775 ADB0 D167`.
 
+.. _deployment_guide_9_8:
+
 Tuleap 9.8
 ==========
 
