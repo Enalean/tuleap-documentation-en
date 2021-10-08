@@ -35,14 +35,23 @@ End of 2021
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
 Subversion (SVN Core)         Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
-Trackers v3                   Removed           Migrate to Trackers v5
 forgeupgrade                  Removed           :ref:`Update script/procedures <update>` should no longer use ``/usr/lib/forgeupgrade/bin/forgeupgrade``
-SOAP API                      Removed           End-users should switch to REST API
 Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
+============================= ================= ============================================================
+
+End of June 2022
+''''''''''''''''
+
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+Trackers v3                   Removed           Migrate to Trackers v5
+SOAP API                      Removed           End-users should switch to REST API
 MySQL 5.7                     End of support    Switch to MySQL 8
 tab file-based translations   Replaced by       Nothing
                               gettext
 ============================= ================= ============================================================
+
 
 In the future
 '''''''''''''
