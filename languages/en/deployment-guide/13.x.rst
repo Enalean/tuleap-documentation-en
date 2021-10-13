@@ -4,10 +4,6 @@ Tuleap 13.x
 Tuleap 13.1
 ===========
 
-.. NOTE::
-
-  Tuleap 13.1 is currently under development.
-
 Minimal browser support raised to Firefox 78 ESR and Chrome 87
 --------------------------------------------------------------
 
