@@ -8,11 +8,24 @@ Tuleap 13.2
 
   Tuleap 13.2 is currently under development.
 
+All users will need to log in again after the upgrade (>= Tuleap Community 13.1.99.22)
+--------------------------------------------------------------------------------------
 
-Nothing to mention.
+In order to mitigate performance issues we have been forced to clear all the ongoing sessions.
+All your users will be disconnected after this upgrade. This is a one time thing and there is
+no security implications to it.
+
 
 Tuleap 13.1
 ===========
+
+All users will need to log in again after the upgrade (>= Tuleap Enterprise 13.1-2)
+-----------------------------------------------------------------------------------
+
+In order to mitigate performance issues we have been forced to clear all the ongoing sessions.
+All your users will be disconnected after this upgrade. This is a one time thing and there is
+no security implications to it.
+
 
 Minimal browser support raised to Firefox 78 ESR and Chrome 87
 --------------------------------------------------------------
