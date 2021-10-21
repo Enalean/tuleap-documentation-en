@@ -16,8 +16,6 @@ As root, run:
     yum check-update tuleap\*
 
 
-Note: you can update only the tuleap part (tuleap*) but we highly recommend you to upgrade the whole OS on regular basis.
-
 Upgrade
 -------
 
