@@ -16,6 +16,13 @@ All your users will be disconnected after this upgrade. This is a one time thing
 no security implications to it.
 
 
+Mediawiki MLEB extensions removed
+---------------------------------
+
+Those Mediawiki extensions :ref:`are disabled since Tuleap 12.7 <mediawiki_mleb_extensions_desactivation>`. Since no feedback has been
+provided since then they have been removed definitely. If the package ``php-mediawiki-mleb-tuleap`` is installed on your server, it is
+safe to remove it.
+
 Tuleap 13.1
 ===========
 
