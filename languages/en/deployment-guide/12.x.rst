@@ -99,6 +99,8 @@ Subversion max file size
 A new parameter can be :ref:`configured at site level <subversion-max-file-size>` to limit the max file size in svn
 plugin repositories. By default no limit is set for existing platforms.
 
+.. _mediawiki_mleb_extensions_desactivation:
+
 Mediawiki MLEB extensions desactivated
 --------------------------------------
 
