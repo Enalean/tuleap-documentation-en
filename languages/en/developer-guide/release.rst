@@ -7,15 +7,13 @@ Tuleap release process
 
    A release manager needs to:
     - be a Tuleap integrator
-    - have enough rights on the `Jenkins instance ci.tuleap.org <https://ci.tuleap.org/jenkins/>`_ to lauch new builds
     - at least be a tracker administrator in the project Tuleap on `Tuleap.net <https://tuleap.net/projects/tuleap/>`_
-    - be a core member of the `Enalean organization on GitHub <https://github.com/Enalean/>`_
 
 
-Release a new Tuleap stable milestone
-=====================================
+Release a new Tuleap Community milestone
+========================================
 
-A new Tuleap stable milestone can be released once:
+A new Tuleap Community milestone can be released once:
     - the set of features included in the release has been validated by the Product Owner
     - full validation test suite has been passed with success (all major spotted bugs has been fixed)
     - no Tuleap integrator has manifested himself with a reason to block the release
@@ -23,7 +21,7 @@ A new Tuleap stable milestone can be released once:
 Prepare the source repositories for the release
 -----------------------------------------------
 
-The source repositories must be prepared to release a new Tuleap stable milestone.
+The source repositories must be prepared to release a new Tuleap Community milestone.
 The release manager **must** sign with his GPG key any commits or any tags created during the release process.
 
 This document consider that X.Y is the version number of Tuleap that you want to release.
@@ -31,7 +29,7 @@ This document consider that X.Y is the version number of Tuleap that you want to
 Tuleap
 ^^^^^^
 
-You should retrieve the sources of the master branch of the `Tuleap stable repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
+You should retrieve the sources of the master branch of the `Tuleap Community repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
 You will also need a remote to the `Tuleap repository on Gerrit <https://gerrit.tuleap.net/admin/repos/tuleap>`_.
 The top of the master branch must be what you want to release.
 Your workspace copy must be up to date and at the top of the master branch.
@@ -85,6 +83,37 @@ must be updated, so you need to clone both repositories.
         # In both repositories
         $ git push -u origin HEAD
 
+Update Tuleap.net
+-----------------
+
+ * `Create a fake release in the FRS <https://tuleap.net/file/admin/release.php?func=add&group_id=101&package_id=5>`_ with the release artifact ID
+ * Mark the release artifact as delivered in the `Releases tracker <https://tuleap.net/plugins/tracker/?tracker=146>`_
+ * `Edit the Version field <https://tuleap.net/plugins/tracker/?tracker=143&func=admin-formElements>`_ to add the new release and to hide the oldest one
+
+Release a new major Tuleap Enterprise milestone
+===============================================
+
+This can only be done after the release of a Tuleap Community milestone.
+This guide only covers the release of a new major Tuleap Enterprise milestone as it is closely related to the release of a
+Tuleap Community milestone. 
+
+.. note:: Publishing a new Tuleap Enterprise milestone is only possible for Tuleap integrators with an access to Enalean internal repositories.
+
+Prepare the source repositories for the release
+-----------------------------------------------
+
+Similarly to the release of a Tuleap Community milestone, every tag and commit created during the process
+**must** be signed by the release manager.
+
+
+Tuleap
+^^^^^^
+
+You must publish the tag to the Tuleap Enterprise repository::
+
+    $ git push enterprise X.Y
+
+
 Plugins and tools external to the main Tuleap repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -92,12 +121,12 @@ Some plugins and tools are not in the main Tuleap repository as such their versi
 must be updated and tagged individually.
 
 The list of the concerned plugins and tools can be found in the
-`manifest file <https://tuleap.net/plugins/git/tuleap/tools/release-manifest?a=blob&f=stable%2Fmanifest.json>`_.
+`manifest file <https://my.enalean.com/plugins/git/tuleap-by-enalean/release-manifest?a=blob&f=manifest.json>`_.
 
 The procedure to follow is similar for each one of the concerned plugins and tools:
  1. Clone the repository or update your local workspace to be on the top of the remote master branch
 
- 2. Verify if changes has been made since the last Tuleap stable milestone release. If the top of the master
+ 2. Verify if changes has been made since the last major Tuleap Enterprise milestone release. If the top of the master
  branch is the tag created for the last release you can stop, else you need to continue the procedure.
 
  3. Edit `/VERSION` file with the new version number. The version is expected to formatted as ``MAJOR.MINOR.PATCH``,
@@ -122,48 +151,22 @@ The procedure to follow is similar for each one of the concerned plugins and too
 Update the manifest
 -------------------
 
-What goes into a Tuleap stable milestone is defined by a manifest file.
+What goes into a Tuleap Community milestone is defined by a manifest file.
 
  1. Clone or update your local copy of the `release-manisfest repository <https://tuleap.net/plugins/git/tuleap/tools/release-manifest>`_
- 2. Edit the release manifest file located in `stable/manifest.json` with the tags you have created for the release
+ 2. Edit the release manifest file located in `manifest.json` with the tags you have created for the release (do not forget the `links` keys)
  3. Commit the new manifest and publish it::
 
-    $ git commit -S -a -m 'Release Tuleap stable X.Y'
+    $ git commit -S -a -m 'Release Tuleap Enterprise X.Y'
     $ git push
 
 Build and publish packages
 --------------------------
 
 Building and publishing the packages is fully automated through a Jenkins pipeline.
-The only thing you need to do is to `start it <https://ci.tuleap.org/jenkins/job/RPMs/job/TuleapStable/>`_ once you're ready.
+The `pipeline will start <https://ci.enalean.com/jenkins/job/RPMs/job/TuleapEnterprise/>`_ as soon as you publish the updated manifest.
 
-You should wait for the pipeline to complete before finishing the release process.
+Update my.enalean.com
+---------------------
 
-Update Tuleap.net
------------------
-
- * `Create a fake release in the FRS <https://tuleap.net/file/admin/release.php?func=add&group_id=101&package_id=5>`_ with the release artifact ID
- * Mark the release artifact as delivered in the `Releases tracker <https://tuleap.net/plugins/tracker/?tracker=146>`_
- * `Edit the Version field <https://tuleap.net/plugins/tracker/?tracker=143&func=admin-formElements>`_ to add the new release and to hide the oldest one
-
-
-Release or update a dependency delivered in the Tuleap RPM repository
-=====================================================================
-
-This action is only needed when it is needed to publish a dependency package that is not
-built in the standard build pipeline of Tuleap. This is something that is rarely needed.
-Ensure you really need it before going further.
-
- .. note:: Publishing a RPM package manually in the RPM repository is only accessible to Tuleap integrators with:
-
-    - a SSH access to ci.tuleap.org
-    - an account on the Hashicorp Vault managed by Enalean with the permission to access to the GPG key used to sign packages
-
- 1. Build the package you want to publish
- 2. Sign the package with the script `helpers/sign-packages.sh` provided in the Git repository `sign-packages-repositories <https://tuleap.net/plugins/git/tuleap/tools/sign-packages-repositories>`_
- 3. Upload the signed package to ci.tuleap.org in `/var/lib/jenkins/pub/tuleap/upstream/rhel/VERSION/PHPBASE` where:
-
-    - VERSION is the major release of the OS (at the moment it can only be 7)
-    - PHPBASE (noarch for RHEL7)
-
- 4. The package will be published with the next automated build of Tuleap
+Edit the `Version field <https://my.enalean.com/plugins/tracker/?tracker=221&func=admin-formElements>`_ to add the new release and to hide the oldest one.
