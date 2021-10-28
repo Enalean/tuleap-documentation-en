@@ -8,6 +8,20 @@ Tuleap 13.2
 
   Tuleap 13.2 is currently under development.
 
+End of life for Tuleap "stable" repository
+------------------------------------------
+
+The repository located at the URL ``https://ci.tuleap.net/yum/tuleap/rhel/7/stable/x86_64/`` will not be updated anymore.
+The repository will put offline at some point in the future without further notice.
+
+Please note that `stable` name has always been misleading as it's merely a snapshot a fixed point in time with no stabilization process. It was there provide dependencies (eg. mailman or mediawiki) that we were not able to ship elsewhere. Those packages are now built properly within the regular publication pipeline. Hence, `stable` has no reasons to be kept.
+
+Tuleap Enterprise users can remove it from their repo file ``/etc/yum.repos.d/Tuleap.repo``
+(it is the repository with the ``exclude=tuleap*`` instruction). In case of doubt please reach out to your support contact.
+
+Tuleap Community users should update their configuration to match the instructions given on the :ref:`Tuleap installation page <tuleap_installation>`.
+Please note this repository was never officially supported for Tuleap Community.
+
 All users will need to log in again after the upgrade (>= Tuleap Community 13.1.99.22)
 --------------------------------------------------------------------------------------
 
