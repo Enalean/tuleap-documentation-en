@@ -229,7 +229,8 @@ linkcheck_ignore = [
     r'https://mermaid-js\.github\.io/mermaid/\#.*', # Anchors are not found due to the page generation client side
     'https://prismjs.com/#supported-languages', # Anchor is not found due to the page generation client side
     r'https://ci\.enalean\.com/.*', # No public access
-    r'https://my\.enalean\.com/.*' # No public access
+    r'https://my\.enalean\.com/.*', # No public access
+    'https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate' # Cloudflare does not like Linkcheck
 ]
 
 # -- Options for manual page output --------------------------------------------
