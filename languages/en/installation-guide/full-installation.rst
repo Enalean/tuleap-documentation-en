@@ -73,6 +73,7 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
     baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/dev/$basearch
     enabled=1
     gpgcheck=1
+    repo_gpgcheck=1
     gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
 
 -  **Install Tuleap** by running the following command:
