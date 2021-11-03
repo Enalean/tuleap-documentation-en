@@ -49,40 +49,6 @@ Your workspace copy must be up to date and at the top of the master branch.
     $ git push gerrit HEAD:master
     $ git push stable X.Y
 
-Documentation
-^^^^^^^^^^^^^
-
-Both the `English documentation <https://github.com/Enalean/tuleap-documentation-en>`_ and `French documentation <https://github.com/Enalean/tuleap-documentation-fr>`_
-must be updated, so you need to clone both repositories.
-
- 1. Verify that the deployment guide in the english documentation is up to date.
- You can partially achieve that by checking if there was changes in the configuration
- files::
-
-    $ git diff X.W..X.Y -- plugins/*/etc/ src/etc
-
- 2. Create a branch specific to the release in the English and French documentation repositories::
-
-    $ git checkout -b X.Y origin/master
-
- 3. Edit, if needed, the copyright, version and release::
-
-        # In English documentation repository
-        $ vim languages/en/conf.py
-        # In French documentation repository
-        $ vim languages/fr/conf.py
-
- 4. Edit, if needed, the deployment guide to remove the mention "Under development"
-
- 5. Commit your changes and publish them::
-
-        # In English documentation repository
-        $ git commit -S -a -m 'Initialize documentation for Tuleap X.Y'
-        # In French documentation repository
-        $ git commit -S -a -m 'Initialisation de la documentation de Tuleap X.Y'
-        # In both repositories
-        $ git push -u origin HEAD
-
 Update Tuleap.net
 -----------------
 
@@ -113,6 +79,39 @@ You must publish the tag to the Tuleap Enterprise repository::
 
     $ git push enterprise X.Y
 
+Documentation
+^^^^^^^^^^^^^
+
+Both the `English documentation <https://github.com/Enalean/tuleap-documentation-en>`_ and `French documentation <https://github.com/Enalean/tuleap-documentation-fr>`_
+must be updated, so you need to clone both repositories.
+
+1. Verify that the deployment guide in the english documentation is up to date.
+You can partially achieve that by checking if there was changes in the configuration
+files::
+
+   $ git diff X.W..X.Y -- plugins/*/etc/ src/etc
+
+2. Create a branch specific to the release in the English and French documentation repositories::
+
+   $ git checkout -b X.Y origin/master
+
+3. Edit, if needed, the copyright, version and release::
+
+      # In English documentation repository
+      $ vim languages/en/conf.py
+      # In French documentation repository
+      $ vim languages/fr/conf.py
+
+4. Edit, if needed, the deployment guide to remove the mention "Under development"
+
+5. Commit your changes and publish them::
+
+      # In English documentation repository
+      $ git commit -S -a -m 'Initialize documentation for Tuleap X.Y'
+      # In French documentation repository
+      $ git commit -S -a -m 'Initialisation de la documentation de Tuleap X.Y'
+      # In both repositories
+      $ git push -u origin HEAD
 
 Plugins and tools external to the main Tuleap repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
