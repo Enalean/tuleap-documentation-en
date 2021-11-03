@@ -8,6 +8,15 @@ Tuleap 13.2
 
   Tuleap 13.2 is currently under development.
 
+Metadata of the Tuleap Community repository are now signed
+----------------------------------------------------------
+
+The metadata of the Tuleap Community repository are now GPG signed. Previously, only the packages themselves were signed.
+You can update your ``/etc/yum.repos.d/Tuleap.repo`` to add the ``repo_gpgcheck=1`` directive to tell yum to verify the
+signature.
+
+You can verify your configuration is correct by checking the :ref:`Tuleap installation page <tuleap_installation>`.
+
 End of life for Tuleap "stable" repository
 ------------------------------------------
 
