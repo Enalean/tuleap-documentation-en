@@ -4,10 +4,6 @@ Tuleap 13.x
 Tuleap 13.2
 ===========
 
-.. NOTE::
-
-  Tuleap 13.2 is currently under development.
-
 Metadata of the Tuleap Community repository are now signed
 ----------------------------------------------------------
 
