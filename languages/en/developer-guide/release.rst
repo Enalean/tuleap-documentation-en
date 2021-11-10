@@ -150,7 +150,7 @@ The procedure to follow is similar for each one of the concerned plugins and too
 Update the manifest
 -------------------
 
-What goes into a Tuleap Community milestone is defined by a manifest file.
+What goes into a Tuleap Enterprise milestone is defined by a manifest file.
 
  1. Clone or update your local copy of the `release-manisfest repository <https://tuleap.net/plugins/git/tuleap/tools/release-manifest>`_
  2. Edit the release manifest file located in `manifest.json` with the tags you have created for the release (do not forget the `links` keys)
