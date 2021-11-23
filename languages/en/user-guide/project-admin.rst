@@ -378,9 +378,6 @@ Roadmap
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-.. NOTE::
-  This widget is still under development.
-
 This displays the roadmap of a project in the project dashboard. It shows the progress of artifacts with:
 
 * :ref:`semantic Title<semantic-title>`
