@@ -9,7 +9,12 @@ Tuleap 13.4
   Tuleap 13.4 is currently under development.
 
 
-Nothing to mention.
+Removal of the ``textualreport`` plugin
+---------------------------------------
+
+This plugin is replaced by the Tuleap DocGen (``document_generation``) plugin.
+You can active the Tuleap DocGen plugin from the site administration if you wish
+keep a way to generate document from a tracker report.
 
 Tuleap 13.3
 ===========
