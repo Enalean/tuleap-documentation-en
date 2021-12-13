@@ -13,7 +13,7 @@ Removal of the ``textualreport`` plugin
 ---------------------------------------
 
 This plugin is replaced by the Tuleap DocGen (``document_generation``) plugin.
-You can active the Tuleap DocGen plugin from the site administration if you wish
+You can active the Tuleap DocGen plugin from the site administration if you wish to
 keep a way to generate document from a tracker report.
 
 Tuleap 13.3
