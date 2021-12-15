@@ -1,4 +1,4 @@
-FROM nixos/nix:2.3.12 AS builder
+FROM nixos/nix:2.5.0 AS builder
 
 RUN addgroup -S builder && adduser -S -G builder builder
 
