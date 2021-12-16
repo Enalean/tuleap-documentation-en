@@ -110,7 +110,7 @@ Then create a ``docker-compose.yml`` file with following content:
         image: redis:6
         volumes:
           - redis-data:/data
-        command: redis-server --appendonly yes
+        command: redis-server --appendonly yes --auto-aof-rewrite-percentage 20 --auto-aof-rewrite-min-size 200kb
 
       # This is for test purpose only. Mailhog is there to capture email traffic
       mailhog:
