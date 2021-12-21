@@ -262,7 +262,7 @@ You can see the list of triggered jobs in the logs section of the Jenkins Webhoo
 
     The ``hudson_git`` plugin needs to be installed in order to be able to create Jenkins Webhook.
 
-.. _Push notification from repository: https://plugins.jenkins.io/git/#push-notification-from-repository
+.. _Push notification from repository: https://plugins.jenkins.io/git/#plugin-content-push-notification-from-repository
 
 Jenkins Webhooks for Tuleap Branch Source Jenkins plugin
 ````````````````````````````````````````````````````````
