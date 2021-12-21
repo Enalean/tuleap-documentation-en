@@ -88,6 +88,7 @@ Triggered when an artifact is created.
 .. code-block:: javascript
 
     {
+        "id":182,
         "action":"create",
         "user":{
             "id":102,
@@ -159,6 +160,7 @@ Triggered when an artifact is updated.
 .. code-block:: javascript
 
     {
+        "id":182,
         "action":"update",
         "user":{
             "id":102,
