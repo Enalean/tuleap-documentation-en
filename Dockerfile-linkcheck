@@ -1,5 +1,0 @@
-FROM nixos/nix:2.5.1
-
-COPY *.nix ./
-
-RUN nix-env --install -f ./default.nix
