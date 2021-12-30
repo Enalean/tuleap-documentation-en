@@ -37,3 +37,11 @@ jobs:
         uses: actions/checkout@v2.4.0
       - name: Build image
         run: docker build -f docs.tuleap.org/Dockerfile -t test-build .
+  build_docker_image_linkcheck:
+    name: Check build of the Docker image used to run linkcheck
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Build image
+        run: DOCKER_BUILDKIT=1 docker build -f linkcheck-docker.nix -t test-build-linkcheck .
