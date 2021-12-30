@@ -1,16 +1,14 @@
-FROM nixos/nix:2.3.16 AS builder
+FROM nixos/nix:2.5.1 AS builder
 
-RUN addgroup -S builder && adduser -S -G builder builder
+COPY --chown=1000:1000 . /home/builder/tuleap-documentation
 
-COPY --chown=builder:builder . /home/builder/tuleap-documentation
+RUN nix-env --install -f /home/builder/tuleap-documentation/default.nix && chmod 0777 /tmp
 
-RUN nix-env --install -f /home/builder/tuleap-documentation/default.nix
-
-USER builder
+USER 1000:1000
 
 WORKDIR /home/builder/tuleap-documentation
 
-RUN npm ci && npm run build && \
+RUN HOME=/tmp npm ci && npm run build && \
     tmp_venv="$(mktemp -d)" && virtualenv "$tmp_venv" && \
     source "$tmp_venv"/bin/activate && \
     pip install -r requirements.txt && \
