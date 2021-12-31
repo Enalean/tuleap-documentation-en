@@ -35,10 +35,3 @@ but corresponding user accounts will be created automatically during import.
     than some tweaks are needed to make it generic and usable with newer versions.
 
     Check `source code <https://github.com/Enalean/bz2tuleap>`_ for more details.
-
-Redmine
-'''''''
-
-`TrackerIO <https://github.com/jpo38/TrackerIO>`_ is a tool that takes a Redmine database as input and leverages Tuleap
-APIs to replicate the tickets as Tuleap artifacts. It doesn't require an admin access to Tuleap but you will need to have
-full access to the redmine DB.
