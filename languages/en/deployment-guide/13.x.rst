@@ -4,11 +4,6 @@ Tuleap 13.x
 Tuleap 13.4
 ===========
 
-.. NOTE::
-
-  Tuleap 13.4 is currently under development.
-
-
 Removal of the ``textualreport`` plugin
 ---------------------------------------
 
