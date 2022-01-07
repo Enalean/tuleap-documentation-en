@@ -47,13 +47,14 @@ tab file-based translations   Replaced by       Nothing
 In the future
 '''''''''''''
 
-============================ ============== =============================================
-The Future                   Status         As platform administrator, what should I do ?
-============================ ============== =============================================
-PHP Wiki                     Removed        Switch to Mediawiki
-PROFTPd                      End of support End-users should use document/frs instead
-Realtime server using NodeJS Replaced       (To be announced)
-============================ ============== =============================================
+============================ ==================== =============================================
+The Future                   Status               As platform administrator, what should I do ?
+============================ ==================== =============================================
+Project Data Export (text)   Removed in June 2022 Use project XML export
+PHP Wiki                     Removed              Switch to Mediawiki
+PROFTPd                      End of support       End-users should use document/frs instead
+Realtime server using NodeJS Replaced             (To be announced)
+============================ ==================== =============================================
 
 Support already ended
 =====================
