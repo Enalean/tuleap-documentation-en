@@ -132,7 +132,7 @@ The command line will generate a XML file with the given number of artifacts con
 * PHP >=8.0 and composer are required:
     - Option 1: install them from your terminal
     - Option 2: use `Nix <https://nixos.org/>`_ and `shell.nix` file to build this project dependencies environment
-        + `Install Nix <https://nixos.org/download.html#nix-quick-install>`_
+        + `Install Nix <https://nixos.org/download.html>`_
         + From root project directory, type ``nix-shell``: you will be dropped in a shell with all dependencies you need to run *generate:artifacts* command.
 
 * Make sure your tuleap instance is running on this URL: https://tuleap-web.tuleap-aio-dev.docker/
