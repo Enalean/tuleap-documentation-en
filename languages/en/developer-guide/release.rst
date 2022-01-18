@@ -169,3 +169,24 @@ Update my.enalean.com
 ---------------------
 
 Edit the `Version field <https://my.enalean.com/plugins/tracker/?tracker=221&func=admin-formElements>`_ to add the new release and to hide the oldest one.
+
+
+Release a JS library developed in the main Tuleap repository
+============================================================
+
+This section is only useful if you want to release a new version of a JS library developed
+in the `main Tuleap repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
+
+Only a Tuleap integrator can trigger a release.
+
+To release a new version, you need to:
+
+ 1. Make sure the ``version`` field of the ``package.json`` of your library has been incremented (see `SemVer <https://semver.org/>`_ to determine how to increment it) and the changelog updated.
+ 2. If the version needs to be increment or the changelog updated, submit the changes to review
+ 3. Checkout to the Tuleap version where your package version has been incremented
+ 4. Tag your new version and publish the tag::
+
+    $ git tag -s -m '<PACKAGE_NAME> v<VERSION>' <PACKAGE_NAME>_<VERSION>
+    $ git push stable <PACKAGE_NAME>_<VERSION>
+
+ 5. Trigger the `pipeline to publish your new version to the npmjs.com registry <https://ci.tuleap.org/jenkins/job/Publish_JS_libraries/job/Main_Tuleap_repository/>`_
