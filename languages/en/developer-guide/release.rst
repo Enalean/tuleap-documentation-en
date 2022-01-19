@@ -176,6 +176,7 @@ Release a JS library developed in the main Tuleap repository
 
 This section is only useful if you want to release a new version of a JS library developed
 in the `main Tuleap repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable>`_.
+You can find the `ADR on this subject in the main Tuleap repository <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=refs%2Fheads%2Fmaster&f=adr%2F0009-publish-js-lib-registry.md>`_.
 
 Only a Tuleap integrator can trigger a release.
 
