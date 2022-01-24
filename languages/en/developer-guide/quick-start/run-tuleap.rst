@@ -21,7 +21,7 @@ Tuleap uses `Nix <https://nixos.org/>`_ for its build process and to share an un
 for its development environment. This is the preferred way to get a development environment as it is
 expected to always be up to date with Tuleap requirements.
 
- 1. `Install Nix <https://nixos.org/download.html#nix-quick-install>`_
+ 1. `Install Nix <https://nixos.org/download.html>`_
  2. With a terminal go to sources you previously cloned and type ``nix-shell``,
     you will be dropped in a shell with all the needed tools to develop on Tuleap
 
