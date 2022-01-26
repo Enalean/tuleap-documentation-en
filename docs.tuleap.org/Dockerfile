@@ -14,7 +14,7 @@ RUN HOME=/tmp npm ci && npm run build && \
     pip install -r requirements.txt && \
     make SPHINXOPTS="-D html_theme=tuleap_org" html
 
-FROM nginx:1.21.5-alpine
+FROM nginx:1.21.6-alpine
 
 COPY docs.tuleap.org/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /home/builder/tuleap-documentation/_build/html/en/ /usr/share/nginx/html
