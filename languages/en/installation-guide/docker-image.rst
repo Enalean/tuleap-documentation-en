@@ -62,9 +62,18 @@ In a directory named ``tuleap-community-edition`` (be careful, with docker-compo
 
     TULEAP_FQDN=tuleap.example.com
     MYSQL_ROOT_PASSWORD=some random strong password
+    TULEAP_SYS_DBPASSWD=another strong password
+    SITE_ADMINISTRATOR_PASSWORD=and a third strong password
 
 * ``TULEAP_FQDN`` is the full name of the machine you are going to run Tuleap on. As we saw in pre-requisite section, it should be the name of your docker host either from DNS or at very least defined in ``/etc/hosts`` (will resolve only locally).
-* ``MYSQL_ROOT_PASSWORD`` will be the root password of your mysql instance. We recommend at least 20 chars but only alphabetical & numbers.
+* ``MYSQL_ROOT_PASSWORD`` will be the root password of your mysql instance.
+* ``TULEAP_SYS_DBPASSWD`` will be the password used by Tuleap application to connect to the database (default user ``tuleapadm``)
+* ``SITE_ADMINISTRATOR_PASSWORD`` will be the password of the Tuleap site administrator application user.
+
+Notes about passwords:
+
+* we recommend at least 20 chars but only alphabetical & numbers,
+* they are set at the site initialization only (not updated automatically).
 
 Then create a ``docker-compose.yml`` file with following content:
 
@@ -89,7 +98,9 @@ Then create a ``docker-compose.yml`` file with following content:
           - mailhog
         environment:
           - TULEAP_FQDN=${TULEAP_FQDN}
-          - DB_HOST=db
+          - TULEAP_SYS_DBHOST=db
+          - TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD}
+          - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
           - DB_ADMIN_USER=root
           - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
           - TULEAP_FPM_SESSION_MODE=redis
@@ -142,7 +153,6 @@ Until you see something like:
 
     ...
     web_1      | ***********************************************************************************************************
-    web_1      | * You can get `admin` password with following command: `docker-compose exec web cat /root/.tuleap_passwd` *
     web_1      | * Your Tuleap fully qualified domain name is tuleap.example.com and it's IP address is 172.21.0.5         *
     web_1      | ***********************************************************************************************************
     web_1      | Setup Supervisord
@@ -161,15 +171,6 @@ Until you see something like:
     ...
 
 You can then quit the logs command (Ctrl+C) and open your browser at the address set in ``TULEAP_FQDN`` and that's it.
-
-During the installation the ``admin`` account got a password generated, you can get it by running:
-
-.. code-block:: bash
-
-    $ docker-compose exec web cat /root/.tuleap_passwd
-    Site admin password (admin): ...
-    MySQL application user (tuleapadm): ...
-
 
 The docker-compose file provided here is for general guidance and you should adapt to your environment. One of the main
 thing you will want to configure is a proper email relay. By default, we spawned a `mailhog <https://github.com/mailhog/MailHog>`_ image
@@ -191,7 +192,7 @@ This will gives you the IP address of the container that runs mailhog, you can t
 Run without docker compose
 ``````````````````````````
 
-For anything but tests you should have a dedicated MySQL (version 5.7) and Redis (last stable recommended) databases.
+For anything but tests you should have a dedicated MySQL (**version 5.7**) and Redis (last stable recommended) databases.
 
 Then you can init docker image in command line:
 
@@ -204,9 +205,11 @@ Then you can init docker image in command line:
         --publish 443:443 \
         --hostname tuleap-ce.example.com \
         -e TULEAP_FQDN=tuleap-ce.example.com \
-        -e DB_HOST=db-tuleap-ce.example.com \
+        -e TULEAP_SYS_DBHOST=db-tuleap-ce.example.com \
         -e DB_ADMIN_USER=root \
         -e DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD} \
+        -e TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD} \
+        -e SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD} \
         -e TULEAP_FPM_SESSION_MODE=redis \
         -e TULEAP_REDIS_SERVER=redis \
         -e TULEAP_REDIS_PASSWORD=${REDIS_PASSWORD} \
@@ -269,9 +272,11 @@ You first need to authenticate toward Tuleap registry:
 At first run you will need to provide some information about the platform you want to deploy:
 
 * The Tuleap server name (without https) as ``TULEAP_FQDN`` environment variable
-* The Database server name as ``DB_HOST`` environment variable. See :ref:`database installation <install_database>` for specific configuration.
+* The Database server name as ``TULEAP_SYS_DBHOST`` environment variable. See :ref:`database installation <install_database>` for specific configuration.
 * The database admin user (root or equivalent) as ``DB_ADMIN_USER`` environment variable
 * The database admin user password as ``DB_ADMIN_PASSWORD`` environment variable
+* The database application user (typically ``tuleapadm``) password as ``TULEAP_SYS_DBPASSWD`` environment variable
+* The Tuleap ``admin`` user password ad ``SITE_ADMINISTRATOR_PASSWORD`` environment variable
 
 You can also modify the behaviour of Tuleap with the following environment variables:
 
