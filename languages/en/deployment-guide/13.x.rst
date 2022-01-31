@@ -8,8 +8,14 @@ Tuleap 13.5
 
   Tuleap 13.5 is currently under development.
 
+Docker Images
+-------------
 
-Nothing to mention.
+Docker images now requires password for database user (tuleapadm) and site administrator to be injected at container
+initialization.
+
+The parameter ``DB_HOST`` was renamed ``TULEAP_SYS_DBHOST``. This only affect newly deployed containers (this variable
+is only used at container initalization at the moment).
 
 Tuleap 13.4
 ===========
