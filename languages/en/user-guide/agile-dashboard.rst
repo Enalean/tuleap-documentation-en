@@ -167,6 +167,11 @@ With the burnup and burndown view, you can see how your on going work is progres
 
 To configure a burnup and burndown charts please refer to (:ref:`burnup_administration`) part of documentation.
 
+.. _plugin_velocity:
+
+Velocity
+~~~~~~~~
+
 When the release end, and during the sprint planning you can use the velocity chart to determine your new team capacity.
 The velocity chart display the sum of done effort of linked artifacts.
 Only backlog artifacts are taken in account during computation (artifact linked in planning configuration of Agiledashboard).
@@ -182,6 +187,7 @@ Known limitation: if an artifact is created directly at a "done" status, velocit
 
 To configure a velocity chart please refer to (:ref:`velocity_administration`) part of documentation.
 
+.. _plugin_taskboard:
 
 Daily project update
 ````````````````````
