@@ -12,7 +12,7 @@ Docker Images
 -------------
 
 Docker images now requires password for database user (tuleapadm) and site administrator to be injected at container
-initialization.
+initialization. See :ref:`mandatory configuration variables <docker-images-compose>`.
 
 The parameter ``DB_HOST`` was renamed ``TULEAP_SYS_DBHOST``. This only affect newly deployed containers (this variable
 is only used at container initalization at the moment).
