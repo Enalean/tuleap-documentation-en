@@ -46,6 +46,8 @@ On success the output will look something like this:
     - Any certificates were verified against the Fulcio roots.
   {"critical":{"identity":{"docker-reference":"index.docker.io/tuleap/tuleap-community-edition"},"image":{"docker-manifest-digest":"sha256:e425adc51e915c6974db6c82723a520123c1014a091d93b4f504384c6d916608"},"type":"cosign container image signature"},"optional":null}
 
+.. _docker-images-compose:
+
 Deploy a test environment with docker-compose
 `````````````````````````````````````````````
 
