@@ -37,39 +37,39 @@ Project management:
 * **graphontrackers**: Display graphs on top of trackers
 * **agiledashboard**: Do Scrum and Kanban
 * **cardwall**: Build a board of cards on top of trackers or Agile Dashboard
-* **velocity**: Display velocity chart in the Agile Dashboard
+* :ref:`velocity <plugin_velocity>`: Display velocity chart in the Agile Dashboard
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **taskboard**: Visually keep track of things that need to get done in a task board, used in Agile Dashboard.
+* :ref:`taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in Agile Dashboard.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **testmanagement**: Test campaigns and traceability (aka TTM).
+* :ref:`testmanagement <testmgmt>`: Test campaigns and traceability (aka TTM).
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **testplan**: Integration between the agiledashboard and testmanagement plugins.
+* :ref:`testplan <testmgmt_link_tests_requirements>`: Integration between the agiledashboard and testmanagement plugins.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **label**: Group and display labels on Project Dashboard (useful to track pull requests)
+* :ref:`label<label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests)
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **crosstracker**: Aggregate data across trackers, even in across projects (beta)
+* :ref:`crosstracker <portfolio>`: Aggregate data across trackers, even in across projects (beta)
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **timetracking**: Provide an easy way to track your time
+* :ref:`timetracking <timetracking>`: Provide an easy way to track your time
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **projectmilestones**: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
+* :ref:`projectmilestones <project-milestones>`: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **roadmap**: Widget to display the roadmap on the project dashboard.
+* :ref:`roadmap <roadmap>`: Widget to display the roadmap on the project dashboard.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -81,9 +81,18 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* **baseline**: Create baseline for releases and compare them (beta).
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
+
 File deliveries and documentation:
 
-* **docman**: Document management
+* **docman**: Legacy document management
+* :ref:`document <plugin_document>`: Modern document management
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 * **frs**: Enhance File Release System with better release view and REST API
 * **mediawiki**: Integration of "Wikipedia" wiki technology
 * **webdav**: Access FRS and Documentation like a file system with WebDAV protocol
@@ -103,7 +112,7 @@ Authentication and permissions:
 * **ldap**: Integration with OpenLDAP like or Active Directory
 * **openidconnectclient**: Delegate authentication to an OpenId Connect compatible server
 * **captcha**: Add a captcha to login page to avoid bots
-* **dynamic_credentials**: Provide a way to generate short-lived credentials
+* :ref:`dynamic credentials <dynamic-credentials>`: Provide a way to generate short-lived credentials
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -111,7 +120,7 @@ Authentication and permissions:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **oauth2-server**: Delegate authorizations via OAuth 2.0 and authenticate Tuleap users on third-party apps via OpenID Connect
+* :ref:`oauth2-server <openidconnect_provider>`: Delegate authorizations via OAuth 2.0 and authenticate Tuleap users on third-party apps via OpenID Connect
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -119,7 +128,7 @@ Administration:
 
 * **archivedeleteditems**: When something is deleted, move it into a dedicated place for archiving purpose
 * **statistics**: Compute stats about platform
-* **prometheus_metrics**: Expose metrics to Prometheus about Tuleap usage
+* :ref:`prometheus_metrics <admin_monitoring_with_prometheus>`: Expose metrics to Prometheus about Tuleap usage
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -131,7 +140,7 @@ Integrations:
 * **botmattermost**: Integration with mattermost and slack
 * **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
 * **botmattermost-git**: Mattermost bot for git
-* **jira-import**: Import entire Jira project
+* :ref:`jira-import <jira-project-importer>`: Import entire Jira project
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
