@@ -4,10 +4,6 @@ Tuleap 13.x
 Tuleap 13.5
 ===========
 
-.. NOTE::
-
-  Tuleap 13.5 is currently under development.
-
 Docker Images
 -------------
 
