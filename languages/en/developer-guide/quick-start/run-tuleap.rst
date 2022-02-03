@@ -79,23 +79,7 @@ Specific steps for macOS users
 
 /etc/hosts
 """"""""""
-Your ``/etc/hosts`` file should be: ``127.0.0.1       tuleap-web.tuleap-aio-dev.docker``.
- 
-Skip ForgeUpgrade
-"""""""""""""""""
-Docker for Mac disk performances are really bad. If you want to start your container faster,
-you will need to set ``DO_NOT_LAUNCH_FORGEUPGRADE`` environment variable to ``true``.
-You can put this following line into your ``.bash_profile`` so it will always be set:
-
-.. code-block:: bash
-
-    export DO_NOT_LAUNCH_FORGEUPGRADE=true
-
-You also havo to add this line into your local.inc file:
-
-.. code-block:: php
-
-    $disable_forge_upgrade_warnings = 1;
+Your ``/etc/hosts`` file should be: ``127.0.0.1    tuleap-web.tuleap-aio-dev.docker``.
 
 
 Connect as Admin
