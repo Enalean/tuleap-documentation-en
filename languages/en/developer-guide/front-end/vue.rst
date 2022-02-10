@@ -244,9 +244,9 @@ Best-practices for Tuleap
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 Many rules are already enforced by the pre-commit hook that runs eslint_ with `eslint-plugin-vue`_.
 
-* Please avoid the usage of `vue directives shorthands <https://vuejs.org/v2/guide/syntax.html#Shorthands>`_. Shorthands are nice to use but it is not obvious for the others to figure out which directive you are actually using.
+* Please avoid the usage of `vue directives shorthands <https://v2.vuejs.org/v2/guide/syntax.html#Shorthands>`_. Shorthands are nice to use but it is not obvious for the others to figure out which directive you are actually using.
 * Always use ``PascalCase`` for component names.
-* Always use multi-word names for components, for example: "DocumentSearch". In templates, this translates as ``<document-search/>``. See `the dedicated Vue Style Guide rule <https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential>`_.
+* Always use multi-word names for components, for example: "DocumentSearch". In templates, this translates as ``<document-search/>``. See `the dedicated Vue Style Guide rule <https://v2.vuejs.org/v2/style-guide/#Multi-word-component-names-essential>`_.
 * Always use ``snake_case`` for computed properties. I know, there are parentheses when we define them, but they really are *properties*, not methods. See :ref:`Tuleap coding standards <tuleap-coding-standards>`.
 * Always use ``snake_case`` for props. They follow the same rule as variables.
 * Always use ``camelCase`` for methods.
@@ -262,15 +262,15 @@ Many rules are already enforced by the pre-commit hook that runs eslint_ with `e
 Resources
 ^^^^^^^^^
 
-- Vue.js doc: https://vuejs.org/v2/guide/
+- Vue.js doc: https://v2.vuejs.org/v2/guide/
 - Vuex doc: https://vuex.vuejs.org/
 - Vue-router doc: https://router.vuejs.org/
-- Vue.js Official Style Guide: https://vuejs.org/v2/style-guide/
+- Vue.js Official Style Guide: https://v2.vuejs.org/v2/style-guide/
 - eslint-plugin-vue's rules: https://eslint.vuejs.org/rules/
 - TypeScript reference: https://www.typescriptlang.org
 - vue-gettext: https://github.com/Polyconseil/vue-gettext
 
 .. _eslint: https://eslint.org/
 .. _eslint-plugin-vue: https://github.com/vuejs/eslint-plugin-vue
-.. _Vue Style Guide: https://vuejs.org/v2/style-guide/
+.. _Vue Style Guide: https://v2.vuejs.org/v2/style-guide/
 .. _vue-gettext: https://github.com/Polyconseil/vue-gettext
