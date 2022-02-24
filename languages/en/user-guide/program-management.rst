@@ -45,13 +45,15 @@ Overview
 .. figure:: ../images/screenshots/program-management/safe-templates.png
 	:align: center
 	:alt: Tuleap SAFe® templates
-	:name: Tuleap SAFe® templates
+
+	Tuleap SAFe® templates
 
 In order to implement SAFe® with Tuleap you will need separated workspace (projects). The easiest way to start is to create
 those new workspaces with the provided templates but it's also possible to adapt an existing workspace.
 
-Tuleap provides two type of templates for workspaces:
+Tuleap provides three types of templates for workspaces:
 
+* Portfolio SAFe®
 * Essential SAFe® - Agile Release Train
 * Essential SAFe® - Scrum Team
 
