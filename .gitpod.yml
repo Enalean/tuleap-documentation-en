@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - init: >
+      mkdir -p /home/gitpod/.config/nix &&
+      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf &&
+      nix-shell --command "virtualenv venv && source venv/bin/activate && pip install -r requirements.txt -r requirements-dev.txt && npm ci && npm run build && make SPHINXOPTS=\"-D html_theme=tuleap_org\" watch-html"
+ports:
+  - port: 5000
+    onOpen: open-preview
+vscode:
+  extensions:
+    - bbenoist.Nix
