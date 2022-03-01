@@ -140,10 +140,11 @@ feature is only available in tuleap CLI:
         --tuleap-user TULEAP_USER_LOGIN \
         --shortname TULEAP_PROJECT_SHORTNAME
 
-This command works with Jira REST API so Tuleap server must be able to reach the Jira server (``JIRA_HOST``). In addition to that:
+This command works with Jira REST API so Tuleap server must be able to reach the Jira instance (``JIRA_HOST``). In addition to that:
 
 * The Jira user (``JIRA_USER``) used to do the import must be administrator of your Jira project in order to have all the issues and all the content possible.
-* The Jira user must first generate a token on the Jira instance (they will be prompted for the token when they launch the command).
+* When importing from Jira Cloud, the Jira user must first generate a token on the Jira instance (they will be prompted for the token when they launch the command).
+* When importing from Jira Server, ``JIRA_USER`` is the regular login used on Jira instance and when prompted for credentials, it's the Jira Server password that should be provided.
 * For best conversion, Jira users' email addresses should visible to anyone in the Jira configuration (must be done by each user).
     * if Jira users do not disclose their emails, everything will be owned by a "Tuleap importer" user.
 
