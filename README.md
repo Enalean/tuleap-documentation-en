@@ -8,6 +8,12 @@ Contributors are encouraged to have a look at
 [Google Technical Writing](https://developers.google.com/tech-writing) 
 course in order to add high quality content.
 
+Contribute without leaving your browser
+---------------------------------------
+
+GitPod allows editing and building the documentation without leaving your browser. Give it a try with click on [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Enalean/tuleap-documentation-en).
+
+
 Download the sources from GitHub
 --------------------------------
 
