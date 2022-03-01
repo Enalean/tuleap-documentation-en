@@ -16,7 +16,7 @@ ENV USER gitpod
 WORKDIR /home/gitpod
 
 RUN touch .bash_profile \
- && curl https://nixos.org/releases/nix/nix-2.3.14/install | sh
+ && curl https://nixos.org/releases/nix/nix-2.6.1/install | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 
