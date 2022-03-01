@@ -129,8 +129,8 @@ In this part, you can choose to import a bunch of issues from a Jira instance.
 To import your Jira issues, you have to provide:
 
 * The Jira instance URL
-* Your Jira account email
-* One of your Jira API token
+* Your Jira account email for Jira Cloud (or login for Jira Server)
+* One of your Jira API token for Jira Cloud (or password for Jira Server)
 
 Then, you are able to select a Jira project and an issue type. Once all selected, the Jira import is queued.
 
