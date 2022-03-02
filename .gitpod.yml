@@ -11,3 +11,5 @@ ports:
 vscode:
   extensions:
     - bbenoist.Nix
+    - lextudio.restructuredtext
+    - trond-snekvik.simple-rst
