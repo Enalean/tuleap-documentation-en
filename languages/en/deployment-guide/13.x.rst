@@ -1,12 +1,25 @@
 Tuleap 13.x
 ###########
 
-Tuleap 13.5
+Tuleap 13.7
 ===========
 
 .. NOTE::
 
-  Tuleap 13.5 is currently under development.
+  Tuleap 13.7 is currently under development.
+
+Tuleap 13.6
+===========
+
+Configuration / local.inc
+-------------------------
+
+Two variables from ``local.inc``, ``$sys_dbauth_user`` and  ``$sys_dbauth_passwd`` were automatically transfered to the database at upgrade.
+You should remove those 2 variables from ``local.inc``. Please note that ``sys_dbauth_passwd`` is now stored encrypted.
+
+Tuleap 13.5
+===========
+
 
 Docker Images
 -------------
