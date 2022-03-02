@@ -18,7 +18,7 @@ jobs:
         python-version: [3.8, 3.9]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
       - name: Build image
         run: docker build -f docs.tuleap.org/Dockerfile -t test-build .
   build_docker_image_linkcheck:
@@ -42,6 +42,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
       - name: Build image
         run: DOCKER_BUILDKIT=1 docker build -f linkcheck-docker.nix -t test-build-linkcheck .
