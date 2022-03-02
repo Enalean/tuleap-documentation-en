@@ -17,6 +17,15 @@ Configuration / local.inc
 Two variables from ``local.inc``, ``$sys_dbauth_user`` and  ``$sys_dbauth_passwd`` were automatically transfered to the database at upgrade.
 You should remove those 2 variables from ``local.inc``. Please note that ``sys_dbauth_passwd`` is now stored encrypted.
 
+RedHat/CentOS git package no longer needed
+------------------------------------------
+
+With packaging of gitolite as part of Tuleap, there is no longer any dependencies on "system" git. You can remove the package with:
+
+.. sourcecode:: shell
+
+    yum remove git
+
 Tuleap 13.5
 ===========
 
