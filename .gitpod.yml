@@ -13,3 +13,4 @@ vscode:
     - bbenoist.Nix
     - lextudio.restructuredtext
     - trond-snekvik.simple-rst
+    - ms-python.python
