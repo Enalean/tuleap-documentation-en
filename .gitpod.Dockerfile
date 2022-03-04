@@ -20,11 +20,7 @@ RUN touch .bash_profile \
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 
-# Install git
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -i git git-lfs
+COPY default.nix /tmp/
+COPY pinned-nixpkgs.nix /tmp/
 
-# Install direnv
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -i direnv \
-  && direnv hook bash >> /home/gitpod/.bashrc
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && nix-build --no-out-link /tmp/default.nix
