@@ -1,4 +1,4 @@
-FROM nixos/nix:2.6.1 AS builder
+FROM nixos/nix:2.7.0 AS builder
 
 COPY --chown=1000:1000 . /home/builder/tuleap-documentation
 
