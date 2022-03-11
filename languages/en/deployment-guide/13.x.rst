@@ -8,6 +8,12 @@ Tuleap 13.7
 
   Tuleap 13.7 is currently under development.
 
+Webdav
+------
+
+The access via a dedicated host (like ``https://webdav.tuleap.example.com/``) that was once necessary for Windows 7 and
+before, is now removed. Webdav is only accessible on ``https://tuleap.example.com/plugins/webdav``.
+
 Tuleap 13.6
 ===========
 
