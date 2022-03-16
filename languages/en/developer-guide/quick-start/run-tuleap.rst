@@ -31,30 +31,6 @@ At the very least you should know `how to clean the unused packages <https://nix
 
 Developers wanting to keep their custom shell configurations should take a look at `direnv <https://direnv.net/>`_.
 
-Manually install the dependencies
-"""""""""""""""""""""""""""""""""
-
-Circa October 2021, the following tools are needed to develop on Tuleap, please refer to their
-respective documentation for installation instructions:
-
-- GNU make
-- GNU grep
-- GNU sed
-- `PHP <https://www.php.net/>`_ 8.0.x
-- `nodejs <https://nodejs.org/en/>`_ >= v16.5.x
-- `pnpm <https://pnpm.io/>`_ v6.16.x
-- `composer <https://getcomposer.org/>`_ >= 2.1.x
-- `Docker Compose <https://docs.docker.com/compose/>`_ >= 1.29.x
-
-   .. IMPORTANT:: By default, composer installs itself in the local directory as ``composer.phar``.
-
-        However we require that ``composer`` command is available in your executable path.
-        This can be done by executing the following command during the installation steps:
-
-        ``sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin``
-
-In macOS, you also need ``gettext``. Steps to install : ``brew install gettext``, then add gettext/bin in PATH.
-
 First start of Tuleap
 ---------------------
 

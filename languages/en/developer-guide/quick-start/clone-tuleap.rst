@@ -5,18 +5,9 @@ Clone Tuleap Sources
 
 First things first, clone Tuleap sources.
 
-You will need `git <https://git-scm.com/>`_:
-
-.. code-block:: bash
-
-    $ sudo apt-get install git
-
-After ensuring that git is installed, clone the Tuleap repository:
-
 .. code-block:: bash
 
     $ git clone https://tuleap.net/plugins/git/tuleap/tuleap/stable.git tuleap
-
 
 .. IMPORTANT::  For the time being the folder you are cloning into must be
     named ``tuleap``.
