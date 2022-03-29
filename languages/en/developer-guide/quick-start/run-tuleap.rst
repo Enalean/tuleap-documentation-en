@@ -7,10 +7,7 @@ Run Tuleap
 Mandatory development dependencies
 ----------------------------------
 
-To retrieve the mandatory development dependencies, two solutions are available:
-
-- use `Nix <https://nixos.org/>`_ and the ``shell.nix`` available in the sources
-- manually install and manage the dependencies
+To retrieve the mandatory development dependencies, use `Nix <https://nixos.org/>`_ and the ``shell.nix`` available in the sources.
 
 .. _use-nix-dev-env:
 
@@ -29,7 +26,7 @@ It is recommended to browse the `Nix documentation <https://nixos.org/manual/nix
 to understand the basics of how it works.
 At the very least you should know `how to clean the unused packages <https://nixos.org/manual/nix/unstable/command-ref/nix-collect-garbage.html>`_.
 
-Developers wanting to keep their custom shell configurations should take a look at `direnv <https://direnv.net/>`_.
+Developers wanting to keep their custom shell configurations should take a look at `direnv <https://direnv.net/>`_ and `lorri <https://github.com/nix-community/lorri>`_.
 
 First start of Tuleap
 ---------------------
