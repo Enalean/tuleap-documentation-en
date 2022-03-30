@@ -1,12 +1,15 @@
 Tuleap 13.x
 ###########
 
-Tuleap 13.7
+Tuleap 13.8
 ===========
 
 .. NOTE::
 
-  Tuleap 13.7 is currently under development.
+  Tuleap 13.8 is currently under development.
+
+Tuleap 13.7
+===========
 
 Webdav
 ------
