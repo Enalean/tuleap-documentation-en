@@ -27,3 +27,4 @@ Tuleap internals
     back-end/plugins
     back-end/cli
     back-end/redis
+    back-end/config
