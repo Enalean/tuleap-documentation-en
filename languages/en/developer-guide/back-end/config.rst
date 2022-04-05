@@ -34,4 +34,8 @@ Improve variable with attributes
 There are a bunch of attributes that might be helpful (everything in ``Tuleap\Config`` namespace):
 
 * ``ConfigKeyHelp``: when summary in ``ConfigKey`` is not enough, you can put a long text here (``<<<HEREDOC`` format recommended).
-* Several attributes implements ``ConfigKeyType``, they are convenient to declare the type of the variable as well as default value. Example: ``#[ConfigKeyInt(50)]`` => variable is an int and it's default value is ``50``
+* ``ConfigKeySecret``: declare a variable that will store a secret (like a password). The secret will be automatically encrypted when saved in the DB.
+* ``FeatureFlagConfigKey``: to be used (in place of ``ConfigKey``) when introducing a new feature not ready for prime time. Needed to keep track of all feature flags across the DB.
+* Several attributes implements ``ConfigKeyType``, they are convenient to declare the type of the variable as well as default value. Example: ``#[ConfigKeyInt(50)]`` => variable is an int and it's default value is ``50``.
+
+When several configuration variables belongs to the same "category" (a plugin, "database", etc) it's good idea to add on associated class the ``#[ConfigKeyCategory]`` attribute.
