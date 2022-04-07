@@ -15,7 +15,7 @@ the #developers channel <https://chat.tuleap.org/>`_.
 
 .. attention:: 
 
-   Documentation of a living tool is hard to acheive and, in case of doubts, the source code
+   Documentation of a living tool is hard to achieve and, in case of doubts, the source code
    is always the reference.
 
    When working with sources, you must look closely to `Architecture Decision Records <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=master&f=adr%2Findex.md>`_
