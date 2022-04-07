@@ -13,7 +13,15 @@ This guide will gives you the insights to start your contributions to Tuleap:
 You can also find help for your dev related questions on the `chat in
 the #developers channel <https://chat.tuleap.org/>`_.
 
-Getting started, what you need to know to setup your environement and push
+.. attention:: 
+
+   Documentation of a living tool is hard to acheive and, in case of doubts, the source code
+   is always the reference.
+
+   When working with sources, you must look closely to `Architecture Decision Records <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=master&f=adr%2Findex.md>`_
+   that will give insights on the evolutions of the code base and what is expected / current norm.
+
+Getting started, what you need to know to setup your environment and push
 your code
 
 .. toctree::
