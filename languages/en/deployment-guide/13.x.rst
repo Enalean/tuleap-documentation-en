@@ -8,6 +8,18 @@ Tuleap 13.8
 
   Tuleap 13.8 is currently under development.
 
+Docker Images
+-------------
+
+The environment variables ``TULEAP_DB_SSL_MODE`` and ``TULEAP_DB_SSL_CA`` were removed in favor of the official variables:
+
+- ``TULEAP_SYS_ENABLESSL``: can be either ``0`` to disable or ``1`` to enable encryption of traffic with database.
+- ``TULEAP_SYS_DB_SSL_VERIFY_CERT``: can be either ``0`` to disable or ``1`` to enable verification of database's certificates.
+- ``TULEAP_SYS_DB_SSL_CA``: path toward a custom CA file for certifacte verification.
+
+This only affect newly deployed containers (this variable is only used at container initalization at the moment).
+
+
 Tuleap 13.7
 ===========
 
@@ -37,7 +49,6 @@ With packaging of gitolite as part of Tuleap, there is no longer any dependencie
 
 Tuleap 13.5
 ===========
-
 
 Docker Images
 -------------
