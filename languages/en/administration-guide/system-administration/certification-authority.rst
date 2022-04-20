@@ -8,5 +8,6 @@ It could be needed to a new CA to the list of recognized CAs. On CentOS that cou
 .. sourcecode:: console
 
       #> cp /path/to/your/ca.cert /etc/pki/ca-trust/source/anchors/
-      #> update-ca-trust enable
-      #> update-ca-trust extract
+      #> update-ca-trust
+
+If you are using the Docker Image, please refer to the :ref:`specific configuration <docker_image_ca>`.
