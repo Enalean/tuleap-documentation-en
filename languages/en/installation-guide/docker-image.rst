@@ -357,8 +357,8 @@ On success the output will look something like this:
     - Any certificates were verified against the Fulcio roots.
   {"critical":{"identity":{"docker-reference":"docker.tuleap.org/tuleap-enterprise-edition"},"image":{"docker-manifest-digest":"sha256:9dca6d11d176760c447d671d9a6494f731539712b1d083f161aa800cc46e44ef"},"type":"cosign container image signature"},"optional":null}
 
-Certificates
-````````````
+TLS Certificates
+````````````````
 
 Tuleap container generate a self signed certificate can only communicate in https. In order to have a valid certificate
 for your end users you either need to:
@@ -370,6 +370,17 @@ for your end users you either need to:
   * They key must be ``/data/etc/pki/tls/private/localhost.key.pem``
   * The cert must be ``/data/etc/pki/tls/certs/localhost.cert.pem``
   * If you need something more complex, use a reverse proxy.
+
+.. _docker_image_ca:
+
+Certification Authority
+```````````````````````
+
+If you manage your own trust chain, you might need to let container be aware of your own CA. 
+It's mainly useful when Tuleap should be able to communicate with a 3rd party systems (jenkins, jira, gitlab, webhooks servers, etc)
+exposed over TLS but with a certificate that is not part of the standard CA bundle.
+
+The extra CA must be mounted at the container root ``/extra_ca.pem``. Tuleap will ensure this CA is added to system's bundle automatically.
 
 Next steps
 ----------
