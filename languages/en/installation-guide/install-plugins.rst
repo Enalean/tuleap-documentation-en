@@ -81,7 +81,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* **baseline**: Create baseline for releases and compare them (beta).
+* :ref:`baseline <plugin_baseline>`: Create baseline for releases and compare them (beta).
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
