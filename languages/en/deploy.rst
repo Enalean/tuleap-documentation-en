@@ -45,7 +45,6 @@ End of June 2022
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
 Project Data Export (text)    Removed           Use project XML export
-Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
 PROFTPd                       End of support    End-users should use document/frs instead
 PHP 8.0                       Removed           Nothing, Tuleap will switch to PHP 8.1 automatically
 ============================= ================= ============================================================
@@ -58,7 +57,6 @@ What                          Status            As platform administrator, what 
 ============================= ================= ============================================================
 Trackers v3                   Removed           Migrate to Trackers v5
 SOAP API                      Removed           End-users should switch to REST API
-Gerrit versions < 3.1         End of support    Switch to Gerrit 3.1 or higher
 MySQL 5.7                     End of support    Switch to MySQL 8
 tab file-based translations   Replaced by       Nothing
                               gettext
@@ -80,7 +78,7 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
-Gerrit versions < 3.1           Q4 2021  End of support    Switch to Gerrit 3.1 or higher
+Gerrit versions < 3.3           Q4 2021  End of support    Switch to Gerrit 3.3 or higher
 Chrome & Edge < 87              Q3 2021  End of support    Ensure your users have an up to date browser
 Firefox < 78.1                  Q3 2021  End of support    Ensure your users have an up to date browser
 PHP 7.4                         Q3 2021  Removed           Nothing, Tuleap will switch to PHP 8.0 automatically
