@@ -13,10 +13,10 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 Project management
 ------------------
 
-* Baseline: Create baseline for releases and compare them (beta)
+* :ref:`Baseline <plugin_baseline>`: Create baseline for releases and compare them
 * DocGen: Generation of document (docx) from Tracker reports
 * :ref:`Label widget <label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests)
-* :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects (beta)
+* :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects
 * :ref:`Project Milestones <project-milestones>`: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
 * :ref:`Program management <program-management>`: Manage multi project backlog and team synchronisation.
 * :ref:`Roadmap <roadmap>`:  Widget to display the roadmap on the project dashboard.

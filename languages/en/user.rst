@@ -10,6 +10,7 @@ User guide
    user-guide/project-admin
    user-guide/agile-dashboard
    user-guide/program-management
+   user-guide/baseline
    user-guide/tracker
    user-guide/scm
    user-guide/ci
