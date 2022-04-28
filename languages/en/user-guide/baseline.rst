@@ -48,7 +48,7 @@ What is displayed in a Baseline ?
 Compare two Baselines
 =====================
 
-When there is at least two baseline for a milestone, it's possible to generate a comparison between those.
+When there are at least two baseline for a milestone, it's possible to generate a comparison between those.
 
 .. figure:: ../images/screenshots/baseline/comparison.png
 	:align: center
