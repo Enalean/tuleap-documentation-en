@@ -280,21 +280,6 @@ At first run you will need to provide some information about the platform you wa
 * The database application user (typically ``tuleapadm``) password as ``TULEAP_SYS_DBPASSWD`` environment variable
 * The Tuleap ``admin`` user password ad ``SITE_ADMINISTRATOR_PASSWORD`` environment variable
 
-You can also modify the behaviour of Tuleap with the following environment variables:
-
-* ``TULEAP_SYS_DBPORT``: define this variable if your database runs on a port different of ``3306``.
-* ``TULEAP_SYS_ENABLESSL``: can be either ``0`` to disable or ``1`` to enable encryption of traffic with database. Default is ``0``
-* ``TULEAP_SYS_DB_SSL_VERIFY_CERT``: can be either ``0`` to disable or ``1`` to enable verification of database's certificates. Default is ``0``. **WARNING**: perl code (used for subversion core and some maintenance scripts) cannot enforce this, those parts will do encryption without certificate verification.
-* ``TULEAP_SYS_DB_SSL_CA``: path toward a custom CA file for certifacte verification.
-* ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://docs.microsoft.com/en-us/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal#connect-to-the-server-by-using-mysqlexe>`_)
-* ``TULEAP_FPM_SESSION_MODE``: you can set it to ``redis`` so php sessions will be stored in a `Redis <https://redis.io>`_ K/V store. This also activate usage of redis for Tuleap (background events, etc).
-* ``TULEAP_REDIS_SERVER``: needed if you set ``redis`` for ``TULEAP_FPM_SESSION_MODE``
-* ``TULEAP_REDIS_PORT``: needed if redis is listening on port that is not ``6379`` (the default)
-* ``TULEAP_REDIS_PASSWORD``: needed if redis requires a password
-* ``TULEAP_REDIS_USE_TLS``: set to 1 if you want to encrypt the connection to Redis
-* ``TULEAP_EMAIL_RELAYHOST``: email relay host (none by default)
-* ``TULEAP_EMAIL_ADMIN``: email address where all the system emails will be redirected
-
   * **WARNING**: You cannot enforce encryption of Redis communication if you enabled Subversion because the underlying code, written in perl, doesn't support encryption.
 
 The data volume must be mounted on ``/data`` inside the container.
@@ -355,6 +340,55 @@ On success the output will look something like this:
     - The signatures were verified against the specified public key
     - Any certificates were verified against the Fulcio roots.
   {"critical":{"identity":{"docker-reference":"docker.tuleap.org/tuleap-enterprise-edition"},"image":{"docker-manifest-digest":"sha256:9dca6d11d176760c447d671d9a6494f731539712b1d083f161aa800cc46e44ef"},"type":"cosign container image signature"},"optional":null}
+
+
+Docker images configuration
+---------------------------
+
+This section covers the configuration details that applies to both images.
+
+Environment variables
+`````````````````````
+
+You can also modify the behaviour of Tuleap with environment variables.
+
+General
+#######
+
+* ``TULEAP_FQDN``: the Tuleap server name (without protocol).
+
+Database
+########
+
+* ``TULEAP_SYS_DBHOST``: database server name. See :ref:`database installation <install_database>` for specific configuration.
+* ``DB_ADMIN_USER``: admin user (``root`` or equivalent).
+* ``DB_ADMIN_PASSWORD``: admin user password.
+* ``TULEAP_SYS_DBPASSWD``: application user (typically ``tuleapadm``) password.
+* ``TULEAP_SYS_DBPORT``: define this variable if your database runs on a port different of ``3306``.
+* ``TULEAP_SYS_ENABLESSL``: can be either ``0`` to disable or ``1`` to enable encryption of traffic with database. Default is ``0``
+* ``TULEAP_SYS_DB_SSL_VERIFY_CERT``: can be either ``0`` to disable or ``1`` to enable verification of database's certificates. Default is ``0``. **WARNING**: perl code (used for subversion core and some maintenance scripts) cannot enforce this, those parts will do encryption without certificate verification.
+* ``TULEAP_SYS_DB_SSL_CA``: path toward a custom CA file for certifacte verification.
+* ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://docs.microsoft.com/en-us/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal#connect-to-the-server-by-using-mysqlexe>`_).
+
+Site administration
+###################
+
+* ``SITE_ADMINISTRATOR_PASSWORD``: tuleap ``admin`` user password.
+* ``TULEAP_EMAIL_ADMIN``: email address where all the system emails will be redirected (**since 13.8**).
+
+Redis
+#####
+
+* ``TULEAP_FPM_SESSION_MODE``: you can set it to ``redis`` so php sessions will be stored in a `Redis <https://redis.io>`_ K/V store. This also activate usage of redis for Tuleap (background events, etc).
+* ``TULEAP_REDIS_SERVER``: needed if you set ``redis`` for ``TULEAP_FPM_SESSION_MODE``.
+* ``TULEAP_REDIS_PORT``: needed if redis is listening on port that is not ``6379`` (the default).
+* ``TULEAP_REDIS_PASSWORD``: needed if redis requires a password.
+* ``TULEAP_REDIS_USE_TLS``: set to 1 if you want to encrypt the connection to Redis.
+
+Email
+#####
+
+* ``TULEAP_EMAIL_RELAYHOST``: email relay host (none by default).
 
 TLS Certificates
 ````````````````
