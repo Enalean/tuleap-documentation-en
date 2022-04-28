@@ -32,7 +32,7 @@ As of today, a baseline can be created from a top level milestone of the agile d
 
 By default, the baseline is created with the current content but it's also possible to define a date in the past. This can be useful when one forgot to create it back then.
 
-What is displayed in a Baseline ?
+What is displayed in a Baseline?
 
 - The title (as per semantic)
 - The description (as per semantic)
