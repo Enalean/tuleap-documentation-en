@@ -13,6 +13,14 @@ Nothing to mention.
 Tuleap 13.8
 ===========
 
+General availability of Baseline
+--------------------------------
+
+Tuleap Enterprise users that were using the specific Baseline repository to retrieve the Baseline plugin can now
+remove it from their Yum configuration.
+
+The Baseline plugin is now available in the main Tuleap Enterprise repository.
+
 Docker Images
 -------------
 
