@@ -76,3 +76,7 @@ the real import:
            -i PATH_TO_ARCHIVE \
            -m PATH_TO_MAPPING_FILE
 
+.. note::
+
+    If you need explicit error messages, you need to install the package ``java-1.8.0-openjdk``.
+
