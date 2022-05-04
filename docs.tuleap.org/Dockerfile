@@ -8,7 +8,9 @@ USER 1000:1000
 
 WORKDIR /home/builder/tuleap-documentation
 
-RUN HOME=/tmp npm ci && npm run build && \
+ENV HOME=/tmp
+
+RUN npm ci && npm run build && \
     tmp_venv="$(mktemp -d)" && virtualenv "$tmp_venv" && \
     source "$tmp_venv"/bin/activate && \
     pip install -r requirements.txt && \
