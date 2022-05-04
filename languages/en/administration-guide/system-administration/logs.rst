@@ -71,6 +71,7 @@ Tuleap
  - ``/var/log/tuleap/mail_syslog``: contains errors and information specific to mails distribution.
  - ``/var/log/tuleap/oauth2_server.log``: contains errors and information specific to the OAuth2/OpenID Connect server.
  - ``/var/log/tuleap/webdav_syslog``: contains errors and information specific to Webdav activity.
+ - ``/var/log/tuleap/frontend_error``: contains errors specific to the client side activity (JS scripts).
 
 Tuleap realtime
 ```````````````
