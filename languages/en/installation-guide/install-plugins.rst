@@ -127,6 +127,7 @@ Authentication and permissions:
 Administration:
 
 * **archivedeleteditems**: When something is deleted, move it into a dedicated place for archiving purpose
+* :ref:`securitytxt <securitytxt>`: Deploy a `security.txt <https://securitytxt.org/>`_ (`RFC 9116 <https://www.rfc-editor.org/rfc/rfc9116.html>`_) file
 * **statistics**: Compute stats about platform
 * :ref:`prometheus_metrics <admin_monitoring_with_prometheus>`: Expose metrics to Prometheus about Tuleap usage
 
