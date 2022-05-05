@@ -78,5 +78,5 @@ the real import:
 
 .. note::
 
-    If you need explicit error messages, you need to install the package ``java-1.8.0-openjdk``.
+    If you encounter ``XML parse errors`` without details, we suggest to install the package ``java-1.8.0-openjdk`` and try to import again. It should add explicit error messages.
 
