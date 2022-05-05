@@ -76,3 +76,7 @@ the real import:
            -i PATH_TO_ARCHIVE \
            -m PATH_TO_MAPPING_FILE
 
+.. note::
+
+    If you encounter ``XML parse errors`` without details, we suggest to install the package ``java-1.8.0-openjdk`` and try to import again. It should add explicit error messages.
+
