@@ -355,3 +355,15 @@ a.button,
         }
     }
 }
+
+kbd {
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: $black;
+    color: $white;
+    font-family: monospace;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    vertical-align: 1px;
+}

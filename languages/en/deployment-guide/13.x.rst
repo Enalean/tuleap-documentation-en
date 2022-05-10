@@ -8,7 +8,17 @@ Tuleap 13.9
 
   Tuleap 13.9 is currently under development.
 
-Nothing to mention.
+Brazilian Portuguese
+--------------------
+
+Brazilian Portuguese can be enabled for your instance by adding ``pt_BR`` to the list of supported languages in
+``/etc/tuleap/conf/local.inc``. For example:
+
+.. code-block:: php
+
+  $sys_supported_languages = 'en_US,fr_FR,pt_BR';
+
+Please note that Brazilian Portuguese is a community contribution and is only partially translated.
 
 Tuleap 13.8
 ===========
