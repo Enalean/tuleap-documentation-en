@@ -184,12 +184,25 @@ Read also Localization below for additional information on how to customise inte
 Localization
 ------------
 
-Tuleap source code is localized so the interface is displayed in the user-selected language. Currently, Tuleap supports the English and French languages.
+Tuleap source code is localized so the interface is displayed in the user-selected language. Currently, Tuleap supports the following languages:
+
+* English (native)
+* French (100% translated)
+* Community contribution:
+
+  * Brazilian Portugueze (partly translated)
+
+Your language is not in the list? Please refer to :ref:`i18n` in developer guide to see how you can contribute.
+
+Customized localization (deprecated)
+````````````````````````````````````
 
 Messages are stored in the site-content directory: there is one message file per service, with the same name as the service, ending with '.tab'. E.g. 'site-content/en_US/tracker/tracker.tab' contains all tracker messages in English.
 
 The format of the message files is very simple: one line per message, with the following format
-    key1 tab? key2 tab? your message here
+
+
+    key1 :kbd:`Tab(↹)` key2 :kbd:`Tab(↹)` your message here
 
 As with other site-content files, you may customize the language files, so that you can change a few specific messages:
 

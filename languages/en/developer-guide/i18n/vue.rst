@@ -4,7 +4,8 @@ i18n in Vue apps
 We use Gettext with `vue-gettext`_ to translate strings in our Vue apps.
 Here is some advice specific to ``vue-gettext``:
 
-* Always add a ``key`` attribute when you have conditional translated strings.
+Always add a ``key`` attribute when you have conditional translated strings
+---------------------------------------------------------------------------
 
 For example, DO NOT do this:
 
@@ -28,7 +29,8 @@ INSTEAD, DO THIS:
         <p v-translate v-else key="other_case">This string will be shown</p>
     </template>
 
-* Never use Vue.js interpolation inside translated strings.
+Never use Vue.js interpolation inside translated strings
+--------------------------------------------------------
 
 For example, DO NOT do this:
 
@@ -52,7 +54,8 @@ INSTEAD, DO THIS:
        <translate v-bind:translate-params="{ reactive_value }">Current value: %{ reactive_value }</translate>
    </template>
 
-* Never use ``v-bind`` on attributes in HTML tags in translated strings.
+Never use ``v-bind`` on attributes in HTML tags in translated strings
+---------------------------------------------------------------------
 
 For example, DO NOT do this:
 
@@ -73,11 +76,11 @@ INSTEAD, DO THIS:
     <template>
         <p v-translate="{ link_url, link_text }"><a href="%{ link_url }">%{ link_text }</a> has done some changes in this document.</p>
     </template>
-    
-        
- * Name your parameter when your translations have parameters.
- 
- For example, DO NOT do this:
+
+Name your parameter when your translations have parameters
+----------------------------------------------------------
+
+For example, DO NOT do this:
 
 .. code-block:: html
 
@@ -98,7 +101,7 @@ INSTEAD, DO THIS:
     </template>
 
 Resources
-^^^^^^^^^
+---------
 
 - vue-gettext: https://github.com/Polyconseil/vue-gettext
 
