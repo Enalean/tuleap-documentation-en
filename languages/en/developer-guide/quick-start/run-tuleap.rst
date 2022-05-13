@@ -134,7 +134,7 @@ If you don't receive email, this is because we configured postfix to not deliver
 
 .. code-block:: bash
 
-    $ docker exec -ti tuleap-web bash
+    $ make bash-web
     $> vi /data/etc/email_whitelist # enter your email
-    $> ./whitelist_emails.sh
+    $> tools/docker/tuleap-aio-dev/whitelist_emails.sh
     $> systemctl restart postfix
