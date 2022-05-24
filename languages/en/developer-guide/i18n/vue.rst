@@ -17,7 +17,7 @@ For example, DO NOT do this:
         <p v-translate v-else>This string will never be shown</p> <!-- <== This string will NEVER be shown -->
     </template>
 
-The string in the ``v-else`` will never be shown, because Vue does not know that the two ``<p>`` tags actually have different content. Vue tries to limit the number of DOM changes, so it will only change attributes and will change the text node, which will mess up ``vue-gettext``. See `the Vue.js documentation on the key attribute <https://vuejs.org/v2/api/#key>`_ for details.
+The string in the ``v-else`` will never be shown, because Vue does not know that the two ``<p>`` tags actually have different content. Vue tries to limit the number of DOM changes, so it will only change attributes and will change the text node, which will mess up ``vue-gettext``. See `the Vue.js documentation on the key attribute <https://v2.vuejs.org/v2/api/#key>`_ for details.
 
 INSTEAD, DO THIS:
 
