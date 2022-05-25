@@ -4,10 +4,6 @@ Tuleap 13.x
 Tuleap 13.9
 ===========
 
-.. NOTE::
-
-  Tuleap 13.9 is currently under development.
-
 Brazilian Portuguese
 --------------------
 
