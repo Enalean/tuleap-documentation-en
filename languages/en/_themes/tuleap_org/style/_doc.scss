@@ -88,7 +88,7 @@ body {
 
             > a .toctree-expand::before {
                 content: '\f146'; // minus-square
-                font-family: 'Font Awesome 5 Free';
+                font-family: 'Font Awesome 6 Free';
                 font-weight: 400;
             }
         }
@@ -180,7 +180,7 @@ body {
 
                 &::before {
                     content: '\f0fe'; // plus-square
-                    font-family: 'Font Awesome 5 Free';
+                    font-family: 'Font Awesome 6 Free';
                     font-weight: 400;
                 }
             }
@@ -278,7 +278,7 @@ body {
             position: relative;
             top: -3px;
             left: -6px;
-            font-family: 'Font Awesome 5 Free';
+            font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             font-size: 14px;
             line-height: normal;
