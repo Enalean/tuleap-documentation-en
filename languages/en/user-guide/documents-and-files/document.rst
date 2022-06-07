@@ -3,12 +3,6 @@
 Document Manager modern interface (2019)
 ========================================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap. You will need to install ``tuleap-plugin-document`` rpm and activate
-  ``document`` plugin as site administrator.
-
 The new interface of document manager provides a modern way to interact with document manager.
 This new interface has been designed for most common actions.
 

@@ -25,11 +25,6 @@ Project management
 * :ref:`Timetracking <timetracking>`: Provide an easy way to track your time
 * :ref:`Velocity <plugin_velocity>`: Display velocity chart in the Agile Dashboard
 
-File deliveries and documentation
----------------------------------
-
-* :ref:`Document <plugin_document>`: Modern document management
-
 Authentication and permissions
 ------------------------------
 
