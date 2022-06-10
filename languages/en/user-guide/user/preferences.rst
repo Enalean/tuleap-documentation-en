@@ -98,6 +98,21 @@ The available formats are:
 Appearance and language
 ```````````````````````
 
+.. _available-languages:
+
+Languages
+~~~~~~~~~
+
+The following languages are currently supported with always up-to-date translations:
+
+* English
+* French
+
+The following languages are also available but are contributed by the Tuleap community (translations might be inaccurate and incomplete):
+
+* Brazilian Portugueze
+
+
 Relative dates display
 ~~~~~~~~~~~~~~~~~~~~~~
 

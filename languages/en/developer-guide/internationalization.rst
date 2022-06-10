@@ -34,13 +34,7 @@ contribution, new strings should be translated in French).
 Supported languages
 ^^^^^^^^^^^^^^^^^^^
 
-Currently, Tuleap supports the following languages:
-
-* English (native)
-* French (100% translated)
-* Community contribution:
-
-  * Brazilian Portugueze (partly translated)
+The list of currently available languages can be seen here: :ref:`available-languages`
 
 .. note::
 
