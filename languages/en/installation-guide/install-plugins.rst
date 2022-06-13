@@ -88,11 +88,7 @@ Project management:
 
 File deliveries and documentation:
 
-* **docman**: Legacy document management
-* :ref:`document <plugin_document>`: Modern document management
-
-  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
-
+* **document**: Document management
 * **frs**: Enhance File Release System with better release view and REST API
 * **mediawiki**: Integration of "Wikipedia" wiki technology
 * **webdav**: Access FRS and Documentation like a file system with WebDAV protocol

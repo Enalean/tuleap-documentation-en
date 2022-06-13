@@ -60,6 +60,13 @@ h4 {
     text-transform: uppercase;
 }
 
+h5 {
+    margin: 0 0 10px;
+    color: transparentize($grey, .4);
+    font-weight: 700;
+    line-height: 30px;
+}
+
 .intro {
     display: block;
     width: 80%;
