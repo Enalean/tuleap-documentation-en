@@ -28,8 +28,6 @@ Contributed files should not contain:
 * fuzzy strings
 * obsolete strings
 
-You should not leave untranslated strings, especially in your mother language (e.g you are French and make a
-contribution, new strings should be translated in French).
 
 Supported languages
 ^^^^^^^^^^^^^^^^^^^
