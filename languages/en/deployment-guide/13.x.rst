@@ -8,6 +8,16 @@ Tuleap 13.10
 
   Tuleap 13.10 is currently under development.
 
+General availability of Document
+--------------------------------
+
+Please welcome Document plugin in Tuleap Community Edition 🎉.
+
+There is now only one package ``tuleap-plugin-document`` to serve
+the Document Manager. There is nothing to do for users of the
+legacy ``tuleap-plugin-docman``, it will be automatically replaced
+by ``tuleap-plugin-document`` during the upgrade.
+
 Tuleap 13.9
 ===========
 

@@ -49,6 +49,24 @@ PROFTPd                       End of support    End-users should use document/fr
 PHP 8.0                       Removed           Nothing, Tuleap will switch to PHP 8.1 automatically
 ============================= ================= ============================================================
 
+End of September 2022
+'''''''''''''''''''''
+
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+Legacy docman user interface  Removed           Nothing, the switch to new user interface is automatic since 13.10.
+                                                Starting 14.2, users wont be able to use old features:
+
+                                                * manual order in folders (move up/down)
+                                                * import of search reports from other projects
+                                                * cut/copy/paste of items cross projects
+                                                * …
+
+                                                See more details in `story #27179: remove old docman views
+                                                <https://tuleap.net/plugins/tracker/?aid=27179>`_.
+============================= ================= ============================================================
+
 End of December 2022
 ''''''''''''''''''''
 
