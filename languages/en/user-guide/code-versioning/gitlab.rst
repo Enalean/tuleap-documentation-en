@@ -175,7 +175,7 @@ The first done value retrieved by Tuleap will be used to close the artifact. If 
 Create GitLab branches from Tuleap artifact
 ```````````````````````````````````````````
 
-If some preconditions are met, user can be able to create a GitLab branch directly from a Tuleap artifact.
+If some preconditions are met, user can be able to create a GitLab branch and the corresponding merge request directly from a Tuleap artifact.
 Those preconditions are:
 
 * At least one GitLab repository is integrated in the artifact's project with token well configured
@@ -192,8 +192,8 @@ This action can be performed through the artifact action button.
 
 .. figure:: ../../images/screenshots/gitlab/gitlab-artifact-create-branch-action.png
    :align: center
-   :alt: Modal to create the GitLab branch
-   :name: Modal to create the GitLab branch
+   :alt: Modal to create the GitLab branch and Merge Request
+   :name: Modal to create the GitLab branch and Merge Request
 
 Register your GitLab repository
 -------------------------------
