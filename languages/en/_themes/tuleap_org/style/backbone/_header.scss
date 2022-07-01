@@ -380,3 +380,7 @@ span.header-menu-item {
     line-height: normal;
     text-transform: uppercase;
 }
+
+section {
+    scroll-margin-top: $header-pinned-height;
+}
