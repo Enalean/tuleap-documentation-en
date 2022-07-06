@@ -25,6 +25,19 @@ Tuleap can be installed on the following Linux x86_64 systems:
 
 The server will need an Internet connection as it will download external packages.
 
+Database
+````````
+
+Database must be MySQL v5.7 (`MySQL 8 support is in progress <https://tuleap.net/plugins/tracker/?aid=22660>`_). As an alternative, MariaDB 10.3 can be used but was never tested in production.
+
+The database **must** be dedicated to Tuleap. Either it's a local installation (as described bellow, perfect for small & medium instances) or provided by an external service.
+
+Mutualized databases must not be used:
+
+- they cannot guarranty the needed Quality of service
+- they cannot respect the requirements (SQL modes) described bellow
+- they make consistent backups almost impossible
+
 .. _tuleap_installation:
 
 Installation
