@@ -16,7 +16,7 @@ Jenkins Configuration
 
 .. attention::
    
-    The currently minimal Jenkins version is **2.249.3**
+    The currently minimal Jenkins version is **2.289.3**
 
     The currently minimal Tuleap version should be **12.11**
 
