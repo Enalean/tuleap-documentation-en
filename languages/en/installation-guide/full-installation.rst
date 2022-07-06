@@ -30,7 +30,7 @@ Database
 
 Database must be MySQL v5.7 (`MySQL 8 support is in progress <https://tuleap.net/plugins/tracker/?aid=22660>`_). As an alternative, MariaDB 10.3 can be used but was never tested in production.
 
-The database **must** be dedicated to Tuleap. Either it's a local installation (as described bellow, perfect for small & medium instances) or provided by an external service.
+The database **must** be dedicated to Tuleap. Either it's a local installation (as described below, perfect for small & medium instances) or provided by an external service.
 
 Mutualized databases must not be used:
 
