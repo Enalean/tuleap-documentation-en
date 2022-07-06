@@ -34,7 +34,7 @@ The database **must** be dedicated to Tuleap. Either it's a local installation (
 
 Mutualized databases must not be used:
 
-- they cannot guarranty the needed Quality of service
+- they cannot guarantee the needed Quality of service
 - they cannot respect the requirements (SQL modes) described bellow
 - they make consistent backups almost impossible
 
