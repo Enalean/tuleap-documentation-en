@@ -8,7 +8,20 @@ Tuleap 13.11
 
   Tuleap 13.11 is currently under development.
 
-Nothing to mention.
+
+Changes in the way SVN authentication and project level authorization is handled
+--------------------------------------------------------------------------------
+
+This change is not expected to require modifications from system administrators.
+As it impacts a sensitive part of Tuleap, system administrators should test carefully
+SVN accesses after the upgrade. In case of issues, please reach out to the development team.
+
+The way Tuleap authenticates users and authorizes them at the project level has changed.
+Until now, Tuleap was handling this using a ``mod_perl`` module in Apache. The authentication is now
+handled like other web requests without dependending on a module loaded in Apache.
+
+Tuleap instances deployed using the advanced *distributed SVN* setup **must** ensure the Apache server
+cannot be reached directly by the end-users otherwise they could access resources without being authenticated.
 
 Tuleap 13.10
 ============
