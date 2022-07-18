@@ -357,6 +357,37 @@ Note: If you were using tuleap before 10.9 and you already had files bigger than
   For them, it's done in "Git" section of Site administration.
 
 
+Git branch creation through Tracker artifact actions
+-----------------------------------------------------
+
+.. IMPORTANT:: To have this action available, both ``Git`` and ``Tracker`` plugins must be installed, and some Git repositories must exist in the same project of the artifact.
+
+Starting Tuleap 13.11, a new action is available in Tracker artifact actions, the ability to create a new Git branch and the associated pull-request.
+
+   .. figure:: ../../images/screenshots/git/artifact-action-create-branch.png
+      :align: center
+      :alt: Artifact action create Git branch and pull request
+      :name: Artifact action create Git branch and pull request
+
+Once selected, a modal to create the branch and the associated pull-request will appear.
+
+In the modal, you will have the Git project repositories user is able to write in. No personal forks are listed.
+
+When selecting a repository, the reference input will be updated with the default branch name of the selected repository.
+You can also write another Git branch name or a commit reference (SHA-1) from the repository. The new branch will be based on it.
+
+There is a preview of the Git branch name that will be created. This name is fixed by Tuleap and cannot be updated. 
+The format of the branch name is: ``tuleap-{artifact_id}-{artifact-title}``
+
+The checkbox to create the associated pull-request is checked by default.
+
+   .. figure:: ../../images/screenshots/git/artifact-action-create-branch-modal.png
+      :align: center
+      :alt: Artifact action create Git branch and pull request modal
+      :name: Artifact action create Git branch and pull request modal
+
+.. IMPORTANT:: The ``pull-request`` plugin needs to be installed and activated for the project in order to be able to create the pull-request. Otherwise only Git branches can be created.
+
 Git References
 ---------------
 
