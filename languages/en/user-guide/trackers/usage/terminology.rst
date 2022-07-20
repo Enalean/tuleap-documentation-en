@@ -1,3 +1,5 @@
+.. _tracker-terminology:
+
 Terminology and common features
 -------------------------------
 
