@@ -247,6 +247,11 @@ The parsing method checks several potential errors in the CSV file:
 All other potential errors have to be checked manually by looking at the
 parse report table.
 
+DOCX and XLSX export
+````````````````````
+
+In addition to csv it's also possible to export to docx and xlsx formats. See the :ref:`dedicated section <plugin_document_generation>`.
+
 Graphical visualization
 ```````````````````````
 

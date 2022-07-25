@@ -1,7 +1,7 @@
 .. _plugin_document_generation:
 
-Document Generation
--------------------
+Document Generation: docx and xlsx export
+-----------------------------------------
 
 .. attention::
 
@@ -13,7 +13,7 @@ This plugin allows to generate MS Office documents (docx/xlsx) from tracker repo
 * Word (docx) document as a snapshot of a tracker content.
 * Excel (xlsx) document for single or cross tracker reports.
 
-.. figure:: ../images/screenshots/document-generation/doc-gen-export-fs8.png
+.. figure:: ../../../images/screenshots/document-generation/doc-gen-export-fs8.png
 	:align: center
 	:alt: Document Generation exports
 
@@ -67,7 +67,7 @@ The first one is almost the equivalent of CSV's "Export all columns report" with
 
 The second one allows to generate a spreadsheet with data that comes from multiple trackers.
 
-.. figure:: ../images/screenshots/document-generation/xlsx-report-fs8.png
+.. figure:: ../../../images/screenshots/document-generation/xlsx-report-fs8.png
 	:align: center
 	:alt: Configuration screen for cross tracker export
 
