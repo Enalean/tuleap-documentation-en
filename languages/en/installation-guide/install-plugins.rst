@@ -73,7 +73,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`document_generation <plugin_document_generation>`: Export Tuleap tracker reports as documents (docx).
+* :ref:`document_generation <plugin_document_generation>`: Export Tuleap tracker reports as documents (docx and xlsx).
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
