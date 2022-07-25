@@ -374,7 +374,7 @@ Site administration
 ###################
 
 * ``SITE_ADMINISTRATOR_PASSWORD``: tuleap ``admin`` user password.
-* ``TULEAP_EMAIL_ADMIN``: email address where all the system emails will be redirected (**since 13.8**).
+* ``TULEAP_SYS_EMAIL_ADMIN``: email address where all the system emails will be redirected (**since 13.8**).
 
 Redis
 #####
