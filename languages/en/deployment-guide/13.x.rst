@@ -1,12 +1,17 @@
 Tuleap 13.x
 ###########
 
-Tuleap 13.11
+Tuleap 13.12
 ============
 
 .. NOTE::
 
-  Tuleap 13.11 is currently under development.
+  Tuleap 13.12 is currently under development.
+
+Nothing to mention.
+
+Tuleap 13.11
+============
 
 
 Changes in the way SVN authentication and project level authorization is handled
