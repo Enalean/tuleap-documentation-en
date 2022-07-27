@@ -329,7 +329,8 @@ body {
 
     .attention,
     .note,
-    .warning {
+    .warning,
+    .important {
         margin: 20px 0;
         padding: 10px;
         border-radius: 0 4px 4px 0;
@@ -385,6 +386,19 @@ body {
 
         li::before {
             color: $light-blue;
+        }
+    }
+
+    .important {
+        border-left: 4px solid #28c4a0;
+        background: transparentize(#28c4a0, .95);
+
+        > p {
+            color: #00775c;
+        }
+
+        li::before {
+            color: #00775c;
         }
     }
 
