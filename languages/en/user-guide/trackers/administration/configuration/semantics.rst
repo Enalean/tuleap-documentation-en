@@ -54,7 +54,7 @@ Done
 ````
 
 The done semantic is used for burnup and velocity chart
-computation. It can also be used in the :ref:`GitLab integration <version-control-with-gitlab>`.
+computation. It can also be used by the :ref:`GitLab integration <version-control-with-gitlab>` and the :ref:`Git integration <version-control-with-git>`.
 
 .. _velocity_administration:
 
