@@ -256,11 +256,16 @@ Custom webhooks are available for Git. See the :ref:`webhook-git` section in the
 Jenkins Webhooks
 ````````````````
 
-The best way to integrate a project with Hudson/Jenkins is to configure a Jenkins Webhook. Only one Jenkins Webhook is
-needed so you cannot create more than one. Please read `Push notification from repository`_ from Jenkins documentation
-for more information.
+The best way to integrate a project with Hudson/Jenkins is to configure a Jenkins Webhook.
+Please read `Push notification from repository`_ from Jenkins documentation for more information.
+
+You can create one Jenkins webhook per repository. In the project-level settings of the Git plugin you can
+also add multiple ones that will triggered for all repositories of this project.
 
 You can see the list of triggered jobs in the logs section of the Jenkins Webhook.
+
+A notifyCommit access token will be requested to configure the webhook. You can generate it in the *Global Security*
+page of your Jenkins instance.
 
 .. IMPORTANT::
 
