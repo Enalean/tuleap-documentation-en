@@ -57,6 +57,9 @@ Deploy a test environment with docker-compose
     not a recommended setup unless you perfectly understand how to operate (run, backup, restore, troubleshoot) them under
     docker constraints.
 
+    Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to 
+    customize the image to fit your needs.
+
 In a directory named ``tuleap-community-edition`` (be careful, with docker-compose, directory name matters) create a
 ``.env`` file that defines two variables:
 
@@ -107,6 +110,7 @@ Then create a ``docker-compose.yml`` file with following content:
           - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
           - TULEAP_FPM_SESSION_MODE=redis
           - TULEAP_REDIS_SERVER=redis
+          - TULEAP_EMAIL_TRANSPORT=smtp
           - TULEAP_EMAIL_RELAYHOST=mailhog:1025
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
@@ -215,6 +219,7 @@ Then you can init docker image in command line:
         -e TULEAP_FPM_SESSION_MODE=redis \
         -e TULEAP_REDIS_SERVER=redis \
         -e TULEAP_REDIS_PASSWORD=${REDIS_PASSWORD} \
+        -e TULEAP_EMAIL_TRANSPORT=smtp \
         -e TULEAP_EMAIL_RELAYHOST=your-smtp.example.com:2025 \
         -v /srv/path/to/data:/data
         tuleap/tuleap-community-edition
@@ -231,6 +236,7 @@ For future runs you don't need to pass all the environments:
         --hostname tuleap-ce.example.com \
         -e TULEAP_FPM_SESSION_MODE=redis \
         -e TULEAP_REDIS_SERVER=redis \
+        -e TULEAP_EMAIL_TRANSPORT=smtp \
         -e TULEAP_EMAIL_RELAYHOST=your-smtp.example.com:2025 \
         -v /srv/path/to/data:/data
         tuleap/tuleap-community-edition
@@ -388,6 +394,7 @@ Redis
 Email
 #####
 
+* ``TULEAP_EMAIL_TRANSPORT``: email transport (sendmail by default). (**since 13.12**).
 * ``TULEAP_EMAIL_RELAYHOST``: email relay host (none by default).
 
 TLS Certificates

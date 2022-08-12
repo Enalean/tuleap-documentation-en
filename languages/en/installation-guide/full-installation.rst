@@ -168,7 +168,7 @@ Do not forget to restart nginx with ``systemctl restart nginx`` after a modifica
 
 Mail configuration
 ------------------
-Tuleap interacts with Postfix to process mails. The following lines should be uncommented/modified in
+Tuleap interacts with Postfix by default to process mails. The following lines should be uncommented/modified in
 the main Postfix configuration file generally located in /etc/postfix/main.cf:
 
 ::
