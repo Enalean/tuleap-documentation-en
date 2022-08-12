@@ -57,9 +57,6 @@ Deploy a test environment with docker-compose
     not a recommended setup unless you perfectly understand how to operate (run, backup, restore, troubleshoot) them under
     docker constraints.
 
-    Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to 
-    customize the image to fit your needs.
-
 In a directory named ``tuleap-community-edition`` (be careful, with docker-compose, directory name matters) create a
 ``.env`` file that defines two variables:
 
@@ -396,6 +393,11 @@ Email
 
 * ``TULEAP_EMAIL_TRANSPORT``: email transport (sendmail by default). (**since 13.12**).
 * ``TULEAP_EMAIL_RELAYHOST``: email relay host (none by default).
+
+.. warning::
+
+    Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to 
+    customize the image to fit your needs.
 
 TLS Certificates
 ````````````````
