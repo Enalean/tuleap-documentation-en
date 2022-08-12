@@ -305,6 +305,8 @@ service as telnet comes standard with the Windows operating system.
 However we highly recommend not to enable telnet for security reasons
 and instruct your Windows users to install an SSH client instead.
 
+..  _services_postfix:
+
 Postfix
 -------
 

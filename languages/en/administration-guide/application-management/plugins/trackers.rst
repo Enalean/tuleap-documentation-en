@@ -31,6 +31,7 @@ email address (forge__artifact+id@... to update an artifact and forge__tracker+i
     If you still want to enable this option, it is highly recommended to use a
     dedicated domain name (see ``sys_default_mail_domain`` in your ``local.inc`` file).
 
+    This option will only work when Tuleap is configured to use :ref:`the self hosted email configuration <emailrelay>`
 
 Once activated by site admin, each tracker admin that wants this feature to be enabled needs to manually
 activate the feature in tracker "General Settings" screen. The tracker must respect some constraints:
