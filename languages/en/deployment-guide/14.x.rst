@@ -1,0 +1,11 @@
+Tuleap 14.x
+###########
+
+Tuleap 14.0
+===========
+
+.. NOTE::
+
+  Tuleap 14.0 is currently under development.
+
+Nothing to mention.
