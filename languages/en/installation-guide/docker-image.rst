@@ -107,8 +107,6 @@ Then create a ``docker-compose.yml`` file with following content:
           - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
           - TULEAP_FPM_SESSION_MODE=redis
           - TULEAP_REDIS_SERVER=redis
-          - TULEAP_EMAIL_TRANSPORT=smtp
-          - TULEAP_EMAIL_RELAYHOST=mailhog:1025
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
       db:
