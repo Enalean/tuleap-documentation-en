@@ -1,3 +1,5 @@
+.. _document-manager:
+
 Document Manager
 ================
 
@@ -88,6 +90,9 @@ Type          Description
 File          Any type of document can be uploaded. From a PowerPoint
               presentation, to a simple picture or a full office document. Files
               are versionned, so you can add new versions on existing document.
+              Office files such as Word or Excel documents can be viewed directly
+              in your browser when the :ref:`ONLYOFFICE integration <onlyoffice-integration>`
+              is active.
 
 Link          Allows the user to target a document with a URL. The document
               will not be stored locally in the Document Manager.

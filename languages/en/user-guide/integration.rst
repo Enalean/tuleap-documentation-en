@@ -10,5 +10,6 @@ Integration
    integration/rocketchat
    integration/bugzilla
    integration/maven
+   integration/onlyoffice
    integration/ide/jetbrains
    integration/ide/mylyn/usage
