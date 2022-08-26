@@ -137,6 +137,7 @@ Integrations:
 * **botmattermost**: Integration with mattermost and slack
 * **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
 * **botmattermost-git**: Mattermost bot for git
+* :ref:`onlyoffice <onlyoffice-integration>`: Integrate `ONLYOFFICE <https://www.onlyoffice.com/>`_ in the document management plugin so you can view your office documents
 * :ref:`jira-import <jira-project-importer>`: Import entire Jira project
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
