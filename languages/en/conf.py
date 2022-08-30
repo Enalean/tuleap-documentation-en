@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.imgmath', 'sphinx_rtd_theme', 'sphinxext.rediraffe']
+extensions = ['sphinx.ext.imgmath', 'sphinx_rtd_theme', 'sphinxext.rediraffe', 'notfound.extension']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -285,3 +285,6 @@ rediraffe_redirects = {
     "user-guide/my-personal-dashboard.rst": "user-guide/user/dashboard.rst",
     "installation-guide/intro.rst": "install.rst"
 }
+
+# 404 page
+notfound_urls_prefix = ''
