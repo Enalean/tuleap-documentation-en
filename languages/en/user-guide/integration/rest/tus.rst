@@ -1,3 +1,5 @@
+.. _rest-api-tus:
+
 Use TUS for file upload
 =======================
 
