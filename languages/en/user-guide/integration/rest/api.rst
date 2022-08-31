@@ -1,7 +1,7 @@
 Various examples
 ================
 
-In this section you will find utilization example of REST routes.
+In this section you will find usage examples of Tuleap REST routes.
 
 POST /artifacts
 ---------------
@@ -80,67 +80,70 @@ Retrieve artifact attachment
 
 The following javascript snippet shows how we can retrieve the content of an
 artifact, find a suitable file field and retrieve its first attachment. Assuming
-that the file is an image, this can be run in the console of a recent browser
-like Chrome or Firefox (don't forget to update the base url, file id, and
-credentials).
+that the file is an image, this can be run in the console of a web browser
+like Chrome or Firefox (don't forget to change the tuleap base url, artifact id, and
+access key).
 
 .. code-block:: javascript
 
     (() => {
-      const base_url = "https://tuleap.example.com/api/v1";
-      const artifact_id = 1;
-      const access_key =
-        "tlp-k1-22.3329b8ac4401eaf03cf7776d6bab1809883624eef7a2e2dd2dc4d07696d32504";
+        const tuleap_base_url = "https://tuleap.example.com/api/v1";
+        const artifact_id = 1;
+        const access_key = "tlp-k1-22.3329b8ac4401eaf03cf7776d6bab1809883624eef7a2e2dd2dc4d07696d32504";
 
-      async function downloadImage() {
-        const artifact = await getArtifact(artifact_id);
-        const file_html_url = getFirstFileHTMLURL(artifact);
-        saveTheFileSomewhere(file_html_url);
-      }
-
-      async function getArtifact(artifact_id) {
-        console.log(`getArtifact (artifact_id = ${artifact_id})`);
-        const init = {
-          method: "GET",
-          headers: new Headers({
-            "Content-type": "application/json",
-            "X-Auth-AccessKey": access_key
-          }),
-          mode: "cors"
-        };
-        const response = await fetch(`${base_url}/artifacts/${artifact_id}`);
-        return response.json();
-      }
-
-      function getFirstFileHTMLURL(artifact) {
-        const field = findFirstValidFileField(artifact);
-        if (typeof field === "undefined") {
-          throw new Error(
-            "There are no attachments on this artifact (or you don't have permission to read them)."
-          );
+        async function getArtifact(artifact_id) {
+            console.log(`getArtifact (artifact_id = ${artifact_id})`);
+            const response = await fetch(encodeURI(`${tuleap_base_url}/artifacts/${artifact_id}`), {
+                method: "GET",
+                headers: new Headers({
+                    "Content-type": "application/json",
+                    "X-Auth-AccessKey": access_key,
+                }),
+                mode: "cors",
+            });
+            return response.json();
         }
-        return field.file_descriptions[0].html_url;
-      }
 
-      const findFirstValidFileField = artifact =>
-        artifact.values.find(isValidFileField);
+        const fileHasAnAttachment = (field) => field.file_descriptions.length > 0;
 
-      const isValidFileField = field =>
-        field.type === "file" && fileHasAnAttachment(field);
+        const isValidFileField = (field) => field.type === "file" && fileHasAnAttachment(field);
 
-      const fileHasAnAttachment = field => field.file_descriptions.length > 0;
+        const findFirstValidFileField = (artifact) => artifact.values.find(isValidFileField);
 
-      function saveTheFileSomewhere(file_html_url) {
-        // For the demo, instead of saving the file, we display it in the browser
-        const img = new Image();
-        img.src = file_html_url;
+        function getFirstFileHTMLURL(artifact) {
+            console.log({ artifact });
+            const field = findFirstValidFileField(artifact);
+            if (typeof field === "undefined") {
+                throw new Error(
+                    "There are no attachments on this artifact (or you don't have permission to read them)."
+                );
+            }
+            return field.file_descriptions[0].html_url;
+        }
 
-        console.log("Attaching the image element at the end of the body");
-        document.body.appendChild(img);
-        console.log("done");
-      }
+        function saveTheFileSomewhere(file_html_url) {
+            // For the example, instead of saving the file on disk, we display it in the browser
+            const img = new Image();
+            img.src = file_html_url;
 
-      downloadImage();
+            console.log("Attaching the image element at the end of the body");
+            document.body.appendChild(img);
+        }
+
+        async function downloadImage() {
+            const artifact = await getArtifact(artifact_id).then((json) => {
+                if ("error" in json) {
+                    const error_message = json.error.message;
+                    throw new Error("Could not get the artifact: " + error_message);
+                }
+                return json;
+            });
+            const file_html_url = getFirstFileHTMLURL(artifact);
+            saveTheFileSomewhere(file_html_url);
+            console.log("done");
+        }
+
+        downloadImage();
     })();
 
 
