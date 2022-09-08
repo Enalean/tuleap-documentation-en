@@ -15,17 +15,17 @@ Install Docker Engine
 Installing Docker on Ubuntu
 """""""""""""""""""""""""""
 
-Follow the official Docker documentation: `Installation on Ubuntu <https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/>`_.
+Follow the official Docker documentation: `Installation on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_.
 
 Installing Docker on Fedora
 """""""""""""""""""""""""""
 
 **Fedora 35+**
 
-Follow the official Docker documentation:  `Installation on Fedora <https://docs.docker.com/engine/installation/linux/docker-ce/fedora/>`_.
+Follow the official Docker documentation:  `Installation on Fedora <https://docs.docker.com/engine/install/fedora/>`_.
 
 Installing Docker on macOS
 """"""""""""""""""""""""""
 
-Go to https://docs.docker.com/docker-for-mac/ and download Docker for Mac.
+Go to https://docs.docker.com/desktop/install/mac-install/ and download Docker for Mac.
 It will install all you need to run Tuleap containers.
