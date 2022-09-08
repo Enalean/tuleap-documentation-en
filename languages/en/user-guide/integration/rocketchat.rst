@@ -3,7 +3,7 @@
 Rocket chat
 ===========
 
-`Rocket.Chat <https://rocket.chat>`_ is an open source chat/messaging solution you can self host. It's an alternative to
+`Rocket.Chat <https://www.rocket.chat/>`_ is an open source chat/messaging solution you can self host. It's an alternative to
 Slack, Mattermost, Teams, etc.
 
 Authenticate with OAuth / OpenID Connect
