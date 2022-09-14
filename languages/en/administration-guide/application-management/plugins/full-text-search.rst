@@ -15,7 +15,8 @@ Indexed items
 
 The following items are currently indexed and can be found via the full-text search:
 
-* Artifacts
+* Artifacts:
+
   * String fields
   * Text fields
   * Step definition fields
@@ -26,7 +27,7 @@ Limitations
 -----------
 
 The current implementation targets small to medium Tuleap instances.
-It is not suitable for large instances with more than 200000 artifacts: search quality and performance are not adequate.
+It is not suitable for large instances with more than 200'000 artifacts: search quality and performance are not adequate.
 
 Content written in ideographic languages such as Chinese and Japanese are not correctly indexed and you will not be able
 to find them in the search.
