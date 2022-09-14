@@ -103,6 +103,12 @@ Source control and continuous integration:
 * **hudson_git**: Jenkins integration for git
 * **hudson_svn**: Jenkins integration for svn
 
+Full-text search:
+
+* :ref:`fts-db <full-text-search-admin>`: Full-text search implementation using the database to index items
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 Authentication and permissions:
 
 * **ldap**: Integration with OpenLDAP like or Active Directory
