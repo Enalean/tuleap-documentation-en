@@ -1,11 +1,19 @@
 Tuleap 14.x
 ###########
 
-Tuleap 14.0
+Tuleap 14.1
 ===========
 
 .. NOTE::
 
-  Tuleap 14.0 is currently under development.
+  Tuleap 14.1 is currently under development.
 
 Nothing to mention.
+
+Tuleap 14.0
+===========
+
+There are two new plugins available for install:
+
+- :ref:`tuleap-plugin-fts_db <full-text-search-admin>`
+- :ref:`tuleap-plugin-onlyoffice <onlyoffice-integration>`
