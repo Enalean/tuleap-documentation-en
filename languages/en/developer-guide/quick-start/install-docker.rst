@@ -12,17 +12,50 @@ You can ensure docker is working properly by using :code:`$ docker run hello-wor
 Install Docker Engine
 ---------------------
 
+The recommend platform for Tuleap development is Fedora. It's the base image used by
+most of the Tuleap developers, you are more likely to get help with this base.
+
+Installing Docker on Fedora
+"""""""""""""""""""""""""""
+
+**Fedora 36+**
+
+We recommend you run fedora's version of docker (instead of Docker CE).
+
+However, there will be some configuration needed to run everything:
+
+First, you need to raise the default ulimits:
+
+.. code-block:: bash
+
+    $> sudo vim /etc/sysconfig/docker
+        ...
+        --default-ulimit nofile=2048:2048 \
+        ...
+    $> sudo systemctl edit docker.service
+    [Service]
+    LimitNOFILE=2048
+
+Then, SELinux must be disabled:
+
+.. code-block:: bash
+
+    $> sudo setenforce disabled
+    $> vim /etc/selinux/config
+    SELINUX=permissive
+
+Finally, restart everything:
+
+.. code-block:: bash
+
+    $> sudo systemctl daemon-reload
+    $> sudo systemctl restart docker.service
+
 Installing Docker on Ubuntu
 """""""""""""""""""""""""""
 
 Follow the official Docker documentation: `Installation on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_.
 
-Installing Docker on Fedora
-"""""""""""""""""""""""""""
-
-**Fedora 35+**
-
-Follow the official Docker documentation:  `Installation on Fedora <https://docs.docker.com/engine/install/fedora/>`_.
 
 Installing Docker on macOS
 """"""""""""""""""""""""""
