@@ -333,7 +333,7 @@ In Tuleap, either with a service or personal account that have read access to th
 Step 2: Create a Tuleap Project
 ```````````````````````````````
 
-In Jenkins, create a new job with type "Tuleap Project". It should be named after your Tuleap project name to ease organisation.
+In Jenkins, create an Organization Folder and in the Projet Section of the configuration choose "Tuleap Project" on Repository sources selectbox.
 
 .. figure:: ../images/screenshots/jenkins/tgbs_new_project.png
    :align: center
