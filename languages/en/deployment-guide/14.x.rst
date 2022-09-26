@@ -8,7 +8,9 @@ Tuleap 14.1
 
   Tuleap 14.1 is currently under development.
 
-Nothing to mention.
+There are one new plugins available for install:
+
+- :ref:`tuleap-plugin-fts_meilisearch <full-text-search-admin>`
 
 Tuleap 14.0
 ===========
