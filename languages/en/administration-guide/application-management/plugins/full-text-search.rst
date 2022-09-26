@@ -22,15 +22,37 @@ The following items are currently indexed and can be found via the full-text sea
   * Step definition fields
   * Follow-up comments
 
+Indexation backends
+-------------------
 
-Limitations
------------
+Two different backends are provided via two different plugins:
 
-The current implementation targets small to medium Tuleap instances.
+* MySQL Database (``tuleap-plugin-fts_db``)
+* Meilisearch Server (``tuleap-plugin-fts_meilisearch``)
+
+Database implementation rely on `MySQL Natural Language Full-Text Searches
+<https://dev.mysql.com/doc/refman/8.0/en/fulltext-natural-language.html>`_. It targets small to medium Tuleap instances.
 It is not suitable for large instances with more than 200'000 artifacts: search quality and performance are not adequate.
+Furthermore content written in ideographic languages such as Chinese and Japanese are not correctly indexed and you will
+not be able to find them in the search.
 
-Content written in ideographic languages such as Chinese and Japanese are not correctly indexed and you will not be able
-to find them in the search.
+Based on first feedbacks, Meilisearch implementation does not seem to suffer the same limitations and it provides more
+relevant results (we are still waiting for feedbacks for big instances with lot of artifacts). It needs a remote or
+local `Meilisearch server <https://www.meilisearch.com/>`_ instance.
+
+* Remote server needs a server url and an API key to be able to index and search. Those settings can be set via
+  web UI (Site administration » plugins » Meilisearch) or via CLI:
+
+  * ``tuleap config-set fts_meilisearch_server_url <url>``
+  * ``tuleap config-set fts_meilisearch_api_key <key>``
+  * ``tuleap config-set fts_meilisearch_index_name <name>`` (optional, defaults to ``fts_tuleap``)
+
+* Local server is installed with ``tuleap-meilisearch-server`` package and do not need any special configuration (you
+  will have to ``tuleap-cfg site-redeploy`` and ``systemctl start tuleap-meilisearch``).
+
+.. attention::
+
+   You should not install both plugins ``tuleap-plugin-fts_db`` and ``tuleap-plugin-fts_meilisearch``.
 
 Initial indexing
 ----------------

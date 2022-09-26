@@ -109,6 +109,10 @@ Full-text search:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
+* :ref:`fts-meilisearch <full-text-search-admin>`: Full-text search implementation using a Meilisearch server instance to index items
+
+  * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
 Authentication and permissions:
 
 * **ldap**: Integration with OpenLDAP like or Active Directory
