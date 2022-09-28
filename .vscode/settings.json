@@ -1,4 +1,7 @@
 {
     "esbonio.sphinx.confDir": "",
-    "restructuredtext.preview.name": "docutils"
+    "restructuredtext.preview.name": "docutils",
+    "cSpell.words": [
+        "Tuleap"
+    ]
 }
