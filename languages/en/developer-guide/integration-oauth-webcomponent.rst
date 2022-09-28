@@ -38,7 +38,7 @@ OAuth2
 
 Tuleap is :ref:`OAuth2 & OpenID Connect provider <openidconnect_provider>` it means that your standalone application will be able to:
 
-- leverage Tuleap authentication with Single Sign Once
+- leverage Tuleap authentication with Single Sign On
 - let Tuleap permissions model be managed by Tuleap itself (it's a very bad idea to duplicate the logic in your app, you will shoot yourself in the feet)
 
 This section is not meant to cover how to implement an OAuth2 client, there is plenty of
