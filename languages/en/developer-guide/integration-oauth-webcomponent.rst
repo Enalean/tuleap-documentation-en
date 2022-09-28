@@ -51,10 +51,11 @@ Tuleap supports Anonymous access but it depends of the Site configuration as wel
 
 The only valid way to be sure that you won't leak (or restrict) is to follow this process:
 
-1. **always** initiate the OAuth2 authorization flow as soon as a page is loaded with `prompt=none`
+1. **always** initiate the OAuth2 authorization flow as soon as a page is loaded with ``prompt=none``
     * if the user is already logged in Tuleap, it will be transparently authenticated in your app
-    * if the user is not logged in Tuleap, Tuleap will respond with an error code `login_required`
-1. Then you should call ``/api/projects/:id/3rd_party_integration_data`` to get SideBar information
+    * if the user is not logged in Tuleap, Tuleap will respond with an error code ``login_required``
+
+2. Then you should call ``/api/projects/:id/3rd_party_integration_data`` to get SideBar information
     * If at step 1. user was authenticated and this new call succeed, it means that user can access the project.
-    * If at step 1. you got **login_required** but this new call succeed it means that anonymous can access the project.
-    * If at step 1. you got **login_required** and this new call end with ``403`` it means that anonymous cannot access and you should redo the OAuth2 authorization **without prompt=none**.
+    * If at step 1. you got ``login_required`` but this new call succeed it means that anonymous can access the project.
+    * If at step 1. you got ``login_required`` and this new call end with ``403`` it means that anonymous cannot access and you should redo the OAuth2 authorization **without prompt=none**.
