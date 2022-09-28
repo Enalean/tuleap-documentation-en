@@ -5,7 +5,7 @@ Tuleap is a Free and Open Source software developed since 2001 under GPLv2 licen
 Contributions are welcomed, on Tuleap Core, on plugins, in documentation, etc.
 
 Development of a Tuleap extension, outside of the main development tree is hard and
-you are likely to shoot yourself in the feets if you do so. The main reason is that
+you are likely to shoot yourself in the foot if you do so. The main reason is that
 Tuleap internal API is not guaranteed, it can change at any moment for any reasons.
 
 REST API & Webhooks, on the other hand are very carefully maintained and we ensure, as
