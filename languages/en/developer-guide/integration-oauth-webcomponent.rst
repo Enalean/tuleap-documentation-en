@@ -20,7 +20,7 @@ Tuleap SideBar
 --------------
 
 `Tuleap SideBar <https://www.npmjs.com/package/@tuleap/project-sidebar>`_ is a `WebComponent <https://www.webcomponents.org/introduction>`_
-the provides everything (HTML/DOM, Javascript) needed to render the left hand SideBar of a Tuleap Project. This WebComponent is meant
+that provides everything (HTML/DOM, Javascript) needed to render the left hand SideBar of a Tuleap Project. This WebComponent is meant
 to be used together with ``/api/projects/:id/3rd_party_integration_data`` Tuleap REST end point. The payload provides:
 
 - the WebComponent configuration (ie. the list of services, icons, project title, visibility, ...).
