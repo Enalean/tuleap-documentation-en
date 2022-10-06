@@ -72,7 +72,18 @@ the real import:
         $> cd /usr/share/tuleap/
         $> tuleap import-project-xml
            -p PROJECT_ID_IMPORT \
-           -u PROJECT_ADMIN_USERNAME \
+           -u SITE_ADMIN_USERNAME \
+           -i PATH_TO_ARCHIVE \
+           -m PATH_TO_MAPPING_FILE
+
+If the project to be imported does not yet exist, you must use the ``root`` user instead of ``codendiadm`` and not use the ``-p`` parameter.
+
+  .. code-block:: bash
+
+        $> su - root
+        $> cd /usr/share/tuleap/
+        $> tuleap import-project-xml
+           -u SITE_ADMIN_USERNAME \
            -i PATH_TO_ARCHIVE \
            -m PATH_TO_MAPPING_FILE
 
