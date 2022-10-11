@@ -16,11 +16,11 @@ ENV USER gitpod
 WORKDIR /home/gitpod
 
 RUN touch .bash_profile \
- && curl https://nixos.org/releases/nix/nix-2.6.1/install | sh
+ && curl https://nixos.org/releases/nix/nix-2.11.1/install | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 
-COPY default.nix /tmp/
-COPY pinned-nixpkgs.nix /tmp/
+COPY shell.nix pyproject.toml poetry.lock /tmp/
+COPY build-support/*.nix /tmp/build-support/
 
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && nix-build --no-out-link /tmp/default.nix
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && nix-build --no-out-link /tmp/shell.nix

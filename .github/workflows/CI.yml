@@ -44,4 +44,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build image
-        run: DOCKER_BUILDKIT=1 docker build -f linkcheck-docker.nix -t test-build-linkcheck .
+        run: docker build -f build-support/linkcheck-docker.dockerfile -t test-build-linkcheck .
