@@ -2,7 +2,7 @@ pipeline {
     agent {
         dockerfile {
             label 'docker'
-            filename 'linkcheck-docker.nix'
+            filename 'build-support/linkcheck-docker.dockerfile'
         }
     }
 
@@ -16,10 +16,6 @@ pipeline {
         stage ('Check links') {
             steps {
                 sh """
-                tmp_venv="\$(mktemp -d)"
-                virtualenv "\$tmp_venv"
-                source "\$tmp_venv"/bin/activate
-                pip install -r requirements.txt
                 make linkcheck
                 """
             }
