@@ -13,14 +13,14 @@ Nothing to mention.
 Tuleap 14.1
 ===========
 
-There are one new plugins available for install:
+There is one new plugin available for install:
 
-- :ref:`tuleap-plugin-fts_meilisearch <full-text-search-admin>`
+- :ref:`tuleap-plugin-fts-meilisearch <full-text-search-admin>`
 
 Tuleap 14.0
 ===========
 
 There are two new plugins available for install:
 
-- :ref:`tuleap-plugin-fts_db <full-text-search-admin>`
+- :ref:`tuleap-plugin-fts-db <full-text-search-admin>`
 - :ref:`tuleap-plugin-onlyoffice <onlyoffice-integration>`
