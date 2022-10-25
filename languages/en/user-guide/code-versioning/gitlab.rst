@@ -59,7 +59,7 @@ Otherwise, the author name is displayed as received from the GitLab API.
 
 .. note::
     If the author of the Merge Requests changes its public email after creating the Merge Request, then no refresh will be
-    performed to update data displaying in the reference on Tuleap.
+    performed to update data shown in the reference on Tuleap.
 
 On GitLab side, when a merge request contains some references to Tuleap, then a comment is automatically added.
 
@@ -143,10 +143,12 @@ To reference a GitLab branch, you have to use the keyword ``gitlab_branch`` foll
 When you click on this reference, you will be redirected to your GitLab instance, on the page displaying the commit details 
 of the last commit in the branch ``<branch_name>``.
 
+.. _gitlab-close-artifacts:
+
 Close Tuleap artifact with GitLab commit messages
 `````````````````````````````````````````````````
 
-When integrating a GitLab repository in a Tuleap project, there is an option (disabled by default) that allow to close artifacts in this project based on GitLab commit messages.
+When integrating a GitLab repository in a Tuleap project, there is an option (disabled by default) that allows to close artifacts in this project based on GitLab commit messages.
 If a commit message containing a closing pattern is pushed in a GitLab repository integrated in a Tuleap project and this integration has activated this feature, 
 then the artifact will be closed :
 
@@ -171,6 +173,8 @@ Some variations of these keywords are handled:
 
 The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` and a comment will be added to explain why it has been closed.
 The first done value retrieved by Tuleap will be used to close the artifact. If there is no done semantic defined, then the first closed value will be used.
+
+.. _create-gitlab-branch-from-artifact:
 
 Create GitLab branches from Tuleap artifact
 ```````````````````````````````````````````
@@ -203,29 +207,28 @@ Prerequisites
 
 To be able to register a GitLab repository in your project, please ensure that:
 
-    * both Git and GitLab plugins are installed and activated.
-    * you have admin privileges in the Git service of your project.
-    * you have a GitLab access token authorized to be used to query the GitLab API (see :ref:`gitlab-access-token`)
+* both Git and GitLab plugins are installed and activated.
+* you have administrator privileges in the Git service of your Tuleap project.
+* you have a GitLab access token that authorizes querying the GitLab API (see :ref:`gitlab-access-token`).
 
 .. _gitlab-access-token:
 
 GitLab access Token
 ```````````````````
 
-You can use a personal or project access token. The token will be used to manage integration of GitLab repository in Tuleap,
+You can use a personal, a group or a project access token. The token will be used to manage integration of GitLab repository in Tuleap,
 and to write comments automatically on GitLab commit or merge requests.
 
-
+With a group access token, you can only integrate the GitLab repositories of the corresponding group.
 With a project access token, you can only integrate the GitLab repository which provides the project access token.
-With a personal access token, you can integrate all repositories which you maintain.
+With a personal access token, you can integrate all repositories that you maintain.
 Don't forget that comments will be added automatically on GitLab commits and merge requests. These comments will be
 written with the access token, so if you provide a personal access token, the user providing this token will be displayed
 next to comments.
 
-
 .. note::
 
-    If you use a personal access token, you need to be identified by GitLab as the maintainer of the repository that you want integrate.
+    If you use a personal access token, you need to be identified by GitLab as the maintainer of the repository that you want to integrate.
 
 .. figure:: ../../images/screenshots/gitlab/gitlab-api-scope.png
    :align: center
@@ -257,7 +260,7 @@ In the modal, provide the URL of your GitLab instance and the GitLab access toke
    :alt: Modal to enter server instance and access token
    :name: Modal to enter server instance and access token
 
-The list of the repositories that you can integrated is displayed. Select the repository to link.
+The list of the repositories that you can integrate is displayed. Select the repository to link.
 
 .. figure:: ../../images/screenshots/gitlab/modal-choose-repository.png
    :align: center
@@ -331,7 +334,7 @@ If the webhook has been changed and is not functional, you can regenerate it by 
    :alt: Modal to regenerate webhook
    :name: Modal to regenerate webhook
 
-When the webhook is regenerated, the old is deleted from GitLab server, and a new webhook with a new secret is created.
+When the webhook is regenerated, the old one is deleted from GitLab server, and a new webhook with a new secret is created.
 
 Allow artifacts closure option
 ``````````````````````````````
@@ -346,13 +349,15 @@ This option can be selected at repository integration. It can also be edited by 
 Edit create branch prefix
 `````````````````````````
 
-This option allows to edit the prefix used in the branch name while creating a GitLab branch from a Tuleap artifact. 
+This option allows to edit the prefix used in the branch name while :ref:`creating a GitLab branch from a Tuleap artifact<create-gitlab-branch-from-artifact>`.
 It's empty by default. It can be edited by any Git administrator.
 
 .. figure:: ../../images/screenshots/gitlab/gitlab-edit-create-branch-prefix.png
    :align: center
    :alt: Modal to edit the create branch prefix
    :name: Modal to edit the create branch prefix
+
+.. _remove-gitlab-repository-integration:
 
 Unregister repositories
 ```````````````````````
@@ -374,5 +379,97 @@ From now on, existing references will be removed and any new commit in this repo
       * ``name_with_namespace`` is displayed in UI
       * ``path_with_namespace`` is used to clone/checkout the repository
       * Tuleap displays only ``path_with_namespace`` and references are created with it.
-  * Two repositories with the same name and path from two different GitLab instances cannot be integrated into the same project.
+  * Two repositories with the same name and path from two different GitLab instances cannot be integrated in the same Tuleap project.
   * For the moment, the project name and namespace of your GitLab project must **not** contain a "-" or a ".".
+
+Link a Tuleap project to a GitLab group
+---------------------------------------
+
+Prerequisites
+'''''''''''''
+
+To be able to link a GitLab group to your Tuleap project, please make sure that:
+
+* both Git and GitLab plugins are installed and activated.
+* you have administrator privileges in the Git service of your Tuleap project.
+* you have a GitLab access token that authorizes querying the GitLab API (see :ref:`gitlab-access-token`).
+
+Create the link to the GitLab group
+'''''''''''''''''''''''''''''''''''
+
+.. figure:: ../../images/screenshots/gitlab/group-link-wizard-empty.png
+   :alt: Empty state of the GitLab group Link administration tab
+   :name: group-link-wizard-empty
+
+   Click on the button to start the wizard
+
+Enter the URL of your GitLab instance and the GitLab access token. Then in the list of visible groups, select the group to link. A Tuleap project may only be linked to one GitLab group at a time.
+
+.. figure:: ../../images/screenshots/gitlab/group-link-wizard-group-selection.png
+   :alt: List of the GitLab groups
+   :name: group-link-wizard-group-selection
+
+   Select a GitLab group
+
+Then, configure the settings that will be applied for each GitLab repository in the chosen group: whether to allow :ref:`closing Tuleap Artifacts<gitlab-close-artifacts>` and the branch prefix used when :ref:`creating a GitLab branch from a Tuleap artifact<create-gitlab-branch-from-artifact>`. Both settings are optional.
+
+.. note::
+  The settings here, only apply at the initial synchronization of each repository with Tuleap. They are not locked down and can be changed individually for each repository after their synchronization.
+
+.. figure:: ../../images/screenshots/gitlab/group-link-wizard-configuration.png
+   :alt: Configuration for the synchronized repositories
+   :name: group-link-wizard-configuration
+
+   Choose settings that will be applied for each newly synchronized repository
+
+When you link the group, all the repositories of that group will be integrated in the Tuleap project. They will be visible in the list of Git repositories of the project.
+
+Once linked, you can do the following actions:
+
+* Synchronize the GitLab group
+* Update the access token
+* Edit configuration
+* Unlink the GitLab group
+
+Synchronize the GitLab group
+````````````````````````````
+
+.. figure:: ../../images/screenshots/gitlab/group-link-sync.png
+   :alt: Button to synchronize the repositories of the GitLab group with the project.
+   :name: group-link-sync
+
+   Synchronize the repositories of the GitLab group with the project
+
+Tuleap will fetch the list of repositories in the group and will integrate all the new repositories since last synchronization.
+
+.. note::
+   If a GitLab repository has been deleted or moved to another group since last synchronization, it will NOT be removed on Tuleap side. It will stay in the same project.
+
+Update the access token
+```````````````````````
+
+.. figure:: ../../images/screenshots/gitlab/group-link-token-modal.png
+   :alt: Modal to change the access token for the GitLab group.
+   :name: group-link-token-modal
+
+If the access token used to link the GitLab group has been revoked, you can change it by clicking on the [Update token] button. See :ref:`gitlab-access-token` for more details.
+
+Edit configuration
+````````````````````
+
+.. figure:: ../../images/screenshots/gitlab/group-link-config-modal.png
+   :alt: Edit configuration for the next synchronized repositories.
+   :name: group-link-config-modal
+
+You can change the settings of the group: whether to allow :ref:`closing Tuleap Artifacts<gitlab-close-artifacts>` and the branch prefix used when :ref:`creating a GitLab branch from a Tuleap artifact<create-gitlab-branch-from-artifact>`.
+
+.. note::
+  The settings here only apply when synchronizing new repositories. Changing them here will NOT change them for any repository previously synchronized. Furthermore, those settings are not locked down and can be changed individually for each repository after their synchronization.
+
+Unlink the GitLab group
+```````````````````````
+
+This will remove the link between the Tuleap project and the GitLab group.
+
+.. note::
+  This will not delete the group on GitLab side. It only removes the link between the Tuleap project and the GitLab group. All GitLab projects part of the group will stay integrated with Tuleap, their configuration will not change. If you wish to remove the integrations of the GitLab projects part of this group, you must :ref:`remove each one manually<remove-gitlab-repository-integration>`.
