@@ -16,10 +16,8 @@ In which situation do I need a library ?
 When NOT to create a library ?
 ------------------------------
 
-- When the code uses dynamic import, for example to load polyfills or translations. In this case,
-  use a standard webpack configuration
-- When you need to output a file with a revision hash in its name, for example ``my-lib-name-0123456aea.js``.
-  In this case, use a standard webpack configuration.
+- When the code uses dynamic import, for example to load polyfills or translations. In this case, use a standard vite configuration
+- When you need to output a file with a revision hash in its name, for example ``my-lib-name-0123456aea.js``. In this case, use a standard vite configuration.
 
 Folder structure of an internal library
 ---------------------------------------
@@ -59,7 +57,7 @@ Here is the folder structure you should follow:
                     |-- po/                                 # Localization strings
                          |-- fr_FR.po                       # Localized strings for French
                     |-- src/                                # The lib source-code
-                         |-- index.ts                       # Entrypoint for your library
+                         |-- main.ts                        # Entrypoint for your library
                          |-- subfolder/
                               |-- my-other-source.ts
                     |-- themes/                             # The lib styles
@@ -71,7 +69,7 @@ Build your internal library
 
 The build system will read ``build-manifest.json`` to understand how and where it needs to extract translated strings.
 
- .. code-block:: JavaScript
+  .. code-block:: JavaScript
 
     // tuleap/plugins/my-plugin/build-manifest.json
     {
@@ -109,16 +107,24 @@ This file should be located in ``my-lib-name/``.
  .. code-block:: TypeScript
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/vite.config.ts
-    import { defineConfig } from "../../../../../tools/utils/scripts/vite-configurator";
+    import { vite, viteDtsPlugin } from "@tuleap/build-system-configurator";
     import * as path from "path";
-    import dts from "vite-dts";
 
-    export default defineConfig({
-        plugins: [dts()],
+    export default vite.defineLibConfig({
+        plugins: [viteDtsPlugin()],
         build: {
             lib: {
-                entry: path.resolve(__dirname, "src/index.ts"),
+                entry: path.resolve(__dirname, "src/main.ts"),
                 name: "MyLibName",
+            },
+            // Exclude an external dependency from the lib's bundle
+            rollupOptions: {
+                external: ["dompurify"],
+                output: {
+                    globals: {
+                        dompurify: "DOMPurify",
+                    },
+                },
             },
         }
     });
@@ -134,13 +140,14 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
       "homepage": "https://tuleap.org",           // or your lib's homepage
       "license": "GPL-2.0-or-later",              // or your license
       "private": true,                            // to avoid accidentally publishing on NPM registry
-      "version": "0.0.0",
-      "module": "dist/my-lib-name.es.js",         // The Javascript ES Module bundle of your lib
-      "main": "dist/my-lib-name.umd.js",          // The Javascript UMD bundle of your lib
+      "type": "module",                           // Allow import/export instead of require()
+      "module": "dist/my-lib-name.js",            // The Javascript ES Module bundle of your lib
+      "main": "dist/my-lib-name.umd.cjs",         // The Javascript UMD bundle of your lib
+      "types": "dist/main.d.ts",                  // Generated TypeScript declarations
       "exports": {
         ".": {
-          "import": "./dist/my-lib-name.es.js",   // The Javascript ES Module bundle of your lib
-          "require": "./dist/my-lib-name.umd.js"  // The Javascript UMD bundle of your lib
+          "import": "./dist/my-lib-name.js",      // The Javascript ES Module bundle of your lib
+          "require": "./dist/my-lib-name.umd.cjs" // The Javascript UMD bundle of your lib
         }
       },
       "style": "dist/style.css",                  // The CSS bundle of your lib
@@ -148,6 +155,7 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
         "dompurify": "^2.3.4"
       },
       "devDependencies": {
+        "@tuleap/build-system-configurator": "link:../../../../../lib/frontend/build-system-configurator",
         "@types/dompurify": "^2.3.2"
       },
       "scripts": {
@@ -158,9 +166,9 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
       }
     }
 
-.. NOTE:: All the Vite and Jest dependencies are available at the tuleap root folder, hence the ``config.bin``.
+.. NOTE:: All the Vite and Jest dependencies are available at the tuleap root folder.
 
-Use the pnpm scripts to build the library or to launch the unit tests.
+Use the pnpm scripts to build the library or to run the unit tests.
 
  .. code-block:: sh
 
@@ -171,8 +179,7 @@ Use the pnpm scripts to build the library or to launch the unit tests.
 
  .. warning::
 
-    In order to test the library in real conditions (with your browser), you
-    need to also include it in an application AND also rebuild that application.
+    In order to test the library in real conditions (with your browser), you need to also include it in an application AND also rebuild that application.
 
 Once you have a ``package.json`` file, you will also need a ``tsconfig.json``
 file to configure Typescript.
@@ -184,7 +191,6 @@ file to configure Typescript.
         "extends": "../../../../../tools/utils/scripts/tsconfig-for-libraries.json",
         "compilerOptions": {
             "lib": [],          // Add values like "DOM" if your lib interacts with the DOM
-            "outDir": "types/",
             "types": ["jest"],  // Add global types needed by your lib
         },
         "include": ["src/**/*"]
@@ -195,12 +201,14 @@ You also need a Jest config, but this one has nothing special.
  .. code-block:: Javascript
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/jest.config.js
-    process.env.DISABLE_TS_TYPECHECK = "true";
+    import { env } from "process";
+    import { defineJestConfiguration } from "@tuleap/build-system-configurator";
 
-    const base_config = require("../../../../../tests/jest/jest.base.config.js");
+    env.DISABLE_TS_TYPECHECK = "true";
 
+    const jest_base_config = defineJestConfiguration();
     module.exports = {
-        ...base_config,
+        ...jest_base_config,
         displayName: "my-lib-name",
     };
 
@@ -219,24 +227,7 @@ If you have gettext translations with node-gettext, you will need a
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/src/pofile-shim.d.ts
     declare module "*.po" {
-        // See https://github.com/smhg/gettext-parser for the file format reference
-        interface Translation {
-            readonly msgid: string;
-            readonly msgstr: string;
-        }
-
-        interface TranslatedStrings {
-            readonly [key: string]: Translation;
-        }
-
-        export interface Contexts {
-            readonly [key: string]: TranslatedStrings;
-        }
-
-        export interface GettextParserPoFile {
-            readonly translations: Contexts;
-        }
-
+        import type { GettextParserPoFile } from "@tuleap/gettext";
         const content: GettextParserPoFile;
         export default content;
     }
@@ -252,8 +243,8 @@ a base64 string) and included in ``dist/style.css``.
         background: url('../images/some-image.png');
     }
 
-Finally, your ``index.ts`` file (the lib entrypoint) should export types that
-callers will need. Exporting them will ensure that the generated ``index.d.ts``
+Finally, your ``main.ts`` file (the lib entrypoint) should export types that
+callers will need. Exporting them will ensure that the generated ``main.d.ts``
 declaration file references those types.
 Also note that you need to import the style file you referenced in your ``package.json``
 so it can be processed by Vite.
@@ -274,7 +265,7 @@ Use your library from another application
 -----------------------------------------
 
 To use your library from another application, you must first declare it as a
-dependency in the app's ``package.json`` file. Use ``npm install ../my-plugin/scripts/lib/my-lib-name``
+dependency in the app's ``package.json`` file. Use ``pnpm add ../my-plugin/scripts/lib/my-lib-name``
 to achieve that. You will something looking like this:
 
  .. code-block:: Javascript
@@ -284,7 +275,7 @@ to achieve that. You will something looking like this:
       "name": "@tuleap/other-plugin",
       // ...
       "dependencies": {
-        "@tuleap/my-lib-name": "file:../my-plugin/scripts/lib/my-lib-name" // Add your lib as a dependency. Reference it with file: protocol to create a symlink
+        "@tuleap/my-lib-name": "link:../my-plugin/scripts/lib/my-lib-name" // Add your lib as a dependency
       },
       "scripts": {
         "build": "..."
@@ -306,7 +297,7 @@ Import the CSS styles like any other "npm module" in SCSS files:
  .. code-block:: SCSS
 
     // tuleap/plugins/other-plugin/themes/BurningParrot/src/other-file.scss
-    @import '~@tuleap/my-lib-name';
+    @use '@tuleap/my-lib-name';
 
 Making changes to your library
 ------------------------------
@@ -319,6 +310,5 @@ Making changes to your library
 
  .. code-block:: sh
 
-    $> (cd tuleap/plugins/my-plugin/scripts/lib/my-lib-name/ && pnpm run watch)
-    # In another terminal usually
-    $> (cd tuleap/plugins/other-plugin/ && pnpm run watch)
+    $> (cd tuleap/plugins/my-plugin/scripts/lib/my-lib-name/ && pnpm run watch) & (cd tuleap/plugins/other-plugin/ && pnpm run watch) && fg
+    # CTRL-C twice to exit both watches

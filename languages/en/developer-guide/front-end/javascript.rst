@@ -3,7 +3,7 @@
 Javascript
 ==========
 
-New code must be written in `Typescript <https://www.typescriptlang.org/>`_.
+New code must be written in `TypeScript`_.
 
 Typescript code should always go in "scripts" folders.
 
@@ -15,34 +15,36 @@ Build the typescript files
 
 From the root directory of the Tuleap sources (you must have pnpm installed):
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        $ pnpm install
-        $ pnpm run build
+  $ pnpm install
+  $ pnpm run build
 
-This command will install the tools needed, transpile the javascript to make it compatible with Internet Explorer 11 and minify (compress) it.
+This command will install the tools needed, transpile the javascript to make it compatible with our :ref:`supported browsers <user_supported_browsers>` and minify (compress) it.
 
-	.. important::
+.. important::
 
-		* you have to run ``pnpm run build`` every time you edit a Javascript file.
-		* Built javascript files go to the "assets" folder. You should never modify files in "assets" folders as they are removed when you rebuild.
+  * you have to run ``pnpm run build`` every time you edit a Javascript file.
+  * Built javascript files go to the ``frontend-assets`` folder. You should never modify files in ``frontend-assets`` folders. Your modifications will be erased on the next build.
 
-If you are working in Tuleap "core", change your current directory to ``src/`` to run the "pnpm" commands.
-If you are working in a plugin for Tuleap, change your current directory to the "root" of that plugin in ``plugins/<my-plugin>/`` to run the "pnpm" commands.
+Tuleap has a lot of pages and many functionalities. To handle them, there is an ongoing work to split the frontend in many small apps. Thus, Tuleap core and some of the plugins contain several "applications".
+
+If you are working in Tuleap "core", change your current directory to ``src/<application>`` to run the pnpm commands.
+If you are working on a plugin for Tuleap, change your current directory to ``plugins/<my-plugin>/scripts/<application>`` to run the pnpm commands.
 
 While you are working, the following commands should help you:
 
-	.. code-block:: bash
+.. code-block:: bash
 
-		$ pnpm run watch
-		$ pnpm test -- --watch
+  $ pnpm run watch
+  $ pnpm test -- --watch
 
-	.. important::
+.. important::
 
-		* ``pnpm run watch`` will automatically rebuild Javascript after changes.
-		* ``pnpm test`` will run the unit tests once. It is used by the Continuous integration to validate changes.
-		* ``pnpm test -- --watch`` will run unit tests based on modified files since the last Git commit. See the command's built-in help.
-		* ``pnpm test -- --coverage`` will run the unit tests and generate a coverage report.
+  * ``pnpm run watch`` will automatically rebuild Javascript after changes.
+  * ``pnpm test`` will run the unit tests once. It is used by the Continuous integration to validate changes.
+  * ``pnpm test -- --watch`` will run unit tests based on modified files since the last Git commit. See the command's built-in help.
+  * ``pnpm test -- --coverage`` will run the unit tests and generate a coverage report.
 
 Best-practices for Tuleap
 -------------------------
@@ -50,21 +52,19 @@ Best-practices for Tuleap
 When you submit a patch for review, we may request changes to better match the following best practices. Please try to follow them.
 
 * Always write new code in Typescript.
-* Always use a Typescript file. No manual <script> tags.
-* Always name Typescript files with ``dash-case``.
+* Always use a Typescript file. No manual ``<script>`` tags.
 * Whenever you need to run code when the page is loaded, do it like this:
 
-	.. code-block:: typescript
+.. code-block:: typescript
 
-		/** index.ts */
-		document.addEventListener("DOMContentLoaded", (): void => {
-		    // Your initialization code
-		});
+  /** main.ts */
+  document.addEventListener("DOMContentLoaded", (): void => {
+      // Your initialization code
+  });
 
-* Always manipulate the DOM in only one place. For example when using :ref:`Vue <vue-js>`, do not change datasets or class names in ``.vue`` files. Do it in ``index.ts``
-* Leverage ES6 and later versions! We have setup Babel_ to let you use the full power of ES6 and beyond AND still have code compatible with the older browsers.
-* In Burning Parrot pages, you can rely on the DOM4_ APIs as we already include a polyfill.
-* Always make sure the Browser APIs you are using (for example DOM, Location, CustomEvent, etc.) work on our list of :ref:`supported browsers <user_supported_browsers>`. To do that you can check with the `Can I use`_ website.
+* Always manipulate the DOM in only one place. For example when using :ref:`Vue <vue-js>`, do not change datasets or class names in ``.vue`` files. Do it in ``main.ts``
+* Leverage ES6 and later versions! Your code will be transpiled to keep it compatible with our supported browsers.
+* Always make sure the Browser APIs you are using (for example DOM, ``Location``, ``CustomEvent``, etc.) work on our list of :ref:`supported browsers <user_supported_browsers>`. To do that you can check with the `Can I use`_ website.
 
 Resources
 ~~~~~~~~~
@@ -72,7 +72,6 @@ Resources
 - Exploring ES6: https://exploringjs.com/es6/index.html
 - Can I use, to check what is available for major browsers: https://caniuse.com/
 
-.. _Babel: https://babeljs.io/
 .. _Can I use: https://caniuse.com/
-.. _DOM4: https://github.com/WebReflection/dom4
 .. _exploring ES6: https://exploringjs.com/es6/index.html
+.. _TypeScript: https://www.typescriptlang.org
