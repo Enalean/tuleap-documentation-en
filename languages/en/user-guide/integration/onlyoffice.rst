@@ -8,11 +8,9 @@ ONLYOFFICE
 Integration with :ref:`document-manager`
 ----------------------------------------
 
-Office documents (Word, Excel, spreadsheets, PDF…) stored in the Document Manager can be directly viewed in ONLYOFFICE.
+Office documents (Word, Excel, Powerpoint, PDF…) stored in the Document Manager can be directly viewed in ONLYOFFICE.
 The integration is seamless when the ONLYOFFICE integration plugin is active: clicking on an office document in the Document
 Manager will open ONLYOFFICE and load your document.
-
-.. note:: As of today, the integration cannot be used to edit documents, only to view them.
 
 Initial setup
 -------------
@@ -25,3 +23,37 @@ need to specify the URL of your `document server <https://api.onlyoffice.com/edi
 .. image:: ../../images/screenshots/onlyoffice/onlyoffice-admin-panel.png
     :alt: ONLYOFFICE plugin administration panel
     :align: center
+
+Usage
+-----
+
+As soon as the integration is set up, office documents can be opened in ONLYOFFICE. This includes:
+
+* Documents: ``.docx``, ``.doc``, ``.odt``, …
+* Spreadsheets: ``.xlsx``, ``.csv``, ``.ods``, …
+* Presentations: ``.pptx``, ``.odp``, …
+* PDF files: ``.pdf``
+
+The integration allow to edit some documents, following all those conditions:
+
+* The file is a ``.docx``, ``.docxf``, ``.oform``, ``.ppsx``, ``.pptx``, or a ``.xlsx``,
+* No filename pattern si enforced,
+* The user has :ref:`permission to write the document <documents-permissions>`,
+* The document is not marked as locked in Tuleap,
+* There is no approval table on the document.
+
+Once the user leaves the ONLYOFFICE editor, after a short delay, the changes are sent back to Tuleap and a new version
+is created.
+
+ONLYOFFICE allows collaborative editing, this means that a document can be opened by multiple users at the same time. In
+that case the new version is saved after the last user leaves the editor.
+
+.. warning::
+
+    The save of the new version might fail for multiple reasons. Due to the way of working of ONLYOFFICE, authors of the
+    changes **won't** be notified.
+
+    * Permissions for the user has been changed during the edition,
+    * Document has been locked during the edition,
+    * Tuleap cannot retrieve changes from ONLYOFFICE server,
+    * …

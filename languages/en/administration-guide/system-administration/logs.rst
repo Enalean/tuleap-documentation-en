@@ -67,6 +67,7 @@ Tuleap
  - ``/var/log/tuleap/archive_deleted_item.log``: contains information about what is executed by the archivedeleteditems plugin while archiving deleted items.
  - ``/var/log/tuleap/botMattermost_syslog``: contains information on the BotMattermost plugins behavior.
  - ``/var/log/tuleap/worker_log``: contains information about backend workers activity (e.g. asynchronous notifications).
+ - ``/var/log/tuleap/onlyoffice_syslog``: contains errors specific to the ONLYOFFICE integration.
  - ``/var/log/tuleap/openid_connect_client.log``: contains errors specific to the OpenID Connect activity.
  - ``/var/log/tuleap/mail_syslog``: contains errors and information specific to mails distribution.
  - ``/var/log/tuleap/oauth2_server.log``: contains errors and information specific to the OAuth2/OpenID Connect server.

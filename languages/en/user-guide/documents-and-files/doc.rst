@@ -19,7 +19,7 @@ The Document Manager features are as follows:
 -  The Tuleap Document Manager can handle any type of
    document.
 -  Documents are stored in folders. You can have subfolders in a folder.
--  Documents can be edited online (See `Embedded files`_).
+-  Documents can be edited online (See `Embedded files`_ and :ref:`ONLYOFFICE integration <onlyoffice-integration>`).
 -  Access control rules can be defined for each document or folder.
 -  Documents have properties and searchable properties.
 
@@ -198,6 +198,9 @@ New version
 
 This action allows the user to update a new version of a file or an
 embedded file, update the name of a wiki page, or the URL of a link.
+
+
+.. _documents-permissions:
 
 Permissions
 ```````````
