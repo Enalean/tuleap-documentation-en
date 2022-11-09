@@ -1,12 +1,17 @@
 Tuleap 14.x
 ###########
 
-Tuleap 14.2
+Tuleap 14.3
 ===========
 
 .. NOTE::
 
-  Tuleap 14.2 is currently under development.
+  Tuleap 14.3 is currently under development.
+
+Nothing to mention.
+
+Tuleap 14.2
+===========
 
 Nothing to mention.
 
