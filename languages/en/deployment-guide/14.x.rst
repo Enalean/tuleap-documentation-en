@@ -20,7 +20,7 @@ You can play the following snippet before running the :ref:`regular upgrade <upd
 
 .. sourcecode:: shell
 
-    rm -f /etc/httpd/conf.d/tuleap-svnroot.conf
+    rm -f /etc/httpd/conf.d/tuleap-svnroot.conf /etc/httpd/conf.d/svnroot.conf
     tuleap queue-system-check
     tuleap process-system-events default
 
