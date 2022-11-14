@@ -13,7 +13,17 @@ Nothing to mention.
 Tuleap 14.2
 ===========
 
-Nothing to mention.
+With the removal of the "good old" ``tuleap.pm`` that was used to control the access to subversion repositories, 
+you should force the re-generation of the apache configuration before the start of the stack.
+
+You can play the following snippet before running the :ref:`regular upgrade <update>`
+
+.. sourcecode:: shell
+
+    rm -f /etc/httpd/conf.d/tuleap-svnroot.conf
+    tuleap queue-system-check
+    tuleap process-system-events default
+
 
 Tuleap 14.1
 ===========
