@@ -20,10 +20,11 @@ You can play the following snippet before running the :ref:`regular upgrade <upd
 
 .. sourcecode:: shell
 
-    rm -f /etc/httpd/conf.d/tuleap-svnroot.conf /etc/httpd/conf.d/svnroot.conf
+    rm -f /etc/httpd/conf.d/tuleap-svnroot.conf /etc/httpd/conf.d/svnroot.conf /etc/httpd/conf.d/codendi_svnroot.conf
     tuleap queue-system-check
     tuleap process-system-events default
 
+Some of the files that are listed in the ``rm`` command might not exist on your platform, that's normal.
 
 Tuleap 14.1
 ===========
