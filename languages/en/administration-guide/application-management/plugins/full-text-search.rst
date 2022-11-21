@@ -48,7 +48,7 @@ local `Meilisearch server <https://www.meilisearch.com/>`_ instance.
   * ``tuleap config-set fts_meilisearch_index_name <name>`` (optional, defaults to ``fts_tuleap``)
 
 * Local server is installed with ``tuleap-meilisearch-server`` package and do not need any special configuration (you
-  will have to ``tuleap-cfg site-redeploy`` and ``systemctl start tuleap-meilisearch``).
+  will have to ``tuleap-cfg site-deploy`` and ``systemctl start tuleap-meilisearch``).
 
 .. attention::
 
