@@ -77,7 +77,7 @@ Notes about passwords:
 * we recommend at least 20 chars but only alphabetical & numbers,
 * they are set at the site initialization only (not updated automatically).
 
-Then create a ``docker-compose.yml`` file with following content:
+Then create a ``compose.yaml`` file with following content:
 
 .. code-block:: yaml
 
@@ -110,12 +110,12 @@ Then create a ``docker-compose.yml`` file with following content:
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
       db:
-        image: mysql:5.7
-        command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"]
+        image: mysql:8.0
+        command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
         environment:
           - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         volumes:
-          - db57-data:/var/lib/mysql
+          - db80-data:/var/lib/mysql
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
       redis:
@@ -130,7 +130,7 @@ Then create a ``docker-compose.yml`` file with following content:
 
     volumes:
       tuleap-data:
-      db57-data:
+      db80-data:
       redis-data:
 
 Run with docker-compose
@@ -193,7 +193,7 @@ This will gives you the IP address of the container that runs mailhog, you can t
 Run without docker compose
 ``````````````````````````
 
-For anything but tests you should have a dedicated MySQL (**version 5.7**) and Redis (last stable recommended) databases.
+For anything but tests you should have a dedicated MySQL (**version 8.0**) and Redis (last stable recommended) databases.
 
 Then you can init docker image in command line:
 

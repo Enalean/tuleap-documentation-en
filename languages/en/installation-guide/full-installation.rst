@@ -28,7 +28,7 @@ The server will need an Internet connection as it will download external package
 Database
 ````````
 
-Database must be MySQL v5.7 (`MySQL 8 support is in progress <https://tuleap.net/plugins/tracker/?aid=22660>`_). As an alternative, MariaDB 10.3 can be used but was never tested in production.
+Database must be MySQL v8.0. As an alternative, MariaDB 10.3 can be used but was never tested in production.
 
 The database **must** be dedicated to Tuleap. Either it's a local installation (as described below, perfect for small & medium instances) or provided by an external service.
 
@@ -94,7 +94,7 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 ::
 
     yum install -y \
-      rh-mysql57-mysql-server \
+      rh-mysql80-mysql-server \
       tuleap \
       tuleap-plugin-agiledashboard \
       tuleap-plugin-graphontrackers \
@@ -110,22 +110,22 @@ to install all of them now. Start small and add them on the go.
 
 - **Configure the database**
 
-Ensure that ``/etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf`` contains ``sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION``
+Ensure that ``/etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf`` contains ``sql-mode=NO_ENGINE_SUBSTITUTION``
 in section [mysqld]
 
 ::
 
-    # Add 'sql-mode' parameter after [mysqld]
-    sed -i '20 a sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' /etc/opt/rh/rh-mysql57/my.cnf.d/rh-mysql57-mysql-server.cnf
+    # Create /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf file
+    echo -e '[mysqld]\nsql-mode="NO_ENGINE_SUBSTITUTION"' > /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf
     
     # Activate mysql on boot
-    systemctl enable rh-mysql57-mysqld
+    systemctl enable rh-mysql80-mysqld
 
     # Start it
-    systemctl start rh-mysql57-mysqld
+    systemctl start rh-mysql80-mysqld
 
     # Set a password
-    scl enable rh-mysql57 "mysqladmin -u root password"
+    scl enable rh-mysql80 "mysqladmin -u root password"
 
 
 Setup

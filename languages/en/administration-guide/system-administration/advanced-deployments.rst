@@ -180,7 +180,7 @@ All servers are expected to run CentOS/RedHat 7.
 Services
 ~~~~~~~~
   * The Reverse Proxy needs to be **Nginx 1.10** or newer
-  * The database needs to be **MySQL 5.7**
+  * The database needs to be **MySQL 8.0**
   * The SVN repository needs to be **svn/wandisco 1.9** or newer
   * You need **Redis 3.2** or newer
 
