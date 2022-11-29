@@ -82,30 +82,34 @@ The new document inherits the permissions of the parent folder.
 Document Type
 ~~~~~~~~~~~~~
 
-Five types of documents are available:
+Six types of documents are available:
 
-============= ===============================================================
-Type          Description
-============= ===============================================================
-File          Any type of document can be uploaded. From a PowerPoint
-              presentation, to a simple picture or a full office document. Files
-              are versionned, so you can add new versions on existing document.
-              Office files such as Word or Excel documents can be viewed directly
-              in your browser when the :ref:`ONLYOFFICE integration <onlyoffice-integration>`
-              is active.
+=================== ===============================================================
+Type                Description
+=================== ===============================================================
+File                Any type of document can be uploaded. From a PowerPoint
+                    presentation, to a simple picture or a full office document.
+                    Files are versioned, so you can add new versions on existing
+                    document.
 
-Link          Allows the user to target a document with a URL. The document
-              will not be stored locally in the Document Manager.
+Online office file  Office files such as Word, Powerpoint or Excel documents can be
+                    viewed, created, and edited directly in your browser when the
+                    :ref:`ONLYOFFICE integration <onlyoffice-integration>` is
+                    active.
 
-Empty         The document will have no type. The user will be able to
-              change the type after creation.
+Link                Allows the user to target a document with a URL. The document
+                    will not be stored locally in the Document Manager.
 
-Wiki          The document can be created with the wiki service. Just
-              enter the name of the corresponding wiki page. You can also use an
-              existing wiki page name.
+Empty               The document will have no type. The user will be able to
+                    change the type after creation.
 
-Embedded file HTML text that can be edited online. Embedded files are versioned.
-============= ===============================================================
+Wiki                The document can be created with the wiki service. Just
+                    enter the name of the corresponding wiki page. You can also
+                    use an existing wiki page name.
+
+Embedded file       HTML text that can be edited online. Embedded files are
+                    versioned.
+=================== ===============================================================
 
 .. note::
 
