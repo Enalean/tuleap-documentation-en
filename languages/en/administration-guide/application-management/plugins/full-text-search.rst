@@ -56,6 +56,8 @@ Meilisearch backend rely on a Meilisearch server. Tuleap ships with a local serv
 server (aka local server). It's also possible to use a remote instance either hosted by `Meilisearch <https://www.meilisearch.com/>`_ 
 or inside your own infrastructure (for scalability or separation of concerns reasons).
 
+.. _fts-local-meilisearch:
+
 Local server
 ^^^^^^^^^^^^
 
