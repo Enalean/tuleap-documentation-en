@@ -114,14 +114,14 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-plugin/scr
       "private": true,
       "type": "module",
       "dependencies": {
-        "@tuleap/dom": "link:../../../../lib/frontend/dom",
+        "@tuleap/dom": "workspace:*",
         "pinia": "^2.0.21",
         "vue": "^3.2.37",
         "vue3-gettext": "^2.2.1"
       },
       "devDependencies": {
-        "@tuleap/build-system-configurator": "link:../../../../lib/frontend/build-system-configurator",
-        "@tuleap/po-gettext-plugin": "link:../../../../lib/frontend/po-gettext-plugin",
+        "@tuleap/build-system-configurator": "workspace:*",
+        "@tuleap/po-gettext-plugin": "workspace:*",
       },
       "scripts": {
         "typecheck": "vue-tsc --noEmit"
