@@ -155,7 +155,7 @@ Once you have a Vite config, you will need a ``package.json`` in ``my-lib-name/`
         "dompurify": "^2.3.4"
       },
       "devDependencies": {
-        "@tuleap/build-system-configurator": "link:../../../../../lib/frontend/build-system-configurator",
+        "@tuleap/build-system-configurator": "workspace:*",
         "@types/dompurify": "^2.3.2"
       },
       "scripts": {
@@ -201,7 +201,7 @@ You also need a Jest config, but this one has nothing special.
  .. code-block:: Javascript
 
     // tuleap/plugins/my-plugin/scripts/lib/my-lib-name/jest.config.js
-    import { env } from "process";
+    import { env } from "node:process";
     import { defineJestConfiguration } from "@tuleap/build-system-configurator";
 
     env.DISABLE_TS_TYPECHECK = "true";
@@ -265,8 +265,8 @@ Use your library from another application
 -----------------------------------------
 
 To use your library from another application, you must first declare it as a
-dependency in the app's ``package.json`` file. Use ``pnpm add ../my-plugin/scripts/lib/my-lib-name``
-to achieve that. You will something looking like this:
+dependency in the app's ``package.json`` file. Use ``pnpm add @tuleap/my-lib-name@*``
+to achieve that. You will get something looking like this:
 
  .. code-block:: Javascript
 
@@ -275,7 +275,7 @@ to achieve that. You will something looking like this:
       "name": "@tuleap/other-plugin",
       // ...
       "dependencies": {
-        "@tuleap/my-lib-name": "link:../my-plugin/scripts/lib/my-lib-name" // Add your lib as a dependency
+        "@tuleap/my-lib-name": "workspace:*" // Add your lib as a dependency
       },
       "scripts": {
         "build": "..."
