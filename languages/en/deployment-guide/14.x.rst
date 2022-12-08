@@ -4,11 +4,6 @@ Tuleap 14.x
 Tuleap 14.3
 ===========
 
-.. NOTE::
-
-  Tuleap 14.3 is currently under development.
-
-
 Upgrade of the local Meilisearch instance from 0.29.0 to 0.30.0
 ---------------------------------------------------------------
 
