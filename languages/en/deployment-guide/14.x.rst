@@ -8,7 +8,11 @@ Tuleap 14.4
 
   Tuleap 14.4 is currently under development.
 
-Nothing to mention.
+Removal of the legacy ForgeUpgrade compatibility layer
+------------------------------------------------------
+
+:ref:`Update script/procedures <update>` must no longer use ``/usr/lib/forgeupgrade/bin/forgeupgrade``,
+the compatibility layer has been removed. ``tuleap-cfg site-deploy`` must be used instead.
 
 Tuleap 14.3
 ===========

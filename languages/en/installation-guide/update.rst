@@ -31,9 +31,6 @@ Run as root:
     # Upgrade packages
     yum update
 
-    # Before Tuleap 12.11, you need to explicitly run the database migrations
-    # /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
-
     # Deploy site configurations, run database migration & co
     tuleap-cfg site-deploy
 
