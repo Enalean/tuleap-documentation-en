@@ -61,7 +61,8 @@ End of October 2024
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-RHEL / CentOS 7               End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
+RHEL / CentOS 7               End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9 \
+                                                **EL9 will no longer support Mailman (Lists), ForumML and CVS**
 ============================= ================= ============================================================
 
 In the future
