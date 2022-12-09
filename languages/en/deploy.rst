@@ -37,13 +37,15 @@ End of March 2023
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-PROFTPd plugin                End of support    End-users should use document/frs instead
-Reference Alias * plugins     Removed           Nothing. It was only used as compatibility layer for TeamForge
+PROFTPd plugin                Removed           End-users should use document/frs instead
+Reference Alias * plugins     Removed           It was only used as compatibility layer for TeamForge
                                                 migration and no longer in use. The removed plugins:
                                                 ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``,
                                                 ``referencealias_svn``, ``referencealias_tracker``.
-Artifacts Folders plugin      Removed           Nothing. It was only used as compatibility layer for TeamForge
+Artifacts Folders plugin      Removed           It was only used as compatibility layer for TeamForge
                                                 migration and no longer in use.
+Distributed SVN               Removed           If you set-up Distributed SVN you should update the main reverse
+                                                proxy and ensure that all traffic goes to the main Tuleap server.
 ============================= ================= ============================================================
 
 September 2023 (Tuleap 15.0)
