@@ -56,7 +56,13 @@ Each version of Tuleap is likely to differ from the next one on many levels incl
 The upgrading of the database happens when the above command is run:
   .. code-block:: bash
 
-    $> /usr/lib/forgeupgrade/bin/forgeupgrade --config=/etc/tuleap/forgeupgrade/config.ini update
+    $> tuleap-cfg site-deploy:forgeupgrade
+
+In a dev environment an helper is available to run the DB migrations:
+  .. code-block:: bash
+
+    $> make dev-forgeupgrade
+
 
 Database scripts
 """"""""""""""""
