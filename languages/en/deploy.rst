@@ -42,7 +42,7 @@ Reference Alias * plugins     Removed           Nothing. It was only used as com
                                                 migration and no longer in use. The removed plugins:
                                                 ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``,
                                                 ``referencealias_svn``, ``referencealias_tracker``.
-Artifacts Folders folder      Removed           Nothing. It was only used as compatibility layer for TeamForge
+Artifacts Folders plugin      Removed           Nothing. It was only used as compatibility layer for TeamForge
                                                 migration and no longer in use.
 ============================= ================= ============================================================
 
