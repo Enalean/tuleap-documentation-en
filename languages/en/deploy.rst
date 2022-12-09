@@ -46,6 +46,19 @@ Artifacts Folders plugin      Removed           Nothing. It was only used as com
                                                 migration and no longer in use.
 ============================= ================= ============================================================
 
+Septembre 2023 (Tuleap 15.0)
+''''''''''''''''''''''''''''
+
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+Mailman & ForumML plugin      Removed           Tuleap will no longer provide the feature. Administrators should
+                                                look for another tool to distribute emails.
+CVS                           Removed           Tuleap will no longer provide the feature. Administrators should
+                                                warn their teams to migrate to newer solutions (SVN, git).    
+============================= ================= ============================================================
+
+
 End of October 2023
 ''''''''''''''''''''
 
