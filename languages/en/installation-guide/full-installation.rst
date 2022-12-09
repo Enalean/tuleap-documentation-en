@@ -108,7 +108,6 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
       tuleap-plugin-onlyoffice \
       tuleap-plugin-embed \
       tuleap-plugin-gitlab \
-      tuleap-plugin-securitytxt \
       tuleap-plugin-openidconnectclient \
       tuleap-plugin-ldap
 
