@@ -29,56 +29,39 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-End of March 2022
+**Last update: Decembre 2022**
+
+End of March 2023
 '''''''''''''''''
 
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-Subversion (SVN Core)         Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
-forgeupgrade                  Removed           :ref:`Update script/procedures <update>` should no longer use ``/usr/lib/forgeupgrade/bin/forgeupgrade``
+PROFTPd plugin                End of support    End-users should use document/frs instead
+Reference Alias * plugins     Removed           Nothing. It was only used as compatibility layer for TeamForge
+                                                migration and no longer in use. The removed plugins:
+                                                ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``,
+                                                ``referencealias_svn``, ``referencealias_tracker``.
+Artifacts Folders folder      Removed           Nothing. It was only used as compatibility layer for TeamForge
+                                                migration and no longer in use.
 ============================= ================= ============================================================
 
-End of June 2022
-''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-Project Data Export (text)    Removed           Use project XML export
-PROFTPd                       End of support    End-users should use document/frs instead
-PHP 8.0                       Removed           Nothing, Tuleap will switch to PHP 8.1 automatically
-============================= ================= ============================================================
-
-End of September 2022
-'''''''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-Legacy docman user interface  Removed           Nothing, the switch to new user interface is automatic since 13.10.
-                                                Starting 14.2, users wont be able to use old features:
-
-                                                * manual order in folders (move up/down)
-                                                * import of search reports from other projects
-                                                * cut/copy/paste of items cross projects
-                                                * …
-
-                                                See more details in `story #27179: remove old docman views
-                                                <https://tuleap.net/plugins/tracker/?aid=27179>`_.
-============================= ================= ============================================================
-
-End of December 2022
+End of October 2023
 ''''''''''''''''''''
 
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-Trackers v3                   Removed           Migrate to Trackers v5
-SOAP API                      Removed           End-users should switch to REST API
 MySQL 5.7                     End of support    Switch to MySQL 8
-tab file-based translations   Replaced by       Nothing
-                              gettext
+============================= ================= ============================================================
+
+End of October 2024
+''''''''''''''''''''
+
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+RHEL / CentOS 7               End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
 ============================= ================= ============================================================
 
 In the future
@@ -87,8 +70,8 @@ In the future
 ============================ ==================== =============================================
 What                         Status               As platform administrator, what should I do ?
 ============================ ==================== =============================================
+Trackers v3                  Removed              Migrate to Trackers v5
 PHP Wiki                     Removed              Switch to Mediawiki
-Realtime server using NodeJS Replaced             (To be announced)
 ============================ ==================== =============================================
 
 Support already ended
@@ -97,6 +80,10 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+SOAP API                        Q4 2022  Removed           End-users should switch to REST API
+Subversion (SVN Core)           Q4 2022  Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
+forgeupgrade                    Q4 2022  Removed           :ref:`Update script/procedures <update>` should no longer use ``/usr/lib/forgeupgrade/bin/forgeupgrade``
+Project Data Export (text)      Q3 2022  Removed           Use project XML export
 Gerrit versions < 3.3           Q4 2021  End of support    Switch to Gerrit 3.3 or higher
 Chrome & Edge < 87              Q3 2021  End of support    Ensure your users have an up to date browser
 Firefox < 78.1                  Q3 2021  End of support    Ensure your users have an up to date browser
