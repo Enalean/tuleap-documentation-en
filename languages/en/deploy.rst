@@ -29,7 +29,7 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: Decembre 2022**
+**Last update: December 2022**
 
 End of March 2023
 '''''''''''''''''
