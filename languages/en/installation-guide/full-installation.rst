@@ -96,12 +96,20 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
     yum install -y \
       rh-mysql80-mysql-server \
       tuleap \
-      tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackers \
       tuleap-theme-burningparrot \
       tuleap-theme-flamingparrot \
+      tuleap-plugin-agiledashboard \
+      tuleap-plugin-graphontrackers \
       tuleap-plugin-git \
-      tuleap-plugin-pullrequest
+      tuleap-plugin-hudson-git \
+      tuleap-plugin-pullrequest \
+      tuleap-plugin-gitlfs \
+      tuleap-plugin-document \
+      tuleap-plugin-onlyoffice \
+      tuleap-plugin-embed \
+      tuleap-plugin-gitlab \
+      tuleap-plugin-openidconnectclient \
+      tuleap-plugin-ldap
 
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
