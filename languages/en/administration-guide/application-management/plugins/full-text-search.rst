@@ -68,7 +68,7 @@ Meilisearch server is installed with ``tuleap-meilisearch-server`` package. It's
 In order to install you will need to run:
 
 1. install the package: ``yum install tuleap-meilisearch-server``
-2. activate fts_meilisearch plugin: either in site admin interface or with ``sudo -l codendiadm tuleap plugin:install fts_meilisearch``)
+2. activate fts_meilisearch plugin: either in site admin interface or with ``sudo -u codendiadm tuleap plugin:install fts_meilisearch``)
 3. redeploy conf: ``tuleap-cfg site-deploy``
 4. start Meilisearch server: ``systemctl start tuleap-meilisearch``
 5. ensure the server will be started at boot time: ``systemctl enable tuleap-meilisearch``
