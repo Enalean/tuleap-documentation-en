@@ -236,12 +236,6 @@ Now that it is possible to import a git repository alongside a project archive, 
 
         codendiadm ALL= (gitolite) SETENV: NOPASSWD: RESTORE_TAR_REPO_CMD, BUNDLE_CMD
 
-Tuleap 8.9
-==========
-
-New configuration parameter in ``local.inc`` when Tuleap is behind a reverse proxy, check
-:ref:`Deploy Tuleap behind a reverse proxy <admin_howto_reverseproxy>` in Administration guide.
-
 Tuleap 8.8
 ==========
 
