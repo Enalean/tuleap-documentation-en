@@ -14,7 +14,7 @@ Wiki
 
 Tuleap offers a Wiki service to each project. The wiki
 available in Tuleap is based on a popular wiki tool called
-`phpWiki <https://phpwiki.sourceforge.io/>`__.
+`phpWiki <https://sourceforge.net/projects/phpwiki/>`__.
 
 Wiki Overview
 -------------

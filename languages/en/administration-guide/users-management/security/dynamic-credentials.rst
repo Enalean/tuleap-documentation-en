@@ -34,7 +34,7 @@ on your Tuleap instance, see :ref:`install-plugins` to learn how to do that.
 
 On your Vault instance, you must install the ``vault-tuleap-plugin`` and mount
 the secret engine, refer to the
-`Vault documentation <https://www.vaultproject.io/docs/plugins/plugin-management>`_ to
+`Vault documentation <https://developer.hashicorp.com/vault/docs/plugins/plugin-management>`_ to
 learn how to do that. A compiled version of the ``vault-tuleap-plugin`` can be
 found `here <https://ci.tuleap.org/jenkins/job/vault-tuleap-plugin-build/>`_.
 This document assumes the Tuleap secrets engine is enabled at the ``tuleap``
@@ -131,5 +131,5 @@ The security of the solution relies on the fact that the private key used to sig
 is generated directly in the HashiCorp Vault instance and, under a normal usage,
 is not known by other parties. The HashiCorp Vault instance is the only party
 able to generate a valid request accepted by the Tuleap instance. The
-`HashiCorp Vault security model <https://www.vaultproject.io/docs/internals/security/>`_
+`HashiCorp Vault security model <https://developer.hashicorp.com/vault/docs/internals/security>`_
 might of interest. For the Tuleap plugin, the usual security model of Tuleap applies.

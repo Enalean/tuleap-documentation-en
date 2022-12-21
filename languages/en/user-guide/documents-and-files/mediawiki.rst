@@ -145,4 +145,4 @@ Contributions
 - **ParserFunctions** contributed by Tim Starling, Robert Rohde, Ross McClure and Juraj Simlovic.
 - **PdfBook** contributed by `Aran Dunkley <https://organicdesign.nz/Nad>`_.
 - **SyntaxHighlight_GeSHi** contributed by Brion Vibber, Tim Starling, Rob Church and Niklas Laxström.
-- **TuleapArtLinks** contributed by `Enalean SAS <https://www.enalean.com/>`_.
+- **TuleapArtLinks** contributed by `Enalean SAS <https://www.tuleap.org/company/about-us>`_.

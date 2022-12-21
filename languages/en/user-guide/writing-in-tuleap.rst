@@ -38,7 +38,7 @@ underlying lib used for the syntax highlighting, PrismJS.
 Graphs
 ``````
 
-You can also write graphs in a text format called `Mermaid <https://mermaid-js.github.io/mermaid/>`_
+You can also write graphs in a text format called `Mermaid <https://mermaid.js.org/>`_
 in Markdown code blocks:
 
   .. code-block:: markdown
@@ -59,16 +59,16 @@ This will produce a flow-chart graph like this:
 
 At the time of writing (Tuleap 12.7), Tuleap uses Mermaid v8 and supports following graph type:
 
-* `Flowcharts <https://mermaid-js.github.io/mermaid/#/flowchart>`_
-* `Sequence diagrams <https://mermaid-js.github.io/mermaid/#/sequenceDiagram>`_
-* `Class diagrams <https://mermaid-js.github.io/mermaid/#/classDiagram>`_
-* `State diagrams <https://mermaid-js.github.io/mermaid/#/stateDiagram>`_
-* `Entity Relationship Diagrams <https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram>`_
-* `User Journey Diagram <https://mermaid-js.github.io/mermaid/#/user-journey>`_
-* `Gantt diagrams <https://mermaid-js.github.io/mermaid/#/gantt>`_
-* `Pie chart diagrams <https://mermaid-js.github.io/mermaid/#/pie>`_
+* `Flowcharts <https://mermaid.js.org/syntax/flowchart.html>`_
+* `Sequence diagrams <https://mermaid.js.org/syntax/sequenceDiagram.html>`_
+* `Class diagrams <https://mermaid.js.org/syntax/classDiagram.html>`_
+* `State diagrams <https://mermaid.js.org/syntax/stateDiagram.html>`_
+* `Entity Relationship Diagrams <https://mermaid.js.org/syntax/entityRelationshipDiagram.html>`_
+* `User Journey Diagram <https://mermaid.js.org/syntax/userJourney.html>`_
+* `Gantt diagrams <https://mermaid.js.org/syntax/gantt.html>`_
+* `Pie chart diagrams <https://mermaid.js.org/syntax/pie.html>`_
 
-The `configuration is Strict <https://mermaid-js.github.io/mermaid/#/Setup?id=securitylevel>`_ and cannot be modified.
+The `configuration is Strict <https://mermaid.js.org/config/usage.html#securitylevel>`_ and cannot be modified.
 It means that clicks are forbidden and texts are encoded.
 
 Charts can be quite large, don't worry. There is a zoom built-in, just click on the graph and it will show the diagram
