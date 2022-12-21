@@ -34,7 +34,7 @@ PHPLDAPAdmin
 You can set-up a local ldap with a UI managment front in a few steps.
 
  * Install docker then follow the instructions here for creating an ldap instance https://github.com/Enalean/docker-ldap
- * Download and install http://phpldapadmin.sourceforge.net/wiki/index.php/Installation
+ * Download and install https://phpldapadmin.sourceforge.net/wiki/index.php/Installation
  * Modify config.php to your liking
  * Restart apache and go to [name of your localhost]/phpldapadmin
  * Hack one of files in phpldapadmin (known bug) https://stackoverflow.com/questions/20673186/getting-error-for-setting-password-field-when-creating-generic-user-account-phpl

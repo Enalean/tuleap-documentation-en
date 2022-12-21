@@ -33,7 +33,7 @@ A modal opens and you can fill in the necessary fields
 Azure Active Directory Provider
 *******************************
 
-The Azure Active Directory provider takes into account the specificities of `Azure Active Directory <https://azure.microsoft.com/en-us/services/active-directory/>`_.
+The Azure Active Directory provider takes into account the specificities of `Azure Active Directory <https://azure.microsoft.com/en-us/products/active-directory/>`_.
 If you want to add an Azure AD provider, click on the caret down and "Azure Active Directory".
 
 .. image:: ../../../../images/openidconnect/azure-add-button.png

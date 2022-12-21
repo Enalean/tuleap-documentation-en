@@ -363,7 +363,7 @@ The basic workflow to get started with Git LFS is:
     git push
 
 
-More information about Git LFS can be found on the `Git LFS website <https://git-lfs.github.com/>`_ and the
+More information about Git LFS can be found on the `Git LFS website <https://git-lfs.com/>`_ and the
 `Git LFS wiki <https://github.com/git-lfs/git-lfs/wiki/Tutorial>`_.
 
 Existing repositories can be migrated to Git LFS. To rewrite all, e.g., `*.mp4` files not present
