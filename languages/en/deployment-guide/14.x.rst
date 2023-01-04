@@ -4,10 +4,6 @@ Tuleap 14.x
 Tuleap 14.4
 ===========
 
-.. NOTE::
-
-  Tuleap 14.4 is currently under development.
-
 Removal of the legacy ForgeUpgrade compatibility layer
 ------------------------------------------------------
 
