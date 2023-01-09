@@ -153,7 +153,7 @@ This configure the dependencies and download RPM packages
     dnf install epel-release
 
 
--  **Install remi-safe repository** (needed for PHP dependencies):
+-  **Install Remi repository** (needed for modern PHP versions):
 
 ::
 
@@ -161,17 +161,11 @@ This configure the dependencies and download RPM packages
 
 You can find find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
--  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
+-  **Install Tuleap repository**
 
 ::
 
-    [Tuleap]
-    name=Tuleap
-    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/9/dev/$basearch
-    enabled=1
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
+    dnf install https://ci.tuleap.net/yum/tuleap/rhel/9/dev/x86_64/tuleap-community-release.rpm
 
 -  **Install Tuleap** by running the following command:
 
