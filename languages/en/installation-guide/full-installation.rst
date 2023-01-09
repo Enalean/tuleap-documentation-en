@@ -3,23 +3,21 @@
 Tuleap Installation
 ===================
 
-Why should I use the Tuleap full installation?
-----------------------------------------------
+Full installation can be done on RHEL 7 or CentOS 7 in production context. Rocky Linux 9 builds are available **for test purpose only**. 
 
-The full installation is the common way to install tuleap.
-It uses your distribution package system and will provide a fully configurable and adjustable
-environment. It is robust so you can deploy production environment this way.
+RHEL9, Rocky Linux 9 and Alma Linux 9 will be fully supported at some point during first half of 2023.
 
 Requirements
 ------------
 
 To install Tuleap you will need a **fully dedicated server**. It can be **virtualized or physical**.
 It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
-a full suite of software and is deeply integrated with its host system. Installing Tuleap on a mutualized server
-will certainly cause probleme in both Tuleap and your other applications.
+a full suite of software and is deeply integrated with its host system. Installing Tuleap on a server shared with other applications
+will certainly cause problem in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - **CentOS or RedHat 7.x**.
+ - **CentOS or Red Hat Enterprise Linux (RHEL) 7.x**.
+ - Rocky Linux 9 **for test purpose only, no production**
 
 **You must disable SELinux** prior to the install.
 
@@ -32,16 +30,19 @@ Database must be MySQL v8.0. As an alternative, MariaDB 10.3 can be used but was
 
 The database **must** be dedicated to Tuleap. Either it's a local installation (as described below, perfect for small & medium instances) or provided by an external service.
 
-Mutualized databases must not be used:
+Shared databases must not be used:
 
 - they cannot guarantee the needed Quality of service
 - they cannot respect the requirements (SQL modes) described below
 - they make consistent backups almost impossible
 
+Install packages
+----------------
+
 .. _tuleap_installation:
 
-Installation
-------------
+Red Hat Enterprise Linux (RHEL) 7 or CentOS 7
+`````````````````````````````````````````````
 
 This configure the dependencies and download RPM packages
 
@@ -135,6 +136,87 @@ in section [mysqld]
     # Set a password
     scl enable rh-mysql80 "mysqladmin -u root password"
 
+
+Your are now ready to configure and run Tuleap. Go to :ref:`Setup <tuleap_setup>` step bellow.
+
+Rocky Linux 9
+`````````````
+
+**FOR TEST PURPOSE ONLY. DO NOT USE IT IN PRODUCTION**
+
+This configure the dependencies and download RPM packages
+
+-  **Install EPEL** You will need EPEL for some dependencies.
+
+::
+
+    dnf install epel-release
+
+
+-  **Install remi-safe repository** (needed for PHP dependencies):
+
+::
+
+    dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+
+You can find find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+
+-  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
+
+::
+
+    [Tuleap]
+    name=Tuleap
+    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/9/dev/$basearch
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
+
+-  **Install Tuleap** by running the following command:
+
+::
+
+    dnf install -y \
+      mysql-server \
+      tuleap \
+      tuleap-theme-burningparrot \
+      tuleap-theme-flamingparrot \
+      tuleap-plugin-agiledashboard \
+      tuleap-plugin-graphontrackers \
+      tuleap-plugin-git \
+      tuleap-plugin-hudson-git \
+      tuleap-plugin-pullrequest \
+      tuleap-plugin-gitlfs \
+      tuleap-plugin-document \
+      tuleap-plugin-onlyoffice \
+      tuleap-plugin-embed \
+      tuleap-plugin-gitlab \
+      tuleap-plugin-openidconnectclient \
+      tuleap-plugin-ldap
+
+You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
+to install all of them now. Start small and add them on the go.
+
+- **Prepare the database**
+
+::
+
+    # Create /etc/my.cnf.d/tuleap.cnf file
+    echo -e '[mysqld]\nsql-mode="NO_ENGINE_SUBSTITUTION"' > /etc/my.cnf.d/tuleap.cnf
+    
+    # Activate mysql on boot
+    systemctl enable mysqld
+
+    # Start it
+    systemctl start mysqld
+
+    # Set a password
+    mysqladmin -u root password
+
+Your are now ready to configure and run Tuleap. Go to :ref:`Setup <tuleap_setup>` step bellow.
+
+.. _tuleap_setup:
 
 Setup
 -----
