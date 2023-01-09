@@ -78,7 +78,7 @@ You can find find more information about the installation of the remi-safe repos
 on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
 
--  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
+-  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
 
 ::
 
@@ -161,7 +161,7 @@ This configure the dependencies and download RPM packages
 
 You can find find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
--  **Install Tuleap repositories** Create a /etc/yum.repos.d/Tuleap.repo with this content:
+-  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
 
 ::
 
@@ -221,8 +221,6 @@ Your are now ready to configure and run Tuleap. Go to :ref:`Setup <tuleap_setup>
 Setup
 -----
 
-**Please do not repeat this step twice**. This script should only be executed once. If you have any errors in the previous steps, be sure to fix those before continuing.
-
 As root, run:
 
 ::
@@ -235,7 +233,7 @@ As root, run:
 
 With:
 
-- FQDN being the name of the server as you access it on your network (localhost for a local test, tuleap.example.com with a DNS entry 192.168.1.123 if you only have an IP address)
+- FQDN being the name of the server as you access it on your network (``localhost`` for a local test, tuleap.example.com with a DNS entry 192.168.1.123 if you only have an IP address)
 - XXXXX being the password of root password of the db configured earlier.
 -  Ensure the firewall is properly configured. Open needed ports:
     -  Web (TCP/80 & TCP/443)
