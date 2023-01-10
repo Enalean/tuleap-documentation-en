@@ -8,4 +8,3 @@ Projects management
    projects-management/projects-settings
    projects-management/projects-templates
    projects-management/project-export-import
-   projects-management/project-website
