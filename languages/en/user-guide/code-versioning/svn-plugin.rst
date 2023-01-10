@@ -384,23 +384,11 @@ Logging In
 Subversion will ask for your login name and password only when
 performing an operation (e.g. commit) that requires authentication.
 
-.. _svn-plugin-use-token:
+Access SVN with username/access key instead of username/password
+`````````````````````````````````````````````````````````````````
 
-Access SVN with username/token instead of username/password
-```````````````````````````````````````````````````````````
-
-If the project allows it, you can use a token instead of your password when using SVN.
-
-1) Generate a token
-
-   First, you need to generate a token for your account. Go to you account preferences, generate a new SVN token. **There's no way to retrieve this token so don't forget it**. You can generate as many tokens as you want so if you loose one of your tokens, just delete it from you account preferences and generate another one.
-
-   .. image:: ../../images/screenshots/svn-token.gif
-      :scale: 50 %
-
-2) Use your token
-
-   If the project can manage SVN tokens, just use your token instead of your password when using SVN.
+It is possible to use a :ref:`personal access key <access-keys>` with a ``SVN`` scope
+instead of your password when using SVN.
 
 Importing Existing Source Code
 ```````````````````````````````

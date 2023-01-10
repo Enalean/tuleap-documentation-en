@@ -231,23 +231,7 @@ If you have to revert, please contact the dev team to explain the issue
 Tuleap 12.1
 ===========
 
-Mandatory changes for Subversion (core and plugin)
---------------------------------------------------
-
-This is the continuation of the work initiated in Tuleap 12.0: accounts connected to an OpenID Connect provider must
-use :ref:`SVN Tokens <svn-plugin-use-token>` to access SVN repositories.
-
-In order to enforce this change, it is necessary to allow the DB user used to handle SVN authentications more access to the
-database. **These changes are mandatory even if your Tuleap instance does not use the OpenID Connect plugin.**
-You must run the following commands on your database with a privileged user:
-
-.. sourcecode:: sql
-
-        GRANT CREATE,SELECT ON plugin_ldap_user TO dbauthuser;
-        GRANT CREATE,SELECT ON plugin_openidconnectclient_user_mapping TO dbauthuser;
-        REVOKE CREATE ON plugin_ldap_user FROM dbauthuser;
-        REVOKE CREATE ON plugin_openidconnectclient_user_mapping FROM dbauthuser;
-        FLUSH PRIVILEGES;
+Nothing to mention.
 
 
 Tuleap 12.0
@@ -299,6 +283,6 @@ OpenID Connect
     * Web login (they should use OpenID Connect instead)
     * REST API access (they should use :ref:`Access Keys <access-keys>`.)
     * Git over https access (they should use :ref:`Access Keys <access-keys>`.)
-    * Subversion access (they should use :ref:`SVN Tokens <svn-plugin-use-token>`.)
+    * Subversion access (they should use :ref:`Access Keys <access-keys>`.)
 
     Access to **SOAP API is no longer possible** for users that switch to OpenID Connect.
