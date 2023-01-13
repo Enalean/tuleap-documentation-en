@@ -19,6 +19,15 @@ If you have made some tweaks to the configuration file
 ``/etc/opt/remi/php80/php-fpm.d/tuleap.conf`` you will also needs
 to adapt them for the new configuration at ``/etc/opt/remi/php81/php-fpm.d/tuleap.conf``.
 
+MySQL 8.0 support and upgrade
+-----------------------------
+
+Tuleap supports MySQL 8.0 since the 14.3 release.
+You must plan and upgrade to it before the end of life of MySQL 5.7 in October 2023.
+
+You can report to :ref:`the upgrade guide for more information <mysql80_upgrade>`.
+
+
 Tuleap 14.4
 ===========
 
