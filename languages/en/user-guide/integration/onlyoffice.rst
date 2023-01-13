@@ -18,11 +18,15 @@ Initial setup
 To deploy the integration you will need to have access to an `ONLYOFFICE document server <https://api.onlyoffice.com/editors/basic>`_ or deploy one.
 
 In order to activate the integration, as a site administrator once :ref:`you have installed and actived the plugin <install-plugins>`, you will
-need to specify the URL of your `document server <https://api.onlyoffice.com/editors/basic>`_ and the `token associated with it <https://api.onlyoffice.com/editors/signature/>`_.
+need to specify the URL of your `document server <https://api.onlyoffice.com/editors/basic>`_ and the `token associated with it <https://api.onlyoffice.com/editors/signature/>`_ in site administration / ONLYOFFICE.
 
-.. image:: ../../images/screenshots/onlyoffice/onlyoffice-admin-panel.png
-    :alt: ONLYOFFICE plugin administration panel
-    :align: center
+As site administrator, you can:
+
+* Choose which project can access to the document server. Those who don't have access won't have the ONLYOFFICE integration. By default every projects have access.
+* Create more than one document server. In that case you have to explicitly give access to projects to the different servers.
+
+
+.. WARNING:: Updating project restrictions while users are editing on document servers may loose their modifications.
 
 Usage
 -----
