@@ -15,7 +15,7 @@ It will execute all REST tests in a docker container. This container is stopped 
 .. code-block:: bash
 
    $> make tests-rest SETUP_ONLY=1
-   $root@d4601e92ca3f> /opt/remi/php80/root/usr/bin/php \
+   $root@d4601e92ca3f> /opt/remi/php81/root/usr/bin/php \
      /usr/share/tuleap/tests/rest/vendor/bin/phpunit \
      --configuration /usr/share/tuleap/tests/rest/phpunit.xml \
      --do-not-cache-result \
@@ -26,4 +26,4 @@ In case of failure, you may need to attach to this running container in order to
 .. code-block:: bash
 
    $> docker exec -ti <name-of-the-container> bash
-   $root@d4601e92ca3f> tail -f /var/opt/remi/php74/log/php-fpm/error.log
+   $root@d4601e92ca3f> tail -f /var/opt/remi/php81/log/php-fpm/error.log
