@@ -26,5 +26,6 @@ Tuleap internals
     back-end/widgets
     back-end/plugins
     back-end/cli
+    back-end/keycloak
     back-end/redis
     back-end/config
