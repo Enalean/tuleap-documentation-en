@@ -1,3 +1,5 @@
+.. _user-authentication-flowchart:
+
 User authentication flowchart
 =============================
 

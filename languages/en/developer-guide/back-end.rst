@@ -28,3 +28,4 @@ Tuleap internals
     back-end/cli
     back-end/redis
     back-end/config
+    back-end/flowcharts
