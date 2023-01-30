@@ -102,6 +102,8 @@ Descriptions of commands
 Pro-tips
 --------
 
+Emails sent by the platform are catched by MailHog (its ip address is given during ``make start``).
+
 If you need to connect to the server you can run:
 
 .. code-block:: bash
@@ -129,12 +131,3 @@ If your browser cannot manage to reach https://tuleap-web.tuleap-aio-dev.docker/
   '*.docker'``, ``dig '*.tuleap-aio-dev.docker'`` and ``dig
   'tuleap-web.tuleap-aio-dev.docker'`` should return a suitable answer
   (typically ``172.17.42.4`` for the web container, but it may vary).
-
-If you don't receive email, this is because we configured postfix to not deliver emails by default. You may need to manually add the emails you use for your development:
-
-.. code-block:: bash
-
-    $ make bash-web
-    $> vi /data/etc/email_whitelist # enter your email
-    $> tools/docker/tuleap-aio-dev/whitelist_emails.sh
-    $> systemctl restart postfix
