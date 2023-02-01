@@ -1,12 +1,17 @@
 Tuleap 14.x
 ###########
 
-Tuleap 14.5
+Tuleap 14.6
 ===========
 
 .. NOTE::
 
-  Tuleap 14.5 is currently under development.
+  Tuleap 14.6 is currently under development.
+
+Nothing to mention.
+
+Tuleap 14.5
+===========
 
 End of support of PHP 8.0
 -------------------------
