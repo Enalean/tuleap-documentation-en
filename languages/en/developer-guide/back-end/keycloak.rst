@@ -21,7 +21,6 @@ Add the following to the ``docker-compose.yml``:
         - KEYCLOAK_ADMIN=admin
         - KEYCLOAK_ADMIN_PASSWORD=admin
 
-.. ATTENTION:: You MUST change the password if your keycloak is meant to be public!
 
 Then start the container::
 
