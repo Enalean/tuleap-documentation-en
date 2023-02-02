@@ -449,6 +449,8 @@ Where:
     ``svnadmin dump`` command. With this dump the Tuleap
     Team will re-install everything for you on the Tuleap
     server. Contact us for more information.
+    The dump file can be re-imported into an existing repository with
+    ``sudo -u codendiadm svnadmin load /var/lib/tuleap/svn_plugin/<project_id>/<repo_name> < /path/to/svn_dumpfile``.
 
 Checking Code Out
 `````````````````
