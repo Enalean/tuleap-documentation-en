@@ -113,40 +113,6 @@ files::
       # In both repositories
       $ git push -u origin HEAD
 
-Plugins and tools external to the main Tuleap repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some plugins and tools are not in the main Tuleap repository as such their versions
-must be updated and tagged individually.
-
-The list of the concerned plugins and tools can be found in the
-`manifest file <https://my.enalean.com/plugins/git/tuleap-by-enalean/release-manifest?a=blob&f=manifest.json>`_.
-
-The procedure to follow is similar for each one of the concerned plugins and tools:
- 1. Clone the repository or update your local workspace to be on the top of the remote master branch
-
- 2. Verify if changes has been made since the last major Tuleap Enterprise milestone release. If the top of the master
- branch is the tag created for the last release you can stop, else you need to continue the procedure.
-
- 3. Edit `/VERSION` file with the new version number. The version is expected to formatted as ``MAJOR.MINOR.PATCH``,
- so you need to either increment MAJOR or MINOR version and reset the PATCH version to 0.
- The rest of this procedure assumes that you are releasing the version T.U.0 of the plugin or tool::
-
-    $ echo 'T.U.0' > VERSION
-
- 4. Commit::
-
-    $ git commit -S -a -m 'Version T.U.0'
-
- 5. Tag::
-
-    $ git tag -s -m 'Version T.U.0' T.U.0
-
- 6. Publish your commit and tag (each needs a dedicated push since Gerrit 3.1 does not allow to push commit and tag in the same operation)::
-
-    $ git push
-    $ git push --follow-tags
-
 Update the manifest
 -------------------
 
