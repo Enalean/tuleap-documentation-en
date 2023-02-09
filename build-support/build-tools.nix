@@ -4,6 +4,7 @@
   pkgs.gnugrep
   pkgs.gnused
   pkgs.gawk
+  pkgs.nodePackages.mermaid-cli
   (pkgs.poetry2nix.mkPoetryEnv {
     projectDir = ../.;
     # Some overrides are needed because some packages does not define their build deps correctly
