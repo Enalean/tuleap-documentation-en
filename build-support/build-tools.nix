@@ -8,33 +8,35 @@
     projectDir = ../.;
     # Some overrides are needed because some packages does not define their build deps correctly
     # or do not respect PEP 440 when defining the version
-    overrides = pkgs.poetry2nix.overrides.withDefaults (
+    # https://github.com/nix-community/poetry2nix/blob/master/docs/edgecases.md
+    overrides = pkgs.poetry2nix.defaultPoetryOverrides.extend (
       self: super: {
-        idna = super.idna.overrideAttrs (
+        sphinx = super.sphinx.overridePythonAttrs (
           old: {
             buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
           }
         );
-        sphinx = super.sphinx.overrideAttrs (
+        sphinx-autobuild = super.sphinx-autobuild.overridePythonAttrs (
           old: {
             buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
           }
         );
-        sphinx-autobuild = super.sphinx-autobuild.overrideAttrs (
+        sphinx-notfound-page = super.sphinx-notfound-page.overridePythonAttrs (
           old: {
             buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
           }
         );
-        sphinx-notfound-page = super.sphinx-notfound-page.overrideAttrs (
+        sphinxext-rediraffe = super.sphinxext-rediraffe.overridePythonAttrs (
           old: {
-            buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
-          }
-        );
-        sphinxext-rediraffe = super.sphinxext-rediraffe.overrideAttrs (
-          old: {
+            buildInputs = (old.buildInputs or [ ]) ++ [ super.setuptools ];
             postPatch = ''
               substituteInPlace setup.py --replace 'version = "main"' 'version = "${old.version}"'
             '';
+          }
+        );
+        sphinxcontrib-mermaid = super.sphinxcontrib-mermaid.overridePythonAttrs (
+          old: {
+            buildInputs = (old.buildInputs or [ ]) ++ [ super.setuptools ];
           }
         );
       }
