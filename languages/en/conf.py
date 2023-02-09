@@ -293,3 +293,9 @@ rediraffe_redirects = {
 
 # 404 page
 notfound_urls_prefix = ''
+
+# Mermaid extension
+# No external script must be loaded
+mermaid_version = ''
+mermaid_init_js = ''
+mermaid_output_format = 'svg'
