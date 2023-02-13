@@ -299,3 +299,4 @@ notfound_urls_prefix = ''
 mermaid_version = ''
 mermaid_init_js = ''
 mermaid_output_format = 'svg'
+mermaid_params = ['-p' 'build-support/puppeteer-config.json']
