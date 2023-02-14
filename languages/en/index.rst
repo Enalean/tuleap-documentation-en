@@ -19,3 +19,4 @@ You can learn more about the project on `Tuleap web site <https://www.tuleap.org
    admin
    deploy
    dev
+   how-to
