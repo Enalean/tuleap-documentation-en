@@ -296,6 +296,25 @@ notfound_urls_prefix = ''
 
 # Mermaid extension
 # No external script must be loaded
-mermaid_version = ''
-mermaid_init_js = ''
-mermaid_output_format = 'svg'
+# See https://github.com/mgaitan/sphinxcontrib-mermaid/issues/80#issuecomment-1345352276
+
+from sphinxcontrib.mermaid import mermaid
+
+MERMAID_SCRIPT = 'mermaid-9.3.0.min.js'
+mermaid_version = ''  # We add a minified Mermaid script file ourselves
+
+def remove_unused_mermaid_script_file(app, pagename, templatename, context, doctree):
+    # The `doctree` arg is `None` when not created from a reST document.
+    if not doctree:
+        return
+
+    # Add Mermaid JS on page with a mermaid diagram
+    if doctree.next_node(mermaid):
+        app.add_js_file(MERMAID_SCRIPT)
+
+    # Remove "None" entries added when `mermaid_version` is set to `""`.
+    context["script_files"] = [x for x in context["script_files"] if x != "None"]
+
+
+def setup(app):
+    app.connect("html-page-context", remove_unused_mermaid_script_file)
