@@ -14,9 +14,9 @@ You can learn more about the project on `Tuleap web site <https://www.tuleap.org
 .. toctree::
    :maxdepth: 2
 
+   how-to
    user
    install
    admin
    deploy
    dev
-   how-to

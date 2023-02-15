@@ -9,5 +9,5 @@ Add a user as platform administrator
 3. Check if you already have an ``Admin`` group. If not:
     1. Create one by clicking on the ``Add group`` button.
     2. Add the ``Platform administration`` permission by clicking the ``Add permissions`` button.
-4. On the right part of the screen, use the ``Add user`` field to add one of your users in the ``Admin`` group.
+4. On the right part of the screen, use the ``Add user`` field to add one of your users to the ``Admin`` group.
 5. The selected user should now also be a Platform Administrator and see the two red wheels icon at the top right of their screen.
