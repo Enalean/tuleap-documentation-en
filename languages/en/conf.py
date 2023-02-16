@@ -235,7 +235,9 @@ linkcheck_ignore = [
     'https://prismjs.com/#supported-languages', # Anchor is not found due to the page generation client side
     r'https://ci\.enalean\.com/.*', # No public access
     r'https://my\.enalean\.com/.*', # No public access
-    'https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate' # Cloudflare does not like Linkcheck
+    'https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate', # Cloudflare does not like Linkcheck
+    r'https://dev\.mysql\.com/doc/refman/8.0/en/.*', # We get a 403 when running linkcheck on CI agents
+    r'http://192\.0\.2\.11.*' # IP used as an example on the Keycloack page of the dev section
 ]
 
 # -- Options for manual page output --------------------------------------------
