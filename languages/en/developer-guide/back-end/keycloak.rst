@@ -29,14 +29,14 @@ Then start the container::
 You will get the keycloak container ip address with::
 
   make show-ips
-  # 172.18.0.11 /tuleap-keycloak-1
+  # 192.0.2.11 /tuleap-keycloak-1
 
-Examples below will be based on ``172.18.0.11``. You should adapt them to your own address.
+Examples below will be based on ``192.0.2.11``. You should adapt them to your own address.
 
 Create a realm
 ~~~~~~~~~~~~~~
 
-Open `<http://172.18.0.11:8080>`_ in your browser and open the Administration Console. Admin credentials can be find in
+Open `<http://192.0.2.11:8080>`_ in your browser and open the Administration Console. Admin credentials can be find in
 the ``docker-compose.yml`` you updated beforehand.
 
 By default you are on the realm "master", but it is advised to work on your own. So create a new realm, here we will
@@ -55,7 +55,7 @@ In this realm, we now create a user to verify authentication.
 * Set a password in Credentials (Temporary: ``Off``)
 * Test the connection
 
-  * Open `<http://172.18.0.11:8080/realms/tuleap-realm/account>`_ in a tab
+  * Open `<http://192.0.2.11:8080/realms/tuleap-realm/account>`_ in a tab
   * Connect with ``jdoe``.
   * Celebrate your first victory 🎉
 
@@ -78,7 +78,7 @@ Once created, update the Access settings:
 Copy the needed informations to create the provider on Tuleap side (see below):
 
 * Client secret is given in the Credentials tab of the server.
-* Endpoints are given by the following URL `<http://172.18.0.11:8080/realms/tuleap-realm/.well-known/openid-configuration>`_.
+* Endpoints are given by the following URL `<http://192.0.2.11:8080/realms/tuleap-realm/.well-known/openid-configuration>`_.
 
 Configure Tuleap to use Keycloak
 --------------------------------
@@ -86,10 +86,10 @@ Configure Tuleap to use Keycloak
 As site administrator, install and enable OpenID Connect Client plugin. Now create a provider:
 
 * Name: ``Keycloak``
-* Authorization endpoint: ``https://172.18.0.11:8080/realms/tuleap-realm/protocol/openid-connect/auth``
-* Token endpoint: ``https://172.18.0.11:8080/realms/tuleap-realm/protocol/openid-connect/token``
-* JWKS endpoint: ``https://172.18.0.11:8080/realms/tuleap-realm/protocol/openid-connect/certs``
-* User information endpoint: ``https://172.18.0.11:8080/realms/tuleap-realm/protocol/openid-connect/userinfo``
+* Authorization endpoint: ``https://192.0.2.11:8080/realms/tuleap-realm/protocol/openid-connect/auth``
+* Token endpoint: ``https://192.0.2.11:8080/realms/tuleap-realm/protocol/openid-connect/token``
+* JWKS endpoint: ``https://192.0.2.11:8080/realms/tuleap-realm/protocol/openid-connect/certs``
+* User information endpoint: ``https://192.0.2.11:8080/realms/tuleap-realm/protocol/openid-connect/userinfo``
 * Client ID: ``tuleap-dev``
 * Client secret: ``<client-id>``
 

@@ -20,7 +20,7 @@ Jenkins Configuration
 
     The currently minimal Tuleap version should be **12.11**
 
-    Both Jenkins and Tuleap servers **must** be in https and certificate must be either `valid <https://certbot.eff.org/lets-encrypt/centosrhel7-nginx.html>`_
+    Both Jenkins and Tuleap servers **must** be in https and certificate must be either `valid <https://certbot.eff.org/instructions?ws=nginx&os=centosrhel7>`_
     or, at least, trusted.
 
     If you cannot have valid certificates:
