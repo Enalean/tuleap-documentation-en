@@ -80,6 +80,9 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
 -  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
 
+Tuleap Community Edition
+````````````````````````
+
 ::
 
     [Tuleap]
@@ -114,6 +117,68 @@ on the `Remi's RPM repositories Repository Configuration page <https://blog.remi
 
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
+
+Tuleap Entreprise Edition
+`````````````````````````
+Please contact your salesperson to receive your credentials.
+
+::
+
+    [Tuleap-by-Enalean]
+    name=Tuleap
+    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/tuleap/current/rhel7/noarch
+    gpgcheck=1
+    gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/gpg.key
+    enabled=1
+
+-  **Install Tuleap** by running the following command:
+
+::
+
+    yum install -y rh-mysql80-mysql-server \
+    redis \
+    tuleap \
+    tuleap-plugin-agiledashboard \
+    tuleap-plugin-api-explorer \
+    tuleap-plugin-archivedeleteditems \
+    tuleap-plugin-baseline \
+    tuleap-plugin-botmattermost-agiledashboard \
+    tuleap-plugin-botmattermost-git \
+    tuleap-plugin-captcha \
+    tuleap-plugin-cardwall \
+    tuleap-plugin-crosstracker \
+    tuleap-plugin-document \
+    tuleap-plugin-document_generation \
+    tuleap-plugin-frs \
+    tuleap-plugin-git \
+    tuleap-plugin-gitlab \
+    tuleap-plugin-gitlfs \
+    tuleap-plugin-graphontrackers \
+    tuleap-plugin-hudson \
+    tuleap-plugin-hudson-git \
+    tuleap-plugin-label \
+    tuleap-plugin-ldap \
+    tuleap-plugin-mediawiki \
+    tuleap-plugin-openidconnectclient \
+    tuleap-plugin-program_management \
+    tuleap-plugin-project-ownership \
+    tuleap-plugin-projectmilestones \
+    tuleap-plugin-prometheus-metrics \
+    tuleap-plugin-pullrequest \
+    tuleap-plugin-roadmap \
+    tuleap-plugin-svn \
+    tuleap-plugin-taskboard \
+    tuleap-plugin-testmanagement \
+    tuleap-plugin-testplan \
+    tuleap-plugin-timetracking \
+    tuleap-plugin-velocity \
+    tuleap-realtime \
+    tuleap-theme-burningparrot \
+    tuleap-theme-flamingparrot
+
+
+For Both :
+``````````
 
 ..  _install_database:
 
@@ -259,6 +324,111 @@ the main Postfix configuration file generally located in /etc/postfix/main.cf:
      alias_maps = hash:/etc/aliases,hash:/etc/aliases.codendi
      alias_database = hash:/etc/aliases,hash:/etc/aliases.codendi
      recipient_delimiter = +
+
+
+If you have installed Tuleap Community Edition, you can go straight to :ref:`First connection <tuleap_first-connection>`
+
+.. _tuleap-enterprise_configuration:
+
+Tuleap Enterprise Edition Advanced configuration
+------------------------------------------------
+Tuleap needs a bit more configuration in order to use the Enterprise plugins.
+
+Redis 
+`````
+Generate a password :
+:: 
+
+    dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
+
+
+You will have to modify ``/etc/redis.conf``:
+
+-  Replace ``#requirepass foobared`` with ``requirepass PREVIOUS_GENERATED_PASSWORD``
+-  Replace ``appendonly no`` with ``appendonly yes``
+-  Replace ``auto-aof-rewrite-percentage 100`` with ``auto-aof-rewrite-percentage 20``
+-  Replace ``auto-aof-rewrite-min-size 64mb`` with ``auto-aof-rewrite-min-size 200kb``
+
+Create and fill ``/etc/tuleap/conf/redis.inc`` with :
+::
+
+    <?php
+
+    $redis_server   = '127.0.0.1';
+    $redis_port     = 6379;
+    $redis_password = 'PREVIOUS_GENERATED_PASSWORD';
+
+Give it the correct permissions:
+::
+
+    chown codendiadm:codendiadm /etc/tuleap/conf/redis.inc
+    chmod 640 /etc/tuleap/conf/redis.inc
+
+Real-Time
+`````````
+
+Generate a shared key between Tuleap and Realtime:
+
+::
+
+    head -c 64 /dev/urandom | base64 --wrap=88
+
+Edit ``/etc/tuleap-realtime/config.json``
+
+::
+
+    {
+    "nodejs_server_jwt_private_key": "SHARED_KEY",
+    "full_path_ssl_cert": "CUSTOMER_CERT_PATH",
+    "full_path_ssl_key": "CUSTOMER_PRIVKEY_PATH",
+    "port": 8443,
+    "process_uid": "tuleaprt",
+    "process_gid": "tuleaprt"
+    }
+
+Where :
+
+-  ``SHARED_KEY`` being the previously generated key.
+-  ``CUSTOMER_CERT/KEY_PATH`` being the path to your SSL Certificates.
+
+You can now add at the end of ``etc/tuleap/conf/local.inc``:
+
+::
+
+    $sys_nb_backend_workers = 2;
+    $nodejs_server = 'FQDN';
+    $nodejs_server_int = 'FQDN:8443';
+    $nodejs_server_jwt_private_key = 'SHARED_KEY';
+
+With :
+
+-  FQDN being the name of the server as you access it on your network.
+-  ``SHARED_KEY`` being the previously generated key.
+
+Create ``/etc/nginx/conf.d/tuleap.d/10-realtime.conf`` with the following content :
+::  
+
+    location /socket.io {
+    proxy_pass https://127.0.0.1:8443;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header X-Real-IP         $remote_addr;
+    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host              $host;
+    }
+
+We're finished !!  
+
+All you have to do now is enable and launch the services and you should be able to access your instance.
+::
+
+    nginx -s reload
+    systemctl enable --now tuleap-realtime redis
+    systemctl restart tuleap tuleap-realtime redis
+
+.. _tuleap_first-connection:
 
 First connection
 ----------------
