@@ -23,59 +23,7 @@ dirty with Internal code.
 
    developer-guide/integration-oauth-webcomponent
 
-Tuleap core & plugin development
---------------------------------
+Tuleap core & plugins development
+---------------------------------
 
-This guide will gives you the insights to start your contributions to Tuleap:
-
-- Setting up your environment
-- Push your code for review to integrators
-- Understand Tuleap internals
-
-You can also find help for your dev related questions on the `chat in
-the #developers channel <https://chat.tuleap.org/>`_.
-
-.. attention:: 
-
-   Documentation of a living tool is hard to achieve and, in case of doubts, the source code
-   is always the reference.
-
-   When working with sources, you must look closely to `Architecture Decision Records <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=master&f=adr%2Findex.md>`_
-   that will give insights on the evolutions of the code base and what is expected / current norm.
-
-Getting started, what you need to know to setup your environment and push
-your code
-
-.. toctree::
-   :maxdepth: 1
-
-   developer-guide/contrib
-   developer-guide/quick-start
-   developer-guide/patches
-   developer-guide/coding-standards
-   developer-guide/expected-code
-   developer-guide/development-tools
-
-Development 101, what you need to know
-
-.. toctree::
-   :maxdepth: 1
-
-   developer-guide/front-end
-   developer-guide/back-end
-   developer-guide/tests
-   developer-guide/internationalization
-   developer-guide/integrators
-
-Advanced topics
-
-.. toctree::
-   :maxdepth: 1
-
-   developer-guide/release
-   developer-guide/ldap
-   developer-guide/realtime
-   developer-guide/trackers
-   developer-guide/gerrit
-   developer-guide/project-background
-   developer-guide/gitlab
+In order to contribute to Tuleap core & plugins, please see `dedicated Developer guide <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=tree&f=doc>`_.
