@@ -369,7 +369,6 @@ Database
 * ``TULEAP_SYS_ENABLESSL``: can be either ``0`` to disable or ``1`` to enable encryption of traffic with database. Default is ``0``
 * ``TULEAP_SYS_DB_SSL_VERIFY_CERT``: can be either ``0`` to disable or ``1`` to enable verification of database's certificates. Default is ``0``. **WARNING**: perl code (used for subversion core and some maintenance scripts) cannot enforce this, those parts will do encryption without certificate verification.
 * ``TULEAP_SYS_DB_SSL_CA``: path toward a custom CA file for certifacte verification.
-* ``TULEAP_DB_AZURE_SUFFIX``: only needed if you deploy on Microsoft Azure MySQL. It should correspond to first part of ``DB_HOST`` (see `official documentation <https://learn.microsoft.com/en-us/azure/mysql/single-server/quickstart-create-mysql-server-database-using-azure-portal#connect-to-the-server-by-using-mysqlexe>`_).
 
 Site administration
 ###################
