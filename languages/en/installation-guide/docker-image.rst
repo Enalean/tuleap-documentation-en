@@ -308,6 +308,58 @@ The next runs won't need the environment variable so you can restart with:
         -v tuleap-data:/data
         docker.tuleap.org/tuleap-enterprise-edition:11.13-3
 
+You can also use this docker-compose.yml file :
+
+.. code-block:: yaml
+
+    --- 
+    version: "2"
+
+    services:
+      tuleap:
+        image: docker.tuleap.org/tuleap-enterprise-edition:${TULEAP_VERSION}
+        hostname: ${TULEAP_FQDN}
+        restart: always
+        volumes:
+          - ./tuleap-data:/data
+        depends_on:
+          - db
+          - redis
+        environment:
+          - TULEAP_FQDN=${TULEAP_FQDN}
+          - TULEAP_SYS_DBHOST=db
+          - TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD}
+          - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
+          - DB_ADMIN_USER=root
+          - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
+          - TULEAP_FPM_SESSION_MODE=redis
+          - TULEAP_REDIS_SERVER=redis
+
+      nginx:
+        image: nginx:latest
+        restart: always
+        ports:
+          - 80:80
+          - 443:443
+        volumes:
+          - ./nginx-data/certs:/certs
+          - ./nginx-data/nginx.conf:/etc/nginx/nginx.conf
+
+      db:
+        image: mysql:8.0
+        command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
+        environment:
+          - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        volumes:
+          - ./mysql-data:/var/lib/mysql
+
+      redis:
+        image: redis:latest
+        volumes:
+          - ./redis-data:/data
+        command: redis-server --appendonly yes --auto-aof-rewrite-percentage 20 --auto-aof-rewrite-min-size 200kb
+
+
 .. NOTE::
 
     In the context of an orchestrator you don't need to separate the 2 modes (first run or restart), you can expose the
@@ -409,6 +461,72 @@ for your end users you either need to:
   * They key must be ``/data/etc/pki/tls/private/localhost.key.pem``
   * The cert must be ``/data/etc/pki/tls/certs/localhost.cert.pem``
   * If you need something more complex, use a reverse proxy.
+
+You can take inspiration from this nginx.conf file
+
+.. code-block::
+
+  user  nginx;
+  worker_processes  1;
+
+  error_log  /dev/stdout warn;
+  pid        /var/run/nginx.pid;
+
+
+  events {
+      worker_connections  1024;
+  }
+
+
+  http {
+      include       /etc/nginx/mime.types;
+      default_type  application/octet-stream;
+
+      log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                        '$status $body_bytes_sent "$http_referer" '
+                        '"$http_user_agent" "$http_x_forwarded_for"';
+
+      access_log  /dev/stdout  main;
+
+      sendfile        on;
+      #tcp_nopush     on;
+
+      keepalive_timeout  65;
+
+      #gzip  on;
+      
+      server {
+          listen 80 default_server;
+          listen [::]:80 default_server;
+      
+          location / {
+              return 301 https://$host$request_uri;
+          }
+      }
+
+      server {
+          listen       443 ssl;
+          ssl_certificate /certs/cert.pem;
+          ssl_certificate_key /certs/key.pem;
+          ssl_verify_client off;
+      
+          location / {
+            proxy_pass https://tuleap;
+
+            proxy_ssl_verify              off;
+
+            proxy_set_header X-Real-IP         $remote_addr;
+            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto https;
+            proxy_set_header Host              $host;
+            proxy_set_header Destination $http_destination;
+            proxy_read_timeout 300;
+
+        
+          }
+      }
+
+  }
 
 .. _docker_image_ca:
 
