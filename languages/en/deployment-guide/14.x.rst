@@ -18,11 +18,12 @@ This is only a concern for you if you have deployed a :ref:`local Meilisearch in
 
 This upgrade requires to "update" the Meilisearch database to the `new 1.0.0 version <https://blog.meilisearch.com/v1-enterprise-ready-stable/>`_ 🎉.
 
-In order to do that, drop all the existing data and then ask Tuleap to re-index everything after you have upgraded the packages:
+In order to do that, drop all the existing data, restart tuleap-meilisearch, and then ask Tuleap to re-index everything after you have upgraded the packages:
 
 .. sourcecode:: shell
 
     rm -rf /var/lib/tuleap/fts_meilisearch_server/data.ms/
+    systemctl restart tuleap-meilisearch
     tuleap full-text-search:identify-all-items-to-index
     tuleap full-text-search:index-all-pending-items
 
