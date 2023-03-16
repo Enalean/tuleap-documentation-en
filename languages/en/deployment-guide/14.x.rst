@@ -22,7 +22,9 @@ In order to do that, drop all the existing data and then ask Tuleap to re-index 
 
 .. sourcecode:: shell
 
+    systemctl stop tuleap
     rm -rf /var/lib/tuleap/fts_meilisearch_server/data.ms/
+    systemctl start tuleap
     tuleap full-text-search:identify-all-items-to-index
     tuleap full-text-search:index-all-pending-items
 
