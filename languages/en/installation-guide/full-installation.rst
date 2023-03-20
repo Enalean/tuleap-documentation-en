@@ -5,7 +5,7 @@ Tuleap Installation
 
 Full installation can be done on RHEL 7 or CentOS 7 in production context. Rocky Linux 9 builds are available **for test purpose only**. 
 
-RHEL9, Rocky Linux 9 and Alma Linux 9 will be fully supported at some point during first half of 2023.
+RHEL9, Rocky Linux 9 and Alma Linux 9 will probably be supported at some point in 2023.
 
 Requirements
 ------------
