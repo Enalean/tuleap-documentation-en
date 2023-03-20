@@ -172,7 +172,6 @@ Please contact your salesperson to receive your credentials.
     tuleap-plugin-testplan \
     tuleap-plugin-timetracking \
     tuleap-plugin-velocity \
-    tuleap-realtime \
     tuleap-theme-burningparrot \
     tuleap-theme-flamingparrot
 
@@ -364,69 +363,11 @@ Give it the correct permissions:
     chown codendiadm:codendiadm /etc/tuleap/conf/redis.inc
     chmod 640 /etc/tuleap/conf/redis.inc
 
-Real-Time
-`````````
-
-Generate a shared key between Tuleap and Realtime:
-
-::
-
-    head -c 64 /dev/urandom | base64 --wrap=88
-
-Edit ``/etc/tuleap-realtime/config.json``
-
-::
-
-    {
-    "nodejs_server_jwt_private_key": "SHARED_KEY",
-    "full_path_ssl_cert": "CUSTOMER_CERT_PATH",
-    "full_path_ssl_key": "CUSTOMER_PRIVKEY_PATH",
-    "port": 8443,
-    "process_uid": "tuleaprt",
-    "process_gid": "tuleaprt"
-    }
-
-Where :
-
--  ``SHARED_KEY`` being the previously generated key.
--  ``CUSTOMER_CERT/KEY_PATH`` being the path to your SSL Certificates.
-
-You can now add at the end of ``etc/tuleap/conf/local.inc``:
-
-::
-
-    $sys_nb_backend_workers = 2;
-    $nodejs_server = 'FQDN';
-    $nodejs_server_int = 'FQDN:8443';
-    $nodejs_server_jwt_private_key = 'SHARED_KEY';
-
-With :
-
--  FQDN being the name of the server as you access it on your network.
--  ``SHARED_KEY`` being the previously generated key.
-
-Create ``/etc/nginx/conf.d/tuleap.d/10-realtime.conf`` with the following content :
-::  
-
-    location /socket.io {
-    proxy_pass https://127.0.0.1:8443;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "Upgrade";
-    proxy_set_header X-Real-IP         $remote_addr;
-    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header Host              $host;
-    }
-
-We're finished !!  
-
 All you have to do now is enable and launch the services and you should be able to access your instance.
 ::
 
-    nginx -s reload
-    systemctl enable --now tuleap-realtime redis
-    systemctl restart tuleap tuleap-realtime redis
+    systemctl enable redis
+    systemctl restart tuleap redis
 
 .. _tuleap_first-connection:
 
