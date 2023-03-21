@@ -34,11 +34,6 @@
             '';
           }
         );
-        sphinxcontrib-mermaid = super.sphinxcontrib-mermaid.overridePythonAttrs (
-          old: {
-            buildInputs = (old.buildInputs or [ ]) ++ [ super.setuptools ];
-          }
-        );
       }
     );
   })
