@@ -8,6 +8,16 @@ Tuleap 14.7
 
   Tuleap 14.7 is currently under development.
 
+Automatic deployment of Tuleap Realtime
+---------------------------------------
+
+The Tuleap Realtime service is now automatically deployed and managed by Tuleap.
+The Tuleap Realtime service now listen on ``localhost`` and is accessed via the same
+endpoint than the rest of the web UI.
+
+If you had customized the ``nginx`` configuration to make it work in your situation you should remove
+your customizations to avoid potential conflicts.
+
 Tuleap 14.6
 ===========
 

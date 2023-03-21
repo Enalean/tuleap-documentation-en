@@ -19,17 +19,6 @@ Test Management features:
 * Realtime update for concurrent test execution by team
 * Link with requirements managed by Agile Dashboard
 
-.. note::
-
-    It's strongly recommended to site administrator to configure :ref:`Tuleap Realtime <install_realtime>` on the platforms that runs TTM.
-
-    When active, TTM will, without having to reload the page:
-
-    - show presence of all testers in the top bar
-    - up date the the overall progress bar (number of tests not run, passed, failed, blocked)
-    - show the status of each steps and test (passed, failed, blocked)
-    - show who is looking at which test
-
 Overview
 --------
 
