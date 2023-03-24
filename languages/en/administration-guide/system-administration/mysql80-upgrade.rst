@@ -17,16 +17,16 @@ commands in order to upgrade:
 
     yum install rh-mysql80-mysql-server
     echo -e '[mysqld]\nsql-mode="NO_ENGINE_SUBSTITUTION"' > /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf
-    mkdir /etc/systemd/system/rh-mysql80-mysqld.service/
-    echo -e '[Service]\nTimeoutStartSec=99999999999999999' > /etc/systemd/system/rh-mysql80-mysqld.service/override.conf
+    mkdir /etc/systemd/system/rh-mysql80-mysqld.service.d/
+    echo -e '[Service]\nTimeoutStartSec=99999999999999999' > /etc/systemd/system/rh-mysql80-mysqld.service.d/override.conf
     systemctl daemon-reload
     systemctl stop rh-mysql57-mysqld
-    cp -a /var/opt/rh/rh-mysql57/lib/mysql /var/opt/rh/rh-mysql80/lib/mysql
+    cp -a /var/opt/rh/rh-mysql57/lib/mysql /var/opt/rh/rh-mysql80/lib/
     # The first start can take a long time, you can follow the upgrade progress in the MySQL logs
     systemctl start rh-mysql80-mysqld
     systemctl enable rh-mysql80-mysqld
     systemctl disable rh-mysql57-mysqld
-    rm -rf /etc/systemd/system/rh-mysql80-mysqld.service
+    rm -rf /etc/systemd/system/rh-mysql80-mysqld.service.d
     systemctl daemon-reload
 
 For all other situations, please consult your database administrator and the
