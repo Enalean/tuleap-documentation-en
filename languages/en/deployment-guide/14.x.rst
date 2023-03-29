@@ -4,10 +4,6 @@ Tuleap 14.x
 Tuleap 14.7
 ===========
 
-.. NOTE::
-
-  Tuleap 14.7 is currently under development.
-
 Automatic deployment of Tuleap Realtime
 ---------------------------------------
 
