@@ -3,9 +3,7 @@
 Tuleap Installation
 ===================
 
-Full installation can be done on RHEL 7 or CentOS 7 in production context. Rocky Linux 9 builds are available **for test purpose only**. 
-
-RHEL9, Rocky Linux 9 and Alma Linux 9 will be fully supported at some point during first half of 2023.
+Full installation can be done on RHEL 9, Rockylinux 9 or Almalinux 9 in a production context. 
 
 Requirements
 ------------
@@ -13,11 +11,11 @@ Requirements
 To install Tuleap you will need a **fully dedicated server**. It can be **virtualized or physical**.
 It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a server shared with other applications
-will certainly cause problem in both Tuleap and your other applications.
+will certainly cause problems in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - **CentOS or Red Hat Enterprise Linux (RHEL) 7.x**.
- - Rocky Linux 9 **for test purpose only, no production**
+ - CentOS or Red Hat Enterprise Linux (RHEL) 7.x **(LEGACY)**. The details of the installation on this system is not covered in this guide.
+ - **Enterprise Linux 9 (RHEL, Rocky, Alma Linux 9)**.
 
 **You must disable SELinux** prior to the install.
 
@@ -37,68 +35,45 @@ Shared databases must not be used:
 - they make consistent backups almost impossible
 
 Install packages
-----------------
+----------------------
 
 .. _tuleap_installation:
 
-Red Hat Enterprise Linux (RHEL) 7 or CentOS 7
-`````````````````````````````````````````````
+Install dependencies
+````````````````````
 
-This configure the dependencies and download RPM packages
+This configures the dependencies and downloads RPM packages
 
 -  **Install EPEL** You will need EPEL for some dependencies.
 
 ::
 
-    yum install -y epel-release
+    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 
-- If you use Red Hat, you will need to activate the Optional channel
-
-- **Install the Software Collections repositories**
-
-On CentOS this is done by:
+-  **Install Remi repository** (needed for modern PHP versions):
 
 ::
 
-    yum install centos-release-scl
+    dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
-On RedHat this is done by:
+You can find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
-::
-
-    yum-config-manager --enable rhel-server-rhscl-7-rpms
-
--  **Install remi-safe repository** (needed for PHP dependencies):
-
-::
-
-    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-
-You can find find more information about the installation of the remi-safe repository
-on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
-
-
--  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
 
 Tuleap Community Edition
 ````````````````````````
 
+-  **Install Tuleap repository**
+
 ::
 
-    [Tuleap]
-    name=Tuleap
-    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/dev/$basearch
-    enabled=1
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
+    dnf install https://ci.tuleap.net/yum/tuleap/rhel/9/dev/x86_64/tuleap-community-release.rpm
 
 -  **Install Tuleap** by running the following command:
 
 ::
 
-    yum install -y \
-      rh-mysql80-mysql-server \
+    dnf install -y \
+      mysql-server \
       tuleap \
       tuleap-theme-burningparrot \
       tuleap-theme-flamingparrot \
@@ -118,15 +93,15 @@ Tuleap Community Edition
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
 
-Tuleap Entreprise Edition
-`````````````````````````
+Tuleap Enterprise Edition
+``````````````````````````
 Please contact your salesperson to receive your credentials.
 
 ::
 
     [Tuleap-by-Enalean]
     name=Tuleap
-    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/tuleap/current/rhel7/noarch
+    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/tuleap/current/el9/noarch
     gpgcheck=1
     gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/gpg.key
     enabled=1
@@ -135,7 +110,7 @@ Please contact your salesperson to receive your credentials.
 
 ::
 
-    yum install -y rh-mysql80-mysql-server \
+    dnf install -y mysql-server \
     redis \
     tuleap \
     tuleap-plugin-agiledashboard \
@@ -175,88 +150,13 @@ Please contact your salesperson to receive your credentials.
     tuleap-theme-burningparrot \
     tuleap-theme-flamingparrot
 
-
-For Both :
-``````````
-
-..  _install_database:
-
-- **Configure the database**
-
-Ensure that ``/etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf`` contains ``sql-mode=NO_ENGINE_SUBSTITUTION``
-in section [mysqld]
-
-::
-
-    # Create /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf file
-    echo -e '[mysqld]\nsql-mode="NO_ENGINE_SUBSTITUTION"' > /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf
-    
-    # Activate mysql on boot
-    systemctl enable rh-mysql80-mysqld
-
-    # Start it
-    systemctl start rh-mysql80-mysqld
-
-    # Set a password
-    scl enable rh-mysql80 "mysqladmin -u root password"
-
-
-Your are now ready to configure and run Tuleap. Go to :ref:`Setup <tuleap_setup>` step bellow.
-
-Rocky Linux 9
-`````````````
-
-**FOR TEST PURPOSE ONLY. DO NOT USE IT IN PRODUCTION**
-
-This configure the dependencies and download RPM packages
-
--  **Install EPEL** You will need EPEL for some dependencies.
-
-::
-
-    dnf install epel-release
-
-
--  **Install Remi repository** (needed for modern PHP versions):
-
-::
-
-    dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
-
-You can find find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
-
--  **Install Tuleap repository**
-
-::
-
-    dnf install https://ci.tuleap.net/yum/tuleap/rhel/9/dev/x86_64/tuleap-community-release.rpm
-
--  **Install Tuleap** by running the following command:
-
-::
-
-    dnf install -y \
-      mysql-server \
-      tuleap \
-      tuleap-theme-burningparrot \
-      tuleap-theme-flamingparrot \
-      tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackers \
-      tuleap-plugin-git \
-      tuleap-plugin-hudson-git \
-      tuleap-plugin-pullrequest \
-      tuleap-plugin-gitlfs \
-      tuleap-plugin-document \
-      tuleap-plugin-onlyoffice \
-      tuleap-plugin-embed \
-      tuleap-plugin-gitlab \
-      tuleap-plugin-openidconnectclient \
-      tuleap-plugin-ldap
-
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
 
-- **Prepare the database**
+Prepare the database
+--------------------
+
+..  _install_database:
 
 ::
 
