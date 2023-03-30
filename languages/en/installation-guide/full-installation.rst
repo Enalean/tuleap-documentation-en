@@ -37,6 +37,8 @@ Shared databases must not be used:
 Install packages
 ----------------------
 
+.. _tuleap_installation:
+
 Install dependencies
 ````````````````````
 
