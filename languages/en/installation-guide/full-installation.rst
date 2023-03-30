@@ -156,6 +156,8 @@ to install all of them now. Start small and add them on the go.
 Prepare the database
 --------------------
 
+..  _install_database:
+
 ::
 
     # Create /etc/my.cnf.d/tuleap.cnf file
