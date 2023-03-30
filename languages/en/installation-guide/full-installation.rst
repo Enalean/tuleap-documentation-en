@@ -3,9 +3,7 @@
 Tuleap Installation
 ===================
 
-Full installation can be done on RHEL 7 or CentOS 7 in production context. Rocky Linux 9 builds are available **for test purpose only**. 
-
-RHEL9, Rocky Linux 9 and Alma Linux 9 will be fully supported at some point during first half of 2023.
+Full installation can be done on RHEL 9, Rockylinux 9 or Almalinux 9 in a production context. 
 
 Requirements
 ------------
@@ -13,11 +11,11 @@ Requirements
 To install Tuleap you will need a **fully dedicated server**. It can be **virtualized or physical**.
 It is not recommended to install Tuleap on a server that hosts other applications. Tuleap provides
 a full suite of software and is deeply integrated with its host system. Installing Tuleap on a server shared with other applications
-will certainly cause problem in both Tuleap and your other applications.
+will certainly cause problems in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - **CentOS or Red Hat Enterprise Linux (RHEL) 7.x** (legacy).
- - Enterprise Linux 9 (RHEL, Rocky, Alma Linux 9).
+ - CentOS or Red Hat Enterprise Linux (RHEL) 7.x **(LEGACY)**.
+ - **Enterprise Linux 9 (RHEL, Rocky, Alma Linux 9)**.
 
 **You must disable SELinux** prior to the install.
 
@@ -36,15 +34,13 @@ Shared databases must not be used:
 - they cannot respect the requirements (SQL modes) described below
 - they make consistent backups almost impossible
 
-EL9 - Install packages
+Install packages
 ----------------------
 
 Install dependencies
 ````````````````````
 
-**FOR TEST PURPOSE ONLY. DO NOT USE IT IN PRODUCTION**
-
-This configure the dependencies and download RPM packages
+This configures the dependencies and downloads RPM packages
 
 -  **Install EPEL** You will need EPEL for some dependencies.
 
@@ -58,7 +54,7 @@ This configure the dependencies and download RPM packages
 
     dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
-You can find find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
+You can find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
 
 
 Tuleap Community Edition
@@ -112,7 +108,7 @@ Please contact your salesperson to receive your credentials.
 
 ::
 
-    yum install -y mysql-server \
+    dnf install -y mysql-server \
     redis \
     tuleap \
     tuleap-plugin-agiledashboard \
@@ -155,10 +151,8 @@ Please contact your salesperson to receive your credentials.
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
 
-For Both :
-``````````
-
-- **Prepare the database**
+Prepare the database
+--------------------
 
 ::
 
