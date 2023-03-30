@@ -16,8 +16,8 @@ a full suite of software and is deeply integrated with its host system. Installi
 will certainly cause problem in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - **CentOS or Red Hat Enterprise Linux (RHEL) 7.x**.
- - Rocky Linux 9 **for test purpose only, no production**
+ - **CentOS or Red Hat Enterprise Linux (RHEL) 7.x** (legacy).
+ - Enterprise Linux 9 (RHEL, Rocky, Alma Linux 9).
 
 **You must disable SELinux** prior to the install.
 
@@ -36,175 +36,8 @@ Shared databases must not be used:
 - they cannot respect the requirements (SQL modes) described below
 - they make consistent backups almost impossible
 
-Install packages for EL7
-------------------------
-
-.. _tuleap_installation:
-
-Install dependencies
-````````````````````
-
-This configures the dependencies and downloads RPM packages
-
--  **Install EPEL** You will need EPEL for some dependencies.
-
-::
-
-    yum install -y epel-release
-
-- If you use Red Hat, you will need to activate the Optional channel
-
-- **Install the Software Collections repositories**
-
-On CentOS this is done by:
-
-::
-
-    yum install centos-release-scl
-
-On RedHat this is done by:
-
-::
-
-    yum-config-manager --enable rhel-server-rhscl-7-rpms
-
--  **Install remi-safe repository** (needed for PHP dependencies):
-
-::
-
-    yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-
-You can find find more information about the installation of the remi-safe repository
-on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
-
-
--  **Install Tuleap repositories** Create a ``/etc/yum.repos.d/Tuleap.repo`` with this content:
-
-Tuleap Community Edition
-````````````````````````
-
-::
-
-    [Tuleap]
-    name=Tuleap
-    baseurl=https://ci.tuleap.net/yum/tuleap/rhel/7/dev/$basearch
-    enabled=1
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://ci.tuleap.net/yum/tuleap/gpg.key
-
--  **Install Tuleap** by running the following command:
-
-::
-
-    yum install -y \
-      rh-mysql80-mysql-server \
-      tuleap \
-      tuleap-theme-burningparrot \
-      tuleap-theme-flamingparrot \
-      tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackers \
-      tuleap-plugin-git \
-      tuleap-plugin-hudson-git \
-      tuleap-plugin-pullrequest \
-      tuleap-plugin-gitlfs \
-      tuleap-plugin-document \
-      tuleap-plugin-onlyoffice \
-      tuleap-plugin-embed \
-      tuleap-plugin-gitlab \
-      tuleap-plugin-openidconnectclient \
-      tuleap-plugin-ldap
-
-You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
-to install all of them now. Start small and add them on the go.
-
-Tuleap Entreprise Edition
-`````````````````````````
-Please contact your salesperson to receive your credentials.
-
-::
-
-    [Tuleap-by-Enalean]
-    name=Tuleap
-    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/tuleap/current/rhel7/noarch
-    gpgcheck=1
-    gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/gpg.key
-    enabled=1
-
--  **Install Tuleap** by running the following command:
-
-::
-
-    yum install -y rh-mysql80-mysql-server \
-    redis \
-    tuleap \
-    tuleap-plugin-agiledashboard \
-    tuleap-plugin-api-explorer \
-    tuleap-plugin-archivedeleteditems \
-    tuleap-plugin-baseline \
-    tuleap-plugin-botmattermost-agiledashboard \
-    tuleap-plugin-botmattermost-git \
-    tuleap-plugin-captcha \
-    tuleap-plugin-cardwall \
-    tuleap-plugin-crosstracker \
-    tuleap-plugin-document \
-    tuleap-plugin-document_generation \
-    tuleap-plugin-frs \
-    tuleap-plugin-git \
-    tuleap-plugin-gitlab \
-    tuleap-plugin-gitlfs \
-    tuleap-plugin-graphontrackers \
-    tuleap-plugin-hudson \
-    tuleap-plugin-hudson-git \
-    tuleap-plugin-label \
-    tuleap-plugin-ldap \
-    tuleap-plugin-mediawiki \
-    tuleap-plugin-openidconnectclient \
-    tuleap-plugin-program_management \
-    tuleap-plugin-project-ownership \
-    tuleap-plugin-projectmilestones \
-    tuleap-plugin-prometheus-metrics \
-    tuleap-plugin-pullrequest \
-    tuleap-plugin-roadmap \
-    tuleap-plugin-svn \
-    tuleap-plugin-taskboard \
-    tuleap-plugin-testmanagement \
-    tuleap-plugin-testplan \
-    tuleap-plugin-timetracking \
-    tuleap-plugin-velocity \
-    tuleap-theme-burningparrot \
-    tuleap-theme-flamingparrot
-
-
-For Both :
-``````````
-
-..  _install_database:
-
-- **Configure the database**
-
-Ensure that ``/etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf`` contains ``sql-mode=NO_ENGINE_SUBSTITUTION``
-in section [mysqld]
-
-::
-
-    # Create /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf file
-    echo -e '[mysqld]\nsql-mode="NO_ENGINE_SUBSTITUTION"' > /etc/opt/rh/rh-mysql80/my.cnf.d/tuleap.cnf
-    
-    # Activate mysql on boot
-    systemctl enable rh-mysql80-mysqld
-
-    # Start it
-    systemctl start rh-mysql80-mysqld
-
-    # Set a password
-    scl enable rh-mysql80 "mysqladmin -u root password"
-
-
-Your are now ready to configure and run Tuleap. Go to :ref:`Setup <tuleap_setup>` step bellow.
-
-Install packages for EL9
--------------------------
+EL9 - Install packages
+----------------------
 
 Install dependencies
 ````````````````````
@@ -218,7 +51,6 @@ This configure the dependencies and download RPM packages
 ::
 
     dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-
 
 -  **Install Remi repository** (needed for modern PHP versions):
 
