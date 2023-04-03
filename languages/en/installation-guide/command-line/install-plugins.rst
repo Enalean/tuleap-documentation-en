@@ -1,6 +1,6 @@
 .. _install-plugins:
 
-Tuleap Plugins installation
+Plugins installation
 ===========================
 
 Tuleap comes with a lot of plugins, they bring new features and can be easily installed and configured.
@@ -18,8 +18,8 @@ is the name of the package of the plugin you want to install):
 
 ::
 
-    # On RHEL/CentOS 7
-    yum install tuleap-plugin-awesomestuff
+    # On EL9
+    dnf install tuleap-plugin-awesomestuff
     tuleap-cfg site-deploy
     systemctl reload nginx
     systemctl restart tuleap-php-fpm
@@ -160,8 +160,6 @@ Integrations:
 Deprecated plugins
 -------------------
 
-Those plugins are not compatible with RHEL/CentOS 7
-
-Those plugins should not be installed and only kept for legacy reasons. They will be removed
+Those plugins should not be installed and only kept for legacy reasons. They will be removed:
 
 * tracker_encryption

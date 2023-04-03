@@ -1,8 +1,5 @@
-Troubleshooting your Tuleap Installation
-========================================
-
-
-.. _FAQ_Timeout_URL:
+Troubleshooting
+===============
 
 I can not access Tuleap front page
 ----------------------------------
@@ -35,7 +32,7 @@ Check your firewall is disabled or correctly configured:
 Ports 80 and 443 should be opened.
 
 
-.. _FAQ_Blank_Page:
+.. _Troubleshooting_Blank_Page:
 
 I have a blank page when accessing a web page
 ---------------------------------------------
@@ -43,7 +40,7 @@ I have a blank page when accessing a web page
 Check NGINX and PHP logs: :ref:`platform_logs`
 
 
-.. _FAQ_Cannot_Connect:
+.. _Troubleshooting_Cannot_Connect:
 
 I can not log in or I'm redirected indefinitely on the login page
 -----------------------------------------------------------------

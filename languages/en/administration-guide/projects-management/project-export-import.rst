@@ -28,4 +28,5 @@ same Tuleap instance or between two different Tuleap instances.
 
    export-import/project-export
    export-import/project-import
+   export-import/import-from-other-tools
    export-import/import-format
