@@ -214,7 +214,7 @@ Then you can init docker image in command line:
         -e TULEAP_EMAIL_TRANSPORT=smtp \
         -e TULEAP_EMAIL_RELAYHOST=your-smtp.example.com:2025 \
         -v /srv/path/to/data:/data
-        tuleapp/tuleap-community-edition
+        tuleap/tuleap-community-edition
 
 For future runs you don't need to pass all the environments:
 
