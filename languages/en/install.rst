@@ -1,4 +1,4 @@
-Installation Guide
+Installation guide
 ==================
 
 If you are a tech enthusiast with the ability to self-install and maintain your instance,
