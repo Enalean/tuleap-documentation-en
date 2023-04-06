@@ -5,7 +5,7 @@ As root, run:
 
 ::
 
-     /usr/share/tuleap/tools/setup.el7.sh \
+     /usr/share/tuleap/tools/setup.sh \
        --configure \
        --server-name=FQDN \
        --mysql-server=localhost \
