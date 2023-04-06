@@ -1,7 +1,7 @@
 Command-line Installation
 =========================
 
-Full installation can be done on RHEL 9, Rockylinux 9 or Almalinux 9 in a production context. 
+Full installation can be done on RHEL 9, Rockylinux 9 or AlmaLinux 9 in a production context. 
 
 Table of contents:
 
