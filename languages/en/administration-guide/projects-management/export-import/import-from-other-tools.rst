@@ -24,7 +24,7 @@ Bugzilla
 ''''''''
 
 Leveraging Tuleap XML import format, `bz2tuleap <https://hub.docker.com/r/enalean/bz2tuleap/>`_ is a tool that convert
-any Bugzilla XML query into an archive ready to be :ref:`imported <project-export-import>` into a Tuleap instance.
+any Bugzilla XML query into an archive ready to be :doc:`imported <import-format>` into a Tuleap instance.
 
 Not only it will recreate the bugs and their comments with proper usernames and dates
 but corresponding user accounts will be created automatically during import.
