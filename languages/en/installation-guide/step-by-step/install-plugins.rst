@@ -22,7 +22,7 @@ is the name of the package of the plugin you want to install):
     dnf install tuleap-plugin-awesomestuff
     tuleap-cfg site-deploy
     systemctl reload nginx
-    systemctl restart tuleap-php-fpm
+    systemctl restart tuleap
 
 Once the plugin is installed, go to Tuleap site admin home page and enter the plugin administration page. You can now
 install and activate the new plugin from 'Not yet installed' tab.
