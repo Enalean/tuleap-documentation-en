@@ -289,7 +289,8 @@ rediraffe_redirects = {
     "user-guide/documents-and-files/document.rst": "user-guide/documents-and-files/doc.rst",
     "user-guide/trackers/usage/markdown.rst": "user-guide/writing-in-tuleap.rst",
     "user-guide/my-personal-dashboard.rst": "user-guide/user/dashboard.rst",
-    "installation-guide/intro.rst": "install.rst"
+    "installation-guide/intro.rst": "install.rst",
+    "administration-guide/system-administration/backend-workers.rst": "installation-guide/command-line/redis-configuration.rst"
 }
 
 # 404 page

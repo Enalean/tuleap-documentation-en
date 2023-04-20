@@ -54,7 +54,11 @@ Check that you access your Tuleap instance with the same URL than the one presen
 
 If URLs differ, choose one and configure it everywhere. Tuleap can only be accessed by one address.
 
+Backend workers are not processing the system events
+----------------------------------------------------
 
+You can track worker activity in ``/var/log/tuleap/worker_log`` log file (you might need to change the
+``$sys_logger_level`` value to make if more verbose).
 
 I checked everything and it's still not working
 -----------------------------------------------

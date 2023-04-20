@@ -1,10 +1,16 @@
-Tuleap Enterprise Edition Advanced configuration
-================================================
+.. _installation_redis:
 
-Tuleap needs a bit more configuration in order to use the Enterprise plugins.
+Redis Configuration
+===================
 
-Redis 
-`````
+Backend workers are used to process asynchronous tasks. Currently it is used for:
+
+* Asynchronous actions like sending tracker notifications or :ref:`importing Jira issues <tracker-import-from-jira>`
+* :ref:`Monitoring with Prometheus<admin_monitoring_with_prometheus>`
+
+It's based on a notification queue managed by Redis and a worker that will process the the queue as soon as it's pushed.
+Unlike "SystemEvents" there is no delay between the queue and the processing of the job.
+
 Generate a password :
 :: 
 
@@ -32,6 +38,10 @@ Give it the correct permissions:
 
     chown codendiadm:codendiadm /etc/tuleap/conf/redis.inc
     chmod 640 /etc/tuleap/conf/redis.inc
+
+In ``/etc/tuleap/conf/local.inc`` you should set ``$sys_nb_backend_workers`` to a number greater than or equal to ``1``.
+This controls the number of workers to process background jobs. It should be adapted given your server workload.
+``2`` is a good starting value.
 
 All you have to do now is enable and launch the services and you should be able to access your instance.
 ::

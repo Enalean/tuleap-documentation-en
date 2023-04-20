@@ -14,7 +14,7 @@ Table of contents:
    setup
    tls-configuration
    mail-configuration
-   tee-advanced-configuration
+   redis-configuration
    first-connection
    install-plugins
    upgrade

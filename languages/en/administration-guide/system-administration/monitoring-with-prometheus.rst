@@ -22,7 +22,7 @@ Configuration of Tuleap
 -----------------------
 
 First step is to install a Redis server and to configure Tuleap to use it,
-checkout :ref:`backend workers guide<admin_howto_backend_worker>`.
+checkout :ref:`backend workers guide<installation_redis>`.
 
 After having installed and activated ``tuleap-plugin-prometheus-metrics`` rpm, you need to setup a password to access the
 data (by default data are private and there is no ways to make them accessible anonymously). To do so, you need to write
