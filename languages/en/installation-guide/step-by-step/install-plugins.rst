@@ -18,8 +18,12 @@ is the name of the package of the plugin you want to install):
 
 ::
 
+    # On RHEL/CentOS 7
+    yum install tuleap-plugin-awesomestuff
+
     # On EL9
     dnf install tuleap-plugin-awesomestuff
+
     tuleap-cfg site-deploy
     systemctl reload nginx
     systemctl restart tuleap

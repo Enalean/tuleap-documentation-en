@@ -11,6 +11,10 @@ This document aims to help you install Tuleap Community Edition (TCE) or Tuleap 
 
 Multiple ways to install TCE & TEE are supported with their benefits and disadvantages.
 
+-  :doc:`Docker installation<installation-guide/docker/introduction>`:
+    -  Quick and easy install
+    -  Recommended way to install Tuleap, especially for tests
+
 -  :doc:`Step by step installation<installation-guide/step-by-step/introduction>`:
     -  Fully adaptable to your needs
     -  Installation can be tricky for linux beginners
@@ -21,16 +25,12 @@ Multiple ways to install TCE & TEE are supported with their benefits and disadva
     -  Deploy and manage multiple servers at once
     -  A first default setup is done with ansible
       
--  :doc:`Docker installation<installation-guide/docker/introduction>`:
-    -  Quick and easy install
-    -  Recommended way to install Tuleap, especially for tests
-
 Table of contents:
 
 .. toctree::
    :maxdepth: 2
 
+   installation-guide/docker/introduction
    installation-guide/step-by-step/introduction
    installation-guide/ansible/introduction
-   installation-guide/docker/introduction
    installation-guide/troubleshooting
