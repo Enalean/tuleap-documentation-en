@@ -6,10 +6,12 @@ Full installation can be done on RHEL 9, Rockylinux 9 or AlmaLinux 9 in a produc
 Table of contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    requirements
-   install-packages
+   install-dependencies
+   install-packages-tce
+   install-packages-tee
    prepare-database
    setup
    tls-configuration

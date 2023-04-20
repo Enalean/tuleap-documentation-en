@@ -1,64 +1,8 @@
-Install packages
-================
+.. _tuleap_installation_install_packages_tee:
+ 
+Install packages - Tuleap Enterprise Edition
+============================================
 
-.. _tuleap_installation:
-
-Install dependencies
-````````````````````
-
-This configures the dependencies and downloads RPM packages
-
--  **Install EPEL** You will need EPEL for some dependencies.
-
-::
-
-    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-
--  **Install Remi repository** (needed for modern PHP versions):
-
-::
-
-    dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
-
-You can find more information about the installation on the `Remi's RPM repositories Repository Configuration page <https://blog.remirepo.net/pages/Config-en>`_.
-
-
-Tuleap Community Edition
-````````````````````````
-
--  **Install Tuleap repository**
-
-::
-
-    dnf install https://ci.tuleap.net/yum/tuleap/rhel/9/dev/x86_64/tuleap-community-release.rpm
-
--  **Install Tuleap** by running the following command:
-
-::
-
-    dnf install -y \
-      mysql-server \
-      tuleap \
-      tuleap-theme-burningparrot \
-      tuleap-theme-flamingparrot \
-      tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackers \
-      tuleap-plugin-git \
-      tuleap-plugin-hudson-git \
-      tuleap-plugin-pullrequest \
-      tuleap-plugin-gitlfs \
-      tuleap-plugin-document \
-      tuleap-plugin-onlyoffice \
-      tuleap-plugin-embed \
-      tuleap-plugin-gitlab \
-      tuleap-plugin-openidconnectclient \
-      tuleap-plugin-ldap
-
-You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
-to install all of them now. Start small and add them on the go.
-
-Tuleap Enterprise Edition
-``````````````````````````
 Please contact your salesperson to receive your credentials.
 
 ::
