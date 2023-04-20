@@ -18,4 +18,3 @@ Table of contents:
    first-connection
    install-plugins
    upgrade
-   next-steps

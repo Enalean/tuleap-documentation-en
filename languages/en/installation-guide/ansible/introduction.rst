@@ -15,4 +15,3 @@ Table of contents:
    requirements
    ansible-role
    installation
-   next-steps

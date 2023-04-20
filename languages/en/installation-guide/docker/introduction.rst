@@ -11,4 +11,3 @@ Table of contents:
    tce
    tee
    images-configuration
-   next-steps
