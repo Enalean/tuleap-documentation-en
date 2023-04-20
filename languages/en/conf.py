@@ -290,7 +290,14 @@ rediraffe_redirects = {
     "user-guide/trackers/usage/markdown.rst": "user-guide/writing-in-tuleap.rst",
     "user-guide/my-personal-dashboard.rst": "user-guide/user/dashboard.rst",
     "installation-guide/intro.rst": "install.rst",
-    "administration-guide/system-administration/backend-workers.rst": "installation-guide/step-by-step/redis-configuration.rst"
+    "administration-guide/system-administration/backend-workers.rst": "installation-guide/step-by-step/redis-configuration.rst",
+    "installation-guide/import.rst": "administration-guide/projects-management/export-import/import-from-other-tools.rst",
+    "installation-guide/ansible-installation.rst": "installation-guide/ansible/introduction.rst",
+    "installation-guide/docker-image.rst": "installation-guide/docker/introduction.rst",
+    "installation-guide/full-installation.rst": "installation-guide/step-by-step/introduction.rst",
+    "installation-guide/install-plugins.rst" : "installation-guide/step-by-step/install-plugins.rst",
+    "installation-guide/update.rst": "installation-guide/step-by-step/upgrade.rst",
+    "installation-guide/FAQ.rst": "installation-guide/troubleshooting.rst"
 }
 
 # 404 page
