@@ -11,7 +11,7 @@ This document aims to help you install Tuleap Community Edition (TCE) or Tuleap 
 
 Multiple ways to install TCE & TEE are supported with their benefits and disadvantages.
 
--  :doc:`Command-line installation<installation-guide/command-line/introduction>`:
+-  :doc:`Step by step installation<installation-guide/step-by-step/introduction>`:
     -  Fully adaptable to your needs
     -  Installation can be tricky for linux beginners
 
@@ -30,7 +30,7 @@ Table of contents:
 .. toctree::
    :maxdepth: 2
 
-   installation-guide/command-line/introduction
+   installation-guide/step-by-step/introduction
    installation-guide/ansible/introduction
    installation-guide/docker/introduction
    installation-guide/troubleshooting
