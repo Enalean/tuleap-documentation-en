@@ -150,52 +150,10 @@ This command works with Jira REST API so Tuleap server must be able to reach the
 
 This command will import:
 
-* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort),
+* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort, more details :ref:`here <tracker-import-from-jira>`),
 * the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
 * all worklog as :ref:`time tracking <timetracking>`,
 * Board and Sprints with associated issues and backlog.
-
-Here is a summary of imported Jira fields:
-
-**Jira system fields**
-
-================== ===============
-Field type         With history?  
-================== ===============
-fixVersions                       
-versions                          
-components                        
-summary            ✅             
-description        ✅             
-duedate            ✅             
-priority           ✅             
-assignee           ✅             
-reporter           ✅             
-labels             ✅             
-status             ✅             
-attachment                        
-story_points       ✅             
-================== ===============
-
-**Jira custom fields**
-
-=================================================================== =================
-Field type                                                          With history?    
-=================================================================== =================
-com.atlassian.jira.plugin.system.customfieldtypes:textfield         ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:textarea          ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:float             ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:datepicker        ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:datetime          ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons      ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:multiselect       ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:select            ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:userpicker        ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker   ✅               
-com.atlassian.jira.plugin.system.customfieldtypes:multiversion                       
-com.atlassian.jira.plugin.system.customfieldtypes:version                            
-com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes                    
-=================================================================== =================
 
 A given Jira project can have many Boards with different configurations. There is no equivalent concept in Tuleap
 so the importer arbitrarily choose the first declared board.
