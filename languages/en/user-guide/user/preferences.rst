@@ -51,6 +51,7 @@ for what usage and you won't know the ones you can revoke and the ones you must 
 Access Keys also have a scope:
 
   - REST API: The access key can be used to make any REST call to Tuleap API. Look at :ref:`rest-auth` to learn how to use it.
+  - SVN: The access key can be used to do SVN operations (``checkout`` & ``commit``, according to your permissions).
   - Git: The access key can be used to do git operations over https (``clone`` & ``push``, according to your permissions).
     When doing git with an access key, you will have to use https basic authentication mode with your username.
   - WebDAV: The access key can be used to access document manager or file release system files via the WebDAV server.
