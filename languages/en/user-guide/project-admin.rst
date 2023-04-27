@@ -155,6 +155,48 @@ This command will import:
 * all worklog as :ref:`time tracking <timetracking>`,
 * Board and Sprints with associated issues and backlog.
 
+Here is a summary of imported Jira fields:
+
+**Jira system fields**
+
+================== ===============
+Field type         With history?  
+================== ===============
+fixVersions                       
+versions                          
+components                        
+summary            ✅             
+description        ✅             
+duedate            ✅             
+priority           ✅             
+assignee           ✅             
+reporter           ✅             
+labels             ✅             
+status             ✅             
+attachment                        
+story_points       ✅             
+================== ===============
+
+**Jira custom fields**
+
+=================================================================== =================
+Field type                                                          With history?    
+=================================================================== =================
+com.atlassian.jira.plugin.system.customfieldtypes:textfield         ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:textarea          ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:float             ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:datepicker        ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:datetime          ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons      ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiselect       ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:select            ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:userpicker        ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker   ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiversion                       
+com.atlassian.jira.plugin.system.customfieldtypes:version                            
+com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes                    
+=================================================================== =================
+
 A given Jira project can have many Boards with different configurations. There is no equivalent concept in Tuleap
 so the importer arbitrarily choose the first declared board.
 
@@ -163,7 +205,7 @@ pick the ``Epic`` issue type. If this label was modified in your project, you ca
 ``--jira-epic-issue-type`` option.
 
 The project is created and activated as soon as the command ends with ``TULEAP_USER_LOGIN`` as sole project administrator.
-By default the project privacy is "private" and can be changed after import.
+By default the project privacy is "private". A ``--visiblity`` option can be used to defined the Tuleap project visiblity at import.
 
 .. note::
 
