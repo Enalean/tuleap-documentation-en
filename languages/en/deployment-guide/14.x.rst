@@ -3,10 +3,6 @@ Tuleap 14.x
 
 Tuleap 14.8
 ===========
-
-.. NOTE::
-
-  Tuleap 14.8 is currently under development.
   
 Plugin removal
 --------------
