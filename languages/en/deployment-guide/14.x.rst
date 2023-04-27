@@ -7,6 +7,18 @@ Tuleap 14.8
 .. NOTE::
 
   Tuleap 14.8 is currently under development.
+  
+Plugin removal
+--------------
+
+Some plugins have been removed, if you have any of following listed plugins intalled you can removed them:
+
+ - tuleap-plugin-referencealias-git
+ - tuleap-plugin-referencealias-mediawiki
+ - tuleap-plugin-referencealias-tracker
+ - tuleap-plugin-referencealias-svn
+ - tuleap-plugin-referencealias-core
+ - tuleap-plugin-artifactsfolders
 
 
 Default protection against Server Side Request Forgery (SSRF)
