@@ -139,15 +139,45 @@ Imported data
 
 All the issues of the selected type in the selected project will be imported. The import is able to deal with the following fields:
 
-* Text
-* String
-* Date
-* Date with time
-* Selectbox
-* Radio button
-* Checkbox
-* Status field
-* Attachments
+**Jira system fields**
+
+================== ===============
+Field type         With history?  
+================== ===============
+fixVersions                       
+versions                          
+components                        
+summary            ✅             
+description        ✅             
+duedate            ✅             
+priority           ✅             
+assignee           ✅             
+reporter           ✅             
+labels             ✅             
+status             ✅             
+attachment                        
+story_points       ✅             
+================== ===============
+
+**Jira custom fields**
+
+=================================================================== =================
+Field type                                                          With history?    
+=================================================================== =================
+com.atlassian.jira.plugin.system.customfieldtypes:textfield         ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:textarea          ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:float             ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:datepicker        ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:datetime          ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons      ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiselect       ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:select            ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:userpicker        ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker   ✅               
+com.atlassian.jira.plugin.system.customfieldtypes:multiversion                       
+com.atlassian.jira.plugin.system.customfieldtypes:version                            
+com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes                    
+=================================================================== =================
 
 Comments are also imported. The issue history is recreated.
 
