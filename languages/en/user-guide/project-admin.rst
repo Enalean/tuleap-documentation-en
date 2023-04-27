@@ -150,7 +150,7 @@ This command works with Jira REST API so Tuleap server must be able to reach the
 
 This command will import:
 
-* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort),
+* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort, more details :ref:`here <tracker-import-from-jira>`),
 * the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
 * all worklog as :ref:`time tracking <timetracking>`,
 * Board and Sprints with associated issues and backlog.
@@ -163,7 +163,7 @@ pick the ``Epic`` issue type. If this label was modified in your project, you ca
 ``--jira-epic-issue-type`` option.
 
 The project is created and activated as soon as the command ends with ``TULEAP_USER_LOGIN`` as sole project administrator.
-By default the project privacy is "private" and can be changed after import.
+By default the project privacy is "private". A ``--visiblity`` option can be used to defined the Tuleap project visiblity at import.
 
 .. note::
 
