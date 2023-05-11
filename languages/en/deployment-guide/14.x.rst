@@ -14,15 +14,16 @@ Tuleap 14.8
 Plugin removal
 --------------
 
-Some plugins have been removed, if you have any of following listed plugins intalled you can removed them:
+Some plugins have been removed, if you have any of following listed plugins installed **you must removed them prior the upgrade**:
 
- - tuleap-plugin-referencealias-git
- - tuleap-plugin-referencealias-mediawiki
- - tuleap-plugin-referencealias-tracker
- - tuleap-plugin-referencealias-svn
- - tuleap-plugin-referencealias-core
- - tuleap-plugin-artifactsfolders
+.. sourcecode:: shell
 
+    yum remove tuleap-plugin-referencealias-git \
+        tuleap-plugin-referencealias-mediawiki \
+        tuleap-plugin-referencealias-tracker \
+        tuleap-plugin-referencealias-svn \
+        tuleap-plugin-referencealias-core \
+        tuleap-plugin-artifactsfolders
 
 Default protection against Server Side Request Forgery (SSRF)
 -------------------------------------------------------------
@@ -33,7 +34,7 @@ This protection is active by default if you have not defined a custom ``sys_prox
 Any outbound requests Tuleap send (e.g. webhooks, imports from JIRA, RSS widget…) are now rejected if they try to access
 a service on a :ref:`non public network <ssrf_default_filters>`.
 
-You can find more informations on what is exactly filtered and how to add exceptions to the filters in :ref:`the dedicated documentation section <ssrf_protection>`.
+You can find more information on what is exactly filtered and how to add exceptions to the filters in :ref:`the dedicated documentation section <ssrf_protection>`.
 
 Tuleap 14.7
 ===========
