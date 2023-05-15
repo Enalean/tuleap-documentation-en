@@ -89,7 +89,13 @@ If you are using a container, restart it.
 How to detect a filtered outbound request?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Filtered outbound requests are logged with the reason explaining why they have been blocked.
+Filtered outbound requests are logged with the reason explaining why they have been blocked. The information is logged into ``/var/log/tuleap/codendi_syslog``
+or you log sink depending on :ref:`your log configuration <platform_logs>`.
+The logs look like this:
+
+.. sourcecode::
+
+     A possible SSRF attempt was blocked: https://example.com/api/xml (Egress proxying is denied to host '192.0.2.1:443': The destination address (192.0.2.1) was denied by rule 'Deny: Not Global Unicast'. destination address was denied by rule, see error.)
 
 Warnings are displayed in the site administration, you can hide them using the Tuleap CLI on the server:
 
