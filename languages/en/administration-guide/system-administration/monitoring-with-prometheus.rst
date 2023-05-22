@@ -87,3 +87,11 @@ it is recommended to take a look at `Prometheus documentation <https://prometheu
             - tuleap.example.com
 
       ...
+
+Grafana Dashboard
+-----------------
+
+The dashboard is published on `Grafana Dashboard Marketplace <https://grafana.com/grafana/dashboards/18764-tuleap-metrics/>`_ you can either find it directly
+in your Grafana instance or download it directly from there.
+
+The dashboard evolves when new metrics are being added to Tuleap so keep an eye on it.
