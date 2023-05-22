@@ -8,7 +8,18 @@ Tuleap 14.10
 
   Tuleap 14.10 is currently under development.
 
-Nothing to mention.
+Minimal browser support raised to Firefox 102 ESR and Chrome 103
+----------------------------------------------------------------
+
+The best effort support is now Firefox 102 ESR and Chrome 103.
+Versions older than that do not work at all anymore to browse Tuleap.
+
+The previous minimal best effort browser version was Firefox 91 ESR which is out
+of security support since 9 months.
+
+:ref:`The recommendation is still to use the latest version of Mozilla Firefox, Microsoft Edge
+or Google Chrome <user_supported_browsers>`.
+
 
 Tuleap 14.9
 ===========
