@@ -8,9 +8,20 @@ Tuleap 14.9
 
   Tuleap 14.9 is currently under development.
 
+
+Removal of Proftpd plugin
+-------------------------
+
+The Proftpd plugin has been removed. Please uninstall it from the site administration and remove
+the package prior to the upgrade if you had it installed.
+
+.. sourcecode:: shell
+
+    yum remove tuleap-plugin-proftpd
+
 Tuleap 14.8
 ===========
-  
+
 Plugin removal
 --------------
 

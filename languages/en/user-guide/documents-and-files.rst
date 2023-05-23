@@ -8,4 +8,3 @@ Documents and files
    documents-and-files/mediawiki
    documents-and-files/wiki
    documents-and-files/frs
-   documents-and-files/sftp-browser
