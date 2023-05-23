@@ -771,7 +771,6 @@ Docman                 plugin_docman:service_lbl_key         plugin_docman:servi
 Git                    plugin_git:service_lbl_key            plugin_git:service_desc_key
 Continuous Integration plugin_hudson:service_lbl_key         plugin_hudson:service_desc_key
 Mediawiki              plugin_mediawiki:service_lbl_key      plugin_mediawiki:service_desc_key
-ProFTPd                plugin_proftpd:service_lbl_key        plugin_proftpd:service_desc_key
 SVN Plugin             plugin_svn:service_lbl_key            plugin_svn:service_desc_key
 TestManagement         plugin_testmanagement:service_lbl_key plugin_testmanagement:service_desc_key
 Trackers               plugin_tracker:service_lbl_key        plugin_tracker:service_desc_key
