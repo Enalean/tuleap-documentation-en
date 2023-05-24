@@ -4,11 +4,6 @@ Tuleap 14.x
 Tuleap 14.9
 ===========
 
-.. NOTE::
-
-  Tuleap 14.9 is currently under development.
-
-
 Removal of Proftpd plugin
 -------------------------
 
