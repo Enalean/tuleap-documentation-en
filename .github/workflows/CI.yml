@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
-      - uses: cachix/install-nix-action@29bd9290ef037a3ecbdafe83cbd2185e9dd0fa0a
+      - uses: cachix/install-nix-action@4b933aa7ebcc94a6174cf1364864e957b4910265
       - name: Build
         run: nix-shell --pure --run 'make SPHINXOPTS='-W' html'
   build_docker_image_theme_tuleap_org:
