@@ -3,8 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS       =
-SPHINXBUILD      = sphinx-build
-SPHINX_AUTOBUILD = sphinx-autobuild
+SPHINXBUILD      = LC_ALL=C sphinx-build
+SPHINX_AUTOBUILD = LC_ALL=C sphinx-autobuild
 BUILDDIR         = _build
 LANG             = en
 

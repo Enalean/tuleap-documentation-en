@@ -26,6 +26,11 @@
             buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
           }
         );
+        sphinxcontrib-jquery = super.sphinxcontrib-jquery.overridePythonAttrs (
+          old: {
+            buildInputs = (old.buildInputs or [ ]) ++ [ self.flit-core ];
+          }
+        );
         sphinxext-rediraffe = super.sphinxext-rediraffe.overridePythonAttrs (
           old: {
             buildInputs = (old.buildInputs or [ ]) ++ [ super.setuptools ];
