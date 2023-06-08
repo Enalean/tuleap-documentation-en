@@ -54,7 +54,7 @@ Currently, the language supports:
 - Dynamic value for list fields bound to users: ``MYSELF()``.
 
   * ``assigned_to = MYSELF()`` matches all artifacts where assigned_to is equal to the current user.
-   
+
 - Search in comments:
 
   * ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
@@ -62,14 +62,16 @@ Currently, the language supports:
   * ``@comments != ''`` returns the list of artifacts with at least one comment
   * When searching in comments, you should be aware of some limitations:
      * Searches are done for words longer than 3 characters
-     * Some words are not taken in account because they are too common (like ``the``, ``a``, …) 
-     
+     * Some words are not taken in account because they are too common (like ``the``, ``a``, …)
+
 - Search in files:
 
   * ``attachment = 'minutes'`` matches all artifacts where there is at least one attached file with the filename "Minutes-20180101.docx" or the description "Minutes of last meeting" contains the string ``minutes``
   * ``attachment != 'minutes'`` matches all artifacts where there isn't any attached files with filename or description containing ``minutes``.
   * ``attachment = ''`` matches all artifacts without any attached files
   * ``attachment != ''`` matches all artifacts that have at least one attached file
+
+.. include:: tql-artlink.rst
 
 To construct a query you can combine all these elements.
 
@@ -208,7 +210,9 @@ Currently, the query supports:
   * For @submitted_on and @last_update_date: the empty string ``''`` cannot be used. Those fields always have a value, therefore the comparison to "empty" is not useful.
   * For @submitted_by, @last_update_by and @assigned_to: ``string`` matching a user, ``MYSELF()``
 
-  Example::
+.. include:: tql-artlink.rst
+
+Example::
 
     @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
     //Returns all open artifacts with 'documentation' in the title that have been
