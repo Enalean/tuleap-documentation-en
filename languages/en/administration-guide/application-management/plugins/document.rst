@@ -1,7 +1,7 @@
 .. _site-admin-document:
 
-Document Manager modern interface (2019)
-========================================
+Document Manager
+================
 
 File download/upload limits
 ```````````````````````````
