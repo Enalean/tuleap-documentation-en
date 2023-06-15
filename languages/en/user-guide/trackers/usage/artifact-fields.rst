@@ -175,7 +175,12 @@ It's a new field for Agiledashboard plugin.
 
 This graph allows you to visualise:
    * Total effort: sum of initial effort to do to complete release
-   * Team effort: sum of initial effort already done for the release
+   * The effort already achieved using either:
+
+     - Team effort (default): sum of initial effort already done for the release
+     - Closed elements: the number of closed items for the release
+
+You can switch between the *Team effort* and the *Closed elements* modes in the administration of the agile dashboard.
 
 Burnup and Burndown mechanisms
 ``````````````````````````````
