@@ -9,7 +9,7 @@
 
 - Search for children relationship:
 
-  * ``WITH CHILDREN`` matches all artifacts that have a child artifact
+  * ``WITH CHILDREN`` matches all artifacts that have a least one child artifact
   * ``WITHOUT CHILDREN`` matches all artifacts that don't have a child artifact
   * ``WITH CHILDREN ARTIFACT = 123`` matches all artifacts that have artifact #123 as a child
   * ``WITHOUT CHILDREN ARTIFACT = 123`` matches all artifacts that don't have artifact #123 as a child
