@@ -26,45 +26,59 @@ Currently, the language supports:
 
 - Logical operators: ``AND``, ``OR``
 - Parenthesis to force precedence
-- Comparison operators:
 
-  * For string, text, files, and @comments: ``=``, ``!=``
-  * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
-  * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
-- Comparison values:
+Comparison operators
+''''''''''''''''''''
 
-  * For string, text, and files fields: ``string``
-  * For integer fields: ``string`` convertible to integer, ``integer``
-  * For float fields: ``string`` convertible to float,  ``integer``, ``float``
-  * For date fields: ``string`` convertible to date, ``NOW()``
-  * For list fields: ``all`` matching list bind values
-  * For list fields bound to users: ``string`` using user names, ``MYSELF()``
-  * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
-  * For @comments: ``string``
+* For string, text, files, and @comments: ``=``, ``!=``
+* For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
+* For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
-- Dynamic value for date fields: ``NOW()``.
+Comparison values
+'''''''''''''''''
 
-  * ``start_date > NOW()`` matches all artifacts where start_date is greater than the current time (time when the query
-    is displayed).
-  * You can use interval periods with NOW(), for example ``submitted_on > NOW() - 1m`` will matches
-    all artifacts that have been created during the last month. The supported specificators are: years (``y``),
-    months (``m``), weeks (``w``) and days (``d``).
+* For string, text, and files fields: ``string``
+* For integer fields: ``string`` convertible to integer, ``integer``
+* For float fields: ``string`` convertible to float,  ``integer``, ``float``
+* For date fields: ``string`` convertible to date, ``NOW()``
+* For list fields: ``all`` matching list bind values
+* For list fields bound to users: ``string`` using user names, ``MYSELF()``
+* For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (e.g. ``"Customers"``) or matching the translated system-defined ("Dynamic") user group name (e.g. ``"Project members"``).
+* For @comments: ``string``
 
-- Dynamic value for list fields bound to users: ``MYSELF()``.
+Dynamic value for date fields: ``NOW()``
+''''''''''''''''''''''''''''''''''''''''
 
-  * ``assigned_to = MYSELF()`` matches all artifacts where assigned_to is equal to the current user.
+* ``start_date > NOW()`` matches all artifacts where start_date is greater than the current time (time when the query
+  is displayed).
+* You can use interval periods with NOW(), for example ``submitted_on > NOW() - 1m`` will matches
+  all artifacts that have been created during the last month. The supported specificators are:
 
-- Search in comments:
+  * years (``y``)
+  * months (``m``)
+  * weeks (``w``)
+  * days (``d``)
 
-  * ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
-  * ``@comments = ''`` returns the list of artifacts without any comments
-  * ``@comments != ''`` returns the list of artifacts with at least one comment
-  * When searching in comments, you should be aware of some limitations:
-     * Searches are done for words longer than 3 characters
-     * Some words are not taken in account because they are too common (like ``the``, ``a``, …)
+Dynamic value for list fields bound to users: ``MYSELF()``
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-- Search in files:
+``assigned_to = MYSELF()`` matches all artifacts where assigned_to is equal to the current user.
+
+Search in comments
+''''''''''''''''''
+
+* ``@comments = 'Lorem ipsum'`` matches all artifacts where at least one follow-up comment contains the string ``lorem ipsum``
+* ``@comments = ''`` returns the list of artifacts without any comments
+* ``@comments != ''`` returns the list of artifacts with at least one comment
+
+When searching in comments, you should be aware of some limitations:
+
+    * Searches are done for words longer than 3 characters
+    * Some words are not taken in account because they are too common (like ``the``, ``a``, …)
+
+Search in files
+'''''''''''''''
 
   * ``attachment = 'minutes'`` matches all artifacts where there is at least one attached file with the filename "Minutes-20180101.docx" or the description "Minutes of last meeting" contains the string ``minutes``
   * ``attachment != 'minutes'`` matches all artifacts where there isn't any attached files with filename or description containing ``minutes``.
@@ -72,6 +86,9 @@ Currently, the language supports:
   * ``attachment != ''`` matches all artifacts that have at least one attached file
 
 .. include:: tql-artlink.rst
+
+Query construction
+------------------
 
 To construct a query you can combine all these elements.
 
@@ -195,14 +212,17 @@ Currently, the query supports:
 
 - Logical operators: ``AND``, ``OR``
 - Parenthesis to force precedence
-- Supported comparisons:
+
+Supported comparisons
+'''''''''''''''''''''
 
   * For @title and @description: ``=``, ``!=``
   * For @status: ``= OPEN()``, ``!= OPEN()``. ``OPEN()`` is the only supported value.
   * For @submitted_on and @last_update_date: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``.
   * For @submitted_by and @last_update_by: ``=``, ``!=``, ``IN()``, ``NOT IN()``.
 
-- Comparison values:
+Comparison values
+'''''''''''''''''
 
   * For @title and @description: ``string``
   * For @status: ``OPEN()`` is the only supported value
@@ -212,7 +232,10 @@ Currently, the query supports:
 
 .. include:: tql-artlink.rst
 
-Example::
+Example
+-------
+
+::
 
     @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
     //Returns all open artifacts with 'documentation' in the title that have been
