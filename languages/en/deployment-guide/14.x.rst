@@ -1,12 +1,15 @@
 Tuleap 14.x
 ###########
 
-Tuleap 14.10
+Tuleap 14.11
 ============
 
 .. NOTE::
 
-  Tuleap 14.10 is currently under development.
+  Tuleap 14.11 is currently under development.
+
+Tuleap 14.10
+============
 
 Minimal browser support raised to Firefox 102 ESR and Chrome 103
 ----------------------------------------------------------------
