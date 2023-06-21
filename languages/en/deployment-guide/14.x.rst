@@ -8,6 +8,8 @@ Tuleap 14.11
 
   Tuleap 14.11 is currently under development.
 
+Nothing to mention.
+
 Tuleap 14.10
 ============
 
