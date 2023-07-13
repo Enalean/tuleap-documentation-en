@@ -8,7 +8,17 @@ Tuleap 14.11
 
   Tuleap 14.11 is currently under development.
 
-Nothing to mention.
+Upgrade of the local Meilisearch instance from 1.0 to 1.2
+---------------------------------------------------------
+
+If you have deployed a :ref:`local Meilisearch instance <fts-local-meilisearch>` it will be automatically
+upgraded to the 1.2.0 version. The process is automatic when the server is restarted after its update.
+
+The upgrade will re-index all the items. Until the process is completed, some items might not be found when
+searching, and an increased load on your instance is expected.
+
+Administrators having deployed an independent Meilisearch instance should also
+`upgrade it <https://www.meilisearch.com/docs/learn/update_and_migration/updating>`_.
 
 Tuleap 14.10
 ============
