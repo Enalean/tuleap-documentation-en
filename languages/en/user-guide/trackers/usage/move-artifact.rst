@@ -7,15 +7,12 @@ To be able to move an artifact:
    - you must be tracker administrator of both source and target trackers
    - artifact deletion must be allowed (``Site admin > Administration > Tracker > Artifacts Deletion``)
 
-However artifacts containing artifact links and artifacts connected to FRS releases cannot be moved.
+However artifacts containing artifacts connected to FRS releases or Program cannot be moved.
 
 .. NOTE::
 
-  For the moment, only:
-  - fields based on semantics Title, Description, Status, Assigned to and Initial effort
-  - field submitted date
-  - field submitted by
-
+ Move is based on ducktyping, if the origin field and the destination field have the same names and types, the Artifact can be moved to the destination tracker.
+ If fields have different name, a modal will be displayed indicating you data you will lost
 
     And follow-up comments can be moved.
 
