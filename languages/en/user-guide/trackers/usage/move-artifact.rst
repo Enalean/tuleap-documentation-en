@@ -19,8 +19,8 @@ However, there are some limitations:
     Regarding list fields, they need to have the same bind type (static values, users, user groups). If a value does not exist in the destination list field, then it will be ignored.
     When a field does not match these conditions, then its data will be lost.
     Artifact links are moved but follow some specific rules:
-        - system types `_is_child`, `_covered_by` ... are cleared (the artifact is still link but the type is reset to no type)
-        - parent artifact is also cleared
+    - system types `_is_child`, `_covered_by` ... are cleared (the artifact is still link but the type is reset to no type)
+    - parent artifact is also cleared
 
 .. figure:: ../../../images/screenshots/tracker/move-artifact.png
   :align: center
