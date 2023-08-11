@@ -7,8 +7,10 @@ It gives you a fully working Tuleap in minutes with everything preconfigured wit
 Table of contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   tce
-   tee
+   intro_docker
+   verify_images_authenticity
+   docker_standalone
+   docker_compose
    images-configuration
