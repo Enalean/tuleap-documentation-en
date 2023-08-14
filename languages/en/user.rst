@@ -9,6 +9,7 @@ User guide
    user-guide/writing-in-tuleap
    user-guide/project-admin
    user-guide/agile-dashboard
+   user-guide/kanban
    user-guide/program-management
    user-guide/baseline
    user-guide/tracker
