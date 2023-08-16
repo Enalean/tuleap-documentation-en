@@ -14,9 +14,13 @@ Prerequisites
 
 You need docker on your host. You might want docker-compose as well.
 
-We are going to pull the `official Tuleap Community Edition image <https://hub.docker.com/r/tuleap/tuleap-community-edition>`_.
-It's built out of Tuleap official pipelines in rolling release mode.
-
 The following sections assume that you are going to run the Tuleap container as the only "visible" container on the server.
 That means that Tuleap web container will publish it's ports (``80``, ``443`` and ``22``) on hosts ports.
 
+External Dependencies
+`````````````````````
+
+The image has two dependencies:
+
+* A working database with admin credentials (at first run only)
+* A persistent filesystem for data storage
