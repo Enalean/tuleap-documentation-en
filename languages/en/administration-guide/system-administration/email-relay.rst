@@ -26,7 +26,6 @@ More information about the different settings can be found using ``tuleap config
 .. warning:: When configured to use an SMTP server, some features will not work anymore. These features are:
 
     * :ref:`Tracker mail gateway <admin_tracker_reply_by_email>`
-    * ForumML
 
     Some notifications from legacy services will still use the self hosted Tuleap email to work:
 
