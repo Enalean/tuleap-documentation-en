@@ -181,6 +181,15 @@ com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes
 
 Comments are also imported. The issue history is recreated.
 
+**Jira issue links**
+
+.. ATTENTION::
+   Issue link types must be created on Tuleap before the import is done, otherwise the link type will not be imported.
+
+When importing a solo issuetype, all links between issues from this selected issuetype are imported.
+Links done between issues with different issuetypes are skipped. 
+All Jira project's issues links are imported when doing a :ref:`full project import <jira-project-importer>`.
+
 User mapping
 ````````````
 
