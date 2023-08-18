@@ -155,6 +155,9 @@ This command will import:
 * all worklog as :ref:`time tracking <timetracking>`,
 * Board and Sprints with associated issues and backlog.
 
+.. ATTENTION::
+   Issue link types must be created on Tuleap before the import is done, otherwise the link type will not be imported.
+
 A given Jira project can have many Boards with different configurations. There is no equivalent concept in Tuleap
 so the importer arbitrarily choose the first declared board.
 
