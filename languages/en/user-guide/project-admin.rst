@@ -137,6 +137,7 @@ feature is only available in tuleap CLI:
     tuleap import-project:from-jira \
         --jira-host JIRA_HOST \
         --jira-user JIRA_USER \
+        --import-mode multi-trackers \
         --tuleap-user TULEAP_USER_LOGIN \
         --shortname TULEAP_PROJECT_SHORTNAME
 
@@ -150,10 +151,16 @@ This command works with Jira REST API so Tuleap server must be able to reach the
 
 This command will import:
 
-* all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort, more details :ref:`here <tracker-import-from-jira>`),
-* the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
-* all worklog as :ref:`time tracking <timetracking>`,
-* Board and Sprints with associated issues and backlog.
+* In ``multi-trackers`` mode:
+   - all Jira issue types (as trackers) with all issues (as artifacts) with their comment and history of field change (best effort, more details :ref:`here <tracker-import-from-jira>`),
+   - the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
+   - all worklog as :ref:`time tracking <timetracking>`,
+   - Board and Sprints with associated issues and backlog.
+* In ``mono-tracker`` mode:
+   - all issues (as artifacts) with their comment and history of field change (best effort, more details :ref:`here <tracker-import-from-jira>`) in a unique ``Issues`` tracker,
+   - the links between issues with their types (related to, duplicate, etc). This includes sub-tasks as well as epics.
+   - all worklog as :ref:`time tracking <timetracking>`,
+   - A simple Kanban will be activated.
 
 .. ATTENTION::
    Issue link types must be created on Tuleap before the import is done, otherwise the link type will not be imported.
@@ -167,6 +174,8 @@ pick the ``Epic`` issue type. If this label was modified in your project, you ca
 
 The project is created and activated as soon as the command ends with ``TULEAP_USER_LOGIN`` as sole project administrator.
 By default the project privacy is "private". A ``--visiblity`` option can be used to defined the Tuleap project visiblity at import.
+
+The ``import-mode`` is an optional CLI option to choose how to import Jira data. If not provided, the import is done in ``multi-trackers`` mode by default.
 
 .. note::
 
