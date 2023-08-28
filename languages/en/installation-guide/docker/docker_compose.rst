@@ -1,6 +1,10 @@
 Docker Compose
 ===============
 
+.. _env-variables:
+
+The Environment
+````````````````
 In a directory named ``tuleap-stack`` (be careful, with docker-compose, directory name matters) create a
 ``.env`` file that defines these variables:
 
@@ -117,7 +121,7 @@ You first need to authenticate towards Tuleap's registry:
 
     $ docker login docker.tuleap.org
 
-You should add these variables in your ``.env`` file (along with the aforementionned ones):
+You should add these variables in your ``.env`` file (along with the :ref:`aforementionned ones <env-variables>`):
 
 .. code-block::
 
@@ -164,7 +168,7 @@ You should add these variables in your ``.env`` file (along with the aforementio
     volumes: 
         tuleap-data:
 
-You should put your certificates in ``./nginx/certs``, or else nginx will not boot.
+You should put your certificates in ``./nginx/certs`` or else nginx will not boot.
 
 Run the docker-compose file
 ```````````````````````````
@@ -206,19 +210,5 @@ Until you see something like:
 
 You can then quit the logs command (Ctrl+C) and open your browser at the address set in ``TULEAP_FQDN`` and that's it.
 
-The docker-compose file provided here is for general guidance and you should adapt to your environment. One of the main
-thing you will want to configure is a proper email relay. By default, we spawned a `mailhog <https://github.com/mailhog/MailHog>`_ image
-that will catch all mails sent by Tuleap and display to anyone who have access to the interface.
-
-To see the mails captured by mailhog, you should run:
-
-.. code-block:: bash
-
-    $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker-compose ps -q mailhog)
-    172.21.0.2
-
-This will give you the IP address of the container that runs mailhog, you can then open a browser at this IP address on port ``8025``:
-
-.. code-block:: bash
-
-    $ xdg-open http://172.21.0.2:8025
+The docker-compose file provided here is for general guidance and you should adapt to your environment. 
+One of the main thing you will want to configure is a proper email relay.

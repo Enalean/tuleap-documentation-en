@@ -1,9 +1,6 @@
 Verify the image authenticity
 =============================
 
-
-.. _check-image-tce:
-
 Check Tuleap Community image
 ````````````````````````````
 We sign the `official Tuleap Community Edition image <https://hub.docker.com/r/tuleap/tuleap-community-edition>`_ each time we
@@ -26,8 +23,6 @@ On success the output will look something like this:
     - Any certificates were verified against the Fulcio roots.
   {"critical":{"identity":{"docker-reference":"index.docker.io/tuleap/tuleap-community-edition"},"image":{"docker-manifest-digest":"sha256:e425adc51e915c6974db6c82723a520123c1014a091d93b4f504384c6d916608"},"type":"cosign container image signature"},"optional":null}
 
-
-.. _check-image-tee:
 
 Check Tuleap Enterprise image
 `````````````````````````````
