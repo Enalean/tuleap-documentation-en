@@ -119,7 +119,7 @@ You first need to authenticate towards Tuleap's registry:
 
     $ docker login docker.tuleap.org
 
-You should add these variables in your ``.env`` file (along with the :ref:`aforementionned ones <env-variables>`):
+You should add these variables in your ``.env`` file (along with the :ref:`aforementioned ones <env-variables>`):
 
 .. code-block::
 
