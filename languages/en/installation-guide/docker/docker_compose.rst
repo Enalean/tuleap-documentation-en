@@ -5,8 +5,7 @@ Docker Compose
 
 The Environment
 ````````````````
-In a directory named ``tuleap-stack`` (be careful, with docker-compose, directory name matters) create a
-``.env`` file that defines these variables:
+In a special directory (created only for the Tuleap stack), create a ``.env`` file that defines these variables:
 
 .. code-block::
 
@@ -81,30 +80,10 @@ Then create a ``compose.yaml`` file with following content:
           - redis-data:/data
         command: redis-server --appendonly yes --auto-aof-rewrite-percentage 20 --auto-aof-rewrite-min-size 200kb
 
-      # This is for test purpose only. Mailhog is there to capture email traffic
-      mailhog:
-        image: mailhog/mailhog
-
     volumes:
       tuleap-data:
-      db80-data:
+      db-data:
       redis-data:
-
-By default, we spawned a `mailhog <https://github.com/mailhog/MailHog>`_ image
-that will catch all mails sent by Tuleap and display to anyone who have access to the interface. You will be able to access it after starting the stack 
-
-To see the mails captured by mailhog, you should run:
-
-.. code-block:: bash
-
-    $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker-compose ps -q mailhog)
-    172.21.0.2
-
-This will give you the IP address of the container that runs mailhog, you can then open a browser at this IP address on port ``8025``:
-
-.. code-block:: bash
-
-    $ xdg-open http://172.21.0.2:8025
 
 Tuleap Enterprise
 `````````````````
@@ -124,8 +103,8 @@ You should add these variables in your ``.env`` file (along with the :ref:`afore
 .. code-block::
 
     TULEAP_VERSION=15.0-1
-    DB_FQDN=some random strong password
-    REDIS_FQDN=another strong password
+    DB_FQDN=mysql.example.com
+    REDIS_FQDN=redis.example.com
 
 * ``TULEAP_VERSION`` is the version of Tuleap Enterprise you wish to use. There is no ``latest``, and the version format is either ``15.0`` or ``15.0-1``.
 * ``DB_FQDN`` is the full name of the machine hosting the Database.
@@ -141,6 +120,10 @@ You should add these variables in your ``.env`` file (along with the :ref:`afore
         image: docker.tuleap.org/tuleap-enterprise-edition:${TULEAP-VERSION}
         hostname: ${TULEAP_FQDN}
         restart: always
+        ports:
+          - "80:80"
+          - "443:443"
+          - "22:22"
         volumes:
         - tuleap-data:/data
         environment:
@@ -153,20 +136,10 @@ You should add these variables in your ``.env`` file (along with the :ref:`afore
         - TULEAP_FPM_SESSION_MODE=redis
         - TULEAP_REDIS_SERVER=${REDIS_FQDN}
 
-    nginx:
-        image: nginx:latest
-        restart: always
-        ports:
-        - 80:80
-        - 443:443
-        volumes:
-        - ./nginx/certs:/certs
-        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-
     volumes: 
         tuleap-data:
 
-You should put your certificates in ``./nginx/certs`` or else nginx will not boot.
+If you want to secure your server and use certificates, you may spawn a Reverse-Proxy in the stack.
 
 Run the docker-compose file
 ```````````````````````````
@@ -181,7 +154,7 @@ Then you can follow the progress of the installation with
 
 .. code-block:: bash
 
-    $ docker-compose logs -f web
+    $ docker-compose logs -f tuleap
 
 Until you see something like:
 
