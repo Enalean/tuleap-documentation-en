@@ -25,7 +25,7 @@ Better integration between the Agile Dashboard and the Test Management plugins
 ------------------------------------------------------------------------------
 
 This release introduces a new plugin that brings a deeper and better integration
-between the :ref:`Agile Dashboard <agile-dashboard>` and the :ref:`Test Management <testmgmt>` plugins.
+between the :ref:`Agile Dashboard <backlog>` and the :ref:`Test Management <testmgmt>` plugins.
 
 To get it, install the `tuleap-plugin-testplan` package and activate it in the site
 administration. For more information about plugins installation, see :ref:`install-plugins`.

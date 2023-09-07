@@ -42,7 +42,7 @@ Some widgets have documentation to explain how to configure and use them:
 
 - :ref:`Hudson/Jenkins <continuous-integration-with-Hudson/Jenkins>` permits to display many widgets for Continuous Integration.
 - :ref:`Kanban <kanban>` add a Kanban in your personal dashboard.
-- :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard in personal dashboard.
+- :ref:`Project Milestones <project-milestones>` displays a :ref:`Scrum Backlog <backlog>` in personal dashboard.
 - :ref:`Timetracking <timetracking>` allows you to visualize your saved times with TimeTracking plugin.
 
 

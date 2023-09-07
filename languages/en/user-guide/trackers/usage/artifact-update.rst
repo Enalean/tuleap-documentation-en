@@ -180,6 +180,6 @@ The children added this way will be displayed everywhere (artifact view, plannin
 The hierarchy is now only an helper.
 It means that the artifact link type ``_is_child`` is no more added automatically based on hierarchy but it's still used in:
 
-* Agiledashboard to have quick access to create new items and new parents
-* Agiledashboard for scrum plannings definition
+* Backlog to have quick access to create new items and new parents
+* Backlog for scrum plannings definition
 * Tracker triggers that only deals with children based on the hierarchy

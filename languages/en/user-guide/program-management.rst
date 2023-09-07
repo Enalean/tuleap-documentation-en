@@ -33,7 +33,7 @@ for large scale products and programs.
 
 In the context of Tuleap, that means many different projects (Teams) that work together, synchronised, on a shared backlog.
 
-If you are working in a single team setup, the regular :ref:`Scrum <agile-dashboard>` setup is probably enough. However if
+If you are working in a single team setup, the regular :ref:`Scrum <backlog>` setup is probably enough. However if
 your product is big enough to require several Scrum teams that work together, the SAFe® templates might be for you.
 
 Disclaimer: this section contains a lot of SAFe® jargon and is written for people who already know, at least with a high
@@ -71,7 +71,7 @@ The Backlog is made of *Features* and *Program Enablers*. It corresponds to two 
 same way so in the following section we will only speak about *Features*.
 
 *Features* will be planned in a *Program Increment* thanks to *Program* service. If you are already familiar with Tuleap
-:ref:`Scrum Agile Dashboard <agile-dashboard>`, it works the same way.
+:ref:`Scrum Backlog <backlog>`, it works the same way.
 
 *Features* are broken down in *User Stories*. The *User Stories* are created in their respective *Scrum Team* workspace.
 
@@ -143,16 +143,16 @@ There are no limits in the number of projects that can be aggregated nor pre-con
 
 - the aggregated project cannot be another Program.
 - the user who wants to aggregate a project must be Project Administrator of it.
-- the aggregated project doesn't have Agile Dashboard usage. It's actually possible to aggregate it but it won't do anything useful.
+- the aggregated project doesn't have :ref:`backlog` usage. It's actually possible to aggregate it but it won't do anything useful.
 
-A Program project cannot activate the "Scrum" part of Agile Dashboard. Similarly, a project that is using Scrum cannot
+A Program project cannot activate the :ref:`backlog` service. Similarly, a project that is using :ref:`backlog` cannot
 activate Program service.
 
 Aggregated Projects
 ###################
 
 A project can be aggregated to any number of Program (except Programs that cannot be aggregated at all). In practice it
-only make sense to aggregate project that make usage of "Scrum" part of Agile Dashboard.
+only make sense to aggregate project that make usage of :ref:`backlog`.
 
 Each aggregated project is independent from the Program(s) it is aggregated with. That means that teams can customise
 their workspace as much as they want as long as they keep the synchronizations elements details in the sections hereafter.
@@ -172,7 +172,7 @@ When a milestone is created or updated in a Program, the milestone is replicated
 milestones are called Mirrored Milestones.
 This means there are a set of constraints on Milestone trackers of aggregated projects:
 
-- The milestone will be created in the higher level Planning defined in Agile Dashboard Scrum configuration.
+- The milestone will be created in the higher level Planning defined in :ref:`Scrum Backlog <backlog>` configuration.
 - This tracker must have following semantics defined: Title, Description, Duration (with same configuration) and Status (with same status values).
 - The user who wants to create the Milestone must have "Submit" permission on the fields associated with the semantics as well as "artifact link" field.
 
@@ -186,7 +186,8 @@ high level kind of requirements like epics, themes, features, etc. Backlog Items
 Children Items, like User Stories, in Aggregated Projects.
 
 Backlog Items will appear in Program's Backlog at some point of their life thanks to "explicit backlog" mechanism:
-- either by adding it explicitly with the "Add to top backlog" action in the artifact view,
+
+- either by adding it explicitly with the "Add to backlog" action in the artifact view,
 - or by configuring a Workflow transition that will move the artifact in the Backlog when the artifact reaches a given status.
 
 When a user plans a Backlog Item in a Milestone in Program's Backlog, the Children Items in each aggregated projects are

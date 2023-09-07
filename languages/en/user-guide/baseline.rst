@@ -8,7 +8,7 @@ Baseline
     This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
     not be available on your installation of Tuleap.
 
-Baseline allows to take snapshot of Agile Dashboard's milestone content and to compare them. Baseline allows to:
+Baseline allows to take snapshot of Backlog's milestone content and to compare them. Baseline allows to:
 
 * capture the state of a milestone at given time,
 * identify what changed between two milestones.
@@ -21,7 +21,7 @@ Baseline allows to take snapshot of Agile Dashboard's milestone content and to c
 Create a Baseline
 =================
 
-As of today, a baseline can be created from a top level milestone of the agile dashboard (most of the time, it's releases). The user who creates a baseline is expected to provide a name for this baseline.
+As of today, a baseline can be created from a top level milestone of the Backlog (most of the time, it's releases). The user who creates a baseline is expected to provide a name for this baseline.
 
 
 .. figure:: ../images/screenshots/baseline/baseline.png

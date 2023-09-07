@@ -17,13 +17,13 @@ Project management
 * :ref:`DocGen <plugin_document_generation>`: Generation of document (docx) from Tracker reports
 * :ref:`Label widget <label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests)
 * :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects
-* :ref:`Project Milestones <project-milestones>`: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
+* :ref:`Project Milestones <project-milestones>`: Widget to display :ref:`Scrum Backlog <backlog>` of a project on user or project dashboard.
 * :ref:`Program management <program-management>`: Manage multi project backlog and team synchronisation.
 * :ref:`Roadmap <roadmap>`:  Widget to display the roadmap on the project dashboard.
-* :ref:`Taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in Agile Dashboard.
+* :ref:`Taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in :ref:`backlog`.
 * :ref:`Test Management <testmgmt>`: Test campaigns and traceability (aka TTM).
 * :ref:`Timetracking <timetracking>`: Provide an easy way to track your time
-* :ref:`Velocity <plugin_velocity>`: Display velocity chart in the Agile Dashboard
+* :ref:`Velocity <plugin_velocity>`: Display velocity chart in the :ref:`backlog`
 
 Authentication and permissions
 ------------------------------

@@ -17,7 +17,7 @@ and to install the plugin you want.
 They are three plugins available in Tuleap RPM: ``tuleap-plugin-botmattermost`` ``tuleap-plugin-botmattermost-agiledashboard`` ``tuleap-plugin-botmattermost-git``.
 The **botmattermost** plugin is mandatory to use the others.
 
-You can install **botmattermost-git** for Tuleap Git notification plugin and stand-up summary in :ref:`agile-dashboard` plugin.
+You can install **botmattermost-git** for Tuleap Git notification plugin and stand-up summary in :ref:`backlog` plugin.
 
 Configuration
 -------------
