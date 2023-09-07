@@ -1,3 +1,5 @@
+.. NOTE:: Starting Tuleap 15.0, Agile Dashboard service has been split in two separate services: :ref:`backlog` and Kanban.
+
 .. _kanban:
 
 Kanban
@@ -8,38 +10,26 @@ Tuleap supports Kanban methodology with a dedicated cardwall.
 Using a Kanban
 --------------
 
-To enter a Kanban, go to the Agile Dashboard service of your project. All your Kanban boards are displayed on the right hand side of the screen.
+To enter a Kanban, go to the Kanban service of your project. All your Kanban boards are displayed.
 
-.. figure:: ../images/screenshots/agiledashboard/kanban/kanban-list.png
-   :align: center
-   :alt: Kanban list
-   :name: Kanban list
-   :width: 800px
-
-   Kanban List
-
-If you do not have any Kanban yet, you have two choices:
-
-1. Create a Kanban on your own
-2. Let Tuleap take care of it for you (``Start scrum`` button or ``Agile Dashboard Administration > Kanban > Activate Kanban``)
+If you do not have any Kanban yet, you can create a Kanban on your own.
 
 Creating your Kanban from scratch
 `````````````````````````````````
 
 To create your own Kanban, you will need to create a tracker.
-Once your tracker has been created, go to the Agile Dashboard service of your project.
-Click on the ``Add a Kanban`` button located in the header of the right hand side section.
+Once your tracker has been created, go to the Kanban service of your project.
+Click on the ``Add a Kanban`` button.
 In the modal, enter a name for your Kanban, select your newly created tracker and validate.
 
 .. figure:: ../images/screenshots/agiledashboard/kanban/create-new-kanban.png
    :align: center
    :alt: Create a new kanban
    :name: Create a new kanban
-   :width: 800px
 
    Kanban creation
 
-A new Kanban appears in the Kanban section. Click on ``Cardwall`` to open it.
+A new Kanban appears in the Kanban section.
 
 Configure the card fields
 `````````````````````````
@@ -52,7 +42,6 @@ You can also define the card's background color.
    :align: center
    :alt: Cards fields
    :name: Cards fields
-   :width: 500px
 
    Card fields in Kanban
 
@@ -76,7 +65,6 @@ Once it is done, a filter selectbox appears in the header of the Kanban.
    :align: center
    :alt: Filtered kanban
    :name: Filtered kanban
-   :width: 800px
 
    Filtered Kanban
 
@@ -94,7 +82,6 @@ To do it, click on the ``Add to dashboard`` button and select the target dashboa
    :align: center
    :alt: Filtered kanban widget
    :name: Filtered kanban widget
-   :width: 800px
 
    Kanban widget
 

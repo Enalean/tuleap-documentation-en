@@ -58,8 +58,8 @@ computation. It can also be used by the :ref:`GitLab integration <version-contro
 
 .. _velocity_administration:
 
-Velocity (Agile Dashboard)
-``````````````````````````
+Velocity (Backlog)
+``````````````````
 .. attention::
 
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
@@ -124,7 +124,7 @@ You can select all the fields you want to compose the artifact tooltip.
 Cards semantic
 ``````````````
 The cards semantic allows you to add the fields which will be visible in
-cardwall, Agile dashboard Planning and Kanban.
+cardwall, Backlog Planning and Kanban.
 
 The background color semantic allows you to choose the field which will be used
 to determine the background color of a card. Only selectbox and radio buttons
@@ -158,17 +158,17 @@ in cardwall.
   To see the updated background color for the card, you should either change
   status via the artifact modal or refresh the page.
 
-Initial Effort (Agile Dashboard)
-````````````````````````````````
+Initial Effort (Backlog)
+````````````````````````
 
 The Initial Effort semantic is special in that it only exists if the project
-has the Agile Dashboard enabled. In the agile context, it is supposed to
+has the :ref:`backlog` enabled. In the agile context, it is supposed to
 represent the estimated effort for a given task, story, sprint, release...
 
 In order to use this semantic you need to have a numeric field in your tracker
 that corresponds to this initial effort notion.
 
-The initial effort is used in the Agile Dashboard **content** and **planning**
+The initial effort is used in the :ref:`backlog` **content** and **planning**
 views.
 
 .. _semantic-timeframe:
@@ -215,7 +215,7 @@ Progress
 
 The semantic **Progress** is used to compute the progression of the ongoing work on artifacts.
 
-It is used in the Roadmap widget at the moment. In the longer term, we plan to use it in the Agile Dashboard as well.
+It is used in the Roadmap widget at the moment. In the longer term, we plan to use it in the :ref:`backlog` as well.
 
 Two computation methods are available: **based on effort** and **based on artifact links count**.
 

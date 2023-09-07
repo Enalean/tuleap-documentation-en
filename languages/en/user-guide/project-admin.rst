@@ -87,7 +87,9 @@ This includes that:
 
    -  the test management configuration is copied (This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`)
 
-   -  the agile dashboard configuration is copied
+   -  the backlog configuration is copied
+
+   -  the kanban boards are copied
 
    -  the same forums are created (but the messages are not copied).
 
@@ -276,7 +278,7 @@ Some widgets have documentation to explain how to configure and use them:
 
 - :ref:`Kanban <kanban>` add a Kanban in your project dashboard.
 - :ref:`Hudson/Jenkins <continuous-integration-with-Hudson/Jenkins>` permits to display many widgets for Continuous Integration.
-- :ref:`Project Milestones <project-milestones>` displays a Scrum Agile Dashboard in project dashboard.
+- :ref:`Project Milestones <project-milestones>` displays a Scrum Backlog in project dashboard.
 - :ref:`Label widget <label_widget>` to track your items.
 - :ref:`Portfolio <portfolio>`.
 - :ref:`Roadmap <roadmap>`.
@@ -725,7 +727,7 @@ Service Configuration
 ---------------------
 
 Services are items listed in the sidebar on each page in the project:
-trackers, Git, Agile Dashboard, documentation, etc. A project administrator can
+trackers, Git, Backlog, Kanban, documentation, etc. A project administrator can
 update, enable, disable or even create services.
 
 There are two kinds of services:
@@ -777,7 +779,6 @@ Wiki                   service_wiki_lbl_key                  service_wiki_desc_k
 Legacy Trackers        service_tracker_lbl_key               service_tracker_desc_key
 Legacy SVN             service_svn_lbl_key                   service_svn_desc_key
 Legacy homepage        service_homepage_lbl_key              service_homepage_desc_key
-Agile Dashboard        plugin_agiledashboard:service_lbl_key plugin_agiledashboard:service_desc_key
 Baseline               plugin_baseline:service_lbl_key       plugin_baseline:service_desc_key
 Docman                 plugin_docman:service_lbl_key         plugin_docman:service_desc_key
 Git                    plugin_git:service_lbl_key            plugin_git:service_desc_key

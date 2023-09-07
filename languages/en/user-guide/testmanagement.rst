@@ -17,7 +17,7 @@ Test Management features:
 * Create test campaigns as a collection of test cases (manual or automated)
 * Follow test executions (Not run, passed, failed, blocked), with creation of bugs when a test fails
 * Realtime update for concurrent test execution by team
-* Link with requirements managed by Agile Dashboard
+* Link with requirements managed by :ref:`backlog`
 
 Overview
 --------
@@ -202,7 +202,7 @@ Link tests with requirements / user stories
 
     Tuleap administrators must install and activate ``TestPlan`` plugin beforehand.
 
-If your project also uses the Scrum backlog of Agile Dashboard service, a "Tests" tab will be added to milestones.
+If your project also uses the :ref:`Scrum Backlog <backlog>` service, a "Tests" tab will be added to milestones.
 
 This tab shows the test plan and campaigns of the milestone.
 

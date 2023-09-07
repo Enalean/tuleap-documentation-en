@@ -8,18 +8,17 @@ Project Milestones
   This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The widget Project Milestones aims at displaying the main information of a Scrum Agile Dashboard on a personal or project dashboard.
+The widget Project Milestones aims at displaying the main information of a Scrum Backlog on a personal or project dashboard.
 
 Project Milestones features:
 
-* Multiple widgets to synthesize several Agile Dashboard of projects on same dashboard
+* Multiple widgets to synthesize several Backlog of projects on same dashboard
 * Integration with TestManagement
 
 Configuration
 ~~~~~~~~~~~~~
 
-The displayed project in Project Milestones must have the Agile Dashboard service activated,
-and it is mandatory that a Scrum Agile Dashboard be configured (see :ref:`Agile Dashboard <agile-dashboard>`).
+The displayed project in Project Milestones must have the Backlog service activated and configured (see :ref:`backlog`).
 
 Project Milestones can be displayed on any personal dashboard or project dashboard.
 
@@ -31,7 +30,7 @@ Add the widget
    :alt: Project Milestones add widget
    :name: Project Milestones add widget
 
-To add Project Milestones in a dashboard, you need to select Project Milestones in section ``Agile Dashboard``.
+To add Project Milestones in a dashboard, you need to select Project Milestones in section ``Backlog``.
 
 Then, enter the label of the project to display, select the project from the dropdown, and click on ``Add widget``.
 

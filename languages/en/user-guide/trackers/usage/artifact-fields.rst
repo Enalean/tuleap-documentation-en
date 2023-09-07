@@ -165,7 +165,7 @@ Burnup
 ``````
 
 Burnup chart represent team progress overtime for a release or a sprint.
-It's a new field for Agiledashboard plugin.
+It's a new field for :ref:`backlog`.
 
 .. figure:: ../../../images/screenshots/tracker/burnup.png
    :align: center
@@ -180,7 +180,7 @@ This graph allows you to visualise:
      - Team effort (default): sum of initial effort already done for the release
      - Closed elements: the number of closed items for the release
 
-You can switch between the *Team effort* and the *Closed elements* modes in the administration of the agile dashboard.
+You can switch between the *Team effort* and the *Closed elements* modes in the administration of :ref:`backlog`.
 
 Burnup and Burndown mechanisms
 ``````````````````````````````
@@ -265,8 +265,7 @@ document, wiki, etc.).
 
 Rank
 ````
-this field is automatically updated by the AgileDashboard
-plugin. It displays the artifact rank in the context of the milestone.
+this field is automatically updated by :ref:`backlog`. It displays the artifact rank in the context of the milestone.
 
 Structural Elements
 ~~~~~~~~~~~~~~~~~~~

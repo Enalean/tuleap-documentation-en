@@ -32,7 +32,7 @@ BotMattermost-AgileDashboard
 ````````````````````````````
 To use this feature, **BotMattermost-Agiledashboard plugin** need to be installed and available for the project you need to use.
 
-Go in your project and select **Agile Dashboard** service. In **Admin** section click on **Notification** pane.
+Go in your project and select :ref:`backlog` service. In **Admin** section click on **Notification** pane.
 
 .. image:: ../../images/screenshots/bot-mattermost-plugins/botADConf.png
     :alt: Bot agiledashboard configuration

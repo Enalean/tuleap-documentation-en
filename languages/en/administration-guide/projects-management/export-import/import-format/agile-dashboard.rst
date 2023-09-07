@@ -1,7 +1,9 @@
-Agile Dashboard
-***************
+Backlog & Kanban
+****************
 
-You can import agiledashboard configuration. There are no data related to agiledashboard itself. The data are in the trackers.
+You can import backlog and kanban configuration. There are no data related to backlog or kanban themselves. The data are in the trackers.
+
+.. NOTE:: For historical reasons, backlog and kanban configurations are in `<agiledashboard>` node.
 
 .. sourcecode:: xml
 

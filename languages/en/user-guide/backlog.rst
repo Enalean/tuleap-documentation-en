@@ -1,17 +1,17 @@
+.. NOTE:: Starting Tuleap 15.0, Agile Dashboard service has been split in two separate services: Backlog and :ref:`kanban`.
 
+.. _backlog:
 
-.. _agile-dashboard:
+Backlog
+=======
 
-Agile Dashboard
-===============
-
-The Tuleap Agile Dashboard is a service provided by Tuleap on top of trackers (see :ref:`trackers`).
+The Backlog is a service provided by Tuleap on top of trackers (see :ref:`trackers`).
 It is highly configurable and adapts to almost any agile team.
 
 Features
 --------
 
-The Tuleap Agile Dashboard has many features including a taskboard, a burndown and a backlog planner.
+The Backlog has many features including a taskboard, a burndown and a backlog planner.
 
 The taskboard allows for the visual monitoring of a story or task's progress, the individuals who are working on it
 or the remaining effort.
@@ -19,31 +19,21 @@ or the remaining effort.
 Interactive actions currently include on the fly assigning, edition of the remaining effort and
 the drag'n'drop within a workflow.
 
-Creating an Agile Dashboard
----------------------------
+Creating a Backlog
+------------------
 
 Creating from Tuleap's template
 ```````````````````````````````
 
 You can create one from scratch but, given the sheer number of configurations, it is
 easier to import and tweak it.
-Before anything, you need to ensure that the trackers and Agile Dashboard services are installed and
+Before anything, you need to ensure that the trackers and Backlog services are installed and
 activated for your project.
 
 Use default templates
 `````````````````````
 
-When you first come, as a project administrator, on Agile Dashboard service, you will be asked to create either a Scrum or a Kanban dashboard.
-
-.. figure:: ../images/screenshots/kanban-onboarding.png
-   :align: center
-   :alt: Agile Dashboard welcome screen
-   :name: Agile Dashboard  welcome screen
-   :width: 800px
-
-   Agile Dashboard welcome screen
-
-Pick-up the one you need and it will automatically create and configure everything for you.
+When you first come, as a project administrator, on Backlog service, you will be asked to create a Backlog.
 
 You inherit a default template provided by Tuleap but you can modify whatever you want:
 
@@ -52,9 +42,9 @@ You inherit a default template provided by Tuleap but you can modify whatever yo
 - tweak Scrum to use more Plannings
 - ...
 
-Creating your Agile Dashboard from scratch
-``````````````````````````````````````````
-You will have to create your own trackers and link them within the Agile Dashboard administration.
+Creating your Backlog from scratch
+``````````````````````````````````
+You will have to create your own trackers and link them within the Backlog administration.
 
 Note that some field names are important to respect:
 
@@ -66,41 +56,18 @@ Note that some field names are important to respect:
 -  Type of a task: the field representing the type must have "type" as field name in order to display the color
    representing the type of the task on the cards of the cardwall.
 
-Using an Agile Dashboard
-------------------------
+Using Backlog
+-------------
 
-To enter the Agile Dashboard service of a given project, first go to
-the project and click on the "Agile Dashboard" item in the sidebar.
-
-You will be directed to the agile dashboard homepage of your project
-(see `Agile Dashboard Homepage`_).
-
-The homepage lists and links to all the milestones in your project. they are sorted according to status and date.
-
--  In the "Done" tab, you have all the milestones whose status is closed.
--  In the "What's hot" tab, you have all the milestones whose status is open and whose start date and duration make them ongoing.
--  In the "What's next" tab, you  have all the milestones whose status is open and whose start date and duration either places them in the future or are not set.
-
-If start_date and duration are not defined in the tracker, but status is open, you will have the milestones both in "What's hot" and "Next".
-If start_date and duration are defined but empty, you will have the milestones in the three tabs.
-
-
-If configured, it provides links to cardwalls, so that the team can directly makes its daily stand up changes.
-
-.. figure:: ../images/screenshots/sc_ad_homepage_new.png
-   :align: center
-   :alt: Agile Dashboard Homepage
-   :name: Agile Dashboard Homepage
-   :width: 800px
-
-   Agile Dashboard Homepage
+To enter the Backlog service of a given project, first go to
+the project and click on the "Backlog" item in the sidebar.
 
 .. _plan-releases-and-sprints:
 
 Plan releases and sprints
 `````````````````````````
 
-Tuleap Agile Dashboard lets you plan easily your releases.
+Backlog lets you plan easily your releases.
 
 .. figure:: ../images/screenshots/agiledashboard/sc_plan_releases.png
    :align: center
@@ -108,7 +75,7 @@ Tuleap Agile Dashboard lets you plan easily your releases.
    :name: Plan a release
    :width: 800px
 
-   Agile Dashboard: Plan your releases
+   Backlog: Plan your releases
 
 From this view, you can drag'n'drop elements from top backlog to one of the planned releases on the right, or add new releases.
 
@@ -142,13 +109,13 @@ A :ref:`workflow <tracker-workflow>` post-action named ``AddToTopBacklog`` can a
    :alt: AddToTopBacklog workflow post action
    :name: AddToTopBacklog workflow post action
 
-You can enable this option in Agiledashboard administration by checking the use explicit backlog option.
+You can enable this option in Backlog administration by checking the use explicit backlog option.
 
 Open backlog
 ~~~~~~~~~~~~
 The top backlog planning will contains all open and unplanned artifacts. They are removed from top backlog when you prioritize them in a release or a sprint or when you update their status.
 
-The agile dashboard also provides the possibility to prioritize the backlog, by drag'n'dropping elements from top to bottom.
+The Backlog also provides the possibility to prioritize elements, by drag'n'dropping them from top to bottom.
 
 Monitor project progress
 ````````````````````````
@@ -161,9 +128,9 @@ With the burnup and burndown view, you can see how your on going work is progres
    :alt: Burnup and burndown view
    :name: Burnup and burndown view
 
-   Agile Dashboard: Burnup and burndown view
+   Backlog: Burnup and burndown view
 
-To configure a burnup and burndown charts please refer to (:ref:`burnup_administration`) part of documentation.
+To configure a burnup and burndown charts please refer to :ref:`burnup_administration` part of documentation.
 
 .. _plugin_velocity:
 
@@ -172,18 +139,18 @@ Velocity
 
 When the release end, and during the sprint planning you can use the velocity chart to determine your new team capacity.
 The velocity chart display the sum of done effort of linked artifacts.
-Only backlog artifacts are taken in account during computation (artifact linked in planning configuration of Agiledashboard).
+Only backlog artifacts are taken in account during computation (artifact linked in planning configuration of Backlog).
 
 .. figure:: ../images/screenshots/agiledashboard/velocity.png
    :align: center
    :alt: Velocity chart
    :name: Velocity chart
 
-   Agile Dashboard: Velocity chart
+   Backlog: Velocity chart
 
 Known limitation: if an artifact is created directly at a "done" status, velocity won't be computed.
 
-To configure a velocity chart please refer to (:ref:`velocity_administration`) part of documentation.
+To configure a velocity chart please refer to :ref:`velocity_administration` part of documentation.
 
 .. _plugin_taskboard:
 

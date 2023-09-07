@@ -39,13 +39,13 @@ Project management:
 
 * **tracker**: Tuleap flagship, track anything the way you want
 * **graphontrackers**: Display graphs on top of trackers
-* **agiledashboard**: Do Scrum and Kanban
-* **cardwall**: Build a board of cards on top of trackers or Agile Dashboard
-* :ref:`velocity <plugin_velocity>`: Display velocity chart in the Agile Dashboard
+* **agiledashboard**: Do Scrum Backlog and Kanban
+* **cardwall**: Build a board of cards on top of trackers or Backlog
+* :ref:`velocity <plugin_velocity>`: Display velocity chart in the Backlog
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in Agile Dashboard.
+* :ref:`taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in Backlog.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -53,7 +53,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`testplan <testmgmt_link_tests_requirements>`: Integration between the agiledashboard and testmanagement plugins.
+* :ref:`testplan <testmgmt_link_tests_requirements>`: Integration between the Backlog and testmanagement services.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -69,7 +69,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`projectmilestones <project-milestones>`: Widget to display scrum Agile Dashboard of a project on user or project dashboard.
+* :ref:`projectmilestones <project-milestones>`: Widget to display scrum backlog of a project on user or project dashboard.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
@@ -149,7 +149,7 @@ Integrations:
 * **embed**: Provide a preview of `Figma <https://www.figma.com/>`_ and `Blackfire profiles <https://www.blackfire.io/>`_ inside the artifact view
 * **gitlab**: Reference your GitLab commits in Tuleap artifacts and conversely
 * **botmattermost**: Integration with mattermost and slack
-* **botmattermost-agiledashboard**: Mattermost bot for Agile Dashboard
+* **botmattermost-agiledashboard**: Mattermost bot for Backlog
 * **botmattermost-git**: Mattermost bot for git
 * :ref:`onlyoffice <onlyoffice-integration>`: Integrate `ONLYOFFICE <https://www.onlyoffice.com/>`_ in the document management plugin so you can view your office documents
 * :ref:`jira-import <jira-project-importer>`: Import entire Jira project

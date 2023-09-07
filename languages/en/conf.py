@@ -286,6 +286,7 @@ lexers['markdown'] = MarkdownLexer(startinline=True, linenos=1)
 # Redirections
 
 rediraffe_redirects = {
+    "user-guide/agile-dashboard.rst": "user-guide/backlog.rst",
     "user-guide/documents-and-files/document.rst": "user-guide/documents-and-files/doc.rst",
     "user-guide/trackers/usage/markdown.rst": "user-guide/writing-in-tuleap.rst",
     "user-guide/my-personal-dashboard.rst": "user-guide/user/dashboard.rst",
