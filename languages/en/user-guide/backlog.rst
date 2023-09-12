@@ -19,43 +19,6 @@ or the remaining effort.
 Interactive actions currently include on the fly assigning, edition of the remaining effort and
 the drag'n'drop within a workflow.
 
-Creating a Backlog
-------------------
-
-Creating from Tuleap's template
-```````````````````````````````
-
-You can create one from scratch but, given the sheer number of configurations, it is
-easier to import and tweak it.
-Before anything, you need to ensure that the trackers and Backlog services are installed and
-activated for your project.
-
-Use default templates
-`````````````````````
-
-When you first come, as a project administrator, on Backlog service, you will be asked to create a Backlog.
-
-You inherit a default template provided by Tuleap but you can modify whatever you want:
-
-- use both Scrum and Kanban
-- use several Kanban (you will have to create your own tracker first)
-- tweak Scrum to use more Plannings
-- ...
-
-Creating your Backlog from scratch
-``````````````````````````````````
-You will have to create your own trackers and link them within the Backlog administration.
-
-Note that some field names are important to respect:
-
--  Remaining Effort: the field representing the remaining effort (mainly used in user stories or tasks) must have "remaining_effort" as field name
--  Impediment: the field representing an impediment must have "impediment" as field in order to be displayed on the cards of the cardwall
--  Start Date of a sprint: the field representing the start date must have "start_date" as field name
--  Capacity of a sprint: the field representing the capacity must have "capacity" as field name
--  Duration of a sprint: the field representing the duration must have "duration" as field name
--  Type of a task: the field representing the type must have "type" as field name in order to display the color
-   representing the type of the task on the cards of the cardwall.
-
 Using Backlog
 -------------
 
@@ -245,3 +208,40 @@ When used in combination with Tuleap Test Management, the Backlog can be covered
    :name: Test plan over a release
 
 The full documentation is available in :ref:`Test Management <testmgmt_link_tests_requirements>` section.
+
+Creating a Backlog
+------------------
+
+Creating from Tuleap's template
+```````````````````````````````
+
+You can create one from scratch but, given the sheer number of configurations, it is
+easier to import and tweak it.
+Before anything, you need to ensure that the trackers and Backlog services are installed and
+activated for your project.
+
+Use default templates
+`````````````````````
+
+When you first come, as a project administrator, on Backlog service, you will be asked to create a Backlog.
+
+You inherit a default template provided by Tuleap but you can modify whatever you want:
+
+- use both Scrum and Kanban
+- use several Kanban (you will have to create your own tracker first)
+- tweak Scrum to use more Plannings
+- ...
+
+Creating your Backlog from scratch
+``````````````````````````````````
+You will have to create your own trackers and link them within the Backlog administration.
+
+Note that some field names are important to respect:
+
+-  Remaining Effort: the field representing the remaining effort (mainly used in user stories or tasks) must have "remaining_effort" as field name
+-  Impediment: the field representing an impediment must have "impediment" as field in order to be displayed on the cards of the cardwall
+-  Start Date of a sprint: the field representing the start date must have "start_date" as field name
+-  Capacity of a sprint: the field representing the capacity must have "capacity" as field name
+-  Duration of a sprint: the field representing the duration must have "duration" as field name
+-  Type of a task: the field representing the type must have "type" as field name in order to display the color
+   representing the type of the task on the cards of the cardwall.
