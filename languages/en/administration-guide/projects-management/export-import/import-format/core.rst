@@ -21,7 +21,6 @@ Core information imported as of today:
   - projectlatestnews
   - projectpublicareas
   - projectlatestsvncommits
-  - projectlatestcvscommits
   - projectsvnstats
   - projectrss (with 'rss' preference: 2 values 'title' and 'url')
   - projectimageviewer (with 'image' preference: 2 values 'title' and 'url')
@@ -64,7 +63,6 @@ Core information imported as of today:
 
       <services>
         <service shortname="svn" enabled="true" />
-        <service shortname="cvs" enabled="false" />
         <service shortname="plugin_git" enabled="true" />
         <service shortname="plugin_tracker" enabled="true" />
       </services>

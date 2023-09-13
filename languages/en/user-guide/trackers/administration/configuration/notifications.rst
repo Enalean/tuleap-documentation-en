@@ -25,19 +25,6 @@ This feature is typically used to send submissions of new artifacts to a
 number of well identified persons in the team who are in charge of
 qualifying and dispatching the artifacts.
 
-.. NOTE::
-
-    If you want to notify many people at once, we suggest that you use
-    the Tuleap Mailing Lists service to create a
-    distribution lists (see :ref:`mailing-lists`). Once the Mailing List is up and running
-    type the e-mail address in the Global Email Notification field.
-
-    Creating a Mailing List on Tuleap has several
-    advantages: first individuals can (un)subscribe by themselves and
-    second all messages sent to a Tuleap mailing list are
-    kept in an archive that can serve as an audit trail for your
-    tracker.
-
 Email subject customisation
 ```````````````````````````
 

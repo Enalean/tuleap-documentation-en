@@ -1,12 +1,7 @@
 User status
 ===========
 
-There are 2 different statuses associated with a Tuleap user:
-
-#. The "status" field in the user table contains the user status from
-   the point of view of the Web interface.
-
-   -  Valid values are :
+There are different statuses associated with a Tuleap user:
 
       -  'A' for Active
       -  'P' for Pending
@@ -38,35 +33,7 @@ There are 2 different statuses associated with a Tuleap user:
       (left menu pane) but it generates a huge page with all users. So a
       better choice is to choose "Admin Page" and then search for the
       use or select the first letter of the name. Then you can change
-      the Web status.
-
-#. The "unix\_status" field in the user table governs the status of the
-   Unix account.
-
-   -  It is completely independent from the Web 'status' field above
-   -  Valid values are
-
-      -  'N' for No Unix account: this one has an effect only when a
-         user is created with this unix status upfront. In this case the
-         Unix crontab daemon simply ignores it and doesn't create a Unix
-         account for this user
-      -  'A' for Active: A Unix account is created for this user
-         (including a home directory in /home/users/user\_name)
-      -  'R' for Restricted: A Unix account is created for this user
-         (including a home directory in /home/users/user\_name)
-      -  'S' for Suspended: the Unix password is replaced by "!!"
-         meaning the user account is preserved although no longer usable
-         (Can not login but home directory remains untouched and
-         assignment to Unix group is safe as well).Going back to status
-         'A' will reactivate the account with the initial password.
-      -  'D' for Deleted: the home directory for this user is archived
-         in /tmp (and therefore automatically cleaned up after 7 days)
-         for the moment and then removed from /home/users. Assignment to
-         Unix groups is revoked as well of course.
-
-   -  To modify the Unix status do the same as for status but click on
-      the user name. Then you are given access to the Unix status of the
-      user. Change it to whatever value is appropriate.
+      the status.
 
 Pending users
 -------------
@@ -193,29 +160,6 @@ Some explanation:
 -  **$sys\_allow\_restricted\_users = 1** simply enables the
    'Restricted' status for users.
 
-Restricted Shell
-^^^^^^^^^^^^^^^^
-
-By default, restricted users do not have a regular shell access: they
-are given a restricted shell access that only supports a few command
-(only 'cvs' today).
-
-The default shell is '/usr/lib/tuleap/bin/cvssh-restricted'. It grants
-CVS access to projects the user is member of, and forbid access to all
-other projects repositories.
-
-If you need to completely remove shell access (and forbid CVS), you need
-to modify the shell manually in the administration interface for each
-user: set it to /sbin/nologin.
-
-Setup: in order to use CVS, the restricted user must do the following:
-
--  Set the 'CVS\_RSH' environment variable to 'ssh'
--  use the following command line: cvs
-   -d:ext:username@example.com:/cvsroot/projectname co module
-
-See also 'Tuleap Installation Guide'.
-
 Setting restricted users privileges
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -252,16 +196,6 @@ sample configuration file:
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
 
--  Restricted users must be denied access to the pserver protocol to
-   access CVS: only the SSH method is supported (through the restricted
-   shell). If you want to disable the pserver access, make sure you
-   edit/etc/xinetd.d/cvs, change the 'disable' parameter to 'yes' and
-   restart xinetd (systemctl restart xinetd). You may also fine-tune the
-   configuration file to allow pserver for some IP addresses and deny it
-   for others..
--  Access to projects web sites by Restricted Users is not controlled.
-   If a project web site displays sensitive data, then it should put in
-   place access restriction mechanisms (e.g. a '.htaccess' file).
 -  **Subversion**: currently, if the sys\_allow\_restricted\_user
    variable is set to '1', subversion repositories have their default
    access policy changed: by default, only project members have read

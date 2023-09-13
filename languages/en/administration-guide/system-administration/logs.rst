@@ -54,7 +54,6 @@ Tuleap
 ``````
 
  - ``/var/log/tuleap/codendi_syslog``: contains information about backend operations like a system event execution.
- - ``/var/log/tuleap/cvslog/``: contains information specific to the CVS activity.
  - ``/var/log/tuleap/ldap_syslog``: contains information specific to the LDAP plugin activity.
  - ``/var/log/tuleap/git_syslog``: contains information on operations executed in the Git system event queue.
  - ``/var/log/tuleap/git_http_error_log``: contains errors specific to the Git HTTP activity.

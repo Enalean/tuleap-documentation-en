@@ -29,12 +29,5 @@ In addition to that, all access to its resources are disabled:
     - REST calls to fetch resources belonging to suspended projects are also blocked and it will result a 403 error.
     - The services used by this project are blocked.
 
-.. warning::
-    The following services are not blocked and may still be used:
-        - Mailing lists (Lists Service)
-        - Project web pages (Home Page Service)
-        - CVS
-        - SOAP API
-
 This status can be toggled back and forth with no impact on the project. When back to ``active``, all access will be
 unlocked.

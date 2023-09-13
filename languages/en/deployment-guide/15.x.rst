@@ -7,3 +7,19 @@ Tuleap 15.0
 .. NOTE::
 
   Tuleap 15.0 is currently under development.
+
+Removal of the support of ForumML, CVS and of the management of system users and groups
+---------------------------------------------------------------------------------------
+
+The features related to the ForumML plugin, CVS and the management of system users and
+groups have been removed from Tuleap.
+
+We recommend that you remove the package dependencies that were associated to these features:
+
+.. sourcecode:: shell
+
+    yum remove cvs-tuleap mailman-tuleap libnss-mysql
+
+If you were relying on the management of system users and groups by Tuleap you will need
+to manage those users manually and you should also remove any mention of ``mysql`` in the
+``/etc/nsswitch.conf`` configuration file.
