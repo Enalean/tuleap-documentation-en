@@ -132,20 +132,6 @@ notification:
    :align: center
    :alt: Notifications
 
-   ..
-
-
-    **Tip**
-
-    If you intend to generate email notification for the changes made in
-    your Subversion repository or a specific path, it is a good practice
-    to create a specific mailing list called ``projectname-svnevents``.
-    By doing so, Tuleap users and project members interested
-    in receiving the email notification just need to subscribe to the
-    mailing list. In addition, the Tuleap mailing list
-    manager will archive all the email messages which can prove very
-    useful for future reference. See :ref:`mailing-lists` for mailing list creation.
-
 Access Control
 ``````````````
 

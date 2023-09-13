@@ -423,8 +423,7 @@ Continuous Integration service in Tuleap
 
 .. note::
 
-    The "Continuous Integration" service in Tuleap refers to an historical implementation that was mainly targeting Subversion
-    and CVS.
+    The "Continuous Integration" service in Tuleap refers to an historical implementation that was mainly targeting Subversion.
 
     It also provides some widgets that can be used on Project and Personal dashboards.
 
@@ -444,7 +443,7 @@ give the URL of the Hudson job you want to associate with your project
    :name:  Link Jenkins job with your project
 
 You may also want to enable the auto trigger of the build for this job
-after each commit in your project repository (CVS or Subversion). If you
+after each commit in your project repository (Subversion). If you
 have protected your build with a token, you can specify this token.
 
 By checking this option, each commit will

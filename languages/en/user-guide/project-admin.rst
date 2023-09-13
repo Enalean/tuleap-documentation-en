@@ -103,10 +103,6 @@ This includes that:
 
    -  the file packages and their permissions are copied
 
-   -  the CVS admin settings are copied (preamble, tracking mode, CVS
-      Watch Mode), but the emails and the CVS permissions are not
-      copied.
-
 
 After you validate the project registration, the Tuleap Team in charge
 of your platform reviews the information you submitted and decides
@@ -773,7 +769,6 @@ Administration         service_admin_lbl_key                 service_admin_desc_
 Forums                 service_forum_lbl_key                 service_forum_desc_key
 Mails                  service_mail_lbl_key                  service_mail_desc_key
 News                   service_news_lbl_key                  service_news_desc_key
-CVS                    service_cvs_lbl_key                   service_cvs_desc_key
 File                   service_file_lbl_key                  service_file_desc_key
 Wiki                   service_wiki_lbl_key                  service_wiki_desc_key
 Legacy Trackers        service_tracker_lbl_key               service_tracker_desc_key
@@ -1149,13 +1144,8 @@ information:
    what file and when (date and time). The time of download is reported
    in local time relative to the project member time zone.
 
--  The Tuleap users who used CVS to checkout or update the
-   sources on their local desktop machine or who browsed source code via
-   the CVS Web interface.
-
 -  The Tuleap users who accessed the source code through the
-   Subversion repository or who browsed source code via the CVS Web
-   interface.
+   Subversion repository.
 
 -  The Tuleap users who downloaded documents, except for
    those documents marked as being accessible to anonymous users in your

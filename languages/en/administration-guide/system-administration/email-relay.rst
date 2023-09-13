@@ -30,5 +30,4 @@ More information about the different settings can be found using ``tuleap config
     Some notifications from legacy services will still use the self hosted Tuleap email to work:
 
     * PHPWiki notifications
-    * CVS notifications
     * SVN core notifications

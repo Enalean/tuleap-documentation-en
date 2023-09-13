@@ -53,9 +53,8 @@ necessary.
    artifacts, as well as source code commits, documents, files, etc.
    Please refer to :ref:`writing-in-tuleap-references` for more details on References.
 
-   Furthemore references concerning artifacts, svn revisions and cvs
-   commits are stored in the database. They are displayed in the next
-   section, ordered by type and initial reference direction.
+   Furthemore references concerning artifacts, svn revisions are stored in the database.
+   They are displayed in the next section, ordered by type and initial reference direction.
 
 Comments
 ````````
