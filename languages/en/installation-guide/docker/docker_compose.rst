@@ -9,10 +9,12 @@ In a special directory (created only for the Tuleap stack), create a ``.env`` fi
 
 .. code-block:: ini
 
-    TULEAP_FQDN=tuleap.example.com
-    MYSQL_ROOT_PASSWORD=some random strong password
-    TULEAP_SYS_DBPASSWD=another strong password
-    SITE_ADMINISTRATOR_PASSWORD=and a third strong password
+    TULEAP_FQDN="tuleap.example.com"
+    MYSQL_ROOT_PASSWORD="some random strong password"
+    TULEAP_SYS_DBPASSWD="another strong password"
+    SITE_ADMINISTRATOR_PASSWORD="and a third strong password"
+
+Please be aware that you need **double quotes** around your variables in order for docker to parse the whole string. 
 
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
@@ -99,9 +101,9 @@ You should add these variables in your ``.env`` file (along with the :ref:`afore
 
 .. code-block:: ini
 
-    TULEAP_VERSION=15.0-1
-    DB_FQDN=mysql.example.com
-    REDIS_FQDN=redis.example.com
+    TULEAP_VERSION="15.0-1"
+    DB_FQDN="mysql.example.com"
+    REDIS_FQDN="redis.example.com"
 
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
