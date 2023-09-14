@@ -18,10 +18,6 @@ Please be aware that you need **double quotes** around your variables in order f
 
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
-Notes about passwords:
-
-* we recommend at least 20 chars but only alphabetical & numbers,
-* they are set at the first run only (not updated automatically).
 
 Tuleap Community
 `````````````````

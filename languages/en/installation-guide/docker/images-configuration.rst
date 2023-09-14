@@ -53,6 +53,12 @@ Email
     Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to 
     customize the image to fit your needs.
 
+Passwords 
+`````````
+
+* We recommend at least 20 chars but only alphabetical & numbers,
+* They are set at the first run only (not updated automatically).
+
 TLS Certificates
 ````````````````
 
