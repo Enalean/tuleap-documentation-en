@@ -7,7 +7,7 @@ What for ?
 The Tuleap Community Edition docker image allows you to test Tuleap quickly by skipping the installation and customization part.
 It gives you a fully working Tuleap in minutes with everything preconfigured with sensible defaults.
 
-That's the recommended way to install Tuleap, especially if you "just want to give it a try".
+That's the recommended way to install Tuleap, especially if you just want to give it a try.
 
 Prerequisites
 `````````````
