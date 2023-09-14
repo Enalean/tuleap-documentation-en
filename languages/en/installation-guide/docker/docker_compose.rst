@@ -7,22 +7,19 @@ The Environment
 ````````````````
 In a special directory (created only for the Tuleap stack), create a ``.env`` file that defines these variables:
 
-.. code-block::
+.. code-block:: ini
 
     TULEAP_FQDN=tuleap.example.com
     MYSQL_ROOT_PASSWORD=some random strong password
     TULEAP_SYS_DBPASSWD=another strong password
     SITE_ADMINISTRATOR_PASSWORD=and a third strong password
 
-* ``TULEAP_FQDN`` is the full name of the machine you are going to run Tuleap on. As we saw in pre-requisite section, it should be the name of your docker host either from DNS or at very least defined in ``/etc/hosts`` (will resolve only locally).
-* ``MYSQL_ROOT_PASSWORD`` will be the root password of your mysql instance.
-* ``TULEAP_SYS_DBPASSWD`` will be the password used by Tuleap application to connect to the database (default user ``tuleapadm``)
-* ``SITE_ADMINISTRATOR_PASSWORD`` will be the password of the Tuleap site administrator application user.
+Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
 Notes about passwords:
 
 * we recommend at least 20 chars but only alphabetical & numbers,
-* they are set at the site initialization only (not updated automatically).
+* they are set at the first run only (not updated automatically).
 
 Tuleap Community
 `````````````````
@@ -100,16 +97,13 @@ You first need to authenticate towards Tuleap's registry:
 
 You should add these variables in your ``.env`` file (along with the :ref:`aforementioned ones <env-variables>`):
 
-.. code-block::
+.. code-block:: ini
 
     TULEAP_VERSION=15.0-1
     DB_FQDN=mysql.example.com
     REDIS_FQDN=redis.example.com
 
-* ``TULEAP_VERSION`` is the version of Tuleap Enterprise you wish to use. There is no ``latest``, and the version format is either ``15.0`` or ``15.0-1``.
-* ``DB_FQDN`` is the full name of the machine hosting the Database.
-* ``REDIS_FQDN`` is the full name of the machine hosting Redis.
-
+Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
 .. code-block:: yaml
 
@@ -181,5 +175,5 @@ Until you see something like:
 
 You can then quit the logs command (Ctrl+C) and open your browser at the address set in ``TULEAP_FQDN`` and that's it.
 
-The docker-compose file provided here is for general guidance and you should adapt to your environment. 
-One of the main thing you will want to configure is a proper email relay.
+The docker-compose file provided here is for general guidance and you should adapt it to your environment. 
+One of the main things you will want to configure is a proper email relay.

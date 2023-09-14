@@ -8,13 +8,13 @@ publish it. The image is signed using `cosign <https://github.com/sigstore/cosig
 
 You can verify the image authenticity by :download:`downloading our public key <tuleap_docker.pub>` into a file named ``tuleap_docker.pub`` and then running:
 
-.. code-block::
+.. code-block:: bash
 
   $ cosign verify -key tuleap_docker.pub tuleap/tuleap-community-edition
 
 On success the output will look something like this:
 
-.. code-block::
+.. code-block:: text
 
   Verification for tuleap/tuleap-community-edition --
   The following checks were performed on each of these signatures:
@@ -26,17 +26,17 @@ On success the output will look something like this:
 
 Check Tuleap Enterprise image
 `````````````````````````````
-We sign the Tuleap Enterprise Docker images each time we publish them. The images are signed using `cosign <https://github.com/sigstore/cosign>`_.
+We sign the Tuleap Enterprise Docker image each time we publish it. The image is signed using `cosign <https://github.com/sigstore/cosign>`_.
 
 You can verify an image authenticity by :download:`downloading our public key <tuleap_enterprise_docker.pub>` into a file named ``tuleap_enterprise_docker.pub`` and then running:
 
-.. code-block::
+.. code-block:: bash 
 
   $ cosign verify -key tuleap_enterprise_docker.pub docker.tuleap.org/tuleap-enterprise-edition:12.11-2
 
 On success the output will look something like this:
 
-.. code-block::
+.. code-block:: text
 
   Verification for docker.tuleap.org/tuleap-enterprise-edition:14.11-4 --
   The following checks were performed on each of these signatures:

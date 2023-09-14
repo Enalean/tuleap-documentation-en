@@ -3,6 +3,8 @@ Docker images configuration
 
 This section covers the configuration details that applies to both images.
 
+.. _docker-environment-variables:
+
 Environment variables
 `````````````````````
 

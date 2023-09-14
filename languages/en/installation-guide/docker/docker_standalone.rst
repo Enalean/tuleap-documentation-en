@@ -1,7 +1,7 @@
 Docker Standalone
 =================
 
-For anything but tests you should have a dedicated MySQL (**version 8.0**) and Redis (last stable recommended) databases.
+For anything but tests, you should have a dedicated MySQL (**version 8.0**) and Redis (last stable recommended) databases.
 
 At first run you will need to provide some information about the platform you want to deploy:
 
@@ -12,9 +12,18 @@ At first run you will need to provide some information about the platform you wa
 * The database application user (typically ``tuleapadm``) password as ``TULEAP_SYS_DBPASSWD`` environment variable
 * The Tuleap ``admin`` user password as ``SITE_ADMINISTRATOR_PASSWORD`` environment variable
 
-  * **WARNING**: You cannot enforce encryption of Redis communication if you enabled Subversion because the underlying code, written in perl, doesn't support encryption.
+Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
+
+.. warning::
+
+    You cannot enforce encryption of Redis communication if you enabled Subversion because the underlying code, written in perl, doesn't support encryption.
 
 The data volume must be mounted on ``/data`` inside the container.
+When running, the container exposes the following ports:
+
+* ``80`` TCP http traffic, automatically redirected to ``443``
+* ``443`` TCP https traffic
+* ``22`` TCP ssh traffic (for git)
 
 Tuleap Community
 `````````````````
@@ -43,7 +52,7 @@ You can init docker image in command line:
         -v /srv/path/to/data:/data
         tuleap/tuleap-community-edition
 
-For future runs you don't need to pass all the environments:
+For future runs you don't need to pass all the environment variables:
 
 .. code-block:: bash
 
@@ -86,7 +95,7 @@ You must specify the Tuleap tag you want to run (there is no ``:latest`` to avoi
         -e DB_HOST=db-tuleap.example.com \
         -e DB_ADMIN_USER="root" \
         -e DB_ADMIN_PASSWORD="a fine password" \
-        -v tuleap-data:/data
+        -v /srv/path/to/data:/data
         docker.tuleap.org/tuleap-enterprise-edition:11.13-3
 
 The next runs won't need the environment variable so you can restart with:
@@ -94,11 +103,5 @@ The next runs won't need the environment variable so you can restart with:
 .. code-block:: bash
 
     $ docker run -d \
-        -v tuleap-data:/data
+        -v /srv/path/to/data:/data
         docker.tuleap.org/tuleap-enterprise-edition:11.13-3
-
-When running, the container exposes the following ports:
-
-* ``80`` TCP http traffic, automatically redirected to ``443``
-* ``443`` TCP https traffic
-* ``22`` TCP ssh traffic (for git)
