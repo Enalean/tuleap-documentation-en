@@ -30,37 +30,7 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: December 2022**
-
-End of March 2023
-'''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-PROFTPd plugin                Removed           End-users should use document/frs instead
-Reference Alias * plugins     Removed           It was only used as compatibility layer for TeamForge
-                                                migration and no longer in use. The removed plugins:
-                                                ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``,
-                                                ``referencealias_svn``, ``referencealias_tracker``.
-Artifacts Folders plugin      Removed           It was only used as compatibility layer for TeamForge
-                                                migration and no longer in use.
-Distributed SVN               Removed           If you set-up Distributed SVN you should update the main reverse
-                                                proxy and ensure that all traffic goes to the main Tuleap server.
-============================= ================= ============================================================
-
-September 2023 (Tuleap 15.0)
-''''''''''''''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-Mailman & ForumML plugin      Removed           Tuleap will no longer provide the feature. Administrators should
-                                                look for another tool to distribute emails.
-CVS                           Removed           Tuleap will no longer provide the feature. Administrators should
-                                                warn their teams to migrate to newer solutions (SVN, git).    
-============================= ================= ============================================================
-
+**Last update: September 2023**
 
 End of October 2023
 ''''''''''''''''''''
@@ -97,14 +67,19 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+Mailman & ForumML plugins       Q3 2023  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool to distribute emails.
+CVS                             Q3 2023  Removed           Tuleap will no longer provide the feature. Administrators should warn their teams to migrate to newer solutions (SVN, git).
+PROFTPd plugin                  Q2 2023  Removed           End-users should use document or FRS instead
+Reference Alias * plugins       Q2 2023  Removed           It was only used as compatibility layer for TeamForge migration and no longer in use. The removed plugins: ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``, ``referencealias_svn``, ``referencealias_tracker``.
+Artifacts Folders plugin        Q2 2023  Removed           It was only used as compatibility layer for TeamForge migration and no longer in use.
+Chrome & Edge < 103             Q2 2023  End of support    Ensure your users have an up to date browser.
+Firefox < 102                   Q2 2023  End of support    Ensure your users have an up to date browser.
+Distributed SVN                 Q1 2023  Removed           If you set-up Distributed SVN you should update the main reverse proxy and ensure that all traffic goes to the main Tuleap server.
 SOAP API                        Q4 2022  Removed           End-users should switch to REST API
 Subversion (SVN Core)           Q4 2022  Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
 forgeupgrade                    Q4 2022  Removed           :ref:`Update script/procedures <update>` should no longer use ``/usr/lib/forgeupgrade/bin/forgeupgrade``
 Project Data Export (text)      Q3 2022  Removed           Use project XML export
 Gerrit versions < 3.3           Q4 2021  End of support    Switch to Gerrit 3.3 or higher
-Chrome & Edge < 87              Q3 2021  End of support    Ensure your users have an up to date browser
-Firefox < 78.1                  Q3 2021  End of support    Ensure your users have an up to date browser
-PHP 7.4                         Q3 2021  Removed           Nothing, Tuleap will switch to PHP 8.0 automatically
 PermissionsOverrider            Q1 2021  Removed           :ref:`Delete the local glue <remove_permissions_overrider>`
 Internet Explorer               Q4 2020  End of support    **End-users must switch to the latest version of Firefox, Edge, Chrome or Chromium**
 RHEL 6                          Q4 2020  End of support    Switch to RHEL 7
