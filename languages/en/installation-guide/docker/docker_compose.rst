@@ -25,7 +25,7 @@ Tuleap Community
 
 .. warning::
 
-    The following section is meant for test purpose only. The databases (MySQL and Redis) are handled by Docker and it is not a recommend setup.
+    The following section is meant for test purpose only. The databases (MySQL and Redis) are handled by Docker and it is not a recommended setup.
 
 
 Then create a ``compose.yaml`` file with following content:
