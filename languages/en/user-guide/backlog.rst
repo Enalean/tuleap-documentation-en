@@ -1,4 +1,4 @@
-.. NOTE:: Starting Tuleap 15.0, Agile Dashboard service has been split in two separate services: Backlog and :ref:`kanban`.
+.. NOTE:: Starting Tuleap 15.0, Agile Dashboard service has been split in two separate services: Backlog and :ref:`kanban`. For more details about this split please see https://blog.tuleap.org/new-navigation-bar-splitting-the-agile-dashboard
 
 .. _backlog:
 
