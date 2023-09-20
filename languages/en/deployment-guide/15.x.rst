@@ -1,12 +1,15 @@
 Tuleap 15.x
 ###########
-
-Tuleap 15.0
+    
+Tuleap 15.1
 ===========
 
 .. NOTE::
 
-  Tuleap 15.0 is currently under development.
+  Tuleap 15.1 is currently under development.
+    
+Tuleap 15.0
+===========
 
 Removal of the support of ForumML, CVS and of the management of system users and groups
 ---------------------------------------------------------------------------------------
