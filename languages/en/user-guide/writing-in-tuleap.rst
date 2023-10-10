@@ -81,6 +81,7 @@ Where can I write Markdown ?
 * in Tuleap Test Management :ref:`Step Definitions <testmanagement_test_steps>`,
 * in Tuleap Git for :ref:`markdown documents <git_markdown_document>`,
 * in :ref:`Project dashboard <project-dashboard-content>` Note widget.
+* in pullrequest :ref:`Pullrequests<code-review-with-pullrequest>`
 
 .. _writing-in-tuleap-references:
 
