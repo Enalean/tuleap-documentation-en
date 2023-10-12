@@ -4,10 +4,8 @@ Tuleap 15.x
 Tuleap 15.1
 ===========
 
-.. NOTE::
+Nothing to mention.
 
-  Tuleap 15.1 is currently under development.
-    
 Tuleap 15.0
 ===========
 
