@@ -17,7 +17,7 @@ The server will need an Internet connection as it will download external package
 Database
 ````````
 
-Database must be MySQL v8.0. As an alternative, MariaDB 10.3 can be used but was never tested in production.
+Database must be MySQL v8.0.
 
 The database **must** be dedicated to Tuleap. Either it's a local installation (as described below, perfect for small & medium instances) or provided by an external service.
 
