@@ -8,6 +8,14 @@ Tuleap 15.2
 
   Tuleap 15.2 is currently under development.
 
+End of support of MySQL 5.7
+---------------------------
+
+MySQL 5.7 has reached its end of life and therefore is not supported by Tuleap anymore.
+You must upgrade to MySQL 8.0.
+
+You can report to :ref:`the upgrade guide for more information <mysql80_upgrade>`.
+
 Tuleap 15.1
 ===========
 
