@@ -4,10 +4,6 @@ Tuleap 15.x
 Tuleap 15.2
 ===========
 
-.. NOTE::
-
-  Tuleap 15.2 is currently under development.
-
 End of support of MySQL 5.7
 ---------------------------
 
