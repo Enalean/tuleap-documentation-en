@@ -2,6 +2,7 @@ Docker images configuration
 ===========================
 
 This section covers the configuration details that applies to both images.
+If you want the default configuration you can go to verify the image authencity.
 
 .. _docker-environment-variables:
 
