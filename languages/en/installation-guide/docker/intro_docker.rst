@@ -16,7 +16,7 @@ It allows you to not be bothered by different OS migrations and the like.
 Prerequisites
 `````````````
 
-You need docker on your host. You might want `docker-compose <https://docs.docker.com/engine/install/>`_  as well.
+You need `docker<https://docs.docker.com/engine/install/>`_ on your host. You might want docker-compose as well.
 
 The following sections assume that you are going to run the Tuleap container as the only "visible" container on the server.
 That means that Tuleap web container will publish it's ports (``80``, ``443`` and ``22``) on hosts ports.
