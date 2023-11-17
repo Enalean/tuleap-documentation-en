@@ -3,6 +3,12 @@ Docker Compose
 
 .. _env-variables:
 
+Information
+```````````
+You are going to create two files ``.env`` and ``compose.yaml``.
+Don't forget to put them in the same folder otherwise that will not work. 
+
+
 The Environment
 ````````````````
 In a special directory (created only for the Tuleap stack), create a ``.env`` file that defines these variables:
@@ -28,7 +34,7 @@ Tuleap Community
     The following section is meant for test purpose only. The databases (MySQL and Redis) are handled by Docker and it is not a recommended setup.
 
 
-Then create a ``compose.yaml`` file in the same folder that you create before with the following content:
+Then create a ``compose.yaml`` file with following content:
 
 .. code-block:: yaml
 
