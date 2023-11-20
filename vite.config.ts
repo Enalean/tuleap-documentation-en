@@ -4,7 +4,7 @@ const { resolve } = require("path");
 export default defineConfig({
     base: "/_static/assets/",
     build: {
-        brotliSize: false,
+        reportCompressedSize: false,
         rollupOptions: {
             input: {
                 scroll: resolve(__dirname, "languages/en/_themes/tuleap_org/js/scroll.js"),
