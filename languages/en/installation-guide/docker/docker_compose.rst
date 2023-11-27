@@ -3,9 +3,25 @@ Docker Compose
 
 .. _env-variables:
 
+
 The Environment
 ````````````````
-In a special directory (created only for the Tuleap stack), create a ``.env`` file that defines these variables:
+In a folder you are going to create two files ``.env`` and ``compose.yaml``.
+
+Depending on what you are doing, you are not going to to put the folder in the same directory.
+To explain this, this an example to guide you :
+
+If you intend to have a production environment :
+
+``/srv/tuleap/`` 
+	
+If it's for a demo/test :
+	
+``/home/$USERNAME/Workspace/test-tuleap`` 
+	
+
+
+Now you can create the file ``.env`` with this configuration :
 
 .. code-block:: ini
 
