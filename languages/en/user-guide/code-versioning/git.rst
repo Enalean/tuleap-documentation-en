@@ -435,7 +435,11 @@ The checkbox to create the associated pull-request is checked by default.
 Pre-receive hook
 ----------------
 
-Tuleap offers the possibility to write scripts for git pre-receive hook. Your scripts must take an input from ``stdin`` and return an output on ``stdout``.
+.. WARNING:: Technology preview: several things might be adjusted in future releases.
+
+Tuleap offers the possibility to write scripts for git pre-receive hook. Your scripts must take an input from ``stdin`` and return an output on ``stdout``. 
+
+Only WASM modules build with WASI Preview 1 support can be used as scripts for the hook.
 
 Input
 `````
@@ -452,7 +456,7 @@ Input
         "repository_path": "string"
     }
 
-.. _hook_input:
+..
 
 Output
 ``````
@@ -463,8 +467,11 @@ Output
         "rejection_message": "string"|null
     }
 
-.. _hook_output:
+..
 
+To be used, the WASM module needs to put on server at ``/var/lib/tuleap/untrusted-code/git/pre-receive-hook/<repo-id>.wasm``. 
+``<repo-id>`` correspond to the git repository id for which you want the hook to be executed. 
+There is also some strict resource limitations (time, memory) and you don't have write access to the repository (only read access).
 
 Git References
 ---------------
