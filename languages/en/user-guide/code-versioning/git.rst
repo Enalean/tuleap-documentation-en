@@ -432,6 +432,40 @@ The checkbox to create the associated pull-request is checked by default.
 
 .. IMPORTANT:: The ``pull-request`` plugin needs to be installed and activated for the project in order to be able to create the pull-request. Otherwise only Git branches can be created.
 
+Pre-receive hook
+----------------
+
+Tuleap offers the possibility to write scripts for git pre-receive hook. Your scripts must take an input from ``stdin`` and return an output on ``stdout``.
+
+Input
+`````
+
+.. code-block:: javascript
+
+    {
+        "updated_references": {
+            "<reference>": {
+                "old_value": "string",
+                "new_value": "string"
+            }
+        }
+        "repository_path": "string"
+    }
+
+.. _hook_input:
+
+Output
+``````
+
+.. code-block:: javascript
+
+    {
+        "rejection_message": "string"|null
+    }
+
+.. _hook_output:
+
+
 Git References
 ---------------
 
