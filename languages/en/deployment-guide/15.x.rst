@@ -8,6 +8,24 @@ Tuleap 15.3
 
   Tuleap 15.3 is currently under development.
 
+Removal of remaining dependencies to PHP 7.4 packages
+-----------------------------------------------------
+
+The remaining dependencies to PHP 7.4 packages have been removed.
+After the upgrade you can remove the packages from your system.
+
+On CentOS/RHEL 7:
+
+.. sourcecode:: shell
+
+    yum remove php74\*
+
+On Rocky Linux 9:
+
+.. sourcecode:: shell
+
+    dnf remove php74\*
+
 Tuleap 15.2
 ===========
 
