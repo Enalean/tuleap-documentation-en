@@ -38,7 +38,7 @@ Caldendar notifications can be linked to artifacts, activation of this option mu
 
 .. figure:: ../../../images/screenshots/tracker/administration/calendar-notif.png
    :align: center
-   :alt: Calendar notification
-   :name: Calendar notification
+   :alt: Tracker calendar notification
+   :name: Tracker calendar notification
 
-   Backlog: Calendar notification
+   Tracker: Calendar notification
