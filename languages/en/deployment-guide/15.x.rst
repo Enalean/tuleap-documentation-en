@@ -4,10 +4,6 @@ Tuleap 15.x
 Tuleap 15.3
 ===========
 
-.. NOTE::
-
-  Tuleap 15.3 is currently under development.
-
 Removal of remaining dependencies to PHP 7.4 packages
 -----------------------------------------------------
 
