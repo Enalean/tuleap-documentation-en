@@ -44,6 +44,12 @@ From this view, you can drag'n'drop elements from top backlog to one of the plan
 
 Planning a sprint is as simple as planning a release. Simply go to a release planning to fill your sprint or create a new sprint.
 
+.. NOTE:: To ease navigation, the last five current releases and their sprints will appear in the project sidebar.
+
+  In order to be displayed in the sidebar, releases and sprints must have a :ref:`semantic-title`, must be open (:ref:`status-semantic`), and current date must be within their :ref:`semantic-timeframe`.
+
+  This behavior can be disabled in backlog administration » Display milestones in sidebar
+
 Moreover, the badge color will reflect the total initial effort of cards compared to the team capacity for the sprint, or release (if you have one).
 
 You also can notice that some cards can have a background colors to provide a quick information to the team.
