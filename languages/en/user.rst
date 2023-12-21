@@ -17,7 +17,6 @@ User guide
    user-guide/ci
    user-guide/testmanagement
    user-guide/documents-and-files
-   user-guide/collaboration
    user-guide/integration
    user-guide/oauth2
    user-guide/tql
