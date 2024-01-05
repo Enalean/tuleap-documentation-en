@@ -13,7 +13,7 @@ As root, run:
 
 .. sourcecode:: shell
 
-    yum check-update tuleap\*
+    dnf check-update tuleap\*
 
 
 Upgrade
@@ -29,7 +29,7 @@ Run as root:
     systemctl stop tuleap nginx httpd
 
     # Upgrade packages
-    yum update
+    dnf update
 
     # Deploy site configurations, run database migration & co
     tuleap-cfg site-deploy
