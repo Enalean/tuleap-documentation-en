@@ -10,6 +10,8 @@ You can also see it in action on https://tuleap.net/api/explorer/
 Implementations of the API in various languages are welcomed, please find the list below:
 
 * `Python <https://github.com/djurodrljaca/tuleap-rest-api-client>`_
+* `Golang <https://gitlab.com/csgroup-oss/go-tuleap/>`_
+* `Shell <https://gitlab.com/csgroup-oss/tuleap-cli>`_ (command line utility)
 
 Table of contents
 -----------------
