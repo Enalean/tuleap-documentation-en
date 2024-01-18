@@ -149,9 +149,32 @@ Platform administrator must push two image files in PNG format:
 * ``/var/lib/tuleap/images/organization_logo.png`` (maximum size: 180×40px)
 * ``/var/lib/tuleap/images/organization_logo_small.png`` (maximum size: 40×40px)
 
-Once files are created, cache must be invalidated with ``tuleap -c``.
-
 The small version is used when the project sidebar is collapsed.
+
+**For the tuleap server you need to do this :**
+
+To import this two image files you need to remove first the two existing files.
+So you need to go to the folder : ``/var/lib/tuleap/images``.
+Delete ``organization_logo.png`` and ``organization_logo_small.png``
+
+Once you done that you can import now the new image files using the command ``scp``
+
+Here is an example : 
+
+* ``scp organization_logo.png root@ip_host://var/lib/tuleap/images/organization_logo.png``
+ 
+When it's done, cache must be invalidated with the command ``tuleap -c``
+
+**For the docker server you need to do this :**
+
+In the compose.yaml put a volume where you going to change the local path to a secure path inside your host.
+It will be present like this : ``local:/data``
+
+Like in the tuleap server had the two images in ``/var/lib/tuleap/images/``
+
+Then start docker with : ``docker compose up -d``
+
+Now you can check of the configuration has been done correctly. You can go to your container that contain your website.
 
 Site content
 ------------
