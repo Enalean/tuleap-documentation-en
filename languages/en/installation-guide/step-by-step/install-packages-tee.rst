@@ -1,5 +1,5 @@
 .. _tuleap_installation_install_packages_tee:
- 
+
 Install packages - Tuleap Enterprise Edition
 ============================================
 
@@ -50,6 +50,7 @@ Please contact your salesperson to receive your credentials.
     tuleap-plugin-pullrequest \
     tuleap-plugin-roadmap \
     tuleap-plugin-svn \
+    tuleap-plugin-tracker-cee \
     tuleap-plugin-taskboard \
     tuleap-plugin-testmanagement \
     tuleap-plugin-testplan \
