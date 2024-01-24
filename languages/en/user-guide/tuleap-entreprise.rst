@@ -24,6 +24,7 @@ Project management
 * :ref:`Test Management <testmgmt>`: Test campaigns and traceability (aka TTM).
 * :ref:`Timetracking <timetracking>`: Provide an easy way to track your time
 * :ref:`Velocity <plugin_velocity>`: Display velocity chart in the :ref:`backlog`
+* :ref:`Tracker Custom Code Execution <tracker-cce>`: Execute custom code after each artifact creation/update
 
 Authentication and permissions
 ------------------------------
