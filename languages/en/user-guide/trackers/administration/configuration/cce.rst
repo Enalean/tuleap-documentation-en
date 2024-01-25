@@ -19,6 +19,8 @@ by the tracker administrator. It is run asynchronously by Tuleap after each arti
 * The module must output (stdout) a payload identical to the one that is used by REST API to update an artifact (``PUT /artifact/:id``).
 * The artifact will be updated with this output payload (update fields and/or add a follow-up comment) with a dedicated "Custom Code Execution" user.
 
+You can take a look at `this example <https://github.com/Enalean/tuleap-functions-for-tracker-example>`_ to have a better understanding of how to build such module.
+
 Please note that:
 
 * Module is sandboxed and has a limited access to resources. For example it is not possible to read the content of file attachments of the artifact.
