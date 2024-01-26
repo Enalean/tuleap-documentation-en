@@ -98,7 +98,7 @@ File deliveries and documentation:
 
 * **document**: Document management
 * **frs**: Enhance File Release System with better release view and REST API
-* **mediawiki**: Integration of "Wikipedia" wiki technology
+* **mediawiki_standalone**: Integration of "Wikipedia" wiki technology
 * **webdav**: Access FRS and Documentation like a file system with WebDAV protocol
 
 Source control and continuous integration:
@@ -171,3 +171,4 @@ Deprecated plugins
 Those plugins should not be installed and only kept for legacy reasons. They will be removed:
 
 * tracker_encryption
+* mediawiki
