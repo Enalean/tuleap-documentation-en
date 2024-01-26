@@ -13,6 +13,7 @@ sections:
    configuration/workflow
    configuration/field-dependencies
    configuration/webhooks
+   configuration/cce
    configuration/general-configuration
    configuration/notifications
    configuration/import

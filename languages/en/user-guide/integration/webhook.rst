@@ -149,7 +149,8 @@ Triggered when an artifact is created.
                 ...
             ]
         },
-        "previous": null
+        "previous": null,
+        "is_custom_code_execution": false
     }
 
 Artifact Update
@@ -269,5 +270,6 @@ Triggered when an artifact is updated.
                 {"field_id":596,"type":"lud","label":"Last Update On","value":"2018-07-03T08:48:44+02:00"}
                 ...
             ]
-        }
+        },
+        "is_custom_code_execution": false
     }

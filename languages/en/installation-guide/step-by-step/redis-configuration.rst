@@ -12,7 +12,7 @@ It's based on a notification queue managed by Redis and a worker that will proce
 Unlike "SystemEvents" there is no delay between the queue and the processing of the job.
 
 Generate a password :
-:: 
+::
 
     dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
 
@@ -38,10 +38,6 @@ Give it the correct permissions:
 
     chown codendiadm:codendiadm /etc/tuleap/conf/redis.inc
     chmod 640 /etc/tuleap/conf/redis.inc
-
-In ``/etc/tuleap/conf/local.inc`` you should set ``$sys_nb_backend_workers`` to a number greater than or equal to ``1``.
-This controls the number of workers to process background jobs. It should be adapted given your server workload.
-``2`` is a good starting value.
 
 All you have to do now is enable and launch the services and you should be able to access your instance.
 ::
