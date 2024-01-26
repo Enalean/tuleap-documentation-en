@@ -167,14 +167,29 @@ When it's done, cache must be invalidated with the command ``tuleap -c``
 
 **For the docker server you need to do this :**
 
-In the compose.yaml put a volume where you going to change the local path to a secure path inside your host.
-It will be present like this : ``local:/data``
+You will need to create a bridge between your host and the tuleap docker. To do that you going to do this :
 
-Like in the tuleap server had the two images in ``/var/lib/tuleap/images/``
+``docker run -v directory_files/:name_of_directory -v name_volume:/tuleap-data -t -i alpine sh`` 
 
-Then start docker with : ``docker compose up -d``
+* directory_files : it’s corresponding of where you put your two logos in your host.
+* name_of_directory : it’s the name of your directory in your container. You can put what you want.
+* name_volume : it’s the name of your volume that you are using for this modification. You can check all your volumes name with : ``docker volume ls``
+* alpine : we decide to put alpine because it’s a light image but you can choose an another one.
+* sh : it’s launching a bash environment.
 
-Now you can check of the configuration has been done correctly. You can go to your container that contain your website.
+Now you are going to remove the two existing logos in ``/tuleap-data/var/lib/tuleap/images``
+
+When this is done you can go exit the bash environment.
+
+And now you are going to copy your two png files between your host and the tuleap docker.
+
+``docker run -v directory_files/:name_of_directory -v name_volume:/tuleap-data -t -i cp name_of_directory/organization_logo.png /tuleap-data/var/lib/tuleap/images``
+
+Do the same for ``organization_logo_small.png``
+
+Now you can start docker with : ``docker compose up -d``
+
+Finally you can check on your docker website if everything work.
 
 Site content
 ------------
