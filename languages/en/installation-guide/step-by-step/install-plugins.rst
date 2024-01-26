@@ -89,7 +89,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`tracker-cee <tracker-cce>`: Execute custom code after each artifact creation/update.
+* :ref:`tracker-functions <tracker-functions>`: Execute custom code after each artifact creation/update.
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 

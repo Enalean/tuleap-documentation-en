@@ -50,7 +50,7 @@ Please contact your salesperson to receive your credentials.
     tuleap-plugin-pullrequest \
     tuleap-plugin-roadmap \
     tuleap-plugin-svn \
-    tuleap-plugin-tracker-cee \
+    tuleap-plugin-tracker-functions \
     tuleap-plugin-taskboard \
     tuleap-plugin-testmanagement \
     tuleap-plugin-testplan \
