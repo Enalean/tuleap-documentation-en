@@ -1,4 +1,4 @@
-FROM nixos/nix:2.19.3@sha256:498fa2d7f2b5cb3891a4edf20f3a8f8496e70865099ba72540494cd3e2942634
+FROM nixos/nix:2.20.0@sha256:e3b7c652fb710a9c4a4db0c8a2653b73331dd8dba8e9990b20574236cfc82018
 
 COPY build-support/*.nix /build-support/
 COPY pyproject.toml poetry.lock /
