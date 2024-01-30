@@ -8,7 +8,10 @@ Tuleap Functions for Tracker
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The goal of this feature is to let project administrator do a level of computation automatically when artifacts are
+Context & usages
+````````````````
+
+The goal of this feature is to let tracker administrator do a level of computation automatically when artifacts are
 created or updated. For instance, this could be used to compute a risk as a combination of two factors. This is an
 alternative to the model where team have to rely on webhook and an external server to do their own computation.
 
@@ -29,3 +32,22 @@ Please note that:
 * Execution of the function can be suspended (function is there but not executed).
 * For each tracker, the last 50 execution details (status, errors) are kept with: associated artifact, source payload and generated payload.
 * To avoid infinite loop, the update done by a custom code execution will not trigger another custom code execution.
+* Function can execute for a maximum of 10 ms.
+* At runtime, a Function can use at most 4 MB of linear memory.
+* At runtime, a Function can use at most 1 MB of stack memory.
+
+Security
+````````
+
+Tuleap Functions is letting users running their own code from within the execution flow of Tuleap.
+The code provided by users is running in a sandbox and can only access the information it has been
+explicitly given access to.
+
+However as not all users might be well intentioned, as a platform administrators you must consider how it
+fits into your own threat model and the following points:
+
+* Your ability to quickly update your instance if an issue in the sandoxing is identified. Alternatively,
+  disabling completly the plugin in a timely maner until you can apply updates can be a valid mitigations
+* How a `transient execution CPU vulnerability <https://en.wikipedia.org/wiki/Transient_execution_CPU_vulnerability>`_
+  impacts you. You should consider even more carefully if you are running Tuleap in a container-based environment
+  with multiple services as this sort of vulnerability might impact also them in addition of the Tuleap service.
