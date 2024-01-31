@@ -4,10 +4,6 @@ Tuleap 15.x
 Tuleap 15.5
 ===========
 
-.. NOTE::
-
-  Tuleap 15.5 is currently under development.
-
 End of support of PHP 8.1
 -------------------------
 
