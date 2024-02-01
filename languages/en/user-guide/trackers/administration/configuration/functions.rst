@@ -22,7 +22,7 @@ by the tracker administrator. It is run asynchronously by Tuleap after each arti
 * The function must output (stdout) a payload identical to the one that is used by REST API to update an artifact (``PUT /artifact/:id``).
 * The artifact will be updated with this output payload (update fields and/or add a follow-up comment) with a dedicated "Tuleap Functions" user.
 
-You can take a look at `this example <https://github.com/Enalean/tuleap-functions-for-tracker-example>`_ to have a better understanding of how to build such function.
+You can take a look at `this example <https://github.com/Enalean/tuleap-function-examples>`_ to have a better understanding of how to build such function.
 
 Please note that:
 
