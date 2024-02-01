@@ -167,27 +167,21 @@ When it's done, cache must be invalidated with the command ``tuleap -c``
 
 **For the docker server you need to do this :**
 
-You will need to create a bridge between your host and the tuleap docker. To do that you going to do this :
+You will need to create a bridge between your host and the tuleap docker. To do that you are going to do this :
 
-``docker run -v directory_files/:name_of_directory -v name_volume:/tuleap-data -t -i alpine sh`` 
+``docker run --rm -v directory_files/:/pictures -v name_volume:/tuleap-data cp -f /pictures/organization_logo*.png /tuleap-data/var/lib/tuleap/images`` 
 
 * directory_files : it’s corresponding of where you put your two logos in your host.
-* name_of_directory : it’s the name of your directory in your container. You can put what you want.
 * name_volume : it’s the name of your volume that you are using for this modification. You can check all your volumes name with : ``docker volume ls``
-* alpine : we decide to put alpine because it’s a light image but you can choose an another one.
-* sh : it’s launching a bash environment.
 
-Now you are going to remove the two existing logos in ``/tuleap-data/var/lib/tuleap/images``
+In the first part of the command ``docker run --rm -v directory_files/:/pictures -v name_volume:/tuleap-data`` it will create a bridge between your host and the tuleap docker.
 
-When this is done you can go exit the bash environment.
+In the second part of this command ``cp -f /pictures/organization_logo*.png /tuleap-data/var/lib/tuleap/images`` it will copy all your logo files into the tuleap docker by erasing the old one.
 
-And now you are going to copy your two png files between your host and the tuleap docker.
+You can restart your container to see the modification : 
 
-``docker run -v directory_files/:name_of_directory -v name_volume:/tuleap-data -t -i cp name_of_directory/organization_logo.png /tuleap-data/var/lib/tuleap/images``
-
-Do the same for ``organization_logo_small.png``
-
-Now you can start docker with : ``docker compose up -d``
+* ``docker ps`` to know what is your container id.
+* ``docker restart container_id``
 
 Finally you can check on your docker website if everything work.
 
