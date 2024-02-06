@@ -8,6 +8,24 @@ Tuleap 15.6
 
   Tuleap 15.6 is currently under development.
 
+Removal of remaining dependencies to PHP 8.1 packages
+-----------------------------------------------------
+
+The remaining dependencies to PHP 8.1 packages have been removed.
+After the upgrade you can remove the packages from your system.
+
+On Rocky Linux 9:
+
+.. sourcecode:: shell
+
+    dnf remove php81\*
+
+On CentOS/RHEL 7:
+
+.. sourcecode:: shell
+
+    yum remove php81\*
+
 Tuleap 15.5
 ===========
 
