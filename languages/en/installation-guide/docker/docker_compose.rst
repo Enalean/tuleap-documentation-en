@@ -64,7 +64,6 @@ Then create a ``compose.yaml`` file with following content:
         depends_on:
           - db
           - redis
-          - mailhog
         environment:
           - TULEAP_FQDN=${TULEAP_FQDN}
           - TULEAP_SYS_DBHOST=db
