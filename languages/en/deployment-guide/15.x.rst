@@ -1,12 +1,16 @@
 Tuleap 15.x
 ###########
 
-Tuleap 15.6
+
+Tuleap 15.7
 ===========
 
 .. NOTE::
 
-  Tuleap 15.6 is currently under development.
+  Tuleap 15.7 is currently under development.
+
+Tuleap 15.6
+===========
 
 Removal of remaining dependencies to PHP 8.1 packages
 -----------------------------------------------------
