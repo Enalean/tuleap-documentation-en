@@ -4,7 +4,7 @@ COPY --chown=1000:1000 . /home/builder/tuleap-documentation
 
 WORKDIR /home/builder/tuleap-documentation
 
-RUN nix-shell --pure --run 'npm ci && npm run build && make SPHINXOPTS="-D html_theme=tuleap_org" html'
+RUN nix-shell --run 'npm ci && npm run build && make SPHINXOPTS="-D html_theme=tuleap_org" html'
 
 FROM nginx:1.25.4-alpine
 
