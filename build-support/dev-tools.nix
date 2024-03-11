@@ -1,6 +1,6 @@
 { pkgs }:
 [
   pkgs.poetry
-  pkgs.nodejs-slim-18_x
+  pkgs.nodejs-slim
   pkgs.nodePackages.npm
 ]
