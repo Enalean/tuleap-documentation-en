@@ -186,9 +186,6 @@ Lists bound to users:
  * ``@last_update_by``: the "Last Updated by" dynamic field. It behaves like a list and can have only a single value at a time.
  * ``@assigned_to``: the "Contributor/assignee"`` semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
 
-Multi-tracker search on custom fields
-'''''''''''''''''''''''''''''''''''''
-
 You can also search on any custom field with its name as long as there is at least one Tracker with a compatible definition. We consider that 2 fields from 2 Trackers are compatible if:
  * You can see both fields
  * They have the same name
