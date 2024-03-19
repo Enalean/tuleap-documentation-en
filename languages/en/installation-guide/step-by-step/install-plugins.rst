@@ -1,7 +1,7 @@
 .. _install-plugins:
 
 Plugins installation
-===========================
+====================
 
 Tuleap comes with a lot of plugins, they bring new features and can be easily installed and configured.
 
@@ -16,14 +16,15 @@ Installation is done in 2 steps
 When you want to install a new plugin, run (where ``tuleap-plugin-awesomestuff``
 is the name of the package of the plugin you want to install):
 
-::
+.. sourcecode:: shell
 
-    # On RHEL/CentOS 7
-    yum install tuleap-plugin-awesomestuff
-
-    # On EL9
+    # Deploy RPM package
     dnf install tuleap-plugin-awesomestuff
 
+    # Install and activate the plugin for all projects and users
+    sudo -u codendiadm tuleap plugin:install awesomestuff
+
+    # Update configurations
     tuleap-cfg site-deploy
     systemctl reload nginx
     systemctl restart tuleap
