@@ -149,9 +149,41 @@ Platform administrator must push two image files in PNG format:
 * ``/var/lib/tuleap/images/organization_logo.png`` (maximum size: 180×40px)
 * ``/var/lib/tuleap/images/organization_logo_small.png`` (maximum size: 40×40px)
 
-Once files are created, cache must be invalidated with ``tuleap -c``.
-
 The small version is used when the project sidebar is collapsed.
+
+**For the tuleap server you need to do this :**
+
+To import this two image files you need to remove first the two existing files.
+So you need to go to the folder : ``/var/lib/tuleap/images``.
+Delete ``organization_logo.png`` and ``organization_logo_small.png``
+
+Once you done that you can import now the new image files using the command ``scp``
+
+Here is an example : 
+
+* ``scp organization_logo.png root@ip_host://var/lib/tuleap/images/organization_logo.png``
+ 
+When it's done, cache must be invalidated with the command ``tuleap -c``
+
+**For the docker server you need to do this :**
+
+You will need to create a bridge between your host and the tuleap docker. To do that you are going to do this :
+
+``docker run --rm -v directory_files/:/pictures -v name_volume:/tuleap-data cp -f /pictures/organization_logo*.png /tuleap-data/var/lib/tuleap/images`` 
+
+* directory_files : it’s corresponding of where you put your two logos in your host.
+* name_volume : it’s the name of your volume that you are using for this modification. You can check all your volumes name with : ``docker volume ls``
+
+In the first part of the command ``docker run --rm -v directory_files/:/pictures -v name_volume:/tuleap-data`` it will create a bridge between your host and the tuleap docker.
+
+In the second part of this command ``cp -f /pictures/organization_logo*.png /tuleap-data/var/lib/tuleap/images`` it will copy all your logo files into the tuleap docker by erasing the old one.
+
+You can restart your container to see the modification : 
+
+* ``docker ps`` to know what is your container id.
+* ``docker restart container_id``
+
+Finally you can check on your docker website if everything work.
 
 Site content
 ------------
