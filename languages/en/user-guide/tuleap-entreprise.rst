@@ -8,6 +8,8 @@ Tuleap Enterprise
 Tuleap Enterprise is a special distribution of Tuleap crafted by Enalean for
 enhanced reliability.
 
+The plugins below are available in addition to :ref:`Tuleap Community Edition plugins <install-plugins>`
+
 Some features are only distributed to Tuleap Enterprise subscribers:
 
 Project management

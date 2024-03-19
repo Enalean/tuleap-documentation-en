@@ -60,6 +60,22 @@ to a value greater than 2, you can keep your settings by issuing the following c
 
     tuleap config-set sys_nb_backend_workers <NB>
 
+New plugin: Tuleap Functions for Tracker
+----------------------------------------
+
+This plugin is only available for :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
+:ref:`Tuleap Functions for Tracker <tracker-functions>` execute custom code after each artifact creation/update.
+
+How to install:
+
+.. sourcecode:: shell
+
+    yum install tuleap-plugin-tracker-functions
+    sudo -u codendiadm tuleap plugin:install tracker_functions
+    tuleap-cfg site-deploy
+    systemctl reload nginx
+    systemctl restart tuleap
 
 Tuleap 15.4
 ===========
