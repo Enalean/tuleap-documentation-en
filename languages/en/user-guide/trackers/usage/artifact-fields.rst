@@ -21,6 +21,7 @@ defect, a task, etc. is of type "Text".
 
 It can have three formats: "Text", "HTML" or "Markdown".
 
+
 Select Box
 ``````````
 A "Select Box" field takes its value from a predefined
@@ -51,6 +52,12 @@ tracker.
 Date*: one-line field that only accept ISO formatted dates
 (YYYY-MM-DD). For user convenience, each date field comes with a
 calendar.
+
+
+Shared Fields
+`````````````
+When selectbox values can be shared between multiples tracker and pultiples project you can use `shared field`.
+You can add/hide values from original tracker and every tracker sharing the field will be up to date with new values instantly.
 
 File upload
 ```````````
