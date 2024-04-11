@@ -48,7 +48,7 @@ The project registration is a two steps process:
       administrator of that project to be able to use it.
 
 
-.. figure:: ../images/screenshots/project-admin/project_creation_step1.png
+.. figure:: ../images/screenshots/project-admin/project-creation-step1.png
 	:align: center
 	:alt: Project Creation: choose your template
 	:name: Project Creation: choose your template
@@ -63,7 +63,7 @@ The project registration is a two steps process:
 	:alt: Project Creation: fill your project information
 	:name: Project Creation: fill your project information
 
-Some platforms may have more fields to fill. Tuleap offers the possibility to add more project informations if you need
+Some platforms may have more fields to fill. Tuleap offers the possibility to add more project information if you need
 (see :ref:`software-map-(or Project Tree)`).
 
 The new project will use exactly the same configuration as the template.
@@ -103,6 +103,8 @@ This includes that:
 
    -  the file packages and their permissions are copied
 
+If you create a new project from an archive, the provided archive must contains the project structure only. Data (like artifacts or users) must not be included.
+To create an archive with only the project structure see :ref:`project-structure-export`
 
 After you validate the project registration, the Tuleap Team in charge
 of your platform reviews the information you submitted and decides
@@ -1081,6 +1083,20 @@ Software map will allow users to find your project with the chosen categories.
    :align: center
    :alt: Software Map sample browsing
    :name: Software Map sample browsing
+
+.. _project-structure-export:
+
+Project Structure Export
+------------------------
+
+In "Project XML export" menu you can export the project structure as a zip archive. Data are not exported.
+
+.. figure:: ../images/screenshots/project-admin/project-structure-export.png
+	:align: center
+	:alt: Export the project structure
+	:name: Export the project structure
+
+If you want to export project with data, please see :ref:`project-export-import`
 
 .. _project-data-export:
 
