@@ -55,6 +55,10 @@ field that contains "<h1>my title</h1>", this title will become "heading 5" in g
 Excel (xlsx) exports
 ====================
 
+.. warning::
+
+     Known limitation: Excel (xlsx) reports generation will fail if the tracker reports selected as sources are made of more than **1** table renderer each.
+
 The plugin exposes two XLSX exports:
 
 * Export all report columns
