@@ -4,6 +4,7 @@ Redis Configuration
 ===================
 
 Redis is used when using the :ref:`monitoring with Prometheus<admin_monitoring_with_prometheus>` feature.
+If you do not use it, your can skip this setup.
 
 Generate a password :
 ::

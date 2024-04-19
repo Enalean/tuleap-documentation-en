@@ -41,7 +41,7 @@ Tuleap Community
 
 .. warning::
 
-    The following section is meant for test purpose only. The databases (MySQL and Redis) are handled by Docker and it is not a recommended setup.
+    The following section is meant for test purpose only. The database (MySQL) is handled by Docker and it is not a recommended setup.
 
 
 Then create a ``compose.yaml`` file with following content:
@@ -63,7 +63,6 @@ Then create a ``compose.yaml`` file with following content:
           - tuleap-data:/data
         depends_on:
           - db
-          - redis
         environment:
           - TULEAP_FQDN=${TULEAP_FQDN}
           - TULEAP_SYS_DBHOST=db
@@ -71,8 +70,6 @@ Then create a ``compose.yaml`` file with following content:
           - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
           - DB_ADMIN_USER=root
           - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
-          - TULEAP_FPM_SESSION_MODE=redis
-          - TULEAP_REDIS_SERVER=redis
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
       db:
@@ -83,17 +80,9 @@ Then create a ``compose.yaml`` file with following content:
         volumes:
           - db-data:/var/lib/mysql
 
-      # This is for test purpose only. It's not advised to run a production database as a docker container
-      redis:
-        image: redis:6
-        volumes:
-          - redis-data:/data
-        command: redis-server --appendonly yes --auto-aof-rewrite-percentage 20 --auto-aof-rewrite-min-size 200kb
-
     volumes:
       tuleap-data:
       db-data:
-      redis-data:
 
 Tuleap Enterprise
 `````````````````
