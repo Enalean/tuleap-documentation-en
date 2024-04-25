@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - uses: cachix/install-nix-action@8887e596b4ee1134dae06b98d573bd674693f47c
       - name: Build
         run: nix-shell --pure --run 'make SPHINXOPTS='-W' html'
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - name: Build image
         run: docker build -f docs.tuleap.org/Dockerfile -t test-build .
   build_docker_image_linkcheck:
@@ -32,6 +32,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
       - name: Build image
         run: docker build -f build-support/linkcheck-docker.dockerfile -t test-build-linkcheck .
