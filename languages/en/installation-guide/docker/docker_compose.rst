@@ -48,8 +48,6 @@ Then create a ``compose.yaml`` file with following content:
 
 .. code-block:: yaml
 
-    version: "2"
-
     services:
       web:
         image: tuleap/tuleap-community-edition
@@ -119,8 +117,6 @@ You should add these variables in your ``.env`` file (along with the :ref:`afore
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
 .. code-block:: yaml
-
-    version: "2"
 
     services:
     tuleap:
