@@ -112,6 +112,7 @@ The following languages are currently supported with always up-to-date translati
 The following languages are also available but are contributed by the Tuleap community (translations might be inaccurate and incomplete):
 
 * Brazilian Portugueze
+* Korean
 
 
 Relative dates display
