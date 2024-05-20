@@ -10,6 +10,7 @@ Administration
 Administrate your Tuleap instance, adding new users, setting permissions and so on.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    how-to/administration/add-a-user-as-platform-administrator
+   how-to/administration/add-a-nature-as-platform-administrator
