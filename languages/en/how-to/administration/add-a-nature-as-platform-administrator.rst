@@ -16,4 +16,7 @@ Add a nature as platform administrator
 .. image:: /images/how-to/administration/artifact-links-types.png
    :alt: link artifact links types
 
-4. Finally you can add a nature with the button ``Add type``.  
+4. Finally you can add a nature with the button ``Add type``.
+
+.. image:: /images/how-to/administration/button-add-nature.png
+   :alt: button nature
