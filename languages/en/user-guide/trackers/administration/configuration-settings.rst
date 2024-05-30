@@ -21,4 +21,5 @@ sections:
    configuration/delete-artifact
    configuration/export-structure
    configuration/triggers
+   configuration/hierarchy
 

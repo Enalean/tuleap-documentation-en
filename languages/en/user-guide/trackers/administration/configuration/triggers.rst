@@ -1,36 +1,49 @@
-Triggers
-========
+.. _Triggers:
 
-Before we configure the triggers, it will be interesting to configure who is the parent and who is the child of our trackers.
+Cross-tracker triggers
+======================
 
-To do so go in the drop-menu next to ``notifications`` and click on ``Tracker hierarchy``.
+Before configuring the triggers, it will be interesting to configure who is the parents and who is the children of our trackers.
+To do so go to your tracker hierarchy administration.
+To have more information on the :ref:`Tracker-hierarchy`.
 
-.. image:: /images/screenshots/tracker/tracker_hierarchy.png
-    :alt: tracker hierarchy 
+The triggers will be applied on each creation/update of artifacts. The triggers definitions are based on the tracker hierarchy.
+Only children that are part of the defined hierarchy will be taken into account by triggers.
 
-You can choose who will be the parent. 
-You click on the one that you want and then you can add his children. 
-If you want more than on parent in the same tree, you can do it. 
-You just need to select the new parent and do the same.
-Here is an example of what you can do :
+Conserning the permissions management, if a user don't have permissions on the parent and we would like to change parameters on the child. 
+There will not have restrictions on the changing.
 
-.. image:: /images/screenshots/tracker/example_of_hierarchy.png
-    :alt: example
+Example of Configuration
+````````````````````````
 
-As you can see we have the parent ``Epics`` with two children ``Bugs`` and ``User Stories``.
-And you have ``Releases`` with one child ``Sprints`` who have also a child ``Tasks``.
+In this example, we are going to configure the tracker ``User Stories`` as a parent and ``Tasks`` as his child.
+First of all, let's configure a new trigger.
 
-Now that we organise our parents and children in the tracker hierarchy.
-You can go to your ``Triggers``
-
-.. image:: /images/screenshots/tracker/triggers.png
-    :alt: Triggers
-
-You can add a new trigger with two option ``at least one child`` or ``all children``.
-Depending on the field that you choose, you will not have the same set value.
+We can add a new trigger with two option ``at least one child`` or ``all children``.
+Depending on the field that we choose, we will not have the same set value.
 If you want more than one rule in the same trigger you can do it.
 
 .. image:: /images/screenshots/tracker/add_rule.png
     :alt: rule
 
 Just as a reminder if a parent don't have a minimum of one child you can't create a new trigger for it.
+
+Now that the point is set, let's create the trigger for our story.
+
+.. image:: /images/screenshots/tracker/triggers-example1.png
+    :alt: example 1
+
+Then add a new story in the tracker ``User Stories``.
+
+Now let's create some artifacts in the tracker ``Tasks``.
+In the creation of the actifacts don't forget to add the story in the ``Links`` section.
+If you want to verify if your child is correctly link to his parent. We can check it by using the edit button.
+
+.. image:: /images/screenshots/tracker/triggers-example2.png
+    :alt: example 2
+
+Now that artifacts are created. Let's check if the triggers rules work properly.
+If we put all our artifacts in done, normally the story will past to done too.
+
+.. image:: /images/screenshots/tracker/triggers-example3.png
+    :alt: example 3
