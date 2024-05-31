@@ -6,7 +6,8 @@ Configuration of tracker hierarchy
 Overview
 ````````
 
-Tracker hierarchy is part of :ref:`Triggers` configuration.
+The configuration of the tracker hierarchy can be set without :ref:`triggers<Triggers>` but the opposite is not possible.
+The feature Tracker hierarchy aims to define parent/child relationship between trackers.
 
 The tracker hierarchy could be seen as a helper. 
 To be more precise we can define your children/parents on this but you could do it on your artifacts too.
