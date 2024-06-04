@@ -3,21 +3,21 @@
 Cross-tracker triggers
 ======================
 
-Before configuring the triggers, you need define a parent/child relationship between trackers.
-Triggers only works on trackers that are part of hierarchy.
+Before configuring the triggers, you need to define a parent/child relationship between trackers.
+Triggers only work on trackers that are part of hierarchy.
 To do so go to your :ref:`tracker hierarchy administration<Tracker-hierarchy>`.
 
-The triggers will be applied on each creation/update of artifacts. The triggers definitions are based on the tracker hierarchy.
+The triggers will be applied on each creation/update of artifacts. The triggers definition are based on the tracker hierarchy.
 Only children that are part of the defined hierarchy will be taken into account by triggers.
 
-Triggers applies regardless of the permission of the user who does the change that will trigger the automation.
+Triggers apply regardless of the permission of the user who does the change that will trigger the automation.
 For instance, if a user doesn't have permissions on the parent and update a child that trigger a change on parent, the parent will be updated.
 
 Example of Configuration
 ````````````````````````
 First of all, let's configure a new trigger.
 
-We can add a new trigger with two option ``at least one child`` or ``all children``.
+We can add a new trigger with two options ``at least one child`` or ``all children``.
 Depending on the field that we choose, we will not have the same set value.
 If you want more than one rule in the same trigger you can do it.
 
