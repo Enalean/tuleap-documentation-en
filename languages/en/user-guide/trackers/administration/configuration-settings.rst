@@ -20,4 +20,6 @@ sections:
    configuration/canned-responses
    configuration/delete-artifact
    configuration/export-structure
+   configuration/hierarchy
+   configuration/triggers
 
