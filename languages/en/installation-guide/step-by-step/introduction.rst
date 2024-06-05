@@ -10,8 +10,7 @@ Table of contents:
 
    requirements
    install-dependencies
-   install-packages-tce
-   install-packages-tee
+   install-packages-tee-tce
    prepare-database
    setup
    tls-configuration
