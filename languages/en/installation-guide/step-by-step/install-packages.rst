@@ -1,10 +1,7 @@
-.. _tuleap_installation_install_packages_tee_tce:
-.. _tuleap_enterprise_edition:
-.. _tuleap_community_edition:
+.. _tuleap_installation_install_packages:
 
-
-Install packages - Tuleap TEE or TCE
-====================================
+Install packages
+================
 
 Please choose one of the two editions :
 
