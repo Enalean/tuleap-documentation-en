@@ -139,7 +139,7 @@ The metadata of the Tuleap Community repository are now GPG signed. Previously, 
 You can update your ``/etc/yum.repos.d/Tuleap.repo`` to add the ``repo_gpgcheck=1`` directive to tell yum to verify the
 signature.
 
-You can verify your configuration is correct by checking the :ref:`Tuleap installation page <tuleap_installation_install_packages_tce>`.
+You can verify your configuration is correct by checking the :ref:`Tuleap installation page <tuleap_installation_install_packages>`.
 
 End of life for Tuleap "stable" repository
 ------------------------------------------
@@ -152,7 +152,7 @@ Please note that `stable` name has always been misleading as it's merely a snaps
 Tuleap Enterprise users can remove it from their repo file ``/etc/yum.repos.d/Tuleap.repo``
 (it is the repository with the ``exclude=tuleap*`` instruction). In case of doubt please reach out to your support contact.
 
-Tuleap Community users should update their configuration to match the instructions given on the :ref:`Tuleap installation page <tuleap_installation_install_packages_tce>`.
+Tuleap Community users should update their configuration to match the instructions given on the :ref:`Tuleap installation page <tuleap_installation_install_packages>`.
 Please note this repository was never officially supported for Tuleap Community.
 
 All users will need to log in again after the upgrade (>= Tuleap Community 13.1.99.22)
