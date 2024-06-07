@@ -7,4 +7,4 @@ This page can be modified. For example, to put a link to ask a question to your 
 To do so you need to go to ``/etc/tuleap/site-content/your_language/help``.
 Replace ``your_language`` by ``en_US`` or ``fr_FR`` or ``br_BR`` depending on the using language.
 
-Now you can edit the file ``site.txt``as wish.
+Now you can edit the file ``site.txt`` as wish.
