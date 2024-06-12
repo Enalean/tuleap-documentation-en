@@ -12,7 +12,7 @@ Generate a password :
     dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
 
 
-You will have to modify ``/etc/redis.conf``:
+You will have to modify ``/etc/redis/redis.conf``:
 
 -  Replace ``#requirepass foobared`` with ``requirepass PREVIOUS_GENERATED_PASSWORD``
 -  Replace ``appendonly no`` with ``appendonly yes``
