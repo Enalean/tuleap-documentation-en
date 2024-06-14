@@ -5,14 +5,17 @@ Install packages
 
 `Tuleap Enterprise Edition <https://www.tuleap.org/pricing/on-premise>`_ plans, encompasses Premium features and Professional Support to help you out with its configurations. 
 It is the most secure and stable edition for businesses, available both « on premise » and « in the cloud ».
-
 In contrast, Tuleap Community Edition is freely accessible and has no restrictions in terms of user number, projects or time limitations. 
 It can be installed on CentOs or Redhat servers and it represents the under development version of Tuleap.
 
+
+
 Please choose one of the two editions :
 
-- `Tuleap Enterprise Edition`_
-- `Tuleap Community Edition`_
+- `Tuleap Enterprise Edition <#tuleap-enterprise-edition-section>`_
+- `Tuleap Community Edition <#tuleap-community-edition-section>`_
+
+.. _tuleap-enterprise-edition-section:
 
 Tuleap Enterprise Edition
 -------------------------
@@ -75,6 +78,8 @@ Please contact your salesperson to receive your credentials.
 
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
+
+.. _tuleap-community-edition-section:
 
 Tuleap Community Edition
 ------------------------
