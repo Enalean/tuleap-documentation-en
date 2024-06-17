@@ -298,7 +298,9 @@ rediraffe_redirects = {
     "installation-guide/full-installation.rst": "installation-guide/step-by-step/introduction.rst",
     "installation-guide/install-plugins.rst" : "installation-guide/step-by-step/install-plugins.rst",
     "installation-guide/update.rst": "installation-guide/step-by-step/upgrade.rst",
-    "installation-guide/FAQ.rst": "installation-guide/troubleshooting.rst"
+    "installation-guide/FAQ.rst": "installation-guide/troubleshooting.rst",
+    "installation-guide/step-by-step/install-packages-tee.rst": "installation-guide/step-by-step/install-packages.rst",
+    "installation-guide/step-by-step/install-packages-tce.rst": "installation-guide/step-by-step/install-packages.rst"
 }
 
 # 404 page
