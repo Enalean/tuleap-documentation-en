@@ -24,9 +24,9 @@ Please contact your salesperson to receive your credentials.
 
     [Tuleap-by-Enalean]
     name=Tuleap
-    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/tuleap/current/el9/noarch
+    baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@rpm-repository.tuleap-enterprise.com/pub/tuleap-by-enalean/tuleap/current/el9/noarch
     gpgcheck=1
-    gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@my.enalean.com/pub/tuleap-by-enalean/gpg.key
+    gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@rpm-repository.tuleap-enterprise.com/pub/tuleap-by-enalean/gpg.key
     enabled=1
 
 -  **Install Tuleap** by running the following command:
