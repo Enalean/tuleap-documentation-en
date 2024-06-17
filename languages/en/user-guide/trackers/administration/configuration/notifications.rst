@@ -35,3 +35,16 @@ This rely on Contributor/assignee semantic of the tracker.
 In addition to the subject of the email, all the assignees are listed in the mail
 body with ``=ASSIGNED_TO=<username>``. These markers are not visible but could be
 used to create filters in your email client.
+
+Calendar Event
+``````````````
+
+You can choose to activate calendar event for your notifications.
+If your tracker is configured with a timeframe semantic, a calendar event will be sent
+
+.. figure:: ../../../../images/screenshots/tracker/administration/calendar-notif.png
+   :align: center
+   :alt: Calendar notification
+   :name: Calendar notification
+
+   Backlog: Calendar notification
