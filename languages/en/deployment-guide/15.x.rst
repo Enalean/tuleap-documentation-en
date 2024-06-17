@@ -8,7 +8,12 @@ Tuleap 15.10
 
   Tuleap 15.10 is currently under development.
 
-Nothing to mention.
+API BREAKING CHANGE:
+--------------------
+
+``/api/cross_tracker_reports/{id}/content`` REST endpoint changed its default return format to "selectable".
+If you wish to use the previous return format, please add a parameter ``return_format=static``.
+Cross-tracker search widgets have been updated to request the static return format, they will keep functioning as before.
 
 Tuleap 15.9
 ===========
