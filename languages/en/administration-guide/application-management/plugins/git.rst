@@ -22,7 +22,7 @@ Step 2: on master, you need to create a new Mirror entry as site admin (Admin > 
 
 Step 3: on the mirror, configure ``tuleap-gitolite-membership``:
 
-#. configure yum repository as in Tuleap installation for :ref:`Community Edition <tuleap_installation_install_packages_tce>` or :ref:`Enterprise Edition <tuleap_installation_install_packages_tee>`
+#. configure yum repository as in Tuleap installation for :ref:`Community Edition <tuleap_installation_install_packages>` or :ref:`Enterprise Edition <tuleap_installation_install_packages>`
 #. install package: ``tuleap-gitolite-membership``
 #. update ``/etc/tuleap-gitolite-membership.ini`` and set the user/password defined in the previous section
 
