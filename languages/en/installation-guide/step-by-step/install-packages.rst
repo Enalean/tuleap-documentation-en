@@ -20,10 +20,12 @@ Tuleap Enterprise Edition
 
 Please contact your salesperson to receive your credentials.
 
+Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
+
 ::
 
-    [Tuleap-by-Enalean]
-    name=Tuleap
+    [Tuleap-Enterprise]
+    name=Tuleap_Enterprise
     baseurl=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@rpm-repository.tuleap-enterprise.com/pub/tuleap-by-enalean/tuleap/current/el9/noarch
     gpgcheck=1
     gpgkey=https://CUSTOMER_NAME:CUSTOMER_PASSWORD@rpm-repository.tuleap-enterprise.com/pub/tuleap-by-enalean/gpg.key
