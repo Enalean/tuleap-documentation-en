@@ -15,6 +15,15 @@ API BREAKING CHANGE:
 If you wish to use the previous return format, please add a parameter ``return_format=static``.
 Cross-tracker search widgets have been updated to request the static return format, they will keep functioning as before.
 
+End of Support of CentOS / RHEL 7
+---------------------------------
+
+Tuleap 15.10 is the last version supporting CentOS / RHEL 7 as
+the operating system end of security support is on June 30th 2024.
+
+Tuleap packages for CentOS / RHEL 7 will not be provided anymore.
+Instances must be migrated to an EL9 system (RHEL 9, Rocky Linux 9…).
+
 Tuleap 15.9
 ===========
 
