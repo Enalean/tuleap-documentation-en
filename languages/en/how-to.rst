@@ -14,4 +14,4 @@ Administrate your Tuleap instance, adding new users, setting permissions and so 
 
    how-to/administration/add-a-user-as-platform-administrator
    how-to/administration/add-a-nature-as-platform-administrator
-   how-to/administration/help-configuration-page
+   how-to/administration/customise-help-page
