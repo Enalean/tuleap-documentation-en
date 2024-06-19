@@ -5,7 +5,7 @@ Install packages
 
 `Tuleap Enterprise Edition <https://www.tuleap.org/product/tuleap-enterprise-edition-features>`__  is a special distribution of Tuleap crafted by `Enalean <https://enalean.com>`_ with more plugins and enhanced reliability.
 
-Tuleap Community Edition is the development version of Tuleap with a limited set of plugins. 
+Tuleap Community Edition is the development version of Tuleap with a limited set of plugins.
 
 
 Please choose one of the two editions :
@@ -41,6 +41,7 @@ Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
     tuleap-plugin-agiledashboard \
     tuleap-plugin-api-explorer \
     tuleap-plugin-archivedeleteditems \
+    tuleap-plugin-artidoc \
     tuleap-plugin-baseline \
     tuleap-plugin-botmattermost-agiledashboard \
     tuleap-plugin-botmattermost-git \

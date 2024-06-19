@@ -84,32 +84,35 @@ Document Type
 
 Six types of documents are available:
 
-=================== ===============================================================
-Type                Description
-=================== ===============================================================
-File                Any type of document can be uploaded. From a PowerPoint
-                    presentation, to a simple picture or a full office document.
-                    Files are versioned, so you can add new versions on existing
-                    document.
+======================== ===============================================================
+Type                     Description
+======================== ===============================================================
+File                     Any type of document can be uploaded. From a PowerPoint
+                         presentation, to a simple picture or a full office document.
+                         Files are versioned, so you can add new versions on existing
+                         document.
 
-Online office file  Office files such as Word, Powerpoint or Excel documents can be
-                    viewed, created, and edited directly in your browser when the
-                    :ref:`ONLYOFFICE integration <onlyoffice-integration>` is
-                    active.
+Online office file       Office files such as Word, Powerpoint or Excel documents can be
+                         viewed, created, and edited directly in your browser when the
+                         :ref:`ONLYOFFICE integration <onlyoffice-integration>` is
+                         active.
 
-Link                Allows the user to target a document with a URL. The document
-                    will not be stored locally in the Document Manager.
+Link                     Allows the user to target a document with a URL. The document
+                         will not be stored locally in the Document Manager.
 
-Empty               The document will have no type. The user will be able to
-                    change the type after creation.
+Empty                    The document will have no type. The user will be able to
+                         change the type after creation.
 
-Wiki                The document can be created with the wiki service. Just
-                    enter the name of the corresponding wiki page. You can also
-                    use an existing wiki page name.
+Wiki                     The document can be created with the wiki service. Just
+                         enter the name of the corresponding wiki page. You can also
+                         use an existing wiki page name.
 
-Embedded file       HTML text that can be edited online. Embedded files are
-                    versioned.
-=================== ===============================================================
+Embedded file            HTML text that can be edited online. Embedded files are
+                         versioned.
+
+:ref:`Artidoc <artidoc>` Compose a document with artifacts. **Note:** This is part of
+                         :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+======================== ===============================================================
 
 .. note::
 
