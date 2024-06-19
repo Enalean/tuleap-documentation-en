@@ -21,6 +21,8 @@ Database must be MySQL v8.0.
 
 The database **must** be dedicated to Tuleap. Either it's a local installation (as described below, perfect for small & medium instances) or provided by an external service.
 
+If you are going to use a local installation of MySQL, do not anticipate its setup. You will be guided in the next steps.
+
 Shared databases must not be used:
 
 - they cannot guarantee the needed Quality of service
