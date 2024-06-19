@@ -18,12 +18,6 @@ Multiple ways to install TCE & TEE are supported with their benefits and disadva
 -  :doc:`Step by step installation<installation-guide/step-by-step/introduction>`:
     -  Fully adaptable to your needs
     -  Installation can be tricky for linux beginners
-
--  :doc:`Ansible installation<installation-guide/ansible/introduction>`:
-    -  Require an ansible client
-    -  Quick and easy install
-    -  Deploy and manage multiple servers at once
-    -  A first default setup is done with ansible
       
 Table of contents:
 
@@ -32,5 +26,4 @@ Table of contents:
 
    installation-guide/docker/introduction
    installation-guide/step-by-step/introduction
-   installation-guide/ansible/introduction
    installation-guide/troubleshooting
