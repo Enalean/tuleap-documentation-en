@@ -7,7 +7,6 @@ a full suite of software and is deeply integrated with its host system. Installi
 will certainly cause problems in both Tuleap and your other applications.
 
 Tuleap can be installed on the following Linux x86_64 systems:
- - CentOS or Red Hat Enterprise Linux (RHEL) 7.x **(LEGACY)**. The details of the installation on this system is not covered in this guide.
  - **Enterprise Linux 9 (RHEL, Rocky, Alma Linux 9)**.
 
 **You must disable SELinux** prior to the install.
