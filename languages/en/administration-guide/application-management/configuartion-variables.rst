@@ -1,5 +1,5 @@
-Configure Variables
-===================
+Configuration Variables
+=======================
 
 Introduction
 ____________
