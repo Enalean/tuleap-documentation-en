@@ -27,6 +27,18 @@ the operating system end of security support is on June 30th 2024.
 Tuleap packages for CentOS / RHEL 7 will not be provided anymore.
 Instances must be migrated to an EL9 system (RHEL 9, Rocky Linux 9…).
 
+New plugin: Tuleap Artidoc
+--------------------------
+This plugin is only available for :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
+How to install:
+
+yum install tuleap-plugin-artidoc
+sudo -u codendiadm tuleap plugin:install artidoc
+tuleap-cfg site-deploy
+systemctl reload nginx
+systemctl restart tuleap
+
 Tuleap 15.9
 ===========
 
