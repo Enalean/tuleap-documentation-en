@@ -33,7 +33,7 @@ This plugin is only available for :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
 How to install:
 
-yum install tuleap-plugin-artidoc
+dnf install tuleap-plugin-artidoc
 sudo -u codendiadm tuleap plugin:install artidoc
 tuleap-cfg site-deploy
 systemctl reload nginx
