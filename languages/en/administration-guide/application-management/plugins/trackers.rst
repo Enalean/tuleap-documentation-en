@@ -88,3 +88,15 @@ If there is not enough informations in the later, try making it more verbose by 
 ``$sys_logger_level = 'debug';`` in ``/etc/tuleap/conf/local.inc``. Do not forget to change
 it back if you don't want to be flooded.
 
+.. _deletion_artifacts:
+
+Deletion artifacts
+~~~~~~~~~~~~~~~~~~
+
+This feature is here to protect you from a mass deletion of artifacts.
+
+To set up this limit of artifacts deletion. You need to be the site administrator. If you're not contact him.
+
+To change the value of artifacts deletion, you need to go to your tracker administration and go to the menu artifacts deletion.
+Here you can set the limit of artifacts deletion for 24 hours. So choose **wisely** your limit of artifacts deletion.
+You can set your limit to 0 or more. The value 0 his here to disable the deletion of artifacts. The default value is set to 0.

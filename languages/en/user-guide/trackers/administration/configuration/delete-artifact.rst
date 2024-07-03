@@ -7,3 +7,4 @@ To do so, go to the tracker administration and select "Delete artifacts".
 .. NOTE::
 
     if you are not project or tracker administrator, please contact one administrator.
+    To have more information as :ref:`site administrator <deletion_artifacts>`.
