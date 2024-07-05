@@ -44,20 +44,19 @@ Tuleap can also exposes server metrics (CPU, RAM, etc) on the same end point. It
 configurations in Prometheus and you don't have to make your own reverse proxy to let Prometheus access securely to your
 server metrics.
 
-The server metrics are gathered by `node_exporter <https://github.com/prometheus/node_exporter>`_ you can either build
-it for yourself or you can use the packages provided in `community-supplied COPR repository <https://copr.fedorainfracloud.org/coprs/ibotty/prometheus-exporters/>`_.
+The server metrics are gathered by `node_exporter <https://github.com/prometheus/node_exporter>`_.
 
 The following example uses COPR repository
 
 .. sourcecode:: bash
 
-    # On RHEL/CentOS 7
-    $> curl -Lo /etc/yum.repos.d/_copr_ibotty-prometheus-exporters.repo https://copr.fedorainfracloud.org/coprs/ibotty/prometheus-exporters/repo/epel-7/ibotty-prometheus-exporters-epel-7.repo
-    $> yum install -y node_exporter
-
-    # Either run node_exporter manually (nohup node_exporter &) or create systemd service if you want node_exporter to run
-    # at server reboot
-    # $> nohup node_exporter &
+    # On RHEL/Rocky Linux/... 9
+    $> dnf install golang-github-prometheus-node-exporter
+    # Adjust the arguments used when starting the service to your liking
+    # You might want to only expose it locally with `--web.listen-address="127.0.0.1:9100"`
+    $> $EDITOR /etc/default/prometheus-node-exporter
+    # Start the service and enable it at boot time
+    $> systemctl enable --now prometheus-node-exporter
 
     $> tuleap config-set prometheus_node_exporter http://127.0.0.1:9100/metrics
 

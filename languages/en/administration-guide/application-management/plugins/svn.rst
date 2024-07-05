@@ -31,21 +31,6 @@ A repository migrated will keep:
 * Immutable tags
 * Notifications
 
-Use Subversion 1.9 from WANdisco repository
--------------------------------------------
-
-.. warning::
-
-    Starting Subversion 1.8, the way paths are handled in the access file has changed.
-    Sections of the access file that might have been previously ignored will now deny
-    accesses to the repository. For more information, consult the Subversion 1.8
-    changelog: `FS paths syntax in authz access rules <https://subversion.apache.org/docs/release-notes/1.8#authz-fspath-syntax>`_.
-
-You can use the following instructions to install Subversion 1.9:
-
- 1. Install WANdisco repository on your server
- 2. Upgrade Subversion with ``yum upgrade subversion``
-
 .. _subversion-max-file-size:
 
 Define max file size
