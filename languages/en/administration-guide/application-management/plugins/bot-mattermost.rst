@@ -10,7 +10,7 @@ In your Tuleap, you can find the package name using:
 
 .. code-block:: bash
 
-    yum search tuleap-plugin-botmattermost
+    dnf search tuleap-plugin-botmattermost
 
 and to install the plugin you want.
 

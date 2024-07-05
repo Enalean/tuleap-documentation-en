@@ -9,7 +9,7 @@ Setup tuleap-gitolite-membership
 
 Step 1: on the mirror, you need to setup minimal things:
 
-- install gitolite3:  ``yum install gitolite3``
+- install gitolite3:  ``dnf install gitolite3``
 - create a user gitolite: ``useradd --home /var/lib/gitolite --create-home gitolite``
 - As user ``gitolite``, generate an ssh key (ssh-keygen)
 - Setup gitolite with ``gitolite setup -pk .ssh/id_rsa.pub``
@@ -22,7 +22,7 @@ Step 2: on master, you need to create a new Mirror entry as site admin (Admin > 
 
 Step 3: on the mirror, configure ``tuleap-gitolite-membership``:
 
-#. configure yum repository as in Tuleap installation for :ref:`Community Edition <tuleap_installation_install_packages>` or :ref:`Enterprise Edition <tuleap_installation_install_packages>`
+#. configure DNF repository as in Tuleap installation for :ref:`Community Edition <tuleap_installation_install_packages>` or :ref:`Enterprise Edition <tuleap_installation_install_packages>`
 #. install package: ``tuleap-gitolite-membership``
 #. update ``/etc/tuleap-gitolite-membership.ini`` and set the user/password defined in the previous section
 
@@ -229,58 +229,3 @@ logs previsously parsed won't be taken in account.
         $> su - codendiadm
         $> cd /usr/share/tuleap/
         $> ./src/utils/php-launcher.sh plugins/git/bin/import_all_giotlite3_logs.php
-
-Upgrade from gitolite2 to gitolite3
------------------------------------
-
-Pre-requisite
-~~~~~~~~~~~~~
-
-Upgrade will not work if there are bad ssh keys in your configuration.
-You should run the following commands before any upgrade:
-
-  .. sourcecode:: console
-
-      /usr/share/tuleap/src/utils/php-launcher.sh /usr/share/tuleap/tools/utils/purge_bad_sshkeys.php
-
-if there is any output wait for night run of daily compute (so keys are dumped again) or run the daily cron by hand
-
-Upgrade on CentOS 6
-~~~~~~~~~~~~~~~~~~~
-
-If you use the pullrequest plugin, it will be removed during the procedure, do not
-forget to install it back at the end with ``yum install tuleap-plugin-pullrequest``.
-
-Unless you are running in RHEL environnement that has been migrated from RHEL5,
-the command ``find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;``
-might fail during the procedure because ``/usr/com/gitolite`` does not exist. It
-is not an issue, you can safely finish the migration.
-
-  .. sourcecode:: console
-
-      # as root, service tuleap stop
-      # su - gitolite
-      # git clone /var/lib/tuleap/gitolite/repositories/gitolite-admin.git
-      # su to root
-      # cp -ar /var/lib/gitolite /var/lib/gitolite.bkp
-      # yum install gitolite3
-      # yum remove gitolite
-      # cp -ar /var/lib/gitolite.bkp /var/lib/gitolite
-      # yum install tuleap-plugin-git-gitolite3
-      # cp ~codendiadm/.ssh/id_rsa_gl-adm.pub /tmp
-      # su - gitolite
-      # ln -s /var/lib/tuleap/gitolite/repositories
-      # cp -a .gitolite.rc gitolite2.rc
-      # cp -a /usr/share/tuleap/plugins/git/etc/gitolite3.rc.dist .gitolite.rc
-      # tar -czf gitolite2-logs.tgz ~/.gitolite/logs
-      # rm -rf repositories/gitolite-admin.git
-      # gitolite setup -pk /tmp/id_rsa_gl-adm.pub
-      # cd gitolite-admin
-      # gitolite push -f
-      # install -g gitolite -o gitolite -m 00755 /usr/share/tuleap/plugins/git/hooks/post-receive-gitolite /var/lib/gitolite/.gitolite/hooks/common/post-receive
-      # edit ~/.gitolite.rc and uncomment GROUPLIST_PGM line
-      # find /usr/com/gitolite/.gitolite -type d -exec chmod g+rx {} \;
-      # find /var/lib/tuleap/gitolite/repositories/ -type l \( -name "post-receive.mirrorpush" -o -name "gitolite-hooked" \)  -exec rm {} \;
-      # as root, service tuleap start
-
-Adapt ``/etc/httpd/conf.d/tuleap-plugins/git-http.conf`` with ``ScriptAlias /git/ /usr/lib/codendi/bin/gitolite3-suexec-wrapper.sh/``.
