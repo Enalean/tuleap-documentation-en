@@ -61,6 +61,7 @@ Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
     tuleap-plugin-ldap \
     tuleap-plugin-mediawiki \
     tuleap-plugin-openidconnectclient \
+    tuleap-plugin-pdftemplate \
     tuleap-plugin-program_management \
     tuleap-plugin-projectmilestones \
     tuleap-plugin-prometheus-metrics \
