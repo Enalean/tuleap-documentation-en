@@ -8,6 +8,22 @@ Tuleap 15.11
 
   Tuleap 15.11 is currently under development.
 
+New plugin: Tuleap PDF Template
+-------------------------------
+
+This plugin is only available for :ref:`Tuleap Entreprise <tuleap-enterprise>`.
+
+How to install:
+
+.. sourcecode:: shell
+
+    dnf install tuleap-plugin-pdftemplate
+    sudo -u codendiadm tuleap plugin:install pdftemplate
+    tuleap-cfg site-deploy
+    systemctl reload nginx
+    systemctl restart tuleap
+
+
 Tuleap 15.10
 ============
 
