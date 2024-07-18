@@ -90,24 +90,23 @@ it back if you don't want to be flooded.
 
 .. _deletion_artifacts:
 
-Deletion artifacts
+Artifacts deletion
 ~~~~~~~~~~~~~~~~~~
 
-Artifacts in Tuleap can represent various work items such as tasks, bugs, user stories, feature requests, and other project elements.
-Each artifact contains valuable data, including descriptions, status, comments, attachments, and links to other artifacts.
 Users can delete them in two different ways, from the :ref:`REST API<rest_api>` or from the administration of trackers.
 Deleting these artifacts should be done with caution as this action is typically irreversible and can lead to loss of important information.
-The limit is here to help you to decide how much artifact you can delete for a day. He can be 0 or he can be more.
+The limit prevents users to delete a certain amount of artifacts on a sliding window of 24 hours. He can be 0 or he can be more.
 The fact that we put a limit is here to prevent a potentially malicious mass deletion.
 
-To set up this limit of artifacts deletion. You need to be the site administrator. If you're not contact him.
+To set up this limit of artifacts deletion. You need to be the site administrator.
 
-To change the value of artifacts deletion, go to your site administration then to your Plugins, next in your Trackers, and finally to your Artifacts deletion tab.
+The configuration of this limit is done in site administration > Plugins > Trackers > Artifacts deletion.
 
 This limitation is set for each user individually.
 Firstly, it's possible for a user to delete artifacts only if the limit has a value more than 0.
 Secondly, this limit allows each user to delete up to X artifacts **on a sliding wondow of 24 hours**.
-Finally, if they reach the limit, they will have to wait some time to be able to delete artifacts again.
 
-As mentioned on artifacts deletion page, the artifacts who have been deleted will be exported to a temporary file.
-They will be purged automatically accordingly to the settings of the machine on which the server is running.
+When the Archive Deleted Items plugin is enabled and properly configured, it ensures that all deleted artifacts are not immediately removed from the system.
+Instead, they are moved to an archive. This archived data is then stored in a temporary file.
+The system settings on the server determine how long these archived artifacts are retained before they are permanently purged. 
+This process provides a protection, allowing for recovery of mistakenly deleted artifacts within the retention period specified by the server settings.
