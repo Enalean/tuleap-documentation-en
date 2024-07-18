@@ -29,12 +29,5 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                sshagent(['deploy-documentation-web01.enalean.com']) {
-                    sh 'ssh jenkins@web01.enalean.com ./update_docs.tuleap.org.sh'
-                }
-            }
-        }
     }
 }
