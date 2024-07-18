@@ -4,10 +4,6 @@ Tuleap 15.x
 Tuleap 15.11
 ============
 
-.. NOTE::
-
-  Tuleap 15.11 is currently under development.
-
 New plugin: Tuleap PDF Template
 -------------------------------
 
