@@ -8,7 +8,7 @@ You need to have an SSH access to the Tuleap server to customize this part.
 
 The help page is accessible with :
     * The star or question mark at the bottom right of your tuleap page.
-    * Throught this URL : ``https://yourtuleapserver/help`` 
+    * Through this URL : ``https://yourtuleapserver/help`` 
 
 
 You will have to define one help page per language used on your platform.
@@ -17,7 +17,7 @@ You will have to define one help page per language used on your platform.
 | For English use, ``vi /etc/tuleap/site-content/en_US/help/site.txt``.
 | For Portuguese use, ``vi /etc/tuleap/site-content/br_BR/help/site.txt``.
 
-Now you can edit the file ``site.txt`` as wish.
+Now you can edit the file ``site.txt`` as wished.
 
 Here is an example of what you can do :
 
@@ -25,5 +25,5 @@ Here is an example of what you can do :
 
     <section class="tlp-pane-section">
         <h1 class="tlp-pane-subtitle">Contact your support team</h1>
-        <p> For all other inquiries use <a href="mailto:support_team@example.com">support_team@example.com</a></p>
+        <p> For all requests, use <a href="mailto:support_team@example.com">support_team@example.com</a></p>
     </section>
