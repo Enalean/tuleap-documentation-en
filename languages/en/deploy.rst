@@ -30,25 +30,15 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: September 2023**
+**Last update: July 2024**
 
-End of October 2023
-''''''''''''''''''''
-
-============================= ================= ============================================================
-What                          Status            As platform administrator, what should I do ?
-============================= ================= ============================================================
-MySQL 5.7                     End of support    :ref:`Switch to MySQL 8 <mysql80_upgrade>`
-============================= ================= ============================================================
-
-End of June 2024
-''''''''''''''''''''
+December 2024
+'''''''''''''
 
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-RHEL / CentOS 7               End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9 \
-                                                **EL9 will no longer support Mailman (Lists), ForumML and CVS**
+News and Forums               Removed           Tuleap will no longer provide the feature. Administrators should look for another tool.
 ============================= ================= ============================================================
 
 In the future
@@ -67,6 +57,8 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+RHEL / CentOS 7                 Q2 2024  End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
+MySQL 5.7                       Q4 2023  End of support    :ref:`Switch to MySQL 8 <mysql80_upgrade>`
 Mailman & ForumML plugins       Q3 2023  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool to distribute emails.
 CVS                             Q3 2023  Removed           Tuleap will no longer provide the feature. Administrators should warn their teams to migrate to newer solutions (SVN, git).
 PROFTPd plugin                  Q2 2023  Removed           End-users should use document or FRS instead
