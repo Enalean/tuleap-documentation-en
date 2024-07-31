@@ -346,13 +346,13 @@ test = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "sphinx-notfound-page"
-version = "1.0.2"
+version = "1.0.3"
 description = "Sphinx extension to build a 404 page with absolute URLs"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "sphinx_notfound_page-1.0.2-py3-none-any.whl", hash = "sha256:dbfb4fb05d8ccdaf28c19c3452231eeab73917fd475dcafebbf3babb84343800"},
-    {file = "sphinx_notfound_page-1.0.2.tar.gz", hash = "sha256:7b2759ca79cbaa44422325f540b91542b1ce411cd31217c20cd6ba1e6cffb5ec"},
+    {file = "sphinx_notfound_page-1.0.3-py3-none-any.whl", hash = "sha256:bdee947b721d1e485a21ee3ea3f784fcae52b7610bb8201abf12de1c8ca3aa4f"},
+    {file = "sphinx_notfound_page-1.0.3.tar.gz", hash = "sha256:61106279313e5713e3a8f949e87b848739d7555cd222d2cf906eb991fd66e2a1"},
 ]
 
 [package.dependencies]
@@ -552,4 +552,4 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-it
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "88f9f9ccd4cd4fd3d939301d8fd971d5a1abdf5191cd0948c897a3b75edcd75c"
+content-hash = "345914ec7407fedfd827d128b976390976498a403a9008745025838a142c56ea"
