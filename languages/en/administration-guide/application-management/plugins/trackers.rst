@@ -95,7 +95,7 @@ Artifacts deletion
 
 Users can delete them in two different ways, from the :ref:`REST API<rest_api>` or from the administration of trackers.
 Deleting these artifacts should be done with caution as this action is typically irreversible and can lead to loss of important information.
-The limit prevents users to delete a certain amount of artifacts on a sliding window of 24 hours. He can be 0 or he can be more.
+The limit prevents users to delete a certain amount of artifacts on a sliding window of 24 hours.
 The fact that we put a limit is here to prevent a potentially malicious mass deletion.
 
 To set up this limit of artifacts deletion. You need to be the site administrator.
