@@ -88,3 +88,25 @@ If there is not enough informations in the later, try making it more verbose by 
 ``$sys_logger_level = 'debug';`` in ``/etc/tuleap/conf/local.inc``. Do not forget to change
 it back if you don't want to be flooded.
 
+.. _deletion_artifacts:
+
+Artifacts deletion
+~~~~~~~~~~~~~~~~~~
+
+Users can delete them in two different ways, from the :ref:`REST API<rest_api>` or from the administration of trackers.
+Deleting these artifacts should be done with caution as this action is typically irreversible and can lead to loss of important information.
+The limit prevents users to delete a certain amount of artifacts on a sliding window of 24 hours.
+The fact that we put a limit is here to prevent a potentially malicious mass deletion.
+
+To set up this limit of artifacts deletion. You need to be the site administrator.
+
+The configuration of this limit is done in site administration > Plugins > Trackers > Artifacts deletion.
+
+This limitation is set for each user individually.
+Firstly, it's possible for a user to delete artifacts only if the limit has a value more than 0.
+Secondly, this limit allows each user to delete up to X artifacts **on a sliding wondow of 24 hours**.
+
+When the Archive Deleted Items plugin is enabled and properly configured, it ensures that all deleted artifacts are not immediately removed from the system.
+Instead, they are moved to an archive. This archived data is then stored in a temporary file.
+The system settings on the server determine how long these archived artifacts are retained before they are permanently purged. 
+This process provides a protection, allowing for recovery of mistakenly deleted artifacts within the retention period specified by the server settings.
