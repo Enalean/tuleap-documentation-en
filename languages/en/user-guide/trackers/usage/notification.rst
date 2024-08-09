@@ -30,3 +30,15 @@ access the artifact form on Tuleap.
    :name: Notification by email
 
    Notification by email
+
+Calendar Notifications
+----------------------
+
+Caldendar notifications can be linked to artifacts, activation of this option must be done in `Tracker > Adminstration > Notification` settings
+
+.. figure:: ../../../images/screenshots/tracker/administration/calendar-notif.png
+   :align: center
+   :alt: Tracker calendar notification
+   :name: Tracker calendar notification
+
+   Tracker: Calendar notification
