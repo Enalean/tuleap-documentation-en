@@ -174,6 +174,9 @@ String/Text semantics:
  * ``@title``: the "Title" semantic. It behaves like a string field.
  * ``@description``: the "Description" semantic. It behaves like a text field.
 
+Integer:
+ * ``@id``: the "Artifact id" dynamic field. It contains the unique id of the artifact, a strictly positive integer.
+
 Dates:
  * ``@submitted_on``: the "Submitted On" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
  * ``@last_update_date``: the "Last Update Date" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
@@ -184,7 +187,12 @@ Lists:
 Lists bound to users:
  * ``@submitted_by``: the "Submitted By" dynamic field. It behaves like a list and can have only a single value at a time.
  * ``@last_update_by``: the "Last Updated by" dynamic field. It behaves like a list and can have only a single value at a time.
- * ``@assigned_to``: the "Contributor/assignee"`` semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
+ * ``@assigned_to``: the "Contributor/assignee" semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
+
+.. _tql_duck_typing:
+
+Searching on similar fields
+'''''''''''''''''''''''''''
 
 You can also search on any custom field with its name as long as there is at least one Tracker with a compatible definition. We consider that 2 fields from 2 Trackers are compatible if:
  * You can see both fields
@@ -203,21 +211,24 @@ TQL behavior to search on these fields is the same as for classic single tracker
 Preconditions for multi-tracker search
 --------------------------------------
 
-When you use a semantic, all selected trackers must have it configured and all fields linked to the semantic must be readable by the current user.
+When you use a semantic, at least one of the selected trackers must have it configured and the field linked to the semantic must be readable by the current user.
 
-For example, if you run an expert query containing ``@status``, all selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
-If **one** of the trackers does not define the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **one** of the "Status" fields is not readable by the current user, an error will be displayed.
+For example, if you run an expert query containing ``@status``, at least one of the selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
+If **none** of the trackers defines the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **none** of the "Status" fields are readable by the current user, it will raise an error.
 
-When you use a dynamic field, for all selected trackers it must be added in the tracker and it must be readable by the current user.
+When you use a dynamic field, it must exist in at least one of the selected trackers and it must be readable by the current user.
 
 Supported dynamic fields are the following:
-  * "Submitted On": The creation date of the artifact.
+  * "Submitted On": The creation date and time of the artifact.
   * "Submitted By": The user who first created the artifact.
-  * "Last Updated Date": The date of the last change to the artifact.
+  * "Last Updated Date": The date and time of the last change to the artifact.
   * "Last Updated By": The user who made the last change to the artifact.
+  * "Artifact id": The unique id of the artifact.
 
-For example, if you run an expert query containing ``@last_update_date``, all selected trackers **must** have a "Last update date" field and that field **must** be readable by the user viewing the widget.
-If **one** of the trackers does not have a "Last update date" field, it will cause an error to be shown. The same is true for permissions: if **one** of the "Last update date" fields is not readable by the current user, an error will be displayed.
+For example, if you run an expert query containing ``@last_update_date``, at least one of the selected trackers **must** have a "Last update date" field and that field **must** be readable by the user viewing the widget.
+If **none** of the trackers has a "Last update date" field, it will cause an error to be shown. The same is true for permissions: if **none** of the "Last update date" fields are readable by the current user, it will raise an error.
+
+If only part of the selected trackers match these preconditions, the query will be performed only on those.
 
 Queries
 -------
@@ -232,8 +243,8 @@ Supported comparisons
 
   * For @title and @description: ``=``, ``!=``
   * For @status: ``= OPEN()``, ``!= OPEN()``. ``OPEN()`` is the only supported value.
-  * For @submitted_on and @last_update_date: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``.
-  * For @submitted_by and @last_update_by: ``=``, ``!=``, ``IN()``, ``NOT IN()``.
+  * For @submitted_on, @last_update_date and @id: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``.
+  * For @submitted_by, @last_update_by and @assigned_to: ``=``, ``!=``, ``IN()``, ``NOT IN()``.
 
 Comparison values
 '''''''''''''''''
@@ -243,6 +254,7 @@ Comparison values
   * For @submitted_on and @last_update_date: ``string`` convertible to date, ``NOW()`` and dynamic values based on ``NOW()``. For example: ``NOW() -1m``, ``NOW() -6w``, ...
   * For @submitted_on and @last_update_date: the empty string ``''`` cannot be used. Those fields always have a value, therefore the comparison to "empty" is not useful.
   * For @submitted_by, @last_update_by and @assigned_to: ``string`` matching a user, ``MYSELF()``
+  * For @id: ``integer``.
 
 .. include:: tql-artlink.rst
 
@@ -259,3 +271,44 @@ Example
     //Returns all artifacts with 'documentation' in the title that have been submitted
     //by user 'alice' and are assigned to the viewing user (for example 'bob')
     //or user 'charles'.
+
+Expert mode
+-----------
+
+.. attention::
+
+  This part is still work in progress, future releases may break your report.
+  You can follow advancement in `epic #37567 SuperTableau - Full TQL mode <https://tuleap.net/plugins/tracker/?aid=37567>`_
+
+Cross-tracker search widget is also available in expert mode allowing you to use extended syntax of TQL.
+
+In this extended syntax of TQL you can choose which fields you want to display on the widget through ``SELECT`` syntax:
+
+::
+
+    SELECT @pretty_title, @status, open_date WHERE @assigned_to = MYSELF()
+    // Returns all artifacts assigned to me and display its title, status and opening date.
+
+When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field and a condition after the ``WHERE``.
+
+TQL ``SELECT`` syntax allow you to select on the same fields allowed for the condition plus some special fields:
+
+Semantics and always there fields:
+ * ``@id`` Artifact id.
+ * ``@submitted_on`` The creation date and time of the artifact.
+ * ``@last_update_date`` The date and time of the last change to the artifact.
+ * ``@submitted_by`` The user who first created the artifact.
+ * ``@last_update_by`` The user who made the last change to the artifact.
+ * ``@title`` Artifact title semantic.
+ * ``@description`` Artifact description semantic.
+ * ``@status`` Artifact status semantic.
+ * ``@assigned_to`` Artifact assignee/contributor semantic.
+
+Fields short name:
+ * Same as for condition (see :ref:`Duck-typed fields rules <tql_duck_typing>`)
+ * Note that in ``SELECT`` date and datetime fields are considered compatible
+
+Special fields:
+ * ``@project.name`` The name and icon of the project that the artifact belongs to.
+ * ``@tracker.name`` The name and color of the tracker the artifact belongs to.
+ * ``@pretty_title`` It's equivalent to the Artifact column of classic Cross-tracker search widget (or the title of the artifact view).

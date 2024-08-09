@@ -8,6 +8,13 @@ Tuleap 15.12
 
   Tuleap 15.12 is currently under development.
 
+API BREAKING CHANGE:
+--------------------
+
+``/api/cross_tracker_reports/{id}/content`` REST endpoint changed. The previously added parameter ``return_format`` is removed and replaced by the optional parameter ``report_mode``.
+Its value can be either ``default`` for classic Cross-tracker search or ``expert`` to use the new way. 
+Cross-tracker search widgets have been updated along the API changes, they will keep functioning as before.
+
 Tuleap 15.11
 ============
 
