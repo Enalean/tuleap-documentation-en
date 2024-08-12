@@ -15,6 +15,13 @@ API BREAKING CHANGE:
 Its value can be either ``default`` for classic Cross-tracker search or ``expert`` to use the new way. 
 Cross-tracker search widgets have been updated along the API changes, they will keep functioning as before.
 
+
+nginx directive ``server_names_hash_bucket_size`` is now managed automatically
+------------------------------------------------------------------------------
+
+Tuleap now automatically sets the nginx directive ``server_names_hash_bucket_size`` to an appropriate value.
+If you had manually set it in your configuration in order to manage a long domain name, you will need to remove it.
+
 Tuleap 15.11
 ============
 
