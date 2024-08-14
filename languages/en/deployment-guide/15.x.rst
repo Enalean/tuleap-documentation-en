@@ -22,6 +22,23 @@ nginx directive ``server_names_hash_bucket_size`` is now managed automatically
 Tuleap now automatically sets the nginx directive ``server_names_hash_bucket_size`` to an appropriate value.
 If you had manually set it in your configuration in order to manage a long domain name, you will need to remove it.
 
+Upgrade of the local Meilisearch instance from 1.7.6 to 1.9.0 and data structure change
+---------------------------------------------------------------------------------------
+
+If you have deployed a :ref:`local Meilisearch instance <fts-local-meilisearch>` it will be automatically
+upgraded to the 1.9.0 version. The process is automatic when the server is restarted after its update.
+
+The upgrade will re-index all the items. Until the process is completed, some items might not be found when
+searching, and an increased load on your instance is expected.
+
+Administrators having deployed an independent Meilisearch instance should upgrade it and clear all the existing entries.
+A change in Tuleap requires to re-index all the items, after the upgrade you must run:
+
+.. sourcecode:: shell
+
+    tuleap full-text-search:identify-all-items-to-index
+    tuleap full-text-search:index-all-pending-items
+
 Tuleap 15.11
 ============
 
