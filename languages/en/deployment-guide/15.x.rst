@@ -4,10 +4,6 @@ Tuleap 15.x
 Tuleap 15.12
 ============
 
-.. NOTE::
-
-  Tuleap 15.12 is currently under development.
-
 API BREAKING CHANGE:
 --------------------
 
