@@ -2,12 +2,12 @@
 
 let
   pinnedNixpkgs = import (fetchTarball { 
-    url = "https://github.com/NixOS/nixpkgs/archive/38d3352a65ac9d621b0cd3074d3bef27199ff78f.tar.gz";
-    sha256 = "0cww7hyrdh5mylk2rb0v9i7iic0gy5qnn9sa7bz3rmnwwgjwys56";
+    url = "https://github.com/NixOS/nixpkgs/archive/d13fa5a45a34e7c8be33474f58003914430bdc5a.tar.gz";
+    sha256 = "sha256-G7Mf9uN9m8FimeP3eMHu/dOC4QS8QAzo0h4ZIlDHcCA=";
   } ) {};
   poetry2nixsrc = builtins.fetchTarball {
-    url = "https://github.com/nix-community/poetry2nix/archive/refs/tags/2024.6.2040715.tar.gz";
-    sha256 = "0n7lm77sxy8b40rfc400h4hg8b8ds0n11cmg1pxdr9hi4m5d2hk5";
+    url = "https://github.com/nix-community/poetry2nix/archive/refs/tags/2024.8.2111184.tar.gz";
+    sha256 = "sha256:0p68vkp01r8wmq169sklagvkjyyvddlrc0mrnwzhr04zyh85q92c";
   };
   poetry2nix = import poetry2nixsrc {
     pkgs = pinnedNixpkgs;
