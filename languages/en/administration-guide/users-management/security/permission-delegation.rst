@@ -1,3 +1,5 @@
+.. _permissions_delegation:
+
 Permission delegation
 ---------------------
 
@@ -29,6 +31,8 @@ There are various permissions to be granted. However, think wisely about the peo
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | REST Read only administrator                              | Grants the right to browse the whole REST API as a read only platform administrator. Assigned user(s) should only be |
 |                                                           | used with the REST API as it will induce inconsistent behaviour with the Web UI.                                     |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| PDF templates manager                                     | Grants the right to manage :ref:`PDF templates <pdf_template>` (create, duplicate, delete)                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 .. NOTE::
