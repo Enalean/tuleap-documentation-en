@@ -15,18 +15,21 @@ Some features are only distributed to Tuleap Enterprise subscribers:
 Project management
 ------------------
 
-* :ref:`Baseline <plugin_baseline>`: Create baseline for releases and compare them
-* :ref:`DocGen <plugin_document_generation>`: Generation of document (docx) from Tracker reports
-* :ref:`Label widget <label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests)
-* :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects
+* :ref:`Artidoc <artidoc>`: Compose documents with artifacts.
+* :ref:`Baseline <plugin_baseline>`: Create baseline for releases and compare them.
+* :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects.
+* :ref:`DocGen <plugin_document_generation>`: Generation of document (docx) from Tracker reports.
+* :ref:`Label widget <label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests).
 * :ref:`Project Milestones <project-milestones>`: Widget to display :ref:`Scrum Backlog <backlog>` of a project on user or project dashboard.
+* :ref:`PDF template <pdf_template>`: Export documents to PDF using platform defined templates.
 * :ref:`Program management <program-management>`: Manage multi project backlog and team synchronisation.
 * :ref:`Roadmap <roadmap>`:  Widget to display the roadmap on the project dashboard.
 * :ref:`Taskboard <plugin_taskboard>`: Visually keep track of things that need to get done in a task board, used in :ref:`backlog`.
 * :ref:`Test Management <testmgmt>`: Test campaigns and traceability (aka TTM).
-* :ref:`Timetracking <timetracking>`: Provide an easy way to track your time
-* :ref:`Velocity <plugin_velocity>`: Display velocity chart in the :ref:`backlog`
-* :ref:`Tuleap Functions for Tracker <tracker-functions>`: Execute custom code after each artifact creation/update
+* :ref:`Timetracking <timetracking>`: Provide an easy way to track your time.
+* :ref:`Tuleap Functions for Tracker <tracker-functions>`: Execute custom code after each artifact creation/update.
+* :ref:`Velocity <plugin_velocity>`: Display velocity chart in the :ref:`backlog`.
+
 
 Authentication and permissions
 ------------------------------
