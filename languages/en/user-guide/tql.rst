@@ -156,7 +156,7 @@ TQL on cross-tracker search
 
 .. attention::
 
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
+  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
 TQL can also be used in the cross-tracker widget, in the search area.
@@ -282,14 +282,14 @@ Expert mode
 
 Cross-tracker search widget is also available in expert mode allowing you to use extended syntax of TQL.
 
-In this extended syntax of TQL you can choose which fields you want to display on the widget through ``SELECT`` syntax:
+In this extended syntax of TQL you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which tracker to perform the query with ``FROM``:
 
 ::
 
-    SELECT @pretty_title, @status, open_date WHERE @assigned_to = MYSELF()
-    // Returns all artifacts assigned to me and display its title, status and opening date.
+    SELECT @pretty_title, @status, open_date FROM @project = 'self' AND @tracker.name IN('release', 'sprint') WHERE @assigned_to = MYSELF()
+    // Returns all artifacts from current project release and sprint trackers assigned to me and display their title, status and opening date.
 
-When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field and a condition after the ``WHERE``.
+When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field, ``FROM`` with at least one condition, and a condition after the ``WHERE``.
 
 TQL ``SELECT`` syntax allow you to select on the same fields allowed for the condition plus some special fields:
 
@@ -312,3 +312,40 @@ Special fields:
  * ``@project.name`` The name and icon of the project that the artifact belongs to.
  * ``@tracker.name`` The name and color of the tracker the artifact belongs to.
  * ``@pretty_title`` It's equivalent to the Artifact column of classic Cross-tracker search widget (or the title of the artifact view).
+
+TQL ``FROM`` syntax allow you to select on which tracker to perform the query by filtering projects and trackers. You can use only one condition of each type joined by ``AND``:
+
+Project condition:
+ * ``@project = 'self'`` get current project. Works only in a project dashboard.
+ * ``@project = 'aggregated'`` get project aggregated to the current one. Works only in a :ref:`program <program-management>` project dashboard.
+ * ``@project.name`` either with ``= 'project_name'`` or ``IN('project_name', 'another_project')``, get all projects with the corresponding short name.
+ * ``@project.category = 'Topic::Hardware'`` get all projects with corresponding category or sub category. A category is specified by its full path (root category to current one) with ``::`` as delimiter.
+ * ``@project.category IN('Topic::Hardware', 'License::Open Source')`` get all projects with corresponding category.
+
+Tracker condition:
+ * ``@tracker.name`` either with ``= 'release'`` or ``IN('release', 'sprint')``, get all trackers with corresponding short name.
+
+You must provide 1 or 2 condition of different kind. If only the project condition is provided then it gets all trackers from corresponding projects.
+If only the tracker condition is provided, then match the trackers from current project. It means that in a personal dashboard you must provide the project condition.
+
+To provide both condition, you can use ``AND`` between them. There is no restriction for the order of the conditions.
+
+Some example you can take inspiration from:
+
+::
+
+    SELECT @pretty_title, @status, @submitted_by, @last_update_date 
+    FROM @project.name = 'support' AND @tracker.name = 'ticket' 
+    WHERE @status = OPEN() AND @assigned_to = MYSELF()
+    // Get tickets assigned to me from support project. Display their title, status, who opened the ticket and the last modification date
+
+    SELECT @title, @status, @project.name
+    FROM @project.category = 'Topic::Team' AND @tracker.name IN('epic', 'story')
+    WHERE @status = OPEN()
+    // Get open epics and stories from project with category Topic::Team (or sub category) 
+    // display their title, status and from which project it comes
+
+    SELECT @pretty_title
+    FROM @project = 'self'
+    WHERE @id >= 1
+    // Display title of all artifacts of current project
