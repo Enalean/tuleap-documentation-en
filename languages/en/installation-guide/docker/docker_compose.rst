@@ -109,7 +109,7 @@ Please check the :ref:`environment variables <docker-environment-variables>` to 
 
     services:
     tuleap:
-        image: docker.tuleap.org/tuleap-enterprise-edition:${TULEAP-VERSION}
+        image: docker.tuleap.org/tuleap-enterprise-edition:${TULEAP_VERSION}
         hostname: ${TULEAP_FQDN}
         restart: always
         ports:
