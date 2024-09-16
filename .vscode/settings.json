@@ -3,5 +3,8 @@
     "restructuredtext.preview.name": "docutils",
     "cSpell.words": [
         "Tuleap"
+    ],
+    "python.analysis.extraPaths": [
+        "./languages/en/_pygments"
     ]
 }

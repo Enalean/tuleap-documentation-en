@@ -94,7 +94,7 @@ To construct a query you can combine all these elements.
 
 Query example:
 
-.. code-block:: sql
+.. code-block:: tql
 
     (summary = "soap" OR summary = "rest")
       AND description = "documentation" AND story_points BETWEEN(3, 8)
@@ -261,7 +261,7 @@ Comparison values
 Example
 -------
 
-::
+.. code-block:: tql
 
     @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
     //Returns all open artifacts with 'documentation' in the title that have been
@@ -284,7 +284,7 @@ Cross-tracker search widget is also available in expert mode allowing you to use
 
 In this extended syntax of TQL you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which tracker to perform the query with ``FROM``:
 
-::
+.. code-block:: tql
 
     SELECT @pretty_title, @status, open_date FROM @project = 'self' AND @tracker.name IN('release', 'sprint') WHERE @assigned_to = MYSELF()
     // Returns all artifacts from current project release and sprint trackers assigned to me and display their title, status and opening date.
@@ -332,7 +332,7 @@ To provide both condition, you can use ``AND`` between them. There is no restric
 
 Some example you can take inspiration from:
 
-::
+.. code-block:: tql
 
     SELECT @pretty_title, @status, @submitted_by, @last_update_date 
     FROM @project.name = 'support' AND @tracker.name = 'ticket' 

@@ -17,6 +17,7 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
+sys.path.append(os.path.abspath("./_pygments"))
 
 # -- General configuration -----------------------------------------------------
 
@@ -30,6 +31,8 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinxext.rediraffe',
     'notfound.extension',
+    'lexer',
+    'tuleap_style',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -86,7 +89,7 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'tango'
+pygments_style = 'tuleap_style.TuleapStyle'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -282,6 +285,8 @@ lexers['php'] = PhpLexer(startinline=True, linenos=1)
 lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
 from pygments.lexers.markup import MarkdownLexer
 lexers['markdown'] = MarkdownLexer(startinline=True, linenos=1)
+from lexer import TqlLexer
+lexers['tql'] = TqlLexer()
 
 # Redirections
 
