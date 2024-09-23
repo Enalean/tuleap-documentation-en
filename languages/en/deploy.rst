@@ -31,7 +31,7 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: July 2024**
+**Last update: September 2024**
 
 December 2024
 '''''''''''''
@@ -39,7 +39,10 @@ December 2024
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-News and Forums               Removed           Tuleap will no longer provide the feature. Administrators should look for another tool.
+News and Forums               Removed in 16.4   Tuleap will no longer provide the feature. Administrators should look for another tool.
+Legacy "DocMan" UI            Removed in 16.4   Nothing to do, for most users it's already the default behavior
+                                                unless you activated ``feature_flag_allow_temporary_access_to_old_ui_that_will_be_removed_soon``
+                                                feature flag.
 ============================= ================= ============================================================
 
 In the future
