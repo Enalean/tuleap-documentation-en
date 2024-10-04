@@ -23,9 +23,8 @@ class TqlLexer(RegexLexer):
             (r'/\d+[dwmy]/i', Number),
             (r'\d+(?:\.\d+)?', Number),
 
-            (r'linked\s*from\b', Name),
-            (r'(?:and|from|or|select|where)\b', Keyword),
-            (r'(?:artifact|between|by|child|children|covered|covering|from|in|is|linked|myself|not|now|open|parent|to|tracker|type|with|without)\b', Name),
+            (r'(?:and|from|or|select|where|order\s*by)\b', Keyword),
+            (r'(?:artifact|between|by|child|children|covered|covering|from|in|is|linked|myself|not|now|open|parent|to|tracker|type|with|without|linked\s*from|asc|ascending|desc|descending)\b', Name),
 
             (r'[=<>!+-]+', Operator),
             (r'[()]', Operator),
