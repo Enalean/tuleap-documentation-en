@@ -1,3 +1,16 @@
+$-fa-font-path: "@fortawesome/fontawesome-free/webfonts/";
+
+@use "pkg:@fortawesome/fontawesome-free/css/fontawesome.css";
+@use "pkg:@fortawesome/fontawesome-free/scss/solid.scss" with (
+    $fa-font-path: $-fa-font-path
+);
+@use "pkg:@fortawesome/fontawesome-free/scss/regular.scss" with (
+    $fa-font-path: $-fa-font-path
+);
+@use "pkg:@fortawesome/fontawesome-free/scss/brands.scss" with (
+    $fa-font-path: $-fa-font-path
+);
+
 @font-face {
     font-family: 'OpenSans';
     font-style: normal;
@@ -57,9 +70,3 @@
         url('./files/open-sans-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
         url('./files/open-sans-latin-800.woff') format('woff'); /* Modern Browsers */
 }
-
-
-@import '@fortawesome/fontawesome-free/css/fontawesome';
-@import '@fortawesome/fontawesome-free/css/solid';
-@import '@fortawesome/fontawesome-free/css/regular';
-@import '@fortawesome/fontawesome-free/css/brands';

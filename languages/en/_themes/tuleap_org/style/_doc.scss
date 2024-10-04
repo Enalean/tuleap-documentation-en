@@ -1,9 +1,12 @@
+@use "./variables";
+@use "sass:color";
+
 body {
     &.pinned .doc-menu {
-        height: calc(100vh - #{$header-pinned-height} - 20px);
+        height: calc(100vh - #{variables.$header-pinned-height} - 20px);
     }
 
-    @each $name, $hexa in $guides {
+    @each $name, $hexa in variables.$guides {
         &.#{$name} {
             .doc-menu li > a.current,
             .doc-content a,
@@ -14,7 +17,7 @@ body {
 
             .doc-menu li.toctree-l3 > a::before,
             .doc-menu li.toctree-l3 > ul::before {
-                background: transparentize($hexa, .1);
+                background: color.scale($hexa, $alpha: -10%);
             }
 
             .doc-previous-next > a.button.outline {
@@ -23,13 +26,13 @@ body {
 
                 &:hover:not(:disabled),
                 &:focus:not(:disabled) {
-                    border-color: darken($hexa, 10%);
-                    background: transparentize($hexa, .9);
+                    border-color: color.adjust($hexa, $lightness: -10%);
+                    background: color.scale($hexa, $alpha: -90%);
                 }
 
                 &:active {
-                    border-color: darken($hexa, 12%);
-                    background: transparentize($hexa, .8);
+                    border-color: color.adjust($hexa, $lightness: -12%);
+                    background: color.scale($hexa, $alpha: -80%);
                 }
             }
         }
@@ -46,17 +49,17 @@ body {
     top: 100px;
     flex: 0 0 auto;
     width: 300px;
-    height: calc(100vh - #{$header-height});
+    height: calc(100vh - #{variables.$header-height});
     padding: 20px 20px 50px 0;
     overflow-y: auto;
 
-    @media screen and (max-width: #{$small-screen-size}) {
+    @media screen and (max-width: #{variables.$small-screen-size}) {
         padding: 20px 20px 50px;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         top: 80px;
-        height: calc(100vh - #{$header-pinned-height});
+        height: calc(100vh - #{variables.$header-pinned-height});
         margin: 0 0 0 -295px;
         transition: margin 100ms;
 
@@ -97,7 +100,7 @@ body {
             margin: 0 0 20px;
 
             > a {
-                color: $grey;
+                color: variables.$grey;
                 font-weight: 600;
                 text-transform: uppercase;
 
@@ -131,11 +134,11 @@ body {
                 left: -8px;
                 width: 2px;
                 height: 100%;
-                background: transparentize($orange, .1);
+                background: color.scale(variables.$orange, $alpha: -10%);
             }
 
             a {
-                color: $grey;
+                color: variables.$grey;
             }
         }
 
@@ -152,7 +155,7 @@ body {
             display: block;
             position: relative;
             padding: 5px;
-            color: $light-grey;
+            color: variables.$light-grey;
             line-height: 18px;
 
             &:hover::after {
@@ -164,12 +167,12 @@ body {
             &:hover,
             &:active,
             &:focus {
-                color: $black;
+                color: variables.$black;
                 text-decoration: none;
             }
 
             &.current {
-                color: $orange;
+                color: variables.$orange;
             }
 
             .toctree-expand {
@@ -196,7 +199,7 @@ body {
     display: none;
     margin: 0 25px 0 0;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         display: inline-block;
     }
 }
@@ -217,7 +220,7 @@ body {
 
     .doc-breadcrumb-separator {
         margin: 0 7px 0 0;
-        color: $light-grey;
+        color: variables.$light-grey;
         font-size: 10px;
     }
 }
@@ -236,13 +239,13 @@ body {
         width: 1px;
         height: 100%;
         background-image: linear-gradient(to bottom,
-            $white 0,
-            transparentize($light-grey, .85) 50px,
-            transparentize($light-grey, .85) 100%
+            variables.$white 0,
+            color.scale(variables.$light-grey, $alpha: -85%) 50px,
+            color.scale(variables.$light-grey, $alpha: -85%) 100%
         );
     }
 
-    @media screen and (max-width: #{$small-screen-size}) {
+    @media screen and (max-width: #{variables.$small-screen-size}) {
         padding: 50px 20px;
     }
 
@@ -303,7 +306,7 @@ body {
     }
 
     .caption {
-        color: $light-grey;
+        color: variables.$light-grey;
         font-style: italic;
         text-align: center;
     }
@@ -351,47 +354,47 @@ body {
     }
 
     .attention {
-        border-left: 4px solid $red;
-        background: transparentize($red, .95);
+        border-left: 4px solid variables.$red;
+        background: color.scale(variables.$red, $alpha: -95%);
 
         > p {
-            color: $red;
+            color: variables.$red;
         }
 
         li::before {
-            color: $red;
+            color: variables.$red;
         }
     }
 
     .warning {
-        border-left: 4px solid $orange;
-        background: transparentize($orange, .95);
+        border-left: 4px solid variables.$orange;
+        background: color.scale(variables.$orange, $alpha: -95%);
 
         > p {
-            color: $orange;
+            color: variables.$orange;
         }
 
         li::before {
-            color: $orange;
+            color: variables.$orange;
         }
     }
 
     .note {
-        border-left: 4px solid $light-blue;
-        background: transparentize($light-blue, .95);
+        border-left: 4px solid variables.$light-blue;
+        background: color.scale(variables.$light-blue, $alpha: -95%);
 
         > p {
-            color: $light-blue;
+            color: variables.$light-blue;
         }
 
         li::before {
-            color: $light-blue;
+            color: variables.$light-blue;
         }
     }
 
     .important {
         border-left: 4px solid #28c4a0;
-        background: transparentize(#28c4a0, .95);
+        background: color.scale(#28c4a0, $alpha: -95%);
 
         > p {
             color: #00775c;
@@ -415,21 +418,21 @@ body {
         line-height: 18px;
 
         &.highlighttable {
-            border-color: transparentize($blue, .8);
-            background: transparentize($blue, .95);
+            border-color: color.scale(variables.$blue, $alpha: -80%);
+            background: color.scale(variables.$blue, $alpha: -95%);
 
             th,
             td {
-                border-color: transparentize($blue, .8);
+                border-color: color.scale(variables.$blue, $alpha: -80%);
             }
         }
 
         th {
             padding: 15px 10px;
             border-right: 1px solid #e8e8e8;
-            border-bottom: 1px solid transparentize($orange, .4);
+            border-bottom: 1px solid color.scale(variables.$orange, $alpha: -40%);
             background: #f8f8f8;
-            color: $grey;
+            color: variables.$grey;
             font-weight: 600;
             vertical-align: middle;
 
@@ -469,7 +472,7 @@ body {
         pre {
             border: 0;
             background: none;
-            color: $grey;
+            color: variables.$grey;
         }
     }
 
@@ -479,7 +482,7 @@ body {
 
     .doc-homepage-subtitle {
         margin: 0 0 10px;
-        color: $light-grey;
+        color: variables.$light-grey;
         font-size: 18px;
     }
 
@@ -498,7 +501,7 @@ body {
         flex: 0 1 auto;
         margin: 0 50px 0 0;
 
-        @media screen and (min-width: #{$big-screen-size}) {
+        @media screen and (min-width: #{variables.$big-screen-size}) {
             margin: 0 100px 0 0;
         }
     }
@@ -516,12 +519,12 @@ body {
         &:first-child {
             margin-right: 25px;
 
-            @media screen and (min-width: #{$big-screen-size}) {
+            @media screen and (min-width: #{variables.$big-screen-size}) {
                 margin-right: 50px;
             }
         }
 
-        @media screen and (min-width: #{$big-screen-size}) {
+        @media screen and (min-width: #{variables.$big-screen-size}) {
             width: 280px;
         }
     }

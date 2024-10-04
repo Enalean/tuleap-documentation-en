@@ -1,28 +1,31 @@
+@use "../variables";
+@use "sass:color";
+
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: $footer-height;
-    background: $black;
+    height: variables.$footer-height;
+    background: variables.$black;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: $container-width;
+    width: variables.$container-width;
 
-    @media screen and (min-width: #{$big-screen-size}) {
-        max-width: $big-screen-size;
+    @media screen and (min-width: #{variables.$big-screen-size}) {
+        max-width: variables.$big-screen-size;
     }
 
-    @media screen and (max-width: #{$small-screen-size}) {
+    @media screen and (max-width: #{variables.$small-screen-size}) {
         width: 100%;
         padding: 0 20px;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         padding: 20px;
     }
 }
@@ -57,7 +60,7 @@ footer {
         color: #909090;
 
         &:hover {
-            color: lighten(#909090, 20%);
+            color: color.adjust(#909090, $lightness: 20%);
             text-decoration: none;
         }
     }
@@ -86,7 +89,7 @@ footer {
         background: #505050;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         margin: 0 0 0 5px;
     }
 }
@@ -102,7 +105,7 @@ footer {
     }
 
     &:hover {
-        color: lighten(#606060, 20%);
+        color: color.adjust(#606060, $lightness: 20%);
         text-decoration: none;
 
         .footer-link-image {
@@ -110,7 +113,7 @@ footer {
         }
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         margin: 0 5px;
     }
 }

@@ -1,5 +1,7 @@
+import { resolve } from "node:path";
+import process from "node:process";
 import { defineConfig } from "vite";
-const { resolve } = require("path");
+import { NodePackageImporter } from "sass";
 
 export default defineConfig({
     base: "/_static/assets/",
@@ -20,5 +22,13 @@ export default defineConfig({
         },
         outDir: resolve(__dirname, "languages/en/_themes/tuleap_org/static/assets/"),
         assetsDir: "",
+    },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: "modern",
+                importers: [new NodePackageImporter(process.cwd())]
+            }
+        }
     },
 });

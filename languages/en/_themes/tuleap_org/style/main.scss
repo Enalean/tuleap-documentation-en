@@ -1,6 +1,4 @@
-@import 'reset';
-@import 'fonts';
-@import 'variables';
-
-@import 'backbone';
-@import 'doc';
+@use "./reset";
+@use "./fonts";
+@use "./backbone";
+@use "./doc";

@@ -1,14 +1,15 @@
 {
-    "name": "tuleap-documentation-en",
-    "private": true,
-    "license": "GPL-2.0-or-later",
-    "devDependencies": {
-        "@fortawesome/fontawesome-free": "^6.6.0",
-        "sass": "^1.79.4",
-        "vite": "^5.4.8"
-    },
-    "scripts": {
-        "build": "vite build",
-        "watch": "vite build --watch"
-    }
+  "name": "tuleap-documentation-en",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "sass": "^1.79.4",
+    "vite": "^5.4.8"
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  }
 }
