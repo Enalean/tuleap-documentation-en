@@ -1,11 +1,14 @@
+@use "../variables";
+@use "sass:color";
+
 ::selection {
-    background: $orange;
-    color: $white;
+    background: variables.$orange;
+    color: variables.$white;
 }
 
 h1 {
     margin: 20px 0 60px;
-    color: $grey;
+    color: variables.$grey;
     font-size: 52px;
     font-weight: 300;
     line-height: 66px;
@@ -13,7 +16,7 @@ h1 {
 
 h2 {
     margin: 0 0 20px;
-    color: $orange;
+    color: variables.$orange;
     font-size: 30px;
     font-weight: 400;
     line-height: 42px;
@@ -22,13 +25,13 @@ h2 {
 .section-title {
     width: 100%;
     margin: 0 0 50px;
-    color: $black;
+    color: variables.$black;
     font-size: 42px;
     font-weight: 300;
     line-height: 54px;
     text-align: center;
 
-    @each $name, $hexa in $colors {
+    @each $name, $hexa in variables.$colors {
         &.#{$name} {
             color: $hexa;
         }
@@ -44,7 +47,7 @@ h2 {
 
 h3 {
     margin: 0 0 10px;
-    color: transparentize($grey, .3);
+    color: color.scale(variables.$grey, $alpha: -30%);
     font-size: 22px;
     font-weight: 600;
     line-height: 30px;
@@ -53,7 +56,7 @@ h3 {
 
 h4 {
     margin: 0 0 10px;
-    color: transparentize($grey, .4);
+    color: color.scale(variables.$grey, $alpha: -40%);
     font-size: 16px;
     font-weight: 700;
     line-height: 30px;
@@ -62,7 +65,7 @@ h4 {
 
 h5 {
     margin: 0 0 10px;
-    color: transparentize($grey, .4);
+    color: color.scale(variables.$grey, $alpha: -40%);
     font-weight: 700;
     line-height: 30px;
 }
@@ -80,7 +83,7 @@ dt,
 dd,
 p {
     margin: 0 0 20px;
-    color: $grey;
+    color: variables.$grey;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -110,11 +113,11 @@ dt {
 }
 
 span.highlighted {
-    @each $name, $hexa in $colors {
+    @each $name, $hexa in variables.$colors {
         &.#{$name} {
             padding: 0;
             border-radius: 0;
-            background-image: linear-gradient(to top, transparentize($hexa, .7) 0%, transparentize($hexa, .85) 100%);
+            background-image: linear-gradient(to top, color.scale($hexa, $alpha: -70%) 0%, color.scale($hexa, $alpha: -85%) 100%);
             background-repeat: no-repeat;
             background-position: 0 85%;
             background-size: 100% 20%;
@@ -130,10 +133,10 @@ span.highlighted {
 pre {
     margin: 0 0 20px;
     padding: 10px;
-    border: 1px solid transparentize($blue, .8);
+    border: 1px solid color.scale(variables.$blue, $alpha: -80%);
     border-radius: 4px;
-    background: transparentize($blue, .95);
-    color: darken(#6cd3ff, 40%);
+    background: color.scale(variables.$blue, $alpha: -95%);
+    color: color.adjust(#6cd3ff, $lightness: -40%);
     font-family: monospace;
     font-size: 14px;
     line-height: 24px;
@@ -141,10 +144,10 @@ pre {
 
 code {
     padding: 3px 7px;
-    border: 1px solid transparentize($blue, .8);
+    border: 1px solid color.scale(variables.$blue, $alpha: -80%);
     border-radius: 3px;
-    background: transparentize($blue, .95);
-    color: darken(#6cd3ff, 40%);
+    background: color.scale(variables.$blue, $alpha: -95%);
+    color: color.adjust(#6cd3ff, $lightness: -40%);
     font-family: monospace;
     font-size: 14px;
     line-height: 24px;
@@ -162,8 +165,8 @@ code.download {
     white-space: inherit;
 
     > span:first-child::before {
-        @extend .fa;
-        @extend .fa-download;
+        @extend .fa !optional;
+        @extend .fa-download !optional;
         margin-right: 4px;
     }
 }
@@ -174,7 +177,7 @@ strong {
 
 blockquote {
     margin: 0 0 20px;
-    color: $grey;
+    color: variables.$grey;
     font-size: 16px;
     line-height: 30px;
 
@@ -189,7 +192,7 @@ blockquote {
     > .quote {
         position: relative;
         top: 5px;
-        color: $orange;
+        color: variables.$orange;
         font-size: 30px;
         line-height: 0;
     }
@@ -210,7 +213,7 @@ ul {
 }
 
 li {
-    color: $grey;
+    color: variables.$grey;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -220,7 +223,7 @@ li {
         position: relative;
         top: -3px;
         margin: 0 8px 0 0;
-        color: $orange;
+        color: variables.$orange;
         font-family: 'Font Awesome 6 Free';
         font-weight: 900;
         font-size: 8px;
@@ -246,7 +249,7 @@ ol > li {
 }
 
 a {
-    color: $orange;
+    color: variables.$orange;
     text-decoration: none;
 
     &:hover,
@@ -265,7 +268,7 @@ a.button,
     transition: top $button-transition, background $button-transition, box-shadow $button-transition, border-color $button-transition;
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    color: $white;
+    color: variables.$white;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
@@ -303,24 +306,24 @@ a.button,
         opacity: .6;
     }
 
-    @each $name, $hexa in $colors {
+    @each $name, $hexa in variables.$colors {
         &.#{$name} {
             border: 1px solid $hexa;
             background: $hexa;
 
             @if $name == 'white' {
-                color: $grey;
+                color: variables.$grey;
             }
 
             &:hover:not(:disabled),
             &:focus:not(:disabled) {
-                border-color: darken($hexa, 10%);
-                background: darken($hexa, 10%);
+                border-color: color.adjust($hexa, $lightness: -10%);
+                background: color.adjust($hexa, $lightness: -10%);
             }
 
             &:active, {
-                border-color: darken($hexa, 15%);
-                background: darken($hexa, 15%);
+                border-color: color.adjust($hexa, $lightness: -15%);
+                background: color.adjust($hexa, $lightness: -15%);
             }
 
             &.outline {
@@ -331,32 +334,32 @@ a.button,
 
                 &:hover:not(:disabled),
                 &:focus:not(:disabled) {
-                    border-color: darken($hexa, 10%);
-                    background: transparentize($hexa, .9);
+                    border-color: color.adjust($hexa, $lightness: -10%);
+                    background: color.scale($hexa, $alpha: -90%);
                 }
 
                 &:active {
-                    border-color: darken($hexa, 12%);
-                    background: transparentize($hexa, .8);
+                    border-color: color.adjust($hexa, $lightness: -12%);
+                    background: color.scale($hexa, $alpha: -80%);
                 }
             }
 
             &.no-border {
-                border-color: transparentize($hexa, .92);
-                background: transparentize($hexa, .94);
+                border-color: color.scale($hexa, $alpha: -92%);
+                background: color.scale($hexa, $alpha: -94%);
                 box-shadow: 0 2px 4px rgba(50, 50, 93, .05), 0 1px 3px rgba(0, 0, 0, .02);
                 color: $hexa;
 
                 &:hover:not(:disabled),
                 &:focus:not(:disabled) {
-                    border-color: transparentize($hexa, .9);
-                    background: transparentize($hexa, .9);
+                    border-color: color.scale($hexa, $alpha: -90%);
+                    background: color.scale($hexa, $alpha: -90%);
                     box-shadow: 0 4px 6px rgba(50, 50, 93, .05), 0 1px 3px rgba(0, 0, 0, .02);
                 }
 
                 &:active {
                     border-color: transparent;
-                    background: transparentize($hexa, .9);
+                    background: color.scale($hexa, $alpha: -90%);
                 }
             }
         }
@@ -367,8 +370,8 @@ kbd {
     display: inline-block;
     padding: 2px 4px;
     border-radius: 3px;
-    background: $black;
-    color: $white;
+    background: variables.$black;
+    color: variables.$white;
     font-family: monospace;
     font-size: 0.875rem;
     line-height: 1.25rem;

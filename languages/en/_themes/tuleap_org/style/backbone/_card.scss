@@ -1,3 +1,6 @@
+@use "../variables";
+@use "sass:color";
+
 .card {
     display: flex;
     position: relative;
@@ -31,15 +34,15 @@
         margin: 0;
         padding: 15px 20px;
         border-radius: 0 0 4px 4px;
-        background: $white;
-        color: $grey;
+        background: variables.$white;
+        color: variables.$grey;
         font-size: 18px;
         font-weight: 600;
     }
 
-    @each $name, $hexa in $colors {
+    @each $name, $hexa in variables.$colors {
         &.#{$name} > .card-illustration {
-            background: linear-gradient(45deg, darken($hexa, 5%), lighten($hexa, 15%));
+            background: linear-gradient(45deg, color.adjust($hexa, $lightness: -5%), color.adjust($hexa, $lightness: 15%));
         }
     }
 }

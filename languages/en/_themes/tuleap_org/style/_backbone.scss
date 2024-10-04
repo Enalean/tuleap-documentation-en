@@ -1,6 +1,14 @@
+@use "./backbone/basic-elements";
+@use "./backbone/form";
+@use "./backbone/card";
+@use "./backbone/badge";
+@use "./backbone/header";
+@use "./backbone/footer";
+@use "./variables";
+
 body {
     min-height: 100vh;
-    padding: $header-height 0 0;
+    padding: variables.$header-height 0 0;
     background: #ffffff;
     font-family: 'OpenSans', Helvetica, Arial, sans-serif;
 
@@ -9,38 +17,30 @@ body {
         overflow: hidden;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
-        padding: $header-pinned-height 0 0;
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
+        padding: variables.$header-pinned-height 0 0;
     }
 
     > main {
-        min-height: calc(100vh - #{$footer-height});
+        min-height: calc(100vh - #{variables.$footer-height});
 
         .container {
-            width: $container-width;
+            width: variables.$container-width;
             margin: 0 auto;
             padding: 50px 0;
 
-            @media screen and (min-width: #{$big-screen-size}) {
-                max-width: $big-screen-size;
+            @media screen and (min-width: #{variables.$big-screen-size}) {
+                max-width: variables.$big-screen-size;
             }
 
-            @media screen and (max-width: #{$small-screen-size}) {
+            @media screen and (max-width: #{variables.$small-screen-size}) {
                 width: 100%;
                 padding: 50px 20px;
             }
         }
 
-        @media screen and (max-width: #{$tiny-screen-size}) {
-            min-height: calc(100vh - #{$footer-height} + (#{$header-height} - #{$header-pinned-height}));
+        @media screen and (max-width: #{variables.$tiny-screen-size}) {
+            min-height: calc(100vh - #{variables.$footer-height} + (#{variables.$header-height} - #{variables.$header-pinned-height}));
         }
     }
 }
-
-@import 'backbone/basic-elements';
-@import 'backbone/form';
-@import 'backbone/card';
-@import 'backbone/badge';
-
-@import 'backbone/header';
-@import 'backbone/footer';

@@ -1,26 +1,29 @@
+@use "../variables";
+@use "sass:color";
+
 /* stylelint-disable selector-no-qualifying-type */
 body.pinned {
     header {
         position: fixed;
-        height: $header-pinned-height;
-        -webkit-transform: translate3d(0, 0, 0);
-        background: $white;
-        box-shadow: 0 1px 5px transparentize($black, .8);
+        height: variables.$header-pinned-height;
+        transform: translate3d(0, 0, 0);
+        background: variables.$white;
+        box-shadow: 0 1px 5px color.scale(variables.$black, $alpha: -80%);
     }
 
     .header-content {
-        height: $header-pinned-height;
+        height: variables.$header-pinned-height;
     }
 
     .header-logo-image {
         height: 50px;
     }
 
-    @each $name, $hexa in $guides {
+    @each $name, $hexa in variables.$guides {
         &.#{$name} header {
             .header-menu-item-container:hover {
                 .header-menu-item {
-                    color: lighten($hexa, 30%);
+                    color: color.adjust($hexa, $lightness: 30%);
                 }
             }
 
@@ -29,7 +32,7 @@ body.pinned {
 
                 &.active {
                     background: $hexa;
-                    color: $white;
+                    color: variables.$white;
                 }
             }
         }
@@ -48,12 +51,12 @@ body:not(.pinned) {
         }
 
         .header-burger {
-            color: $white;
+            color: variables.$white;
         }
 
         .header-menu {
-            @media screen and (max-width: #{$tiny-screen-size}) {
-                background: transparentize($black, .05);
+            @media screen and (max-width: #{variables.$tiny-screen-size}) {
+                background: color.scale(variables.$black, $alpha: -5%);
 
                 &:not(.show) {
                     display: none;
@@ -64,27 +67,27 @@ body:not(.pinned) {
         .header-menu-item-container:hover {
             .header-menu-item {
                 background: #000000;
-                color: $orange;
+                color: variables.$orange;
             }
         }
 
         .header-menu-item {
-            color: $white;
+            color: variables.$white;
         }
 
         .header-submenu {
             background: #000000;
 
-            @media screen and (max-width: #{$mobile-screen-size}) {
+            @media screen and (max-width: #{variables.$mobile-screen-size}) {
                 background: none;
             }
         }
 
         .header-submenu-item {
-            color: $white;
+            color: variables.$white;
 
             &:hover {
-                background: lighten(#000000, 7%);
+                background: color.adjust(#000000, $lightness: 7%);
             }
         }
     }
@@ -100,46 +103,46 @@ body:not(.pinned) {
         }
 
         .header-burger {
-            color: $white;
+            color: variables.$white;
         }
 
         .header-menu-item-container:hover {
             .header-menu-item {
-                background: darken($black, 5%);
-                color: $orange;
+                background: color.adjust(variables.$black, $lightness: -5%);
+                color: variables.$orange;
             }
         }
 
         .header-menu-item {
-            color: $white;
+            color: variables.$white;
 
             &.active {
-                background: $white;
-                color: $orange;
+                background: variables.$white;
+                color: variables.$orange;
             }
         }
 
         .header-submenu {
-            background: darken($black, 5%);
+            background: color.adjust(variables.$black, $lightness: -5%);
 
-            @media screen and (max-width: #{$mobile-screen-size}) {
+            @media screen and (max-width: #{variables.$mobile-screen-size}) {
                 background: none;
             }
         }
 
         .header-submenu-item {
-            color: $white;
+            color: variables.$white;
 
             &:hover {
-                background: darken($black, 10%);
+                background: color.adjust(variables.$black, $lightness: -10%);
             }
         }
     }
 
     &.orange header {
         .header-menu {
-            @media screen and (max-width: #{$tiny-screen-size}) {
-                background: transparentize(#e07e3b, .05);
+            @media screen and (max-width: #{variables.$tiny-screen-size}) {
+                background: color.scale(#e07e3b, $alpha: -5%);
 
                 &:not(.show) {
                     display: none;
@@ -148,11 +151,11 @@ body:not(.pinned) {
         }
     }
 
-    @each $name, $hexa in $guides {
+    @each $name, $hexa in variables.$guides {
         &.#{$name} header {
             .header-menu-item-container:hover .header-menu-item {
-                background: $black;
-                color: lighten($hexa, 10%);
+                background: variables.$black;
+                color: color.adjust($hexa, $lightness: 10%);
             }
 
             .header-menu-item {
@@ -160,7 +163,7 @@ body:not(.pinned) {
 
                 &.active {
                     background: $hexa;
-                    color: $white;
+                    color: variables.$white;
                 }
             }
         }
@@ -175,13 +178,13 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: $header-height;
+    height: variables.$header-height;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         position: fixed;
         width: 100vw;
-        height: $header-pinned-height;
-        -webkit-transform: translate3d(0, 0, 0);
+        height: variables.$header-pinned-height;
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -189,20 +192,20 @@ header {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    width: $container-width;
-    height: $header-height;
+    width: variables.$container-width;
+    height: variables.$header-height;
 
-    @media screen and (min-width: #{$big-screen-size}) {
-        max-width: $big-screen-size;
+    @media screen and (min-width: #{variables.$big-screen-size}) {
+        max-width: variables.$big-screen-size;
     }
 
-    @media screen and (max-width: #{$small-screen-size}) {
+    @media screen and (max-width: #{variables.$small-screen-size}) {
         width: 100%;
         padding: 0 20px;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
-        height: $header-pinned-height;
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
+        height: variables.$header-pinned-height;
     }
 }
 
@@ -218,7 +221,7 @@ header {
 .header-logo-image-orange-black {
     height: 60px;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         height: 50px;
     }
 }
@@ -234,11 +237,11 @@ header {
 
 .header-burger {
     display: none;
-    color: $orange;
+    color: variables.$orange;
     font-size: 40px;
     cursor: pointer;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         display: flex;
         align-items: center;
     }
@@ -248,22 +251,22 @@ header {
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         position: fixed;
-        top: calc(#{$header-pinned-height} - 10px);
+        top: calc(#{variables.$header-pinned-height} - 10px);
         left: 0;
         flex-direction: column;
         justify-content: center;
         width: 100vw;
-        height: calc(100vh - #{$header-pinned-height} + 10px);
-        background: transparentize($white, .05);
+        height: calc(100vh - #{variables.$header-pinned-height} + 10px);
+        background: color.scale(variables.$white, $alpha: -5%);
 
         &:not(.show) {
             display: none;
         }
     }
 
-    @media screen and (max-width: #{$mobile-screen-size}) {
+    @media screen and (max-width: #{variables.$mobile-screen-size}) {
         justify-content: stretch;
         overflow: scroll;
     }
@@ -272,8 +275,8 @@ header {
 .header-menu-item-container:hover {
     .header-menu-item {
         border-radius: 5px 5px 0 0;
-        background: $grey;
-        color: $white;
+        background: variables.$grey;
+        color: variables.$white;
         text-decoration: none;
 
         &:only-child {
@@ -299,7 +302,7 @@ span.header-menu-item {
     margin: 0 5px;
     padding: 13px 10px;
     border-radius: 5px;
-    color: $orange;
+    color: variables.$orange;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: .5px;
@@ -308,8 +311,8 @@ span.header-menu-item {
     text-transform: uppercase;
 
     &.active {
-        background: $orange;
-        color: $white;
+        background: variables.$orange;
+        color: variables.$white;
     }
 
     &:active,
@@ -317,11 +320,11 @@ span.header-menu-item {
         text-decoration: none;
     }
 
-    @media screen and (max-width: #{$small-screen-size}) {
+    @media screen and (max-width: #{variables.$small-screen-size}) {
         padding: 10px 8px;
     }
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         margin: 15px 0;
         padding: 13px 10px;
         font-size: 18px;
@@ -336,16 +339,16 @@ span.header-menu-item {
     margin: -1px 5px 0;
     overflow: hidden;
     border-radius: 0 5px 5px;
-    background: $grey;
-    box-shadow: 0 10px 20px transparentize($black, .8);
+    background: variables.$grey;
+    box-shadow: 0 10px 20px color.scale(variables.$black, $alpha: -80%);
     pointer-events: none;
 
-    @media screen and (max-width: #{$tiny-screen-size}) {
+    @media screen and (max-width: #{variables.$tiny-screen-size}) {
         position: relative;
         margin: -15px 0 0;
         border-radius: 0 0 5px 5px;
     }
-    @media screen and (max-width: #{$mobile-screen-size}) {
+    @media screen and (max-width: #{variables.$mobile-screen-size}) {
         display: flex;
         background: none;
         box-shadow: none;
@@ -357,24 +360,24 @@ span.header-menu-item {
     display: flex;
     flex-direction: column;
     padding: 13px 10px;
-    color: transparentize($white, .1);
+    color: color.scale(variables.$white, $alpha: -10%);
     font-size: 13px;
     letter-spacing: .2px;
     text-decoration: none;
 
     &:hover {
-        background: $black;
-        color: transparentize($white, .1);
+        background: variables.$black;
+        color: color.scale(variables.$white, $alpha: -10%);
         text-decoration: none;
     }
-    @media screen and (max-width: #{$mobile-screen-size}) {
-        color: $black;
+    @media screen and (max-width: #{variables.$mobile-screen-size}) {
+        color: variables.$black;
     }
 }
 
 .header-submenu-item-details {
     margin: 10px 0 0;
-    color: transparentize($white, .5);
+    color: color.scale(variables.$white, $alpha: -5%);
     font-size: 10px;
     letter-spacing: .8px;
     line-height: normal;
@@ -382,5 +385,5 @@ span.header-menu-item {
 }
 
 section {
-    scroll-margin-top: $header-pinned-height;
+    scroll-margin-top: variables.$header-pinned-height;
 }

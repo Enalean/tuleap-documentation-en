@@ -1,3 +1,6 @@
+@use "../variables";
+@use "sass:color";
+
 label {
     display: block;
     flex: 0 0 auto;
@@ -13,7 +16,7 @@ label {
         position: relative;
         top: -3px;
         left: 3px;
-        color: $red;
+        color: variables.$red;
         font-size: 8px;
     }
 
@@ -36,8 +39,8 @@ textarea {
     transition: border-color $input-transition, box-shadow $input-transition;
     border: 1px solid #dddddd;
     border-radius: 4px;
-    background: $white;
-    color: $black;
+    background: variables.$white;
+    color: variables.$black;
     font-family: inherit;
     font-size: 16px;
 
@@ -48,7 +51,7 @@ textarea {
     &:focus,
     &:active {
         transition: border-color $input-transition, box-shadow $input-transition;
-        box-shadow: inset 0 0 2px transparentize($black, .7);
+        box-shadow: inset 0 0 2px color.scale(variables.$black, $alpha: -70%);
     }
 
     &::placeholder {

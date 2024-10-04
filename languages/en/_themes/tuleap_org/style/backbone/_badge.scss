@@ -1,16 +1,18 @@
+@use "../variables";
+
 .badge {
     margin: 10px 0 30px;
     padding: 10px 15px;
-    border: 1px solid $black;
+    border: 1px solid variables.$black;
     border-radius: 50px;
-    background: $black;
-    color: $white;
+    background: variables.$black;
+    color: variables.$white;
     font-size: 12px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
 
-    @each $name, $hexa in $colors {
+    @each $name, $hexa in variables.$colors {
         &.#{$name} {
             border: 1px solid $hexa;
             background: $hexa;
