@@ -286,12 +286,16 @@ In this extended syntax of TQL you can choose which fields you want to display o
 
 .. code-block:: tql
 
-    SELECT @pretty_title, @status, open_date FROM @project = 'self' AND @tracker.name IN('release', 'sprint') WHERE @assigned_to = MYSELF()
-    // Returns all artifacts from current project release and sprint trackers assigned to me and display their title, status and opening date.
+    SELECT @pretty_title, @status, open_date 
+    FROM @project = 'self' AND @tracker.name IN('activity', 'task') 
+    WHERE @assigned_to = MYSELF()
+    ORDER BY @last_update_date DESCENDING
+    // Returns all artifacts from current project activity and task trackers assigned to me.
+    // Display their title, status and opening date ordered according to their last modification date.
 
-When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field, ``FROM`` with at least one condition, and a condition after the ``WHERE``.
+When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field, ``FROM`` with at least one condition, and a condition after the ``WHERE``. The ``ORDER BY`` part is optional.
 
-TQL ``SELECT`` syntax allow you to select on the same fields allowed for the condition plus some special fields:
+TQL ``SELECT`` syntax allows you to select on the same fields allowed for the condition plus some special fields:
 
 Semantics and always there fields:
  * ``@id`` Artifact id.
@@ -313,7 +317,7 @@ Special fields:
  * ``@tracker.name`` The name and color of the tracker the artifact belongs to.
  * ``@pretty_title`` It's equivalent to the Artifact column of classic Cross-tracker search widget (or the title of the artifact view).
 
-TQL ``FROM`` syntax allow you to select on which tracker to perform the query by filtering projects and trackers. You can use only one condition of each type joined by ``AND``:
+TQL ``FROM`` syntax allows you to select on which tracker to perform the query by filtering projects and trackers. You can use only one condition of each type joined by ``AND``:
 
 Project condition:
  * ``@project = 'self'`` get current project. Works only in a project dashboard.
@@ -330,6 +334,20 @@ If only the tracker condition is provided, then match the trackers from current 
 
 To provide both condition, you can use ``AND`` between them. There is no restriction for the order of the conditions.
 
+TQL ``ORDER BY`` syntax allows you to sort artifacts on a single field. Ordering on more than one criteria is not possible.
+
+There are some restrictions on the fields you can use. As for the condition (``WHERE``) their types must be compatible. Date and date with time fields are not compatible together.
+For list fields, only selectbox and radio buttons are allowed. All the ``@`` fields and semantics valid in conditions (``WHERE``) are allowed.
+
+You must provide the direction of the ordering:
+ * ``ASC`` or ``ASCENDING`` from smallest to largest
+ * ``DESC`` or ``DESCENDING`` from largest to smallest
+
+User list and user group list fields are compared on displayed value. For user lists it means that the ordering depends on your preference on user display (login, real name or both). 
+For user groups like Project members or Project administrators, the sort is done on their translated name and so the ordering depends on your language.
+
+If you do not provide an ``ORDER BY`` to your query, it will default to ``ORDER BY @id DESCENDING``.
+
 Some example you can take inspiration from:
 
 .. code-block:: tql
@@ -337,6 +355,7 @@ Some example you can take inspiration from:
     SELECT @pretty_title, @status, @submitted_by, @last_update_date 
     FROM @project.name = 'support' AND @tracker.name = 'ticket' 
     WHERE @status = OPEN() AND @assigned_to = MYSELF()
+    ORDER BY @last_update_date DESC
     // Get tickets assigned to me from support project. Display their title, status, who opened the ticket and the last modification date
 
     SELECT @title, @status, @project.name
