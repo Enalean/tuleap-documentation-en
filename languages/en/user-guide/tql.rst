@@ -15,7 +15,7 @@ only artifacts in trackers can be searched.
 Limitations
 -----------
 
-:ref:`TQL in Tracker reports <tql_tracker_report>` does not have the same features as TQL in :ref:`Cross-Tracker Search <xts>`. There are also two "modes" in Cross-Tracker search TQL: :ref:`Expert mode <xts_expert_mode>` is the most complete and supports additional syntax (see below).
+:ref:`TQL in Tracker reports <tql_tracker_report>` does not have the same features as TQL in :ref:`Cross-Tracker Search <tql_xts>`. There are also two "modes" in Cross-Tracker search TQL: :ref:`Expert mode <xts_expert_mode>` is the most complete and supports additional syntax (see below).
 
 ===================================== ======================= =========================================== ==========================================
 Feature                               TQL in tracker reports  TQL in Cross-Tracker search "Default mode"  TQL in Cross-Tracker search "Expert mode"

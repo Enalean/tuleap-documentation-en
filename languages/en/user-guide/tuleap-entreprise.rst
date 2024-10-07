@@ -17,7 +17,7 @@ Project management
 
 * :ref:`Artidoc <artidoc>`: Compose documents with artifacts.
 * :ref:`Baseline <plugin_baseline>`: Create baseline for releases and compare them.
-* :ref:`Cross tracker search <portfolio>`: Aggregate data across trackers, even in across projects.
+* :ref:`Cross tracker search <xts>`: Aggregate data across trackers, even in across projects.
 * :ref:`DocGen <plugin_document_generation>`: Generation of document (docx) from Tracker reports.
 * :ref:`Label widget <label_widget>`: Group and display labels on Project Dashboard (useful to track pull requests).
 * :ref:`Project Milestones <project-milestones>`: Widget to display :ref:`Scrum Backlog <backlog>` of a project on user or project dashboard.

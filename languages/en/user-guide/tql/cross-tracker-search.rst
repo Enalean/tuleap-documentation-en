@@ -1,4 +1,4 @@
-.. _xts:
+.. _tql_xts:
 
 TQL in Cross-Tracker Search
 ===========================
@@ -25,11 +25,10 @@ The widget is part of the :ref:`Cross-Tracker Search plugin <install-plugins>` a
 Default mode
 ------------
 
-The widget has two modes, allowing you to choose the level of fine-tuning you want. There is Default mode and :ref:`Expert mode <xts_expert_mode>`.
+The widget has two modes, allowing you to choose the level of fine-tuning you want. There is a Default mode and an :ref:`Expert mode <xts_expert_mode>`.
 Let's first see the default mode.
 
-This is the mode in which the widget is created. It allows you to choose a list of trackers coming from different projects and 
-to filter artifacts from those trackers according to some criteria.
+See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Default mode. This page focuses on the TQL syntax.
 
 Examples:
 
@@ -174,17 +173,9 @@ Expert mode
   This part is still work in progress, future releases may break your report.
   You can follow advancement in `epic #37567 SuperTableau - Full TQL mode <https://tuleap.net/plugins/tracker/?aid=37567>`_
 
-The Cross-Tracker Search widget has a second mode called "Expert mode" allowing you to search even more specifically on your whole platform.
-You can switch between modes by using the button ``Expert mode`` on the widget
+See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Expert mode. This page focuses on the TQL syntax.
 
-.. figure:: ../../images/screenshots/tql/expert_query_xts_change_mode.png
-   :align: center
-   :alt: Change mode of widget
-   :name: Change mode of widget
-
-In expert mode, the widget uses an extended TQL syntax:
-
-In this extended syntax of TQL you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which tracker to perform the query with ``FROM``:
+In expert mode, the widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
 
 .. code-block:: tql
 
@@ -202,7 +193,9 @@ The condition after the ``WHERE`` corresponds to what you write in :ref:`default
 ``SELECT``
 ''''''''''
 
-TQL ``SELECT`` syntax allows you to select on the same fields allowed for the condition plus some special fields:
+TQL ``SELECT`` syntax helps you select which columns you want to see on the artifacts that match the conditions. In ``SELECT``, you may choose several fields, semantics, or "special fields" that will be shown. Each time you select something, it will add another column to the results table. The order of items in ``SELECT`` will be respected in the columns.
+
+You may use the same fields allowed for the conditions (``WHERE``) plus some special fields:
 
 Semantics and always there fields:
  * ``@id`` Artifact id.
@@ -239,10 +232,9 @@ Project condition:
 Tracker condition:
  * ``@tracker.name`` either with ``= 'release'`` or ``IN('release', 'sprint')``, get all trackers with corresponding short name.
 
-You must provide 1 or 2 condition of different kind. If only the project condition is provided then it gets all trackers from corresponding projects.
-If only the tracker condition is provided, then match the trackers from current project. It means that in a personal dashboard you must provide the project condition.
+There cannot be multiple conditions on  ``@project``. For example, the following query will be rejected: ``FROM @project.category = 'Type::Helpdesk' AND @project.name = 'foo'``). Similarly, there cannot be multiple conditions on ``@tracker``. For example, the following query will be rejected: ``FROM @tracker.name = 'sla' AND @tracker.name = 'request'``. If only the project condition is given, then it gets all trackers from corresponding projects (for example: ``FROM @project.name = 'foo'``). If only the tracker condition is provided, then it matches the trackers from the current project (for example: ``FROM @tracker.name = 'sla'``). It means that in a personal dashboard, the project condition is mandatory.
 
-To provide both conditions, you can use ``AND`` between them. There is no restriction for the order of the conditions.
+To provide both conditions, you can use ``AND`` between them. There is no restriction for the order of the conditions. For example: ``FROM @project.category = 'Type::Helpdesk' AND @tracker.name = 'request'``
 
 ``ORDER BY``
 ''''''''''''
@@ -288,7 +280,7 @@ Some examples you can take inspiration from:
     // Display artifacts from current project and teams projects in the context of a program project
 
 Errors you can receive
-~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''
 
 Sending the query to the server can produce the following errors:
 

@@ -250,7 +250,7 @@ The widgets will be the same, in the same position, but they won't be
 able to modify the page.
 
 Some Widgets available on project dashboard
-`````````````````````````````````````````````
+```````````````````````````````````````````
 
 New widgets can be added through the dropdown entry "Add widget". Here is an
 example of available widgets for the project dashboard:
@@ -278,7 +278,7 @@ Some widgets have documentation to explain how to configure and use them:
 - :ref:`Hudson/Jenkins <continuous-integration-with-Hudson/Jenkins>` permits to display many widgets for Continuous Integration.
 - :ref:`Project Milestones <project-milestones>` displays a Scrum Backlog in project dashboard.
 - :ref:`Label widget <label_widget>` to track your items.
-- :ref:`Portfolio <portfolio>`.
+- :ref:`Cross-Tracker Search <xts>`.
 - :ref:`Roadmap <roadmap>`.
 
 Whenever you enter the Project Dashboard of a given project or any of
@@ -288,38 +288,57 @@ menu.
 Only site or project administrators can access the Project Administration page.
 All other Tuleap users are denied access to this part of a project.
 
-.. _portfolio:
+.. _xts:
 
-Portfolio
-`````````
+Cross-Tracker Search
+````````````````````
 
 .. attention::
 
   This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-.. NOTE::
-  This widget is still under development.
-
 You may want to perform a search based on several trackers and several projects.
-A widget "Cross tracker search" enables you to do that.
+A widget "Cross-tracker search" enables you to do that.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget.png
     :align: center
     :alt: Example of dashboard with cross-tracker widget
     :name: Example of dashboard with cross-tracker widget
 
-If you don't fill a query, the request will retrieve "Open" artifacts.
-If you use the query, the retrieved artifacts will match the query and not only the "Open" ones.
-The query uses the TQL language. You can find more information about the query format :ref:`here <xts>`.
+There are two modes on this widget: a Default mode and an Expert mode.
 
-The search respects Tuleap permissions model: you can choose only projects you are member of and trackers you can read.
+Default mode
+++++++++++++
+
+This is the mode in which the widget is created. It allows you to choose a list of trackers coming from different projects and to filter artifacts from those trackers according to some criteria.
+
+You can optionally write a query using :ref:`Tuleap Query Language <tql_xts>` If you don't write a query, it will by default search all "Open" artifacts in the selected projects. If you use the query, the retrieved artifacts will match the query and not only the "Open" ones. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search <tql_xts>`.
+
+The search respects Tuleap's permissions model: you can choose only projects you are member of and trackers you can read.
 If you can't read all trackers or all columns needed by the query, an error message will be displayed.
 
 After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
 
+Expert mode
++++++++++++
+
+The Cross-Tracker Search widget has a second mode called "Expert mode" allowing you to search even more specifically on your whole platform.
+You can switch between modes by using the ``Expert mode`` button on the widget.
+
+.. figure:: ../images/screenshots/tql/expert_query_xts_change_mode.png
+  :align: center
+  :alt: Change the mode of the widget
+  :name: Change the mode of the widget
+
+  Change the mode of the widget
+
+In this mode, the choice of columns to display, the selection of trackers and projects and the selection of artifacts are all expressed in :ref:`Tuleap Query Language <xts_expert_mode>` only. Writing a TQL query is mandatory. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Expert mode <xts_expert_mode>`
+
+After writing a query, you can save the report, then all users who have access to this dashboard will see the widget and the selected artifacts and columns.
+
 CSV Export
-~~~~~~~~~~
+++++++++++
 
 Once a report is saved, an "Export CSV" button will appear. Click it to download a CSV file representing all the artifacts you can see on the widget.
 
