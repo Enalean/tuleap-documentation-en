@@ -227,7 +227,7 @@ Special fields:
 ``FROM``
 ''''''''
 
-TQL ``FROM`` syntax allows you to select on which tracker to perform the query by filtering projects and trackers. You can use only one condition of each type joined by ``AND``:
+TQL ``FROM`` syntax allows you to select on which trackers to perform the query by filtering projects and trackers. You can use only one condition of each type joined by ``AND``:
 
 Project condition:
  * ``@project = 'self'`` get current project. Works only in a project dashboard.
@@ -242,7 +242,7 @@ Tracker condition:
 You must provide 1 or 2 condition of different kind. If only the project condition is provided then it gets all trackers from corresponding projects.
 If only the tracker condition is provided, then match the trackers from current project. It means that in a personal dashboard you must provide the project condition.
 
-To provide both condition, you can use ``AND`` between them. There is no restriction for the order of the conditions.
+To provide both conditions, you can use ``AND`` between them. There is no restriction for the order of the conditions.
 
 ``ORDER BY``
 ''''''''''''
