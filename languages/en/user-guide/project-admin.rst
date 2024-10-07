@@ -311,7 +311,7 @@ A widget "Cross tracker search" enables you to do that.
 
 If you don't fill a query, the request will retrieve "Open" artifacts.
 If you use the query, the retrieved artifacts will match the query and not only the "Open" ones.
-The query uses the TQL language. You can find more information about the query format :ref:`here <tql>`.
+The query uses the TQL language. You can find more information about the query format :ref:`here <xts>`.
 
 The search respects Tuleap permissions model: you can choose only projects you are member of and trackers you can read.
 If you can't read all trackers or all columns needed by the query, an error message will be displayed.

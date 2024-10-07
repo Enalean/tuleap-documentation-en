@@ -62,7 +62,7 @@ Project management:
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
-* :ref:`crosstracker <portfolio>`: Aggregate data across trackers, even in across projects (beta)
+* :ref:`crosstracker <xts>`: Aggregate data across trackers, even in across projects (beta)
 
   * This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`.
 
