@@ -232,9 +232,9 @@ Project condition:
 Tracker condition:
  * ``@tracker.name`` either with ``= 'release'`` or ``IN('release', 'sprint')``, get all trackers with corresponding short name.
 
-There cannot be multiple conditions on  ``@project``. For example, the following query will be rejected: ``FROM @project.category = 'Type::Helpdesk' AND @project.name = 'foo'``). Similarly, there cannot be multiple conditions on ``@tracker``. For example, the following query will be rejected: ``FROM @tracker.name = 'sla' AND @tracker.name = 'request'``. If only the project condition is given, then it gets all trackers from corresponding projects (for example: ``FROM @project.name = 'foo'``). If only the tracker condition is provided, then it matches the trackers from the current project (for example: ``FROM @tracker.name = 'sla'``). It means that in a personal dashboard, the project condition is mandatory.
+There cannot be multiple conditions on  ``@project``. For example, the following query will be rejected: ``FROM @project.category = 'Type::Helpdesk' AND @project.name = 'foo'``. Similarly, there cannot be multiple conditions on ``@tracker``. For example, the following query will be rejected: ``FROM @tracker.name = 'sla' AND @tracker.name = 'request'``. If only the project condition is given, then it gets all trackers from corresponding projects (for example: ``FROM @project.name = 'foo'``). If only the tracker condition is provided, then it matches the trackers from the current project (for example: ``FROM @tracker.name = 'sla'``). It means that in a personal dashboard, the project condition is mandatory.
 
-To provide both conditions, you can use ``AND`` between them. There is no restriction for the order of the conditions. For example: ``FROM @project.category = 'Type::Helpdesk' AND @tracker.name = 'request'``
+To provide both conditions, you must use ``AND`` between them. There is no restriction for the order of the conditions. For example: ``FROM @project.category = 'Type::Helpdesk' AND @tracker.name = 'request'``
 
 ``ORDER BY``
 ''''''''''''

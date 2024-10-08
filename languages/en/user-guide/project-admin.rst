@@ -299,7 +299,7 @@ Cross-Tracker Search
   not be available on your installation of Tuleap.
 
 You may want to perform a search based on several trackers and several projects.
-A widget "Cross-tracker search" enables you to do that.
+A widget "Cross-Tracker Search" enables you to do that.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget.png
     :align: center

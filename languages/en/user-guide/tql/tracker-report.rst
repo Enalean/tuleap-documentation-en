@@ -17,6 +17,8 @@ The goal of TQL is to help you filter very precisely which artifacts you want to
 Queries
 -------
 
+.. note:: ``SELECT``, ``FROM`` and ``ORDER BY`` syntax is not supported in Tracker reports. Please refer to :ref:`the TQL Limitations table <tql>` for details about the syntax differences.
+
 Comparison operators
 ''''''''''''''''''''
 
