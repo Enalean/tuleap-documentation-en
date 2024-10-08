@@ -26,5 +26,11 @@ External Dependencies
 
 The image has two dependencies:
 
-* A working database with admin credentials (at first run only)
+* A **dedicated** working database with admin credentials (at first run only)
 * A persistent filesystem for data storage
+
+Please do note that shared databases must not be used:
+
+- they cannot guarantee the needed Quality of service
+- they cannot respect the requirements (SQL modes)
+- they make consistent backups almost impossible
