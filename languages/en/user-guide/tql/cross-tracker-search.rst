@@ -198,24 +198,24 @@ TQL ``SELECT`` syntax helps you select which columns you want to see on the arti
 You may use the same fields allowed for the conditions (``WHERE``) plus some special fields:
 
 Semantics and always there fields:
- * ``@id`` Artifact id.
- * ``@submitted_on`` The creation date and time of the artifact.
- * ``@last_update_date`` The date and time of the last change to the artifact.
- * ``@submitted_by`` The user who first created the artifact.
- * ``@last_update_by`` The user who made the last change to the artifact.
- * ``@title`` Artifact title semantic.
- * ``@description`` Artifact description semantic.
- * ``@status`` Artifact status semantic.
- * ``@assigned_to`` Artifact assignee/contributor semantic.
+ * ``@id``: Artifact id.
+ * ``@submitted_on``: The creation date and time of the artifact.
+ * ``@last_update_date``: The date and time of the last change to the artifact.
+ * ``@submitted_by``: The user who first created the artifact.
+ * ``@last_update_by``: The user who made the last change to the artifact.
+ * ``@title``: Artifact title semantic.
+ * ``@description``: Artifact description semantic.
+ * ``@status``: Artifact status semantic.
+ * ``@assigned_to``: Artifact assignee/contributor semantic.
 
 Fields short name:
  * Same as for condition (see :ref:`Similar fields rules <tql_duck_typing>`)
  * Note that in ``SELECT`` date and datetime fields are considered compatible
 
 Special fields:
- * ``@project.name`` The name and icon of the project that the artifact belongs to.
- * ``@tracker.name`` The name and color of the tracker the artifact belongs to.
- * ``@pretty_title`` It's equivalent to the Artifact column of classic Cross-tracker search widget (or the title of the artifact view).
+ * ``@project.name``: The name and icon of the project that the artifact belongs to.
+ * ``@tracker.name``: The label and color of the tracker the artifact belongs to.
+ * ``@pretty_title``: The reference to the artifact colored with the tracker color and the title semantic of the artifact. For example: ``user_story #123 My Story title``.
 
 ``FROM``
 ''''''''
@@ -253,7 +253,8 @@ For user groups like Project members or Project administrators, the sort is done
 
 If you do not provide an ``ORDER BY`` to your query, it will default to ``ORDER BY @id DESCENDING``.
 
-Some examples you can take inspiration from:
+Examples
+''''''''
 
 .. code-block:: tql
 

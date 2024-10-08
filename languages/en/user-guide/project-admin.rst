@@ -340,6 +340,8 @@ After writing a query, you can save the report, then all users who have access t
 CSV Export
 ++++++++++
 
+.. note:: CSV Export in not available in Expert mode, only in Default mode.
+
 Once a report is saved, an "Export CSV" button will appear. Click it to download a CSV file representing all the artifacts you can see on the widget.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget-export-csv.png
