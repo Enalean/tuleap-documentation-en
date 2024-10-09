@@ -302,9 +302,9 @@ You may want to perform a search based on several trackers and several projects.
 A widget "Cross-Tracker Search" enables you to do that.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget.png
-    :align: center
-    :alt: Example of dashboard with cross-tracker widget
-    :name: Example of dashboard with cross-tracker widget
+  :alt: Example of cross-tracker widget
+
+  Example of cross-tracker widget
 
 There are two modes on this widget: a Default mode and an Expert mode.
 
@@ -326,10 +326,8 @@ Expert mode
 The Cross-Tracker Search widget has a second mode called "Expert mode" allowing you to search even more specifically on your whole platform.
 You can switch between modes by using the ``Expert mode`` button on the widget.
 
-.. figure:: ../images/screenshots/tql/expert_query_xts_change_mode.png
-  :align: center
+.. figure:: ../images/screenshots/widget/crosstracker-widget-change-mode.png
   :alt: Change the mode of the widget
-  :name: Change the mode of the widget
 
   Change the mode of the widget
 
@@ -345,9 +343,9 @@ CSV Export
 Once a report is saved, an "Export CSV" button will appear. Click it to download a CSV file representing all the artifacts you can see on the widget.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget-export-csv.png
-	:align: center
-	:alt: CSV Export button
-	:name: CSV Export button
+  :name: CSV Export button
+
+  CSV Export button
 
 .. note:: The CSV file contains more information than you can see on the widget. It will export Tracker Semantics and match fields based on their types and names.
 

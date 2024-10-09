@@ -11,14 +11,7 @@ TQL in Cross-Tracker Search
 The widget
 ----------
 
-TQL can be used in the Cross-Tracker Search widget, in the search area.
-
-.. figure:: ../../images/screenshots/tql/expert_query_xtracker_widget.png
-   :align: center
-   :alt: TQL on cross-tracker search
-   :name: TQL on cross-tracker search
-
-The widget is part of the :ref:`Cross-Tracker Search plugin <install-plugins>` and can be added on any dashboard that you have permission to modify.
+TQL can be used in the :ref:`Cross-Tracker Search widget <xts>`, in the search area. The widget is part of the :ref:`Cross-Tracker Search plugin <install-plugins>` and can be added on any dashboard that you have permission to modify.
 
 .. _xts_default_mode:
 
