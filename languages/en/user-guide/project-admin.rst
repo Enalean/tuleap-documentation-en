@@ -343,7 +343,7 @@ CSV Export
 Once a report is saved, an "Export CSV" button will appear. Click it to download a CSV file representing all the artifacts you can see on the widget.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget-export-csv.png
-  :name: CSV Export button
+  :alt: CSV Export button
 
   CSV Export button
 
