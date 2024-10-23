@@ -13,12 +13,12 @@ To explain this, this an example to guide you :
 
 If you intend to have a production environment :
 
-``/srv/tuleap/`` 
-	
+``/srv/tuleap/``
+
 If it's for a demo/test :
-	
-``/home/$USERNAME/Workspace/test-tuleap`` 
-	
+
+``/home/$USERNAME/Workspace/test-tuleap``
+
 
 
 Now you can create the file ``.env`` with this configuration :
@@ -30,7 +30,7 @@ Now you can create the file ``.env`` with this configuration :
     TULEAP_SYS_DBPASSWD="another strong password"
     SITE_ADMINISTRATOR_PASSWORD="and a third strong password"
 
-Please be aware that you need **double quotes** around your variables in order for docker to parse the whole string. 
+Please be aware that you need **double quotes** around your variables in order for docker to parse the whole string.
 
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
@@ -49,7 +49,7 @@ Then create a ``compose.yaml`` file with following content:
 .. code-block:: yaml
 
     services:
-      web:
+      tuleap:
         image: tuleap/tuleap-community-edition
         hostname: ${TULEAP_FQDN}
         restart: always
@@ -128,7 +128,7 @@ Please check the :ref:`environment variables <docker-environment-variables>` to 
         - TULEAP_FPM_SESSION_MODE=redis
         - TULEAP_REDIS_SERVER=${REDIS_FQDN}
 
-    volumes: 
+    volumes:
         tuleap-data:
 
 If you want to secure your server and use certificates, you may spawn a Reverse-Proxy in the stack.
@@ -153,25 +153,25 @@ Until you see something like:
 .. code-block::
 
     ...
-    web_1      | ***********************************************************************************************************
-    web_1      | * Your Tuleap fully qualified domain name is tuleap.example.com and it's IP address is 172.21.0.5         *
-    web_1      | ***********************************************************************************************************
-    web_1      | Setup Supervisord
-    web_1      | Let the place for Supervisord
-    web_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/backend_workers.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/crond.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/fpm.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/httpd.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/nginx.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/postfix.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/rsyslog.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/sshd.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/supervisord-server-credentials.ini" during parsing
-    web_1      | 2021-06-15 14:46:50,732 INFO Set uid to user 0 succeeded
-    web_1      | 2021-06-15 14:46:50,769 INFO RPC interface 'supervisor' initialized
+    tuleap_1      | ***********************************************************************************************************
+    tuleap_1      | * Your Tuleap fully qualified domain name is tuleap.example.com and it's IP address is 172.21.0.5         *
+    tuleap_1      | ***********************************************************************************************************
+    tuleap_1      | Setup Supervisord
+    tuleap_1      | Let the place for Supervisord
+    tuleap_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/backend_workers.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/crond.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/fpm.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,731 INFO Included extra file "/etc/supervisord.d/httpd.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/nginx.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/postfix.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/rsyslog.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/sshd.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Included extra file "/etc/supervisord.d/supervisord-server-credentials.ini" during parsing
+    tuleap_1      | 2021-06-15 14:46:50,732 INFO Set uid to user 0 succeeded
+    tuleap_1      | 2021-06-15 14:46:50,769 INFO RPC interface 'supervisor' initialized
     ...
 
 You can then quit the logs command (Ctrl+C) and open your browser at the address set in ``TULEAP_FQDN`` and that's it.
 
-The docker-compose file provided here is for general guidance and you should adapt it to your environment. 
+The docker-compose file provided here is for general guidance and you should adapt it to your environment.
 One of the main things you will want to configure is a proper email relay.
