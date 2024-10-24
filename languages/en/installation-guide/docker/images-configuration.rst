@@ -1,7 +1,7 @@
 Docker images configuration
 ===========================
 
-This section covers the configuration details that applies to both images. 
+This section covers the configuration details that applies to both images.
 
 If you want the default configuration you can go to verify the image authencity.
 
@@ -52,10 +52,10 @@ Email
 
 .. warning::
 
-    Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to 
+    Please note that not all plugins can be used with this configuration setting (:ref:`email_relay<emailrelay>`) and you might need to
     customize the image to fit your needs.
 
-Passwords 
+Passwords
 `````````
 
 * We recommend at least 20 chars but only alphabetical & numbers,
@@ -80,8 +80,13 @@ for your end users you either need to:
 Certification Authority
 ```````````````````````
 
-If you manage your own trust chain, you might need to let container be aware of your own CA. 
+If you manage your own trust chain, you might need to let container be aware of your own CA.
 It's mainly useful when Tuleap should be able to communicate with a 3rd party systems (jenkins, jira, gitlab, webhooks servers, etc)
 exposed over TLS but with a certificate that is not part of the standard CA bundle.
 
 The extra CA must be mounted at the container root ``/extra_ca.pem``. Tuleap will ensure this CA is added to system's bundle automatically.
+
+Backup/Restore
+``````````````
+
+You probably want to take a look at the :ref:`Backup/Restore guide <backup>` to check data/folder structure for your docker volumes.

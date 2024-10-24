@@ -40,7 +40,7 @@ help:
 	@grep -E '^[a-zA-Z0-9_\-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 clean:
-	-rm -rf tmp
+	-rm -rf tmp/*
 	-rm -rf $(BUILDDIR)/*
 
 html: pre-build ## Make standalone HTML files
@@ -48,7 +48,7 @@ html: pre-build ## Make standalone HTML files
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-singlehtml: pre-build ## Make a signle large HTML file
+singlehtml: pre-build ## Make a single large HTML file
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml/$(LANG)
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
