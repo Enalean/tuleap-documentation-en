@@ -262,8 +262,8 @@ Examples
     FROM @project = MY_PROJECTS()
     WHERE @status = OPEN() AND @assigned_to = MYSELF()
     ORDER BY @last_update_date DESC
-    // Get artifacts opened and assigned to me from projects I'm member of,
-    // display title, who opened the artifact, the last modification date and status
+    // Get artifacts with open status and assigned to me from projects I'm member of,
+    // display title, who created the artifact, the last modification date and status
 
     SELECT @title, @status, @project.name
     FROM @project.category = 'Topic::Team' AND @tracker.name IN('epic', 'story')
