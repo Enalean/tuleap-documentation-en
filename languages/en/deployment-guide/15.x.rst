@@ -219,6 +219,8 @@ Nothing to mention.
 Tuleap 15.0
 ===========
 
+.. _dbauthuser_not_needed:
+
 Removal of the support of ForumML, CVS and of the management of system users and groups
 ---------------------------------------------------------------------------------------
 
