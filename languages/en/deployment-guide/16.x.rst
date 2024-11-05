@@ -8,7 +8,16 @@ Tuleap 16.1
 
   Tuleap 16.1 is currently under development.
 
-Nothing to mention.
+Removal of the MySQL user ``dbauthuser``
+----------------------------------------
+
+In :ref:`Tuleap 15.0 <dbauthuser_not_needed>` the last usages of the MySQL user ``dbauthuser`` were removed.
+If you still have this user in your MySQL database you should remove it.
+
+.. sourcecode:: sql
+
+    DROP USER IF EXISTS dbauthuser;
+
 
 Tuleap 16.0
 ===========
