@@ -218,6 +218,7 @@ TQL ``FROM`` syntax allows you to select on which trackers to perform the query 
 Project condition:
  * ``@project = 'self'`` get current project. Works only in a project dashboard.
  * ``@project = 'aggregated'`` get project aggregated to the current one. Works only in a :ref:`program <program-management>` project dashboard.
+ * ``@project = MY_PROJECTS()`` get the projects I'm member of.
  * ``@project.name`` either with ``= 'project_name'`` or ``IN('project_name', 'another_project')``, get all projects with the corresponding short name.
  * ``@project.category = 'Topic::Hardware'`` get all projects with corresponding category or sub category. A category is specified by its full path (root category to current one) with ``::`` as delimiter.
  * ``@project.category IN('Topic::Hardware', 'License::Open Source')`` get all projects with corresponding category.
@@ -256,6 +257,13 @@ Examples
     WHERE @status = OPEN() AND @assigned_to = MYSELF()
     ORDER BY @last_update_date DESC
     // Get tickets assigned to me from support project. Display their title, status, who opened the ticket and the last modification date
+
+    SELECT @pretty_title, @submitted_by, @last_update_date, @status
+    FROM @project = MY_PROJECTS()
+    WHERE @status = OPEN() AND @assigned_to = MYSELF()
+    ORDER BY @last_update_date DESC
+    // Get artifacts with open status and assigned to me from projects I'm member of,
+    // display title, who created the artifact, the last modification date and status
 
     SELECT @title, @status, @project.name
     FROM @project.category = 'Topic::Team' AND @tracker.name IN('epic', 'story')
