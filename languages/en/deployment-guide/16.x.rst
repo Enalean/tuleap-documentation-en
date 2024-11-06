@@ -4,10 +4,6 @@ Tuleap 16.x
 Tuleap 16.1
 ===========
 
-.. NOTE::
-
-  Tuleap 16.1 is currently under development.
-
 Removal of the MySQL user ``dbauthuser``
 ----------------------------------------
 
