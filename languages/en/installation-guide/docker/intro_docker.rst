@@ -26,7 +26,7 @@ External Dependencies
 
 The image has two dependencies:
 
-* A **dedicated** working database with admin credentials (at first run only)
+* A **dedicated MySQL v8.0** working database with admin credentials (at first run only)
 * A persistent filesystem for data storage
 
 Please do note that shared databases must not be used:
