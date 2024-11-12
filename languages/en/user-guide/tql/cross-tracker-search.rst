@@ -161,11 +161,6 @@ Sending the query to the server can produce the following errors:
 Expert mode
 -----------
 
-.. attention::
-
-  This part is still work in progress, future releases may break your report.
-  You can follow advancement in `epic #37567 SuperTableau - Full TQL mode <https://tuleap.net/plugins/tracker/?aid=37567>`_
-
 See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Expert mode. This page focuses on the TQL syntax.
 
 In expert mode, the widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
