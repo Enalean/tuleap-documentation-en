@@ -1,12 +1,15 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.1
+Tuleap 16.2
 ===========
 
 .. NOTE::
 
-  Tuleap 16.1 is currently under development.
+  Tuleap 16.2 is currently under development.
+
+Tuleap 16.1
+===========
 
 Removal of the MySQL user ``dbauthuser``
 ----------------------------------------
@@ -17,7 +20,6 @@ If you still have this user in your MySQL database you should remove it.
 .. sourcecode:: sql
 
     DROP USER IF EXISTS dbauthuser;
-
 
 Tuleap 16.0
 ===========
