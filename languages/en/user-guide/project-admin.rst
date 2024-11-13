@@ -325,7 +325,7 @@ The Cross-Tracker Search widget has a second mode called "Default mode" that all
 
   Change the mode of the widget
 
-You can optionally write a query using :ref:`Tuleap Query Language <xts_default_mode>` If you don't write a query, it will by default search all "Open" artifacts in the selected projects. If you use the query, the retrieved artifacts will match the query and not only the "Open" ones. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Default mode <xts_default_mode>`.
+You can write a query using :ref:`Tuleap Query Language <xts_default_mode>`. The retrieved artifacts will match your query. If you leave the query empty, it will search all "Open" artifacts according to the Status semantic. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Default mode <xts_default_mode>`.
 
 The search respects Tuleap's permissions: you can choose only projects you are member of and trackers you can read.
 If you can't read all trackers or all columns needed by the query, an error message will be displayed.
