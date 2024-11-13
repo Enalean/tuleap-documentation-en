@@ -225,6 +225,8 @@ There cannot be multiple conditions on  ``@project``. For example, the following
 
 To provide both conditions, you must use ``AND`` between them. There is no restriction for the order of the conditions. For example: ``FROM @project.category = 'Type::Helpdesk' AND @tracker.name = 'request'``
 
+Note that Tuleap's permissions apply when selecting trackers and projects: projects and trackers you don't have access to are ignored. If you don't have read permission for any tracker selected by the ``FROM`` expression, an error message will be displayed.
+
 ``ORDER BY``
 ''''''''''''
 
