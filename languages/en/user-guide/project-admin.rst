@@ -306,34 +306,31 @@ A widget "Cross-Tracker Search" enables you to do that.
 
   Example of cross-tracker widget
 
-There are two modes on this widget: a Default mode and an Expert mode.
-
-Default mode
-++++++++++++
-
-This is the mode in which the widget is created. It allows you to choose a list of trackers coming from different projects and to filter artifacts from those trackers according to some criteria.
-
-You can optionally write a query using :ref:`Tuleap Query Language <tql_xts>` If you don't write a query, it will by default search all "Open" artifacts in the selected projects. If you use the query, the retrieved artifacts will match the query and not only the "Open" ones. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search <tql_xts>`.
-
-The search respects Tuleap's permissions model: you can choose only projects you are member of and trackers you can read.
-If you can't read all trackers or all columns needed by the query, an error message will be displayed.
-
-After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
+There are two modes on this widget: an Expert mode and a Default mode.
 
 Expert mode
 +++++++++++
 
-The Cross-Tracker Search widget has a second mode called "Expert mode" allowing you to search even more specifically on your whole platform.
-You can switch between modes by using the ``Expert mode`` button on the widget.
+This is the mode in which the widget is created. In this mode, the choice of columns to display, the selection of trackers and projects and the selection of artifacts are all expressed in :ref:`Tuleap Query Language <xts_expert_mode>` only. Writing a TQL query is mandatory. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Expert mode <xts_expert_mode>`
+
+After writing a query, you can save the report, then all users who have access to this dashboard will see the widget and the selected artifacts and columns.
+
+Default mode
+++++++++++++
+
+The Cross-Tracker Search widget has a second mode called "Default mode" that allows you to select a list of trackers coming from different projects and to filter artifacts from those trackers according to some criteria. You can switch between modes by using the ``Expert mode`` switch button on the widget.
 
 .. figure:: ../images/screenshots/widget/crosstracker-widget-change-mode.png
   :alt: Change the mode of the widget
 
   Change the mode of the widget
 
-In this mode, the choice of columns to display, the selection of trackers and projects and the selection of artifacts are all expressed in :ref:`Tuleap Query Language <xts_expert_mode>` only. Writing a TQL query is mandatory. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Expert mode <xts_expert_mode>`
+You can write a query using :ref:`Tuleap Query Language <xts_default_mode>`. The retrieved artifacts will match your query. If you leave the query empty, it will search all "Open" artifacts according to the Status semantic. See the dedicated page for details on how to write a query: :ref:`TQL in Cross-Tracker Search Default mode <xts_default_mode>`.
 
-After writing a query, you can save the report, then all users who have access to this dashboard will see the widget and the selected artifacts and columns.
+The search respects Tuleap's permissions: you can choose only projects you are member of and trackers you can read.
+If you can't read all trackers or all columns needed by the query, an error message will be displayed.
+
+After selecting trackers and/or entering a query, you will be able to Save the report. Once saved, all users who can access this dashboard will see the widget with your saved tracker selection and query.
 
 CSV Export
 ++++++++++

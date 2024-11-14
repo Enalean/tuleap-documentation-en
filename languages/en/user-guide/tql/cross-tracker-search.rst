@@ -161,11 +161,6 @@ Sending the query to the server can produce the following errors:
 Expert mode
 -----------
 
-.. attention::
-
-  This part is still work in progress, future releases may break your report.
-  You can follow advancement in `epic #37567 SuperTableau - Full TQL mode <https://tuleap.net/plugins/tracker/?aid=37567>`_
-
 See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Expert mode. This page focuses on the TQL syntax.
 
 In expert mode, the widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
@@ -229,6 +224,8 @@ Tracker condition:
 There cannot be multiple conditions on  ``@project``. For example, the following query will be rejected: ``FROM @project.category = 'Type::Helpdesk' AND @project.name = 'foo'``. Similarly, there cannot be multiple conditions on ``@tracker``. For example, the following query will be rejected: ``FROM @tracker.name = 'sla' AND @tracker.name = 'request'``. If only the project condition is given, then it gets all trackers from corresponding projects (for example: ``FROM @project.name = 'foo'``). If only the tracker condition is provided, then it matches the trackers from the current project (for example: ``FROM @tracker.name = 'sla'``). It means that in a personal dashboard, the project condition is mandatory.
 
 To provide both conditions, you must use ``AND`` between them. There is no restriction for the order of the conditions. For example: ``FROM @project.category = 'Type::Helpdesk' AND @tracker.name = 'request'``
+
+Note that Tuleap's permissions apply when selecting trackers and projects: projects and trackers you don't have access to are ignored. If you don't have read permission for any tracker selected by the ``FROM`` expression, an error message will be displayed.
 
 ``ORDER BY``
 ''''''''''''
