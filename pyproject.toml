@@ -8,7 +8,7 @@ authors = [ "Enalean team" ]
 [tool.poetry.dependencies]
 python = "^3.8"
 Sphinx = "^7.1.2"
-sphinx-rtd-theme = "^2.0.0"
+sphinx-rtd-theme = "^3.0.2"
 sphinxext-rediraffe = "^0.2.7"
 sphinx-notfound-page = "^1.0.4"
 sphinxcontrib-jquery = "^4.1"
