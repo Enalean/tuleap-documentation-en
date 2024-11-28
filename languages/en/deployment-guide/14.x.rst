@@ -110,7 +110,7 @@ Upgrade of the local Meilisearch instance from 0.35.0 to 1.0.0
 
 This is only a concern for you if you have deployed a :ref:`local Meilisearch instance <fts-local-meilisearch>`.
 
-This upgrade requires to "update" the Meilisearch database to the `new 1.0.0 version <https://blog.meilisearch.com/v1-enterprise-ready-stable/>`_ 🎉.
+This upgrade requires to "update" the Meilisearch database to the `new 1.0.0 version <https://www.meilisearch.com/blog/v1-enterprise-ready-stable>`_ 🎉.
 
 In order to do that, drop all the existing data and then ask Tuleap to re-index everything after you have upgraded the packages:
 

@@ -30,10 +30,10 @@ A modal opens and you can fill in the necessary fields
   :alt: Tuleap OpenID Connect generic provider creation
   :align: center
 
-Azure Active Directory Provider
-*******************************
+Azure Active Directory / Entra ID Provider
+******************************************
 
-The Azure Active Directory provider takes into account the specificities of `Azure Active Directory <https://azure.microsoft.com/en-us/products/active-directory/>`_.
+The Azure Active Directory provider takes into account the specificities of `Azure Active Directory / Entra ID <https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id>`_.
 If you want to add an Azure AD provider, click on the caret down and "Azure Active Directory".
 
 .. image:: ../../../../images/openidconnect/azure-add-button.png

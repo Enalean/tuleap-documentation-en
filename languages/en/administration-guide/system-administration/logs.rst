@@ -82,8 +82,8 @@ Tuleap realtime
 Graylog
 -------
 
-System administrators can configure Tuleap to send logs in a centralized `Graylog <https://www.graylog.org/>`_ server
-or, for what is worth, anything that can ingest `gelf <https://www.graylog.org/features/gelf>`_ messages.
+System administrators can configure Tuleap to send logs in a centralized `Graylog <https://graylog.org/>`_ server
+or, for what is worth, anything that can ingest `gelf <https://graylog.org/features/gelf>`_ messages.
 
 The server can be configured with variables (to be set with ``tuleap config-set`` in CLI):
 
