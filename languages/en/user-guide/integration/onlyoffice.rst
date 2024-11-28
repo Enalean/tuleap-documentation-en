@@ -15,10 +15,10 @@ Manager will open ONLYOFFICE and load your document.
 Initial setup
 -------------
 
-To deploy the integration you will need to have access to an `ONLYOFFICE document server <https://api.onlyoffice.com/editors/basic>`_ or deploy one.
+To deploy the integration you will need to have access to an `ONLYOFFICE document server <https://api.onlyoffice.com/docs/docs-api/get-started/basic-concepts/>`_ or deploy one.
 
 In order to activate the integration, as a site administrator once :ref:`you have installed and actived the plugin <install-plugins>`, you will
-need to specify the URL of your `document server <https://api.onlyoffice.com/editors/basic>`_ and the `token associated with it <https://api.onlyoffice.com/editors/signature/>`_ in site administration / ONLYOFFICE.
+need to specify the URL of your `document server <https://api.onlyoffice.com/docs/docs-api/get-started/basic-concepts/>`_ and the `token associated with it <https://helpcenter.onlyoffice.com/installation/docs-configure-jwt.aspx>`_ in site administration / ONLYOFFICE.
 
 As site administrator, you can:
 
