@@ -4,10 +4,6 @@ Tuleap 16.x
 Tuleap 16.2
 ===========
 
-.. NOTE::
-
-  Tuleap 16.2 is currently under development.
-
 Tuleap 16.1
 ===========
 
