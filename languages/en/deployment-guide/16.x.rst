@@ -11,6 +11,8 @@ Tuleap 16.3
 Tuleap 16.2
 ===========
 
+Nothing to mention.
+
 Tuleap 16.1
 ===========
 
