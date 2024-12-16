@@ -20,6 +20,7 @@ pipeline {
                         image_name,
                         '-f docs.tuleap.org/Dockerfile .'
                     )
+                    lib_signing.authenticateOnTailscale()
                     def registry_name = "nexus.enalean.com:22000";
                     docker.withRegistry("https://${registry_name}", 'ci-write') {
                         image.push()
