@@ -111,15 +111,3 @@ use ``/`` as a separator between parameters. For example, ``git #a_repo/6eef1d01
 git commit ``6eef1d01`` in the repository ``a_repo``
 
 Platform and projects can :ref:`define their own references <reference-overview>`.
-
-User mentions
--------------
-
-When you type a text, you can mention a username by typing ``@username``. When possible, after 3 characters Tuleap will
-propose an auto completer to select a user.
-
-This will create a link toward user's public profile page.
-
-.. ATTENTION::
-
-    This feature doesn't notify the mentioned user.
