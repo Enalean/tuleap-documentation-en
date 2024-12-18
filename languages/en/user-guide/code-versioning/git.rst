@@ -392,13 +392,13 @@ After the conversion, push the new repository:
 Git file size restrictions
 --------------------------
 
-Starting 10.9, new files bigger than 50MB will be rejected automatically by Tuleap. Git doesn't handle very will large
+Files bigger than 50MB will be rejected automatically by Tuleap. Git doesn't handle very will large
 files (esp. binary ones) and those files should really be handled by git lfs (see previous section).
 
 Note: If you were using tuleap before 10.9 and you already had files bigger than 50MB, you will still be able to modify them.
 
 .. IMPORTANT:: Site administrators might grant your project an exception and allow arbitrary file size in your projects.
-  For them, it's done in "Git" section of Site administration.
+  See :ref:`increase max file size <increase_max_file_size>` section.
 
 
 Git branch creation through Tracker artifact actions
