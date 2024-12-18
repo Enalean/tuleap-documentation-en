@@ -77,7 +77,7 @@ It is common to see the project members in charge of the artifact classification
 
 **Notification by @ mention**
 
-While writing comments, you can mention somebody by typing ``@`` and their Tuleap username. For example: ``@admin``. After typing three or four letters, an auto-completer should appear and suggest users matching what was written after the ``@``. When you submit the comment, each mentioned user will receive an :ref:`e-mail notification <at_mention_notification>`, unless they do not have permission to see the artifact.
+While writing comments, you can mention somebody by typing ``@`` and their Tuleap username. For example: ``@admin``. After typing three or four letters, an auto-completer appears and suggests users matching what was written after the ``@``. When you submit the comment, each mentioned user will receive an :ref:`e-mail notification <at_mention_notification>`, unless they do not have permission to see the artifact.
 
 This also works if you edit an existing comment: people mentioned will receive an e-mail notification about the change of the comment.
 
