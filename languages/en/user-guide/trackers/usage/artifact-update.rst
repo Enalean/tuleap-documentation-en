@@ -58,18 +58,14 @@ necessary.
 
 .. _artifact_comments:
 
-Comments
---------
+Follow-ups
+----------
 
-As many comments as needed can be attached to any given artifact. Comments are
-free-text fields where virtually any kind of information or comment can be typed
-in.
+Below the fields, the artifact's history will be listed in the "Follow-ups" section. This keeps track of all changes that occurred on all artifact fields since the creation of the artifact. The artifact history shows what fields changed, what the old value was before the change took place, who changed it and when.
+
+You can also write comments for the artifact in the "Follow-ups" section. Comments are free-text fields where virtually any kind of information or comment can be typed in.
 
 Comments have several interesting capabilities and extensions:
-
-**History of Changes**
-
-The artifact's history is also listed below the fields themselves. This keeps track of all changes that occurred on all artifact fields since the creation of the artifact. The artifact history shows what fields changed, what the old value was before the change took place, who changed it and when.
 
 **Canned Responses**
 
