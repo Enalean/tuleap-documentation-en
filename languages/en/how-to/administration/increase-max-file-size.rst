@@ -24,7 +24,7 @@ encoding).
     * ``php_value[memory_limit] = 384M``
     * ``php_value[post_max_size] = 256M``
     * ``php_value[upload_max_filesize] = 256M``
-    * You might need to set ``php_value[upload_tmp_dir]`` to a directory that have enough space to handle the files during upload.
+    * By default, files are uploaded to ``/tmp``. You might need to set ``php_value[upload_tmp_dir]`` to a directory that have enough space to handle the files during upload and is writable by ``codendiadm`` user.
 #. restart the service: ``systemctl restart tuleap nginx``
 
 .. IMPORTANT:: The changes done on ``/etc/opt/remi/php82/php-fpm.d/tuleap.conf`` will need to be re-applied at each PHP upgrade (announced in Deployment Guide).
