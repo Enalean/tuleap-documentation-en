@@ -345,7 +345,6 @@ receive a mail for a comment she has posted.
 
 While writing comments or editing the pull request's description, you can mention somebody by typing ``@`` and their Tuleap username. For example: ``@admin``. After typing three or four letters, an auto-completer appears and suggests users matching what was written after the ``@``. When you submit the comment, each mentioned user will receive an e-mail notification, unless they do not have permission to see the pull request.
 
-This also works if you edit an existing comment: people mentioned will receive an e-mail notification about the change of the comment.
 This is a one-time notification, mentioned users will not receive updates for new comments or changes of the pull request.
 
 Integrate with Jenkins
