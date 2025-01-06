@@ -325,7 +325,7 @@ The following keywords (case insensitive) can be used to close an artifact:
 * ``Fixes`` art #123
 * ``Implements`` art #123
 
-Some variations of these keywords are allowed, including types from `Conventional Commits <https://www.conventionalcommits.org/en/v1.0.0/>`_:
+Some variations of these keywords are allowed, including some from `Conventional Commits <https://www.conventionalcommits.org/en/v1.0.0/>`_:
 
 * ``Close``/``Closes``/``Closed``/``Closing``/``chore:``
 * ``Fix``/``Fixes``/``Fixed``/``Fixing``/``fix:``
