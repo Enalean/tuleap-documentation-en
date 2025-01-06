@@ -343,6 +343,9 @@ User being added to list of reviewers of a pull request also receive a notificat
 Notifications are not sent to the user doing the action, i.e. a user will not
 receive a mail for a comment she has posted.
 
+You can also mention a user using its username in a comment, the corresponding user will receive a mail notification.
+This is a one-time notification, mentioned users will not receive updates for new comments of changes of the pull request.
+
 Integrate with Jenkins
 ----------------------
 
