@@ -325,12 +325,12 @@ The following keywords (case insensitive) can be used to close an artifact:
 * ``Fixes`` art #123
 * ``Implements`` art #123
 
-Some variations of these keywords are handled:
+Some variations of these keywords are allowed, including some from `Conventional Commits <https://www.conventionalcommits.org/en/v1.0.0/>`_:
 
-* ``Close``/``Fix``/``Resolve``/``Implement``
-* ``Closes``/``Fixes``/``Resolves``/``Implements``
-* ``Closed``/``Fixed``/``Resolved``/``Implemented``
-* ``Closing``/``Fixing``/``Resolving``/``Implementing``
+* ``Close``/``Closes``/``Closed``/``Closing``/``chore:``
+* ``Fix``/``Fixes``/``Fixed``/``Fixing``/``fix:``
+* ``Implement``/``Implements``/``Implemented``/``Implementing``/``feat:``
+* ``Resolve``/``Resolves``/``Resolved``/``Resolving``
 
 When all those conditions are met, the referenced artifact's status will be changed to the first valid :ref:`"Done" semantic <done-semantic>` value. If the "Done" semantic is not defined, the first "closed" value (per "Status" semantic configuration) will be used. The artifact will be closed by a Tuleap bot named ``Tracker Workflow Manager`` with a follow-up comment explaining why it has been closed.
 

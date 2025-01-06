@@ -35,7 +35,7 @@ access the artifact form on Tuleap.
 Notification by @ mention
 =========================
 
-In :ref:`Tracker Artifact comments <artifact_comments>`, when you mention somebdy by their Tuleap username, they will also receive an e-mail notification.
+In :ref:`Tracker Artifact comments <artifact_comments>`, when you mention somebody by their Tuleap username, they will also receive an e-mail notification.
 
 This is a one-time notification, people who are notified by their username will not receive updates for new comments or changes to the artifact.
 
