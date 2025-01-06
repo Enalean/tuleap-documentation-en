@@ -343,6 +343,12 @@ User being added to list of reviewers of a pull request also receive a notificat
 Notifications are not sent to the user doing the action, i.e. a user will not
 receive a mail for a comment she has posted.
 
+**Notification by @ mention**
+
+While writing comments or editing the pull request's description, you can mention somebody by typing ``@`` and their Tuleap username. For example: ``@admin``. After typing three or four letters, an auto-completer appears and suggests users matching what was written after the ``@``. When you submit the comment, each mentioned user will receive an e-mail notification, unless they do not have permission to see the pull request.
+
+This is a one-time notification, mentioned users will not receive updates for new comments or changes of the pull request.
+
 Integrate with Jenkins
 ----------------------
 
