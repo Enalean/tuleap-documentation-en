@@ -14,6 +14,7 @@ Unless otherwise instructed by the project administrators or the users themselve
 1. The artifact submitter: the person who initially :ref:`submitted <artifact_submit>` the artifact.
 2. The artifact assignee: the person to whom the artifact is currently :ref:`assigned <assignee_semantic>`. The "Send notifications to selected people" option of the field selected in the :ref:`Contributor / Assignee Semantic <assignee_semantic>` must be checked by the tracker administrator, otherwise e-mails will not be sent.
 3. All users who have :ref:`posted at least one comment <artifact_comments>` to the artifact, or who have :ref:`changed any of the fields <artifact_update>`.
+4. All users who are :ref:`mentioned with @ <at_mention_notification>` in the new comment.
 
 User preferences
 ================
