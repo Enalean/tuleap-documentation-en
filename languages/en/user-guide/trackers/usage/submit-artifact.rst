@@ -1,3 +1,5 @@
+.. _artifact_submit:
+
 Submit an artifact
 ~~~~~~~~~~~~~~~~~~
 

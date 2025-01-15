@@ -1,3 +1,5 @@
+.. _artifact_update:
+
 ***************
 Artifact Update
 ***************

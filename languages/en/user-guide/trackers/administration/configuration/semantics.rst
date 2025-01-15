@@ -95,6 +95,8 @@ A warning is displayed if tracker does not have all needed semantic
 
 Once computation is done, you can manually override the computed value by entering a new one.
 
+.. _assignee_semantic:
+
 Contributor / Assignee
 ``````````````````````
 
