@@ -101,6 +101,24 @@ Triggered when an artifact is created.
             "avatar_url":"https:\/\/tuleap-web.tuleap-aio-dev.docker\/users\/testman/avatar.png",
             "is_anonymous":false
         },
+        "submitter_user_groups": [
+            {
+            "id": "102_3",
+            "uri": "user_groups/102_3",
+            "label": "Project members",
+            "users_uri": "user_groups/102_3/users",
+            "short_name": "project_members",
+            "key": "ugroup_project_members_name_key"
+            },
+            {
+            "id": "150",
+            "uri": "user_groups/150",
+            "label": "mycustomgroup",
+            "users_uri": "user_groups/150/users",
+            "short_name": "mycustomgroup",
+            "key": "mycustomgroup"
+            }
+        ],
         "current":{
             "id":355743,
             "submitted_by":102,
@@ -174,6 +192,24 @@ Triggered when an artifact is updated.
             "avatar_url":"https:\/\/tuleap-web.tuleap-aio-dev.docker\/users\/testman/avatar.png",
             "is_anonymous":false
         },
+        "submitter_user_groups": [
+            {
+            "id": "102_3",
+            "uri": "user_groups/102_3",
+            "label": "Project members",
+            "users_uri": "user_groups/102_3/users",
+            "short_name": "project_members",
+            "key": "ugroup_project_members_name_key"
+            },
+            {
+            "id": "150",
+            "uri": "user_groups/150",
+            "label": "mycustomgroup",
+            "users_uri": "user_groups/150/users",
+            "short_name": "mycustomgroup",
+            "key": "mycustomgroup"
+            }
+        ],
         "current":{
             "id":355743,
             "submitted_by":102,
