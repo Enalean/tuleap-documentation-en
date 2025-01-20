@@ -19,10 +19,13 @@ is the name of the package of the plugin you want to install):
 .. sourcecode:: shell
 
     # Deploy RPM package
-    dnf install tuleap-plugin-awesomestuff
+    dnf install tuleap-plugin-awesomestuff tuleap-plugin-anotherstuff
 
-    # Install and activate the plugin for all projects and users
-    sudo -u codendiadm tuleap plugin:install awesomestuff
+    # Install and activate the plugins for all projects and users
+    sudo -u codendiadm tuleap plugin:install -- awesomestuff anotherstuff
+
+    # If you are doing a full install you can also activate all plugins at once
+    sudo -u codendiadm tuleap plugin:install --all
 
     # Update configurations
     tuleap-cfg site-deploy

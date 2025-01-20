@@ -21,7 +21,7 @@ On success the output will look something like this:
     - The cosign claims were validated
     - The signatures were verified against the specified public key
     - Any certificates were verified against the Fulcio roots.
-  {"critical":{"identity":{"docker-reference":"index.docker.io/tuleap/tuleap-community-edition"},"image":{"docker-manifest-digest":"sha256:e425adc51e915c6974db6c82723a520123c1014a091d93b4f504384c6d916608"},"type":"cosign container image signature"},"optional":null}
+  {"critical":{"identity":{"docker-reference":"index.docker.io/tuleap/tuleap-community-edition"},"image":{"docker-manifest-digest":"sha256:<digest>"},"type":"cosign container image signature"},"optional":null}
 
 
 Check Tuleap Enterprise image
@@ -30,17 +30,17 @@ We sign the Tuleap Enterprise Docker image each time we publish it. The image is
 
 You can verify an image authenticity by :download:`downloading our public key <tuleap_enterprise_docker.pub>` into a file named ``tuleap_enterprise_docker.pub`` and then running:
 
-.. code-block:: bash 
+.. code-block:: bash
 
-  $ cosign verify -key tuleap_enterprise_docker.pub docker.tuleap.org/tuleap-enterprise-edition:12.11-2
+  $ cosign verify --key tuleap_enterprise_docker.pub docker.tuleap.org/tuleap-enterprise-edition:<tuleap_version>
 
 On success the output will look something like this:
 
 .. code-block:: text
 
-  Verification for docker.tuleap.org/tuleap-enterprise-edition:14.11-4 --
+  Verification for docker.tuleap.org/tuleap-enterprise-edition:<tuleap_version> --
   The following checks were performed on each of these signatures:
     - The cosign claims were validated
+    - Existence of the claims in the transparency log was verified offline
     - The signatures were verified against the specified public key
-    - Any certificates were verified against the Fulcio roots.
-  {"critical":{"identity":{"docker-reference":"docker.tuleap.org/tuleap-enterprise-edition"},"image":{"docker-manifest-digest":"sha256:9dca6d11d176760c447d671d9a6494f731539712b1d083f161aa800cc46e44ef"},"type":"cosign container image signature"},"optional":null}
+  {"critical":{"identity":{"docker-reference":"docker.tuleap.org/tuleap-enterprise-edition"},"image":{"docker-manifest-digest":"sha256:<digest>"},"type":"cosign container image signature"},"optional":null}

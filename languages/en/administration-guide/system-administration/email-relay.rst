@@ -13,12 +13,12 @@ You can find :ref:`the local postfix configuration here. <services_postfix>`
 
 You can also setup Tuleap to use an external SMTP (``smtp``) server. To do this, you have to configure the following system variables:
 
-* ``email_transport``
-* ``email_relayhost``
-* ``email_relayhost_smtp_use_tls`` (optional)
-* ``email_relayhost_smtp_username`` (optional)
-* ``email_relayhost_smtp_password`` (optional)
-* ``email_relayhost_smtp_auth_type`` (optional)
+* ``email_transport`` Option to define how Tuleap will send emails
+* ``email_relayhost`` Option to define the relay host used when email_transport is configured to 'smtp'. The used port must be provided here.
+* ``email_relayhost_smtp_auth_type`` Type of authentication to use against the SMTP relay host (either plain, login or xoauth2)
+* ``email_relayhost_smtp_use_tls`` (optional) Activate the usage of TLS for the SMTP relay host
+* ``email_relayhost_smtp_username`` (optional) Username to use to authenticate against the SMTP relay host
+* ``email_relayhost_smtp_password`` (optional) Password to use to authenticate against the SMTP relay host
 
 ``email_transport`` must be set to ``smtp``, and ``email_relayhost`` must contains the URL of the relay and the port separated by ``:``.
 More information about the different settings can be found using ``tuleap config-list``.
