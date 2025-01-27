@@ -1,27 +1,34 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.4
-===========
+Tuleap 16.4 - January 2025
+==========================
 
 .. NOTE::
 
   Tuleap 16.4 is currently under development.
 
+Git configuration
+-----------------
+
+Git configuration options are automatically transferred to database. The following variables are impacted:
+- ``$git_backup_dir``
+- ``$weeks_number``
+
+Other git configuration options where already in the database, you can find all configuration options with ``tuleap config-list``.
+
+Tuleap 16.3 - January 2025
+==========================
+
 Nothing to mention.
 
-Tuleap 16.3
-===========
+Tuleap 16.2 - December 2024
+===========================
 
 Nothing to mention.
 
-Tuleap 16.2
-===========
-
-Nothing to mention.
-
-Tuleap 16.1
-===========
+Tuleap 16.1 - November 2024
+===========================
 
 Removal of the MySQL user ``dbauthuser``
 ----------------------------------------
@@ -33,7 +40,7 @@ If you still have this user in your MySQL database you should remove it.
 
     DROP USER IF EXISTS dbauthuser;
 
-Tuleap 16.0
-===========
+Tuleap 16.0 - October 2024
+==========================
 
 Nothing to mention.
