@@ -12,8 +12,9 @@ Git configuration
 -----------------
 
 Git configuration options are automatically transferred to database. The following variables are impacted:
-- ``$git_backup_dir``
-- ``$weeks_number``
+
+- ``git_backup_dir``
+- ``weeks_number``
 
 Other git configuration options where already in the database, you can find all configuration options with ``tuleap config-list``.
 
