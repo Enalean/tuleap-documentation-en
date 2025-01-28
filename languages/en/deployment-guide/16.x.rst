@@ -16,7 +16,7 @@ Git configuration options are automatically transferred to database. The followi
 - ``git_backup_dir``
 - ``weeks_number``
 
-Other git configuration options where already in the database, you can find all configuration options with ``tuleap config-list``.
+Other git configuration options were already in the database, you can find all configuration options with ``tuleap config-list``.
 
 Before 16.4, configuration variables where defined in ``/etc/tuleap/plugins/git/etc/config.inc``, the upgrade process will rename
 the file automatically (with ``tuleapsave`` and a timestamp). You can review and delete the file to avoid confusions in the future.
