@@ -8,7 +8,11 @@ Tuleap 16.4
 
   Tuleap 16.4 is currently under development.
 
-Nothing to mention.
+API BREAKING CHANGE:
+--------------------
+
+``/api/cross_tracker_reports/{id}/content`` and ``/api/cross_tracker_reports/{id}`` REST endpoint changed. The optional parameter ``report_mode`` is removed.
+All reports are now in mode expert and thus this parameter is no longer needed. All default report are migrated to expert mode.
 
 Tuleap 16.3
 ===========
