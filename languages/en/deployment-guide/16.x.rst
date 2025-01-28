@@ -1,12 +1,13 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.4
-===========
+Tuleap 16.4 - January 2025
+==========================
 
 .. NOTE::
 
   Tuleap 16.4 is currently under development.
+
 
 API BREAKING CHANGE:
 --------------------
@@ -14,18 +15,31 @@ API BREAKING CHANGE:
 ``/api/cross_tracker_reports/{id}/content`` and ``/api/cross_tracker_reports/{id}`` REST endpoint changed. The optional parameter ``report_mode`` is removed.
 All reports are now in mode expert and thus this parameter is no longer needed. All default report are migrated to expert mode.
 
-Tuleap 16.3
-===========
+Git configuration
+-----------------
+
+Git configuration options are automatically transferred to database. The following variables are impacted:
+
+- ``git_backup_dir``
+- ``weeks_number``
+
+Other git configuration options were already in the database, you can find all configuration options with ``tuleap config-list``.
+
+Before 16.4, configuration variables were defined in ``/etc/tuleap/plugins/git/etc/config.inc``, the upgrade process will rename
+the file automatically (with ``tuleapsave`` and a timestamp). You can review and delete the file to avoid confusions in the future.
+
+Tuleap 16.3 - January 2025
+==========================
 
 Nothing to mention.
 
-Tuleap 16.2
-===========
+Tuleap 16.2 - December 2024
+===========================
 
 Nothing to mention.
 
-Tuleap 16.1
-===========
+Tuleap 16.1 - November 2024
+===========================
 
 Removal of the MySQL user ``dbauthuser``
 ----------------------------------------
@@ -37,7 +51,7 @@ If you still have this user in your MySQL database you should remove it.
 
     DROP USER IF EXISTS dbauthuser;
 
-Tuleap 16.0
-===========
+Tuleap 16.0 - October 2024
+==========================
 
 Nothing to mention.
