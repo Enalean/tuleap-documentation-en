@@ -26,4 +26,4 @@ dirty with Internal code.
 Tuleap core & plugins development
 ---------------------------------
 
-In order to contribute to Tuleap core & plugins, please see `dedicated Developer guide <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=tree&f=doc>`_.
+In order to contribute to Tuleap core & plugins, please see `dedicated Developer guide <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=tree&f=docs>`_.

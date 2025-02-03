@@ -85,7 +85,7 @@ Tuleap 12.7
     support. The generated javascript code is using features that are only available in recent version of browsers
     for better performances and asset size.
 
-    This change will be smoothed in 12.8 for `backward compatibility <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=master&f=adr%2F0001-supported-browser-versions.md>`_ reasons.
+    This change will be smoothed in 12.8 for `backward compatibility <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&hb=342ea60bfd97811495a22bdc8e88d59f6fc95439&f=docs%2Fdecisions%2F0001-supported-browser-versions.md>`_ reasons.
 
 Permissions Overrider removal
 -----------------------------

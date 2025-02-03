@@ -192,7 +192,7 @@ Tuleap source code is localized so the interface is displayed in the user-select
 
   * Brazilian Portugueze (partly translated)
 
-Your language is not in the list? Please refer to `Internationalization <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&f=doc%2Finternationalization.md>`_ in developer guide to see how you can contribute.
+Your language is not in the list? Please refer to `Internationalization <https://tuleap.net/plugins/git/tuleap/tuleap/stable?a=blob&f=docs%2Finternationalization.md>`_ in developer guide to see how you can contribute.
 
 Customized localization (deprecated)
 ````````````````````````````````````
