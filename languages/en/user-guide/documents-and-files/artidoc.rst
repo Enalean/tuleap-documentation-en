@@ -30,4 +30,8 @@ Once the artidoc document created, it must be configured with a tracker. This tr
 Please note that the configuration can be changed during the lifetime of the document,
 the new selected tracker impacts only new sections, existing sections will stay untouched.
 
-
+.. NOTE::
+    The tracker must have a title semantic (string field), a description semantic,
+    and no required fields except title and description. Only title and description
+    of the artifact sections can be edited via the document, so it is recommended to
+    disable the workflow for a smoother experience.
