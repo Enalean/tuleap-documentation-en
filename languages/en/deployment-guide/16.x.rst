@@ -1,9 +1,21 @@
 Tuleap 16.x
 ###########
 
+Tuleap 16.5 - February 2025
+===========================
+
+.. NOTE::
+
+  Tuleap 16.5 is currently under development.
+
+API BREAKING CHANGE:
+--------------------
+
+CrossTracker API endpoints have fully changed, ``/api/cross_tracker_reports`` no longer exists and has been split into 2 new endpoints: ``/api/crosstracker_widget`` and ``/api/crosstracker_query``.
+The usage of those new endpoints is available in the API explorer.
+
 Tuleap 16.4 - January 2025
 ==========================
-
 
 API BREAKING CHANGE:
 --------------------
