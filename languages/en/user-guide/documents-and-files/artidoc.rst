@@ -31,7 +31,7 @@ Please note that the configuration can be changed during the lifetime of the doc
 the new selected tracker impacts only new sections, existing sections will stay untouched.
 
 .. NOTE::
-    The tracker must have a title semantic (string field), a description semantic,
+    The tracker must have a :ref:`title semantic <semantic-title>` (string field), a description semantic,
     and no required fields except title and description. Only title and description
     of the artifact sections can be edited via the document, so it is recommended to
     disable the :ref:`workflow <tracker-workflow>` for a smoother experience.
