@@ -1,21 +1,19 @@
-[tool.poetry]
+[project]
 name = "tuleap-documentation-en"
-license = "GPL-2.0-or-later"
 version = "0.0.0"
 description = ""
-authors = [ "Enalean team" ]
+authors = [{ name = "Enalean team" }]
+requires-python = ">=3.12"
+dependencies = [
+    "Sphinx>=7.1.2,<8",
+    "sphinx-rtd-theme>=3.0.2,<4",
+    "sphinxext-rediraffe>=0.2.7,<0.3",
+    "sphinx-notfound-page>=1.1.0,<2",
+    "sphinxcontrib-jquery>=4.1,<5",
+]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-Sphinx = "^7.1.2"
-sphinx-rtd-theme = "^3.0.2"
-sphinxext-rediraffe = "^0.2.7"
-sphinx-notfound-page = "^1.1.0"
-sphinxcontrib-jquery = "^4.1"
+[dependency-groups]
+dev = ["sphinx-autobuild>=2021.3.14,<2022"]
 
-[tool.poetry.dev-dependencies]
-sphinx-autobuild = "^2021.3.14"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.setuptools]
+py-modules = []
