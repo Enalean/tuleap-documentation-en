@@ -20,7 +20,7 @@ RUN touch .bash_profile \
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 
-COPY shell.nix pyproject.toml poetry.lock /tmp/
+COPY shell.nix pyproject.toml uv.lock /tmp/
 COPY build-support/*.nix /tmp/build-support/
 
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && nix-build --no-out-link /tmp/shell.nix
