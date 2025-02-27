@@ -4,10 +4,6 @@ Tuleap 16.x
 Tuleap 16.5 - February 2025
 ===========================
 
-.. NOTE::
-
-  Tuleap 16.5 is currently under development.
-
 API BREAKING CHANGE:
 --------------------
 
