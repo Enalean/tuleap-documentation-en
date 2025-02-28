@@ -17,6 +17,37 @@ API BREAKING CHANGE:
 CrossTracker API endpoints have fully changed, ``/api/cross_tracker_reports`` no longer exists and has been split into 2 new endpoints: ``/api/crosstracker_widget`` and ``/api/crosstracker_query``.
 The documentation of those new endpoints is available in the API explorer.
 
+Configurations moved to database
+--------------------------------
+
+Following plugins got their configuration transferred from files to database:
+
+- Statistics (formerly ``/etc/tuleap/plugins/statistics/etc/statistics.inc``)
+
+  - ``statistics_period``
+  - ``allowed_quota`` renamed ``statistics_allowed_quota``
+  - ``maximum_quota`` renamed ``statistics_maximum_quota``
+
+- Archive Deleted Items (formerly ``/etc/tuleap/plugins/archivedeleteditems/etc/archivedeleteditems.inc``)
+
+  - ``archive_path`` renamed ``archive_deleted_items_path``
+  
+- Webdav (formerly ``/etc/tuleap/plugins/webdav/etc/webdav.inc``)
+
+  - ``max_file_size`` renamed ``webdav_max_file_size``
+  - ``write_access_enabled`` renamed ``webdav_write_access_enabled``
+  
+- Docman (formerly ``/etc/tuleap/plugins/docman/etc/docman.inc``)
+
+  - ``docman_root``
+  - ``embedded_are_allowed`` renamed ``docman_embedded_are_allowed``
+  - ``only_siteadmin_can_delete`` renamed ``docman_only_siteadmin_can_delete``
+
+Configuration variables can be found with ``tuleap config-list`` and modified with ``tuleap config-set``.
+
+Before 16.5, configuration variables were defined in files, the upgrade process will rename
+the files automatically (with ``tuleapsave`` and a timestamp). You can review and delete the file to avoid confusions in the future.
+
 Tuleap 16.4 - January 2025
 ==========================
 
