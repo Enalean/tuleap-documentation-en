@@ -15,7 +15,7 @@ You can also setup Tuleap to use an external SMTP (``smtp``) server. To do this,
 
 * ``email_transport`` Option to define how Tuleap will send emails
 * ``email_relayhost`` Option to define the relay host used when email_transport is configured to 'smtp'. The used port must be provided here.
-* ``email_relayhost_smtp_use_tls`` (optional) Force activate the usage of TLS for the SMTP relay host, do not set if your email relay is relying on ``STARTTLS``
+* ``email_relayhost_smtp_use_implicit_tls`` (optional) Force activate the usage of TLS for the SMTP relay host, do not set if your mail relay is using ``STARTTLS``
 * ``email_relayhost_smtp_username`` (optional) Username to use to authenticate against the SMTP relay host
 * ``email_relayhost_smtp_password`` (optional) Password to use to authenticate against the SMTP relay host
 

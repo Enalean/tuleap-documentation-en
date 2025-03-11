@@ -8,15 +8,15 @@ Tuleap 16.6 - March 2025
 
   Tuleap 16.6 is currently under development.
 
-Configuration change for email relay using ``STARTTLS``
--------------------------------------------------------
+Configuration change for email relay using ``STARTTLS`` on a port other than 587/TCP
+------------------------------------------------------------------------------------
 
-If your email relay is using ``STARTTLS`` you must reset the configuration variable ``email_relayhost_smtp_use_tls`` to the default
-value with:
+If your email relay is using ``STARTTLS`` on a port other than 587/TCP you must reset the
+configuration variable ``email_relayhost_smtp_use_implicit_tls`` to the default value with:
 
 .. sourcecode:: shell
 
-    tuleap config-reset email_relayhost_smtp_use_tls
+    tuleap config-reset email_relayhost_smtp_use_implicit_tls
 
 Tuleap 16.5 - February 2025
 ===========================
