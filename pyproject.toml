@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["sphinx-autobuild>=2021.3.14,<2022"]
+dev = ["sphinx-autobuild>=2024.10.3,<2025"]
 
 [tool.setuptools]
 py-modules = []
