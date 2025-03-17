@@ -8,175 +8,26 @@ TQL in Cross-Tracker Search
   This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
   not be available on your installation of Tuleap.
 
-The widget
+Widget
 ----------
 
 TQL can be used in the :ref:`Cross-Tracker Search widget <xts>`, in the search area. The widget is part of the :ref:`Cross-Tracker Search plugin <install-plugins>` and can be added on any dashboard that you have permission to modify.
 
-.. _xts_default_mode:
+Structure
+---------
 
-Default mode
-------------
-
-The widget has two modes, allowing you to choose the level of fine-tuning you want. There is a Default mode and an :ref:`Expert mode <xts_expert_mode>`.
-Let's first see the default mode.
-
-See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Default mode. This page focuses on the TQL syntax.
-
-Examples:
+The widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
 
 .. code-block:: tql
 
-    @title = 'documentation' AND @status = OPEN() AND @last_update_date > NOW() - 1w
-    // Returns all open artifacts with 'documentation' in the title that have been
-    // updated during the last week.
-
-    @title = 'documentation' AND @submitted_by = 'alice' AND @assigned_to IN (MYSELF(), 'charles')
-    // Returns all artifacts with 'documentation' in the title that have been submitted
-    // by user 'alice' and are assigned to the viewing user (for example 'bob')
-    // or user 'charles'.
-
-To filter artifacts, you have access to several criteria detailed below.
-
-.. _tql_duck_typing:
-
-Similar fields
-''''''''''''''
-
-You can search on any custom field with its name as long as there is at least one Tracker with a compatible definition. We consider that 2 fields from 2 Trackers are compatible if:
- * You can see both fields
- * They have the same name
- * Their types are compatible
-
-Compatible field types:
- * Numerics: integer and float
- * Lists with same bind (user, user group, static)
- * String and text
- * Date
- * Date time
-
-Semantics and dynamic fields
-''''''''''''''''''''''''''''
-
-The following keywords are supported:
-
-String/Text semantics:
- * ``@title``: the "Title" semantic. It behaves like a string field.
- * ``@description``: the "Description" semantic. It behaves like a text field.
-
-Integer:
- * ``@id``: the "Artifact id" dynamic field. It contains the unique id of the artifact, a strictly positive integer.
-
-Dates:
- * ``@submitted_on``: the "Submitted On" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
- * ``@last_update_date``: the "Last Update Date" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
-
-Lists:
- * ``@status``: the "Status" semantic. It can only be compared to ``OPEN()``
-
-Lists bound to users:
- * ``@submitted_by``: the "Submitted By" dynamic field. It behaves like a list and can have only a single value at a time.
- * ``@last_update_by``: the "Last Updated by" dynamic field. It behaves like a list and can have only a single value at a time.
- * ``@assigned_to``: the "Contributor/assignee" semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
-
-Comparison
-''''''''''
-
- * For string and text fields: ``=``, ``!=``
- * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
- * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
-
-Comparison values
-~~~~~~~~~~~~~~~~~
-
- * For string and text fields: simple quote or double quote string like ``'simple quote'`` or ``"double quote"``.
- * For integer fields: integer (``3``) or string convertible to integer (``"3"``)
- * For float fields: integer (``3``), float (``4.2``) or string convertible to float (``"5.6"``)
- * For date fields: ``NOW()`` or string convertible to date (``"2024-10-07"``)
- * For list fields: matching list values (for example: ``"In Review"``, ``"Ongoing"``)
- * For list fields bound to users: ``MYSELF()`` or ``string`` user names (for example: ``"jdoe"``, ``"John Doe"``)
- * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (for example: ``"Customers"``) 
-   or matching the translated system-defined ("Dynamic") user group name (for example: ``"Project members"``).
-
-Empty string ``''`` can be used for any field to specify no value.
-
-``@submitted_by``, ``@last_update_by``, ``@submitted_on``, ``@last_update_date`` and ``@id`` cannot be compared to empty string ``''`` as these fields always have a value.
-
-Dynamic value for date fields
-+++++++++++++++++++++++++++++
-
- * ``start_date > NOW()`` matches all artifacts where the field ``start_date`` is greater (more recent) than the current time (time when the query
-   is displayed).
- * You can use interval periods with ``NOW()``, for example ``submitted_on > NOW() - 1m`` will matches
-   all artifacts that have been created during the last month. The supported specificators are:
-
- * years (``y``)
- * months (``m``)
- * weeks (``w``)
- * days (``d``)
-
-Dynamic value for list fields bound to users: ``MYSELF()``
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-``owner = MYSELF()`` matches all artifacts where the field ``owner`` is equal to the current user.
-
-.. include:: tql-artlink.rst
-
-Queries
-'''''''
-
-You can assemble your different comparisons with logical operators ``AND`` and ``OR`` and use parenthesis ``()`` to force precedence.
-
-Preconditions for multi-tracker search
-''''''''''''''''''''''''''''''''''''''
-
-When you use a semantic, at least one of the selected trackers must have it configured and the field linked to the semantic must be readable by the current user.
-
-For example, if you run an expert query containing ``@status``, at least one of the selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
-If **none** of the trackers defines the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **none** of the "Status" fields are readable by the current user, it will raise an error.
-
-If only part of the selected trackers match these preconditions, the query will be performed only on those trackers.
-
-Errors you can receive
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. note:: Be careful, you must use the name of fields and not the label to construct queries.
-
-Sending the query to the server can produce the following errors:
-
-- The query syntax is incorrect (for example: if you forget a closing quote ``"``)
-- The name used in a comparison doesn't match any existing field name in any of the trackers selected (or there is a mistake in the name)
-- The value is not defined for the list field (for example: ``assigned_to = "non_existent_user"``)
-- The dynamic value is not supported for this field (for example: ``text_field = NOW()``)
-- The comparison operator is not supported for this field (for example: ``list_field >= 3``)
-- The empty value is not allowed for this comparison (for example: ``date_field BETWEEN("", "2017-01-18")``)
-- The query uses ``MYSELF()`` and the current user is not logged in (for example: when browsing a Tuleap platform as an anonymous user)
-- The field type is unsupported
-- The query is too complex
-
-.. important:: The query is too complex when it exceeds a limit. This limit is defined by Site Administrators on Site Administration > Tracker > Report.
-
-.. _xts_expert_mode:
-
-Expert mode
------------
-
-See the documentation page of the :ref:`Cross-Tracker Search widget <xts>` for details on the Expert mode. This page focuses on the TQL syntax.
-
-In expert mode, the widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
-
-.. code-block:: tql
-
-    SELECT @pretty_title, @status, open_date 
-    FROM @project = 'self' AND @tracker.name IN('activity', 'task') 
+    SELECT @pretty_title, @status, open_date
+    FROM @project = 'self' AND @tracker.name IN('activity', 'task')
     WHERE @assigned_to = MYSELF()
     ORDER BY @last_update_date DESCENDING
     // Returns all artifacts from current project activity and task trackers assigned to me.
     // Display their title, status and opening date ordered according to their last modification date.
 
-When using Cross-tracker search expert mode, you must use ``SELECT`` syntax with at least one field, ``FROM`` with at least one condition, and a condition after the ``WHERE``. The ``ORDER BY`` part is optional.
-
-The condition after the ``WHERE`` corresponds to what you write in :ref:`default mode <xts_default_mode>`.
+When using Cross-tracker search, you must use ``SELECT`` syntax with at least one field, ``FROM`` with at least one condition, and a condition after the ``WHERE``. The ``ORDER BY`` part is optional.
 
 ``SELECT``
 ''''''''''
@@ -227,6 +78,13 @@ To provide both conditions, you must use ``AND`` between them. There is no restr
 
 Note that Tuleap's permissions apply when selecting trackers and projects: projects and trackers you don't have access to are ignored. If you don't have read permission for any tracker selected by the ``FROM`` expression, an error message will be displayed.
 
+``WHERE``
+'''''''''
+
+TQL ``WHERE`` syntax allows you to filter artifacts based on values in their fields.
+
+The condition after the ``WHERE`` are described in the :ref:`WHERE Queries part <xts_where_queries>`
+
 ``ORDER BY``
 ''''''''''''
 
@@ -239,18 +97,96 @@ You must provide the direction of the ordering:
  * ``ASC`` or ``ASCENDING`` from smallest to largest
  * ``DESC`` or ``DESCENDING`` from largest to smallest
 
-User list and user group list fields are compared on displayed value. For user lists, it means that the ordering depends on your preference on user display (login, real name or both). 
+User list and user group list fields are compared on displayed value. For user lists, it means that the ordering depends on your preference on user display (login, real name or both).
 For user groups like Project members or Project administrators, the sort is done on their translated name and so the ordering depends on your language.
 
 If you do not provide an ``ORDER BY`` to your query, it will default to ``ORDER BY @id DESCENDING``.
 
+.. _xts_where_queries:
+
+WHERE Queries
+-----------------
+
+You can assemble your different comparisons with logical operators ``AND`` and ``OR`` and use parenthesis ``()`` to force precedence.
+
+Preconditions for multi-tracker search
+''''''''''''''''''''''''''''''''''''''
+
+When you use a semantic, at least one of the selected trackers must have it configured and the field linked to the semantic must be readable by the current user.
+
+For example, if you run a query containing ``@status``, at least one of the selected trackers **must** have defined a "Status" semantic and the "Status" field **must** be readable by the user viewing the widget.
+If **none** of the trackers defines the "Status" semantic, it will cause an error to be shown. The same is true for permissions: if **none** of the "Status" fields are readable by the current user, it will raise an error.
+
+If only part of the selected trackers match these preconditions, the query will be performed only on those trackers.
+
+.. _tql_duck_typing:
+
+Similar fields
+''''''''''''''
+
+You can search on any custom field with its name as long as there is at least one Tracker with a compatible definition. We consider that 2 fields from 2 Trackers are compatible if:
+ * You can see both fields
+ * They have the same name
+ * Their types are compatible
+
+Compatible field types:
+ * Numerics: integer and float
+ * Lists with same bind (user, user group, static)
+ * String and text
+ * Date
+ * Date time
+
+
+Comparison
+''''''''''
+
+ * For string and text fields: ``=``, ``!=``
+ * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
+ * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
+
+Comparison values
+~~~~~~~~~~~~~~~~~
+
+ * For string and text fields: simple quote or double quote string like ``'simple quote'`` or ``"double quote"``.
+ * For integer fields: integer (``3``) or string convertible to integer (``"3"``)
+ * For float fields: integer (``3``), float (``4.2``) or string convertible to float (``"5.6"``)
+ * For date fields: ``NOW()`` or string convertible to date (``"2024-10-07"``)
+ * For list fields: matching list values (for example: ``"In Review"``, ``"Ongoing"``)
+ * For list fields bound to users: ``MYSELF()`` or ``string`` user names (for example: ``"jdoe"``, ``"John Doe"``)
+ * For list fields bound to user groups: ``string`` matching either the name of a user-defined ("Static") user group (for example: ``"Customers"``)
+   or matching the translated system-defined ("Dynamic") user group name (for example: ``"Project members"``).
+
+Empty string ``''`` can be used for any field to specify no value.
+
+``@submitted_by``, ``@last_update_by``, ``@submitted_on``, ``@last_update_date`` and ``@id`` cannot be compared to empty string ``''`` as these fields always have a value.
+
+Dynamic value for date fields
++++++++++++++++++++++++++++++
+
+ * ``start_date > NOW()`` matches all artifacts where the field ``start_date`` is greater (more recent) than the current time (time when the query
+   is displayed).
+ * You can use interval periods with ``NOW()``, for example ``submitted_on > NOW() - 1m`` will matches
+   all artifacts that have been created during the last month. The supported specificators are:
+
+ * years (``y``)
+ * months (``m``)
+ * weeks (``w``)
+ * days (``d``)
+
+Dynamic value for list fields bound to users: ``MYSELF()``
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+``owner = MYSELF()`` matches all artifacts where the field ``owner`` is equal to the current user.
+
+.. include:: tql-artlink.rst
+
 Examples
-''''''''
+--------
 
 .. code-block:: tql
 
-    SELECT @pretty_title, @status, @submitted_by, @last_update_date 
-    FROM @project.name = 'support' AND @tracker.name = 'ticket' 
+    SELECT @pretty_title, @status, @submitted_by, @last_update_date
+    FROM @project.name = 'support' AND @tracker.name = 'ticket'
     WHERE @status = OPEN() AND @assigned_to = MYSELF()
     ORDER BY @last_update_date DESC
     // Get tickets assigned to me from support project. Display their title, status, who opened the ticket and the last modification date
@@ -265,7 +201,7 @@ Examples
     SELECT @title, @status, @project.name
     FROM @project.category = 'Topic::Team' AND @tracker.name IN('epic', 'story')
     WHERE @status = OPEN()
-    // Get open epics and stories from project with category Topic::Team (or sub category) 
+    // Get open epics and stories from project with category Topic::Team (or sub category)
     // display their title, status and from which project it comes
 
     SELECT @pretty_title
@@ -278,14 +214,27 @@ Examples
     WHERE @status = OPEN()
     // Display artifacts from current project and teams projects in the context of a program project
 
-Errors you can receive
-''''''''''''''''''''''
+Errors
+------
+
+.. note:: Be careful, you must use the name of fields and not the label to construct queries.
 
 Sending the query to the server can produce the following errors:
 
+- The query syntax is incorrect (for example: if you forget a closing quote ``"``)
+- The name used in a comparison doesn't match any existing field name in any of the trackers selected (or there is a mistake in the name)
+- The value is not defined for the list field (for example: ``assigned_to = "non_existent_user"``)
+- The dynamic value is not supported for this field (for example: ``text_field = NOW()``)
+- The comparison operator is not supported for this field (for example: ``list_field >= 3``)
+- The empty value is not allowed for this comparison (for example: ``date_field BETWEEN("", "2017-01-18")``)
+- The query uses ``MYSELF()`` and the current user is not logged in (for example: when browsing a Tuleap platform as an anonymous user)
+- The field type is unsupported
 - Missing part of the query (missing ``SELECT`` or ``FROM`` or ``WHERE``).
 - The ``FROM`` part found no trackers (for example: ``FROM @tracker.name = 'sprint'`` but there is no tracker ``sprint`` in the current project).
 - Using ``FROM @project = 'self'`` in a personal dashboard.
 - Using ``FROM @project = 'aggregated'`` in a personal dashboard or a project without :ref:`Program management service <program-management>` enabled.
 - Fields with the same name are not compatible between them (for example: date and int field). This can happen for fields used in ``SELECT``, ``WHERE`` and ``ORDER BY``.
 - Using a list field with multiple values in ``ORDER BY`` (open list, multi-selectbox, checkbox fields are not allowed).
+- The query is too complex
+
+.. important:: The query is too complex when it exceeds a limit. This limit is defined by Site Administrators on Site Administration > Tracker > Report.
