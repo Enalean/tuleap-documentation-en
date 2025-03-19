@@ -136,6 +136,29 @@ Compatible field types:
  * Date
  * Date time
 
+Semantics and dynamic fields
+''''''''''''''''''''''''''''
+
+The following keywords are supported:
+
+String/Text semantics:
+ * ``@title``: the "Title" semantic. It behaves like a string field.
+ * ``@description``: the "Description" semantic. It behaves like a text field.
+
+Integer:
+ * ``@id``: the "Artifact id" dynamic field. It contains the unique id of the artifact, a strictly positive integer.
+
+Dates:
+ * ``@submitted_on``: the "Submitted On" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
+ * ``@last_update_date``: the "Last Update Date" dynamic field. It behaves like a date field, but the empty string ``''`` is not allowed (this field cannot be empty).
+
+Lists:
+ * ``@status``: the "Status" semantic. It can only be compared to ``OPEN()``
+
+Lists bound to users:
+ * ``@submitted_by``: the "Submitted By" dynamic field. It behaves like a list and can have only a single value at a time.
+ * ``@last_update_by``: the "Last Updated by" dynamic field. It behaves like a list and can have only a single value at a time.
+ * ``@assigned_to``: the "Contributor/assignee" semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
 
 Comparison
 ''''''''''
