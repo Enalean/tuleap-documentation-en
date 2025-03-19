@@ -9,12 +9,12 @@ TQL in Cross-Tracker Search
   not be available on your installation of Tuleap.
 
 Widget
-----------
+------
 
 TQL can be used in the :ref:`Cross-Tracker Search widget <xts>`, in the search area. The widget is part of the :ref:`Cross-Tracker Search plugin <install-plugins>` and can be added on any dashboard that you have permission to modify.
 
-Structure
----------
+Queries
+-------
 
 The widget uses an extended TQL syntax. In this syntax of TQL, you can choose which fields you want to display on the widget through ``SELECT`` syntax, and also on which trackers to perform the query with ``FROM``:
 
@@ -83,34 +83,10 @@ Note that Tuleap's permissions apply when selecting trackers and projects: proje
 
 TQL ``WHERE`` syntax allows you to filter artifacts based on values in their fields.
 
-The condition after the ``WHERE`` are described in the :ref:`WHERE Queries part <xts_where_queries>`
-
-``ORDER BY``
-''''''''''''
-
-TQL ``ORDER BY`` syntax allows you to sort artifacts on a single field. Ordering on more than one criteria is not possible.
-
-There are some restrictions on the fields you can use. As for the condition (``WHERE``) their types must be compatible. Date and date with time fields are not compatible together.
-For list fields, only selectbox and radio buttons are allowed. All the ``@`` fields and semantics valid in conditions (``WHERE``) are allowed.
-
-You must provide the direction of the ordering:
- * ``ASC`` or ``ASCENDING`` from smallest to largest
- * ``DESC`` or ``DESCENDING`` from largest to smallest
-
-User list and user group list fields are compared on displayed value. For user lists, it means that the ordering depends on your preference on user display (login, real name or both).
-For user groups like Project members or Project administrators, the sort is done on their translated name and so the ordering depends on your language.
-
-If you do not provide an ``ORDER BY`` to your query, it will default to ``ORDER BY @id DESCENDING``.
-
-.. _xts_where_queries:
-
-WHERE Queries
------------------
-
 You can assemble your different comparisons with logical operators ``AND`` and ``OR`` and use parenthesis ``()`` to force precedence.
 
 Preconditions for multi-tracker search
-''''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you use a semantic, at least one of the selected trackers must have it configured and the field linked to the semantic must be readable by the current user.
 
@@ -122,7 +98,7 @@ If only part of the selected trackers match these preconditions, the query will 
 .. _tql_duck_typing:
 
 Similar fields
-''''''''''''''
+~~~~~~~~~~~~~~
 
 You can search on any custom field with its name as long as there is at least one Tracker with a compatible definition. We consider that 2 fields from 2 Trackers are compatible if:
  * You can see both fields
@@ -137,7 +113,7 @@ Compatible field types:
  * Date time
 
 Semantics and dynamic fields
-''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following keywords are supported:
 
@@ -161,14 +137,14 @@ Lists bound to users:
  * ``@assigned_to``: the "Contributor/assignee" semantic. It behaves like a list and can have multiple values at a time (multiple users assigned to an artifact).
 
 Comparison
-''''''''''
+~~~~~~~~~~
 
  * For string and text fields: ``=``, ``!=``
  * For date, integer and float fields: ``=``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``BETWEEN()``
  * For list fields: ``=``, ``!=``, ``IN()``, ``NOT IN()``
 
 Comparison values
-~~~~~~~~~~~~~~~~~
++++++++++++++++++
 
  * For string and text fields: simple quote or double quote string like ``'simple quote'`` or ``"double quote"``.
  * For integer fields: integer (``3``) or string convertible to integer (``"3"``)
@@ -202,6 +178,23 @@ Dynamic value for list fields bound to users: ``MYSELF()``
 ``owner = MYSELF()`` matches all artifacts where the field ``owner`` is equal to the current user.
 
 .. include:: tql-artlink.rst
+
+``ORDER BY``
+''''''''''''
+
+TQL ``ORDER BY`` syntax allows you to sort artifacts on a single field. Ordering on more than one criteria is not possible.
+
+There are some restrictions on the fields you can use. As for the condition (``WHERE``) their types must be compatible. Date and date with time fields are not compatible together.
+For list fields, only selectbox and radio buttons are allowed. All the ``@`` fields and semantics valid in conditions (``WHERE``) are allowed.
+
+You must provide the direction of the ordering:
+ * ``ASC`` or ``ASCENDING`` from smallest to largest
+ * ``DESC`` or ``DESCENDING`` from largest to smallest
+
+User list and user group list fields are compared on displayed value. For user lists, it means that the ordering depends on your preference on user display (login, real name or both).
+For user groups like Project members or Project administrators, the sort is done on their translated name and so the ordering depends on your language.
+
+If you do not provide an ``ORDER BY`` to your query, it will default to ``ORDER BY @id DESCENDING``.
 
 Examples
 --------
@@ -258,6 +251,18 @@ Sending the query to the server can produce the following errors:
 - Using ``FROM @project = 'aggregated'`` in a personal dashboard or a project without :ref:`Program management service <program-management>` enabled.
 - Fields with the same name are not compatible between them (for example: date and int field). This can happen for fields used in ``SELECT``, ``WHERE`` and ``ORDER BY``.
 - Using a list field with multiple values in ``ORDER BY`` (open list, multi-selectbox, checkbox fields are not allowed).
-- The query is too complex
+- :ref:`The query is too complex<xts_tql_error_query_too_complex>`
 
-.. important:: The query is too complex when it exceeds a limit. This limit is defined by Site Administrators on Site Administration > Tracker > Report.
+.. _xts_tql_error_query_too_complex:
+
+Query is too complex
+''''''''''''''''''''
+
+The query is too complex when it exceeds one of the three limits set on ``SELECT``, ``FROM`` and ``WHERE`` clauses.
+
+The limit on ``WHERE`` is defined by Site Administrators on Site Administration > Tracker > Report
+
+Limits on ``SELECT`` and ``FROM`` are both set at server level using ``tuleap config-set`` with respectively
+``crosstracker_maximum_selected_columns`` and ``crosstracker_maximum_tracker_get_from``. See the
+:ref:`Administration guide’s section on configuration variables<administration_guide_configuration_variables>` for more
+info on how to deal with such configuration.

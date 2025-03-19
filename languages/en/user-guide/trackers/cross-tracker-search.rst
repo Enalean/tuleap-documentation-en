@@ -31,6 +31,12 @@ details and to edit it, you must click on the “Query details & tools” button
 
 Once the details opened, you can directly click on the query itself or on the “Edit” to edit it.
 
+Please do note that a query is made of the TQL query itself as well as:
+
+    - a mandatory title
+    - an optional description
+    - an option to :ref:`set it as the default query for the widget<xts_widget_default_query>`
+
 Query suggestions
 +++++++++++++++++
 
@@ -46,6 +52,8 @@ Search widgets and can be a great way to get started with building your own.
 
 Upon clicking on one of those you will be presented with a window showing you the details of the chosen query before overriding
 your current fields with its values.
+
+.. _xts_widget_default_query:
 
 Default query
 +++++++++++++
