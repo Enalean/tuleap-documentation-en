@@ -22,16 +22,16 @@ Feature                               TQL in tracker reports  TQL in Cross-Track
 ===================================== ======================= ===========================
 Conditions on ``@comments``           ✔️                       ❌
 Conditions on file fields             ✔️                       ❌
-Conditions on ``@assigned_to``        ❌                      ✔️
-Conditions on ``@description``        ❌                      ✔️
-Conditions on ``@status``             ❌                      ✔️
-Conditions on ``@title``              ❌                      ✔️
-Conditions on ``@id``                 ❌                      ✔️
-Conditions on ``@submitted_on``       ❌                      ✔️
-Conditions on ``@submitted_by``       ❌                      ✔️
-Conditions on ``@last_update_date``   ❌                      ✔️
-Conditions on ``@last_update_by``     ❌                      ✔️
-``SELECT``                            ❌                      ✔️
-``FROM``                              ❌                      ✔️
-``ORDER BY``                          ❌                      ✔️
+Conditions on ``@assigned_to``        ❌                       ✔️
+Conditions on ``@description``        ❌                       ✔️
+Conditions on ``@status``             ❌                       ✔️
+Conditions on ``@title``              ❌                       ✔️
+Conditions on ``@id``                 ❌                       ✔️
+Conditions on ``@submitted_on``       ❌                       ✔️
+Conditions on ``@submitted_by``       ❌                       ✔️
+Conditions on ``@last_update_date``   ❌                       ✔️
+Conditions on ``@last_update_by``     ❌                       ✔️
+``SELECT``                            ❌                       ✔️
+``FROM``                              ❌                       ✔️
+``ORDER BY``                          ❌                       ✔️
 ===================================== ======================= ===========================
