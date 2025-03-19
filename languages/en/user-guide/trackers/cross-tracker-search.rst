@@ -77,12 +77,12 @@ Once a report is saved, an "Export XSLX" button will appear. Click it to downloa
 
 	Only some field types can be exported as XLSX in Cross-tracker reports. Here is the list of supported field types:
 
-	- String field
-	- Text field
-	- Integer field
-	- Float field
-	- Date field (with or without time displayed)
+    - String field
+    - Text field
+    - Integer field
+    - Float field
+    - Date field (with or without time displayed)
     - List fields but not multi values list (multi-selects and checkboxes)
-	- Radio button field
+    - Radio button field
 
 	All other fields are not supported yet and will be skipped.
