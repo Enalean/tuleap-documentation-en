@@ -29,6 +29,8 @@ details and to edit it, you must click on the “Query details & tools” button
 .. figure:: ../../images/screenshots/widget/crosstracker-widget-query-details.webp
   :alt: Query details
 
+  Query details
+
 Once the details opened, you can directly click on the query itself or on the “Edit” to edit it.
 
 Please do note that a query is made of the TQL query itself as well as:
