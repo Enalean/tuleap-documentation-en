@@ -1,3 +1,5 @@
+.. _administration_guide_configuration_variables:
+
 Configuration Variables
 =======================
 

@@ -44,6 +44,7 @@ Some widgets have documentation to explain how to configure and use them:
 - :ref:`Kanban <kanban>` add a Kanban in your personal dashboard.
 - :ref:`Project Milestones <project-milestones>` displays a :ref:`Scrum Backlog <backlog>` in personal dashboard.
 - :ref:`Timetracking <timetracking>` allows you to visualize your saved times with TimeTracking plugin.
+- :ref:`Cross-Tracker Search <xts>` lets you query on artifacts through the entire platform.
 
 
 .. toctree::

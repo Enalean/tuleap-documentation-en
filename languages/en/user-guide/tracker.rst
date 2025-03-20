@@ -17,4 +17,5 @@ project, can be fully customized to your processes and business needs.
    trackers/trackers-usage
    trackers/trackers-administration
    trackers/timetracking
+   trackers/cross-tracker-search
    trackers/tv3-migration
