@@ -9,6 +9,5 @@
         ":preserveSemverRanges"
     ],
     "automerge": false,
-    "lockFileMaintenance": { "enabled": true },
     "timezone": "Europe/Paris"
 }
