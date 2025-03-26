@@ -4,10 +4,6 @@ Tuleap 16.x
 Tuleap 16.6 - March 2025
 ===========================
 
-.. NOTE::
-
-  Tuleap 16.6 is currently under development.
-
 Configuration change for email relay using ``STARTTLS`` on a port other than 587/TCP
 ------------------------------------------------------------------------------------
 
