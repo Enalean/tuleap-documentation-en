@@ -153,6 +153,20 @@ Once files are created, cache must be invalidated with ``tuleap -c``.
 
 The small version is used when the project sidebar is collapsed.
 
+Special contents
+````````````````````````````````````````
+For some special contents, platform administrators must upload an image file in PNG format
+to ``/var/lib/tuleap/images/homepage-logo.png`` (max width: 640px).
+
+Once the file is created, the cache must be invalidated using the ``tuleap -c`` command.
+
+The affected contents are as follows :
+
+* Welcome page logo
+* Test plans logo
+* Document exports logo (docx)
+
+
 Site content
 ------------
 
