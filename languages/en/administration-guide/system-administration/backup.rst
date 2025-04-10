@@ -118,6 +118,13 @@ Then construct the map from the 3rd (uid) and 4th (gid) columns and the associat
 
 As you can see, for ftpadmin uids and gids are not the same in this example.
 
+If you plan to migrate to ``docker``, you must use the following numerical ids as the users won't be created on the docker host:
+  - codendiadm: 900
+  - gitolite: 902
+  - ftpadmin: 904
+
+So the maps will be ``--usermap=980:900,976:902,979:904`` and ``--groupmap=980:900,976:902,978:904`` for a docker target in this exemple.
+
 Finally you can use a tool like ``rsync`` to help you remap your data while restoring/resyncing:
 
 .. code-block::
