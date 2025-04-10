@@ -44,13 +44,13 @@ Tuleap doesn't work at all with:
 
 * Internet Explorer, any version
 * Edge Legacy, any version
-* Firefox < 102 ESR
-* Chrome < 103
+* Firefox < 128 ESR
+* Chrome < 127
 
-Best effort: between Firefox 102 ESR / Chrome 103 and their latest version Tuleap might work (ie. most pages should show-up) but:
+Best effort: between Firefox 128 ESR / Chrome 127 and their latest version Tuleap might work (ie. most pages should show up) but:
 
 * **YOU SHOULD NOT DO THAT**, your browser is vulnerable to **a lot** of public security issues and you are putting your whole infrastructure at risk.
 * There are no tests made at all.
 * If something doesn't work, first thing should be to reload the page with developer console (F12) and look for errors.
-* If an error occurs you might report it but there are no guarantee the development team can do anything. What will be done
+* If an error occurs you might report it but there is no guarantee the development team can do anything. What will be done
   (if something is done) will be what costs the least to maintain for Tuleap developers.
