@@ -8,6 +8,16 @@ Tuleap 16.7 - April 2025
 
   Tuleap 16.7 is currently under development.
 
+Minimal browser support raised to Firefox 128 ESR and Chrome 127
+----------------------------------------------------------------
+
+The best effort support is now Firefox 128 ESR and Chrome 127.
+Versions older than that do not work at all anymore to browse Tuleap.
+
+The previous minimal best effort browser version was Firefox 102 ESR which is out of security support since August 2023 (1 year and 8 months).
+
+:ref:`The recommendation is still to use the latest version of Mozilla Firefox, Microsoft Edge or Google Chrome <user_supported_browsers>`.
+
 Tuleap 16.6 - March 2025
 ========================
 

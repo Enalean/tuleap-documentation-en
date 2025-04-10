@@ -31,7 +31,7 @@ Deprecations and end of support
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: September 2024**
+**Last update: April 2025**
 
 December 2024
 '''''''''''''
@@ -61,6 +61,8 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+Chrome & Edge < 127             Q2 2025  End of support    Ensure your users have an up-to-date browser.
+Firefox < 128                   Q2 2025  End of support    Ensure your users have an up-to-date browser.
 RHEL / CentOS 7                 Q2 2024  End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
 MySQL 5.7                       Q4 2023  End of support    :ref:`Switch to MySQL 8 <mysql80_upgrade>`
 Mailman & ForumML plugins       Q3 2023  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool to distribute emails.
@@ -68,8 +70,6 @@ CVS                             Q3 2023  Removed           Tuleap will no longer
 PROFTPd plugin                  Q2 2023  Removed           End-users should use document or FRS instead
 Reference Alias * plugins       Q2 2023  Removed           It was only used as compatibility layer for TeamForge migration and no longer in use. The removed plugins: ``referencealias_core``, ``referencealias_git``, ``referencealias_mediawiki``, ``referencealias_svn``, ``referencealias_tracker``.
 Artifacts Folders plugin        Q2 2023  Removed           It was only used as compatibility layer for TeamForge migration and no longer in use.
-Chrome & Edge < 103             Q2 2023  End of support    Ensure your users have an up to date browser.
-Firefox < 102                   Q2 2023  End of support    Ensure your users have an up to date browser.
 Distributed SVN                 Q1 2023  Removed           If you set-up Distributed SVN you should update the main reverse proxy and ensure that all traffic goes to the main Tuleap server.
 SOAP API                        Q4 2022  Removed           End-users should switch to REST API
 Subversion (SVN Core)           Q4 2022  Removed           :ref:`Switch to SVN Plugin <svn_core_to_plugin>`
