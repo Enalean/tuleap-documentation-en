@@ -4,10 +4,6 @@ Tuleap 16.x
 Tuleap 16.7 - April 2025
 ========================
 
-.. NOTE::
-
-  Tuleap 16.7 is currently under development.
-
 Minimal browser support raised to Firefox 128 ESR and Chrome 127
 ----------------------------------------------------------------
 
@@ -66,12 +62,12 @@ Following plugins got their configuration transferred from files to database:
 - Archive Deleted Items (formerly ``/etc/tuleap/plugins/archivedeleteditems/etc/archivedeleteditems.inc``)
 
   - ``archive_path`` renamed ``archive_deleted_items_path``
-  
+
 - Webdav (formerly ``/etc/tuleap/plugins/webdav/etc/webdav.inc``)
 
   - ``max_file_size`` renamed ``webdav_max_file_size``
   - ``write_access_enabled`` renamed ``webdav_write_access_enabled``
-  
+
 - Docman (formerly ``/etc/tuleap/plugins/docman/etc/docman.inc``)
 
   - ``docman_root``
