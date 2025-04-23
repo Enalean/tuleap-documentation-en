@@ -18,6 +18,18 @@ The previous minimal best effort browser version was Firefox 102 ESR which is ou
 
 :ref:`The recommendation is still to use the latest version of Mozilla Firefox, Microsoft Edge or Google Chrome <user_supported_browsers>`.
 
+Templates dependency on Cross-Tracker Search
+--------------------------------------------
+
+Some templates are now dependent on :ref:`the Cross-Tracker Search plugin <xts>`:
+
+- Agile Enterprise Planning - Full ALM
+- Portfolio SAFe®
+- Essential SAFe® - Agile Release Train
+- Essential SAFe® - Scrum Team
+
+In order to have them listed on the project creation page, the :ref:`Cross-Tracker Search plugin <xts>` needs to be installed and activated on the platform.
+
 Tuleap 16.6 - March 2025
 ========================
 
