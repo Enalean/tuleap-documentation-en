@@ -21,7 +21,7 @@ The previous minimal best effort browser version was Firefox 102 ESR which is ou
 Templates dependency on Cross-Tracker Search
 --------------------------------------------
 
-Some templates are now dependent on :ref:`the Cross-Tracker Search plugin <xts>`:
+Some project templates are now dependent on :ref:`the Cross-Tracker Search plugin <xts>`:
 
 - Agile Enterprise Planning - Full ALM
 - Portfolio SAFe®
