@@ -1,4 +1,4 @@
-FROM nixos/nix:2.28.2@sha256:51b15336cdd00cce3608ec31eb06852a82dfc4e85429011081a2b60f7d82f055
+FROM nixos/nix:2.28.3@sha256:e623d73af9cac82d1b50784c83e0cf2a4b83bfd2cfe8d5b67809a2fc94e043ac
 
 COPY pyproject.toml uv.lock /doc/
 COPY build-support/*.nix /doc/build-support/
