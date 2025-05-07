@@ -11,7 +11,7 @@ Dynamic credentials
 The dynamic credentials plugin aims to provide a way to generate short-lived
 credentials on the fly to access to a Tuleap instance. While it could work with
 other tools, the plugin is specifically designed to work with
-`HashiCorp Vault <https://www.vaultproject.io/>`_.
+`HashiCorp Vault <https://developer.hashicorp.com/vault>`_.
 
 The goal is to solve the following challenges:
 
@@ -36,7 +36,7 @@ On your Vault instance, you must install the ``vault-tuleap-plugin`` and mount
 the secret engine, refer to the
 `Vault documentation <https://developer.hashicorp.com/vault/docs/plugins/plugin-management>`_ to
 learn how to do that. A compiled version of the ``vault-tuleap-plugin`` can be
-found `here <https://ci.tuleap.org/jenkins/job/vault-tuleap-plugin-build/>`_.
+found `here <https://ci.tuleap.org/jenkins/job/Tuleap%20Additional%20Tools/job/Build%20Additional%20Tuleap%20Tools/>`_.
 This document assumes the Tuleap secrets engine is enabled at the ``tuleap``
 path in Vault. If that is not the case, please your commands accordingly.
 

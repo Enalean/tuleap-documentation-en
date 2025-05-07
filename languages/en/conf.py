@@ -231,16 +231,15 @@ linkcheck_ignore = [
     'https://tuleap/',
     'https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders', # Anchor is not found due to the page generation client side
     'https://github.com/Enalean/bz2tuleap#jira-to-tuleap', # Anchor is not found due to the page generation client side
-    'https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y197', # Anchor is not found due to the page generation client side
-    'https://github.com/Polyconseil/vue-gettext#caveat-when-using-v-translate-with-vue-components-or-vue-specific-attributes', # Anchor is not found due to the page generation client side
-    'https://github.com/Polyconseil/vue-gettext#custom-parameters', # Anchor is not found due to the page generation client side
     'https://prismjs.com/#supported-languages', # Anchor is not found due to the page generation client side
     r'https://ci\.enalean\.com/.*', # No public access
     r'https://my\.enalean\.com/.*', # No public access
     'https://support.cloudbees.com/hc/en-us/articles/203821254-How-to-install-a-new-SSL-certificate', # Cloudflare does not like Linkcheck
     r'https://dev\.mysql\.com/doc/refman/8.0/en/.*', # We get a 403 when running linkcheck on CI agents
     r'http://192\.0\.2\.11.*', # IP used as an example on the Keycloack page of the dev section
-    r'https://tuleap\.net/plugins/git/tuleap/tuleap/stable\?.*' # Browsing the source repo requires to be authenticated
+    r'https://tuleap\.net/plugins/git/tuleap/tuleap/stable\?.*', # Browsing the source repo requires to be authenticated
+    'https://ci.tuleap.org/jenkins/job/Tuleap%20Additional%20Tools/job/Build%20Additional%20Tuleap%20Tools/', # Require to be authenticated
+    'https://stackoverflow.com/questions/16323896/locked-out-of-jenkins' # Require a challenge resolution
 ]
 
 # -- Options for manual page output --------------------------------------------

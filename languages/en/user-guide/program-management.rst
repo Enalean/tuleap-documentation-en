@@ -28,7 +28,7 @@ for implementation of SAFe® it can be used for Scrum of Scrum or "home made not
 Usage of SAFe® templates
 ========================
 
-`Scaled Agile Framework (SAFe®) <https://scaledagileframework.com/about/>`_ is a process framework for the management
+`Scaled Agile Framework (SAFe®) <https://framework.scaledagile.com/about/>`_ is a process framework for the management
 for large scale products and programs.
 
 In the context of Tuleap, that means many different projects (Teams) that work together, synchronised, on a shared backlog.
