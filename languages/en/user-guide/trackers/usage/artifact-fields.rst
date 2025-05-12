@@ -104,6 +104,15 @@ dependance to other artifacts. A typical use for this kind of field
 is a reference from a task to several sub-tasks. This field is multi
 valued.
 
+You can now use the new artifact link field in the artifact view. 
+To enable it, you have to check the "Activate unified and simplified artifact links edition" checkbox in tracker fields administration. 
+
+.. figure:: ../../../images/screenshots/tracker/artlink_admin.png
+   :align: center
+   :alt: Artifact link field administration
+
+The site administrator can mass activate it for all trackers of the platform in Tracker plugin administration.
+
 Permissions on artifact
 ```````````````````````
 This field allows to define specific
