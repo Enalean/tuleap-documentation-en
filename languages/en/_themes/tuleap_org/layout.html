@@ -1,6 +1,4 @@
 {# TEMPLATE VAR SETTINGS #}
-{%- set url_root = pathto('', 1) %}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
   {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
 {%- else %}
@@ -8,7 +6,7 @@
 {%- endif %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-content_root="{{ content_root }}">
 <head>
   <meta charset="utf-8">
   {{ metatags }}
