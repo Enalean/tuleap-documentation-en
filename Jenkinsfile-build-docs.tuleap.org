@@ -14,14 +14,14 @@ pipeline {
                 script {
                     @Library('tuleap-jenkinsfile-library@master') _
                     def lib_signing = new org.tuleap.Signing();
+                    lib_signing.authenticateOnTailscale();
                     lib_signing.prefetchToolsToSignDockerImages('ci-write');
                     def image_name = 'tuleap-documentation.docs.tuleap.org';
                     def image = docker.build(
                         image_name,
                         '-f docs.tuleap.org/Dockerfile .'
                     )
-                    lib_signing.authenticateOnTailscale()
-                    def registry_name = "nexus.enalean.com:22000";
+                    def registry_name = "nexus.enalean.com:20000";
                     docker.withRegistry("https://${registry_name}", 'ci-write') {
                         image.push()
 
