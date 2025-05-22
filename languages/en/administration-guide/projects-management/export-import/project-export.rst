@@ -15,7 +15,7 @@ Export with all trackers
            -p PROJECT_ID_EXPORT \
            -u SITE_ADMIN_USERNAME \
            --all \
-           -o PATH_TO_ARCHIVE
+           -o </path/to/archive.zip>
 
 Export single tracker
 `````````````````````
@@ -28,7 +28,7 @@ Export single tracker
            -p PROJECT_ID_EXPORT \
            -u SITE_ADMIN_USERNAME \
            -t TRACKER_V5_ID \
-           -o PATH_TO_ARCHIVE
+           -o </path/to/archive.zip>
 
 This will generate a zip archive with:
 

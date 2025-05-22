@@ -14,8 +14,8 @@ archive and current users on target instance:
         $> cd /usr/share/tuleap/
         $> src/utils/php-launcher.sh src/utils/generate_user_mapping_for_project_import.php \
            -u SITE_ADMIN_USERNAME \
-           -i PATH_TO_ARCHIVE \
-           -o PATH_TO_MAPPING_FILE
+           -i </path/to/archive.zip> \
+           -o </path/to/mapping_file.csv>
 
 The generated file will look like:
 
@@ -59,8 +59,8 @@ valid in regards to current status of the target instance:
 
         $> src/utils/php-launcher.sh src/utils/check_user_mapping_for_project_import.php \
            -u SITE_ADMIN_USERNAME \
-           -i PATH_TO_ARCHIVE \
-           -m PATH_TO_MAPPING_FILE
+           -i </path/to/archive.zip> \
+           -m </path/to/mapping_file.csv>
 
 This will generate some feedback about the wellness of the mapping file. You must fix any remaining errors before doing
 the real import:
@@ -69,11 +69,11 @@ the real import:
 
         $> su - codendiadm
         $> cd /usr/share/tuleap/
-        $> tuleap import-project-xml
+        $> tuleap import-project-xml \
            -p PROJECT_ID_IMPORT \
            -u SITE_ADMIN_USERNAME \
-           -i PATH_TO_ARCHIVE \
-           -m PATH_TO_MAPPING_FILE
+           -i </path/to/archive.zip> \
+           -m </path/to/mapping_file.csv>
 
 If the project to be imported does not yet exist, you must use the ``root`` user instead of ``codendiadm`` and not use the ``-p`` parameter.
 
@@ -81,10 +81,10 @@ If the project to be imported does not yet exist, you must use the ``root`` user
 
         $> su - root
         $> cd /usr/share/tuleap/
-        $> tuleap import-project-xml
+        $> tuleap import-project-xml \
            -u SITE_ADMIN_USERNAME \
-           -i PATH_TO_ARCHIVE \
-           -m PATH_TO_MAPPING_FILE
+           -i </path/to/archive.zip> \
+           -m </path/to/mapping_file.csv>
 
 .. note::
 
