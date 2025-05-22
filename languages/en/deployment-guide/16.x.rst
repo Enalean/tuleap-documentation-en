@@ -1,12 +1,20 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.8 - May 2025
-======================
+Tuleap 16.9 - June 2025
+=======================
 
 .. NOTE::
 
-  Tuleap 16.8 is currently under development.
+  Tuleap 16.9 is currently under development.
+
+
+Nothing to mention.
+
+Tuleap 16.8 - May 2025
+======================
+
+Nothing to mention.
 
 Tuleap 16.7 - April 2025
 ========================
