@@ -17,4 +17,9 @@ Prepare the database
     # Set a password
     mysqladmin -u root password
 
-Your are now ready to configure and run Tuleap.
+.. note::
+
+    Tuleap only works with the sql-mode listed above. 
+    Adding one or booting the SQL database in any other mode will end up with Tuleap malfunctioning
+
+You are now ready to configure and run Tuleap.
