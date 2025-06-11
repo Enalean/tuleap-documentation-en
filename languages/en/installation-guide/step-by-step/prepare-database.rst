@@ -20,6 +20,6 @@ Prepare the database
 .. note::
 
     Tuleap only works with the sql-mode listed above. 
-    Adding one or booting the SQL database in any other mode will end up with Tuleap malfunctioning
+    Adding another or booting the SQL database in any other sql-mode will cause Tuleap to malfunction.
 
 You are now ready to configure and run Tuleap.
