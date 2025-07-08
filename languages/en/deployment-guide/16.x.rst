@@ -8,7 +8,17 @@ Tuleap 16.10 - Not released yet
 
   Tuleap 16.10 is currently under development.
 
-Nothing to mention.
+Migration to PHP 8.4
+--------------------
+
+Tuleap now comes with PHP 8.4 by default.
+
+PHP FPM configuration will be deployed automatically by ``tuleap-cfg site-deploy``.
+
+If you have made some tweaks to the configuration file
+``/etc/opt/remi/php82/php-fpm.d/tuleap.conf`` you will also need
+to adapt them for the new configuration at ``/etc/opt/remi/php84/php-fpm.d/tuleap.conf``.
+
 
 Tuleap 16.9 - June 2025
 =======================

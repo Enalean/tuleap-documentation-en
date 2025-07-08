@@ -256,7 +256,7 @@ On RHEL/CentOS 6:
   chkconfig php73-php-fpm on # Useful if you want the service to be started on boot
 
 If you have made some tweaks to the configuration file
-``/etc/opt/remi/php72/php-fpm.d/tuleap.conf`` you will also needs
+``/etc/opt/remi/php72/php-fpm.d/tuleap.conf`` you will also need
 to adapt them for the new configuration at ``/etc/opt/remi/php73/php-fpm.d/tuleap.conf``.
 
 

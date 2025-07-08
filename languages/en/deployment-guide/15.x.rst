@@ -140,7 +140,7 @@ Tuleap now comes with PHP 8.2.
 PHP FPM configuration will be deployed automatically by ``tuleap-cfg site-deploy``.
 
 If you have made some tweaks to the configuration file
-``/etc/opt/remi/php81/php-fpm.d/tuleap.conf`` you will also needs
+``/etc/opt/remi/php81/php-fpm.d/tuleap.conf`` you will also need
 to adapt them for the new configuration at ``/etc/opt/remi/php82/php-fpm.d/tuleap.conf``.
 
 ``$sys_nb_backend_workers`` removed from ``local.inc``
