@@ -1,8 +1,13 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.10 - Not released yet
-===============================
+Tuleap 16.11 - Under development
+================================
+
+Nothing to mention.
+
+Tuleap 16.10 - July 2025
+========================
 
 .. NOTE::
 
