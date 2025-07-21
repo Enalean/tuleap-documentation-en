@@ -1,8 +1,12 @@
 Tuleap 16.x
 ###########
 
-Tuleap 16.11 - Under development
-================================
+Tuleap 16.11 - August 2025
+==========================
+
+.. NOTE::
+
+  Tuleap 16.11 is currently under development.
 
 Removal of remaining dependencies to PHP 8.2 packages
 -----------------------------------------------------
@@ -16,10 +20,6 @@ After the upgrade you can remove the packages from your system.
 
 Tuleap 16.10 - July 2025
 ========================
-
-.. NOTE::
-
-  Tuleap 16.10 is currently under development.
 
 Migration to PHP 8.4
 --------------------
