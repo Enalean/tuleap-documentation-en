@@ -4,7 +4,15 @@ Tuleap 16.x
 Tuleap 16.11 - Under development
 ================================
 
-Nothing to mention.
+Removal of remaining dependencies to PHP 8.2 packages
+-----------------------------------------------------
+
+The remaining dependencies to PHP 8.2 packages have been removed.
+After the upgrade you can remove the packages from your system.
+
+.. sourcecode:: shell
+
+    dnf remove php82\*
 
 Tuleap 16.10 - July 2025
 ========================
