@@ -1,4 +1,4 @@
-FROM nixos/nix:2.30.1@sha256:8c144c6c37184fe03fd7fed740c6eeb2ecfd801d6e34a6aba4e38f1c8d10de3e AS builder
+FROM nixos/nix:2.30.2@sha256:7894650fb65234b35c80010e6ca44149b70a4a216118a6b7e5c6f6ae377c8d21 AS builder
 
 COPY --chown=1000:1000 . /home/builder/tuleap-documentation
 
