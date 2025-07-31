@@ -2,19 +2,19 @@
 
 let
   pinnedNixpkgs = import (fetchTarball { 
-    url = "https://github.com/NixOS/nixpkgs/archive/29335f23bea5e34228349ea739f31ee79e267b88.tar.gz";
-    sha256 = "sha256-v/sK3AS0QKu/Tu5sHIfddiEHCvrbNYPv8X10Fpux68g=";
+    url = "https://github.com/NixOS/nixpkgs/archive/e44b8dc0882d66e2627a8ff252b04a22f4a629fd.tar.gz";
+    sha256 = "sha256-w81jpZeM3AtYlTKIhT05p3IqvJRIHZPyp0Acgb6hXWc=";
   } ) {};
   pyproject-nix = import (builtins.fetchTarball {
-    url = "https://github.com/pyproject-nix/pyproject.nix/archive/2db2d95ddbc4ff5e29730cb82fdba6647be258a7.tar.gz";
-    sha256 = "sha256:0wra289b7dfphbwjrb1rcqy0pk6qnshicdy6flmwq3cm0g3amybk";
+    url = "https://github.com/pyproject-nix/pyproject.nix/archive/62cc4495b3b2d2a259db321a06584378e93843a6.tar.gz";
+    sha256 = "sha256-r0NuyhyLUeLe/kSr+u2VFGjHFdccBJckZyFt74MYL5A=";
   }) { lib = pinnedNixpkgs.lib; };
   uv2nix = import (builtins.fetchTarball {
-    url = "https://github.com/pyproject-nix/uv2nix/archive/6d19baf0fcc7a013ae9c1c188bbf7cfe37b566e0.tar.gz";
-    sha256 = "sha256:19xab74w74zhymhr1rh0pk2q8lppvjhj5yfil3yz86jr4w2d9pxy";
+    url = "https://github.com/pyproject-nix/uv2nix/archive/656928e823e305426200f478a887943a600db303.tar.gz";
+    sha256 = "sha256-9G0Yo7TXFJEfSyHNrbV1WNEKhEojqQ3J0aWd0aYpixs=";
   }) { lib = pinnedNixpkgs.lib; inherit pyproject-nix; };
   pyproject-build-systems = import (builtins.fetchTarball {
-    url = "https://github.com/pyproject-nix/build-system-pkgs/archive/6d7eced86469cf89ed4d19d91b870163deb0dca2.tar.gz";
-    sha256 = "sha256:0hxz2xjjv5pbz8lyfij89214q4s64lz7q1fpvlvd26fcbbdj7w6b";
+    url = "https://github.com/pyproject-nix/build-system-pkgs/archive/45888b7fd4bf36c57acc55f07917bdf49ec89ec9.tar.gz";
+    sha256 = "sha256-H+gLv6424OjJSD+l1OU1ejxkN/v0U+yaoQdh2huCXYI=";
   }) { lib = pinnedNixpkgs.lib; inherit pyproject-nix uv2nix; };
-in pinnedNixpkgs // { inherit pyproject-nix uv2nix pyproject-build-systems; }
+in pinnedNixpkgs // { inherit pyproject-nix uv2nix; pyproject-build-systems = pyproject-build-systems.default; }
