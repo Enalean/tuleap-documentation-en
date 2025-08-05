@@ -129,7 +129,7 @@ Tuleap 12.5
 Setting ``sys_async_emails`` is no more used
 --------------------------------------------
 
-Tracker notifications are now always sent asynchronously as soon as Tuleap detects :ref:`backend workers<installation_redis>`.
+Tracker notifications are now always sent asynchronously as soon as Tuleap detects :ref:`backend workers<installation_valkey>`.
 You can safely remove this setting from your ``/etc/tuleap/conf/local.inc`` file.
 
 Tuleap 12.4

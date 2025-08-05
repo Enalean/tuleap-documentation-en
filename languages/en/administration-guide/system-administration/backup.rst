@@ -50,7 +50,7 @@ Tuleap data paths backup
 You need to save the following directories:
 
   - /etc/nginx
-  - /etc/redis
+  - /etc/valkey
   - /etc/tuleap
   - /var/lib/gitolite
   - /var/lib/tuleap
@@ -179,7 +179,7 @@ Example of bind mounts via local fstab
 .. code-block:: bash
 
     /data/etc_nginx /etc/nginx none bind,nofail 0 0
-    /data/etc_redis /etc/redis none bind,nofail 0 0
+    /data/etc_valkey /etc/valkey none bind,nofail 0 0
     /data/etc_tuleap /etc/tuleap none bind,nofail 0 0
     /data/var_lib_gitolite /var/lib/gitolite none bind,nofail 0 0
     /data/var_lib_mysql /var/lib/mysql none bind,nofail 0 0

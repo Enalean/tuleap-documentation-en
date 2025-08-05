@@ -36,7 +36,7 @@ Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
 ::
 
     dnf install -y mysql-server \
-    redis \
+    valkey \
     tuleap \
     tuleap-plugin-agiledashboard \
     tuleap-plugin-api-explorer \

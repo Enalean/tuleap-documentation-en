@@ -38,7 +38,7 @@ Site administration
 Redis
 #####
 
-* ``TULEAP_FPM_SESSION_MODE``: you can set it to ``redis`` so php sessions will be stored in a `Redis <https://redis.io>`_ K/V store.
+* ``TULEAP_FPM_SESSION_MODE``: you can set it to ``redis`` so php sessions will be stored in a `Redis <https://redis.io>`_ or `Valkey <https://valkey.io/>`_ K/V store.
 * ``TULEAP_REDIS_SERVER``: needed if you set ``redis`` for ``TULEAP_FPM_SESSION_MODE``.
 * ``TULEAP_REDIS_PORT``: needed if redis is listening on port that is not ``6379`` (the default).
 * ``TULEAP_REDIS_PASSWORD``: needed if redis requires a password.

@@ -147,7 +147,7 @@ to adapt them for the new configuration at ``/etc/opt/remi/php82/php-fpm.d/tulea
 ------------------------------------------------------
 
 The configuration variable ``$sys_nb_backend_workers``,
-used for asynchronous job processing (see :ref:`backend workers guide<installation_redis>`),
+used for asynchronous job processing (see :ref:`backend workers guide<installation_valkey>`),
 is now set via ``tuleap config-set``.
 
 It is recommended to remove it from ``/etc/tuleap/conf/local.inc``. If you had set it specifically

@@ -15,7 +15,7 @@ Table of contents:
    setup
    tls-configuration
    mail-configuration
-   redis-configuration
+   valkey-configuration
    first-connection
    install-plugins
    upgrade

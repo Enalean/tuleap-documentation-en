@@ -21,8 +21,8 @@ documented in their respective documentations.
 Configuration of Tuleap
 -----------------------
 
-First step is to install a Redis server and to configure Tuleap to use it,
-checkout the :ref:`Redis installation guide<installation_redis>`.
+First step is to install a Valkey server and to configure Tuleap to use it,
+checkout the :ref:`Valkey installation guide<installation_valkey>`.
 
 After having installed and activated ``tuleap-plugin-prometheus-metrics`` rpm, you need to setup a password to access the
 data (by default data are private and there is no ways to make them accessible anonymously). To do so, you need to write
