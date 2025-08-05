@@ -1,7 +1,7 @@
 Docker Standalone
 =================
 
-For anything but tests, you should have a dedicated MySQL (**version 8.0**) and Redis (last stable recommended) databases.
+For anything but tests, you should have a dedicated MySQL (**version 8.0**) and Redis or Valkey (last stable recommended) databases.
 
 At first run you will need to provide some information about the platform you want to deploy:
 

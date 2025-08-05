@@ -1,18 +1,22 @@
-.. _installation_redis:
+.. _installation_valkey:
 
-Redis Configuration
-===================
+Valkey Configuration
+====================
 
-Redis is used when using the :ref:`monitoring with Prometheus<admin_monitoring_with_prometheus>` feature.
+Valkey is used when using the :ref:`monitoring with Prometheus<admin_monitoring_with_prometheus>` feature.
 If you do not use it, your can skip this setup.
 
-Generate a password :
+Generate a password:
 ::
 
     dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
 
+Install Valkey:
+::
 
-You will have to modify ``/etc/redis/redis.conf``:
+    dnf install valkey
+
+You will have to modify ``/etc/valkey/valkey.conf``:
 
 -  Replace ``#requirepass foobared`` with ``requirepass PREVIOUS_GENERATED_PASSWORD``
 -  Replace ``appendonly no`` with ``appendonly yes``
@@ -37,5 +41,5 @@ Give it the correct permissions:
 All you have to do now is enable and launch the services and you should be able to access your instance.
 ::
 
-    systemctl enable redis
-    systemctl restart tuleap redis
+    systemctl enable valkey
+    systemctl restart tuleap valkey
