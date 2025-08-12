@@ -72,30 +72,6 @@ Tuleap site. It is generated daily by the logrotate script of ftp (see
 :ref:`log-files` section). It is basically a copy of the FTP
 log file /var/log/xferlog.
 
-Dump files
-----------
-
-/var/lib/tuleap/dumps
-
-As we will see later in this document there is a bunch of background
-script running on Tuleap on a regular basis. The default frequency if
-once every other hours. The first thing these scripts do is to extract a
-number of information from the Tuleap database and dump in a various
-text files to exploit them in the next stages.
-
-Files found in this directory are
-
--  **db\_top\_groups\_calc\_output:** contains different sorts of statistics
-   about the Tuleap hosted projects (project name, old project rank in
-   terms of total number of downloads, old project rank in terms of
-   number of downloads this past week, user rank - unused-, rank in
-   terms of total number of forum posting this past week, total number
-   of download, new rank of the projects in terms of number of
-   downloads, ...
--  **group\_dump:** group (project) name dump with project ID, users
-   belonging to the project and the project status (Active, Suspended,
-   Deleted)
-
 File Release Space
 ------------------
 
