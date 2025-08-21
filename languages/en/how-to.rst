@@ -13,6 +13,6 @@ Administrate your Tuleap instance, adding new users, setting permissions and so 
    :maxdepth: 2
 
    how-to/administration/add-a-user-as-platform-administrator
-   how-to/administration/add-a-nature-as-platform-administrator
+   how-to/administration/add-a-link-type-as-platform-administrator
    how-to/administration/customise-help-page
    how-to/administration/increase-max-file-size
