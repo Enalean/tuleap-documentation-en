@@ -23,6 +23,22 @@ After the upgrade you can remove the packages from your system.
 
     dnf remove php82\*
 
+Redis End Of Life
+-----------------
+
+As Rocky removed Redis from Appstream following its end of life in february, the redis modular metadata are now unavailable.  
+For those that used Prometheus to export metrics, moving from redis to Valkey will be necessary.
+
+.. sourcecode:: shell
+
+    cp -r /etc/redis /etc/redis.orig
+
+    dnf swap redis valkey
+
+    systemctl enable --now valkey
+
+Then follow :ref:`Valkey configuration page<installation_valkey>` to setup.
+
 Tuleap 16.10 - July 2025
 ========================
 
