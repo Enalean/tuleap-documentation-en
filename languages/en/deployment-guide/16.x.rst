@@ -26,7 +26,7 @@ After the upgrade you can remove the packages from your system.
 Redis End Of Life
 -----------------
 
-As Rocky removed Redis from Appstream following its end of life in february, the redis modular metadata are now unavailable.  
+As Rocky removed Redis 6.2 from Appstream following its end of life in february, the redis modular metadata are now unavailable.  
 For those that used Prometheus to export metrics, moving from redis to Valkey will be necessary.
 
 .. sourcecode:: shell
