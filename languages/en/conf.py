@@ -307,7 +307,8 @@ rediraffe_redirects = {
     "installation-guide/update.rst": "installation-guide/step-by-step/upgrade.rst",
     "installation-guide/FAQ.rst": "installation-guide/troubleshooting.rst",
     "installation-guide/step-by-step/install-packages-tee.rst": "installation-guide/step-by-step/install-packages.rst",
-    "installation-guide/step-by-step/install-packages-tce.rst": "installation-guide/step-by-step/install-packages.rst"
+    "installation-guide/step-by-step/install-packages-tce.rst": "installation-guide/step-by-step/install-packages.rst",
+    "how-to/administration/add-a-nature-as-platform-administrator.rst": "how-to/administration/add-a-link-type-as-platform-administrator.rst"
 }
 
 # 404 page
