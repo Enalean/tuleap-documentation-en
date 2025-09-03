@@ -11,7 +11,7 @@ course in order to add high quality content.
 Contribute without leaving your browser
 ---------------------------------------
 
-GitPod allows editing and building the documentation without leaving your browser. Give it a try with click on [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Enalean/tuleap-documentation-en).
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Enalean/tuleap-documentation-en)
 
 
 Download the sources from GitHub
