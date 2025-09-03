@@ -22,6 +22,8 @@ same Tuleap instance or between two different Tuleap instances.
     4. The cross-references in followup comments are modified by adding a space between # and the number in order to not
        leak data in the import in another Tuleap instance.
 
+    5. When you export only a tracker (with the option ``-t``) and you don't make the import into an existing project (import without the option ``-p`` and creation of a new project), be aware that the import may fail because of an inconsistency in the export. The export file of a single tracker also contains project data, such as dashboards based on reports of trackers not included in the export. In this case, the import fails with XML parse errors: ``IDREF "XX" without matching ID line``.
+
 
 .. toctree::
    :maxdepth: 1
