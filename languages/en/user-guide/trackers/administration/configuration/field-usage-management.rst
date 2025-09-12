@@ -187,9 +187,8 @@ The edition mode allows for fields configuration not available at the
 creation :
 
 -  **Change the field name**: the field name is different from the field
-   label. Field name is an internal name for the field. It is used in
-   SOAP API for instance. It must not contain any special characters.
-   Only lower case letters and "\_" are authorized.
+   label. Field name is an internal name for the field. It must not contain
+   any special characters. Only lower case letters and "\_" are authorized.
 
 -  **Add a decorator**: List values can be embellished with a decorator. A
    decorator is a colored square. There are two available color palettes: one

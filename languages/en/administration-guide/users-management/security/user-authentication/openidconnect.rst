@@ -17,8 +17,6 @@ The OpenID Connect client plugin allows users to authenticate with an OpenID Con
     * WebDAV access (they should use :ref:`Access Keys <access-keys>`.)
     * Subversion access (they should use :ref:`Access Keys <access-keys>`.)
 
-    Access to **SOAP API is no longer possible** for users that switch to OpenID Connect.
-
 Generic Provider
 ****************
 
