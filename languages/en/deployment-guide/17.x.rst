@@ -1,0 +1,10 @@
+Tuleap 17.x
+###########
+
+Tuleap 17.0 - November 2025
+===========================
+
+.. NOTE::
+ 
+  Tuleap 17.0 is currently under development.
+
