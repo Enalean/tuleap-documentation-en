@@ -16,7 +16,7 @@ It allows you to not be bothered by different OS migrations and the like.
 Prerequisites
 `````````````
 
-You need `docker <https://docs.docker.com/engine/install/>`_ on your host. You might want docker-compose as well.
+You need `docker compose <https://docs.docker.com/compose/install/>`_ on your host.
 
 The following sections assume that you are going to run the Tuleap container as the only "visible" container on the server.
 That means that Tuleap web container will publish it's ports (``80``, ``443`` and ``22``) on hosts ports.
@@ -34,3 +34,5 @@ Please do note that shared databases must not be used:
 - they cannot guarantee the needed Quality of service
 - they cannot respect the requirements (SQL modes)
 - they make consistent backups almost impossible
+
+In most cases, you'll also want a Reverse-Proxy to get access to your platform and handle the TLS termination.
