@@ -12,7 +12,7 @@ export default defineConfig({
                 scroll: resolve(__dirname, "languages/en/_themes/tuleap_org/js/scroll.js"),
                 nav: resolve(__dirname, "languages/en/_themes/tuleap_org/js/nav.js"),
                 theme: resolve(__dirname, "languages/en/_themes/tuleap_org/js/theme.js"),
-                style: resolve(__dirname, "languages/en/_themes/tuleap_org/style/main.scss"),
+                "style-2": resolve(__dirname, "languages/en/_themes/tuleap_org/style/main.scss"),
             },
             output: {
                 entryFileNames: "[name].js",
