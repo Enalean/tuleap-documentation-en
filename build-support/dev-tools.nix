@@ -12,5 +12,7 @@
       enable = true;
       package = pkgs.nixfmt;
     };
+    programs.actionlint.enable = true;
+    programs.zizmor.enable = true;
   })
 ]
