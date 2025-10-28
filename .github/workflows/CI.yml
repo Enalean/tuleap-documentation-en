@@ -1,6 +1,6 @@
 name: CI
 
-permissions: read-all
+permissions: {}
 
 on:
   push:
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - uses: cachix/install-nix-action@fd24c48048070c1be9acd18c9d369a83f0fe94d7 # v31.8.1
       - name: Build
         run: nix-shell --pure --run 'treefmt --ci'
@@ -25,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - uses: cachix/install-nix-action@fd24c48048070c1be9acd18c9d369a83f0fe94d7 # v31.8.1
       - name: Build
         run: nix-shell --pure --run 'make SPHINXOPTS='-W' html'
@@ -34,6 +38,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Build image
         run: docker build -f docs.tuleap.org/Dockerfile -t test-build .
   build_docker_image_linkcheck:
@@ -42,5 +48,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Build image
         run: docker build -f build-support/linkcheck-docker.dockerfile -t test-build-linkcheck .
