@@ -255,7 +255,7 @@ So, a project administrator can change the default rules, for instance
 to define stricter rules:
 
 ::
-   
+
    [/]
    * =
    @members = r
@@ -275,7 +275,7 @@ will indeed prevent non ``staff`` group users from reading the ``/secret``
 directory.
 
 ::
-   
+
     [/inputs/customer]
     @members =
     @staff = r
@@ -301,16 +301,29 @@ update or delete exiting files.
 **Immutable Tags:**
 
 Given the following structure :
+
 ::
 
- - /repository_name/tags
- - /repository_name/tags/README.txt
+   └ repository_name
+     └ tags
+       └ README.txt
 
-And given an immutable tag define on /repository_name/tags :
-::
+And given an immutable tag define on ``/repository_name/tags``:
 
- - I cannot update or delete README.txt
- - I can create a new file like /repository_name/tags/new_file.txt
+
+- I cannot update or delete ``README.txt``
+- I can create a new file like ``/repository_name/tags/new_file.txt``
+
+
++----------------------------------------------+-------------+
+| Action                                       | Is allowed? |
++==============================================+=============+
+| Update ``/repository_name/tags/README.txt``  | Yes         |
++----------------------------------------------+-------------+
+| Delete ``/repository_name/tags/README.txt``  | Yes         |
++----------------------------------------------+-------------+
+| Add ``/repository_name/tags/new_file.txt``   | No          |
++----------------------------------------------+-------------+
 
 **Whitelist:**
 
@@ -320,25 +333,34 @@ and add new content by defining paths in immutable tags whitelist.
 Given the following structure :
 ::
 
- - /moduleA/trunks
- - /moduleB/trunks
- - /tags
+ ├ trunk
+ └ tags
+   ├ moduleA
+   │ └ README.txt
+   └ moduleB
+     └ README.txt
+
+Given an immutable tag define on ``/tags``
+and a global whitelist defined on ``/tags/module*``
 
 
-Given an immutable tag define on /tags
-and a global whitelist defined on /tags/module*
-::
-
- - I can add content in /tags/moduleA or /tags/moduleB
- - I cannot update or delete content in /tags/moduleA or /tags/moduleB
- - I still cannot update or delete /tags/moduleA/README.txt or /tags/moduleB/README.txt
- - I still can add new file like /tags/moduleA/new_file.txt or /tags/new_file.txt
-
-.. figure:: ../../images/screenshots/immutable_tags.png
-   :align: center
-   :alt: Immutable tags Tuleap interface
-
-   Immutable tags Tuleap interface
++-------------------------------------+-------------+
+| Action                              | Is allowed? |
++=====================================+=============+
+| Add ``/tags/moduleC``               | Yes         |
++-------------------------------------+-------------+
+| Add ``/tags/moduleA/new_file.txt``  | Yes         |
++-------------------------------------+-------------+
+| Add ``/tags/moduleB/new_file.txt``  | Yes         |
++-------------------------------------+-------------+
+| Update ``/tags/moduleA/README.txt`` | No          |
++-------------------------------------+-------------+
+| Update ``/tags/moduleB/README.txt`` | No          |
++-------------------------------------+-------------+
+| Delete ``/tags/moduleA/README.txt`` | No          |
++-------------------------------------+-------------+
+| Delete ``/tags/moduleB/README.txt`` | No          |
++-------------------------------------+-------------+
 
 
 A Typical Subversion Life Cycle
