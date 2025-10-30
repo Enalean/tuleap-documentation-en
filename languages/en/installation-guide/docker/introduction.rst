@@ -15,5 +15,4 @@ Table of contents:
    intro_docker
    images-configuration
    verify_images_authenticity
-   docker_standalone
    docker_compose
