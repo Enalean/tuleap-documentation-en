@@ -2,6 +2,8 @@
 @use "sass:color";
 
 body {
+    color: variables.$typo-default-text-color;
+
     &.pinned .doc-menu {
         height: calc(100vh - #{variables.$header-pinned-height} - 20px);
     }
@@ -100,7 +102,7 @@ body {
             margin: 0 0 20px;
 
             > a {
-                color: variables.$grey;
+                color: variables.$typo-default-text-color;
                 font-weight: 600;
                 text-transform: uppercase;
 
@@ -138,7 +140,7 @@ body {
             }
 
             a {
-                color: variables.$grey;
+                color: variables.$typo-default-text-color;
             }
         }
 
@@ -167,7 +169,7 @@ body {
             &:hover,
             &:active,
             &:focus {
-                color: variables.$black;
+                color: variables.$dark-color;
                 text-decoration: none;
             }
 
@@ -432,7 +434,6 @@ body {
             border-right: 1px solid #e8e8e8;
             border-bottom: 1px solid color.scale(variables.$orange, $alpha: -40%);
             background: #f8f8f8;
-            color: variables.$grey;
             font-weight: 600;
             vertical-align: middle;
 
@@ -472,7 +473,6 @@ body {
         pre {
             border: 0;
             background: none;
-            color: variables.$grey;
         }
     }
 
