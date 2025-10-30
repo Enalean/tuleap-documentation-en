@@ -8,7 +8,7 @@ body.pinned {
         height: variables.$header-pinned-height;
         transform: translate3d(0, 0, 0);
         background: variables.$white;
-        box-shadow: 0 1px 5px color.scale(variables.$black, $alpha: -80%);
+        box-shadow: 0 1px 5px color.scale(variables.$dark-color, $alpha: -80%);
     }
 
     .header-content {
@@ -56,7 +56,7 @@ body:not(.pinned) {
 
         .header-menu {
             @media screen and (max-width: #{variables.$tiny-screen-size}) {
-                background: color.scale(variables.$black, $alpha: -5%);
+                background: color.scale(variables.$dark-color, $alpha: -5%);
 
                 &:not(.show) {
                     display: none;
@@ -108,7 +108,7 @@ body:not(.pinned) {
 
         .header-menu-item-container:hover {
             .header-menu-item {
-                background: color.adjust(variables.$black, $lightness: -5%);
+                background: color.adjust(variables.$dark-color, $lightness: -5%);
                 color: variables.$orange;
             }
         }
@@ -123,7 +123,7 @@ body:not(.pinned) {
         }
 
         .header-submenu {
-            background: color.adjust(variables.$black, $lightness: -5%);
+            background: color.adjust(variables.$dark-color, $lightness: -5%);
 
             @media screen and (max-width: #{variables.$mobile-screen-size}) {
                 background: none;
@@ -134,7 +134,7 @@ body:not(.pinned) {
             color: variables.$white;
 
             &:hover {
-                background: color.adjust(variables.$black, $lightness: -10%);
+                background: color.adjust(variables.$dark-color, $lightness: -10%);
             }
         }
     }
@@ -153,11 +153,6 @@ body:not(.pinned) {
 
     @each $name, $hexa in variables.$guides {
         &.#{$name} header {
-            .header-menu-item-container:hover .header-menu-item {
-                background: variables.$black;
-                color: color.adjust($hexa, $lightness: 10%);
-            }
-
             .header-menu-item {
                 color: $hexa;
 
@@ -168,6 +163,11 @@ body:not(.pinned) {
             }
         }
     }
+}
+
+.header-menu-item-container:hover .header-menu-item {
+    background: variables.$dark-color;
+    color: variables.$white;
 }
 
 header {
@@ -275,7 +275,7 @@ header {
 .header-menu-item-container:hover {
     .header-menu-item {
         border-radius: 5px 5px 0 0;
-        background: variables.$grey;
+        background: variables.$dark-color;
         color: variables.$white;
         text-decoration: none;
 
@@ -339,8 +339,8 @@ span.header-menu-item {
     margin: -1px 5px 0;
     overflow: hidden;
     border-radius: 0 5px 5px;
-    background: variables.$grey;
-    box-shadow: 0 10px 20px color.scale(variables.$black, $alpha: -80%);
+    background: variables.$dark-color;
+    box-shadow: 0 10px 20px color.scale(variables.$dark-color, $alpha: -80%);
     pointer-events: none;
 
     @media screen and (max-width: #{variables.$tiny-screen-size}) {
@@ -366,12 +366,12 @@ span.header-menu-item {
     text-decoration: none;
 
     &:hover {
-        background: variables.$black;
+        background: variables.$dark-color;
         color: color.scale(variables.$white, $alpha: -10%);
         text-decoration: none;
     }
     @media screen and (max-width: #{variables.$mobile-screen-size}) {
-        color: variables.$black;
+        color: variables.$typo-default-text-color;
     }
 }
 

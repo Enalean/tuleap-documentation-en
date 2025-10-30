@@ -7,7 +7,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: variables.$footer-height;
-    background: variables.$black;
+    background: variables.$dark-color;
 }
 
 .footer-content {
@@ -46,9 +46,18 @@ footer {
     height: 40px;
 }
 
+@mixin footer-link {
+    color: variables.$white;
+
+    &:hover {
+        opacity: 0.7;
+        text-decoration: none;
+    }
+}
+
 .footer-sponsored-text {
     margin: 0 0 10px;
-    color: #606060;
+    color: variables.$white;
     font-size: 13px;
     line-height: 18px;
 
@@ -57,12 +66,7 @@ footer {
     }
 
     > a {
-        color: #909090;
-
-        &:hover {
-            color: color.adjust(#909090, $lightness: 20%);
-            text-decoration: none;
-        }
+        @include footer-link;
     }
 }
 
@@ -86,7 +90,7 @@ footer {
         width: 1px;
         height: 30px;
         transform: translate(-50%, -50%);
-        background: #505050;
+        background: variables.$white;
     }
 
     @media screen and (max-width: #{variables.$tiny-screen-size}) {
@@ -95,22 +99,13 @@ footer {
 }
 
 .footer-link {
+    @include footer-link;
+
     margin: 0 0 0 30px;
-    color: #606060;
     font-size: 13px;
 
     .footer-link-image {
         height: 30px;
-        opacity: .7;
-    }
-
-    &:hover {
-        color: color.adjust(#606060, $lightness: 20%);
-        text-decoration: none;
-
-        .footer-link-image {
-            opacity: 1;
-        }
     }
 
     @media screen and (max-width: #{variables.$tiny-screen-size}) {
