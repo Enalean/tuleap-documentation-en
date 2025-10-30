@@ -15,34 +15,37 @@
         text-decoration: none;
     }
 
-    .card-illustration {
-        display: flex;
-        flex: 1 1 auto;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 20px;
-        border-radius: 4px 4px 0 0;
-
-        > img {
-            flex: 0 1 auto;
-            margin: 0;
-        }
-    }
-
-    .card-title {
-        flex: 0 0 auto;
-        margin: 0;
-        padding: 15px 20px;
-        border-radius: 0 0 4px 4px;
-        background: variables.$white;
-        color: variables.$grey;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
     @each $name, $hexa in variables.$colors {
         &.#{$name} > .card-illustration {
-            background: linear-gradient(45deg, color.adjust($hexa, $lightness: -5%), color.adjust($hexa, $lightness: 15%));
+            background: $hexa;
         }
     }
+}
+
+.card-illustration {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px 4px 0 0;
+    height: 175px;
+}
+
+.card-title {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 15px 20px;
+    border-radius: 0 0 4px 4px;
+    background: variables.$white;
+    color: variables.$grey;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.svg-illustration-developer-guide-fill {
+    fill: variables.$developer-guide;
+}
+
+.svg-illustration-developer-guide-stop-color {
+    stop-color: variables.$developer-guide;
 }
