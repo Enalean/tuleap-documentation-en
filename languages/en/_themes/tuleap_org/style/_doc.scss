@@ -195,6 +195,10 @@ body {
 
 #tuleap-doc-search-form {
     margin: 0 0 20px;
+
+    > input::placeholder {
+        color: color.mix(variables.$typo-default-text-color, variables.$white, $weight: 80%, $method: rgb);
+    }
 }
 
 .doc-show-navigation {
@@ -480,17 +484,17 @@ body {
         margin: -40px 0 40px;
     }
 
-    .doc-homepage-subtitle {
-        margin: 0 0 10px;
-        color: variables.$light-grey;
-        font-size: 18px;
-    }
-
     .doc-homepage-intro {
         margin: 0 0 50px;
         font-size: 18px;
         line-height: 30px;
     }
+}
+
+.doc-homepage-subtitle {
+    margin: 0 0 10px;
+    color: color.mix(variables.$typo-default-text-color, variables.$white, $weight: 80%, $method: rgb);
+    font-size: 18px;
 }
 
 .doc-homepage {
