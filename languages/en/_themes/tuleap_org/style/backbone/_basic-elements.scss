@@ -45,7 +45,7 @@ h2 {
 
 h3 {
     margin: 0 0 10px;
-    color: color.scale(variables.$typo-default-text-color, $alpha: -30%);
+    color: color.mix(variables.$typo-default-text-color, variables.$white, $weight: 70%, $method: rgb);
     font-size: 22px;
     font-weight: 600;
     line-height: 30px;
@@ -54,7 +54,7 @@ h3 {
 
 h4 {
     margin: 0 0 10px;
-    color: color.scale(variables.$typo-default-text-color, $alpha: -40%);
+    color: color.mix(variables.$typo-default-text-color, variables.$white, $weight: 60%, $method: rgb);
     font-size: 16px;
     font-weight: 700;
     line-height: 30px;
@@ -63,7 +63,7 @@ h4 {
 
 h5 {
     margin: 0 0 10px;
-    color: color.scale(variables.$typo-default-text-color, $alpha: -40%);
+    color: color.mix(variables.$typo-default-text-color, variables.$white, $weight: 60%, $method: rgb);
     font-weight: 700;
     line-height: 30px;
 }
