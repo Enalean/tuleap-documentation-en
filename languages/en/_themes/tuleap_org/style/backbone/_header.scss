@@ -360,28 +360,17 @@ span.header-menu-item {
     display: flex;
     flex-direction: column;
     padding: 13px 10px;
-    color: color.scale(variables.$white, $alpha: -10%);
+    color: color.mix(variables.$white, variables.$dark-color, $weight: 90%, $method: rgb);
     font-size: 13px;
     letter-spacing: .2px;
     text-decoration: none;
 
     &:hover {
-        background: variables.$dark-color;
-        color: color.scale(variables.$white, $alpha: -10%);
         text-decoration: none;
     }
     @media screen and (max-width: #{variables.$mobile-screen-size}) {
         color: variables.$typo-default-text-color;
     }
-}
-
-.header-submenu-item-details {
-    margin: 10px 0 0;
-    color: color.scale(variables.$white, $alpha: -5%);
-    font-size: 10px;
-    letter-spacing: .8px;
-    line-height: normal;
-    text-transform: uppercase;
 }
 
 section {

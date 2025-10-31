@@ -8,7 +8,7 @@
 body {
     min-height: 100vh;
     padding: variables.$header-height 0 0;
-    background: #ffffff;
+    background: variables.$white;
     font-family: 'Public Sans Variable', Helvetica, Arial, sans-serif;
 
     &.modal-shown {
