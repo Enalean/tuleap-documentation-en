@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $mobile-screen-size: 500px;
 $tiny-screen-size: 900px;
 $small-screen-size: 1200px;
@@ -12,7 +14,7 @@ $footer-height: 160px;
 $dark-color: #1b1512;
 $white: #ffffff;
 $typo-default-text-color: $dark-color;
-$light-grey: #888888;
+$light-grey: color.mix($typo-default-text-color, $white, $weight: 70%, $method: rgb);
 
 $orange: #ff6e30;
 $light-blue: #3fc0d4;

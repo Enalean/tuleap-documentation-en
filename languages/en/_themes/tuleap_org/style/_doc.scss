@@ -195,6 +195,10 @@ body {
 
 #tuleap-doc-search-form {
     margin: 0 0 20px;
+
+    > input::placeholder {
+        color: variables.$light-grey;
+    }
 }
 
 .doc-show-navigation {
@@ -234,6 +238,7 @@ body {
     padding: 50px 0 50px 60px;
 
     &::after {
+        // Makes the border on the left a gradient
         content: '';
         position: absolute;
         top: 0;
@@ -242,8 +247,8 @@ body {
         height: 100%;
         background-image: linear-gradient(to bottom,
             variables.$white 0,
-            color.scale(variables.$light-grey, $alpha: -85%) 50px,
-            color.scale(variables.$light-grey, $alpha: -85%) 100%
+            color.scale(#888888, $alpha: -85%) 50px,
+            color.scale(#888888, $alpha: -85%) 100%
         );
     }
 
@@ -480,17 +485,17 @@ body {
         margin: -40px 0 40px;
     }
 
-    .doc-homepage-subtitle {
-        margin: 0 0 10px;
-        color: variables.$light-grey;
-        font-size: 18px;
-    }
-
     .doc-homepage-intro {
         margin: 0 0 50px;
         font-size: 18px;
         line-height: 30px;
     }
+}
+
+.doc-homepage-subtitle {
+    margin: 0 0 10px;
+    color: variables.$light-grey;
+    font-size: 18px;
 }
 
 .doc-homepage {
