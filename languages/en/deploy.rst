@@ -17,44 +17,35 @@ file, the default is automatically set for you.
 
    deployment-guide/17.x.rst
    deployment-guide/16.x.rst
-   deployment-guide/15.x.rst
-   deployment-guide/14.x.rst
-   deployment-guide/13.x.rst
-   deployment-guide/12.x.rst
-   deployment-guide/11.x.rst
-   deployment-guide/10.x.rst
-   deployment-guide/9.x.rst
-   deployment-guide/8.x.rst
-   deployment-guide/7.x.rst
 
 Deprecations and end of support
 ===============================
 
 Here is the list of what Tuleap will remove, stop or start supporting with the planned time periods.
 
-**Last update: April 2025**
+**Last update: November 2025**
 
-December 2024
+December 2025
 '''''''''''''
 
 ============================= ================= ============================================================
 What                          Status            As platform administrator, what should I do ?
 ============================= ================= ============================================================
-News and Forums               Removed in 16.4   Tuleap will no longer provide the feature. Administrators should look for another tool.
-Legacy "DocMan" UI            Removed in 16.4   Nothing to do, for most users it's already the default behavior
+Trackers v3                   Removed in 17.1   Migrate to Trackers v5
+Legacy "DocMan" UI            Removed in 17.1   Nothing to do, for most users it's already the default behavior
                                                 unless you activated ``feature_flag_allow_temporary_access_to_old_ui_that_will_be_removed_soon``
                                                 feature flag.
+PHP Wiki                      Removed in 17.7   Switch to Mediawiki
 ============================= ================= ============================================================
 
-In the future
-'''''''''''''
+April 2026
+''''''''''
 
-============================ ==================== =============================================
-What                         Status               As platform administrator, what should I do ?
-============================ ==================== =============================================
-Trackers v3                  Removed              Migrate to Trackers v5
-PHP Wiki                     Removed              Switch to Mediawiki
-============================ ==================== =============================================
+============================= ================= ============================================================
+What                          Status            As platform administrator, what should I do ?
+============================= ================= ============================================================
+PHP Wiki                      Removed in 17.7   Switch to Mediawiki
+============================= ================= ============================================================
 
 Support already ended
 =====================
@@ -62,6 +53,7 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
+News and Forums                 Q3 2025  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool.
 Chrome & Edge < 127             Q2 2025  End of support    Ensure your users have an up-to-date browser.
 Firefox < 128                   Q2 2025  End of support    Ensure your users have an up-to-date browser.
 RHEL / CentOS 7                 Q2 2024  End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
@@ -90,3 +82,18 @@ RabbitMQ                        Q3 2019  Replaced by Redis Uninstall RabbitMQ
 WebDAV with Windows 7 client    Q3 2019  End of support    End-users should switch to Cyberduck
 =============================== ======== ================= ====================================================================================
 
+Archives
+========
+
+.. toctree::
+   :maxdepth: 1
+   
+   deployment-guide/15.x.rst
+   deployment-guide/14.x.rst
+   deployment-guide/13.x.rst
+   deployment-guide/12.x.rst
+   deployment-guide/11.x.rst
+   deployment-guide/10.x.rst
+   deployment-guide/9.x.rst
+   deployment-guide/8.x.rst
+   deployment-guide/7.x.rst
