@@ -18,6 +18,7 @@ import sys, os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 sys.path.append(os.path.abspath("./_pygments"))
+sys.path.append(os.path.abspath("./_themes/tuleap_org"))
 
 # -- General configuration -----------------------------------------------------
 
@@ -33,6 +34,7 @@ extensions = [
     'notfound.extension',
     'lexer',
     'tuleap_style',
+    'vite_assets_finder',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
