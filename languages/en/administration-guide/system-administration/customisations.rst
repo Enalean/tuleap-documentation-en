@@ -65,21 +65,22 @@ The small version is used when the project sidebar is collapsed.
 As soon as both files are present, then the logo will be considered customized and
 it will be provided instead of the default logo.
 
-In order to ensure readability of the logo on every context, we provide two class names
+In order to ensure readability of the logo on every context, we provide three class names
 to put in your SVG elements (``<path>``, …):
 
 * ``logo-svg-fill-theme-color``
 * ``logo-svg-fill-default-text-color``
+* ``logo-svg-fill-default-text-color-invert``
 
 This will be rendered with the following color according to context:
 
-+------------+---------------------------+----------------------------------+
-| Context    | logo-svg-fill-theme-color | logo-svg-fill-default-text-color |
-+============+===========================+==================================+
-| No sidebar |  theme color              |  blackish                        |
-+------------+---------------------------+----------------------------------+
-| Sidebar    |  theme color              |  white                           |
-+------------+---------------------------+----------------------------------+
++------------------------+---------------------------+----------------------------------+-----------------------------------------+
+| Context                | logo-svg-fill-theme-color | logo-svg-fill-default-text-color | logo-svg-fill-default-text-color-invert |
++========================+===========================+==================================+=========================================+
+| No sidebar             |  theme color              |  blackish                        |  white                                  |
++------------------------+---------------------------+----------------------------------+-----------------------------------------+
+| Sidebar or dark header |  theme color              |  white                           |  blackish                               |
++------------------------+---------------------------+----------------------------------+-----------------------------------------+
 
 Without those class names, the color of the element will stay the same
 on each pages of Tuleap.
