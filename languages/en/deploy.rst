@@ -35,7 +35,6 @@ Trackers v3                   Removed in 17.1   Migrate to Trackers v5
 Legacy "DocMan" UI            Removed in 17.1   Nothing to do, for most users it's already the default behavior
                                                 unless you activated ``feature_flag_allow_temporary_access_to_old_ui_that_will_be_removed_soon``
                                                 feature flag.
-PHP Wiki                      Removed in 17.7   Switch to Mediawiki
 ============================= ================= ============================================================
 
 April 2026
@@ -53,7 +52,7 @@ Support already ended
 =============================== ======== ================= ====================================================================================
 What                            When     Status            As platform administrator, what should I do ?
 =============================== ======== ================= ====================================================================================
-News and Forums                 Q3 2025  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool.
+News and Forums                 Q4 2025  Removed           Tuleap will no longer provide the feature. Administrators should look for another tool.
 Chrome & Edge < 127             Q2 2025  End of support    Ensure your users have an up-to-date browser.
 Firefox < 128                   Q2 2025  End of support    Ensure your users have an up-to-date browser.
 RHEL / CentOS 7                 Q2 2024  End of support    Switch to RHEL 9 / RockyLinux 9 / AlmaLinux 9
