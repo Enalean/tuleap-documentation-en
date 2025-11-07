@@ -13,4 +13,5 @@ Nothing to mention.
 Tuleap 17.0 - November 2025
 ===========================
 
-Nothing to mention.
+**This is the last version of Tuleap to provide Tracker v3, Old Docman UI and ProjectLinks plugin**
+
