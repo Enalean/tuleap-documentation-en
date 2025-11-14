@@ -2,7 +2,7 @@ Tuleap Documentation
 ====================
 
 [Tuleap](https://tuleap.org/) uses Sphinx in order to generate [its
-documentation](https://docs.tuleap.org/).
+documentation](https://docs.tuleap.com/).
 
 Contributors are encouraged to have a look at 
 [Google Technical Writing](https://developers.google.com/tech-writing) 
@@ -28,12 +28,12 @@ Build the documentation
 
 The documentation is generated in `tuleap-documentation-en/_build/html/en/` You can check the modifications by opening `index.html` with your web browser. You need to build the documentation in order to see your modifications.
 
-To build documentation for tuleap.org:
+To build documentation for docs.tuleap.com:
 
     nix-shell
     npm ci
     npm run build
-    make SPHINXOPTS="-D html_theme=tuleap_org" html
+    make SPHINXOPTS="-D html_theme=tuleap_online_doc" html
 
 
 To build the documentation in watch mode:
@@ -41,7 +41,7 @@ To build the documentation in watch mode:
     nix-shell
     npm ci
     npm run build
-    make SPHINXOPTS="-D html_theme=tuleap_org" watch-html
+    make SPHINXOPTS="-D html_theme=tuleap_online_doc" watch-html
     
 > A web-server will start, the modifies pages will be rebuilt and reloaded automatically each time you save your work.
 

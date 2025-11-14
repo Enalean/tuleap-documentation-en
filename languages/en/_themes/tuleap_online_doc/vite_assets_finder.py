@@ -25,7 +25,7 @@ def setup_vite_assets_finder(app, pagename, templatename, context, doctree):
     def path_to_theme_assets(asset_name):
         with open(os.path.dirname(os.path.abspath(__file__)) + '/static/assets/.vite/manifest.json') as json_data:
             manifest = json.load(json_data)
-        return relative_uri(quote(pagename), '_static/assets/' + manifest['languages/en/_themes/tuleap_org/' + asset_name]['file'])
+        return relative_uri(quote(pagename), '_static/assets/' + manifest['languages/en/_themes/tuleap_online_doc/' + asset_name]['file'])
     context['path_to_theme_assets'] = path_to_theme_assets
 
 def setup(app):

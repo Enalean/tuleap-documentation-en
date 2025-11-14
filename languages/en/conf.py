@@ -18,7 +18,7 @@ import sys, os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 sys.path.append(os.path.abspath("./_pygments"))
-sys.path.append(os.path.abspath("./_themes/tuleap_org"))
+sys.path.append(os.path.abspath("./_themes/tuleap_online_doc"))
 
 # -- General configuration -----------------------------------------------------
 
