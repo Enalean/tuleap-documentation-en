@@ -9,13 +9,13 @@ export default defineConfig({
         reportCompressedSize: false,
         rollupOptions: {
             input: {
-                scroll: resolve(__dirname, "languages/en/_themes/tuleap_org/js/scroll.js"),
-                nav: resolve(__dirname, "languages/en/_themes/tuleap_org/js/nav.js"),
-                theme: resolve(__dirname, "languages/en/_themes/tuleap_org/js/theme.js"),
-                "style": resolve(__dirname, "languages/en/_themes/tuleap_org/style/main.scss"),
+                scroll: resolve(__dirname, "languages/en/_themes/tuleap_online_doc/js/scroll.js"),
+                nav: resolve(__dirname, "languages/en/_themes/tuleap_online_doc/js/nav.js"),
+                theme: resolve(__dirname, "languages/en/_themes/tuleap_online_doc/js/theme.js"),
+                "style": resolve(__dirname, "languages/en/_themes/tuleap_online_doc/style/main.scss"),
             },
         },
-        outDir: resolve(__dirname, "languages/en/_themes/tuleap_org/static/assets/"),
+        outDir: resolve(__dirname, "languages/en/_themes/tuleap_online_doc/static/assets/"),
         assetsDir: "",
         manifest: true,
     },

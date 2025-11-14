@@ -62,8 +62,8 @@ linkcheck: pre-build ## Check all external links for integrity
 watch-html: pre-build ## Watch the files and rebuild
 	$(SPHINX_AUTOBUILD) -b html $(WATCHOPTS) $(BUILDDIR)/html --port 5000 --open-browser
 
-watch-html-tuleap-org: pre-build ## Watch the files for the tuleap.org Theme
-	@$(MAKE) watch-html SPHINXOPTS="-D html_theme=tuleap_org"
+watch-html-online-docs: pre-build ## Watch the files for the Tuleap online docs theme
+	@$(MAKE) watch-html SPHINXOPTS="-D html_theme=tuleap_online_doc"
 
 docker-html:
 	docker run --rm -ti -u `id -u`:`id -g` -v $(CURDIR):/sources enalean/build-documentation make html
