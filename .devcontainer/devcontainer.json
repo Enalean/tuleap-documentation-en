@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {}
   },
-  "postCreateCommand": "nix-shell --command 'npm ci && npm run build && make SPHINXOPTS=\"-D html_theme=tuleap_org\" watch-html'",
+  "postCreateCommand": "nix-shell --command 'npm ci && npm run build && make SPHINXOPTS=\"-D html_theme=tuleap_online_doc\" watch-html'",
   "forwardPorts": [5000],
   "portsAttributes": {
     "5000": {

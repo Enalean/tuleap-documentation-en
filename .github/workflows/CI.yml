@@ -32,8 +32,8 @@ jobs:
       - uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
       - name: Build
         run: nix-shell --pure --run 'make SPHINXOPTS='-W' html'
-  build_docker_image_theme_tuleap_org:
-    name: Check build of the Docker image with the tuleap.org theme (docs.tuleap.org)
+  build_docker_image_theme_online_docs:
+    name: Check build of the Docker image with the Tuleap online docs theme (docs.tuleap.com)
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
@@ -41,7 +41,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Build image
-        run: docker build -f docs.tuleap.org/Dockerfile -t test-build .
+        run: docker build -f online-docs/Dockerfile -t test-build .
   build_docker_image_linkcheck:
     name: Check build of the Docker image used to run linkcheck
     runs-on: ubuntu-24.04

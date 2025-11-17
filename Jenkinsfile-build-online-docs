@@ -16,10 +16,10 @@ pipeline {
                     def lib_signing = new org.tuleap.Signing();
                     lib_signing.authenticateOnTailscale();
                     lib_signing.prefetchToolsToSignDockerImages('ci-write');
-                    def image_name = 'tuleap-documentation.docs.tuleap.org';
+                    def image_name = 'tuleap-documentation.online-docs';
                     def image = docker.build(
                         image_name,
-                        '-f docs.tuleap.org/Dockerfile .'
+                        '-f online-docs/Dockerfile .'
                     )
                     def registry_name = "nexus.enalean.com:20000";
                     docker.withRegistry("https://${registry_name}", 'ci-write') {

@@ -3,5 +3,5 @@ nbproject
 .idea/
 venv/
 node_modules/
-languages/en/_themes/tuleap_org/static/assets/
+languages/en/_themes/tuleap_online_doc/static/assets/
 __pycache__
