@@ -156,6 +156,10 @@ body:not(.pinned) {
             .header-menu-item {
                 color: $hexa;
 
+                &:hover {
+                    color: variables.$white;
+                }
+
                 &.active {
                     background: $hexa;
                     color: variables.$white;

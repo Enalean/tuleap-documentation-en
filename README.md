@@ -41,7 +41,7 @@ To build the documentation in watch mode:
     nix-shell
     npm ci
     npm run build
-    make SPHINXOPTS="-D html_theme=tuleap_online_doc" watch-html
+    make watch-html-online-docs
     
 > A web-server will start, the modifies pages will be rebuilt and reloaded automatically each time you save your work.
 
