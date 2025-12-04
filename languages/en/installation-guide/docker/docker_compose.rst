@@ -34,6 +34,15 @@ Please be aware that you need **double quotes** around your variables in order f
 
 Please check the :ref:`environment variables <docker-environment-variables>` to know what they stand for.
 
+The Volumes
+```````````
+
+We're going to mount tuleap as a Filesystem mountpoint (``/srv/tuleap`` bellow, feel free to change) instead of a typical Docker volume :
+  - It eases configuration manipulation
+  - It allows a better Disk space management
+  - It allows easier Migration / Disaster Recovery if needed
+  - It allows easier backups 
+  - There are no significant performance drop on Linux 
 
 Tuleap Community
 `````````````````
@@ -58,7 +67,7 @@ Then create a ``compose.yaml`` file with following content:
           - "443:443"
           - "22:22"
         volumes:
-          - tuleap-data:/data
+          - /srv/tuleap/tuleap-data:/data
         depends_on:
           - db
         environment:
@@ -70,17 +79,14 @@ Then create a ``compose.yaml`` file with following content:
           - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
-      db:
+      mysql:
         image: mysql:8.0
         command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
         environment:
           - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         volumes:
-          - db-data:/var/lib/mysql
+          - /srv/tuleap/mysql-data:/var/lib/mysql
 
-    volumes:
-      tuleap-data:
-      db-data:
 
 Tuleap Enterprise
 `````````````````
@@ -117,7 +123,7 @@ Please check the :ref:`environment variables <docker-environment-variables>` to 
           - "443:443"
           - "22:22"
         volumes:
-        - tuleap-data:/data
+        - /srv/tuleap/tuleap-data:/data
         environment:
         - TULEAP_FQDN=${TULEAP_FQDN}
         - TULEAP_SYS_DBHOST=${DB_FQDN}
@@ -128,8 +134,6 @@ Please check the :ref:`environment variables <docker-environment-variables>` to 
         - TULEAP_FPM_SESSION_MODE=redis
         - TULEAP_REDIS_SERVER=${REDIS_FQDN}
 
-    volumes:
-        tuleap-data:
 
 If you want to secure your server and use certificates, you may spawn a Reverse-Proxy in the stack.
 
