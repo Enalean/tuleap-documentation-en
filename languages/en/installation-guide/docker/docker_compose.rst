@@ -37,7 +37,7 @@ Please check the :ref:`environment variables <docker-environment-variables>` to 
 The Volumes
 ```````````
 
-We're going to mount tuleap as a Filesystem mountpoint instead of a typical Docker volume :
+We're going to mount tuleap as a Filesystem mountpoint (``/srv/tuleap`` bellow, feel free to change) instead of a typical Docker volume :
   - It eases configuration manipulation
   - It allows a better Disk space management
   - It allows easier Migration / Disaster Recovery if needed
