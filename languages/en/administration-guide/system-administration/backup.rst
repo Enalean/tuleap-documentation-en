@@ -34,13 +34,13 @@ Tuleap main database is ``tuleap``, but additionnal databases can be used for pl
 
 .. code-block:: bash
 
-    $ mysql -u codendiadm -p -e "show databases;"
+    $ mysql -u tuleapadm -p -e "show databases;"
 
 You can write a script to backup each database independently or use ``mysqldump`` to backup all databases:
 
 .. code-block:: bash
 
-    $ mysqldump -u codendiadm -p --all-databases > mybackup.sql
+    $ mysqldump -u tuleapadm -p --all-databases > mybackup.sql
 
 .. _tuleap_data_paths:
 
@@ -79,14 +79,14 @@ Tuleap main database is ``tuleap``, but additionnal databases can be used for pl
 
 .. code-block:: bash
 
-    $ docker exec SQL_CONTAINER /usr/bin/mysql -u codendiadm -p -e "show databases;"
+    $ docker exec SQL_CONTAINER /usr/bin/mysql -u tuleapadm -p -e "show databases;"
 
 You can write a script to backup each database independently or use ``mysqldump`` to backup all databases:
 
 .. code-block:: bash
 
     # Backup
-    docker exec SQL_CONTAINER /usr/bin/mysqldump -u codendiadm -p --all-databases > sqldump_all_tuleap.sql
+    docker exec SQL_CONTAINER /usr/bin/mysqldump -u tuleapadm -p --all-databases > sqldump_all_tuleap.sql
 
     # Restore (use root user for an empty server)
     cat sqldump_all_tuleap.sql | docker exec -i SQL_CONTAINER /usr/bin/mysql -u root -p

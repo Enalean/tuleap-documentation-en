@@ -28,10 +28,10 @@ Some companies have specific policies regarding passwords.
  [retype new password to confirm]
 
  # Change mysql password:
- mysqladmin --user=codendiadm -p password [new\_password]
+ mysqladmin --user=tuleapadm -p password [new\_password]
  enter password: [enter old password]
 
- $ vim /etc/tuleap/conf/database.inc # change **codendiadm** password
+ $ vim /etc/tuleap/conf/database.inc # change **sys_dbpasswd** password
 
 **admin** account:
 
@@ -72,4 +72,3 @@ website:
 - Type new global admin password
 
 If you see the admin page of the selected mailing list, then it is OK.
-
