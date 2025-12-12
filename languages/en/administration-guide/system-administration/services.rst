@@ -43,11 +43,11 @@ are as follows:
 -  **root**: This user has full administration right on all the MySQL
    databases and users. You must use this user whenever you want to
    grant/revoke new permission to a given user or network domain, etc...
--  **codendiadm**: the user that was specifically created to have
+-  **tuleapadm**: the user that was specifically created to have
    read/write access to the tuleap database. It can only interact with
    the database from the local host and not from a remote machine. All
    the Tuleap PHP scripts run under this user name to connect to the
-   database (see the file /etc/tuleap/conf/local.inc for the
+   database (see the file /etc/tuleap/conf/database.inc for the
    configuration of the database user and password).
 -  **cxuser**: this user has read-only access to the project databases that
    are created when a project administrator create a project database
@@ -80,7 +80,6 @@ Apache
 The Apache master configuration file is in /etc/httpd/conf/httpd.conf.
 The master file also includes specific configuration files located at
 /etc/httpd/conf.d.
-
 
 SSH
 ===
