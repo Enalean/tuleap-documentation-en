@@ -299,6 +299,7 @@ rediraffe_redirects = {
     "user-guide/my-personal-dashboard.rst": "user-guide/user/dashboard.rst",
     "installation-guide/intro.rst": "install.rst",
     "administration-guide/system-administration/backend-workers.rst": "installation-guide/step-by-step/valkey-configuration.rst",
+    "administration-guide/system-administration/files-permissions.rst": "administration-guide/system-administration/backup.rst",
     "installation-guide/step-by-step/redis-configuration.rst": "installation-guide/step-by-step/valkey-configuration.rst",
     "installation-guide/import.rst": "administration-guide/projects-management/export-import/import-from-other-tools.rst",
     "installation-guide/ansible-installation.rst": "install.rst",
