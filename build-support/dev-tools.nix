@@ -4,8 +4,7 @@
 }:
 [
   pkgs.uv
-  pkgs.nodejs-slim
-  pkgs.nodePackages.npm
+  pkgs.nodejs
   (treefmt-nix.mkWrapper pkgs {
     programs.oxipng.enable = true;
     programs.nixfmt = {
