@@ -55,7 +55,7 @@ Basic XML syntax
             <properties>
               <title><![CDATA[My link]]></title>
             </properties>
-            <url><![CDATA[https://tuleap.org]]></url>
+            <url><![CDATA[https://www.tuleap.com]]></url>
           </item>
           <item type="file">
             <properties>
