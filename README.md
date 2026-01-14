@@ -1,7 +1,7 @@
 Tuleap Documentation
 ====================
 
-[Tuleap](https://tuleap.org/) uses Sphinx in order to generate [its
+[Tuleap](https://www.tuleap.com/) uses Sphinx in order to generate [its
 documentation](https://docs.tuleap.com/).
 
 Contributors are encouraged to have a look at 

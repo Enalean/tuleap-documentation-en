@@ -3,7 +3,7 @@
 Install packages
 ================
 
-`Tuleap Enterprise Edition <https://www.tuleap.org/product/tuleap-enterprise-edition-features>`__  is a special distribution of Tuleap crafted by `Enalean <https://www.tuleap.org/company/about-us>`_ with more plugins and enhanced reliability.
+`Tuleap Enterprise Edition <https://www.tuleap.com/tuleap-enterprise-edition-features/>`__  is a special distribution of Tuleap crafted by `Enalean <https://www.tuleap.com/about-tuleap/>`_ with more plugins and enhanced reliability.
 
 Tuleap Community Edition is the development version of Tuleap with a limited set of plugins.
 

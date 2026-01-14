@@ -9,7 +9,7 @@ Welcome to Tuleap documentation !
 Tuleap is an all-in-one software engineering platform that helps team to develop
 better and faster together.
 
-You can learn more about the project on `Tuleap web site <https://www.tuleap.org/>`_
+You can learn more about the project on `Tuleap web site <https://www.tuleap.com/>`_
 
 .. toctree::
    :maxdepth: 2

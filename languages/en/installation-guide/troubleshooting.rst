@@ -48,7 +48,7 @@ I can not log in or I'm redirected indefinitely on the login page
 Check that you access your Tuleap instance with the same URL than the one present in the following files:
 
 .. code-block:: bash
-    
+
     /etc/tuleap/conf/local.inc
     /etc/nginx/conf.d/tuleap.conf
 
@@ -63,4 +63,4 @@ You can track worker activity in ``/var/log/tuleap/worker_log`` log file (you mi
 I checked everything and it's still not working
 -----------------------------------------------
 
-Create an account on `tuleap.net <https://tuleap.net>`_ and join us on our `community chat <https://chat.tuleap.org>`_
+Create an account on `tuleap.net <https://tuleap.net>`_ and join us on our `community chat <https://chat.tuleap.com>`_
