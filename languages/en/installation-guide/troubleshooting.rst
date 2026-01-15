@@ -11,7 +11,7 @@ Check all services are running with the following commands:
 
     systemctl status nginx
     systemctl status tuleap-php-fpm
-    systemctl status rh-mysql80-mysqld
+    systemctl status mysqld
 
 
 Check the correct ports are exposed for each service with:

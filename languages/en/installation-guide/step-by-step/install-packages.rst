@@ -35,6 +35,7 @@ Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
 
 ::
 
+    dnf module enable mysql:8.4 && \
     dnf install -y mysql-server \
     valkey \
     tuleap \
