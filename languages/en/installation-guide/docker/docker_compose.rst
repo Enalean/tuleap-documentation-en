@@ -80,7 +80,7 @@ Then create a ``compose.yaml`` file with following content:
 
       # This is for test purpose only. It's not advised to run a production database as a docker container
       mysql:
-        image: mysql:8.0
+        image: mysql:8.4
         command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
         environment:
           - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}

@@ -38,7 +38,7 @@ MySQL backend
 `````````````
 
 Database implementation rely on `MySQL Natural Language Full-Text Searches
-<https://dev.mysql.com/doc/refman/8.0/en/fulltext-natural-language.html>`_. It targets small to medium Tuleap instances.
+<https://dev.mysql.com/doc/refman/8.4/en/fulltext-natural-language.html>`_. It targets small to medium Tuleap instances.
 It is not suitable for large instances with more than 200'000 artifacts: search quality and performance are not adequate.
 Furthermore content written in ideographic languages such as Chinese and Japanese are not correctly indexed and you will
 not be able to find them in the search.

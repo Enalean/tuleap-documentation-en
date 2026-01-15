@@ -51,7 +51,7 @@ text field:
    substring in words)
 
 -  *Regular expression*: You can also specify a `MySQL Extended Regular
-   Expression <https://dev.mysql.com/doc/refman/8.0/en/regexp.html>`_ as
+   Expression <https://dev.mysql.com/doc/refman/8.4/en/regexp.html>`_ as
    a matching criteria (mind the surrounding /.../ !)
 
    Examples:
@@ -101,7 +101,7 @@ you can specify in a integer query field:
    and 900, -45 - 12 for integers between -45 and +12)
 
 -  *Regular expression*: `MySQL Extended Regular
-   Expression <https://dev.mysql.com/doc/refman/8.0/en/regexp.html>`_ can
+   Expression <https://dev.mysql.com/doc/refman/8.4/en/regexp.html>`_ can
    also be used as a matching criteria (e.g. /^4.\*8$/ will look for all
    integer values starting with a "4", ending with an "8" with any
    number of digits in between.
@@ -132,7 +132,7 @@ the values you can specify in such a field:
    to -1.2 and lesser than or equal to 4.5)
 
 -  *Regular expression*: `MySQL Extended Regular
-   Expression <https://dev.mysql.com/doc/refman/8.0/en/regexp.html>`_ can
+   Expression <https://dev.mysql.com/doc/refman/8.4/en/regexp.html>`_ can
    also be used as a matching criteria (e.g. /^4.\*8$/ will look for all
    values starting with a "4", ending with an "8" with any number of
    characters in between including the decimal point.
