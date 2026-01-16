@@ -18,7 +18,6 @@ sections:
    configuration/notifications
    configuration/import
    configuration/canned-responses
-   configuration/delete-artifact
    configuration/export-structure
    configuration/hierarchy
    configuration/triggers

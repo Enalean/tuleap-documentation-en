@@ -172,3 +172,12 @@ It means that the artifact link type ``_is_child`` is no more added automaticall
 * Backlog to have quick access to create new items and new parents
 * Backlog for scrum plannings definition
 * Tracker triggers that only deals with children based on the hierarchy
+
+Delete artifact
+===============
+
+Project and tracker administrators are able to permanently delete artifacts.
+
+.. NOTE::
+
+    Artifact deletion can be limited (e.g 5 deletions per days or disabled by platform administrators.
