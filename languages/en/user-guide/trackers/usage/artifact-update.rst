@@ -180,4 +180,5 @@ Project and tracker administrators are able to permanently delete artifacts.
 
 .. NOTE::
 
-    Artifact deletion can be limited (e.g 5 deletions per days or disabled by platform administrators.
+    Artifact deletion can be limited (for example: 5 deletions per day) or disabled by platform administrators.
+
