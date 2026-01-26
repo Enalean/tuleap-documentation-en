@@ -7,14 +7,17 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
+                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: 'refs/heads/master']], extensions: [cloneOption(depth: 1, noTags: true, reference: '', shallow: true), [$class: 'RelativeTargetDirectory', relativeTargetDir: 'sources']], userRemoteConfigs: [[url: 'https://tuleap.net/plugins/git/tuleap/tuleap/stable.git']])
             }
         }
+
         stage('Build and publish image') {
             steps {
                 script {
                     @Library('tuleap-jenkinsfile-library@master') _
+                    def helpers = load 'sources/tests/helpers.groovy'
+                    helpers.authenticateOnTailscale('tailscale-auth-key')
                     def lib_signing = new org.tuleap.Signing();
-                    lib_signing.authenticateOnTailscale();
                     lib_signing.prefetchToolsToSignDockerImages('ci-write');
                     def image_name = 'tuleap-documentation.online-docs';
                     def image = docker.build(
