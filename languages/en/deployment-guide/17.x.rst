@@ -1,12 +1,17 @@
 Tuleap 17.x
 ###########
 
-Tuleap 17.3 - February 2026
+Tuleap 17.4 - February 2026
 ===========================
 
 .. NOTE::
- 
-  Tuleap 17.3 is currently under development.
+
+  Tuleap 17.4 is currently under development.
+
+Nothing to mention.
+
+Tuleap 17.3 - January 2026
+===========================
 
 Nothing to mention.
 
