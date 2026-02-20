@@ -41,8 +41,8 @@ We're going to mount tuleap as a Filesystem mountpoint (``/srv/tuleap`` bellow, 
   - It eases configuration manipulation
   - It allows a better Disk space management
   - It allows easier Migration / Disaster Recovery if needed
-  - It allows easier backups 
-  - There are no significant performance drop on Linux 
+  - It allows easier backups
+  - There are no significant performance drop on Linux
 
 Tuleap Community
 `````````````````
@@ -69,10 +69,10 @@ Then create a ``compose.yaml`` file with following content:
         volumes:
           - /srv/tuleap/tuleap-data:/data
         depends_on:
-          - db
+          - mysql
         environment:
           - TULEAP_FQDN=${TULEAP_FQDN}
-          - TULEAP_SYS_DBHOST=db
+          - TULEAP_SYS_DBHOST=mysql
           - TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD}
           - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
           - DB_ADMIN_USER=root
