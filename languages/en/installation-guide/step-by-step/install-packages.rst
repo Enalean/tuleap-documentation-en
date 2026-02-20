@@ -48,38 +48,50 @@ Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
     tuleap-plugin-botmattermost-git \
     tuleap-plugin-captcha \
     tuleap-plugin-cardwall \
+    tuleap-plugin-create-test-env \
     tuleap-plugin-crosstracker \
     tuleap-plugin-document \
     tuleap-plugin-document_generation \
+    tuleap-plugin-embed \
     tuleap-plugin-frs \
+    tuleap-plugin-fts-db \
     tuleap-plugin-git \
     tuleap-plugin-gitlab \
     tuleap-plugin-gitlfs \
     tuleap-plugin-graphontrackers \
     tuleap-plugin-hudson \
     tuleap-plugin-hudson-git \
+    tuleap-plugin-hudson-svn \
+    tuleap-plugin-jira-import \
     tuleap-plugin-label \
     tuleap-plugin-ldap \
     tuleap-plugin-mediawiki \
+    tuleap-plugin-mediawiki-standalone \
+    tuleap-plugin-oauth2-server \
+    tuleap-plugin-onlyoffice \
     tuleap-plugin-openidconnectclient \
     tuleap-plugin-pdftemplate \
     tuleap-plugin-program_management \
+    tuleap-plugin-project-ownership \
     tuleap-plugin-projectmilestones \
     tuleap-plugin-prometheus-metrics \
     tuleap-plugin-pullrequest \
     tuleap-plugin-roadmap \
     tuleap-plugin-svn \
-    tuleap-plugin-tracker-functions \
     tuleap-plugin-taskboard \
     tuleap-plugin-testmanagement \
     tuleap-plugin-testplan \
     tuleap-plugin-timetracking \
+    tuleap-plugin-tracker-functions \
     tuleap-plugin-velocity \
+    tuleap-realtime \
     tuleap-theme-burningparrot \
     tuleap-theme-flamingparrot
 
 You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
 to install all of them now. Start small and add them on the go.
+
+Even if the default is to use `fts-db`, it is recommended to switch to `fts-meilisearch` for better performance, see :ref:`Full-Text search <fts-local-meilisearch>` for installation.
 
 .. _tuleap-community-edition-section:
 
