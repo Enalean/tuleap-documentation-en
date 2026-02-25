@@ -8,7 +8,14 @@ Tuleap 17.4 - February 2026
 
   Tuleap 17.4 is currently under development.
 
-Nothing to mention.
+MySQL 8.4 support and upgrade
+-----------------------------
+
+Tuleap supports MySQL 8.4 since this release.
+You must plan and upgrade to it before the end of life of MySQL 8.0 in April 2026.
+
+You can report to :ref:`the upgrade guide for more information <mysql84_upgrade>`.
+
 
 Tuleap 17.3 - January 2026
 ===========================

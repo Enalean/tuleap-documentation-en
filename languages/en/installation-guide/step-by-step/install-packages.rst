@@ -106,6 +106,7 @@ Tuleap Community Edition
 
 ::
 
+    dnf module enable mysql:8.4 && \
     dnf install -y \
       mysql-server \
       tuleap \
