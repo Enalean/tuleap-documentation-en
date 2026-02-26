@@ -1,12 +1,15 @@
 Tuleap 17.x
 ###########
 
-Tuleap 17.4 - February 2026
+Tuleap 17.5 - March 2026
 ===========================
 
 .. NOTE::
 
-  Tuleap 17.4 is currently under development.
+  Tuleap 17.5 is currently under development.
+
+Tuleap 17.4 - February 2026
+===========================
 
 MySQL 8.4 support and upgrade
 -----------------------------
