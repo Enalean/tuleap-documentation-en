@@ -1,6 +1,6 @@
 { }:
 
 import (fetchTarball {
-  url = "https://github.com/numtide/treefmt-nix/archive/f56b1934f5f8fcab8deb5d38d42fd692632b47c2.tar.gz";
-  sha256 = "sha256-ZRVs8UqikBa4Ki3X4KCnMBtBW0ux1DaT35tgsnB1jM4=";
+  url = "https://github.com/numtide/treefmt-nix/archive/337a4fe074be1042a35086f15481d763b8ddc0e7.tar.gz";
+  sha256 = "sha256-wQ6NJSuFqAEmIg2VMnLdCnUc0b7vslUohqqGGD+Fyxk=";
 })
