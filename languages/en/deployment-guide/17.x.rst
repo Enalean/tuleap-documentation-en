@@ -8,6 +8,11 @@ Tuleap 17.5 - March 2026
 
   Tuleap 17.5 is currently under development.
 
+Changes in endpoint: GET /api/testmanagement_campaigns/{id}/testmanagement_executions
+
+The limit parameter now enforces a maximum value of 50 (previously unlimited). 
+Requests with limit > 50 will return a 400 Bad Request error.
+
 Tuleap 17.4 - February 2026
 ===========================
 
