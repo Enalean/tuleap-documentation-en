@@ -15,7 +15,7 @@ Changes in endpoint: ``GET /api/testmanagement_campaigns/{id}/testmanagement_exe
 
 The limit parameter now enforces a maximum value of 50 (previously unlimited). 
 Requests trying to call the endpoint with a ``limit`` superior to 50 will now get an HTTP error response with a 400 status.
-The pagination header ``X-PAGINATION-LIMIT-MAX`` was already mentioning the limitation, so existing code :ref:`handling collections as expected` will not be impacted.
+The pagination header ``X-PAGINATION-LIMIT-MAX`` was already mentioning the limitation, so existing code handling collections as expected will not be impacted.
 
 Tuleap 17.4 - February 2026
 ===========================
