@@ -1,6 +1,9 @@
 Dealing with Collections
 ========================
 
+
+.. _dealing-with-collections:
+
 When a route returns an array, most of time it means that the resource is paginated. You can double check it by verifying
 Response headers. Pagination headers looks like this:
 
