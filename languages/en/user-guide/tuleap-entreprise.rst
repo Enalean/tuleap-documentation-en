@@ -49,6 +49,6 @@ Integrations
 
 * :ref:`Import Jira projects <jira-project-importer>`: Import entire Jira project
 
-More information on `Tuleap.org website`_.
+More information on the `Tuleap website`_.
 
-.. _Tuleap.org website: https://www.tuleap.com/pricing/
+.. _Tuleap website: https://www.tuleap.com/discover-tuleap/
