@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: 'refs/heads/master']], extensions: [cloneOption(depth: 1, noTags: true, reference: '', shallow: true), [$class: 'RelativeTargetDirectory', relativeTargetDir: 'sources']], userRemoteConfigs: [[url: 'https://tuleap.net/plugins/git/tuleap/tuleap/stable.git']])
+                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: 'refs/heads/master']], extensions: [cloneOption(depth: 1, noTags: true, reference: '', shallow: true), [$class: 'RelativeTargetDirectory', relativeTargetDir: 'sources']], userRemoteConfigs: [[credentialsId: 'aci_agent-gitolite-tuleap-net', url: 'ssh://gitolite@tuleap.net/tuleap/tuleap/stable.git']])
             }
         }
 
