@@ -4,10 +4,6 @@ Tuleap 17.x
 Tuleap 17.5 - March 2026
 ===========================
 
-.. NOTE::
-
-  Tuleap 17.5 is currently under development.
-
 Test management API update
 --------------------------
 
