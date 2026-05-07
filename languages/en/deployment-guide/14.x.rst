@@ -14,7 +14,7 @@ The upgrade will re-index all the items. Until the process is completed, some it
 searching, and an increased load on your instance is expected.
 
 Administrators having deployed an independent Meilisearch instance should also
-`upgrade it <https://www.meilisearch.com/docs/learn/update_and_migration/updating>`_.
+`upgrade it <https://www.meilisearch.com/docs/resources/migration/updating>`_.
 
 Tuleap 14.11
 ============
@@ -29,7 +29,7 @@ The upgrade will re-index all the items. Until the process is completed, some it
 searching, and an increased load on your instance is expected.
 
 Administrators having deployed an independent Meilisearch instance should also
-`upgrade it <https://www.meilisearch.com/docs/learn/update_and_migration/updating>`_.
+`upgrade it <https://www.meilisearch.com/docs/resources/migration/updating>`_.
 
 Tuleap 14.10
 ============
