@@ -241,7 +241,9 @@ linkcheck_ignore = [
     r'http://192\.0\.2\.11.*', # IP used as an example on the Keycloack page of the dev section
     r'https://tuleap\.net/plugins/git/tuleap/tuleap/stable\?.*', # Browsing the source repo requires to be authenticated
     'https://ci.tuleap.org/jenkins/job/Tuleap%20Additional%20Tools/job/Build%20Additional%20Tuleap%20Tools/', # Require to be authenticated
-    'https://stackoverflow.com/questions/16323896/locked-out-of-jenkins' # Require a challenge resolution
+    'https://stackoverflow.com/questions/16323896/locked-out-of-jenkins', # Require a challenge resolution
+    'https://www.npmjs.com/package/@tuleap/project-sidebar', # We get a 403 when running linkcheck on CI agents
+    'https://medium.com/intigriti/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c' # We get a 403 when running linkcheck on CI agents
 ]
 
 # -- Options for manual page output --------------------------------------------
