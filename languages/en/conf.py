@@ -232,7 +232,6 @@ linkcheck_ignore = [
     'https://tuleap-web.tuleap-aio-dev.docker/',
     'https://tuleap/',
     'https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders', # Anchor is not found due to the page generation client side
-    'https://github.com/Enalean/bz2tuleap#jira-to-tuleap', # Anchor is not found due to the page generation client side
     'https://prismjs.com/#supported-languages', # Anchor is not found due to the page generation client side
     r'https://ci\.enalean\.com/.*', # No public access
     r'https://my\.enalean\.com/.*', # No public access
