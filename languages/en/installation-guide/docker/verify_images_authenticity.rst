@@ -44,3 +44,11 @@ On success the output will look something like this:
     - Existence of the claims in the transparency log was verified offline
     - The signatures were verified against the specified public key
   {"critical":{"identity":{"docker-reference":"docker.tuleap.org/tuleap-enterprise-edition"},"image":{"docker-manifest-digest":"sha256:<digest>"},"type":"cosign container image signature"},"optional":null}
+
+
+You can also retrieve attestation of Software-Bill-of-Materials (SBOM) in the `CycloneDX format <https://cyclonedx.org/>`_ for the container image using Cosign:
+
+.. code-block:: bash
+
+  $ cosign verify-attestation --key tuleap_enterprise_docker.pub --type cyclonedx docker.tuleap.org/tuleap-enterprise-edition:<tuleap_version> | \
+      jq -r '.payload' | base64 -d > tuleap_container_image_sbom.cdx.json
