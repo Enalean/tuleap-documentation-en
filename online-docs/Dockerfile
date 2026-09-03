@@ -6,7 +6,7 @@ WORKDIR /home/builder/tuleap-documentation
 
 RUN nix-shell --run 'npm ci && npm run build && make SPHINXOPTS="-D html_theme=tuleap_online_doc" html'
 
-FROM nginx:1.31.4-alpine@sha256:eaf802f96908457b5a90a3b271536b45713b775f46bcbf1d570cd7d15d4fcb32
+FROM nginx:1.31.5-alpine@sha256:34f40471dea485273c5e2a04dd5e97a682332ceb4a9adecd67de450dcb2fb390
 
 COPY online-docs/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /home/builder/tuleap-documentation/_build/html/en/ /usr/share/nginx/html
