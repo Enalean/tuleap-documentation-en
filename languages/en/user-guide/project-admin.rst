@@ -85,7 +85,7 @@ This includes that:
       copied with their associated fields, field values, field
       dependencies, reports, and permissions (see ?).
 
-   -  the test management configuration is copied (This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`)
+   -  the test management configuration is copied
 
    -  the backlog configuration is copied
 
@@ -123,9 +123,6 @@ Create project from Jira
 
   This feature is provided by package ``tuleap-plugin-jira-import`` it must be installed and activated by a site administrator
   first.
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
 
 It's also possible to create a new project by importing data from a Jira project.
 
@@ -297,11 +294,6 @@ You will find the documentation of :ref:`Cross-Tracker Search here <xts>`.
 
 Roadmap
 ```````
-
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
 
 This displays the roadmap of a project in the project dashboard. It shows the progress of artifacts with:
 
@@ -773,11 +765,6 @@ This administration panel allows project administrators to:
 
 Label widget
 ````````````
-
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
 
 In your project dashboard, you can add several widgets to track your items:
 

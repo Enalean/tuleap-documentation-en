@@ -10,6 +10,3 @@ the main Postfix configuration file generally located in /etc/postfix/main.cf:
      alias_maps = hash:/etc/aliases,hash:/etc/aliases.codendi
      alias_database = hash:/etc/aliases,hash:/etc/aliases.codendi
      recipient_delimiter = +
-
-
-If you have installed Tuleap Community Edition, you can go straight to :ref:`First connection <tuleap_first-connection>`

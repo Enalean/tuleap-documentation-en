@@ -3,11 +3,6 @@
 Document Generation: docx and xlsx export
 -----------------------------------------
 
-.. attention::
-
-    This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-    not be available on your installation of Tuleap.
-
 This plugin allows to generate MS Office documents (docx/xlsx) from tracker reports:
 
 * Word (docx) document as a snapshot of a tracker content.

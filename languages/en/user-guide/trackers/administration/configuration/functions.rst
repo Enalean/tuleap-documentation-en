@@ -3,11 +3,6 @@
 Tuleap Functions for Tracker
 ============================
 
-.. note::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 Context & usages
 ````````````````
 

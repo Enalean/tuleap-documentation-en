@@ -1,7 +1,7 @@
 Introduction
 ============
 
-Tuleap is a free and Open Source Suite to improve management
+Tuleap is a Suite to improve management
 of software projects and connect with team members. With a single
 web-based solution, CTO, project managers, developers, quality managers
 and other users can easily build, deploy smart and quality projects.
@@ -27,8 +27,7 @@ tailor each tool to your processes and business requirements. `More info
 on Tuleap features . <https://www.tuleap.com/>`__
 
 We want you to experience the full power of Tuleap
-technology. So we do not distinguish between an Enterprise version and a
-Community version. Likewise, this guide provides you with all
+technology. This guide provides you with all
 useful information and good practices to get the most of the Tuleap suite.
 
 The Tuleap team makes great work to make this guide updated to

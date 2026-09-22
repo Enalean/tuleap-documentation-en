@@ -3,11 +3,6 @@
 Test Management
 ===============
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 The Tuleap Test Management plugin (aka **TTM**) aims at providing a straightforward way to deal with
 test campaigns.
 

@@ -5,19 +5,6 @@ Install packages
 
 `Tuleap Enterprise Edition <https://www.tuleap.com/tuleap-enterprise-edition-features/>`__  is a special distribution of Tuleap crafted by `Enalean <https://www.tuleap.com/about-tuleap/>`_ with more plugins and enhanced reliability.
 
-Tuleap Community Edition is the development version of Tuleap with a limited set of plugins.
-
-
-Please choose one of the two editions :
-
-- `Tuleap Enterprise Edition <#tuleap-enterprise-edition-section>`__
-- `Tuleap Community Edition <#tuleap-community-edition-section>`_
-
-.. _tuleap-enterprise-edition-section:
-
-Tuleap Enterprise Edition
--------------------------
-
 Please contact your salesperson to receive your credentials.
 
 Create a file ``/etc/yum.repos.d/tuleap.repo`` with the following content:
@@ -90,40 +77,3 @@ You can install more plugins, see the whole list on the :ref:`plugin list page <
 to install all of them now. Start small and add them on the go.
 
 Even if the default is to use `fts-db`, it is recommended to switch to `fts-meilisearch` for better performance, see :ref:`Full-Text search <fts-local-meilisearch>` for installation.
-
-.. _tuleap-community-edition-section:
-
-Tuleap Community Edition
-------------------------
-
--  **Install Tuleap repository**
-
-::
-
-    dnf install https://ci.tuleap.net/yum/tuleap/rhel/9/dev/x86_64/tuleap-community-release.rpm
-
--  **Install Tuleap** by running the following command:
-
-::
-
-    dnf module enable mysql:8.4 && \
-    dnf install -y \
-      mysql-server \
-      tuleap \
-      tuleap-theme-burningparrot \
-      tuleap-theme-flamingparrot \
-      tuleap-plugin-agiledashboard \
-      tuleap-plugin-graphontrackers \
-      tuleap-plugin-git \
-      tuleap-plugin-hudson-git \
-      tuleap-plugin-pullrequest \
-      tuleap-plugin-gitlfs \
-      tuleap-plugin-document \
-      tuleap-plugin-onlyoffice \
-      tuleap-plugin-embed \
-      tuleap-plugin-gitlab \
-      tuleap-plugin-openidconnectclient \
-      tuleap-plugin-ldap
-
-You can install more plugins, see the whole list on the :ref:`plugin list page <install-plugins>`. However you don't have
-to install all of them now. Start small and add them on the go.

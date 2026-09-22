@@ -3,11 +3,6 @@
 Cross-Tracker Search
 ====================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 You may want to perform a search based on several trackers and several projects.
 A widget "Cross-Tracker Search" allows you to do that.
 

@@ -3,11 +3,6 @@
 Dynamic credentials
 ===================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 The dynamic credentials plugin aims to provide a way to generate short-lived
 credentials on the fly to access to a Tuleap instance. While it could work with
 other tools, the plugin is specifically designed to work with

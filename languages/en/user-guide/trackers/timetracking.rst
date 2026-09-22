@@ -3,11 +3,6 @@
 Timetracking
 ------------
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 The Timetracking plugin of Tuleap aims at providing a simple and easy way to deal with
 artifact time tracking and time reporting for users.
 

@@ -5,11 +5,6 @@
 PDF Template
 ------------
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 PDF Template plugin allows to export documents to PDF using platform defined templates. Export to PDF is supported for:
 
 * :ref:`Artidoc <artidoc>`
