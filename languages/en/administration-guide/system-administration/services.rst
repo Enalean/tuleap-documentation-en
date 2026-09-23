@@ -5,8 +5,7 @@ Services
 Network Ports
 =============
 
-* Web UI: 80 (HTTP) and 443 (HTTPS)
-* FTP: port 21
+* Web UI: 443 (HTTPS)
 * SSH: port 22
 * SMTP: port 25
 
@@ -15,7 +14,6 @@ Mysql
 =====
 
 Tuleap uses the MySQL database engine to store all of the project data.
-MySQL is fast, lightweight and very robust.
 
 Database Creation
 -----------------
