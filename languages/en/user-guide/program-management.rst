@@ -3,11 +3,6 @@
 Program management
 ------------------
 
-.. attention::
-
-    This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-    not be available on your installation of Tuleap.
-
 Program Management plugin brings multi project backlog management as well as teams synchronisation. Program Management
 can be adapted to any methodology and comes with templates for fast and easy on boarding.
 

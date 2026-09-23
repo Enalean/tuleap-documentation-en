@@ -44,52 +44,10 @@ We're going to mount tuleap as a Filesystem mountpoint (``/srv/tuleap`` bellow, 
   - It allows easier backups
   - There are no significant performance drop on Linux
 
-Tuleap Community
+Tuleap Enterprise
 `````````````````
 .. _docker-images-compose:
 
-.. warning::
-
-    The following section is meant for test purpose only. The database (MySQL) is handled by Docker and it is not a recommended setup.
-
-
-Then create a ``compose.yaml`` file with following content:
-
-.. code-block:: yaml
-
-    services:
-      tuleap:
-        image: tuleap/tuleap-community-edition
-        hostname: ${TULEAP_FQDN}
-        restart: always
-        ports:
-          - "80:80"
-          - "443:443"
-          - "22:22"
-        volumes:
-          - /srv/tuleap/tuleap-data:/data
-        depends_on:
-          - mysql
-        environment:
-          - TULEAP_FQDN=${TULEAP_FQDN}
-          - TULEAP_SYS_DBHOST=mysql
-          - TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD}
-          - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
-          - DB_ADMIN_USER=root
-          - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
-
-      # This is for test purpose only. It's not advised to run a production database as a docker container
-      mysql:
-        image: mysql:8.4
-        command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
-        environment:
-          - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-        volumes:
-          - /srv/tuleap/mysql-data:/var/lib/mysql
-
-
-Tuleap Enterprise
-`````````````````
 .. attention::
 
   This image is only available to :ref:`Tuleap Enterprise <tuleap-enterprise>` subscribers. Please contact your support

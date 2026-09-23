@@ -60,11 +60,6 @@ computation. It can also be used by the :ref:`GitLab integration <version-contro
 
 Velocity (Backlog)
 ``````````````````
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 How to add velocity chart in a release:
  1 - You should have a tracker hierarchy between Release and Sprint
 

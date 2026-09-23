@@ -8,11 +8,6 @@ Monitoring with Prometheus
     :alt: Dashboarding with grafana
     :name: Dashboarding of prometheus metrics with grafana
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Entreprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 Tuleap gathers metrics about usage (number of artifact viewed, created, updated, services access) and exposes them using
 `Prometheus <https://prometheus.io/>`_ format. To efficiently exploit them, you should install Prometheus as well as
 `Grafana <https://grafana.com/>`_. Installation and configuration of those tools is not covered in this section but well

@@ -3,11 +3,6 @@
 OAuth2 and OpenIDConnect
 ========================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 Tuleap `oauth2_server` plugin provides both  `OAuth2 <oauth2_>`_ and
 `OpenIDConnect <openidconnect_>`_ servers. This plugin allows for other websites
 to interconnect with Tuleap easily. Users can grant authorizations to external

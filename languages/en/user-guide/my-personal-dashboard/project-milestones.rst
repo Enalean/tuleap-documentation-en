@@ -3,11 +3,6 @@
 Project Milestones
 ------------------
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 The widget Project Milestones aims at displaying the main information of a Scrum Backlog on a personal or project dashboard.
 
 Project Milestones features:

@@ -3,11 +3,6 @@
 TQL in Cross-Tracker Search
 ===========================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 Widget
 ------
 

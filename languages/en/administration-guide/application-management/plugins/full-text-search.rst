@@ -3,11 +3,6 @@
 Full-text search
 ================
 
-.. attention::
-
-  This module is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
 The full-text search makes possible to find an item based on its content across all the items you can access.
 
 Indexed items

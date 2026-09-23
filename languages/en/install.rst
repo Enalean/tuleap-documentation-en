@@ -1,15 +1,12 @@
 Installation guide
 ==================
 
-If you are a tech enthusiast with the ability to self-install and maintain your instance,
-Tuleap Community Edition (TCE) is available and offer powerful capabilities for non-critical
-business process or development needs. If you need enterprise-class features, scalability and
-security and if you plan to use Tuleap in a production environment, you should consider
-`Tuleap Enterprise Edition <https://www.tuleap.com/discover-tuleap/>`_.
+`Tuleap Enterprise Edition <https://www.tuleap.com/discover-tuleap/>`_ offers enterprise-class
+features, scalability and security for production environments.
 
-This document aims to help you install Tuleap Community Edition (TCE) or Tuleap Enterprise Edition (TEE) on your server.
+This document aims to help you install Tuleap Enterprise Edition (TEE) on your server.
 
-Multiple ways to install TCE & TEE are supported with their benefits and disadvantages.
+Multiple ways to install TEE are supported with their benefits and disadvantages.
 
 -  :doc:`Docker installation<installation-guide/docker/introduction>`:
     -  Quick and easy install

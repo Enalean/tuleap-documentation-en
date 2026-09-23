@@ -179,12 +179,6 @@ and change the remaining effort on the fly, that is to say staying on the same p
    | Expand/Collapse columns                                                               |          | ✓         |
    +---------------------------------------------------------------------------------------+----------+-----------+
 
-.. attention::
-
-  Taskboard is part of :ref:`Tuleap Enterprise <tuleap-enterprise>`. It might
-  not be available on your installation of Tuleap.
-
-
 Add in place limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
