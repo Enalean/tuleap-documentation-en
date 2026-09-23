@@ -115,7 +115,7 @@ Tuleap 7.6
 Old Docman migration
 --------------------
 
-This release comes with a tool to assist admin of very old Tuleap to migrate from docman v1 to docman v2 (plugin). This might be relevant to you if you installed Tuleap before 2009. Check :ref:`Administration guide <admin_howto_docmanv1_to_docmanv2>`
+This release comes with a tool to assist admin of very old Tuleap to migrate from docman v1 to docman v2 (plugin). This might be relevant to you if you installed Tuleap before 2009.
 
 Git
 ---
